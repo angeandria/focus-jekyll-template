@@ -16,24 +16,26 @@ jobs:
     - uses: ruby/setup-ruby@v1
       with:
         ruby-version: '3.2'
+        
     - name: Setup cache for Bundler
       id: cache
       uses:  actions/cache@v4
       with:
         path: |
-          Gemfile.lock
            vendor/bundle
         key: ${{ runner.os }}-bundler-${{ hashFiles('docs/Gemfile') }}
         restore-keys: |
           ${{ runner.os }}-bundler-
 
-    - name: Install Bundler and Dependencies
-     run: |
+    - name: Install Dependencies
+      run: |
         bundle install --jobs=4 --retry=3
-    
-    - name: Update Algolia index
-      working-directory: docs/
-      run: bundle exec jekyll algolia push
-      env:
-        ALGOLIA_API_KEY: ${{ secrets.ALGOLIA_API_KEY }}
-      continue-on-error: true
+
+    - name: Build Jekyll site
+      run: bundle exec jekyll build
+      
+#    - name: Update Algolia index
+#      run: bundle exec jekyll algolia push
+#      env:
+#        ALGOLIA_API_KEY: ${{ secrets.ALGOLIA_API_KEY }}
+#      continue-on-error: true
