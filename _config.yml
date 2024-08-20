@@ -1,17 +1,4 @@
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely edit after that. If you find
-# yourself editing this file very often, consider using Jekyll's data files
-# feature for the data you need to update frequently.
-#
-
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
-
-
-
-
+# -----------------
 # Site settings
 # ---------------
 repository               : "angeandria/focus-jekyll-template" # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
@@ -19,7 +6,7 @@ url                      : "https://angeandria.github.io/focus-jekyll-template" 
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 
 
-
+# -----------------
 # Site Details
 # ---------------
 title                    : "Focus template"
@@ -31,20 +18,23 @@ description: >- # this means to ignore newlines until "baseurl:"
   line in _config.yml. It will appear in your document head meta (for
   Google search results) and in your feed.xml site description.
 locale                   : "en-US"
+logo                     : # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
+masthead_title           : # overrides the website title displayed in the masthead, 
 
 
-
+# -----------------
 # Theme Settings
 # ---------------
 remote_theme: mmistakes/minimal-mistakes
 minimal_mistakes_skin: "default" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 
 
+
+# -----------------
 # Site Details - More
 # ---------------
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
-logo                     : # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
-masthead_title           : # overrides the website title displayed in the masthead, use " " for no title
+use " " for no title
 breadcrumbs              : true # true, false (default)
 words_per_minute         : 200
 enable_copy_code_button  : # true, false (default)
@@ -53,37 +43,50 @@ copyright_url            : # "copyright" URL, defaults to site.url
 
 # comments: # no comments for this site - See here for documentation
 # https://github.com/mmistakes/minimal-mistakes/blob/master/_config.yml
-search                   : true # true, false (default)
-search_full_content      : # true, false (default)
-search_provider          : # lunr (default), algolia, google
-lunr:
-  search_within_pages    : # true, false (default)
-algolia:
-  application_id         : # YOUR_APPLICATION_ID
-  index_name             : # YOUR_INDEX_NAME
-  search_only_api_key    : # YOUR_SEARCH_ONLY_API_KEY
-  powered_by             : # true (default), false
-google:
-  search_engine_id       : # YOUR_SEARCH_ENGINE_ID
-  instant_search         : # false (default), true
 
 
 
-# Collections
 # ---------------
-#collections:
-#  docs:
-#    output: true
-#    permalink: /:collection/:path/
-#  recipes:
-#    output: true
-#    permalink: /:collection/:path/
-#  pets:
-#    output: true
-#    permalink: /:collection/:path/
-#  portfolio:
-#    output: true
-#    permalink: /:collection/:path/  
+# Site Author
+# ---------------
+author:
+  name   : "First Lastname"
+  avatar : "/assets/images/bio-photo.jpg"
+  bio    : "My awesome biography constrained to a sentence or two goes here."
+  email  : "ange@angeandria.com"
+  links:
+    - label: "Email"
+      icon: "fas fa-fw fa-envelope-square"
+      url: "mailto:ange@angeandria.com"
+    - label: "Website"
+      icon: "fas fa-fw fa-link"
+      url: "https://"
+    - label: "Twitter"
+      icon: "fab fa-fw fa-twitter-square"
+      url: "https://twitter.com/"
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/"
+    - label: "Instagram"
+      icon: "fab fa-fw fa-instagram"
+      url: "https://instagram.com/"
+
+
+
+
+# -----------------
+# Permalinks : Posts
+# -----------------
+permalink: /:categories/:title/
+
+
+# -----------------
+# Pagination (jekyll-paginate)
+# ---------------
+paginate: 5 # amount of posts to show
+paginate_path: /page:num/
+  
+
 
 # -----------------
 # Collections
@@ -100,9 +103,24 @@ collections:
 #    permalink: /resources/:title
 #    sort_by: weight
 
+#collections:
+#  docs:
+#    output: true
+#    permalink: /:collection/:path/
+#  recipes:
+#    output: true
+#    permalink: /:collection/:path/
+#  pets:
+#    output: true
+#    permalink: /:collection/:path/
+#  portfolio:
+#    output: true
+#    permalink: /:collection/:path/  
 
 
 
+
+# -----------------
 # Defaults
 # ---------------
 defaults:
@@ -134,43 +152,21 @@ defaults:
 #      share: true    
       
 
+
+
+
+
+
+
+# ---------------
 # Build settings
 # ---------------
 markdown: kramdown
-# Outputting
-permalink: /:categories/:title/
 timezone: # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
   
-  
- 
-# Site Author
-# ---------------
-author:
-  name   : "First Lastname"
-  avatar : "/assets/images/bio-photo.jpg"
-  bio    : "My awesome biography constrained to a sentence or two goes here."
-  email  : "ange@angeandria.com"
-  links:
-    - label: "Email"
-      icon: "fas fa-fw fa-envelope-square"
-      url: "mailto:ange@angeandria.com"
-    - label: "Website"
-      icon: "fas fa-fw fa-link"
-      url: "https://"
-    - label: "Twitter"
-      icon: "fab fa-fw fa-twitter-square"
-      url: "https://twitter.com/"
-    - label: "GitHub"
-      icon: "fab fa-fw fa-github"
-      url: "https://github.com/"
-    - label: "Instagram"
-      icon: "fab fa-fw fa-instagram"
-      url: "https://instagram.com/"
 
 
-
-
-
+# -----------------
 # Reading Files
 # ---------------
 # Include / exclude from processing
@@ -212,8 +208,8 @@ markdown_ext: "markdown,mkdown,mkdn,mkd,md"
 
 
 
-
-# Plugins (previously gems:)
+# -----------------
+# Plugins
 # ---------------
 plugins:
   - jekyll-paginate
@@ -233,14 +229,10 @@ whitelist:
   - jekyll-include-cache 
   
 
-# Pagination (jekyll-paginate)
-# ---------------
-paginate: 5 # amount of posts to show
-paginate_path: /page:num/
-  
+
   
  
-
+# -----------------
 # Site Footer
 # ---------------
 footer:
@@ -257,6 +249,26 @@ footer:
 
 
 
+# -----------------
+# Search
+# -----------------
+search                   : true # true, false (default)
+search_full_content      : # true, false (default)
+search_provider          : # lunr (default), algolia, google
+lunr:
+  search_within_pages    : # true, false (default)
+algolia:
+  application_id         : # YOUR_APPLICATION_ID
+  index_name             : # YOUR_INDEX_NAME
+  search_only_api_key    : # YOUR_SEARCH_ONLY_API_KEY
+  powered_by             : # true (default), false
+google:
+  search_engine_id       : # YOUR_SEARCH_ENGINE_ID
+  instant_search         : # false (default), true
+
+
+
+# -----------------
 # Archives
 # ---------------
 #  Type
@@ -294,6 +306,7 @@ tag_archive:
   
 
 
+# -----------------
 # SEO Related
 # ---------------
 google_site_verification :
@@ -303,7 +316,7 @@ yandex_site_verification :
 baidu_site_verification  :
 
 
-
+# -----------------
 # Social Sharing
 # ---------------
 twitter:
@@ -320,7 +333,7 @@ social:
   name                   : # If the user or organization name differs from the site's name
   links: # An array of links to social media profiles
 
-
+# -----------------
 # Analytics
 # ---------------
 analytics:
