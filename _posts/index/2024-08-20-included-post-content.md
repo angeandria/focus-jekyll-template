@@ -1,10 +1,12 @@
 ---
-title: "Post: Chat"
+title: "Post: Standard"
+excerpt_separator: "<!--more-->"
 categories:
   - Blog
 tags:
-  - chat
   - Post Formats
+  - readability
+  - standard
 ---
 
 {% assign post_date = page.date | date: "%Y-%m-%d" %}
