@@ -1,5 +1,5 @@
 ---
-title: "Post: Standard"
+title: "Included post content"
 excerpt_separator: "<!--more-->"
 categories:
   - Blog
