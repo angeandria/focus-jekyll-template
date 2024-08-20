@@ -85,6 +85,22 @@ google:
 #    output: true
 #    permalink: /:collection/:path/  
 
+# -----------------
+# Collections
+# -----------------
+collections:
+#  services:
+#    output: true
+#    sort_by: weight
+  pages:
+    output: true
+    permalink: /:title
+#  guides: 
+#    output: true
+#    permalink: /resources/:title
+#    sort_by: weight
+
+
 
 
 # Defaults
