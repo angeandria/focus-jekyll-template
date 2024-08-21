@@ -1,5 +1,7 @@
 ---
 title: "All Pages"
+layout: archive
+collection: guides
 ---
 
 
