@@ -97,10 +97,10 @@ collections:
   pages:
     output: true
     permalink: /:title
-#  guides: 
-#    output: true
-#    permalink: /resources/:title
-#    sort_by: weight
+  guides: 
+    output: true
+    permalink: /resources/:title
+    sort_by: weight
 
 #collections:
 #  docs:

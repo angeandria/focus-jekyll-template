@@ -1,8 +1,7 @@
 —
-title: Pages archive
-layout: collection
-permalink: /pages/
-collection: pages-archive
+title: Guides archive
+permalink: /guides/
+collection: guides
 entries_layout: grid
 —
 
