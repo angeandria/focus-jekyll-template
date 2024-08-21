@@ -141,7 +141,7 @@ defaults:
     values:
       layout: single
       author_profile: true
-	# _guides
+  # _guides
   - scope:
       path: "_guides"
       type: guides

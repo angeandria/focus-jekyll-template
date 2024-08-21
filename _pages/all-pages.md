@@ -1,7 +1,6 @@
 ---
-title: "Pages archive"
+title: "All Pages"
 ---
-
 
 
 ## List of pages
