@@ -141,6 +141,13 @@ defaults:
     values:
       layout: single
       author_profile: true
+	# _pages
+  - scope:
+      path: "_guides"
+      type: guides
+    values:
+      layout: single
+      author_profile: true
   # _portfolio
 #  - scope:
 #      path: ""

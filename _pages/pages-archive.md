@@ -1,9 +1,8 @@
-—
-title: Guides archive
-permalink: /guides/
-collection: guides
-entries_layout: grid
-—
+---
+title: "Pages archive"
+---
+
+
 
 ## List of pages
 
