@@ -2,7 +2,7 @@
 title: Pages archive
 layout: collection
 permalink: /pages/
-collection: pages
+collection: pages-archive
 entries_layout: grid
 —
 
