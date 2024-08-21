@@ -8,4 +8,4 @@ main:
   - title: "About"
     url: /about/
   ~ title: "All pages"
-  - url: /pages-archive 
+    url: /pages-archive/
