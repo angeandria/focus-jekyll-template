@@ -16,11 +16,8 @@
 		  
 		  
 	 	{% for action in taxonomy_details.actions %}
-  
 	      	<a class="taxonomy-cta btn btn--primary btn--large" href="{{ action.url }}">{{ action.label | markdownify }}
 			</a> 
-			Label : {{ action.label }}
-			url : {{ action.url }}
 		{% endfor %}
 	  </div>
   </div>
