@@ -4,8 +4,12 @@
 <h2>Post slug : {{ post_slug }}<h2>
 
 {% if taxonomy_details %}
-  <p>Blog category exists: {{ taxonomy_details }}</p>
-
+  
+  <h2>{{ taxonomy_details.title | markdownify }}</h2>
+  <div>
+      {{ taxonomy_details.description | markdownify }}
+  </div> 
+      
   {% if page.title == taxonomy_details %}
     <p>The current page title matches the blog category: {{ page.title }}</p>
   {% else %}
