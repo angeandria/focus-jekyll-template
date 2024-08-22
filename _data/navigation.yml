@@ -1,11 +1,11 @@
 main:
   - title: "Posts"
-    url: /posts/
+    url: /posts
   - title: "Categories"
-    url: /categories/
+    url: /categories
   - title: "Tags"
-    url: /tags/
+    url: /tags
   - title: "About"
-    url: /about/
+    url: /about
   - title: "All pages"
-    url: /pages-archive/
+    url: /pages-archive
