@@ -18,12 +18,16 @@ header:
 	{% comment %}
 		Replacing :
   		{% include page__hero.html %}
+		
+		{% capture hero_content %}
+			  {% include page__hero.html %}
+		{% endcapture %}
+		{{ hero_content | replace: page.overlay_filter, rgba(0, 255, 0, 0.5) }}
+		
 	{% endcomment %}
 	
-	{% capture hero_content %}
-		  {% include page__hero.html %}
-	{% endcapture %}
-	{{ hero_content | replace: page.overlay_filter, rgba(0, 255, 0, 0.5) }}
+	
+  	{% include page__hero.html %}
 
 	
 {% elsif page.header.video.id and page.header.video.provider %}
