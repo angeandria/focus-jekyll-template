@@ -13,10 +13,15 @@
 	  <img class="taxonomy-featured-img" src="{{ taxonomy_details.featured-img | default: '/assets/images/placeholder.jpg' | relative_url }}" alt="Featured Image">
 
 	  <div>
-      	<a class="taxonomy-cta btn btn--primary btn--large" href="{{ taxonomy_details.actions.url }}">{{ taxonomy_details.actions.label | markdownify }}
-		</a> 
-		Label : {{ taxonomy_details.actions.label }}
-		url : {{ taxonomy_details.actions.url }}
+		  
+		  
+	 	{% for action in taxonomy_details.actions %}
+  
+	      	<a class="taxonomy-cta btn btn--primary btn--large" href="{{ action.url }}">{{ action.label | markdownify }}
+			</a> 
+			Label : {{ action.label }}
+			url : {{ action.url }}
+		{% endfor %}
 	  </div>
   </div>
 {% endif %}
