@@ -6,6 +6,17 @@ categories:
 tags:
   - Jekyll
   - update
+
+excerpt: "This post should display a **header with an overlay image**, if the theme supports it."
+header:
+  overlay_image: /assets/images/placeholder-1200.jpg
+  overlay_filter: linear-gradient(rgba(255, 0, 0, 0.5), rgba(0, 255, 255, 0.5))
+  caption: "Photo credit: [**Unsplash**](https://unsplash.com)"
+  actions:
+    - label: "More Info"
+      url: "https://unsplash.com"
+    - label: "Download"
+      url: "https://angeandria.com"  
 ---
 
 You'll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.

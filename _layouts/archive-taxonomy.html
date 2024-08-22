@@ -13,6 +13,9 @@ header:
       url: "https://angeandria.com"
 ---
 
+Layout : {{ page.layout}}
+Excerpt : {{ page.excerpt | markdownify }}
+Overlay : {{ page.header.caption }} 
 aaa
 {% if page.header.overlay_color or page.header.overlay_image or page.header.image %}
 
