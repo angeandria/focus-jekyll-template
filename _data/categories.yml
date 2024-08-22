@@ -25,4 +25,4 @@ personal-development:
     featured-img: "assets/images/placeholder-1200.jpg"	
     actions :
       - label: "Get this"
-      - url: "https://angeandria.com"
+        url: "https://angeandria.com"
