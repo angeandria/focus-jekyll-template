@@ -3,8 +3,7 @@
 # --------------    
 growth:
     title: "Growth"
-    description: "Growth description"
-	
+    description: "Growth description"	
     cta-title: "Get this"
     cta-url: "https://angeandria.com"
 
