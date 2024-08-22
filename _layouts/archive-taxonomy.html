@@ -1,48 +1,14 @@
 ---
 layout: default
 author_profile: false
-excerpt: "This post should display a **header with an overlay image**, if the theme supports it."
-header:
-  overlay_image: /assets/images/placeholder-1200.jpg
-  overlay_filter: linear-gradient(rgba(255, 0, 0, 0.5), rgba(0, 255, 255, 0.5))
-  caption: "Photo credit: [**Unsplash**](https://unsplash.com)"
-  actions:
-    - label: "More Info"
-      url: "https://unsplash.com"
-    - label: "Download"
-      url: "https://angeandria.com"
 ---
 
-Layout : {{ page.layout}}
-Excerpt : {{ page.excerpt | markdownify }}
-Overlay : {{ page.header.caption }} 
-aaa
 {% if page.header.overlay_color or page.header.overlay_image or page.header.image %}
-
-	{% comment %}
-		Replacing :
-  		{% include page__hero.html %}
-		
-		
-		
-	{% endcomment %}
-bbb	
-	<hr>
-	
-	{% capture hero_content %}
-			  {% include page__hero.html %}
-		{% endcapture %}
-		{{ hero_content | replace: page.overlay_filter, rgba(0, 255, 0, 0.5) }}
-	
-	<hr>
-	{% include page__hero.html %}
-	<hr>
-	
+  {% include page__hero.html %}
 {% elsif page.header.video.id and page.header.video.provider %}
   {% include page__hero_video.html %}
 {% endif %}
 
-ccc
 {% if page.url != "/" and site.breadcrumbs %}
   {% unless paginator %}
     {% include breadcrumbs.html %}
@@ -55,10 +21,9 @@ ccc
   <div class="archive">
     {% unless page.header.overlay_color or page.header.overlay_image %}
 	
-	<!-- CUSTOM -->
-	{% include taxonomy-description.html %}
-	
-	
+		{% comment %}<!-- CUSTOM -->{% endcomment %}
+		{% include taxonomy-description.html %}
+		
       <h1 id="page-title" class="page__title"{% if page.locale %} lang="{{ page.locale }}"{% endif %}>{{ page.title }}</h1>
     {% endunless %}
     {% for post in page.posts %}
