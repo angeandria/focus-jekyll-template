@@ -1,11 +1,7 @@
-
-
 {% assign post_slug = page.title | slugify %}
-<h2>Post slug : {{ post_slug }}<h2>
-
 {% capture dynamic_key %}{{ post_slug }}{% endcapture %}
 {% assign taxonomy_details = site.data.categories[dynamic_key] %}
-<h2>Post slug : {% post_slug %}<h2>
+<h2>Post slug : {{ post_slug }}<h2>
 
 {% if taxonomy_details %}
   <p>Blog category exists: {{ taxonomy_details }}</p>
