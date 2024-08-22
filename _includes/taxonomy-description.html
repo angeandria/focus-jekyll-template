@@ -19,6 +19,18 @@
 	      	<a class="taxonomy-cta btn btn--primary btn--large" href="{{ action.url }}">{{ action.label | markdownify }}
 			</a> 
 		{% endfor %}
+		<hr>
+		
+		<ul>
+  {% for action in site.data.navi.personal-developmét.actions %}
+    <li>
+      <a href="{{ action.url }}" class="btn">{{ action.label }}</a>
+    </li>
+  {% endfor %}
+</ul>
 	  </div>
+	  
+	  
+	  
   </div>
 {% endif %}
