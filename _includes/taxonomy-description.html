@@ -9,7 +9,11 @@
       <div>
           {{ taxonomy_details.description | markdownify }}
       </div> 
-      <a class="btn btn--primary btn--large" href="{{ taxonomy_details.cta-url }}">{{ taxonomy_details.cta-title | markdownify }}</a>     
-      <img src="/{{ taxonomy_details.featured-img || default: '/assets/images/placeholder.jpg' }}"
+      
+	  <img class="taxonomy-featured-img" src="{{ taxonomy_details.featured-img | default: '/assets/images/placeholder.jpg' | relative_url }}" alt="Featured Image">
+
+	  <div>
+      	<a class="taxonomy-cta btn btn--primary btn--large" href="{{ taxonomy_details.cta-url }}">{{ taxonomy_details.cta-title | markdownify }}</a>     
+	  </div>
   </div>
 {% endif %}
