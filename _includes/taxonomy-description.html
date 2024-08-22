@@ -1,3 +1,4 @@
+<!-- Display Taxonomy description -->
 {% assign post_slug = page.title | slugify %}
 {% capture dynamic_key %}{{ post_slug }}{% endcapture %}
 {% assign taxonomy_details = site.data.categories[dynamic_key] %}
@@ -9,13 +10,6 @@
   <div>
       {{ taxonomy_details.description | markdownify }}
   </div> 
-      
-  {% if page.title == taxonomy_details %}
-    <p>The current page title matches the blog category: {{ page.title }}</p>
-  {% else %}
-    <p>The current page title does not match an exi blog category in categories.yml</p>
-  {% endif %}
-  
-{% else %}
-  <p>Blog category does not exist in categories.yml</p>
+  <a href="{{ taxonomy_details.cta-url }}">{{ taxonomy_details.cta-title | markdownify }}</a>     
+  <img src="{{ taxonomy_details.featured-img || default: 'assets/images/placeholder.jpg' }}"
 {% endif %}
