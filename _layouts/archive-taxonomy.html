@@ -22,11 +22,17 @@ header:
 		
 		
 	{% endcomment %}
+	
+	<hr>
+	
 	{% capture hero_content %}
 			  {% include page__hero.html %}
 		{% endcapture %}
 		{{ hero_content | replace: page.overlay_filter, rgba(0, 255, 0, 0.5) }}
 	
+	<hr>
+	{% include page__hero.html %}
+	<hr>
 	
 {% elsif page.header.video.id and page.header.video.provider %}
   {% include page__hero_video.html %}
