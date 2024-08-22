@@ -23,5 +23,6 @@ personal-development:
     - item 3
     It was popularised in the 1960s with the release of Letraset sheets containing Lorem"
     featured-img: "assets/images/placeholder-1200.jpg"	
-    cta-title: "Get this"
-    cta-url: "https://angeandria.com"
+    actions :
+      - label: "Get this"
+      - url: "https://angeandria.com"
