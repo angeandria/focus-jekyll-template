@@ -1,7 +1,7 @@
 ---
-title: Guides
+title: Guides Archive
 layout: collection
-permalink: /all-pages/
+permalink: /guides-archive
 collection: guides
 entries_layout: grid
 classes: wide
