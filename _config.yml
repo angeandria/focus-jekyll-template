@@ -213,6 +213,7 @@ plugins:
   - jekyll-feed
   - jemoji
   - jekyll-include-cache
+  - jekyll-archives
   
 # mimic GitHub Pages with --safe
 whitelist:
@@ -222,10 +223,9 @@ whitelist:
   - jekyll-feed
   - jemoji
   - jekyll-include-cache 
+  - jekyll-archives
   
 
-
-  
  
 # -----------------
 # Site Footer
