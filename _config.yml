@@ -76,7 +76,7 @@ author:
 # -----------------
 # Permalinks : Posts
 # -----------------
-permalink: /articles/:title/
+permalink: /article/:title/
 
 
 # -----------------
@@ -84,7 +84,6 @@ permalink: /articles/:title/
 # ---------------
 paginate: 10 # amount of posts to show
 paginate_path: /page:num/
-  
 
 
 # -----------------
@@ -99,7 +98,7 @@ collections:
     permalink: /:title
   guides: 
     output: true
-    permalink: /resources/:title
+    permalink: /resource/:title
     sort_by: weight
 
 #collections:
@@ -134,6 +133,11 @@ defaults:
       comments: true
       share: true
       related: true
+      categories:
+        - a
+        - b
+      classes:
+        - categories[0]
   # _pages
   - scope:
       path: "_pages"
@@ -276,8 +280,8 @@ jekyll-archives:
      category: archive-taxonomy
      tag: archive-taxonomy
    permalinks:
-     category: /categories/:name/
-     tag: /tags/:name/ 
+     category: /category/:name/
+     tag: /tag/:name/ 
    titles:
      category: "this is my category title"
      tag: "this is my tag title"
