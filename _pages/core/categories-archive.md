@@ -1,6 +1,6 @@
 ---
 title: "Categories archive"
 layout: categories
-permalink: /categories-archive/
+permalink: /categories/
 author_profile: true
 ---
