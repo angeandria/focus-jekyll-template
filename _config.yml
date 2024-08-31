@@ -100,6 +100,10 @@ collections:
     output: true
     permalink: /resource/:title
     sort_by: weight
+  tools: 
+    output: true
+    permalink: /tool/:title
+    sort_by: weight
 
 #collections:
 #  docs:
@@ -153,6 +157,15 @@ defaults:
       layout: single
       author_profile: true
       share: true
+# _guides
+  - scope:
+      path: "_tools"
+      type: tools
+    values:
+      layout: single
+      author_profile: false
+      share: true
+
 
 
 
