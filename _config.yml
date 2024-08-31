@@ -137,7 +137,7 @@ defaults:
         - a
         - b
       classes:
-        - categories[0]
+        - hello
   # _pages
   - scope:
       path: "_pages"
@@ -265,10 +265,10 @@ footer:
 #  - <base_path>/my-awesome-category/index.html ~> path: /
 category_archive:
   type: jekyll-archives
-  path: /categories/
+  path: /category/
 tag_archive:
   type: jekyll-archives
-  path: /tags/
+  path: /tag/
 
 
 # https://github.com/jekyll/jekyll-archives
