@@ -1,11 +1,7 @@
 main:
-  - title: "Posts"
-    url: /posts
-  - title: "Categories"
-    url: /categories
-  - title: "Tags"
-    url: /tags
+  - title: "Newsletter"
+    url: /newsletter
   - title: "About"
     url: /about
-  - title: "All pages"
-    url: /pages-archive
+  - title: "Service"
+    url: /service
