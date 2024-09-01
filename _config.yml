@@ -171,7 +171,7 @@ defaults:
       type: topic
     values:
       author_profile: false
-	  header:
+      header:
         overlay_image: /assets/images/placeholder-1200.jpg
         overlay_filter: linear-gradient(rgba(255, 0, 0, 0.5), rgba(0, 255, 255, 0.5))
         caption: "Photo credit: [**Unsplash**](https://unsplash.com)"
