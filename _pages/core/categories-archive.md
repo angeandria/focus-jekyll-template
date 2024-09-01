@@ -1,6 +1,7 @@
 ---
-title: "Categories archive"
+title: "Topics archive"
 layout: categories
-permalink: /categories/
+permalink: /topics/
 author_profile: true
 ---
+tooooo

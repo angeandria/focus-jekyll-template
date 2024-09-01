@@ -1,5 +1,5 @@
 ---
-layout: splash
+layout: search
 classes:
   - landing
   - dark-theme
