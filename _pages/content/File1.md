@@ -5,7 +5,7 @@ published_on : 2024-07-13
 last_edit : 
 featured : true
 priority: 4
-layout: default
+layout: 
 permalink: myFile1
 aliases: 
     - file1
