@@ -36,7 +36,7 @@ something here
 
 
 {% capture include_markdown %}
-{% include_relative ../_pages_content/File1_content.md %}
+{% include_relative _pages_content/File1_content.md %}
 {% endcapture %}
 
 {{ include_markdown | markdownify }}
