@@ -155,9 +155,9 @@ defaults:
       type: guides
     values:
       layout: single
-      author_profile: true
+      author_profile: false
       share: true
-# _guides
+# _tools
   - scope:
       path: "_tools"
       type: tools
