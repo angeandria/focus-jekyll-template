@@ -52,12 +52,12 @@ layout: default
 
           <aside class="sidebar__right {% if page.toc_sticky %}sticky{% endif %} {% if page.toc_sticky %}sticky{% endif %}">
               
-            {% ### FOCUS code ### %}              
+            {% comment %} ### FOCUS code ### {% endcomment %}
             <div class="sidebar__right_before">
                     {% include focus/sidebar__right_before.html %}        
             </div>          
-            {% ### End FOCUS code ### %}
-              
+            {% comment %} ### END - FOCUS code ### {% endcomment %}
+            
             {% if page.toc %}
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-{{ page.toc_icon | default: 'file-alt' }}"></i> {{ page.toc_label | default: site.data.ui-text[site.locale].toc_label | default: "On this page" }}</h4></header>
@@ -65,11 +65,11 @@ layout: default
             </nav>
             {% endif %}
             
-            {% ### FOCUS code ### %}              
+            {% comment %} ### FOCUS code ### {% endcomment %}
             <div class="sidebar__right_after">
                     {% include focus/sidebar__right_after.html %}        
             </div>              
-            {% ### End FOCUS code ### %}
+            {% comment %} ### END - FOCUS code ### {% endcomment %}
             
           </aside>
         
