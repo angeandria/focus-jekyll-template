@@ -16,6 +16,10 @@
 
 ## TODO
 
+### Focus framework
+- [ ] Implement focus-jekyll-theme.css
+
 ### General
 - [ ] body class "layout--focus/single" should be "layout--focus-single"
-
+- [ ] sidebar & main-content : transition to flexbox for positioning
+ 
