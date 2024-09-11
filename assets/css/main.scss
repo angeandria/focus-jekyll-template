@@ -1,24 +1,11 @@
+---
+search: false
+---
 
-@charset "utf-8";
+// ------------------
+// FOCUS THEME
+// ------------------
 
-
-.page{
-    float: inline-start !important;
-}
-
-.sidebar{
-    float: inline-end !important;
-}
-
-@import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
-@import "minimal-mistakes"; // main partials
-
-
-
-.page{
-    float: inline-start !important;
-}
-
-.sidebar{
-    float: inline-end !important;
-}
+// ## FOCUS THEME
+// Load first so custom variables/styles are taken into account
+@import "{{ site.mytheme_alias }}{{ site.mytheme_suffix }}/{{ site.mytheme_alias }}";

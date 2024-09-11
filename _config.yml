@@ -27,7 +27,8 @@ masthead_title           : # overrides the website title displayed in the masthe
 # ---------------
 remote_theme: mmistakes/minimal-mistakes
 minimal_mistakes_skin: "default" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
-
+mytheme_alias: "focus"
+mytheme_suffix: "-theme"
 
 
 # -----------------
