@@ -15,19 +15,3 @@
 {% if site.static_files | map: 'path' | contains: '_includes/' | append: custom_file_path %}
   {% include {{ file_to_include }}.html %}
 {% endif %}
-Key Changes
-Path Construction:
-
-The focus_file_path is constructed as just 'focus/' | append: file_to_include | append: '.html'. This is because when checking with site.static_files, we will append '_includes/' before checking.
-The custom_file_path remains as is since it references files directly in _includes.
-File Existence Checks:
-
-The existence checks now correctly consider that you are including them from within the focus folder.
-Usage in Layout
-In your layout (like default.html), you can call this with:
-
-{% include focus/conditional.html file="sidebar__right_before" %}
-Summary
-When your conditional.html is located in a subdirectory, ensure that all paths constructed for checking and including reflect that directory structure.
-This adjustment will allow you to conditionally include files based on their actual locations without encountering errors related to missing files.
-If you continue to encounter issues, please double-check the filenames and paths, as any discrepancies can lead to the errors you’ve been experiencing. If there are still problems, please share the exact structure of your directory and any relevant error messages for further assistance.
