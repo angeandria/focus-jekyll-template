@@ -1,4 +1,14 @@
+
 @charset "utf-8";
+
+
+.page{
+    float: inline-start !important;
+}
+
+.sidebar{
+    float: inline-end !important;
+}
 
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
 @import "minimal-mistakes"; // main partials
@@ -6,9 +16,9 @@
 
 
 .page{
-    float: inline-start;
+    float: inline-start !important;
 }
 
 .sidebar{
-    float: inline-end;
+    float: inline-end !important;
 }
