@@ -1,1 +1,7 @@
 <h2>Sidebar before</h2>
+
+<!-- Conditional Inclusion of _includes/myfile.html -->
+{% assign includes = site.includes | map: 'name' %}
+{% if includes contains 'sidebar__right_before' and includes contains 'focus/sidebar__right_before' == false %}
+  {% include sidebar__right_before.html %}
+{% endif %}
