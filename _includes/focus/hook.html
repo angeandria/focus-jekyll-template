@@ -6,17 +6,10 @@
 {% assign focus_file_path = '_includes/focus/' | append: file_to_include | append: '.html' %}
 {% assign custom_file_path = '_includes/' | append: file_to_include | append: '.html' %}
 
-{% capture focus_content %}
-  {% if site.static_files | map: 'path' | contains: focus_file_path %}
-    {% include focus/{{ file_to_include }}.html %}
-  {% endif %}
-{% endcapture %}
+{% if site.static_files | map: 'path' | contains: focus_file_path %}
+  {% include focus/{{ file_to_include }}.html %}
+{% endif %}
 
-{% capture custom_content %}
-  {% if site.static_files | map: 'path' | contains: custom_file_path %}
-    {% include {{ file_to_include }}.html %}
-  {% endif %}
-{% endcapture %}
-
-{{ focus_content }}
-{{ custom_content }}
+{% if site.static_files | map: 'path' | contains: custom_file_path %}
+  {% include {{ file_to_include }}.html %}
+{% endif %}
