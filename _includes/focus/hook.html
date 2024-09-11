@@ -1,17 +1,24 @@
 {% assign file_to_include = include.file %}
-
 <h2>{{ file_to_include }}</h2>
 
-{% comment %}### FOCUS FILE ###{% endcomment %}
 {% assign focus_file_path = 'focus/' | append: file_to_include | append: '.html' %}
 {% assign custom_file_path = file_to_include | append: '.html' %}
 
+<p>Focus File Path: {{ focus_file_path }}</p>
+<p>Custom File Path: {{ custom_file_path }}</p>
+
 {% comment %} Check if focus file exists {% endcomment %}
 {% if site.static_files | map: 'path' | contains: '_includes/' | append: focus_file_path %}
+  <p>Including Focus File: {{ focus_file_path }}</p>
   {% include focus/{{ file_to_include }}.html %}
+{% else %}
+  <p>Focus file does not exist.</p>
 {% endif %}
 
 {% comment %} Check if custom file exists {% endcomment %}
 {% if site.static_files | map: 'path' | contains: '_includes/' | append: custom_file_path %}
+  <p>Including Custom File: {{ custom_file_path }}</p>
   {% include {{ file_to_include }}.html %}
+{% else %}
+  <p>Custom file does not exist.</p>
 {% endif %}
