@@ -1,0 +1,9 @@
+{% assign file_to_include = include.file %}  <!-- Get the passed variable -->
+
+<h2>{{ file_to_include }}</h2>
+
+{% if site.static_files | map: 'path' | contains: '_includes/' | append: file_to_include | append: '.html' %}
+  {% include {{ file_to_include }}.html %}
+{% endif %}
+
+after sidebar before
