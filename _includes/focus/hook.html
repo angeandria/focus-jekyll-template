@@ -3,7 +3,7 @@
 <h2>{{ file_to_include }}</h2>
 
 {% assign focus_file_path = '_includes/focus/' | append: file_to_include | append: '.html' %}
-{% assign custom_file_path = '_includes/'  | appdend: file_to_include | append: '.html' %}
+{% assign custom_file_path = '_includes/'  | append: file_to_include | append: '.html' %}
 
 {% assign focus_files = site.static_files | where: "path", focus_file_path %}
 {% assign custom_files = site.static_files | where: "path", custom_file_path %}
