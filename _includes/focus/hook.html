@@ -2,7 +2,12 @@
 
 <h2>{{ file_to_include }}</h2>
 
-{% comment %}### FOCUS FILE ###{% endcomment %}
+<p>Focus File Path: {{ focus_file_path }}</p>
+<p>Custom File Path: {{ custom_file_path }}</p>
+<p>Focus Files Found: {{ focus_files.size }}</p>
+<p>Custom Files Found: {{ custom_files.size }}</p>
+
+<!-- {% comment %}### FOCUS FILE ###{% endcomment %}
 {% assign focus_file_path = 'focus/' | append: file_to_include | append: '.html' %}
 {% assign custom_file_path = file_to_include | append: '.html' %}
 
@@ -15,4 +20,6 @@
 
 {% if custom_files.size > 0 %}
   {% include {{ file_to_include }}.html %}
-{% endif %}
+{% endif %} -->
+
+
