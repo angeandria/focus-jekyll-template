@@ -29,6 +29,10 @@ layout: default
 
 <div id="main" role="main">
 
+    
+  {% comment %} ### FOCUS code ### {% endcomment %}
+  {% include focus/sidebar.html %}
+  {% comment %} ### END FOCUS code ### {% endcomment %}  
 
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork"{% if page.locale %} lang="{{ page.locale }}"{% endif %}>
     {% if page.title %}<meta itemprop="headline" content="{{ page.title | replace: '|', '&#124;' | markdownify | strip_html | strip_newlines | escape_once }}">{% endif %}
@@ -95,9 +99,6 @@ layout: default
     {% endif %}
   </article>
 
-  {% comment %} ### FOCUS code ### {% endcomment %}
-  {% include focus/sidebar.html %}
-  {% comment %} ### END FOCUS code ### {% endcomment %}  
   
   {% comment %}<!-- only show related on a post page when `related: true` -->{% endcomment %}
   {% if page.id and page.related and site.related_posts.size > 0 %}
