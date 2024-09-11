@@ -2,6 +2,12 @@
 
 <h2>{{ file_to_include }}</h2>
 
+{% comment %}FOCUS{% endcomment%}
+{% if site.static_files | map: 'path' | contains: '_includes/focus' | append: file_to_include | append: '.html' %}
+{% include focus/{{ file_to_include }}.html %}
+{% endif %}
+
+{% comment %}CUSTOM{% endcomment%}
 {% if site.static_files | map: 'path' | contains: '_includes/' | append: file_to_include | append: '.html' %}
   {% include {{ file_to_include }}.html %}
 {% endif %}
