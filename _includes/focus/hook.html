@@ -13,20 +13,3 @@
 <p>Custom File Path: {{ custom_file_path }}</p>
 <p>Focus Files Found: {{ focus_files.size }}</p>
 <p>Custom Files Found: {{ custom_files.size }}</p>
-
-<!-- {% comment %}### FOCUS FILE ###{% endcomment %}
-{% assign focus_file_path = 'focus/' | append: file_to_include | append: '.html' %}
-{% assign custom_file_path = file_to_include | append: '.html' %}
-
-{% assign focus_files = site.static_files | where: "path", focus_file_path %}
-{% assign custom_files = site.static_files | where: "path", custom_file_path %}
-
-{% if focus_files.size > 0 %}
-  {% include focus/{{ file_to_include }}.html %}
-{% endif %}
-
-{% if custom_files.size > 0 %}
-  {% include {{ file_to_include }}.html %}
-{% endif %} -->
-
-
