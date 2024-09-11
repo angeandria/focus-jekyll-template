@@ -49,27 +49,27 @@ copyright_url            : # "copyright" URL, defaults to site.url
 # ---------------
 # Site Author
 # ---------------
-author:
-  name   : "First Lastname"
-  avatar : "/assets/images/bio-photo.jpg"
-  bio    : "My awesome biography constrained to a sentence or two goes here."
-  email  : "ange@angeandria.com"
-  links:
-    - label: "Email"
-      icon: "fas fa-fw fa-envelope-square"
-      url: "mailto:ange@angeandria.com"
-    - label: "Website"
-      icon: "fas fa-fw fa-link"
-      url: "https://"
-    - label: "Twitter"
-      icon: "fab fa-fw fa-twitter-square"
-      url: "https://twitter.com/"
-    - label: "GitHub"
-      icon: "fab fa-fw fa-github"
-      url: "https://github.com/"
-    - label: "Instagram"
-      icon: "fab fa-fw fa-instagram"
-      url: "https://instagram.com/"
+# author:
+#   name   : "First Lastname"
+#   avatar : "/assets/images/bio-photo.jpg"
+#   bio    : "My awesome biography constrained to a sentence or two goes here."
+#   email  : "ange@angeandria.com"
+#   links:
+#     - label: "Email"
+#       icon: "fas fa-fw fa-envelope-square"
+#       url: "mailto:ange@angeandria.com"
+#     - label: "Website"
+#       icon: "fas fa-fw fa-link"
+#       url: "https://"
+#     - label: "Twitter"
+#       icon: "fab fa-fw fa-twitter-square"
+#       url: "https://twitter.com/"
+#     - label: "GitHub"
+#       icon: "fab fa-fw fa-github"
+#       url: "https://github.com/"
+#     - label: "Instagram"
+#       icon: "fab fa-fw fa-instagram"
+#       url: "https://instagram.com/"
 
 
 
