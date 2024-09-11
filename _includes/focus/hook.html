@@ -3,13 +3,16 @@
 <h2>{{ file_to_include }}</h2>
 
 {% comment %}### FOCUS FILE ###{% endcomment %}
-{% assign focus_file_path = '_includes/focus/' | append: file_to_include | append: '.html' %}
-{% assign custom_file_path = '_includes/' | append: file_to_include | append: '.html' %}
+{% assign focus_file_path = 'focus/' | append: file_to_include | append: '.html' %}
+{% assign custom_file_path = file_to_include | append: '.html' %}
 
-{% if site.static_files | map: 'path' | contains: focus_file_path %}
+{% assign focus_files = site.static_files | where: "path", focus_file_path %}
+{% assign custom_files = site.static_files | where: "path", custom_file_path %}
+
+{% if focus_files.size > 0 %}
   {% include focus/{{ file_to_include }}.html %}
 {% endif %}
 
-{% if site.static_files | map: 'path' | contains: custom_file_path %}
+{% if custom_files.size > 0 %}
   {% include {{ file_to_include }}.html %}
 {% endif %}
