@@ -1,17 +1,9 @@
 // All Focus-powered jekyll sites will share the styles defined in this file
 
-.page{
-    float: inline-start !important;
-}
-
-.sidebar{
-    float: inline-end !important;
-}
-
 
 
 /*
-* RESET MINIMA 
+* RESET MINIMAL MISTAKE
 * ----
 */
 .site-header{
@@ -23,6 +15,8 @@
 * FOCUS
 * ----
 */
+
+// Implement Body Bg Image
 body{
 	position: relative;
 }
@@ -42,3 +36,19 @@ body::after{
 	background-size: cover;
 	z-index: -1;
 }
+
+
+/*
+* PAGE LAYOUT
+* ----
+*/
+
+// Invert current layout
+.page{
+    float: inline-start;
+}
+
+.sidebar{
+    float: inline-end;
+}
+

@@ -1,50 +1,33 @@
 ---
 search: false
 ---
+
+@charset "utf-8";
+
 // ##### (Focus Theme + Custom) + (Chosen theme OR Default theme) #####
 // Note :
 // if parent theme uses !default values, load custom theme BEFORE
 // if not, load custom theme AFTER
-
  
+
+// ----------
 // VARIABLES
+// ----------
 @import "{{ site.mytheme_alias }}{{ site.mytheme_suffix }}/focus-variables";
 @import "custom-variables";
+
 
 
 // ------------------
 // PARENT THEME
 // ------------------
-
-// ## A | DEFAULT THEME : MINIMA
-// Uncomment to use Jekyll Default Theme : Minima
-//@import "minima/skins/{{ site.minima.skin | default: 'classic' }}", "minima/initialize";
-//@import "minima/skins/classic","minima/initialize";
-//@import "basically-basic";
-//@import "jekyll-theme-chirpy";
-
-
-@charset "utf-8";
-
-
-
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
 @import "minimal-mistakes"; // main partials
 
 
 
-// ## B | CHOSEN THEME (Github Pages theme)
-// https://pages.github.com/themes/
-//@import "{{ site.theme_alias }}";
-
-
-// -------------
-
-
+// ----------
 // STYLES
+// ----------
 @import "{{ site.mytheme_alias }}{{ site.mytheme_suffix }}/focus-styles";
 @import "custom-styles";
-
-h1, h2, h3{
-	border-top: 4px solid red;
-}
