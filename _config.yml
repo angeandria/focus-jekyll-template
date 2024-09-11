@@ -148,11 +148,11 @@ defaults:
           image: "/assets/images/your-image.jpg"
           image_alt: "image"
           text: "Some text here."
-        - title: "My Seconde Title"  
-          text: "More text"
-          nav:
-            - main
-            - docs
+        # - title: "My Seconde Title"  
+        #   text: "More text"
+        #   nav:
+        #     - main
+        #     - docs
       toc: true
       toc_label: "Unique Title"
       toc_icon: "heart"  # corresponding Font Awesome icon name (without fa prefix)
