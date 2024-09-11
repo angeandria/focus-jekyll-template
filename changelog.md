@@ -1,6 +1,7 @@
 ## Changelog
 
 ### 2024.09.11
+- created _includes/focus/hook.html to add a hooks functionality to the theme
 
 ### 2024.09.10
 - Created a focus/single.html layout
