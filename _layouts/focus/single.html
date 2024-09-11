@@ -58,10 +58,17 @@ layout: default
               
             {% comment %} ### FOCUS code ### {% endcomment %}
             <div class="sidebar__right_before">
-                    {% include focus/sidebar__right_before.html %}        
+                {% include focus/hook.html file="sidebar__right_before" %}      
             </div>          
             {% comment %} ### END - FOCUS code ### {% endcomment %}
             
+            <!-- CTA -->
+              {% comment %} ### FOCUS code ### {% endcomment %}
+                <div class="sidebar__right_cta">
+                        {% include focus/hook.html file="sidebar__right_cta" %}
+                </div>          
+              {% comment %} ### END - FOCUS code ### {% endcomment %}
+              
             {% if page.toc %}
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-{{ page.toc_icon | default: 'file-alt' }}"></i> {{ page.toc_label | default: site.data.ui-text[site.locale].toc_label | default: "On this page" }}</h4></header>
@@ -71,7 +78,7 @@ layout: default
             
             {% comment %} ### FOCUS code ### {% endcomment %}
             <div class="sidebar__right_after">
-                    {% include focus/sidebar__right_after.html %}        
+                    {% include focus/hook.html file="sidebar__right_after" %}      
             </div>              
             {% comment %} ### END - FOCUS code ### {% endcomment %}
             
