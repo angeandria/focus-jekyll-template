@@ -1,4 +1,4 @@
-{% assign file_to_include = include.file %}
+{% assign file_to_include = include.hook %}
 <h2>{{ file_to_include }}</h2>
 
 {% assign focus_file_path = 'focus/' | append: file_to_include | append: '.html' %}
@@ -10,7 +10,7 @@
 {% comment %} Check if focus file exists {% endcomment %}
 {% if site.static_files | map: 'path' | contains: '_includes/' | append: focus_file_path %}
   <p>Including Focus File: {{ focus_file_path }}</p>
-  <!-- {% include focus/{{ file_to_include }}.html %} -->
+  
 {% else %}
   <p>Focus file does not exist.</p>
 {% endif %}
@@ -18,7 +18,8 @@
 {% comment %} Check if custom file exists {% endcomment %}
 {% if site.static_files | map: 'path' | contains: '_includes/' | append: custom_file_path %}
   <p>Including Custom File: {{ custom_file_path }}</p>
-  <!-- {% include {{ file_to_include }}.html %} -->
+  
+  
 {% else %}
   <p>Custom file does not exist.</p>
 {% endif %}
