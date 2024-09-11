@@ -8,7 +8,7 @@ search: false
 
  
 // VARIABLES
-@import "focus-variables";
+@import "{{ site.mytheme_alias }}{{ site.mytheme_suffix }}/focus-variables";
 @import "custom-variables";
 
 
@@ -42,7 +42,7 @@ search: false
 
 
 // STYLES
-@import "focus-styles";
+@import "{{ site.mytheme_alias }}{{ site.mytheme_suffix }}/focus-styles";
 @import "custom-styles";
 
 h1, h2, h3{
