@@ -1,13 +1,15 @@
-{% assign file_to_include = include.file %}  <!-- Get the passed variable -->
+{% assign file_to_include = include.file %}
 
 <h2>{{ file_to_include }}</h2>
 
-{% comment %}### FOCUS ###{% endcomment %}
-{% if site.static_files | map: 'path' | contains: '_includes/focus/' | append: file_to_include | append: '.html' %}
+{% comment %}### FOCUS FILE ###{% endcomment %}
+{% assign focus_file_path = '_includes/focus/' | append: file_to_include | append: '.html' %}
+{% assign custom_file_path = '_includes/' | append: file_to_include | append: '.html' %}
+
+{% if site.static_files | map: 'path' | contains: focus_file_path %}
   {% include focus/{{ file_to_include }}.html %}
 {% endif %}
 
-{% comment %}### CUSTOM ###{% endcomment %}
-{% if site.static_files | map: 'path' | contains: '_includes/' | append: file_to_include | append: '.html' %}
+{% if site.static_files | map: 'path' | contains: custom_file_path %}
   {% include {{ file_to_include }}.html %}
 {% endif %}
