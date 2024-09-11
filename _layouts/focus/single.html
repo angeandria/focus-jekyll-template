@@ -2,15 +2,6 @@
 layout: default
 ---
 
-{% comment %}
-### FOCUS code 
-#
-# - Display sidebar even if page.toc is not defined
-# - Added sidebar__right_before
-# - Added sidebar__right_after
-{% endcomment %}     
-
-
 {% if page.header.overlay_color or page.header.overlay_image or page.header.image %}
   {% include page__hero.html %}
 {% elsif page.header.video.id and page.header.video.provider %}
