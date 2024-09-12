@@ -7,6 +7,17 @@
 <p>Focus File Path: {{ focus_file_path }}</p>
 <p>Custom File Path: {{ custom_file_path }}</p>
 
+<hr>
+
+<h2>Available Static Files:</h2>
+<ul>
+  {% for file in site.static_files %}
+    <li>{{ file.path }}</li>
+  {% endfor %}
+</ul>
+
+<hr>
+
 {% comment %} Check if focus file exists {% endcomment %}
 {% if site.static_files | map: 'path' | contains: '_includes/' | append: focus_file_path %}
   <p>Including Focus File: {{ focus_file_path }}</p>
