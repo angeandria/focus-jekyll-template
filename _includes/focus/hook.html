@@ -2,24 +2,26 @@
 
 <h2>{{ file_to_include }}</h2>
 
-{% comment %} Check if focus file exists {% endcomment %}
+{% comment %} Attempt to include focus file {% endcomment %}
 {% capture focus_file_output %}
   {% include focus/{{ file_to_include }}.html %}
 {% endcapture %}
 
-{% if focus_file_output %}
+{% comment %} Check if focus file was included successfully {% endcomment %}
+{% if focus_file_output != '' %}
   <p>Including Focus File: {{ file_to_include }}</p>
   {{ focus_file_output }}
 {% else %}
   <p>Focus file does not exist.</p>
 {% endif %}
 
-{% comment %} Check if custom file exists {% endcomment %}
+{% comment %} Attempt to include custom file {% endcomment %}
 {% capture custom_file_output %}
   {% include {{ file_to_include }}.html %}
 {% endcapture %}
 
-{% if custom_file_output %}
+{% comment %} Check if custom file was included successfully {% endcomment %}
+{% if custom_file_output != '' %}
   <p>Including Custom File: {{ file_to_include }}</p>
   {{ custom_file_output }}
 {% else %}
