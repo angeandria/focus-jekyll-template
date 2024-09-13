@@ -1,7 +1,15 @@
-{% assign file_to_include = include.file %}
+{% assign target_file = include.hook %}  <!-- Assuming you pass 'file' as an include parameter -->
+{% assign file_exists = false %}
 
-<h2>{{ file_to_include }}</h2>
+{% for hook in site.data.hooks.hooks %}
+  {% if hook == target_file %}
+    {% assign file_exists = true %}
+  {% endif %}
+{% endfor %}
 
-{% include_conditional file={{ file_to_include }} myfolder="focus" %}
-
-test
+{% if file_exists %}
+  {% include {{ target_file | append: '.html' }} %}  <!-- Append .html when including -->
+{% else %}
+  <!-- Optional: Add a message or fallback content -->
+  <p>The requested hook {{ target_file }} does not exist.</p>
+{% endif %}
