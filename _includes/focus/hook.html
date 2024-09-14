@@ -5,23 +5,22 @@
 <p>{{ hook.name }} >>> {{ target_file }} >>> custom value : {{ hook.custom }}</p>
   {% if hook.name == target_file %}
     {% assign file_exists = true %}
+  {% endif %}
   {% if hook.custom == true %}
     {% assign include_custom = true %}
   {% endif %}
 {% endfor %}
 
  {% if file_exists %}
- <p>include file {{ target_file }} here (and custom version?)</p>
   <!-- focus -->
   {% include focus/{{ target_file | append: '.html' }} %}
 	
 	<!-- custom -->
 	{% if include_custom == true %}
-   <p>include custom</p>
 	  {% include {{ target_file }}.html %}
 	{% endif %}
 	
 {% else %} 
   <!-- Optional: Add a message or fallback content -->
-  <p>The requested hook {{ target_file }} does not exist.</p>
+  <p>ERROR : The requested hook {{ target_file }} does not exist.</p>
 {% endif %}
