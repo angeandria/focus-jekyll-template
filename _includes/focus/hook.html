@@ -9,5 +9,5 @@
         {% include {{ target_file | append: '.html' }} %}
     {% endif %}
 {% else %}
-    <p>ERROR : Hook {{ target_file }} does NOT exist in hooks.yml</p>
+    <p>Error : Hook {{ target_file }} does not exist in hooks.yml</p>
 {% endif %}

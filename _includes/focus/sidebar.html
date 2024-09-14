@@ -1,22 +1,20 @@
 {% if page.author_profile or layout.author_profile or page.sidebar %}
   <div class="sidebar sticky">
       
-      <!-- Before sidebar content -->
+      <!-- Before -->
       {% comment %} ### FOCUS code ### {% endcomment %}
-        <div class="sidebar__right_before">            
-                {% include focus/hook.html hook="sidebar__right_before" %}
-        </div>          
+      <div class="sidebar__right_before">
+        {% include focus/hook.html hook="sidebar__right_before" %}      
+      </div>          
       {% comment %} ### END - FOCUS code ### {% endcomment %}
-      
-      
+        
       <!-- CTA -->
       {% comment %} ### FOCUS code ### {% endcomment %}
-        <div class="sidebar__right_cta">
-                {% include focus/hook.html hook="sidebar__right_cta" %}
-        </div>          
+      <div class="sidebar__right_cta">
+        {% include focus/hook.html hook="sidebar__right_cta" %}
+      </div>          
       {% comment %} ### END - FOCUS code ### {% endcomment %}
 
-      
       <!-- Table of contents -->
       {% if page.toc %}
         <nav class="toc">
@@ -42,14 +40,12 @@
         {% endif %}
       {% endif %}
       
-
-        
       
-      <!-- After sidebar content -->
+      <!-- After -->
       {% comment %} ### FOCUS code ### {% endcomment %}
       <div class="sidebar__right_after">
-            {% include focus/hook.html hook="sidebar__right_after" %}
-      </div>              
+        {% include focus/hook.html hook="sidebar__right_after" %}      
+      </div>          
       {% comment %} ### END - FOCUS code ### {% endcomment %}
     
   </div>
