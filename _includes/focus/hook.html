@@ -4,7 +4,11 @@
 {% assign targeted_hook = hooks[target_file] %}
 {% assign targeted_hook2 = hooks[ {{ target_file }}] %}
 
-<h1> Hook 1 : {{ targeted_hook }}</h1>
+<h1> Hook 1 : {{ targeted_hook }}<br>
+    Name : {{ targeted_hook[0] }}<br>
+    Custom : {{ targeted_hook[1] }}
+</h1>
+
 <h2> Hook 2 : {{ targeted_hook2 }}</h1>
 
 <hr>
