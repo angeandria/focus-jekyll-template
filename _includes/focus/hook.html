@@ -3,9 +3,11 @@
 {% assign hooks = site.data.focus.hooks %}
 {% assign target_hook = hooks[target_file] %}
 
+<h3>{{ include.hook }}</h3>
 {% if target_hook %}
-<p>file {{ target_file }} exists in hooks.yml</p>
-<p>Include custom? : target_hook["custom"]</p>
+    <p>file {{ target_file }} exists in hooks.yml</p>
+    <p>Include custom? : {{ target_hook["custom"] }}</p>
 {% else %}
-<p>file {{ target_file }} does NOT exist in hooks.yml</p>
+    <p>file {{ target_file }} does NOT exist in hooks.yml</p>
 {% endif %}
+<hr>
