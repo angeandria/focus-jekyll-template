@@ -2,15 +2,22 @@
 {% assign file_exists = false %}
 
 {% for hook in site.data.focus.hooks.hooks %}
-<p>{{ hook }} >>> {{ target_file }}</p>
-  {% if hook == target_file %}
+<p>{{ hook.name }} >>> {{ target_file }}</p>
+  {% if hook.name == target_file %}
     {% assign file_exists = true %}
   {% endif %}
 {% endfor %}
 
  {% if file_exists %}
  <p>include file {{ target_file }} here</p>
+  <!-- focus -->
   {% include focus/{{ target_file | append: '.html' }} %}
+	
+	<!-- custom -->
+	{% if hook.custom %}
+	  {% include {{ target_file }}.html %}
+	{% endif %}
+	
 {% else %} 
   <!-- Optional: Add a message or fallback content -->
   <p>The requested hook {{ target_file }} does not exist.</p>
