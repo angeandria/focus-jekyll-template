@@ -1,19 +1,11 @@
 {% assign target_file = include.hook %}
 
 {% assign hooks = site.data.focus.hooks %}
-{% assign targeted_hook = hooks[target_file] %}
-{% assign targeted_hook2 = hooks[ {{ target_file }}] %}
+{% assign target_hook = hooks[target_file] %}
 
-<h1> Hook 1 : {{ targeted_hook }}<br>
-    Name : {{ target_file }}<br>
-    Custom : {{ targeted_hook["custom"] }}
-</h1>
-
-<h2> Hook 2 : {{ targeted_hook2 }}</h1>
-
-<hr>
-
-{% assign target_hook = site.data.focus.hooks[{{target_file}}] %}
-{% if site.data.focus.hooks[{{target_file}}] %}
-<p>file {{ site.data.focus.hooks[{{ target_file }}][0] }} exists in hooks.yml</p>
+{% if target_hook %}
+<p>file {{ target_file }} exists in hooks.yml</p>
+<p>Include custom? : target_hook["custom"]</p>
+{% else %}
+<p>file {{ target_file }} does NOT exist in hooks.yml</p>
 {% endif %}
