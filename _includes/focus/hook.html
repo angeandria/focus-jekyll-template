@@ -5,16 +5,18 @@
 <p>{{ hook.name }} >>> {{ target_file }} >>> custom value : {{ hook.custom }}</p>
   {% if hook.name == target_file %}
     {% assign file_exists = true %}
+  {% if hook.custom == true %}
+    {% assign include_custom = true %}
   {% endif %}
 {% endfor %}
 
  {% if file_exists %}
- <p>include file {{ target_file }} here (and custom version?) >>  {{ hook.custom }}</p>
+ <p>include file {{ target_file }} here (and custom version?)</p>
   <!-- focus -->
   {% include focus/{{ target_file | append: '.html' }} %}
 	
 	<!-- custom -->
-	{% if hook.custom == true %}
+	{% if include_custom == true %}
    <p>include custom</p>
 	  {% include {{ target_file }}.html %}
 	{% endif %}
