@@ -1,7 +1,6 @@
-hooks:
-  - name : sidebar__right_before
-    custom : true
-  - name : sidebar__right_cta
-    custom : true
-  - name : sidebar__right_after
-    custom : false
+sidebar__right_before:
+  custom: true 
+sidebar__right_cta:
+  custom: true
+sidebar__right_after:
+  custom: false
