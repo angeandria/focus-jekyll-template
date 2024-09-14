@@ -8,9 +8,11 @@
   {% endif %}
 {% endfor %}
 
-{% if file_exists %}
-  {% include {{ target_file | append: '.html' }} %}  <!-- Append .html when including -->
-{% else %}
+ {% if file_exists %}
+  <!--
+  {% include {{ target_file | append: '.html' }} %}
+	-->
+{% else %} 
   <!-- Optional: Add a message or fallback content -->
   <p>The requested hook {{ target_file }} does not exist.</p>
 {% endif %}
