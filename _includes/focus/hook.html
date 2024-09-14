@@ -14,7 +14,8 @@
   {% include focus/{{ target_file | append: '.html' }} %}
 	
 	<!-- custom -->
-	{% if hook.custom %}
+	{% if hook.custom == true %}
+   <p>include custom</p>
 	  {% include {{ target_file }}.html %}
 	{% endif %}
 	
