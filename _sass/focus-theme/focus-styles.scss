@@ -43,9 +43,24 @@ body::after{
 * ----
 */
 
+
+/*
+* Minimal Mistakes
+* ----
+*/
+/* Convert from float to flexbox */
+article.page{
+    display: flex;
+    flex-wrap: wrap;
+    float: none;
+}
+
+
 /* Invert current layout */
 .page {
-    float: inline-start;
+    /*float: inline-start;*/
+    flex-grow: 1;
+    background: yellow;
     padding-inline-end: 0;
 
     @media (min-width: 64em) {
@@ -58,8 +73,9 @@ body::after{
 }
 
 
-.sidebar{
-    float: inline-end;
+#main .sidebar{
+    /*float: inline-end;*/
+    
 }
 
 
