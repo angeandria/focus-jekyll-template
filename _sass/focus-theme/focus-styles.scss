@@ -44,17 +44,28 @@ body::after{
 */
 
 /* Invert current layout */
-.page{
+.page {
     float: inline-start;
-    padding-inline-end: 0 !important;
+    padding-inline-end: 0;
+
+    @media (min-width: 64em) {
+        padding-inline-end: 0;
+    }
+
+    @media (min-width: 80em) {
+        padding-inline-end: 0;
+    }
 }
+
 
 .sidebar{
     float: inline-end;
 }
 
 
+
 /* Hide internal sidebar */
 .page_content aside.sidebar__right{
     display: none;
 }
+
