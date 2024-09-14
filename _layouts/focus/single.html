@@ -47,6 +47,7 @@ layout: default
 
           <aside class="sidebar__right {% if page.toc_sticky %}sticky{% endif %} {% if page.toc_sticky %}sticky{% endif %}">
               
+            <!-- BEFORE -->  
             {% comment %} ### FOCUS code ### {% endcomment %}
             <div class="sidebar__right_before">
                 {% include focus/hook.html hook="sidebar__right_before" %}      
@@ -59,7 +60,8 @@ layout: default
                         {% include focus/hook.html hook="sidebar__right_ctazzz" %}
                 </div>          
               {% comment %} ### END - FOCUS code ### {% endcomment %}
-              
+             
+            <!-- TOC -->  
             {% if page.toc %}
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-{{ page.toc_icon | default: 'file-alt' }}"></i> {{ page.toc_label | default: site.data.ui-text[site.locale].toc_label | default: "On this page" }}</h4></header>
@@ -67,6 +69,23 @@ layout: default
             </nav>
             {% endif %}
             
+            <!-- SIDEBAR CONTENT (config.yml) -->
+            {% if page.sidebar %}
+                {% for s in page.sidebar %}
+                  {% if s.image %}
+                    <img src="{{ s.image | relative_url }}"
+                         alt="{% if s.image_alt %}{{ s.image_alt }}{% endif %}">
+                  {% endif %}
+                  {% if s.title %}<h3>{{ s.title }}</h3>{% endif %}
+                  {% if s.text %}{{ s.text | markdownify }}{% endif %}
+                  {% if s.nav %}{% include nav_list nav=s.nav %}{% endif %}
+                {% endfor %}
+                {% if page.sidebar.nav %}
+                  {% include nav_list nav=page.sidebar.nav %}
+                {% endif %}
+            {% endif %}
+              
+            <!-- AFTER -->
             {% comment %} ### FOCUS code ### {% endcomment %}
             <div class="sidebar__right_after">
                     {% include focus/hook.html hook="sidebar__right_after" %}      
