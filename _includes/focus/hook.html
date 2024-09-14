@@ -9,7 +9,7 @@
 {% endfor %}
 
  {% if file_exists %}
- <p>include file {{ target_file }} here</p>
+ <p>include file {{ target_file }} here (and custom version? {{ hook.custom }})</p>
   <!-- focus -->
   {% include focus/{{ target_file | append: '.html' }} %}
 	
