@@ -4,7 +4,9 @@
 
 
 {% assign hooks = site.data.focus.hooks %}
-  {% for hook_name, hook_data in hooks %}
+  {% for hook in hooks %}
+    {% assign hook_name = hook[0] %}
+    {% assign hook_data = hook[1] %}
 <p>{{ hook_name }} >>> {{ target_file }} >>> custom value : {{ hook_data.custom }}</p>
   {% if hook_name == target_file %}
     {% assign file_exists = true %}
@@ -15,7 +17,7 @@
   <!-- focus -->
   {% include focus/{{ target_file | append: '.html' }} %}
 	
-  <p>CUSTOM VALUE : {{ site.data.hooks[target_file].custom }}</p>
+  <p>CUSTOM VALUE : {{ site.data.focus.hooks[target_file].custom }}</p>
   <!-- focus -->
 	{% if site.data.hooks[target_file].custom == true %}
     {% include {{ target_file }}.html %}
