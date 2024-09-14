@@ -2,7 +2,7 @@
 {% assign file_exists = false %}
 
 {% for hook in site.data.focus.hooks.hooks %}
-{{ hook }} >>> {{ target_file }}
+<p>{{ hook }} >>> {{ target_file }}</p>
   {% if hook == target_file %}
     {% assign file_exists = true %}
   {% endif %}
