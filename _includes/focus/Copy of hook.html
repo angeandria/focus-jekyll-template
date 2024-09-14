@@ -1,0 +1,26 @@
+{% assign target_file = include.hook %}  <!-- Assuming you pass 'file' as an include parameter -->
+{% assign file_exists = false %}
+
+{% assign hooks = site.data.focus.hooks %}
+  {% for hook in hooks %}
+    {% assign hook_name = hook[0] %}
+    {% assign hook_data = hook[1] %}
+ 
+    {% if hook_name == target_file %}
+      {% assign file_exists = true %}
+    {% endif %}
+  {% endfor %}
+
+ {% if file_exists %}
+  <!-- focus -->
+  {% include focus/{{ target_file | append: '.html' }} %}
+	
+  <!-- focus -->
+	{% if site.data.hooks[target_file].custom == true %}
+    {% include {{ target_file }}.html %}
+	{% endif %}
+	
+{% else %} 
+  <!-- Optional: Add a message or fallback content -->
+  <p>ERROR : The requested hook {{ target_file }} does not exist.</p>
+{% endif %}
