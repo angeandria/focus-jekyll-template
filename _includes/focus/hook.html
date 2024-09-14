@@ -5,11 +5,11 @@
   {% for hook in hooks %}
     {% assign hook_name = hook[0] %}
     {% assign hook_data = hook[1] %}
- {{ target_file }} >>> custom value : {{ hook_data.custom }}</p>
-  {% if hook_name == target_file %}
-    {% assign file_exists = true %}
-  {% endif %}
-{% endfor %}
+ 
+    {% if hook_name == target_file %}
+      {% assign file_exists = true %}
+    {% endif %}
+  {% endfor %}
 
  {% if file_exists %}
   <!-- focus -->
