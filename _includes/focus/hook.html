@@ -1,26 +1,24 @@
 {% assign target_file = include.hook %}  <!-- Assuming you pass 'file' as an include parameter -->
 {% assign file_exists = false %}
 
-{% for hook in site.data.focus.hooks %}
-<p>{{ hook }} >>> {{ target_file }} >>> custom value : {{ hook.custom }}</p>
-  {% if hook == target_file %}
+
+
+{% assign hooks = site.data.focus.hooks %}
+  {% for hook_name, hook_data in hooks %}
+<p>{{ hook_name }} >>> {{ target_file }} >>> custom value : {{ hook_data.custom }}</p>
+  {% if hook_name == target_file %}
     {% assign file_exists = true %}
   {% endif %}
-  {% if hook.custom == true %}
-    {% assign include_custom = true %}
-  {% endif %}
-  
-  
 {% endfor %}
 
  {% if file_exists %}
   <!-- focus -->
   {% include focus/{{ target_file | append: '.html' }} %}
 	
-	<!-- custom -->
-	{% if include_custom == true %}
-	  {% comment %} {% include {{ target_file }}.html %}
-    {% endcomment %}
+  <p>CUSTOM VALUE : {{ site.data.hooks[target_file].custom }}</p>
+  <!-- focus -->
+	{% if site.data.hooks[target_file].custom == true %}
+    {% include {{ target_file }}.html %}
 	{% endif %}
 	
 {% else %} 
