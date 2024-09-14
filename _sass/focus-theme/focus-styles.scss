@@ -52,3 +52,8 @@ body::after{
     float: inline-end;
 }
 
+
+// Hide internal sidebar
+.page_content aside.sidebar__right{
+    display: none;
+}
