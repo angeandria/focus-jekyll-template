@@ -10,9 +10,9 @@
 
  {% if file_exists %}
  <p>include file {{ target_file }} here</p>
-  <!--
+  {% comment %}
   {% include {{ target_file | append: '.html' }} %}
-	-->
+	{% endcomment %}
 {% else %} 
   <!-- Optional: Add a message or fallback content -->
   <p>The requested hook {{ target_file }} does not exist.</p>
