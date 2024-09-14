@@ -16,7 +16,7 @@
 * ----
 */
 
-// Implement Body Bg Image
+/* Implement Body Bg Image */
 body{
 	position: relative;
 }
@@ -43,7 +43,7 @@ body::after{
 * ----
 */
 
-// Invert current layout
+/* Invert current layout */
 .page{
     float: inline-start;
     padding-inline-end: 0;
@@ -54,7 +54,7 @@ body::after{
 }
 
 
-// Hide internal sidebar
+/* Hide internal sidebar */
 .page_content aside.sidebar__right{
     display: none;
 }
