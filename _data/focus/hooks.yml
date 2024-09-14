@@ -1,7 +1,7 @@
 hooks:
   - name : sidebar__right_before
-		custom : true
+    custom : true
   - name : sidebar__right_cta
-		custom : true
+    custom : true
   - name : sidebar__right_after
-		custom : true
+    custom : false
