@@ -1,7 +1,7 @@
 {% assign target_file = include.hook %}  <!-- Assuming you pass 'file' as an include parameter -->
 {% assign file_exists = false %}
 
-{% for hook in site.data.focus.hooks[hooks] %}
+{% for hook in site.data.focus.hooks.hooks %}
 {{ hook }} >>> {{ target_file }}
   {% if hook == target_file %}
     {% assign file_exists = true %}
