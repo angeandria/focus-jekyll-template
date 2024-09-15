@@ -53,7 +53,9 @@ body::after{
     /* Convert from float to flexbox */
     display: flex;
     flex-wrap: wrap;
-    padding-inline-end: 0;
+    padding-block: 1em;
+    padding-inline: 1em;
+    gap: 50px;
 }
 
 
