@@ -50,15 +50,14 @@ body::after{
 */
 
 #main{
+    /* Convert from float to flexbox */
+    display: flex;
+    flex-wrap: wrap;
     padding-inline-end: 0;
 }
 
 
-
-.page {
-    /* Convert from float to flexbox */
-    display: flex;
-    flex-wrap: wrap;
+.page {    
     float: none;    
     flex-grow: 1;
     
@@ -67,17 +66,13 @@ body::after{
 
     @media (min-width: 64em) {
         padding-inline-end: 0;
+        float: none;
     }
 
     @media (min-width: 80em) {
+        float: none;
         padding-inline-end: 0;
     }
-}
-
-
-#main .sidebar{
-    /*float: inline-end;*/
-    
 }
 
 /* Hide internal sidebar */
@@ -85,3 +80,11 @@ body::after{
     display: none;
 }
 
+/*
+* -----------
+* SINGLE
+* -----------
+*/
+.single-related{
+    background:orange;
+}

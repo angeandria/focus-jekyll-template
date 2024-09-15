@@ -118,7 +118,11 @@ layout: default
     {% include focus/sidebar.html %}
 
   
-  {% comment %}<!-- only show related on a post page when `related: true` -->{% endcomment %}
+
+</div>
+
+<div class="single-related">
+      {% comment %}<!-- only show related on a post page when `related: true` -->{% endcomment %}
   {% if page.id and page.related and site.related_posts.size > 0 %}
     {% include page__related.html posts=site.related_posts %}
   {% comment %}<!-- otherwise show recent posts if no related when `related: true` -->{% endcomment %}
