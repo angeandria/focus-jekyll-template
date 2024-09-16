@@ -69,7 +69,7 @@ $max-width: $x-large !default;
     padding-block: 1em;
     padding-inline: 1em;
 
-    @include breakpoint($medium) {
+    @include breakpoint($small) {
         flex-wrap: no-wrap;
     }
 }
@@ -83,15 +83,15 @@ $max-width: $x-large !default;
     padding-inline-end: 0;
     margin: 0;
     
-    @include breakpoint($large) {
+    @include breakpoint($small) {
             margin-right: 10%;
     }
 }
 
 .sidebar{
     background: green;
-    width: $large;
-    @include breakpoint($large) {
+    width: $small;
+    @include breakpoint($small) {
             width: 300px;
     }
 }
