@@ -1,9 +1,11 @@
 ## Changelog
 
 ### 2024.09.16
-- [ ] Testing includes outside of the _includes folder
-- [ ] Testing layouts outside of the _layouts folder
-- [ ] Testing data outside of the _data folder
+- [x] Css : Adapted code to breakpoints-sass
+- [x] CSS : Updated knowledge of best practices
+- [ ] Tested includes outside of the _includes folder
+- [ ] Tested layouts outside of the _layouts folder
+- [ ] Tested data outside of the _data folder
 
 ### 2024.09.13
 - Updated the layout main/sidebar to flexbox

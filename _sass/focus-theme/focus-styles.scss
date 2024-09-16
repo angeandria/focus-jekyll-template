@@ -52,14 +52,25 @@ body::after{
 * ----
 */
 
+
+/*
+* @include breakpoint($large) {}
+$small: 600px !default;
+$medium: 768px !default;
+$medium-wide: 900px !default;
+$large: 1024px !default;
+$x-large: 1280px !default;
+$max-width: $x-large !default;
+*/
+    
 #main{
     display: flex;
-    flex-wrap: no-wrap;
+    flex-wrap: wrap;
     padding-block: 1em;
     padding-inline: 1em;
-    
-    @media (min-width: 64em) {        
-        flex-wrap: wrap;
+
+    @include breakpoint($large) {
+        flex-wrap: no-wrap;
     }
 }
 
@@ -70,23 +81,18 @@ body::after{
     float: none;    
     flex-grow: 1;
     padding-inline-end: 0;
-    margin-right: 10%;
+    margin: 0;
     
-    @media (min-width: 64em), (min-width: 80em) {
-        padding-inline-end: 0;
-        float: none;
-    }
-    @media (min-width: 64em){
-        margin-right: 0;    
+    @include breakpoint($large) {
+            margin-right: 10%;
     }
 }
 
 .sidebar{
     background: green;
-    
-    width: 300px;
-    @media (min-width: 64em){
-        width: 100%;
+    width: $large;
+    @include breakpoint($large) {
+            width: 300px;
     }
 }
 
