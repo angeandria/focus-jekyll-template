@@ -63,7 +63,9 @@ $x-large: 1280px !default;
 $max-width: $x-large !default;
 */
     
-#main{
+#main {
+    background: blue;
+    
     display: flex;
     flex-wrap: wrap;
     padding-block: 1em;
@@ -116,7 +118,7 @@ $max-width: $x-large !default;
 * MEDIA QUERIES
 * ----------------------
 */
-@media (min-width: 64em){
+@include breakpoint($small) {
     .breadcrumbs ol{
         float-inline:none;
     }
