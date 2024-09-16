@@ -3,8 +3,9 @@
 
 
 /*
+* --------------------------
 * RESET MINIMAL MISTAKE
-* ----
+* --------------------------
 */
 .site-header{
 	border-top: none;
@@ -12,8 +13,9 @@
 }
 
 /*
+* --------------------------
 * FOCUS
-* ----
+* --------------------------
 */
 
 /* Implement Body Bg Image */
@@ -46,16 +48,17 @@ body::after{
 
 /*
 * Minimal Mistakes
+* Convert from float to flexbox
 * ----
 */
 
 #main{
-    /* Convert from float to flexbox */
     display: flex;
     flex-wrap: no-wrap;
     padding-block: 1em;
     padding-inline: 1em;
     gap: 50px;
+    
     @media (min-width: 80em) {
         gap: 0;
         flex-wrap: wrap;
@@ -64,27 +67,26 @@ body::after{
 
 
 .page {    
+    background: yellow;
+    
     float: none;    
     flex-grow: 1;
-    
-    background: yellow;
     padding-inline-end: 0;
+    
+    @media (min-width: 64em), @media (min-width: 64em) {
+        padding-inline-end: 0;
+        float: none;
+    }
+}
 
+.sidebar{
+    background: green;
+    
     @media (min-width: 64em) {
-        padding-inline-end: 0;
-        float: none;
-    }
-
-    @media (min-width: 80em) {
-        float: none;
-        padding-inline-end: 0;
+        width: inherit;
     }
 }
 
-/* TEMPORARY : Hide internal sidebar */
-.page_content aside.sidebar__right{
-    display: none;
-}
 
 /*
 * -----------
@@ -93,14 +95,32 @@ body::after{
 */
 .single-related{
     background:orange;
+    
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 
+/*
+* ----------------------
+* MEDIA QUERIES
+* ----------------------
+*/
 @media (min-width: 64em){
     .breadcrumbs ol{
         float-inline:none;
     }
+}
+
+
+
+/*
+* ----------------------
+* TEMP
+* ----------------------
+*/
+/* TEMPORARY : Hide internal sidebar */
+.page_content aside.sidebar__right{
+    display: none;
 }
