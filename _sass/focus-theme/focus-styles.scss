@@ -72,6 +72,7 @@ body::after{
     float: none;    
     flex-grow: 1;
     padding-inline-end: 0;
+    margin-right: 10%;
     
     @media (min-width: 64em), (min-width: 64em) {
         padding-inline-end: 0;
@@ -82,8 +83,9 @@ body::after{
 .sidebar{
     background: green;
     
+    width: 300px;
     @media (min-width: 64em) {
-        width: inherit;
+        width: 300px;
     }
 }
 
