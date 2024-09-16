@@ -73,7 +73,7 @@ body::after{
     flex-grow: 1;
     padding-inline-end: 0;
     
-    @media (min-width: 64em), @media (min-width: 64em) {
+    @media (min-width: 64em), (min-width: 64em) {
         padding-inline-end: 0;
         float: none;
     }
