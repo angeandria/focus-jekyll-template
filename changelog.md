@@ -1,5 +1,13 @@
 ## Changelog
 
+### 2024.09.16
+- [ ] Testing includes outside of the _includes folder
+- [ ] Testing layouts outside of the _layouts folder
+- [ ] Testing data outside of the _data folder
+
+### 2024.09.13
+- Updated the layout main/sidebar to flexbox
+
 ### 2024.09.11
 - created _includes/focus/hook.html to add a hooks functionality to the theme
 
