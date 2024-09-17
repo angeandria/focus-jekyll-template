@@ -40,9 +40,19 @@ body::after{
 }
 
 
+
 /*
-* PAGE LAYOUT
+* Navigation
 * ----
+*/
+.breadcrumbs ol{
+    float-inline:none;
+}
+
+/* 
+* ----------------
+* PAGE LAYOUT
+* ----------------
 */
 
 
@@ -70,9 +80,9 @@ $max-width: $x-large !default;
     flex-wrap: wrap;
     padding-block: 1em;
     padding-inline: 1em;
-
     @include breakpoint($small) {
-        flex-wrap: no-wrap;
+        flex-wrap: nowrap;
+        background: pink;
     }
 }
 
@@ -119,9 +129,7 @@ $max-width: $x-large !default;
 * ----------------------
 */
 @include breakpoint($small) {
-    .breadcrumbs ol{
-        float-inline:none;
-    }
+    
 }
 
 
