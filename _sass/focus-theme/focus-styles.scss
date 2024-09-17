@@ -96,7 +96,7 @@ $max-width: $x-large !default;
     margin: 0;
     
     @include breakpoint($small) {
-            margin-right: 10%;
+            margin-right: 30px;
     }
 }
 
@@ -104,7 +104,7 @@ $max-width: $x-large !default;
     background: green;
     width: $small;
     @include breakpoint($small) {
-            width: 300px;
+            width: 38.2%;
     }
 }
 
