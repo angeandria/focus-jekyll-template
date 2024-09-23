@@ -1,10 +1,7 @@
 ---
 title: "Topics archive"
 layout: categories
-permalink: /topics/
+permalink: /topics-archive/
 author_profile: true
 URL:
-redirect_from:
-  - /topic/article
 ---
-tooooo
