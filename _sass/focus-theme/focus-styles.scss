@@ -46,7 +46,7 @@ body::after{
 * ----
 */
 .breadcrumbs ol{
-    float-inline:none;
+    float:inline-start;
 }
 
 /* 
@@ -102,9 +102,10 @@ $max-width: $x-large !default;
 
 .sidebar{
     background: green;
-    width: $small;
+    flex-grow: 1;
+    /*width: $small;*/
     @include breakpoint($small) {
-            width: 38.2%;
+            flex: 0 0 26%;
     }
 }
 
