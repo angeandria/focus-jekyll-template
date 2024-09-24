@@ -2,9 +2,9 @@
 title: "Included post content"
 excerpt_separator: "<!--more-->"
 categories:
-  - Blog
+  - blog
 tags:
-  - Post Formats
+  - post formats
   - readability
   - standard
 ---

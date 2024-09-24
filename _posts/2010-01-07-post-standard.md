@@ -4,7 +4,7 @@ excerpt_separator: "<!--more-->"
 categories:
   - growth
 tags:
-  - Post Formats
+  - post formats
   - readability
   - standard
 ---

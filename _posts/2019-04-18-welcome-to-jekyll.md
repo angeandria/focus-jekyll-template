@@ -2,9 +2,9 @@
 title: "Welcome to Jekyll!"
 date: 2019-04-18T15:34:30-04:00
 categories:
-  - Personal development
+  - personal development
 tags:
-  - Jekyll
+  - jekyll
   - update
 
 excerpt: "This post should display a **header with an overlay image**, if the theme supports it."
