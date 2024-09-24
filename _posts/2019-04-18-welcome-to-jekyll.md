@@ -6,6 +6,9 @@ categories:
 tags:
   - jekyll
   - update
+classes:
+  - myClass
+  - myClass2
 
 excerpt: "This post should display a **header with an overlay image**, if the theme supports it."
 header:
