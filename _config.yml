@@ -138,8 +138,7 @@ defaults:
       comments: true
       share: true
       related: true
-      classes:
-        - post
+      classes: "post"
      sidebar:
         - title: "My Title" 
           image: "/assets/images/your-image.jpg"
@@ -161,7 +160,7 @@ defaults:
   - scope:
       path: "_pages"
       type: pages
-      classes: page
+      classes: "page"
     values:
       layout: single
       author_profile: true
