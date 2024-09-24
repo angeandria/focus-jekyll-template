@@ -12,6 +12,7 @@
 
   
     {% assign category_primary = post.categories[0] %}
+    <h1>{{ category_primary }}</h1>
     {% if category_primary %}
       {% assign category_primary_slug = category_primary | downcase | slugify %}
     {% endif %}
