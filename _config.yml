@@ -138,10 +138,9 @@ defaults:
       comments: true
       share: true
       related: true
-      categories:
-        - a
-        - b
-      sidebar:
+      classes:
+        - post
+     sidebar:
         - title: "My Title" 
           image: "/assets/images/your-image.jpg"
           image_alt: "image"
@@ -162,6 +161,7 @@ defaults:
   - scope:
       path: "_pages"
       type: pages
+      classes: page
     values:
       layout: single
       author_profile: true
