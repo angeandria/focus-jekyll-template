@@ -141,8 +141,6 @@ defaults:
       categories:
         - a
         - b
-      classes:
-        - layout--focus-single
       sidebar:
         - title: "My Title" 
           image: "/assets/images/your-image.jpg"
