@@ -1,0 +1,11 @@
+{% assign target_topic = include.topic %}
+
+<p>Posts in category "{{ target_topic }}" are:</p>
+
+<ul>
+  {% for post in site.categories.target_topic %}
+    {% if post.url %}
+        <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+    {% endif %}
+  {% endfor %}
+</ul>wowork

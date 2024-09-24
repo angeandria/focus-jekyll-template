@@ -19,7 +19,7 @@ layout: default
 {% endif %}
 
 <div id="main" role="main">
-<h2>ALL TOPICS ARCHIVE</h2>
+
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork"{% if page.locale %} lang="{{ page.locale }}"{% endif %}>
     {% if page.title %}<meta itemprop="headline" content="{{ page.title | replace: '|', '&#124;' | markdownify | strip_html | strip_newlines | escape_once }}">{% endif %}
     {% if page.excerpt %}<meta itemprop="description" content="{{ page.excerpt | markdownify | strip_html | strip_newlines | escape_once }}">{% endif %}
@@ -40,7 +40,10 @@ layout: default
 
       <section class="page__content" itemprop="text">
 
-          {% comment %} ## DISABLE FOR NOW 
+          <div class="custom-taxonomy">
+            {% include focus/topic-display.html topic="personal-development" %}
+          </div>
+            {% comment %} ## DISABLE FOR NOW 
               <aside class="sidebar__right {% if page.toc_sticky %}sticky{% endif %}">
                   
                 <!-- BEFORE -->  
