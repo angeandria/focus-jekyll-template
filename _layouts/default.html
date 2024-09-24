@@ -1,7 +1,6 @@
 ---
 ---
 
-{% assign category_primary = post.categories[0] %}
 
 <!doctype html>
 {% include copyright.html %}
@@ -11,7 +10,20 @@
     {% include head/custom.html %}
   </head>
 
-  <body class="layout--{{ page.layout | default: layout.layout }}{% if page.classes or layout.classes %}{{ page.classes | default: layout.classes | join: ' ' | prepend: ' ' }}{% endif %}" dir="{% if site.rtl %}rtl{% else %}ltr{% endif %}">
+  
+    {% assign category_primary = post.categories[0] %}
+    {% if category_primary %}
+      {% assign category_primary_slug = category_primary | downcase | slugify %}
+    {% endif %}
+    
+    <body class="
+      layout--{{ page.layout | default: layout.layout | replace: '/', '-' }}
+      {% if category_primary_slug %}category--{{ category_primary_slug }}{% endif %}
+      {% if page.classes or layout.classes %}
+        {{ page.classes | default: layout.classes | join: ' ' | prepend: ' ' }}
+      {% endif %}
+" dir="{% if site.rtl %}rtl{% else %}ltr{% endif %}">
+
     {% include_cached skip-links.html %}
     {% include_cached masthead.html %}
 
