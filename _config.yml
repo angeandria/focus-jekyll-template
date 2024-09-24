@@ -137,8 +137,10 @@ defaults:
       read_time: true
       comments: true
       share: true
-      related: true      
-     sidebar:
+      related: true
+      classes:
+        - single
+      sidebar:
         - title: "My Title" 
           image: "/assets/images/your-image.jpg"
           image_alt: "image"
@@ -158,7 +160,9 @@ defaults:
   # _pages
   - scope:
       path: "_pages"
-      type: pages      
+      type: pages
+      classes:
+        - page
     values:
       layout: single
       author_profile: true
