@@ -19,8 +19,8 @@
     {% assign category_primary_slug = category_primary ? 'category--' | append: (category_primary | downcase | slugify) : '' %}    
     
     <body class="
-    layout--{{ page.layout | default: layout.layout | replace: '/', '-' }}
-      {% if category_primary_slug %}category--{{ category_primary_slug }}{% endif %}
+    layout--{{ page.layout | default: layout.layout | replace: '/', '-' }} 
+      {{ category_primary_slug }} 
       {% if page.classes or layout.classes %}
         {{ page.classes | default: layout.classes | join: ' ' | prepend: ' ' }} 
       {% endif %}
