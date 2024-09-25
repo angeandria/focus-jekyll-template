@@ -15,6 +15,7 @@
     {% assign pagekind_class = page.kind == "post" ? "post" : page.kind == "page" ? "page" : "" %}
     
     {% assign category_primary = post.categories | first %}
+    <p>Page kind {{ page.kind }}</p>
     <p>First category : {{ category_primary }}</p>
     <p>Other Categories: {{ page.categories | join: ', ' }}</p>
     <hr>
