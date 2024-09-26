@@ -11,12 +11,14 @@
   </head>
 
   
-  <hr>
- 
     <!-- Category class -->
     {% assign category_primary = page.categories[0] %}    
-    {% assign category_primary = category_primary == "guide" and page.categories.size > 1 ? page.categories[1] : category_primary %}    
-    {% assign category_primary_slug = category_primary ? 'category--' | append: (category_primary | downcase | slugify) : '' %}    
+    {% if category_primary == "guide" and page.categories.size > 1 %}
+        {% assign category_primary = page.categories[1] %}
+    {% endif %}
+    
+    {% assign category_primary_slug = category_primary ? 'category--' | append: (category_primary | downcase | slugify) : '' %}
+
     
     <body class="
     layout--{{ page.layout | default: layout.layout | replace: '/', '-' }} 
