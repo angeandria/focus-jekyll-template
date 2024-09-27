@@ -17,17 +17,11 @@
         {% assign category_primary = page.categories[1] %}
     {% endif %}
     
-    
-    <!--
-    {% assign category_primary_slug = category_primary | downcase | slugify %}
-    {% assign category_primary_slug = category_primary_slug ? 'category--' | append: category_primary_slug : '' %}
-    {% assign category_primary_slug = category_primary_slug != '' ? 'category--' | append: category_primary_slug : '' %} 
-    -->
-    
     {% assign category_primary_slug = "" %}
-    {% assign category_primary_slug = category_primary | downcase | slugify %}
-    {% assign category_primary_slug = category_primary_slug != '' ? 'category--' | append: category_primary_slug : '' %}
-
+    {% if category_primary %}
+        {% assign category_primary_slug = category_primary | downcase | slugify %}
+        {% assign category_primary_slug = category_primary_slug != '' ? 'category--' | append: category_primary_slug : '' %}
+    {% endif %}
     
     <body class="
     layout--{{ page.layout | default: layout.layout | replace: '/', '-' }} 
