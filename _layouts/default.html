@@ -13,7 +13,8 @@
   
     <!-- Category class -->
     {% assign category_primary = page.categories[0] %}    
-    {% assign category_primary_slug = category_primary ? 'category--' | append: (category_primary | downcase | slugify) : '' %}
+    {% assign category_primary_slug = category_primary | downcase | slugify %}
+    {% assign category_primary_slug = category_primary ? 'category--' | append: category_primary_slug : '' %}
     
     <body class="
     layout--{{ page.layout | default: layout.layout | replace: '/', '-' }} 
