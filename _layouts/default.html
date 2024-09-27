@@ -20,6 +20,7 @@
     {% assign category_primary_slug = category_primary | downcase | slugify %}
     {% assign category_primary_slug = category_primary_slug ? 'category--' | append: category_primary_slug : '' %}
 
+
     
     <body class="
     layout--{{ page.layout | default: layout.layout | replace: '/', '-' }} 
