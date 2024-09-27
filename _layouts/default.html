@@ -23,12 +23,15 @@
     {% assign category_primary_slug = category_primary_slug ? 'category--' | append: category_primary_slug : '' %}
     {% assign category_primary_slug = category_primary_slug != '' ? 'category--' | append: category_primary_slug : '' %} 
     -->
+    
+    {% assign category_primary_slug = "" %}
     {% assign category_primary_slug = category_primary | downcase | slugify %}
+    {% assign category_primary_slug = category_primary_slug != '' ? 'category--' | append: category_primary_slug : '' %}
 
     
     <body class="
     layout--{{ page.layout | default: layout.layout | replace: '/', '-' }} 
-      {% if category_primary_slug != '' %}category--{{ category_primary_slug }}{% endif %} 
+        {{ category_primary_slug }} 
       {% if page.classes or layout.classes %}
         {{ page.classes | default: layout.classes | join: ' ' | prepend: ' ' }} 
       {% endif %}
