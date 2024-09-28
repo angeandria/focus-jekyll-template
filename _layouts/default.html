@@ -20,15 +20,21 @@
     
     {% assign category_primary_slug = "" %}
     {% if category_primary %}
-        {% assign category_primary_slug = category_primary | downcase | slugify %}
-        {% assign category_primary_slug = site.categories_prefix | append: category_primary_slug %}
+        {% assign category_primary_class = category_primary | downcase | slugify %}
+        {% assign category_primary_class = site.category_primary_prefix | append: category_primary_class %}
     {% endif %}
     
-    <body class="{{ layout_class }} {{ category_primary_slug }} 
-      {% if page.classes or layout.classes %}
-        {{ page.classes | default: layout.classes | join: ' ' | prepend: ' ' }} 
-      {% endif %}
-" dir="{% if site.rtl %}rtl{% else %}ltr{% endif %}">
+    <!-- Page classes -->
+    {% if page.categories %}
+        {% assign categories_classes = page.categories | default: '' | join: ' ' | prepend: site.categories_prefix %}
+    {% endif %}
+    
+    <!-- Page classes -->
+    {% if page.classes or layout.classes %}
+        {% assign page_classes = page.classes | default: layout.classes | join: ' ' | prepend: ' ' %}
+    {% endif %}
+    
+    <body class="{{ layout_class }} {{ category_primary_class }} {{ categories_classes }} {{ page_classes }}" dir="{% if site.rtl %}rtl{% else %}ltr{% endif %}">
 
     {% include_cached skip-links.html %}
     {% include_cached masthead.html %}

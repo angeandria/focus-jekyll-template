@@ -31,6 +31,7 @@ mytheme_alias: "focus"
 mytheme_suffix: "-theme"
 layout_prefix: layout--
 categories_prefix: category--
+category_primary_prefix: category-primary--
 
 # -----------------
 # Site Details - More
