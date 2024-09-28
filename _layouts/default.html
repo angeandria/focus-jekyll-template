@@ -1,4 +1,6 @@
 ---
+layout_prefix: layout--
+categories_prefix: category--
 ---
 
 
@@ -10,7 +12,9 @@
     {% include head/custom.html %}
   </head>
 
-  
+    <!-- Layout class -->
+    {% assign layout_class = 'layout--' | append: (page.layout | default: layout.layout | replace: '/', '-') %}
+    
     <!-- Category class -->
     {% assign category_primary = page.categories[0] %}    
     {% if category_primary == "guide" and page.categories.size > 1 %}
@@ -20,12 +24,10 @@
     {% assign category_primary_slug = "" %}
     {% if category_primary %}
         {% assign category_primary_slug = category_primary | downcase | slugify %}
-        {% assign category_primary_slug = 'category--' | append: category_primary_slug %}
+        {% assign category_primary_slug = {{ page.categories_prefix }} | append: category_primary_slug %}
     {% endif %}
     
-    <body class="
-    layout--{{ page.layout | default: layout.layout | replace: '/', '-' }} 
-        {{ category_primary_slug }} 
+    <body class="{{ layout_class }} {{ category_primary_slug }} 
       {% if page.classes or layout.classes %}
         {{ page.classes | default: layout.classes | join: ' ' | prepend: ' ' }} 
       {% endif %}
