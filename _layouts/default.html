@@ -36,6 +36,8 @@ categories_prefix: category--
     {% include_cached skip-links.html %}
     {% include_cached masthead.html %}
 
+    <p>page layout frontmatter : {{ page.layout_prefix }}, {{ page.categories_prefix }}</p>
+    
     <div class="initial-content">
       {{ content }}
       {% include after-content.html %}
