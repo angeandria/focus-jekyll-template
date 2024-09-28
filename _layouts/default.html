@@ -13,18 +13,19 @@
     {% assign layout_class = site.layout_prefix | append: (page.layout | default: layout.layout | replace: '/', '-') %}
     
     <!-- Primary Category class -->
-    {% assign category_primary = page.categories[0] %}    
-    {% if category_primary == "guide" and page.categories.size > 1 %}
-        {% assign category_primary = page.categories[1] %}
+    {% assign category_main = page.categories[0] %}    
+    {% if category_main == "guide" and page.categories.size > 1 %}
+        {% assign category_main = page.categories[1] %}
     {% endif %}
     
-    {% assign category_primary_slug = "" %}
-    {% if category_primary %}
-        {% assign category_primary_class = category_primary | downcase | slugify %}
-        {% assign category_primary_class = site.category_primary_prefix | append: category_primary_class %}
+    {% assign category_main_slug = "" %}
+    {% if category_main %}
+        {% assign category_main_class = category_main | downcase | slugify %}
+        {% assign category_main_class = site.category_main_prefix | append: category_main_class %}
     {% endif %}
     
     <!-- Categories classes -->
+    <!--
     {% assign categories_classes = '' %}
     {% if page.categories %}
         {% for category in page.categories %}
@@ -36,13 +37,22 @@
             {% endif %}
         {% endfor %}
     {% endif %}
+    -->
+    {% assign categories_classes = '' %}
+    {% if page.categories %}
+        {% for category in page.categories %}
+            {% assign slugified_category = category | downcase | slugify %}        
+                {% assign categories_classes = categories_classes | append: ' ' | append: (site.categories_prefix | append: slugified_category) %}
+        {% endfor %}
+    {% endif %}
+    
     
     <!-- Page classes -->    
     {% if page.classes or layout.classes %}
         {% assign page_classes = page.classes | default: layout.classes | join: ' ' | prepend: ' ' %}
     {% endif %}
     
-    <body class="{{ layout_class }} {{ category_primary_class }} {{ categories_classes }} {{ page_classes }}" dir="{% if site.rtl %}rtl{% else %}ltr{% endif %}">
+    <body class="{{ layout_class }} {{ category_main_class }} {{ categories_classes }} {{ page_classes }}" dir="{% if site.rtl %}rtl{% else %}ltr{% endif %}">
 
     {% include_cached skip-links.html %}
     {% include_cached masthead.html %}
