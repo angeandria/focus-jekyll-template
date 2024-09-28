@@ -25,11 +25,15 @@
     {% endif %}
     
     <!-- Categories classes -->
-    {% assign categories_classes = '' %}    
+    {% assign categories_classes = '' %}
     {% if page.categories %}
         {% for category in page.categories %}
-            {% assign slugified_category =  category | downcase | slugify %}
-            {% assign categories_classes = category_classes | append: '' | append: (site.categories_prefix | append: slugified_category) %}
+            {% assign slugified_category = category | downcase | slugify %}
+            {% if forloop.first %}
+                {% assign categories_classes = site.categories_prefix | append: slugified_category %}
+            {% else %}
+                {% assign categories_classes = categories_classes | append: ' ' | append: (site.categories_prefix | append: slugified_category) %}
+            {% endif %}
         {% endfor %}
     {% endif %}
     
