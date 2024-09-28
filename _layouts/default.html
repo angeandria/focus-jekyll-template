@@ -11,8 +11,8 @@
 
     <!-- Layout class -->
     {% assign layout_class = site.layout_prefix | append: (page.layout | default: layout.layout | replace: '/', '-') %}
-    
-    <!-- Primary Category class -->
+
+    <!-- Main Category class -->
     {% assign category_main = page.categories[0] %}    
     {% if category_main == "guide" and page.categories.size > 1 %}
         {% assign category_main = page.categories[1] %}
@@ -25,27 +25,13 @@
     {% endif %}
     
     <!-- Categories classes -->
-    <!--
-    {% assign categories_classes = '' %}
-    {% if page.categories %}
-        {% for category in page.categories %}
-            {% assign slugified_category = category | downcase | slugify %}
-            {% if forloop.first %}
-                {% assign categories_classes = site.categories_prefix | append: slugified_category %}
-            {% else %}
-                {% assign categories_classes = categories_classes | append: ' ' | append: (site.categories_prefix | append: slugified_category) %}
-            {% endif %}
-        {% endfor %}
-    {% endif %}
-    -->
     {% assign categories_classes = '' %}
     {% if page.categories %}
         {% for category in page.categories %}
             {% assign slugified_category = category | downcase | slugify %}        
                 {% assign categories_classes = categories_classes | append: ' ' | append: (site.categories_prefix | append: slugified_category) %}
         {% endfor %}
-    {% endif %}
-    
+    {% endif %}    
     
     <!-- Page classes -->    
     {% if page.classes or layout.classes %}
@@ -56,8 +42,7 @@
 
     {% include_cached skip-links.html %}
     {% include_cached masthead.html %}
-
-    <p>page layout frontmatter : {{ page.layout_prefix }}, {{ page.categories_prefix }}</p>
+    
     
     <div class="initial-content">
       {{ content }}
