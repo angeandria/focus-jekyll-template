@@ -1,8 +1,5 @@
 ---
-layout_prefix: layout--
-categories_prefix: category--
 ---
-
 
 <!doctype html>
 {% include copyright.html %}
@@ -13,7 +10,7 @@ categories_prefix: category--
   </head>
 
     <!-- Layout class -->
-    {% assign layout_class = page.layout_prefix | append: (page.layout | default: layout.layout | replace: '/', '-') %}
+    {% assign layout_class = site.layout_prefix | append: (page.layout | default: layout.layout | replace: '/', '-') %}
     
     <!-- Category class -->
     {% assign category_primary = page.categories[0] %}    
@@ -24,7 +21,7 @@ categories_prefix: category--
     {% assign category_primary_slug = "" %}
     {% if category_primary %}
         {% assign category_primary_slug = category_primary | downcase | slugify %}
-        {% assign category_primary_slug = page.categories_prefix | append: category_primary_slug %}
+        {% assign category_primary_slug = site.categories_prefix | append: category_primary_slug %}
     {% endif %}
     
     <body class="{{ layout_class }} {{ category_primary_slug }} 
