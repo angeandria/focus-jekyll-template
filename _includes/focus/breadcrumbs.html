@@ -26,7 +26,12 @@
     {% assign category_main_class = site.category_main_prefix | append: category_main_class %}
 {% endif %}
 
+    <!-- Layout class -->
+    {% assign layout_class = site.layout_prefix | append: (page.layout | default: layout.layout | replace: '/', '-') %}
     
+<p>Category main : {{ category_main }}</p>
+<p>Layout class : {{ layout_class }}</p>
+
 <nav class="breadcrumbs">
   <ol itemscope itemtype="https://schema.org/BreadcrumbList">
     {% assign crumbs = page.url | split: '/' %}
