@@ -71,12 +71,20 @@
         {% assign page_classes = page.classes | default: layout.classes | join: ' ' | prepend: ' ' %}
     {% endif %}
     
+    
+    
     <body class="{{ layout_class }} {{ category_main_class }} {{ categories_classes }} {{ page_classes }}" dir="{% if site.rtl %}rtl{% else %}ltr{% endif %}">
 
     {% include_cached skip-links.html %}
     {% include_cached masthead.html %}
     
     
+    
+    <p>Cat Main Slug : {{ category_main_slug }}</p>
+    <p>Cat Main Class : {{ category_main_class }}</p>
+    <p>Cat Main Label : {{ category_main_label }}</p>
+    
+
     <div class="initial-content">
       {{ content }}
       {% include after-content.html %}
