@@ -22,8 +22,7 @@
 
 {% assign category_main_slug = "" %}
 {% if category_main %}
-    {% assign category_main_class = category_main | downcase | slugify %}
-    {% assign category_main_class = site.category_main_prefix | append: category_main_class %}
+{% assign category_main_class = category_main | downcase | slugify %}
 {% endif %}
 
     <!-- Layout class -->
@@ -50,7 +49,7 @@
       {% else %}
         {% assign i = i | plus: 1 %}
         <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-          <a href="{{site.category_archive.path}}/{{ category_main_class }}" itemprop="item"><span itemprop="name">{{ category_main }}</span></a>
+          <a href="/{{site.category_archive.path}}/{{ category_main_class }}" itemprop="item"><span itemprop="name">{{ category_main }}</span></a>
           
           <!-- BACKUP MinimalMistakes
           <a href="{{ crumb | downcase | replace: '%20', '-' | prepend: path_type | prepend: crumb_path | relative_url }}" itemprop="item"><span itemprop="name">{{ crumb | url_decode | replace: '-', ' ' | capitalize }}</span></a>
