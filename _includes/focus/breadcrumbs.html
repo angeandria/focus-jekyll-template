@@ -18,9 +18,6 @@
 {% assign url = crumbs[0] %}
 
 
-<p>Site url : {{ site.url }}</p>
-<p>Site baseurl : {{ site.baseurl }}</p>
-<p>Crumbs url : {{ url }}</p>
 
 <!-- Main Category class -->
 {% assign category_main = page.categories[0] %}    
@@ -31,12 +28,17 @@
 
 {% assign category_main_slug = "" %}
 {% if category_main %}
-{% assign category_main_class = category_main | downcase | slugify %}
+{% assign category_main_slug = category_main | downcase | slugify %}
 {% endif %}
 
-    <!-- Layout class -->
-    {% assign layout_class = site.layout_prefix | append: (page.layout | default: layout.layout | replace: '/', '-') %}
-    
+
+<p>Site url : {{ site.url }}</p>
+<p>Site baseurl : {{ site.baseurl }}</p>
+<p>Crumbs url : {{ url }}</p>
+<p>Category main {{ category_main }}</p>
+<p>Category main label {{ category_main_label }}</p>
+<p>with filter : {{ '/' | relative_url}}</p>
+
 
 <nav class="breadcrumbs">
   <ol itemscope itemtype="https://schema.org/BreadcrumbList">
@@ -56,7 +58,7 @@
       {% else %}
         {% assign i = i | plus: 1 %}
         <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-          <a href="{{ '/' | relative_url }}{{site.category_archive.path}}/{{ category_main_class }}" itemprop="item"><span itemprop="name">{{ category_main_label |  }}</span></a>
+          <a href="{{ '/' | relative_url }}{{site.category_archive.path}}/{{ category_main_slug }}" itemprop="item"><span itemprop="name">{{ category_main_label |  }}</span></a>
           
           <!-- BACKUP MinimalMistakes
           <a href="{{ crumb | downcase | replace: '%20', '-' | prepend: path_type | prepend: crumb_path | relative_url }}" itemprop="item"><span itemprop="name">{{ crumb | url_decode | replace: '-', ' ' | capitalize }}</span></a>
