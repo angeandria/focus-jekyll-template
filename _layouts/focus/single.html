@@ -109,8 +109,12 @@ layout: default
 
       {% include post_pagination.html %}
       
+      
+
       <!-- Layout class -->
       {% assign layout_class = site.layout_prefix | append: (page.layout | default: layout.layout | replace: '/', '-') %}
+      
+      <h1>{{ layout_class }}</h1>
       {% if layout_class == "focus-single-post" %}
           <p>PAGE LAYOUT : POST</p>
       {% endif %}
