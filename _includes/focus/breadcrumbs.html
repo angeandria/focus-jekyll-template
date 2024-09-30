@@ -33,7 +33,7 @@ split: ' ' %}
 {% endif %}
 
 {% comment %} Main Category label {% endcomment %}
-{% assign category_main = category_main | split : '' %}
+{% assign category_main = category_main | split : ' ' %}
 {% capture category_main_label %}
   {% for word in category_main %}
     {{ word | capitalize }}
