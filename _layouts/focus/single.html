@@ -112,7 +112,7 @@ layout: default
       
 
       <!-- Layout class -->
-      {% assign layout_class = site.layout_prefix | append: (page.layout | default: layout.layout | replace: '/', '-') %}
+      {% assign layout_class =  page.layout | default: layout.layout | replace: '/', '-' %}
       
       <h1>{{ layout_class }}</h1>
       {% if layout_class == "focus-single-post" %}
