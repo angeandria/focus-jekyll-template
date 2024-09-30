@@ -2,7 +2,11 @@
 
 
 /*
-#main { background-color: blue; }
+#main { background-color: blue;
+    @include breakpoint($small) {
+        flex-wrap: nowrap;
+    }
+}
 .page{ background-color : yellow; }
 .sidebar{ background-color : green; }
 .single-related{ background-color : orange; }
@@ -87,7 +91,6 @@ $max-width: $x-large !default;
     padding-inline: 1em;
     @include breakpoint($small) {
         flex-wrap: nowrap;
-        background: pink;
     }
 }
 
