@@ -25,7 +25,8 @@
     {% assign category_main = page.categories[1] %}
 {% endif %}
 {% assign category_main_label = category_main | downcase | split: ' ' %}
-{% assign category_main_label = category_main_label | map: 'capitalize' | join: ' ' %}
+{% assign category_main_label = category_main_label | map: 'capitalize' %}
+{% assign category_main_label = category_main_label | join: ' ' %}
 
 {% assign category_main_slug = "" %}
 {% if category_main %}
