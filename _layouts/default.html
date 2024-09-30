@@ -10,18 +10,7 @@
     {% assign category_main = page.categories[1] %}
 {% endif %}
 
-{% comment %} <!--  Main Category slug --> {% endcomment %}
-{% assign category_main_slug = "" %}
-{% if category_main %}
-{% assign category_main_slug = category_main | downcase | slugify %}
-{% endif %}
 
-{% comment %} <!-- Main Category label -->{% endcomment %}
-{% assign category_main = category_main | split : ' ' %}
-{% capture category_main_label %}
-  {% for word in category_main %}
-    {{ word | capitalize }}
-  {% endfor %}{% endcapture %}
   
   
 <!doctype html>
@@ -32,22 +21,43 @@
     {% include head/custom.html %}
   </head>
 
+    {% comment %}
     <!-- Layout class -->
+    {% endcomment %}
     {% assign layout_class = site.layout_prefix | append: (page.layout | default: layout.layout | replace: '/', '-') %}
 
+    {% comment %}
     <!-- Main Category class -->
+    {% endcomment %}
     {% assign category_main = page.categories[0] %}    
     {% if category_main == "guide" and page.categories.size > 1 %}
         {% assign category_main = page.categories[1] %}
     {% endif %}
-    
+        
+    {% comment %}
+    <!--  Main Category slug -->
+    {% endcomment %}
     {% assign category_main_slug = "" %}
+    {% assign category_main_class = "" %}
     {% if category_main %}
-        {% assign category_main_class = category_main | downcase | slugify %}
-        {% assign category_main_class = site.category_main_prefix | append: category_main_class %}
+        {% assign category_main_slug = category_main | downcase | slugify %}
+        {% assign category_main_class = site.category_main_prefix | append: category_main_slug %}
     {% endif %}
     
+    {% comment %}
+    <!-- Main Category label -->
+    {% endcomment %}
+    {% assign category_main_split = category_main | split : ' ' %}
+    {% capture category_main_label %}
+      {% for word in category_main_split %}
+        {{ word | capitalize }}
+        {% endfor %}
+    {% endcapture %}
+    
+
+    {% comment %}
     <!-- Categories classes -->
+    {% endcomment %}
     {% assign categories_classes = '' %}
     {% if page.categories %}
         {% for category in page.categories %}
