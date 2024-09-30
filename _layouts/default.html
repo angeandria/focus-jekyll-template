@@ -1,6 +1,29 @@
 ---
 ---
 
+
+
+{% comment %}  <!-- FOCUS --> {% endcomment %}
+{% comment %}  <!-- Main Category --> {% endcomment %}
+{% assign category_main = page.categories[0] %}    
+{% if category_main == "guide" and page.categories.size > 1 %}
+    {% assign category_main = page.categories[1] %}
+{% endif %}
+
+{% comment %} <!--  Main Category slug --> {% endcomment %}
+{% assign category_main_slug = "" %}
+{% if category_main %}
+{% assign category_main_slug = category_main | downcase | slugify %}
+{% endif %}
+
+{% comment %} <!-- Main Category label -->{% endcomment %}
+{% assign category_main = category_main | split : ' ' %}
+{% capture category_main_label %}
+  {% for word in category_main %}
+    {{ word | capitalize }}
+  {% endfor %}{% endcapture %}
+  
+  
 <!doctype html>
 {% include copyright.html %}
 <html lang="{{ site.locale | replace: "_", "-" | default: "en" }}" class="no-js">
