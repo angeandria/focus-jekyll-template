@@ -122,11 +122,14 @@ $max-width: $x-large !default;
 * -----------
 */
 /* Hide Sidebar */
-body.layout--focus-single-page #main > .sidebar{
-    display: none;
-}
-body.layout--focus-single-page #main > .page{
-    margin-right: 0;
+body.layout--sidebar,
+body.layout--focus-single-page{
+    #main > .sidebar{
+        display: none;
+    }
+    #main > .page{
+        margin-right: 0;
+    }
 }
 
 
