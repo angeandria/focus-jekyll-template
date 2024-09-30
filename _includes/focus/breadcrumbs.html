@@ -29,7 +29,7 @@
     <!-- Layout class -->
     {% assign layout_class = site.layout_prefix | append: (page.layout | default: layout.layout | replace: '/', '-') %}
     
-<p>Category main : {{ category_main }}</p>
+<p>Category main : {{ category_main_class }}</p>
 <p>Layout class : {{ layout_class }}</p>
 
 <nav class="breadcrumbs">
@@ -50,10 +50,11 @@
       {% else %}
         {% assign i = i | plus: 1 %}
         <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-          <a href="{{site.category_archive.path}}/{{ category_main_slug }}" itemprop="item"><span itemprop="name">{{ category_main | split: ' ' | map: 'capitalize' | join: ' ' }}</span></a>
+          <a href="{{site.category_archive.path}}/{{ category_main_class }}" itemprop="item"><span itemprop="name">{{ category_main }}</span></a>
           
           <!-- BACKUP MinimalMistakes
-          <a href="{{ crumb | downcase | replace: '%20', '-' | prepend: path_type | prepend: crumb_path | relative_url }}" itemprop="item"><span itemprop="name">{{ crumb | url_decode | replace: '-', ' ' | capitalize }} - topic/{{ category_main_slug }}</span></a>
+          <a href="{{ crumb | downcase | replace: '%20', '-' | prepend: path_type | prepend: crumb_path | relative_url }}" itemprop="item"><span itemprop="name">{{ crumb | url_decode | replace: '-', ' ' | capitalize }}</span></a>
+          
             -->
 
           <meta itemprop="position" content="{{ i }}" />
