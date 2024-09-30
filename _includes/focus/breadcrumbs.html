@@ -26,8 +26,8 @@
 {% assign category_main = page.categories[0] %}    
 {% if category_main == "guide" and page.categories.size > 1 %}
     {% assign category_main = page.categories[1] %}
-    {% assign category_main_label = category_main | split: ' ' | map: 'capitalize' | join: ' ' %}
 {% endif %}
+{% assign category_main_label = category_main | split: ' ' | map: 'capitalize' | join: ' ' %}
 
 {% assign category_main_slug = "" %}
 {% if category_main %}
@@ -56,7 +56,7 @@
       {% else %}
         {% assign i = i | plus: 1 %}
         <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-          <a href="/{{site.category_archive.path}}/{{ category_main_class }}" itemprop="item"><span itemprop="name">{{ category_main_label |  }}</span></a>
+          <a href="{{ '/' | relative_url }}{{site.category_archive.path}}/{{ category_main_class }}" itemprop="item"><span itemprop="name">{{ category_main_label |  }}</span></a>
           
           <!-- BACKUP MinimalMistakes
           <a href="{{ crumb | downcase | replace: '%20', '-' | prepend: path_type | prepend: crumb_path | relative_url }}" itemprop="item"><span itemprop="name">{{ crumb | url_decode | replace: '-', ' ' | capitalize }}</span></a>
