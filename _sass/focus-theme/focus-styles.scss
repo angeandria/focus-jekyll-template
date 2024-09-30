@@ -1,6 +1,13 @@
 // All Focus-powered jekyll sites will share the styles defined in this file
 
 
+/*
+#main { background-color: blue; }
+.page{ background-color : yellow; }
+.sidebar{ background-color : green; }
+.single-related{ background-color : orange; }
+*/
+
 
 /*
 * --------------------------
@@ -73,9 +80,7 @@ $x-large: 1280px !default;
 $max-width: $x-large !default;
 */
     
-#main {
-    background: blue;
-    
+#main {    
     display: flex;
     flex-wrap: wrap;
     padding-block: 1em;
@@ -88,8 +93,6 @@ $max-width: $x-large !default;
 
 
 .page {    
-    background: yellow;
-    
     float: none;    
     flex-grow: 1;
     padding-inline-end: 0;
@@ -101,13 +104,13 @@ $max-width: $x-large !default;
 }
 
 .sidebar{
-    background: green;
     flex-grow: 1;
     /*width: $small;*/
     @include breakpoint($small) {
             flex: 0 0 26%;
     }
 }
+
 
 
 /*
@@ -130,8 +133,6 @@ body.layout--focus-single-page #main > .page{
 * -----------
 */
 .single-related{
-    background:orange;
-    
     display: flex;
     align-items: center;
     justify-content: center;
