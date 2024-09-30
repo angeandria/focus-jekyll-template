@@ -108,6 +108,9 @@ layout: default
       {% if page.share %}{% include social-share.html %}{% endif %}
 
       {% include post_pagination.html %}
+      
+      <p>PAGE LAYOUT : {{ page.layout }}</p>
+      
     </div>
 
     {% if jekyll.environment == 'production' and site.comments.provider and page.comments %}
@@ -116,7 +119,6 @@ layout: default
   </article>
   
     {% include focus/sidebar.html class="main" %}
-
   
 
 </div>
