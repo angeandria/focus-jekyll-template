@@ -112,6 +112,20 @@ $max-width: $x-large !default;
 
 /*
 * -----------
+* SINGLE PAGE
+* -----------
+*/
+/* Hide Sidebar */
+body.layout--focus-single-page #main > .sidebar{
+    display: none;
+}
+body.layout--focus-single-page #main > .page{
+    margin-right: 0;
+}
+
+
+/*
+* -----------
 * SINGLE
 * -----------
 */
