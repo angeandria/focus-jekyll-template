@@ -117,8 +117,11 @@ layout: default
       </footer>
 
       {% if page.share %}{% include social-share.html %}{% endif %}
+    
 
+      {% if page.pagination %}    
       {% include post_pagination.html %}      
+       {% endif %}
       
     </div>
 
