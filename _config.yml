@@ -160,7 +160,6 @@ defaults:
       related: true
       share: true
 
-
   # _pages
   - scope:
       path: "_pages"
@@ -172,9 +171,9 @@ defaults:
       ###
       author_profile: true
       comments: false
-      read_time: true
+      read_time: false
       related: false
-      share: true            
+      share: false         
 
   # _guides
   - scope:
