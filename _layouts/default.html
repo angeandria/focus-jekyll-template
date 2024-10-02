@@ -2,16 +2,6 @@
 ---
 
 
-
-{% comment %}  <!-- FOCUS --> {% endcomment %}
-{% comment %}  <!-- Main Category --> {% endcomment %}
-{% assign category_main = page.categories[0] %}    
-{% if category_main == "guide" and page.categories.size > 1 %}
-    {% assign category_main = page.categories[1] %}
-{% endif %}
-
-
-  
   
 <!doctype html>
 {% include copyright.html %}
@@ -73,17 +63,14 @@
     
     
     
+    {% assign myHashString = 
+  "slug:" | append: category_main_slug | append: ",class:" | append: category_main_class | append: ",label:" | append: category_main_label %}
+
+    
     <body class="{{ layout_class }} {{ category_main_class }} {{ categories_classes }} {{ page_classes }}" dir="{% if site.rtl %}rtl{% else %}ltr{% endif %}">
 
     {% include_cached skip-links.html %}
     {% include_cached masthead.html %}
-    
-    
-    <p>A</p>
-    <p>Cat Main Slug : {{ category_main_slug }}</p>
-    <p>Cat Main Class : {{ category_main_class }}</p>
-    <p>Cat Main Label : {{ category_main_label }}</p>
-    
 
     <div class="initial-content">
       {{ content }}

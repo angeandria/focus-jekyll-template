@@ -41,11 +41,11 @@ layout: default
     <div class="page__inner-wrap">
       {% unless page.header.overlay_color or page.header.overlay_image %}
         <header>
-          {% if page.title -%}
+          {% if page.title %}
           <h1 id="page-title" class="page__title" itemprop="headline">
             <a href="{{ page.url | absolute_url }}" itemprop="url">{{ page.title | markdownify | remove: "<p>" | remove: "</p>" }}</a>
           </h1>
-          {%- endif %}
+          {% endif %}
           {% include page__meta.html %}
         </header>
       {% endunless %}
@@ -118,20 +118,7 @@ layout: default
 
       {% if page.share %}{% include social-share.html %}{% endif %}
 
-      {% include post_pagination.html %}
-      
-      
-
-      <!-- Layout class -->
-      {% assign layout_class =  page.layout | default: layout.layout | replace: '/', '-' %}
-      
-      <h1>{{ layout_class }}</h1>
-      {% if layout_class == "focus-single-post" %}
-          <p>PAGE LAYOUT : POST</p>
-      {% endif %}
-      {% if layout_class == "focus-single-page" %}
-        <p>PAGE LAYOUT : PAGE</p>
-      {% endif %}  
+      {% include post_pagination.html %}      
       
     </div>
 
