@@ -2,6 +2,7 @@
 title: "Newsletter"
 categories:
   - personal development
+show_date: true
 ---
 
 > Tempor velit sint sunt ipsum tempor enim ad qui ullamco. Est dolore anim ad velit duis dolore minim sunt

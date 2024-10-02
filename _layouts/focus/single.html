@@ -105,6 +105,7 @@ layout: default
         
         
         {{ content }}
+        
         {% if page.link %}<div><a href="{{ page.link }}" class="btn btn--primary">{{ site.data.ui-text[site.locale].ext_link_label | default: "Direct Link" }}</a></div>{% endif %}
       </section>
 
@@ -112,16 +113,19 @@ layout: default
         {% if site.data.ui-text[site.locale].meta_label %}
           <h4 class="page__meta-title">{{ site.data.ui-text[site.locale].meta_label }}</h4>
         {% endif %}
-        {% include page__taxonomy.html %}
-        {% include page__date.html %}
+        
+        <!-- Page taxonomy -->
+        {% if page.show_taxonomy %}{% include page__taxonomy.html %}{% endif %}    
+        
+        <!-- Page date -->
+        {% if page.show_footer_date %}{% include page__date.html %}{% endif %}
       </footer>
 
+      <!-- Page sharing -->
       {% if page.share %}{% include social-share.html %}{% endif %}
     
-
-      {% if page.pagination %}    
-      {% include post_pagination.html %}      
-       {% endif %}
+      <!-- Page pagination -->
+      {% if page.show_pagination %}{% include post_pagination.html %}{% endif %}
       
     </div>
 

@@ -159,6 +159,11 @@ defaults:
       read_time: true
       related: true
       share: true
+      #show_footer_date: true
+      #show_pagination: true
+      #show_taxonomy: true
+      #show_pagination: true
+      #show_taxonomy: true
 
   # _pages
   - scope:
@@ -170,10 +175,16 @@ defaults:
       layout: focus/single-page
       ###
       author_profile: true
-      comments: false
+      comments: false      
       read_time: false
       related: false
-      share: false         
+      share: false  
+      show_date: true
+      #show_footer_date: true
+      #show_pagination: true
+      #show_taxonomy: true
+      #show_pagination: true
+      #show_taxonomy: true
 
   # _guides
   - scope:
@@ -187,6 +198,11 @@ defaults:
       read_time: true
       related: false
       share: true
+      #show_footer_date: true
+      #show_pagination: true
+      #show_taxonomy: true
+      #show_pagination: true
+      #show_taxonomy: true      
 
   # _tools
   - scope:
@@ -200,6 +216,11 @@ defaults:
       read_time: true
       related: false
       share: true
+      #show_footer_date: true
+      #show_pagination: true
+      #show_taxonomy: true
+      #show_pagination: true
+      #show_taxonomy: true      
 
   #jekyll-archives Topic
   - scope:
@@ -222,6 +243,11 @@ defaults:
       read_time: false
       related: false
       share: false
+      #show_footer_date: true
+      #show_pagination: true
+      #show_taxonomy: true
+      #show_pagination: true
+      #show_taxonomy: true      
 
   #jekyll-archives Tag	
   - scope:
@@ -233,6 +259,11 @@ defaults:
       read_time: false
       related: false
       share: false
+      #show_footer_date: true
+      #show_pagination: true
+      #show_taxonomy: true
+      #show_pagination: true
+      #show_taxonomy: true      
 
 
 
