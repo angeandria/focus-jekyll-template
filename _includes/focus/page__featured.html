@@ -1,10 +1,12 @@
 <!-- Page Featured Img/Video -->
 {% assign image_description = image_description | markdownify | strip_html | strip_newlines | escape_once %}
 <div class="page__featured">
-    display featured img
+    <h2>page.featured-image : {{ page.featured-image }}</h2>
     {% if page.featured_image %}
-        <div class="featured-img">
-            <img src="{{ page.featured_img | relative_url }}" alt="{{ image_description }}" class="page__featured-image">
+        <div class="featured-image">
+            <img src="{{ page.featured-image | relative_url }}" alt="{{ image_description }}" class="page__featured-image">
+            
+            {% include figure popup=true image_path="{{ page.featured-image | relative_url }}" alt="this is a placeholder image" caption="This is a figure caption." %}
         </div>
     {% endif %}
     
