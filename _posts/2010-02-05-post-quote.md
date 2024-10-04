@@ -1,5 +1,7 @@
 ---
 title: "Post: Quote"
+header:
+  image: /assets/images/placeholder-1200.jpg
 categories:
   - blog
 tags:

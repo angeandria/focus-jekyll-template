@@ -22,7 +22,7 @@ header:
     - label: "Download"
       url: "https://angeandria.com"  
 
-featured-img: /assets/images/placeholder-1200.jpg
+featured_image: /assets/images/placeholder-1200.jpg
 
 ---
 
