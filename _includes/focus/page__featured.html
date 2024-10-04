@@ -2,11 +2,13 @@
 {% assign image_description = image_description | markdownify | strip_html | strip_newlines | escape_once %}
 <div class="page__featured">
     <h2>page.featured-image : {{ page.featured-image }}</h2>
+        
     {% if page.featured_image %}
+        {% capture resource_path %}{{ page.featured_image | relative_url }}{% endcapture %}
         <div class="featured-image">
-            <img src="{{ page.featured_image | relative_url }}" alt="{{ image_description }}" class="page__featured-image">
+            <img src="{{ resource_path }}" alt="{{ image_description }}" class="page__featured-image">
             
-            {% include figure popup=true image_path='page.featured_image | relative_url'  alt='this is a placeholder image' caption='This is a figure caption.'' %}
+            {% include figure popup=true image_path=resource_path  alt='this is a placeholder image' caption='This is a figure caption.'' %}
         </div>
     {% endif %}
     
