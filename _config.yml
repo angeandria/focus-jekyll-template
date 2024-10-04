@@ -157,7 +157,7 @@ defaults:
       author_profile: true
       comments: true
       read_time: true
-      related: true
+      related: false
       share: true
       # show_date: true
       #show_footer_date: true
@@ -196,9 +196,9 @@ defaults:
       ###
       author_profile: true
       comments: false
-      read_time: true
+      read_time: false
       related: false
-      share: true
+      share: false
       #show_footer_date: true
       #show_pagination: true
       #show_taxonomy: true
@@ -214,9 +214,9 @@ defaults:
       ###
       author_profile: true
       comments: false
-      read_time: true
+      read_time: false
       related: false
-      share: true
+      share: false
       #show_footer_date: true
       #show_pagination: true
       #show_taxonomy: true
