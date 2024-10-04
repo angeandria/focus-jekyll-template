@@ -20,6 +20,26 @@ layout: default
   {% endunless %}
 {% endif %}
 
+
+    <div class="wrapper">
+        <header>
+          {% unless page.header.overlay_color or page.header.overlay_image %}
+              {% if page.title_before %}<div class="page-title-before">{{ page.title_before }}</div>{% endif %}
+              {% if page.title %}
+              <h1 id="page-title" class="page__title" itemprop="headline">
+                <a href="{{ page.url | absolute_url }}" itemprop="url">{{ page.title | markdownify | remove: "<p>" | remove: "</p>" }}</a>
+              </h1>
+              {% if page.title_after %}<div class="page-title-after">{{ page.title_after }}</div>{% endif %}
+              {% endif %}
+          {% endunless %}      
+
+          {% if page.featured_image or page.featured_video %}
+                  {% include focus/page__featured.html %}                
+          {% endif %}      
+          {% include page__meta.html %}
+        </header>
+    </div>
+
 <div id="main" role="main">
 
 
@@ -28,29 +48,25 @@ layout: default
     {% if page.excerpt %}<meta itemprop="description" content="{{ page.excerpt | markdownify | strip_html | strip_newlines | escape_once }}">{% endif %}
     {% if page.date %}<meta itemprop="datePublished" content="{{ page.date | date_to_xmlschema }}">{% endif %}
     {% if page.last_modified_at %}<meta itemprop="dateModified" content="{{ page.last_modified_at | date_to_xmlschema }}">{% endif %}
-    
-    
-    
-    <header>
-      {% unless page.header.overlay_color or page.header.overlay_image %}
-          {% if page.title_before %}<div class="page-title-before">{{ page.title_before }}</div>{% endif %}
-          {% if page.title %}
-          <h1 id="page-title" class="page__title" itemprop="headline">
-            <a href="{{ page.url | absolute_url }}" itemprop="url">{{ page.title | markdownify | remove: "<p>" | remove: "</p>" }}</a>
-          </h1>
-          {% if page.title_after %}<div class="page-title-after">{{ page.title_after }}</div>{% endif %}
-          {% endif %}
-      {% endunless %}      
-
-      {% if page.featured_image or page.featured_video %}
-              {% include focus/page__featured.html %}                
-      {% endif %}      
-      {% include page__meta.html %}
-    </header>
 
     <div class="page__inner-wrap">
       
-        
+        <header>
+          {% unless page.header.overlay_color or page.header.overlay_image %}
+              {% if page.title_before %}<div class="page-title-before">{{ page.title_before }}</div>{% endif %}
+              {% if page.title %}
+              <h1 id="page-title" class="page__title" itemprop="headline">
+                <a href="{{ page.url | absolute_url }}" itemprop="url">{{ page.title | markdownify | remove: "<p>" | remove: "</p>" }}</a>
+              </h1>
+              {% if page.title_after %}<div class="page-title-after">{{ page.title_after }}</div>{% endif %}
+              {% endif %}
+          {% endunless %}      
+
+          {% if page.featured_image or page.featured_video %}
+                  {% include focus/page__featured.html %}                
+          {% endif %}      
+          {% include page__meta.html %}
+        </header>
 
       <section class="page__content" itemprop="text">
 
