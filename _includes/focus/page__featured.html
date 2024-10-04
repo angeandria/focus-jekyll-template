@@ -1,0 +1,16 @@
+<!-- Page Featured Img/Video -->
+{% assign image_description = image_description | markdownify | strip_html | strip_newlines | escape_once %}
+<div class="page__featured">
+    
+    {% if page.featured_img %}
+        <div class="featured-img">
+            <img src="{{ page.featured_img | relative_url }}" alt="{{ image_description }}" class="page__featured-image">
+        </div>
+    {% endif %}
+    
+    
+    {% if page.featured_video %}
+        <div class="featured-video">
+        </div> 
+    {% endif %}
+</div>
