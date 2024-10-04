@@ -6,7 +6,7 @@
         <div class="featured-image">
             <img src="{{ page.featured_image | relative_url }}" alt="{{ image_description }}" class="page__featured-image">
             
-            {% include figure popup=true image_path='{{ page.featured_image | relative_url }}'  alt='this is a placeholder image' caption='This is a figure caption.'' %}
+            {% include figure popup=true image_path='page.featured_image | relative_url'  alt='this is a placeholder image' caption='This is a figure caption.'' %}
         </div>
     {% endif %}
     
