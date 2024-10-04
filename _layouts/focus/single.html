@@ -2,9 +2,6 @@
 layout: default
 ---
 
-
-  
-  
   
 
 {% if page.header.overlay_color or page.header.overlay_image or page.header.image %}
@@ -33,21 +30,21 @@ layout: default
     {% if page.last_modified_at %}<meta itemprop="dateModified" content="{{ page.last_modified_at | date_to_xmlschema }}">{% endif %}
 
     <div class="page__inner-wrap">
-      {% unless page.header.overlay_color or page.header.overlay_image %}
+      
         <header>
-          {% if page.title %}
-          <h1 id="page-title" class="page__title" itemprop="headline">
-            <a href="{{ page.url | absolute_url }}" itemprop="url">{{ page.title | markdownify | remove: "<p>" | remove: "</p>" }}</a>
-          </h1>
-          {% endif %}
-          
+          {% unless page.header.overlay_color or page.header.overlay_image %}
+              {% if page.title %}
+              <h1 id="page-title" class="page__title" itemprop="headline">
+                <a href="{{ page.url | absolute_url }}" itemprop="url">{{ page.title | markdownify | remove: "<p>" | remove: "</p>" }}</a>
+              </h1>
+              {% endif %}
+          {% endunless %}      
+
           {% if page.featured_image or page.featured_video %}
                   {% include page__featured.html %}                
-          {% endif %}
-          
+          {% endif %}      
           {% include page__meta.html %}
         </header>
-      {% endunless %}
 
       <section class="page__content" itemprop="text">
 
