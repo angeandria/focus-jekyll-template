@@ -182,7 +182,7 @@ body.layout--focus-single-page{
     }
     
     .page__meta_author{
-        text-align: left;
+        text-align: right;
         .author__bio{
             display: none; /* Hide author bio. Temporarily? */
         }
@@ -191,7 +191,7 @@ body.layout--focus-single-page{
         text-align: center;
     }
     .page__meta_taxonomy{
-        text-align: right;
+        text-align: left;
         margin-bottom: 0;
         strong, .page__taxonomy:first-child { /* hide labels, hide tags entirely  */
             display: none;
