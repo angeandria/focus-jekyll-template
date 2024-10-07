@@ -192,7 +192,7 @@ body.layout--focus-single-page{
     }
     .page__meta_taxonomy{
         text-align: right;
-        strong, span[itemprop="keyword"] { /* hide labels, hide tags entirely  */
+        strong, .page__taxonomy:first-child { /* hide labels, hide tags entirely  */
             display: none;
         }
     }       
