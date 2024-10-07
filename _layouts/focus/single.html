@@ -60,6 +60,7 @@ layout: default
 
     <div class="page__inner-wrap">
       
+        <!--
         <header>
           {% unless page.header.overlay_color or page.header.overlay_image %}
               {% if page.title_before %}<div class="page-title-before">{{ page.title_before }}</div>{% endif %}
@@ -76,10 +77,11 @@ layout: default
           {% endif %}      
           {% include page__meta.html %}
         </header>
-
+        -->
+        
       <section class="page__content" itemprop="text">
 
-          {% comment %} ## DISABLE FOR NOW 
+          {% comment %} ########### DISABLE FOR NOW 
               <aside class="sidebar__right {% if page.toc_sticky %}sticky{% endif %}">
                   
                 <!-- BEFORE -->  
@@ -129,6 +131,7 @@ layout: default
                 
               </aside>
         {% endcomment %}  
+
         
         
         {{ content }}
