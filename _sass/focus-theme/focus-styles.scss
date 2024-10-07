@@ -172,7 +172,13 @@ body.layout--focus-single-page{
     
     .page__meta_author{
         display: flex; /* Enables flexbox layout for inner elements */
-        align-items: center; /* Centers author name and avatar vertically */        
+        align-items: center; /* Centers author name and avatar vertically */
+        align-items: center; /* Centers author name and avatar vertically */
+        margin-left: auto; /* Pushes the author to the right */
+        
+        .author__name, .author__avatar{
+            display: inline-block;
+        }
     }
     
     .page__meta_date,    
