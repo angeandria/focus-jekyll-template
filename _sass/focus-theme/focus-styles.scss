@@ -179,8 +179,6 @@ body.layout--focus-single-page{
     .page__meta_date,    
     .page__meta_taxonomy{
         flex: 1;
-                display: flex; /* Enables flexbox layout for inner elements */
-        align-items: center; 
     }
     
     .page__meta_author{
@@ -194,6 +192,7 @@ body.layout--focus-single-page{
     }
     .page__meta_taxonomy{
         text-align: right;
+        margin-bottom: 0;
         strong, .page__taxonomy:first-child { /* hide labels, hide tags entirely  */
             display: none;
         }
