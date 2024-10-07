@@ -65,9 +65,7 @@ layout: default
                           <div class="author__bio p-note" itemprop="description">
                             {{ author.bio | markdownify }}
                           </div>
-                        {% endif %}
-                    <span>{{ page.date | date_to_xmlschema }}</span>            
-                    {% include author-profile.html %}
+                        {% endif %}                        
                 </div>
               {% endif %}
     
