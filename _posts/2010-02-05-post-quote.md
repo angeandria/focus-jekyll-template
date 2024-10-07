@@ -9,6 +9,7 @@ tags:
   - quote
 ---
 
-> Only one thing is impossible for God: To find any sense in any copyright law on the planet.
-  
-> <cite><a href="http://www.brainyquote.com/quotes/quotes/m/marktwain163473.html">Mark Twain</a></cite>
+{% assign post_date = page.date | date: "%Y-%m-%d" %}
+{% assign post_slug = page.title | slugify %}
+{% assign full_post_filename = post_date | append: "-" | append: post_slug %} 
+{% include_relative content/{{ full_post_filename }}.md %}

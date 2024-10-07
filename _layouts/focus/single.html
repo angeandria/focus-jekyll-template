@@ -36,6 +36,14 @@ layout: default
           {% if page.featured_image or page.featured_video %}
                   {% include focus/page__featured.html %}                
           {% endif %}      
+          
+          <!-- Page taxonomy -->
+          {% if page.show_taxonomy %}{% include page__taxonomy.html %}{% endif %}    
+
+          <!-- Page taxonomy -->          
+          {% if page.author_profile or layout.author_profile %}{% include author-profile.html %}{% endif %}
+          
+          
           {% include page__meta.html %}
         </header>
     </div>

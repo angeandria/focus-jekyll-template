@@ -147,7 +147,14 @@ body.layout--focus-single-page{
 .page-title-before,
 .page-title-after{
     display: block;
-    background: #FAFAFA;
+}
+
+.page-title-before{
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.page-title-after{
 }
 
 #page__header .wrapper{
