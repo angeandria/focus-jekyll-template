@@ -170,15 +170,31 @@ body.layout--focus-single-page{
     align-items: center; /* Centers items vertically */
     gap: 20px; /* Optional: Adds space between items */
     
-    .page__taxonomy{
+    .page__meta_author{
+        display: flex; /* Enables flexbox layout for inner elements */
+        align-items: center; /* Centers author name and avatar vertically */        
+    }
+    
+    .page__meta_author,
+    .page__meta_date,    
+    .page__meta_taxonomy{
+        flex: 1;
+    }
+    
+    .page__meta_date{
+        text-align: left;
+    }    
+    .page__meta_date{
+        text-align: center;
+    }
+    .page__meta_taxonomy{
+        text-align: right;
         strong{
             display: none;
         }
     }       
    
-    .author__name, .author__avatar{
-        display: inline-block;
-    } 
+    
 }
 
 /*
