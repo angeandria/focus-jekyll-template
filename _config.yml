@@ -48,9 +48,9 @@ copyright_url            : # "copyright" URL, defaults to site.url
 
 
 
----------------
-Site Author
----------------
+# ---------------
+# Site Author
+# ---------------
 author:
   name   : "First Lastname"
   avatar : "/assets/images/bio-photo.jpg"
