@@ -159,7 +159,7 @@ defaults:
       read_time: true
       related: false
       share: true
-      #show_date: true
+      show_date: true
       #show_footer_date: true
       #show_pagination: true      
       show_taxonomy: true

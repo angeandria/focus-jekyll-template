@@ -36,15 +36,41 @@ layout: default
           {% if page.featured_image or page.featured_video %}
                   {% include focus/page__featured.html %}                
           {% endif %}      
-          
-          <!-- Page taxonomy -->
-          {% if page.show_taxonomy %}{% include page__taxonomy.html %}{% endif %}    
 
-          <!-- Page taxonomy -->         
-          {% if page.author_profile or layout.author_profile %}{% include author-profile.html %}{% endif %}
+
+
+
+          <div class="page__meta_wrapper">          
+              {% if page.author_profile or layout.author_profile %}
+                <!-- Page author -->         
+                <div class="page__meta_author">                    
+                    <span>{{ page.date | date_to_xmlschema }}</span>            
+                    {% include author-profile.html %}
+                </div>
+              {% endif %}
+    
+              {% if page.date %}
+                <!-- Page date -->         
+                <div class="page__meta_date">                    
+                    <span>{{ page.date | date_to_xmlschema }}</span>            
+                </div>
+              {% endif %}
+    
+              
+              {% if page.show_taxonomy %}
+                <!-- Page taxonomy -->         
+                <div class="page__meta_taxonomy">                                    
+                    {% include page__taxonomy.html %}
+                </div>
+              {% endif %}    
+              
+              <div class="page__meta_misc">
+                     {% include page__meta.html %}
+              </div>
+        </div>
           
           
-          {% include page__meta.html %}
+
         </header>
     </div>
 </div>    
@@ -60,7 +86,7 @@ layout: default
 
     <div class="page__inner-wrap">
       
-        <!--
+        {% comment %} ########### DISABLE FOR NOW 
         <header>
           {% unless page.header.overlay_color or page.header.overlay_image %}
               {% if page.title_before %}<div class="page-title-before">{{ page.title_before }}</div>{% endif %}
@@ -77,7 +103,8 @@ layout: default
           {% endif %}      
           {% include page__meta.html %}
         </header>
-        -->
+        {% endcomment %}
+    
         
       <section class="page__content" itemprop="text">
 
