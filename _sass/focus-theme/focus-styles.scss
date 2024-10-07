@@ -13,6 +13,18 @@
 */
 
 
+
+/*
+* --------------------------
+* VARIABLES
+* --------------------------
+*/
+:root{
+ --gap: 20px;   
+}
+
+
+
 /*
 * --------------------------
 * RESET MINIMAL MISTAKE
@@ -163,15 +175,18 @@ body.layout--focus-single-page{
     text-align: center;
 }
 
+
+
 #page__header .page__meta_wrapper{
     background-color: blue;
     display: flex; /* Enables flexbox layout */
     justify-content: space-between; /* Distributes space between items */
     align-items: center; /* Centers items vertically */
-    gap: 20px; /* Optional: Adds space between items */
+    gap: var(--gap); /* Optional: Adds space between items */
     
+
     .page__meta_wrapper > :last-child {
-      margin-right: -20px; /* Negate the gap on the last child */
+      margin-right: -var(--gap); /* Negate the gap on the last child */
     }
     
     .page__meta_author,
