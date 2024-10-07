@@ -164,11 +164,21 @@ body.layout--focus-single-page{
 }
 
 #page__header .page__meta_wrapper{
-  background-color: #FAFAF9;
-  display: flex; /* Enables flexbox layout */
-  justify-content: space-between; /* Distributes space between items */
-  align-items: center; /* Centers items vertically */
-  gap: 20px; /* Optional: Adds space between items */
+    background-color: #FAFAF9;
+    display: flex; /* Enables flexbox layout */
+    justify-content: space-between; /* Distributes space between items */
+    align-items: center; /* Centers items vertically */
+    gap: 20px; /* Optional: Adds space between items */
+    
+    .page__taxonomy{
+        strong{
+            display: none;
+        }
+    }       
+   
+    .author__name, .author__avatar{
+        display: inline-block;
+    } 
 }
 
 /*
