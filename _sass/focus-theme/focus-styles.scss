@@ -187,6 +187,7 @@ body.layout--focus-single-page{
 
     .page__meta_wrapper > :last-child {
       margin-right: -var(--gap); /* Negate the gap on the last child */
+      margin-right: -20px;
     }
     
     .page__meta_author,
