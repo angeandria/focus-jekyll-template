@@ -175,14 +175,13 @@ body.layout--focus-single-page{
         align-items: center; /* Centers author name and avatar vertically */        
     }
     
-    .page__meta_author,
     .page__meta_date,    
     .page__meta_taxonomy{
         flex: 1;
     }
     
     .page__meta_author{
-        text-align: right;
+        margin-left: auto;
         .author__bio{
             display: none; /* Hide author bio. Temporarily? */
         }
