@@ -164,7 +164,7 @@ body.layout--focus-single-page{
 }
 
 #page__header .page__meta_wrapper{
-    background-color: #FAFAF9;
+    background-color: blue;
     display: flex; /* Enables flexbox layout */
     justify-content: space-between; /* Distributes space between items */
     align-items: center; /* Centers items vertically */
@@ -175,35 +175,22 @@ body.layout--focus-single-page{
     .page__meta_date,    
     .page__meta_taxonomy{
         background-color: yellow;
+        flex: 1; /* Makes each div take equal space */
+        display: flex; /* Allows for internal flexbox properties */
+        align-items: center; /* Centers content vertically */
     }
     
-    .page__meta_author{
-        display: flex; /* Enables flexbox layout for inner elements */
-        align-items: center; /* Centers author name and avatar vertically */
-        align-items: center; /* Centers author name and avatar vertically */
-        margin-left: auto; /* Pushes the author to the right */
-        
-        .author__name, .author__avatar{
-            display: inline-block;
-        }
-    }
-    
-    .page__meta_date,    
-    .page__meta_taxonomy{
-        flex: 1;
-    }
-    
-    .page__meta_author{
-        margin-left: auto;
+    .page__meta_author{        
+        justify-content: flex-end; /* Aligns the content of author to the right */
         .author__bio{
             display: none; /* Hide author bio. Temporarily? */
         }
     }    
     .page__meta_date{
-        text-align: center;
+        justify-content: center;
     }
     .page__meta_taxonomy{
-        text-align: left;
+        justify-content: flex-start; /* Aligns the content of author to the right */
         .page__taxonomy-item{
             margin-bottom: 0;
             background-color: #EFEFEF;
