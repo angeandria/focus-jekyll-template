@@ -170,6 +170,9 @@ body.layout--focus-single-page{
     align-items: center; /* Centers items vertically */
     gap: 20px; /* Optional: Adds space between items */
     
+    .page__meta_wrapper > :last-child {
+      margin-right: -20px; /* Negate the gap on the last child */
+    }
     
     .page__meta_author,
     .page__meta_date,    
@@ -182,6 +185,10 @@ body.layout--focus-single-page{
     
     .page__meta_author{        
         justify-content: flex-end; /* Aligns the content of author to the right */
+        
+        .author__avatar img{
+            max-width: 60px;
+        }
         .author__bio{
             display: none; /* Hide author bio. Temporarily? */
         }
