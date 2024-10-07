@@ -170,6 +170,13 @@ body.layout--focus-single-page{
     align-items: center; /* Centers items vertically */
     gap: 20px; /* Optional: Adds space between items */
     
+    
+    .page__meta_author,
+    .page__meta_date,    
+    .page__meta_taxonomy{
+        background-color: yellow;
+    }
+    
     .page__meta_author{
         display: flex; /* Enables flexbox layout for inner elements */
         align-items: center; /* Centers author name and avatar vertically */
@@ -199,6 +206,9 @@ body.layout--focus-single-page{
         text-align: left;
         .page__taxonomy-item{
             margin-bottom: 0;
+            background-color: #EFEFEF;
+            border-radius: 8px;
+            border-color: transparent;
         }
         strong, .page__taxonomy:first-child { /* hide labels, hide tags entirely  */
             display: none;
