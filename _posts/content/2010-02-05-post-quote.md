@@ -18,3 +18,6 @@ So, I did 2 things:
 I started a newsletter, knowing Google would start ranking my newsletter issues.
 I reached out to an SEO guy who could help me design a strategy to maximize the SEO performance of what I write about ( i.e. What were the underserved keywords or easy wins in my space?)
 The results are pretty staggering. My organic traffi
+
+
+
