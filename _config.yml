@@ -154,9 +154,10 @@ defaults:
       toc_icon: "heart"  # corresponding Font Awesome icon name (without fa prefix)
       toc_sticky: true
       ###  
+      author: default # data/authors.yml
       author_profile: true
       comments: true
-      read_time: true
+      read_time: false
       related: false
       share: true
       show_date: true

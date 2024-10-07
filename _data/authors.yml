@@ -1,0 +1,21 @@
+default:
+    name: anonymous
+    avatar: assets/images/bio-photo.jpg
+    bio: hello default
+    email: anonymous@email.com
+    home: https://www.default.com
+    location: nonono
+    links:
+        - label: "Email"
+          icon: "fas fa-fw fa-envelope-square"
+          url: "mailto:ange@angeandria.com"    
+
+angeandria:
+    name: Ange Andria
+    avatar: assets/images/bio-photo.jpg
+    bio: hello
+    email: aa@gmail.com
+    home: https://www.angeandria.com
+    location: Toulon
+    links:
+    
