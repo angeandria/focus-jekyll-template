@@ -163,6 +163,14 @@ body.layout--focus-single-page{
     text-align: center;
 }
 
+#page__header .page__meta_wrapper{
+  background-color: #FAFAF9;
+  display: flex; /* Enables flexbox layout */
+  justify-content: space-between; /* Distributes space between items */
+  align-items: center; /* Centers items vertically */
+  gap: 20px; /* Optional: Adds space between items */
+}
+
 /*
 * ----------------------
 * MEDIA QUERIES
