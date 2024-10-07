@@ -181,15 +181,18 @@ body.layout--focus-single-page{
         flex: 1;
     }
     
-    .page__meta_date{
+    .page__meta_author{
         text-align: left;
+        .author__bio{
+            display: none; /* Hide author bio. Temporarily? */
+        }
     }    
     .page__meta_date{
         text-align: center;
     }
     .page__meta_taxonomy{
         text-align: right;
-        strong{
+        strong, span[itemprop="keywords"] { /* hide labels, hide tags entirely  */
             display: none;
         }
     }       
