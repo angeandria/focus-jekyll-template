@@ -14,15 +14,6 @@
 
 
 
-/*
-* --------------------------
-* VARIABLES
-* --------------------------
-*/
-:root{
- --gap: 20px;   
-}
-
 
 
 /*
@@ -184,6 +175,9 @@ body.layout--focus-single-page{
     align-items: center; /* Centers items vertically */
     gap: var(--gap); /* Optional: Adds space between items */
     
+    &, a{
+        font-size: calc(var(--font-factor) * var(--font-header-meta-factor));
+    }
 
     .page__meta_wrapper > :last-child {
       margin-right: -var(--gap); /* Negate the gap on the last child */
@@ -222,6 +216,11 @@ body.layout--focus-single-page{
         strong, .page__taxonomy:first-child { /* hide labels, hide tags entirely  */
             display: none;
         }
+        .page__taxonomy{
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+        
     }       
    
     
