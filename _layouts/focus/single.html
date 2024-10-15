@@ -102,6 +102,10 @@ layout: default
     {% if page.last_modified_at %}<meta itemprop="dateModified" content="{{ page.last_modified_at | date_to_xmlschema }}">{% endif %}
 
     <div class="page__inner-wrap">
+        
+        <div class="page__before_content">
+            {% include focus/hook.html hook="page__before_content" %}      
+        </div>
       
         {% comment %} ########### DISABLE FOR NOW 
         <header>
@@ -206,6 +210,11 @@ layout: default
     {% if jekyll.environment == 'production' and site.comments.provider and page.comments %}
       {% include comments.html %}
     {% endif %}
+    
+    <div class="page__after_content">
+        {% include focus/hook.html hook="page__after_content" %}      
+    </div>
+    
   </article>
   
     {% include focus/sidebar.html class="main" %}
