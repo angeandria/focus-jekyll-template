@@ -1,6 +1,6 @@
 #use custom: true if you want to use a custom file outside of the default "focus" folder
 page__before_content:
-  custom: false 
+  custom: true
 page__after_content:
   custom: true 
 sidebar__right_before:
