@@ -8,7 +8,7 @@
     {% if target_hook["custom"] %}    
         {% include {{ target_file | append: '.html' }} %}
     {% else %}        
-        {% include focus/{{ target_file | append: '.html' }} %}
+        {% include focus/hooks/{{ target_file | append: '.html' }} %}
     {% endif %}
     
 {% else %}
