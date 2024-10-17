@@ -4,10 +4,13 @@
 {% assign target_hook = hooks[target_file] %}
 
 {% if target_hook %}
-    {% include focus/{{ target_file | append: '.html' }} %}
+    
     {% if target_hook["custom"] %}    
         {% include {{ target_file | append: '.html' }} %}
+    {% else %}        
+        {% include focus/{{ target_file | append: '.html' }} %}
     {% endif %}
+    
 {% else %}
-    <p>Error : Hook {{ target_file }} does not exist in hooks.yml</p>
+    <div class="notice--danger">Error : Hook {{ target_file }} does not exist in hooks.yml</div>
 {% endif %}
