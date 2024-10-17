@@ -1,25 +1,33 @@
 {% assign target_topic = include.topic %}
+{% assign type_string = include.type | default: "page" %}
+{% assign type_array = type_string | split: ", " %}
 
 <h3>{{ target_topic }}:</h3>
 
-{% assign categorized_pages = site.pages | where: "categories", target_topic %}
-{% if categorized_pages.size > 0 %}
-    <h4>Pages "{{ target_topic }}"</h4>
-    <ul>
-        {% for page in categorized_pages %}
-            <li><a href="{{ page.url }}">{{ page.title }}</a></li>
-        {% endfor %}        
-    </ul>    
-{% endif %}
-
-{% if site.categories[target_topic] %}
-    <h4>Posts "{{ target_topic }}"</h4>
-    {% assign sorted_posts = site.categories[target_topic] | sort: 'priority' | reverse %}
-    <ul>
-    {% for post in sorted_posts %}
-        {% if post.url %}
-            <li><a href="{{ post.url }}">{{ post.title }}</a> (Priority: {{ post.priority }})</li>
+{% for type in type_array %}
+    {% if type == "page" %}
+        {% assign categorized_pages = site.pages | where: "categories", target_topic %}
+        {% if categorized_pages.size > 0 %}
+            <h4>Pages "{{ target_topic }}"</h4>
+            <ul>
+                {% for page in categorized_pages %}
+                    <li><a href="{{ page.url }}">{{ page.title }}</a></li>
+                {% endfor %}        
+            </ul>    
         {% endif %}
-    {% endfor %}    
-    </ul>
-{% endif %}
+
+    {% elsif type == "post" %}
+        {% if site.categories[target_topic] %}
+            <h4>Posts "{{ target_topic }}"</h4>
+            {% assign sorted_posts = site.categories[target_topic] | sort: 'priority' | reverse %}
+            <ul>
+            {% for post in sorted_posts %}
+                {% if post.url %}
+                    <li><a href="{{ post.url }}">{{ post.title }}</a> (Priority: {{ post.priority }})</li>
+                {% endif %}
+            {% endfor %}    
+            </ul>
+        {% endif %}
+
+    {% endif %}
+{% endfor %}
