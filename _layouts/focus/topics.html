@@ -51,6 +51,9 @@ layout: default
           <div class="custom-taxonomy">
             {% include focus/topic-display.html topic="growth" %}
           </div>
+          
+          
+          
             {% comment %} ## DISABLE FOR NOW 
               <aside class="sidebar__right {% if page.toc_sticky %}sticky{% endif %}">
                   
@@ -104,6 +107,7 @@ layout: default
         
         
         {{ content }}
+        
         {% if page.link %}<div><a href="{{ page.link }}" class="btn btn--primary">{{ site.data.ui-text[site.locale].ext_link_label | default: "Direct Link" }}</a></div>{% endif %}
       </section>
 
