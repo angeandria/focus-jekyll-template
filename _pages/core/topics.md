@@ -17,11 +17,13 @@ Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
             <h2>Post, page : pers dev</h2>    
             {% include focus/topic-display.html topic="personal development" type="post" %}
             
-            {% include focus/topic-display.html topic="personal development" type="page" %}
-        </div>
-
-
-            {% include focus/topic-display.html topic="personal development" type="post" %}
-    
+---
             
+            {% include focus/topic-display.html topic="personal development" type="page" %}
+      
+---
+            {% include focus/topic-display.html topic="personal development" type="post" %}
+      </div>
+---
+      
 since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem 
