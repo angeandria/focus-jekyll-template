@@ -2,11 +2,20 @@
 {% assign type_string = include.type | default: "page" %}
 {% assign type_array = type_string | split: ", " %}
 
+{% assign topic_sort = include.sort | "priority" %}
+{% assign topic_order = include.order | "reverse" %}
+{% assign topic_limit = include.limit | 1 %}
+
 <h3>{{ target_topic }}:</h3>
 
 {% for type in type_array %}
     {% if type == "page" %}
-        {% assign categorized_pages = site.pages | where: "categories", target_topic %}
+        {% assign categorized_pages = site.pages | where: "categories", target_topic | sort: topic_sort | limit: topic_limit %}
+        
+        {% if topic_order == "reverse" %}
+            {% assign categorized_pages = categorized_pages | reverse %}
+        {% endif %}
+        
         {% if categorized_pages.size > 0 %}
             <h4>Pages "{{ target_topic }}"</h4>
             <ul>
@@ -19,7 +28,11 @@
     {% elsif type == "post" %}
         {% if site.categories[target_topic] %}
             <h4>Posts "{{ target_topic }}"</h4>
-            {% assign sorted_posts = site.categories[target_topic] | sort: 'priority' | reverse %}
+            {% assign sorted_posts = site.categories[target_topic] | sort: topic_sort | limit: topic_limit | topic_order %}
+            
+            {% if topic_order == "reverse" %}
+            {% assign sorted_posts = sorted_posts | reverse %}
+        {% endif %}
             <ul>
             {% for post in sorted_posts %}
                 {% if post.url %}
