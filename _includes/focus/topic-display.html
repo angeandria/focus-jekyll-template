@@ -2,9 +2,9 @@
 {% assign type_string = include.type | default: "page" %}
 {% assign type_array = type_string | split: ", " %}
 
-{% assign topic_sort = include.sort | "priority" %}
-{% assign topic_order = include.order | "reverse" %}
-{% assign topic_limit = include.limit | 1 %}
+{% assign topic_sort = include.sort | default: "priority" %}
+{% assign topic_order = include.order | default: "reverse" %}
+{% assign topic_limit = include.limit | default: 1 %}
 
 
 <h3>{{ target_topic }}:</h3>
