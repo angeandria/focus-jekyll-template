@@ -9,9 +9,11 @@
 
 <h3>{{ target_topic }}:</h3>
 
-priority {{ topic_priority}}
-limit {{ topic_limit}}
-order {{ topic_order}}
+<ul>
+  <li>priority : {{ topic_priority}}</li>
+<li>limit : {{ topic_limit}}</li>
+<li>order : {{ topic_order}}</li>
+</ul>
 
 {% for type in type_array %}
     {% if type == "page" %}
