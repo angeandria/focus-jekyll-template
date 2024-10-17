@@ -14,7 +14,10 @@ Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
 
 
 <div class="custom-taxonomy">
-            {% include focus/topic-display.html topic="personal development" type="post, page" %}
+            <h2>Post, page : pers dev</h2>    
+            {% include focus/topic-display.html topic="personal development" type="post" %}
+            
+            {% include focus/topic-display.html topic="personal development" type="page" %}
         </div>
 
 
