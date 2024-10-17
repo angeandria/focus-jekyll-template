@@ -13,6 +13,23 @@
 {% endif %}
 
 
+<!-- Main Category class -->
+{% endcomment %}
+{% assign category_main = page.categories[0] %}    
+{% if category_main == "guide" and page.categories.size > 1 %}
+    {% assign category_main = page.categories[1] %}
+{% endif %}
+    
+{% comment %}
+<!--  Main Category slug -->
+{% endcomment %}
+{% assign category_main_slug = "" %}
+{% assign category_main_class = "" %}
+{% if category_main %}
+    {% assign category_main_slug = category_main | downcase | slugify %}
+    {% assign category_main_class = site.category_main_prefix | append: category_main_slug %}
+{% endif %}
+
 <nav class="breadcrumbs">
   <ol itemscope itemtype="https://schema.org/BreadcrumbList">
     {% assign crumbs = page.url | split: '/' %}
