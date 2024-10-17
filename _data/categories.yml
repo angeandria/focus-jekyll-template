@@ -3,7 +3,7 @@
 # --------------    
 growth:
     title: "Growth"
-    description: "Growth description"	
+    description: "from data.categories.yml | Growth description"	
     cta-title: "Get this"
     cta-url: "https://angeandria.com"
 
@@ -14,7 +14,7 @@ growth:
 personal-development:
     title: "Personal development" 
     description: "
-    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever
+    from data.categories.yml | Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever
     
     > since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
     

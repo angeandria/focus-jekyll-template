@@ -1,14 +1,22 @@
 {% assign target_topic = include.topic %}
 
-<p>Posts in category "{{ target_topic }}" are:</p>
+<h3>{{ target_topic }}:</h3>
 
-<ul>
-    {% if site.categories[target_topic] %}
-      {% assign sorted_posts = site.categories[target_topic] | sort: 'priority' %}
-      {% for post in sorted_posts %}
-        {% if post.url %}
-            <li><a href="{{ post.url }}">{{ post.title }}</a> (Priority: {{ post.priority }})</li>
-        {% endif %}
-      {% endfor %}
-  {% endif %}
-</ul>
+{% if site.categories[target_topic] %}
+    <ul>
+        {% assign sorted_pages = site.pages | sort: 'priority' | reverse %}
+        {% for page in sorted_pages %}
+            {% if page.url %}
+                <li><a href="{{ page.url }}">{{ page.title }}</a> (Priority: {{ page.priority }})</li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+    <ul>
+        {% assign sorted_posts = site.categories[target_topic] | sort: 'priority' | reverse %}
+        {% for post in sorted_posts %}
+            {% if post.url %}
+                <li><a href="{{ post.url }}">{{ post.title }}</a> (Priority: {{ post.priority }})</li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+{% endif %}
