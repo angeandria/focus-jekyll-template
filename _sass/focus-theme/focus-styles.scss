@@ -26,11 +26,27 @@
 	border-bottom: none;
 }
 
+
+
+
 /*
 * --------------------------
 * FOCUS
 * --------------------------
 */
+
+
+/*
+* --------------------------
+* HELPERS
+* --------------------------
+*/
+.custom-taxonomy{
+    box-shadow: var(--box-shadow);
+    padding: 14px 20px;
+    margin: 20px 0 14px;
+}
+
 
 /* Implement Body Bg Image */
 body{

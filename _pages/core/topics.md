@@ -14,18 +14,26 @@ Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
 
 
 <div class="custom-taxonomy">
-            <h2>Post, page : pers dev</h2>    
-            {% include focus/topic-display.html topic="personal development" type="post" limit="1" priority="reverse" %}
-            
+    <h2>Post, page : pers dev</h2>    
+    {% include focus/topic-display.html topic="personal development" type="post" limit="1" order="reverse" %}
+</div>
+
 ---
-<h2>Page : pers dev</h2>    
-           
-{% include focus/topic-display.html topic="personal development" type="page" sort="normal" order="primary" limit=1 %}
+
+<div class="custom-taxonomy">
+    <h2>Page : pers dev</h2>    
+               
+    {% include focus/topic-display.html topic="personal development" type="page" sort="normal" order="primary" limit=1 %}
+</div>
+
+---
+
+<div class="custom-taxonomy">
+    <h2>Post : pers dev</h2>   
+    {% include focus/topic-display.html topic="personal development" type="post" limit=5 %}
+</div>
+
+---
       
----
-<h2>Post : pers dev</h2>   
-            {% include focus/topic-display.html topic="personal development" type="post" limit=5 %}
-      </div>
----
-      
-since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem 
+since the 1500s, when an unknown printer took a galley of type and
+scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem 
