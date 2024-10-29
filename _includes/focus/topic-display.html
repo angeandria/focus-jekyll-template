@@ -7,13 +7,10 @@
 {% assign topic_limit = include.limit | default: 1 %}
 
 
-<h3>{{ target_topic }}:</h3>
-
-<ul>
-  <li>priority : {{ topic_priority}}</li>
-<li>limit : {{ topic_limit}}</li>
-<li>order : {{ topic_order}}</li>
-</ul>
+<p>
+    <em>{{ target_topic }} ({{type_string}})</em></br>
+    priority ({{ topic_priority}}) limit ({{ topic_limit}}) order : ({{ topic_order}})
+</p>
 
 {% for type in type_array %}
     {% if type == "page" %}
