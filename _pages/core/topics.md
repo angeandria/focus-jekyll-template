@@ -31,7 +31,7 @@ Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
 
 <div class="custom-taxonomy">
     <h2>Post : pers dev</h2>   
-    {% include focus/topic-display.html topic="personal development" type="post" limit=5 %}
+    {% include focus/topic-display.html topic="personal development" type="post, page" limit=5 %}
 </div>
 
 ---
