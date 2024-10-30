@@ -14,13 +14,13 @@
 
 {% for type in type_array %}
     {% if type == "page" %}
-        {% assign categorized_pages = site.pages | where: "categories", target_topic | sort: topic_sort %}
+        {% assign sorted_pages = site.pages | where: "categories", target_topic | sort: topic_sort %}
         
         {% if topic_order == "reverse" %}
             {% assign categorized_pages = categorized_pages | reverse %}
         {% endif %}
         
-        {% assign limited_posts = sorted_posts | slice: 0, topic_limit %}
+        {% assign limited_pages = sorted_pages | slice: 0, topic_limit %}
         <p>LIMITED Pages Count: {{ limited_posts.size }}</p>
         
         {% if limited_pages.size > 0 %}
