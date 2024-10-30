@@ -14,23 +14,19 @@ redirect_from:
 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever
 
 
-<div class="custom-taxonomy">
-    <h2>Post, page : pers dev</h2>    
+<div class="custom-taxonomy"> 
     {% include focus/topic-display.html topic="personal development" type="post" limit="1" order="reverse" %}
 </div>
 
 ---
 
-<div class="custom-taxonomy">
-    <h2>Page : pers dev</h2>    
-               
+<div class="custom-taxonomy">               
     {% include focus/topic-display.html topic="personal development" type="page" sort="normal" order="primary" limit=1 %}
 </div>
 
 ---
 
-<div class="custom-taxonomy">
-    <h2>Post : pers dev</h2>   
+<div class="custom-taxonomy">  
     {% include focus/topic-display.html topic="personal development" type="post, page" limit=5 %}
 </div>
 
