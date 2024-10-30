@@ -4,7 +4,7 @@
 
 {% assign topic_sort = include.sort | default: "priority" %}
 {% assign topic_order = include.order | default: "reverse" %}
-{% assign topic_limit = 1 %}
+{% assign topic_limit = include.limit | default: 1 %}
 
 
 <p>
@@ -35,7 +35,7 @@
     {% elsif type == "post" %}
         {% if site.categories[target_topic] %}
             <h4>Posts "{{ target_topic }}"</h4>
-            {% assign sorted_posts = site.categories[target_topic] | sort: topic_sort | limit: topic_limit | topic_order %}
+            {% assign sorted_posts = site.categories[target_topic] | sort: topic_sort | limit: 1 | topic_order %}
             
              <p>Filtered Posts Count: {{ sorted_posts.size }}</p>
                     
