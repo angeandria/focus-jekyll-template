@@ -14,19 +14,16 @@
 
 {% for type in type_array %}
     {% if type == "page" %}
-        {% assign categorized_pages = site.pages | where: "categories", target_topic | sort: topic_sort | limit: topic_limit %}
-        
-        <p>Filtered Pages Count: {{ categorized_pages.size }}</p>
-                
+        {% assign categorized_pages = site.pages | where: "categories", target_topic | sort: topic_sort %}
         
         {% if topic_order == "reverse" %}
             {% assign categorized_pages = categorized_pages | reverse %}
         {% endif %}
         
         {% if categorized_pages.size > 0 %}
-            <h4>Pages "{{ target_topic }}"</h4>
+            <p>Pages "{{ target_topic }}"</p>
             <ul>
-                {% for page in categorized_pages limit:1 %}
+                {% for page in categorized_pages limit:topic_limit %}
                     <li><a href="{{ page.url | relative_url }}">{{ page.title }}</a></li>
                 {% endfor %}        
             </ul>    
@@ -35,15 +32,12 @@
     {% elsif type == "post" %}
         {% if site.categories[target_topic] %}
             <h4>Posts "{{ target_topic }}"</h4>
-            {% assign sorted_posts = site.categories[target_topic] | sort: topic_sort | topic_order %}
-                {% assign limited_posts = sorted_posts | limit: 1 %}
-            <p>LIMITED Posts Count: {{ limited_posts.size }}</p>
-
+            {% assign sorted_posts = site.categories[target_topic] | sort: topic_sort | topic_order %}            
             {% if topic_order == "reverse" %}
             {% assign sorted_posts = sorted_posts | reverse %}
         {% endif %}
             <ul>
-            {% for post in sorted_posts limit:1 %}
+            {% for post in sorted_posts limit:topic_limit %}
                 {% if post.url %}
                     <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a> (Priority: {{ post.priority }})</li>
                 {% endif %}
