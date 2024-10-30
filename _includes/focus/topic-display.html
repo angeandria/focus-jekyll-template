@@ -36,6 +36,9 @@
             {% if topic_order == "reverse" %}
             {% assign sorted_posts = sorted_posts | reverse %}
         {% endif %}
+        
+        {% assign limited_posts = sorted_posts | slice: 0, 1 %}
+        <p>LIMITED Posts Count: {{ limited_posts.size }}</p>
             <ul>
             {% for post in sorted_posts limit:topic_limit %}
                 {% if post.url %}
