@@ -20,10 +20,13 @@
             {% assign categorized_pages = categorized_pages | reverse %}
         {% endif %}
         
-        {% if categorized_pages.size > 0 %}
+        {% assign limited_posts = sorted_posts | slice: 0, topic_limit %}
+        <p>LIMITED Pages Count: {{ limited_posts.size }}</p>
+        
+        {% if limited_pages.size > 0 %}
             <p>Pages "{{ target_topic }}"</p>
             <ul>
-                {% for page in categorized_pages limit:topic_limit %}
+                {% for page in limited_pages %}
                     <li><a href="{{ page.url | relative_url }}">{{ page.title }}</a></li>
                 {% endfor %}        
             </ul>    
@@ -37,10 +40,10 @@
             {% assign sorted_posts = sorted_posts | reverse %}
         {% endif %}
         
-        {% assign limited_posts = sorted_posts | slice: 0, 1 %}
+        {% assign limited_posts = sorted_posts | slice: 0, topic_limit %}
         <p>LIMITED Posts Count: {{ limited_posts.size }}</p>
             <ul>
-            {% for post in sorted_posts limit:topic_limit %}
+            {% for post in limited_posts%}
                 {% if post.url %}
                     <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a> (Priority: {{ post.priority }})</li>
                 {% endif %}
