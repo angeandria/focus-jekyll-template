@@ -37,6 +37,8 @@
             <h4>Posts "{{ target_topic }}"</h4>
             {% assign sorted_posts = site.categories[target_topic] | sort: topic_sort | limit: topic_limit | topic_order %}
             
+             <p>Filtered Posts Count: {{ sorted_posts.size }}</p>
+                    
             {% if topic_order == "reverse" %}
             {% assign sorted_posts = sorted_posts | reverse %}
         {% endif %}
