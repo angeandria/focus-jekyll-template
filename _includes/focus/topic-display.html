@@ -26,7 +26,7 @@
         {% if categorized_pages.size > 0 %}
             <h4>Pages "{{ target_topic }}"</h4>
             <ul>
-                {% for page in categorized_pages %}
+                {% for page in categorized_pages limit:1 %}
                     <li><a href="{{ page.url | relative_url }}">{{ page.title }}</a></li>
                 {% endfor %}        
             </ul>    
@@ -43,7 +43,7 @@
             {% assign sorted_posts = sorted_posts | reverse %}
         {% endif %}
             <ul>
-            {% for post in sorted_posts %}
+            {% for post in sorted_posts limit:1 %}
                 {% if post.url %}
                     <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a> (Priority: {{ post.priority }})</li>
                 {% endif %}
