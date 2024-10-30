@@ -17,6 +17,7 @@
         {% assign categorized_pages = site.pages | where: "categories", target_topic | sort: topic_sort | limit: topic_limit %}
         
         <p>Filtered Pages Count: {{ categorized_pages.size }}</p>
+                
         
         {% if topic_order == "reverse" %}
             {% assign categorized_pages = categorized_pages | reverse %}
