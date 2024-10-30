@@ -35,10 +35,10 @@
     {% elsif type == "post" %}
         {% if site.categories[target_topic] %}
             <h4>Posts "{{ target_topic }}"</h4>
-            {% assign sorted_posts = site.categories[target_topic] | sort: topic_sort | limit: 1 | topic_order %}
-            
-             <p>Filtered Posts Count: {{ sorted_posts.size }}</p>
-                    
+            {% assign sorted_posts = site.categories[target_topic] | sort: topic_sort | topic_order %}
+                {% assign limited_posts = sorted_posts | limit: 1 %}
+            <p>Filtered Posts Count: {{ limited_posts.size }}</p>
+
             {% if topic_order == "reverse" %}
             {% assign sorted_posts = sorted_posts | reverse %}
         {% endif %}
