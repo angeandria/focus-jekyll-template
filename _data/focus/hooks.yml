@@ -9,3 +9,7 @@ sidebar__right_cta:
   custom: true
 sidebar__right_after:
   custom: false
+footer__before:
+  custom: false
+footer__after:
+  custom: false

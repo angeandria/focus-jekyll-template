@@ -85,8 +85,10 @@
 
     <div id="footer" class="page__footer">
       <footer>
+        {% include focus/hook.html hook="footer__before" class=""%}        
         {% include footer/custom.html %}
         {% include_cached footer.html %}
+        {% include focus/hook.html hook="footer__after" %}      
       </footer>
     </div>
 

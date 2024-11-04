@@ -2,13 +2,19 @@
 
 {% assign hooks = site.data.focus.hooks %}
 {% assign target_hook = hooks[target_file] %}
+{% assign target_class = include.class | default: ""%}
+
 
 {% if target_hook %}
     
     {% if target_hook["custom"] %}    
-        {% include {{ target_file | append: '.html' }} %}
-    {% else %}        
-        {% include focus/hooks/{{ target_file | append: '.html' }} %}
+        <div class="custom-hook {{ target_class }} notice--info">
+            {% include {{ target_file | append: '.html' }} %}
+        </div>
+    {% else %}
+        <div class="default-hook {{ target_class }} notice--danger">    
+            {% include focus/hooks/{{ target_file | append: '.html' }} %}
+        </div>
     {% endif %}
     
 {% else %}
