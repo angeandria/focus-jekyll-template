@@ -16,7 +16,7 @@
     {% if type == "page" %}
         {% assign sorted_pages = site.pages | where: "categories", target_topic | sort: topic_sort %}
         
-        {% if topic_order == "reverse" %}
+        {% if topic_order == "desc" %}
             {% assign categorized_pages = categorized_pages | reverse %}
         {% endif %}
         

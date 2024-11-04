@@ -242,6 +242,31 @@ body.layout--focus-single-page{
     
 }
 
+
+/*
+* ----------------------
+* CTA
+* ----------------------
+*/
+.cta-category{
+    display: block;
+    padding: 14px 20px;
+    margin: 10px 0;
+    
+    border: 1px solid #EFEFEF;
+    &.cta-category-1-1{
+        background: green;
+    }
+    &.cta-category-2-1{
+        background: blue;
+    }
+    &.cta-category-3-1{
+        background: orange;
+    }
+}
+
+
+
 /*
 * ----------------------
 * MEDIA QUERIES

@@ -15,13 +15,13 @@ Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
 
 
 <div class="custom-taxonomy"> 
-    {% include focus/topic-display.html topic="personal development" type="post" limit="1" order="reverse" %}
+    {% include focus/topic-display.html topic="personal development" type="post" limit="1" order="desc" %}
 </div>
 
 ---
 
 <div class="custom-taxonomy">               
-    {% include focus/topic-display.html topic="personal development" type="page" order="primary" limit=1 %}
+    {% include focus/topic-display.html topic="personal development" type="page" limit=1 %}
 </div>
 
 ---
@@ -31,7 +31,7 @@ Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
 </div>
 
 <div class="custom-taxonomy">  
-    {% include focus/topic-display.html topic="personal development" type="post, page" limit=5 order="reverse" %}
+    {% include focus/topic-display.html topic="personal development" type="post, page" limit=5 order="desc" %}
 </div>
 
 <div class="custom-taxonomy">  
