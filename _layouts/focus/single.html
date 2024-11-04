@@ -37,9 +37,7 @@ layout: default
                   {% include focus/page__featured.html %}                
           {% endif %}      
 
-
-
-
+          
           <div class="page__meta_wrapper">          
               {% assign author = page.author | default: page.authors[0] | default: site.author %}
               {% assign author = site.data.authors[author] | default: author %}
@@ -84,9 +82,7 @@ layout: default
                 </div>
               {% endif %}    
               
-        </div>
-          
-          
+        </div>                    
 
         </header>
     </div>
@@ -102,10 +98,10 @@ layout: default
 
     <div class="page__inner-wrap">
         
-        <div class="page__before_content">
-            {% include focus/hook.html hook="page__before_content" %}      
 
-        </div>
+       <!-- SECTION page__before_content -->      
+        {% include focus/hook.html hook="page__before_content" %}      
+
       
         {% comment %} ########### DISABLE FOR NOW 
         <header>
@@ -126,7 +122,9 @@ layout: default
         </header>
         {% endcomment %}
     
-        
+     <!-- SECTION page__before_post -->   
+     {% include focus/hook.html hook="page__before_post class="notice--danger"%}      
+           
       <section class="page__content" itemprop="text">
 
           {% comment %} ########### DISABLE FOR NOW 
@@ -134,16 +132,18 @@ layout: default
                   
                 <!-- BEFORE -->  
                 {% comment %} ### FOCUS code ### {% endcomment %}
-                <div class="sidebar__right_before">
+                
+                    <!-- SECTION sidebar__right_before -->
                     {% include focus/hook.html hook="sidebar__right_before" %}      
-                </div>          
+
                 {% comment %} ### END - FOCUS code ### {% endcomment %}
                 
                 <!-- CTA -->
                   {% comment %} ### FOCUS code ### {% endcomment %}
-                    <div class="sidebar__right_cta">
-                            {% include focus/hook.html hook="sidebar__right_cta" %}
-                    </div>          
+
+                <!-- SECTION sidebar__right_cta -->      
+                {% include focus/hook.html hook="sidebar__right_cta" %}
+    
                   {% comment %} ### END - FOCUS code ### {% endcomment %}
                  
                 <!-- TOC -->  
@@ -172,9 +172,10 @@ layout: default
                   
                 <!-- AFTER -->
                 {% comment %} ### FOCUS code ### {% endcomment %}
-                <div class="sidebar__right_after">
-                        {% include focus/hook.html hook="sidebar__right_after" %}      
-                </div>              
+
+                <!-- SECTION sidebar__right_after -->
+                {% include focus/hook.html hook="sidebar__right_after" %}      
+
                 {% comment %} ### END - FOCUS code ### {% endcomment %}
                 
               </aside>
@@ -198,6 +199,9 @@ layout: default
         <!-- Page date -->
         {% if page.show_footer_date %}{% include page__date.html %}{% endif %}
       </footer>
+      
+      <!-- SECTION page__after_post -->
+      {% include focus/hook.html hook="page__after_post  class="notice--danger" %}      
 
       <!-- Page sharing -->
       {% if page.share %}{% include social-share.html %}{% endif %}
@@ -211,9 +215,8 @@ layout: default
       {% include comments.html %}
     {% endif %}
     
-    <div class="page__after_content">
-        {% include focus/hook.html hook="page__after_content" %}      
-    </div>
+    <!-- SECTION page__after_content -->
+    {% include focus/hook.html hook="page__after_content" %}      
     
   </article>
   

@@ -277,6 +277,20 @@ body.layout--focus-single-page{
 }
 
 
+/*
+* ----------------------
+* HOOKS
+* ----------------------
+*/
+.section--{
+    &footer_before{
+        background: red;
+    }
+    &page__before_post{
+        background: blue;
+    }
+}
+
 
 /*
 * ----------------------

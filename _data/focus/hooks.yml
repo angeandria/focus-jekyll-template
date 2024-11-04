@@ -1,6 +1,10 @@
 #use custom: true if you want to use a custom file outside of the default "focus" folder
 page__before_content:
   custom: true
+page__before_post:
+  custom: true  
+page__after_post:
+  custom: true   
 page__after_content:
   custom: true 
 sidebar__right_before:
@@ -10,6 +14,6 @@ sidebar__right_cta:
 sidebar__right_after:
   custom: false
 footer__before:
-  custom: false
+  custom: true
 footer__after:
-  custom: false
+  custom: true
