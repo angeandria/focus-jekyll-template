@@ -283,10 +283,10 @@ body.layout--focus-single-page{
 * ----------------------
 */
 .section--{
-    &footer_before{
+    &.footer_before{
         background: red;
     }
-    &page__before_post{
+    &.page__before_post{
         background: blue;
     }
 }
