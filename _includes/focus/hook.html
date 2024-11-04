@@ -8,11 +8,11 @@
 {% if target_hook %}
     
     {% if target_hook["custom"] %}    
-        <div class="custom-hook {{ target_class }} notice--info">
+        <div class="custom-hook section-{{target__file}} {{ target_class }} ">
             {% include {{ target_file | append: '.html' }} %}
         </div>
     {% else %}
-        <div class="default-hook {{ target_class }} notice--danger">    
+        <div class="default-hook section-{{target__file}} {{ target_class }} ">    
             {% include focus/hooks/{{ target_file | append: '.html' }} %}
         </div>
     {% endif %}
