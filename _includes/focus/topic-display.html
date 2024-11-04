@@ -3,7 +3,7 @@
 {% assign type_array = type_string | split: ", " %}
 
 {% assign topic_sort = include.sort | default: "priority" %}
-{% assign topic_order = include.order | default: "reverse" %}
+{% assign topic_order = include.order %}
 {% assign topic_limit = include.limit | default: 1 %}
 
 

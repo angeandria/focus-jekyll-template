@@ -21,10 +21,18 @@ Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
 ---
 
 <div class="custom-taxonomy">               
-    {% include focus/topic-display.html topic="personal development" type="page" sort="normal" order="primary" limit=1 %}
+    {% include focus/topic-display.html topic="personal development" type="page" order="primary" limit=1 %}
 </div>
 
 ---
+
+<div class="custom-taxonomy">  
+    {% include focus/topic-display.html topic="personal development" type="post, page" limit=5 %}
+</div>
+
+<div class="custom-taxonomy">  
+    {% include focus/topic-display.html topic="personal development" type="post, page" limit=5 order="reverse" %}
+</div>
 
 <div class="custom-taxonomy">  
     {% include focus/topic-display.html topic="personal development" type="post, page" limit=5 %}
