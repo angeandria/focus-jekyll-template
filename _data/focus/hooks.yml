@@ -12,7 +12,7 @@ sidebar__right_before:
 sidebar__right_cta:
   custom: true
 sidebar__right_after:
-  custom: false
+  custom: true
 footer__before:
   custom: true
 footer__after:

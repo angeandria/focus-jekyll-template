@@ -35,7 +35,7 @@
         {% if site.categories[target_topic] %}
 
             {% assign sorted_posts = site.categories[target_topic] | sort: topic_sort | topic_order %}            
-            {% if topic_order == "reverse" %}
+            {% if topic_order == "desc" %}
             {% assign sorted_posts = sorted_posts | reverse %}
         {% endif %}
         
