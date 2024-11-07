@@ -1,3 +1,4 @@
+# ACTIVE HOOKS
 # use custom: true if you want to use a custom file outside of the default "focus" folder
 page__before_content:
   custom: true
@@ -12,7 +13,7 @@ sidebar__right_before:
 sidebar__right_cta:
   custom: true
 sidebar__right_after:
-  custom: true
+  custom: false
 footer__before:
   custom: true
 footer__after:
