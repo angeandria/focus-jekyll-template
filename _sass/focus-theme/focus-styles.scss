@@ -282,11 +282,15 @@ body.layout--focus-single-page{
 * HOOKS
 * ----------------------
 */
+.section--hook{
+    display: inline-block;
+    width:100%;
+}
 .section--{
-    &.footer_before{
+    &footer_before{
         background: red;
     }
-    &.page__before_post{
+    &page__before_post{
         background: blue;
     }
 }
