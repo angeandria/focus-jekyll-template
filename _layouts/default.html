@@ -34,7 +34,7 @@
         
         {% assign category_main_details = site.data.categories[category_main_slug] %}    
         {% assign category_main_id = category_main_details.id | default: 0 %}
-        {% assign category_main_id_class = site.categories_prefix | append: "id_" | append: category_main_id %}
+        {% assign category_main_id_class = site.category_main_id_prefix | append: "id_" | append: category_main_id %}
     {% endif %}
     
     <p>Category Main: {{ category_main }}</p>
