@@ -18,9 +18,10 @@
     <!-- Main Category class -->
     {% endcomment %}
     {% assign category_main = page.categories[0] %}    
+    {% assign category_main_id = page.categories[0].cat-id | default: 0 %} 
     {% if category_main == "guide" and page.categories.size > 1 %}
         {% assign category_main = page.categories[1] %}
-        {% assign category_main_id = category_main.cat-id | default: 0 %}
+        {% assign category_main_id = page.categories[1].cat-id | default: 0 %}
     {% endif %}
         
     {% comment %}
