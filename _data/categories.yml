@@ -28,3 +28,14 @@ personal-development:
     actions :
       - label: "Get this"
         url: "https://angeandria.com"
+
+        
+# --------------    
+# BLOG
+# --------------    
+blog:
+    title: "Blog"
+    id: 3-1
+    description: "from data.categories.yml | BLOG description"	
+    cta-title: "Get this"
+    cta-url: "https://angeandria.com"

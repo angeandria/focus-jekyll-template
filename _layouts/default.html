@@ -37,10 +37,6 @@
         {% assign category_main_id_class = site.category_main_id_prefix | append: category_main_id %}
     {% endif %}
     
-    <p>Category Main: {{ category_main }}</p>
-    <p>Category Main Slug: {{ category_main_slug }}</p>
-    <p>Category Main Details: {{ category_main_details }}</p>
-    <p>Category Main ID: {{ category_main_id }}</p>
     
     {% comment %}
     <!-- Main Category label -->
@@ -77,7 +73,7 @@
   "slug:" | append: category_main_slug | append: ",class:" | append: category_main_class | append: ",label:" | append: category_main_label %}
     {% endcomment %}
     
-    <body class="{{ layout_class }} {{ category_main_class }} {{ category_main_id_class }} {{ categories_classes }} {{ page_classes }}" dir="{% if site.rtl %}rtl{% else %}ltr{% endif %}">
+    <body class="{{ layout_class }} {{ category_main_id_class }} {{ category_main_class }} {{ categories_classes }} {{ page_classes }}" dir="{% if site.rtl %}rtl{% else %}ltr{% endif %}">
         
         <!-- SECTION top__bar -->      
         {% include focus/hook.html hook="top__bar" %}
