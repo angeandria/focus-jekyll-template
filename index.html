@@ -1,7 +1,8 @@
 ---
-layout: single
+layout: focus/single-page
 classes:
-    - home
+    - layout--focus-home
+    - single
 ---
 
 > Tempor velit sint sunt ipsum tempor enim ad qui ullamco. Est dolore anim ad velit duis dolore minim sunt
@@ -18,6 +19,16 @@ Cupidatat ea do et in excepteur in. Ad nostrud ut est esse eu duis ea sunt eiusm
 			</div>
 		{% endfor %}
 
+<hr>
+
+<h2>POSTS</h2>
+		{% for post in site.posts %}
+			<div><a href="{{ post.url | relative_url }}">{{ post.title }}</a> - {{ post.url }}</div>
+			<div>
+				{{ post.excerpt | markdownify | strip_html | truncate: 20 }}
+			</div>
+		{% endfor %}
+        
 <hr>
 
 <h2>GUIDES</h2>
