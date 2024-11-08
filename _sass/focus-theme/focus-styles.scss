@@ -272,7 +272,7 @@ body {
     @for $i from 1 through $cta-cats {
         @for $j from 1 through $cta-cats {
             &.category--id-#{$i}-#{$j} {
-                &.cta-category-#{$i}-#{$j} {
+                .cta-category-#{$i}-#{$j} {
                     display: initial;
                 }
             }
