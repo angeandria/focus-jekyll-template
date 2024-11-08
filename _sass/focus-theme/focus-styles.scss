@@ -263,8 +263,15 @@ body.layout--focus-single-page{
     &.cta-category-3-1{
         background: orange;
     }
+    display: none;
 }
 
+body{
+    &.[class^="category--id-1-"]{  
+        [class^="cta-category-1-"] {
+            display: initial;
+    }
+}
 
 
 /*
