@@ -267,10 +267,15 @@ body.layout--focus-single-page{
 }
 
 
-body{
-    &.[class^="category--id-1-"]{  
-        [class^="cta-category-1-"] {
-            display: initial;
+$cta-cats: 3; // Define a variable for the number of categories
+body {
+    @for $i from 1 through $cta-cats {
+        @for $j from 1 through $cta-cats {
+            &.category--id-#{$i}-#{$j} {
+                &.cta-category-#{$i}-#{$j} {
+                    display: initial;
+                }
+            }
         }
     }
 }
