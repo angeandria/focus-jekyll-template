@@ -1,5 +1,11 @@
 # ACTIVE HOOKS
 # use custom: true if you want to use a custom file outside of the default "focus" folder
+top__bar:
+  custom: true
+top__bar_home:
+  custom: true    
+top__bar_single:
+  custom: true  
 page__before_content:
   custom: true
 page__before_post:

@@ -68,6 +68,9 @@
     {% endcomment %}
     
     <body class="{{ layout_class }} {{ category_main_class }} {{ categories_classes }} {{ page_classes }}" dir="{% if site.rtl %}rtl{% else %}ltr{% endif %}">
+        
+        <!-- SECTION top__bar -->      
+        {% include focus/hook.html hook="top__bar" %}
 
         {% include_cached skip-links.html %}
         {% include_cached masthead.html %}
@@ -85,7 +88,7 @@
     
         <div id="footer" class="page__footer">
           <footer>
-             <!-- SECTION footer__before -->      
+            <!-- SECTION footer__before -->      
             {% include focus/hook.html hook="footer__before" %}
             
             {% include footer/custom.html %}
