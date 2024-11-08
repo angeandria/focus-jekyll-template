@@ -20,6 +20,7 @@
     {% assign category_main = page.categories[0] %}    
     {% if category_main == "guide" and page.categories.size > 1 %}
         {% assign category_main = page.categories[1] %}
+        {% assign category_main_id = category_main.cat-id | default: 0 %}
     {% endif %}
         
     {% comment %}
@@ -30,6 +31,7 @@
     {% if category_main %}
         {% assign category_main_slug = category_main | downcase | slugify %}
         {% assign category_main_class = site.category_main_prefix | append: category_main_slug %}
+        {% assign category_main_id_class = site.categories_prefix | append: category_main_id %}
     {% endif %}
     
     {% comment %}
@@ -67,7 +69,7 @@
   "slug:" | append: category_main_slug | append: ",class:" | append: category_main_class | append: ",label:" | append: category_main_label %}
     {% endcomment %}
     
-    <body class="{{ layout_class }} {{ category_main_class }} {{ categories_classes }} {{ page_classes }}" dir="{% if site.rtl %}rtl{% else %}ltr{% endif %}">
+    <body class="{{ layout_class }} {{ category_main_class }} {{ category_main_id_class }} {{ categories_classes }} {{ page_classes }}" dir="{% if site.rtl %}rtl{% else %}ltr{% endif %}">
         
         <!-- SECTION top__bar -->      
         {% include focus/hook.html hook="top__bar" %}
