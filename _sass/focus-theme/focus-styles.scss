@@ -267,11 +267,12 @@ body.layout--focus-single-page{
 }
 
 
-$cta-cats: 3; // Define a variable for the number of categories
+$cta-categories: 3; // Define a variable for the number of categories
+$cta-per-category: 3; 
 body {
-    @for $i from 1 through $cta-cats {
-        @for $j from 1 through $cta-cats {
-            &.category--id-#{$i}-#{$j} {
+    @for $i from 1 through $cta-categories {
+        @for $j from 1 through $cta-per-category {
+            &.category-id--#{$i}-#{$j} {
                 .cta-category-#{$i}-#{$j} {
                     display: initial;
                 }
