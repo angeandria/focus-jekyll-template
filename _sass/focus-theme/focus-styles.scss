@@ -248,6 +248,15 @@ body.layout--focus-single-page{
 * CTA
 * ----------------------
 */
+
+$cta-categories: 3; // Define a variable for the number of categories
+$cta-per-category: 3; 
+$color-array: (
+    "cta-category-1-": orange,
+    "cta-category-2-": blue,
+    "cta-category-3-": green
+);
+
 .cta-category{
     display: block;
     padding: 14px 20px;
@@ -263,12 +272,17 @@ body.layout--focus-single-page{
     &.cta-category-3-1{
         background: orange;
     }
+        
+    @each $prefix, $color in $color-array {
+        &[class^="#{$prefix}"] {
+            background-color: $color;
+        }
+    }
+    
+    
     display: none;
 }
 
-
-$cta-categories: 3; // Define a variable for the number of categories
-$cta-per-category: 3; 
 body {
     @for $i from 1 through $cta-categories {
         @for $j from 1 through $cta-per-category {
