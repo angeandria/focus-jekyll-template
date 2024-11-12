@@ -252,25 +252,15 @@ body.layout--focus-single-page{
 $cta-categories: 3; // Define a variable for the number of categories
 $cta-per-category: 3; 
 $color-array: (
-    "cta-category-1-": orange,
-    "cta-category-2-": blue,
-    "cta-category-3-": green
+    "cta-category-1-": rgba(255, 122, 0, .1),
+    "cta-category-2-": rgba(0, 0, 255, .1),
+    "cta-category-3-": rgba(0, 255, 0, .1)
 );
 
 .cta-category{
     padding: 14px 20px;
-    margin: 10px 0;
-    
-    border: 1px solid #EFEFEF;
-    &.cta-category-1-1{
-        background: green;
-    }
-    &.cta-category-2-1{
-        background: blue;
-    }
-    &.cta-category-3-1{
-        background: orange;
-    }
+    margin: 10px 0;    
+    border: 1px solid #EFEFEF;    
         
     @each $prefix, $color in $color-array {
         &[class^="#{$prefix}"] {
@@ -313,13 +303,14 @@ body {
 .section--hook{
     display: inline-block;
     width:100%;
+    box-shadow: $box-shadow;
+    margin: 10px auto;
 }
-.section--{
+
+.section--{    
     &footer__before{
-        background: red;
     }
     &page__before_post{
-        background: blue;
     }
 }
 
