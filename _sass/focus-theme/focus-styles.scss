@@ -276,15 +276,15 @@ $color-array: (
         &[class^="#{$prefix}"] {
             background-color: $color;
         }
-    }
-        
+    }        
     display: none;
 }
 
 body {
     @for $i from 1 through $cta-categories {
         @for $j from 1 through $cta-per-category {
-            &.category--#{$i}-#{$j} {
+            .boxes .category--#{$i}-#{$j},
+            .page__content .plain .category--#{$i}-#{$j}{
                 .cta-category-#{$i}-#{$j} {
                     display: block;
                 }
@@ -294,6 +294,7 @@ body {
 }
 
 
+.
 
 /*
 * ----------------------

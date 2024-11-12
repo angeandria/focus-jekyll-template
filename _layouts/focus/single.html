@@ -118,10 +118,11 @@ layout: default
               {% include page__meta.html %}
             </header>
             {% endcomment %}
-        
-             <!-- SECTION page__before_post -->   
-             {% include focus/hook.html hook="page__before_post" class=""%}      
-                   
+                
+             
+              <!-- SECTION page__before_post -->   
+              {% include focus/hook.html hook="page__before_post" class=""%}      
+              
               <section class="page__content" itemprop="text">
                       {% comment %} ########### DISABLE FOR NOW 
                               <aside class="sidebar__right {% if page.toc_sticky %}sticky{% endif %}">
@@ -183,7 +184,7 @@ layout: default
                         {{ paragraph | append: '</p>' }}
                         {% if forloop.index == 3 %}
                             <p>INCLUDE HERE</p>
-                           {% include focus/hook.html hook="page__before_content" %}
+                           {% include focus/hook.html hook="page__within_post" %}
                         {% endif %}
                     {% endfor %}
                   <hr><hr><hr>

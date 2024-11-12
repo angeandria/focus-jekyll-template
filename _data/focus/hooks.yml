@@ -10,6 +10,8 @@ page__before_content:
   custom: true
 page__before_post:
   custom: true  
+page__within_post:
+  custom: true   
 page__after_post:
   custom: true   
 page__after_content:
