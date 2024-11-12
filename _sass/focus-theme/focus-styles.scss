@@ -258,7 +258,6 @@ $color-array: (
 );
 
 .cta-category{
-    display: block;
     padding: 14px 20px;
     margin: 10px 0;
     
@@ -278,8 +277,7 @@ $color-array: (
             background-color: $color;
         }
     }
-    
-    
+        
     display: none;
 }
 
@@ -288,7 +286,7 @@ body {
         @for $j from 1 through $cta-per-category {
             &.category--#{$i}-#{$j} {
                 .cta-category-#{$i}-#{$j} {
-                    display: initial;
+                    display: block;
                 }
             }
         }
