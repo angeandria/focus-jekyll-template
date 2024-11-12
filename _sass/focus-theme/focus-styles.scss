@@ -283,9 +283,10 @@ $color-array: (
 body {
     @for $i from 1 through $cta-categories {
         @for $j from 1 through $cta-per-category {
-            .boxes .category--#{$i}-#{$j},
-            .page__content .plain .category--#{$i}-#{$j}{
-                .cta-category-#{$i}-#{$j} {
+            .category--#{$i}-#{$j}{
+                & .boxes,
+                & .page__content .plain{
+                    & .cta-category-#{$i}-#{$j} {
                     display: block;
                 }
             }
