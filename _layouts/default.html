@@ -82,7 +82,19 @@
         {% include_cached masthead.html %}
     
         <div class="initial-content">
-            {{ content }}
+            <!-- SECTION page__before_content -->      
+            <div id="page__before_content">
+                {% include focus/hook.html hook="page__before_content" %}      
+            </div>
+            
+            {{ content }}               
+            
+            <!-- SECTION page__after_content -->      
+            <div id="page__after_content">                        
+                {% include focus/hook.html hook="page__after_content" %}      
+            </div>
+            
+            {% comment %} Provided by parent theme{% endcomment %}
             {% include after-content.html %}
         </div>
     
