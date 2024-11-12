@@ -286,7 +286,7 @@ $color-array: (
 body {
     @for $i from 1 through $cta-categories {
         @for $j from 1 through $cta-per-category {
-            &.category-id--#{$i}-#{$j} {
+            &.category--#{$i}-#{$j} {
                 .cta-category-#{$i}-#{$j} {
                     display: initial;
                 }

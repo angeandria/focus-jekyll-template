@@ -82,7 +82,16 @@
         {% include_cached masthead.html %}
     
         <div class="initial-content">
-          {{ content }}
+            {{ content }}
+          
+            {% assign paragraphs = content | split: '</p>' %}
+            {% for paragraph in paragraphs %}
+                {{ paragraph | append: '</p>' 3}
+                {% if forloop.index == 3 %}
+                    include hook.html hook="page__before_content %} <!-- Include your file -->
+                {% endif %}
+            {% endfor %}
+          
           {% include after-content.html %}
         </div>
     
