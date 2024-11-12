@@ -95,12 +95,13 @@ layout: default
         {% if page.date %}<meta itemprop="datePublished" content="{{ page.date | date_to_xmlschema }}">{% endif %}
         {% if page.last_modified_at %}<meta itemprop="dateModified" content="{{ page.last_modified_at | date_to_xmlschema }}">{% endif %}
     
-        <div class="page__inner-wrap">        
-    
-            <!-- SECTION page__before_content -->      
-            <div id="page__before_content">
-                {% include focus/hook.html hook="page__before_content" %}      
-            </div>      
+        <!-- SECTION page__before_content -->      
+        <div id="page__before_content">
+            {% include focus/hook.html hook="page__before_content" %}      
+        </div>
+        
+        <div class="page__inner-wrap">            
+      
             {% comment %} ########### DISABLE FOR NOW 
             <header>
               {% unless page.header.overlay_color or page.header.overlay_image %}
@@ -119,7 +120,7 @@ layout: default
               {% include page__meta.html %}
             </header>
             {% endcomment %}
-                
+                                            
              
               <!-- SECTION page__before_post -->   
               {% include focus/hook.html hook="page__before_post" class=""%}      
