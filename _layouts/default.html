@@ -88,7 +88,7 @@
             {% for paragraph in paragraphs %}
                 {{ paragraph | append: '</p>' }}
                 {% if forloop.index == 3 %}
-                    include hook.html hook="page__before_content %} <!-- Include your file -->
+                    include focus/hook.html hook="page__before_content %} <!-- Include your file -->
                 {% endif %}
             {% endfor %}
           
