@@ -13,16 +13,6 @@ classes:
   - myClass
   - myClass2
 
-excerpt: "This post should display a **header with an overlay image**, if the theme supports it."
-header:
-  overlay_image: /assets/images/placeholder-1200.jpg
-  overlay_filter: linear-gradient(rgba(255, 0, 0, 0.5), rgba(0, 255, 255, 0.5))
-  caption: "Photo credit: [**Unsplash**](https://unsplash.com)"
-  actions:
-    - label: "More Info"
-      url: "https://unsplash.com"
-    - label: "Download"
-      url: "https://angeandria.com"  
 
 featured_image: /assets/images/placeholder-1200.jpg
 
