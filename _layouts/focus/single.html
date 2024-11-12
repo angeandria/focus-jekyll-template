@@ -97,9 +97,10 @@ layout: default
     
         <div class="page__inner-wrap">        
     
-           <!-- SECTION page__before_content -->      
-            {% include focus/hook.html hook="page__before_content" %}      
-          
+            <!-- SECTION page__before_content -->      
+            <div id="page__before_content">
+                {% include focus/hook.html hook="page__before_content" %}      
+            </div>      
             {% comment %} ########### DISABLE FOR NOW 
             <header>
               {% unless page.header.overlay_color or page.header.overlay_image %}
