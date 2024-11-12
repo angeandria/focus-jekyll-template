@@ -178,7 +178,18 @@ layout: default
             
                     
                     <!-- CONTENT -->
+                    {% assign paragraphs = content | split: '</p>' %}
+                    {% for paragraph in paragraphs %}
+                        {{ paragraph | append: '</p>' }}
+                        {% if forloop.index == 3 %}
+                            <p>INCLUDE HERE</p>
+                           {% include focus/hook.html hook="page__before_content" %}
+                        {% endif %}
+                    {% endfor %}
+                  <hr><hr><hr>
                     {{ content }}
+                              
+                  
                     
                     {% if page.link %}<div><a href="{{ page.link }}" class="btn btn--primary">{{ site.data.ui-text[site.locale].ext_link_label | default: "Direct Link" }}</a></div>{% endif %}
         
