@@ -86,7 +86,7 @@
           
             {% assign paragraphs = content | split: '</p>' %}
             {% for paragraph in paragraphs %}
-                {{ paragraph | append: '</p>' 3}
+                {{ paragraph | append: '</p>' }}
                 {% if forloop.index == 3 %}
                     include hook.html hook="page__before_content %} <!-- Include your file -->
                 {% endif %}
