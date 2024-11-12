@@ -287,7 +287,8 @@ body {
                 & .boxes,
                 & .page__content .plain{
                     & .cta-category-#{$i}-#{$j} {
-                    display: block;
+                        display: block;
+                    }
                 }
             }
         }
