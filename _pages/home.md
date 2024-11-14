@@ -1,5 +1,5 @@
 ---
-layout: home
+layout: focus/home
 permalink: /
 hidden: true
 ---
