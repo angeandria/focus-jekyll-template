@@ -1,0 +1,11 @@
+---
+layout: focus/single-page
+classes:
+    - layout--focus-home
+    - single
+---
+
+{% capture home_content %}
+{% include_relative pages/home.md %}
+{% endcapture %}
+{{ home_content | markdownify }}

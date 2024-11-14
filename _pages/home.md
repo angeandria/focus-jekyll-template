@@ -1,8 +1,10 @@
 ---
-layout: focus/single-page
+layout: splash
 classes:
     - layout--focus-home
     - single
+permalink: /
+hidden: true
 ---
 
 > Tempor velit sint sunt ipsum tempor enim ad qui ullamco. Est dolore anim ad velit duis dolore minim sunt
