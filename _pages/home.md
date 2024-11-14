@@ -1,8 +1,5 @@
 ---
-layout: splash
-classes:
-    - layout--focus-home
-    - single
+layout: home
 permalink: /
 hidden: true
 ---
