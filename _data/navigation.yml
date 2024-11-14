@@ -29,3 +29,27 @@ docs:
         url: /docs/authors/
       - title: "Layouts"
         url: /docs/layouts/
+        
+guide-1:
+    - title: Guide 1 navi
+    children:
+      - title: "Quick-Start Guide 1"
+        url: /guides/
+      - title: "Structure"
+        url: /docs/structure/
+      - title: "Installation"
+        url: /docs/installation/
+      - title: "Upgrading"
+        url: upgrading/
+  - title: Customization
+    children:
+      - title: "Configuration"
+        url: /docs/configuration/
+      - title: "Navigation"
+        url: /docs/navigation/
+      - title: "UI Text"
+        url: /docs/ui-text/
+      - title: "Authors"
+        url: /docs/authors/
+      - title: "Layouts"
+        url: /docs/layouts/    
