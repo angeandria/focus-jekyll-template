@@ -84,8 +84,10 @@
         
         <!-- SECTION top__bar -->
         {% case current_layout %}                
-            {% when "single" %}
+            {% when "single-page" %}
                 {% include focus/hook.html hook="top__bar_single" %}            
+                {% when "single-post" %}
+                {% include focus/hook.html hook="top__bar_single" %}                            
             {% when "home" %}
                 {% include focus/hook.html hook="top__bar_home" %}
             {% else %}
