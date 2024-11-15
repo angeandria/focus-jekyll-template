@@ -41,5 +41,5 @@ guide-1:
         url: /resource/guide-1-post-2
       - title: "How"
         url: /resource/guide-1-post-3
-        - title: "+"
+      - title: "+"
         url: /resource/guide-1-post-cta        
