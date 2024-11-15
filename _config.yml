@@ -190,7 +190,7 @@ defaults:
       path: "_guides"
       type: guides
     values:
-      layout: single
+      layout: focus/single-page
       ###
       author_profile: true
       comments: false

@@ -33,11 +33,13 @@ docs:
 guide-1:
   - title: Guide 1 navi
     children:
-      - title: "Quick-Start Guide 1"
-        url: /guide-1/
+      - title: "Start"
+        url: /resource/guide-1
       - title: "What"
-        url: /guide-1-post-1
+        url: /resource/guide-1-post-1
       - title: "Why"
-        url: /guide-1-post-2
+        url: /resource/guide-1-post-2
       - title: "How"
-        url: /guide-1-post-3
+        url: /resource/guide-1-post-3
+        - title: "+"
+        url: /resource/guide-1-post-cta        
