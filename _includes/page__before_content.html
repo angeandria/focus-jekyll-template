@@ -1,13 +1,2 @@
 <h3>GUIDE</h3>
-<ul class="visible-links">
-  {%- for link in site.data.navigation.guide-1 -%}
-    <li class="masthead__menu-item">
-      <a
-        href="{{ link.url | relative_url }}"
-        {% if link.description %} title="{{ link.description }}"{% endif %}
-        {% if link.target %} target="{{ link.target }}"{% endif %}
-      >{{ link.title }}</a>
-    </li>
-  {%- endfor -%}
-</ul>
-
+{% include nav_list nav="guide-1" %}
