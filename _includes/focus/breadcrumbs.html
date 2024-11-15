@@ -63,7 +63,7 @@
       {% else %}
         {% assign i = i | plus: 1 %}
         <li class="nav-item-category" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-          {% if page.collection == "guide" %}              
+          {% if page.type == "guide" %}              
           GUIDE!!!!
           {% else %}
             Collection : {{ page.collection }}
