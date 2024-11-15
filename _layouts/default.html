@@ -63,7 +63,7 @@
     {% if page.categories %}
         {% for category in page.categories %}
             {% assign slugified_category = category | downcase | slugify %}        
-                {% assign categories_classes = categories_classes | append: ' ' | append: (site.categories_prefix | append: slugified_category) %}
+                {% assign categories_classes = categories_classes | append: ' ' | append: site.categories_prefix | append: slugified_category %}
         {% endfor %}
     {% endif %}    
     
