@@ -30,9 +30,9 @@
 
 
 /*
-* --------------------------
+* ------------------------------------------
 * FOCUS
-* --------------------------
+* ------------------------------------------
 */
 
 
@@ -133,6 +133,31 @@ $max-width: $x-large !default;
     }
 }
 
+
+/*
+* --------------------------
+* HEADER
+* --------------------------
+*/
+
+/*
+* ---------
+* GUIDES
+* ---------
+*/
+.guide-navi {
+    ul {
+        list-style-type: none; /* Remove default list styling */
+        padding: 0; /* Remove default padding */
+        margin: 0 auto; /* Center the list horizontally */
+        display: flex; /* Use Flexbox for layout */
+        justify-content: center; /* Center items horizontally */
+    }
+
+    li {
+        margin: 0 10px; /* Add some space between list items */
+    }
+}
 
 
 /*
@@ -292,6 +317,15 @@ body {
     
 }
 
+/*
+* ----------------------
+* FOOTER
+* ----------------------
+*/
+#footer{
+    background-color: transparent;
+}
+
 
 /*
 * ----------------------
@@ -323,16 +357,3 @@ body {
 }
 
 
-.guide-navi {
-    ul {
-        list-style-type: none; /* Remove default list styling */
-        padding: 0; /* Remove default padding */
-        margin: 0 auto; /* Center the list horizontally */
-        display: flex; /* Use Flexbox for layout */
-        justify-content: center; /* Center items horizontally */
-    }
-
-    li {
-        margin: 0 10px; /* Add some space between list items */
-    }
-}
