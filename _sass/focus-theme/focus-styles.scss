@@ -185,7 +185,6 @@ body.layout--focus-single-page{
 
 
 #page__header .page__meta_wrapper{
-    background-color: blue;
     display: flex; /* Enables flexbox layout */
     justify-content: space-between; /* Distributes space between items */
     align-items: center; /* Centers items vertically */
@@ -202,7 +201,6 @@ body.layout--focus-single-page{
     .page__meta_author,
     .page__meta_date,    
     .page__meta_taxonomy{
-        background-color: yellow;
         flex: 1; /* Makes each div take equal space */
         display: flex; /* Allows for internal flexbox properties */
         align-items: center; /* Centers content vertically */
@@ -303,7 +301,6 @@ body {
 .section--hook{
     display: inline-block;
     width:100%;
-    box-shadow: $box-shadow;
     margin: 10px auto;
 }
 

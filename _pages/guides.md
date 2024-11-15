@@ -1,6 +1,6 @@
 ---
 Title : All Guides
-permalink: /guides
+permalink: /guides/
 ---
 
 ## My text here
