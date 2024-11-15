@@ -12,9 +12,9 @@
     {% comment %}
     <!-- Layout class -->
     {% endcomment %}
-    {% assign layout_slug = page.layout | default: layout.layout | replace: '/', '-' %}
+    {% assign layout_slug = page.layout | default: layout.layout | replace: '/', '-') %}
     {% assign layout_class = site.layout_prefix | append: layout_slug %}
-    {% assign current_layout = layout_slug | replace: 'focus-', '' %}
+    {% assign current_layout = layout_slug | replace: 'focus-', '') %}
 
     LAYOUT SLUG : {{ layout_slug }}    
     LAYOUT_CLASS : {{ layout_class }}
@@ -85,13 +85,13 @@
         <!-- SECTION top__bar -->
         {% case current_layout %}                
             {% when "single-page" %}
-                {% include focus/hook.html hook="top__bar_single" %}            
+                {% include focus/hook.html hook="top__bar_single" class="top__bar" %}            
                 {% when "single-post" %}
-                {% include focus/hook.html hook="top__bar_single" %}                            
+                {% include focus/hook.html hook="top__bar_single" class="top__bar" %}           
             {% when "home" %}
-                {% include focus/hook.html hook="top__bar_home" %}
+                {% include focus/hook.html hook="top__bar_home" class="top__bar" %}
             {% else %}
-                {% include focus/hook.html hook="top__bar" %}        
+                {% include focus/hook.html hook="top__bar" class="top__bar" %}
         {% endcase %}
         
         {% include_cached skip-links.html %}
