@@ -274,7 +274,7 @@ body {
     @for $i from 1 through $cta-categories {
         @for $j from 1 through $cta-per-category {
             &.category--#{$i}-#{$j}{
-                & #page__before_content .boxes,
+                & #page__before_post .boxes,
                 & .page__content .plain{
                     & .cta-category-#{$i}-#{$j} {
                         display: block;
