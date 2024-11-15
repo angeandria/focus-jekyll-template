@@ -16,12 +16,10 @@
     {% assign layout_class = site.layout_prefix | append: layout_slug %}
     {% assign current_layout = layout_slug | replace: 'focus-', '') %}
 
-    {% comment %}
-    DEBUG
     LAYOUT SLUG : {{ layout_slug }}    
     LAYOUT_CLASS : {{ layout_class }}
     CURRENT LAYOUT : {{ current_layout }}
-    {% endcomment %}
+
 
     {% comment %}
     <!-- Main Category class -->
@@ -87,13 +85,13 @@
         <!-- SECTION top__bar -->
         {% case current_layout %}                
             {% when "single-page" %}
-                {% include focus/hook.html hook="top__bar_single" class="top__bar"%}            
-            {% when "single-post" %}
-                {% include focus/hook.html hook="top__bar_single" class="top__bar"%}                            
+                {% include focus/hook.html hook="top__bar_single" %}            
+                {% when "single-post" %}
+                {% include focus/hook.html hook="top__bar_single" %}                            
             {% when "home" %}
-                {% include focus/hook.html hook="top__bar_home" class="top__bar"%}
+                {% include focus/hook.html hook="top__bar_home" %}
             {% else %}
-                {% include focus/hook.html hook="top__bar"  class="top__bar"%}        
+                {% include focus/hook.html hook="top__bar" %}        
         {% endcase %}
         
         {% include_cached skip-links.html %}
