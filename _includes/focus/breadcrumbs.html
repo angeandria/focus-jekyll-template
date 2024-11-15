@@ -63,13 +63,15 @@
       {% else %}
         {% assign i = i | plus: 1 %}
         <li class="nav-item-category" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-          {% if page.type == "guide" %}              
-          GUIDE!!!!
-          {% else %}
-            Collection : {{ page.collection }}
-              <a href="{{ '/' | relative_url }}{{site.category_archive.path}}/{{ category_main_slug }}" itemprop="item"><span itemprop="name">{{ category_main_label |  default : "article" }}</span></a>          
-              <meta itemprop="position" content="{{ i }}" />
-          {% endif %}
+
+            {% if page.type == "guide" %}                          
+                <a href="{{ '/' | relative_url }}{{ page.type}}s/" itemprop="item"><span itemprop="name">{{ page.type}}s |  default : "GGuides" }}</span></a>          
+            
+            {% else %}
+                Collection : {{ page.type }}
+                <a href="{{ '/' | relative_url }}{{site.category_archive.path}}/{{ category_main_slug }}" itemprop="item"><span itemprop="name">{{ category_main_label |  default : "article" }}</span></a>          
+            {% endif %}
+            <meta itemprop="position" content="{{ i }}" />
         </li>
         <span class="sep">{{ site.data.ui-text[site.locale].breadcrumb_separator | default: "/" }}</span>
       {% endif %}

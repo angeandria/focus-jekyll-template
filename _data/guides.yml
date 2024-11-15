@@ -3,6 +3,7 @@
 # --------------    
 guide-1:
     id: 1-1
+    url: /guide-1
     title: "Guide 1" 
     subtitle: "Thsi is Guide 1"     
     description: "
@@ -24,6 +25,7 @@ guide-1:
 # --------------    
 guide-2:
     id: 2-1
+    url: /guide-2    
     title: "Guide 2" 
     subtitle: "This is Guide 2"    
     description: "from data.guides.yml | GUIDE description"	
