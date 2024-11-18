@@ -19,7 +19,6 @@
     {% if type == "page" or type == "guide" %}
         {% if type == "guide"%}        
             {% assign sorted_pages = site.guides %}
-            {{ sorted_pages }}
         {% else %}    
             {% assign sorted_pages = site.pages %}
         {% endif %}
