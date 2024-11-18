@@ -7,14 +7,15 @@
 {% assign topic_limit = include.limit | default: 1 %}
 
 
-{% comment %}
+
 <p>
     <strong>{{ target_topic }} ({{type_string}})</strong><br>
     sort by ({{ topic_sort}}) limit ({{ topic_limit}}) order ({{ topic_order}})
 </p>
-{% endcomment %}
+
 
 {% for type in type_array %}
+    <h4>## {{ type }}</h4>
     {% if type == "page" or type == "guide" %}
         {% if type == "guide"%}        
             {% assign sorted_pages = site.guides %}
