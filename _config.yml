@@ -102,7 +102,7 @@ collections:
     permalink: /:title
   guides: 
     output: true
-    permalink: /resource/:title
+    permalink: /guide/:title
     sort_by: weight
   tools: 
     output: true

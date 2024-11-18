@@ -1,4 +1,4 @@
-{% assign target_topic = include.topic %}
+{% assign target_topic = include.topic | default: "all" %}
 {% assign type_string = include.type | default: "page" %}
 {% assign type_array = type_string | split: ", " %}
 
@@ -16,11 +16,14 @@
 
 {% for type in type_array %}
     {% if type == "page" %}
-        {% assign sorted_pages = site.pages | where: "categories", target_topic | sort: topic_sort %}
-        
+        {% assign sorted_pages = site.pages %}
+        {% if topic_display != "all" %}
+            {% assign sorted_pages = site.pages | where: "categories", target_topic | sort: topic_sort %}
+        {% endif %}        
         {% if topic_order == "desc" %}
             {% assign categorized_pages = categorized_pages | reverse %}
         {% endif %}
+
         
         {% assign limited_pages = sorted_pages | slice: 0, topic_limit %}
         
@@ -34,23 +37,25 @@
         {% endif %}
 
     {% elsif type == "post" %}
+        {% assign sorted_posts = site.posts %}
         {% if site.categories[target_topic] %}
-
-            {% assign sorted_posts = site.categories[target_topic] | sort: topic_sort | topic_order %}            
-            {% if topic_order == "desc" %}
+            {% assign sorted_posts = site.categories[target_topic] | sort: topic_sort %}
+        {% endif %}       
+    
+        {% if topic_order == "desc" %}
             {% assign sorted_posts = sorted_posts | reverse %}
         {% endif %}
-        
+    
         {% assign limited_posts = sorted_posts | slice: 0, topic_limit %}
-            <p>Posts "{{ target_topic }}" - limited to {{ limited_posts.size }}</p>
-            <ul>
-            {% for post in limited_posts%}
-                {% if post.url %}
-                    <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a> (Priority: {{ post.priority }})</li>
-                {% endif %}
-            {% endfor %}    
-            </ul>
-        {% endif %}
+        <p>Posts "{{ target_topic }}" - limited to {{ limited_posts.size }}</p>
+        <ul>
+        {% for post in limited_posts%}
+            {% if post.url %}
+                <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a> (Priority: {{ post.priority }})</li>
+            {% endif %}
+        {% endfor %}    
+        </ul>
+
 
     {% endif %}
 {% endfor %}
