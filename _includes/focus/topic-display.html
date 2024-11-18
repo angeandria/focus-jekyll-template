@@ -7,16 +7,20 @@
 {% assign topic_limit = include.limit | default: 1 %}
 
 
-{% comment %}
+
 <p>
     <strong>{{ target_topic }} ({{type_string}})</strong><br>
     sort by ({{ topic_sort}}) limit ({{ topic_limit}}) order ({{ topic_order}})
 </p>
-{% endcomment %}
+
 
 {% for type in type_array %}
-    {% if type == "page" %}
-        {% assign sorted_pages = site.pages %}
+    {% if type == "page" or type == "guide" %}
+        {% if type == "guide"%}        
+            {% assign sorted_pages = site.guides %}
+        {% else %}    
+            {% assign sorted_pages = site.pages %}
+        {% endif %}
         {% if topic_display != "all" %}
             {% assign sorted_pages = site.pages | where: "categories", target_topic | sort: topic_sort %}
         {% endif %}        
