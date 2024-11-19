@@ -48,7 +48,7 @@
             <div class="">
                 {% for page in limited_pages %}
                     <h3><a href="{{ page.url | relative_url }}">{{ page.title }}</a></h3>
-                    <p>{{ page.content }}</p>
+                    <p>{{ page.excerpt | markdownify | strip_html | truncate: 20 }}</p>
                 {% endfor %}        
             </div>    
         {% endif %}
