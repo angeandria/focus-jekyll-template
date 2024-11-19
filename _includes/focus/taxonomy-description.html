@@ -6,6 +6,10 @@
 {% if taxonomy_details %}
   <div class="taxonomy-details">
        <h1 id="page-title" class="page__title"{% if page.locale %} lang="{{ page.locale }}"{% endif %}>{{ taxonomy_details.title | markdownify }}</h1>
+       
+       {% if taxonomy_details.subtitle %}
+             <h2 id="page-subtitle" class="page__subtitle"{% if page.locale %} lang="{{ page.locale }}"{% endif %}>{{ taxonomy_details.subtitle | markdownify }}</h1>
+        {% endif %} 
       <div>
           {{ taxonomy_details.description | markdownify }}
       </div> 
