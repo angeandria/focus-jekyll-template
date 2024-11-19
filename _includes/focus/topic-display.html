@@ -22,39 +22,15 @@
         {% else %}    
             {% assign sorted_pages = site.pages %}
         {% endif %}
-        
-        <strong>A : </strong>
-        <ul>
-        {% for p in sorted_pages %}
-            <li><a href="{{ p.url | relative_url }}">{{ p.title }}</a></li>
-        {% endfor %} 
-        <ul>
-        <hr>        
-        
+                
         {% comment %} // Filter by category {% endcomment %}
         {% if target_topic != "all" %}
             {% assign sorted_pages = sorted_pages | where: "categories", target_topic %}
         {% endif %}        
-        
-        <strong>B : </strong>
-        <ul>
-        {% for p in sorted_pages %}
-            <li><a href="{{ p.url | relative_url }}">{{ p.title }}</a></li>
-        {% endfor %} 
-        <ul>
-        <hr>
-        
+                
         {% comment %} // Sort by priority {% endcomment %}
         {% assign sorted_pages = sorted_pages | sort: topic_sort %}        
-        
-        <strong>C : </strong>
-        <ul>
-        {% for p in sorted_pages %}
-            <li><a href="{{ p.url | relative_url }}">{{ p.title }}</a></li>
-        {% endfor %} 
-        <ul>
-        <hr>
-        
+                
         {% comment %} // Order direction {% endcomment %}
         {% if topic_order == "desc" %}
             {% assign sorted_pages = sorted_pages | reverse %}

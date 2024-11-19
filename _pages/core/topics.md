@@ -15,12 +15,16 @@ Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
 
 ### All guides
 <div class="custom-taxonomy"> 
-    {% include focus/topic-display.html type="guide" order="desc" %}
+    {% include focus/topic-display.html type="guide" topic="main" order="desc" %}
 </div>
 
 
 <div class="custom-taxonomy"> 
     {% include focus/topic-display.html type="guide" topic="personal development" order="desc" %}
+</div>
+
+<div class="custom-taxonomy"> 
+    {% include focus/topic-display.html type="guide" topic="growth" order="desc" %}
 </div>
 
 ---
