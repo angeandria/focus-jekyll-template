@@ -22,7 +22,7 @@ tags:
 title: My best Post
 subtitle: My post subtitle
 description: My post desc
-image: myimage.jpg
+featured-img: myimage.jpg
 ---
 
 Let's start

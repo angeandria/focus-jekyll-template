@@ -1,5 +1,6 @@
 ---
 title: Guide 1
+subtitle: This is Guide 1 subtitle blablablab
 guide: guide-1
 categories:
   - personal development

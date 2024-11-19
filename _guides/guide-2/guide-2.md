@@ -1,5 +1,6 @@
 ---
 title: Guide 2
+subtitle: This is Guide 2 subtitle blablablab
 guide: guide-2
 categories:
   - growth
