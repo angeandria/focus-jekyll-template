@@ -15,10 +15,11 @@
 
 
 {% for type in type_array %}
-    <h4>## {{ type }}</h4>
+    <strong>TYPE :{{ type }}</strong>
     {% if type == "page" or type == "guide" %}
         {% if type == "guide"%}        
             {% assign sorted_pages = site.guides %}
+    
         {% else %}    
             {% assign sorted_pages = site.pages %}
         {% endif %}
