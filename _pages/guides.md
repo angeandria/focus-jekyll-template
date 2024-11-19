@@ -1,5 +1,5 @@
 ---
-Title : All Guides
+title : All Guides
 permalink: /guides/
 ---
 
