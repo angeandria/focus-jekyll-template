@@ -54,7 +54,7 @@
                     <div class="">
                          {% if page.description %}
                              {{ page.description }}
-                         {% else %)
+                         {% else %}
                              {{ page.excerpt | markdownify | strip_html | truncate: 250 }}
                          {% endif %}                
                     </div>
