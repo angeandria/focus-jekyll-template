@@ -9,13 +9,12 @@
 
 
 <p>
-    <strong>{{ target_topic }} ({{type_string}})</strong><br>
+    <strong>Topic : {{ target_topic }} | Type : ({{type_string}})</strong><br>
     sort by ({{ topic_sort}}) limit ({{ topic_limit}}) order ({{ topic_order}})
 </p>
 
 
 {% for type in type_array %}
-    <strong>TYPE :{{ type }}</strong>
     {% if type == "page" or type == "guide" %}
         {% if type == "guide"%}        
             {% assign sorted_pages = site.guides %}
@@ -34,7 +33,7 @@
         {% assign limited_pages = sorted_pages | slice: 0, topic_limit %}
         
         {% if limited_pages.size > 0 %}
-            <p>Pages "{{ target_topic }}" - limited to {{ limited_pages.size }} - order ({{ topic_order}})</p>
+            <p>Type : {{type}} | Topic : {{ target_topic }} - limited to {{ limited_pages.size }} - order ({{ topic_order}})</p>
             <ul>
                 {% for page in limited_pages %}
                     <li><a href="{{ page.url | relative_url }}">{{ page.title }}</a></li>
