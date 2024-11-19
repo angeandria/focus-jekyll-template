@@ -23,13 +23,19 @@
             {% assign sorted_pages = site.pages %}
         {% endif %}
         
+        A : {{ sorted_pages }}
+        
         {% comment %} // Filter by category {% endcomment %}
         {% if topic_display != "all" %}
             {% assign sorted_pages = sorted_pages | where: "categories", target_topic %}
         {% endif %}        
         
+        B : {{ sorted_pages }}
+        
         {% comment %} // Sort by priority {% endcomment %}
         {% assign sorted_pages = sorted_pages | sort: topic_sort %}        
+        
+        C : {{ sorted_pages }}
         
         {% comment %} // Order direction {% endcomment %}
         {% if topic_order == "desc" %}
