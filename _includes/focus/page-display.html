@@ -58,6 +58,19 @@
                              {{ page.excerpt | markdownify | strip_html | truncate: 250 }}
                          {% endif %}                
                     </div>
+                    
+                    <div class="">
+                        <!-- Page date -->         
+                        <div class="page__meta_date">                    
+                            {% include page__meta.html %}
+                        </div>                        
+                    
+                         <!-- Page taxonomy -->            
+                        <div class="page__meta_taxonomy">                                    
+                            {% include page__taxonomy.html %}
+                        </div>                        
+                    </div>
+                    
                 {% endfor %}        
             </div>    
             
