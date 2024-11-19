@@ -32,7 +32,7 @@
         <hr>        
         
         {% comment %} // Filter by category {% endcomment %}
-        {% if topic_display != "all" %}
+        {% if target_topic != "all" %}
             {% assign sorted_pages = sorted_pages | where: "categories", target_topic %}
         {% endif %}        
         
