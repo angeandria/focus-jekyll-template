@@ -15,42 +15,42 @@ Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
 
 ### All guides
 <div class="custom-taxonomy"> 
-    {% include focus/page-display.html type="guide" topic="main" order="desc" %}
+    {% include focus/post-display.html type="guide" topic="main" order="desc" %}
 </div>
 
 
 <div class="custom-taxonomy"> 
-    {% include focus/page-display.html type="guide" topic="personal development" order="desc" %}
+    {% include focus/post-display.html type="guide" topic="personal development" order="desc" %}
 </div>
 
 <div class="custom-taxonomy"> 
-    {% include focus/page-display.html type="guide" topic="growth" order="desc" %}
+    {% include focus/post-display.html type="guide" topic="growth" order="desc" %}
 </div>
 
 ---
 
 <div class="custom-taxonomy"> 
-    {% include focus/page-display.html topic="personal development" type="post" limit="1" order="desc" %}
+    {% include focus/post-display.html topic="personal development" type="post" limit="1" order="desc" %}
 </div>
 
 ---
 
 <div class="custom-taxonomy">               
-    {% include focus/page-display.html topic="personal development" type="page" limit=1 %}
+    {% include focus/post-display.html topic="personal development" type="page" limit=1 %}
 </div>
 
 ---
 
 <div class="custom-taxonomy">  
-    {% include focus/page-display.html topic="personal development" type="post, page" limit=5 %}
+    {% include focus/post-display.html topic="personal development" type="post, page" limit=5 %}
 </div>
 
 <div class="custom-taxonomy">  
-    {% include focus/page-display.html topic="personal development" type="post, page" limit=5 order="desc" %}
+    {% include focus/post-display.html topic="personal development" type="post, page" limit=5 order="desc" %}
 </div>
 
 <div class="custom-taxonomy">  
-    {% include focus/page-display.html topic="personal development" type="post, page" limit=5 %}
+    {% include focus/post-display.html topic="personal development" type="post, page" limit=5 %}
 </div>
 
 ---

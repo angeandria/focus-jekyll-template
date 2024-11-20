@@ -45,32 +45,33 @@
             
             {% comment %}DEBUG <p>Topic : {{ target_topic }} | Type : {{type}} - limited to {{ limited_pages.size }} - order ({{ topic_order}})</p>{% endcomment %}
                         
-            <div class="">
+            <div class="posts-display pages">
                 {% for page in limited_pages %}
-                    <h3><a href="{{ page.url | relative_url }}">{{ page.title }}</a></h3>
-                    {% if page.subtitle %}
-                        <h4>{{ page.subtitle }}</h4>                    
-                    {% endif %}
-                    <div class="">
-                         {% if page.description %}
-                             {{ page.description }}
-                         {% else %}
-                             {{ page.excerpt | markdownify | strip_html | truncate: 250 }}
-                         {% endif %}                
+                    <div class="post-display">
+                        <h3 class="post-title"><a href="{{ page.url | relative_url }}">{{ page.title }}</a></h3>
+                        {% if page.subtitle %}
+                            <h4 class="post-subtitle">{{ page.subtitle }}</h4>                    
+                        {% endif %}
+                        <div class="post-description">
+                             {% if page.description %}
+                                 {{ page.description }}
+                             {% else %}
+                                 {{ page.excerpt | markdownify | strip_html | truncate: 250 }}
+                             {% endif %}                
+                        </div>
+                        
+                        <div class="post-meta">
+                            <!-- Page date -->         
+                            <div class="page__meta_date">                    
+                                {% include page__meta.html %}
+                            </div>                        
+                        
+                             <!-- Page taxonomy -->            
+                            <div class="page__meta_taxonomy">                                    
+                                {% include page__taxonomy.html %}
+                            </div>                        
+                        </div>
                     </div>
-                    
-                    <div class="">
-                        <!-- Page date -->         
-                        <div class="page__meta_date">                    
-                            {% include page__meta.html %}
-                        </div>                        
-                    
-                         <!-- Page taxonomy -->            
-                        <div class="page__meta_taxonomy">                                    
-                            {% include page__taxonomy.html %}
-                        </div>                        
-                    </div>
-                    
                 {% endfor %}        
             </div>    
             
