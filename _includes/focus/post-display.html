@@ -1,6 +1,6 @@
 {% comment %} HOW TO USE
 - example : {% include focus/post-display.html type="guide" topic="main" order="desc" 
-container_class="box-shadow" pages_class="" posts_class="" pages-single_class="" posts-single_class="" %}
+container_class="box-shadow" pages_class="" pages-item_class="" posts_class="" posts-item_class="" %}
 {% endcomment %} 
 
 {% assign target_topic = include.topic | default: "all" %}
@@ -57,7 +57,7 @@ container_class="box-shadow" pages_class="" posts_class="" pages-single_class=""
                         
             <div class="pages {{ pages_class }}">
                 {% for page in limited_pages %}
-                    <div class="item {{ pages-single_class }}">
+                    <div class="item {{ pages-item_class }}">
                         <h3 class="item-title"><a href="{{ page.url | relative_url }}">{{ page.title }}</a></h3>
                         {% if page.subtitle %}
                             <h4 class="item-subtitle">{{ page.subtitle }}</h4>                    
