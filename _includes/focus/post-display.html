@@ -58,10 +58,15 @@ container_class="box-shadow" pages_class="" pages-item_class="" posts_class="" p
             <div class="pages {{ pages_class }}">
                 {% for page in limited_pages %}
                     <div class="item {{ pages-item_class }}">
-                        <h3 class="item-title"><a href="{{ page.url | relative_url }}">{{ page.title }}</a></h3>
+                        <h3 class="item-title"><a href="{{ page.url | relative_url }}">{{ page.title }}</a></h3>                        
                         {% if page.subtitle %}
                             <h4 class="item-subtitle">{{ page.subtitle }}</h4>                    
                         {% endif %}
+                        
+                        <img class="featured-logo" src="{{ page.featured-logo | default: '/assets/images/placeholder.jpg' | relative_url }}" alt="Featured Logo">
+
+                        <img class="featured-img" src="{{ page.featured-img | default: '/assets/images/placeholder.jpg' | relative_url }}" alt="Featured Image">
+                        
                         <div class="item-description">
                              {% if page.description %}
                                  {{ page.description }}
