@@ -1,4 +1,5 @@
 {% assign target_topic = include.topic | default: "all" %}
+{% assign container_class = include.class | default: "" %}
 {% assign type_string = include.type | default: "page" %}
 {% assign type_array = type_string | split: ", " %}
 
@@ -45,9 +46,9 @@
             
             {% comment %}DEBUG <p>Topic : {{ target_topic }} | Type : {{type}} - limited to {{ limited_pages.size }} - order ({{ topic_order}})</p>{% endcomment %}
                         
-            <div class="posts-display pages">
+            <div class="posts-container pages {{ container_class }}">
                 {% for page in limited_pages %}
-                    <div class="post-display">
+                    <div class="posts-single">
                         <h3 class="post-title"><a href="{{ page.url | relative_url }}">{{ page.title }}</a></h3>
                         {% if page.subtitle %}
                             <h4 class="post-subtitle">{{ page.subtitle }}</h4>                    

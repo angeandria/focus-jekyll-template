@@ -14,44 +14,27 @@ redirect_from:
 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever
 
 ### All guides
-<div class="custom-taxonomy"> 
-    {% include focus/post-display.html type="guide" topic="main" order="desc" %}
-</div>
+{% include focus/post-display.html class="box-shadow" type="guide" topic="main" order="desc" %}
 
+{% include focus/post-display.html type="guide" topic="personal development" order="desc" %}
 
-<div class="custom-taxonomy"> 
-    {% include focus/post-display.html type="guide" topic="personal development" order="desc" %}
-</div>
-
-<div class="custom-taxonomy"> 
-    {% include focus/post-display.html type="guide" topic="growth" order="desc" %}
-</div>
+{% include focus/post-display.html type="guide" topic="growth" order="desc" %}
 
 ---
 
-<div class="custom-taxonomy"> 
-    {% include focus/post-display.html topic="personal development" type="post" limit="1" order="desc" %}
-</div>
+{% include focus/post-display.html topic="personal development" type="post" limit="1" order="desc" %}
 
 ---
 
-<div class="custom-taxonomy">               
-    {% include focus/post-display.html topic="personal development" type="page" limit=1 %}
-</div>
+{% include focus/post-display.html topic="personal development" type="page" limit=1 %}
 
 ---
 
-<div class="custom-taxonomy">  
-    {% include focus/post-display.html topic="personal development" type="post, page" limit=5 %}
-</div>
+{% include focus/post-display.html topic="personal development" type="post, page" limit=5 %}
 
-<div class="custom-taxonomy">  
-    {% include focus/post-display.html topic="personal development" type="post, page" limit=5 order="desc" %}
-</div>
+{% include focus/post-display.html topic="personal development" type="post, page" limit=5 order="desc" %}
 
-<div class="custom-taxonomy">  
-    {% include focus/post-display.html topic="personal development" type="post, page" limit=5 %}
-</div>
+{% include focus/post-display.html topic="personal development" type="post, page" limit=5 %}
 
 ---
       
