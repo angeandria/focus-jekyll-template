@@ -14,7 +14,7 @@ redirect_from:
 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever
 
 ### All guides
-<div>{% include focus/post-display.html class="box-shadow" type="guide" topic="main" order="desc" %}</div>
+{% include focus/post-display.html class="box-shadow" type="guide" topic="main" order="desc" %}
 
 {% include focus/post-display.html type="guide" topic="personal development" order="desc" %}
 
