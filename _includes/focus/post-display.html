@@ -30,18 +30,13 @@ container_class="box-shadow" pages_class="" pages-item_class="" posts_class="" p
         {% comment %} // Get source {% endcomment %}
         {% if type == "guide"%}        
             {% assign sorted_pages = site.guides %}    
-        {% elseif type == "post" %}
-            {% assign sorted_pages = site.posts %}
-            {% if site.categories[target_topic] %}
-                {% assign sorted_pages = site.categories[target_topic] %}
-            {% endif %}
         {% else %}    
             {% assign sorted_pages = site.pages %}
         {% endif %}
         
         
         {% comment %} // Filter by category {% endcomment %}
-        {% if type != "post" and target_topic != "all" %}
+        {% if target_topic != "all" %}
             {% assign sorted_pages = sorted_pages | where: "categories", target_topic %}
         {% endif %}        
                 
