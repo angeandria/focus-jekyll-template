@@ -29,7 +29,7 @@ container_class="box-shadow" pages_class="" pages-item_class="" posts_class="" p
     {% if type == "page" or type == "guide" or type == "post" %}
         {% comment %} // Get source {% endcomment %}
         {% if type == "guide"%}        
-            {% assign sorted_pages = site.guides %}            
+            {% assign sorted_pages = site.guides %}    
         {% elseif type == "post" %}
             {% assign sorted_pages = site.posts %}
             {% if site.categories[target_topic] %}
@@ -41,7 +41,7 @@ container_class="box-shadow" pages_class="" pages-item_class="" posts_class="" p
         
         
         {% comment %} // Filter by category {% endcomment %}
-        {% if target_topic != "all" %}
+        {% if type != "post" and target_topic != "all" %}
             {% assign sorted_pages = sorted_pages | where: "categories", target_topic %}
         {% endif %}        
                 
