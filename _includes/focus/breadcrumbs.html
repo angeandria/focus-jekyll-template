@@ -68,7 +68,6 @@
                 <a href="{{ '/' | relative_url }}guides/" itemprop="item"><span itemprop="name">Guides</span></a>          
             
             {% else %}
-                Collection : {{ page.collection }}
                 <a href="{{ '/' | relative_url }}{{site.category_archive.path}}/{{ category_main_slug }}" itemprop="item"><span itemprop="name">{{ category_main_label |  default : "article" }}</span></a>          
             {% endif %}
             <meta itemprop="position" content="{{ i }}" />
