@@ -32,10 +32,11 @@ container_class="box-shadow" type_class="" type-item_class="" %}
         {% endif %}        
 
         {% comment %} // Filter by category {% endcomment %}
-        {% if type == "post" %}
-            {% assign sorted_pages = site.posts %}
+        {% if type == "post" %}            
             {% if site.categories[target_topic] %}
                 {% assign sorted_pages = site.categories[target_topic] %}
+            {% else %}                
+                {% assign sorted_pages = "" | split: "" %}
             {% endif %}
         {% else %}                
             {% if target_topic != "all" %}
