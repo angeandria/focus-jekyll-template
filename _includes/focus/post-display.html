@@ -59,7 +59,7 @@ container_class="box-shadow" pages_class="" pages-item_class="" posts_class="" p
         {% comment %} // Display {% endcomment %}
         {% if limited_pages.size > 0 %}
             
-            {% comment %}DEBUG <p>Topic : {{ target_topic }} | Type : {{type}} - limited to {{ limited_pages.size }} - order ({{ topic_order}})</p>{% endcomment %}
+            DEBUG <p>Topic : {{ target_topic }} | Type : {{type}} - limited to {{ limited_pages.size }} - order ({{ topic_order}})</p>
                         
             <div class="{{type}}s {{ pages_class }}">
                 {% for page in limited_pages %}
