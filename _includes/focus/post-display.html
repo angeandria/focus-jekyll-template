@@ -34,11 +34,19 @@ container_class="box-shadow" pages_class="" pages-item_class="" posts_class="" p
             {% assign sorted_pages = site.pages %}
         {% endif %}
         
-        
+
         {% comment %} // Filter by category {% endcomment %}
-        {% if target_topic != "all" %}
-            {% assign sorted_pages = sorted_pages | where: "categories", target_topic %}
-        {% endif %}        
+        {% if type == "post" %}
+            {% assign sorted_pages = site.posts %}
+            {% if site.categories[target_topic] %}
+                {% assign sorted_pages = site.categories[target_topic] %}
+            {% endif %}
+        {% else %}                
+            {% if target_topic != "all" %}
+                {% assign sorted_pages = sorted_pages | where: "categories", target_topic %}
+            {% endif %}                
+        {% endif %}
+        
                 
         {% comment %} // Sort by priority {% endcomment %}
         {% assign sorted_pages = sorted_pages | sort: topic_sort %}        
