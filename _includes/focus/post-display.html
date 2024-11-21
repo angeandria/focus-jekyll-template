@@ -16,10 +16,10 @@ container_class="box-shadow" type_class="" type-item_class="" %}
 
 
 
-<p>
-    <strong>Type : {{type_string}} | Topic : {{ target_topic }}</strong><br>
+<h2>
+    Type : {{type_string}} | Topic : {{ target_topic }}<br>
     sort by ({{ topic_sort}}) limit ({{ topic_limit}}) order ({{ topic_order}})
-</p>
+</h2>
 
 <div class="items-container {{ container_class }}">
 {% for type in type_array %}
