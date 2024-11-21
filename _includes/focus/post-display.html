@@ -32,18 +32,23 @@ container_class="box-shadow" type_class="" type-item_class="" %}
         {% endif %}        
 
         {% comment %} // Filter by category {% endcomment %}
-        {% if type == "post" %}            
-            {% if site.categories[target_topic] %}
-                {% assign sorted_pages = site.categories[target_topic] %}
-            {% else %}                
-                {% assign sorted_pages = "" | split: "" %}
-            {% endif %}
-        {% else %}                
-            {% if target_topic != "all" %}
+        {% if target_topic == "all" %}
+            {% if type == "post" %}
+                {% assign sorted_pages = site.posts %}
+            {% endif %}        
+        {% else %}           
+            {% if type == "post" %}            
+                {% if site.categories[target_topic] %}
+                    {% assign sorted_pages = site.categories[target_topic] %}
+                {% else %}                
+                    {% assign sorted_pages = "" | split: "" %}
+                {% endif %}
+            {% else %}
                 {% assign sorted_pages = sorted_pages | where: "categories", target_topic %}
-            {% endif %}                
-        {% endif %}
-                        
+            {% endif %}
+        {% endif %}        
+        
+        
         {% comment %} // Sort by priority {% endcomment %}
         {% assign sorted_pages = sorted_pages | sort: topic_sort %}        
                 
