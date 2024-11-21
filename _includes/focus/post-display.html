@@ -26,14 +26,20 @@ container_class="box-shadow" pages_class="" pages-item_class="" posts_class="" p
 
 <div class="items-container {{ container_class }}">
 {% for type in type_array %}
-    {% if type == "page" or type == "guide" %}
+    {% if type == "page" or type == "guide" or type == "post" %}
         {% comment %} // Get source {% endcomment %}
         {% if type == "guide"%}        
             {% assign sorted_pages = site.guides %}    
+        {% if type == "post" %}
+            {% assign sorted_pages = site.posts %}
+            {% if site.categories[target_topic] %}
+                {% assign sorted_pages = site.categories[target_topic] %}
+            {% endif %}               
         {% else %}    
             {% assign sorted_pages = site.pages %}
         {% endif %}
-                
+        
+        
         {% comment %} // Filter by category {% endcomment %}
         {% if target_topic != "all" %}
             {% assign sorted_pages = sorted_pages | where: "categories", target_topic %}
@@ -55,7 +61,7 @@ container_class="box-shadow" pages_class="" pages-item_class="" posts_class="" p
             
             {% comment %}DEBUG <p>Topic : {{ target_topic }} | Type : {{type}} - limited to {{ limited_pages.size }} - order ({{ topic_order}})</p>{% endcomment %}
                         
-            <div class="pages {{ pages_class }}">
+            <div class="{{type}}s {{ pages_class }}">
                 {% for page in limited_pages %}
                     <div class="item {{ pages-item_class }}">
                         
@@ -67,9 +73,7 @@ container_class="box-shadow" pages_class="" pages-item_class="" posts_class="" p
                         {% if page.subtitle %}
                             <h4 class="item-subtitle">{{ page.subtitle }}</h4>                    
                         {% endif %}
-                        
-                        
-                        
+                                                
                         <div class="item-description">
                              {% if page.description %}
                                  {{ page.description }}
@@ -95,7 +99,7 @@ container_class="box-shadow" pages_class="" pages-item_class="" posts_class="" p
             
         {% endif %}
 
-    {% elsif type == "post" %}
+    {% elsif type == "possssst" %}
         {% assign sorted_posts = site.posts %}
         {% if site.categories[target_topic] %}
             {% assign sorted_posts = site.categories[target_topic] | sort: topic_sort %}
