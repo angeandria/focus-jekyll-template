@@ -30,7 +30,7 @@ container_class="box-shadow" pages_class="" pages-item_class="" posts_class="" p
         {% comment %} // Get source {% endcomment %}
         {% if type == "guide"%}        
             {% assign sorted_pages = site.guides %}    
-        {% if type == "post" %}
+        {% elseif type == "post" %}
             {% assign sorted_pages = site.posts %}
             {% if site.categories[target_topic] %}
                 {% assign sorted_pages = site.categories[target_topic] %}
