@@ -5,3 +5,13 @@ layout: focus/single
 {{ content }}
 
 ---
+
+
+{% assign types_list = "resource, page, post" | split: ", " %}
+
+{% for type in types_list %}
+    {% for category_key in site.data.categories %}
+        <h4>{{ category_key[0] }}</h4>      
+        {% include focus/post-display.html type=type topic="personal development" order="desc" container_class="" type_class="box-shadow" type-item_class="" %}            
+    {% endfor %}        
+{% endfor %}
