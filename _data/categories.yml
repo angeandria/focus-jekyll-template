@@ -12,7 +12,7 @@ growth:
 # --------------    
 # PERSONAL DEVELOPMENT
 # --------------    
-personal development:
+personal-development:
     id: 2-1
     title: "Personal development" 
     subtitle: "subtitle from data.categories.yml"
