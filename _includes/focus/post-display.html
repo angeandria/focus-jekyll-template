@@ -77,11 +77,12 @@ container_class="box-shadow" type_class="" type-item_class="" %}
                         <img class="featured-img" src="{{ page.featured-img | default: '/assets/images/placeholder.jpg' | relative_url }}" alt="Featured Image">
                         
                         
-                        <h3 class="item-title"><a href="{{ page.url | relative_url }}">{{ page.title }}</a></h3>                        
                         {% if site.tag_archive.type and page.tags[0] %}
                             {% include tag-list.html %}
                         {% endif %}
                         {% if page.subtitle %}
+                        
+                        <h3 class="item-title"><a href="{{ page.url | relative_url }}">{{ page.title }}</a></h3>                        
                             <h4 class="item-subtitle">{{ page.subtitle }}</h4>                    
                         {% endif %}
                                                 
