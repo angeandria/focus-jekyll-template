@@ -1,5 +1,5 @@
 {% comment %} HOW TO USE
-- example : {% include focus/post-display.html type="guide" topic="main" order="desc" 
+- example : {% include focus/post-display.html type="resource" topic="main" order="desc" 
 container_class="box-shadow" type_class="" type-item_class="" %}
 {% endcomment %} 
 
@@ -25,8 +25,8 @@ container_class="box-shadow" type_class="" type-item_class="" %}
 {% for type in type_array %}
 
         {% comment %} // Get source {% endcomment %}
-        {% if type == "guide"%}        
-            {% assign sorted_pages = site.guides %}    
+        {% if type == "resource"%}        
+            {% assign sorted_pages = site.resources %}    
         {% else %}    
             {% assign sorted_pages = site.pages %}
         {% endif %}        

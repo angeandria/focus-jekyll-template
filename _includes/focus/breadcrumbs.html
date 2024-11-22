@@ -17,9 +17,6 @@
 <!-- Main Category class -->
 {% endcomment %}
 {% assign category_main = page.categories[0] %}    
-{% if category_main == "guide" and page.categories.size > 1 %}
-    {% assign category_main = page.categories[1] %}
-{% endif %}
     
 {% comment %}
 <!--  Main Category slug -->
@@ -64,8 +61,8 @@
         {% assign i = i | plus: 1 %}
         <li class="nav-item-category" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
 
-            {% if page.collection == "guides" %}                          
-                <a href="{{ '/' | relative_url }}guides/" itemprop="item"><span itemprop="name">Guides</span></a>          
+            {% if page.collection == "resources" %}                          
+                <a href="{{ '/' | relative_url }}resources/" itemprop="item"><span itemprop="name">Resources</span></a>          
             
             {% else %}
                 <a href="{{ '/' | relative_url }}{{site.category_archive.path}}/{{ category_main_slug }}" itemprop="item"><span itemprop="name">{{ category_main_label |  default : "article" }}</span></a>          

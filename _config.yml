@@ -100,9 +100,10 @@ collections:
   pages:
     output: true
     permalink: /:title
-  guides: 
+    sort_by: weight
+  resources: 
     output: true
-    permalink: /guide/:title
+    permalink: /resource/:title
     sort_by: weight
   tools: 
     output: true
@@ -185,10 +186,10 @@ defaults:
       #show_pagination: true      
       #show_taxonomy: true
 
-  # _guides
+  # _resources
   - scope:
-      path: "_guides"
-      type: guides
+      path: "_resources"
+      type: resources
     values:
       layout: focus/single-page
       ###
