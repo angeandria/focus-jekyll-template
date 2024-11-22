@@ -16,11 +16,12 @@ container_class="box-shadow" type_class="" type-item_class="" %}
 {% assign topic_limit = include.limit | default: 100000 %}
 
 
-
+{% comment %}DEBUG
 <h2>
     Type : {{type_string}} | Topic : {{ target_topic }}<br>
     sort by ({{ topic_sort}}) limit ({{ topic_limit}}) order ({{ topic_order}})
 </h2>
+{% endcomment %}
 
 <div class="items-container {{ container_class }}">
 {% for type in type_array %}
@@ -70,6 +71,8 @@ container_class="box-shadow" type_class="" type-item_class="" %}
             {% endcomment %}
                         
             <div class="{{type}}s {{ type_class }}">
+                <h2>{{type_string}}s</h2>
+                <h3>{{ target_topic }}</h3>
                 {% for page in limited_pages %}
                     <div class="item {{ type-item_class }}">
                         
