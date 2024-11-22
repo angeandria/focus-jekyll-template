@@ -23,7 +23,7 @@ container_class="box-shadow" type_class="" type-item_class="" %}
 
 <div class="items-container {{ container_class }}">
 {% for type in type_array %}
-    {% if type == "page" or type == "guide" or type == "post" %}
+
         {% comment %} // Get source {% endcomment %}
         {% if type == "guide"%}        
             {% assign sorted_pages = site.guides %}    
@@ -34,6 +34,7 @@ container_class="box-shadow" type_class="" type-item_class="" %}
         {% comment %} // Filter by category {% endcomment %}
         {% if target_topic == "all" %}
             {% if type == "post" %}
+                {% comment %} // Get source {% endcomment %}
                 {% assign sorted_pages = site.posts %}
             {% endif %}        
         {% else %}           
@@ -75,7 +76,11 @@ container_class="box-shadow" type_class="" type-item_class="" %}
 
                         <img class="featured-img" src="{{ page.featured-img | default: '/assets/images/placeholder.jpg' | relative_url }}" alt="Featured Image">
                         
+                        
                         <h3 class="item-title"><a href="{{ page.url | relative_url }}">{{ page.title }}</a></h3>                        
+                        {% if site.tag_archive.type and page.tags[0] %}
+                            {% include tag-list.html %}
+                        {% endif %}
                         {% if page.subtitle %}
                             <h4 class="item-subtitle">{{ page.subtitle }}</h4>                    
                         {% endif %}
@@ -104,28 +109,6 @@ container_class="box-shadow" type_class="" type-item_class="" %}
             </div>    
             
         {% endif %}
-
-    {% elsif type == "possssst" %}
-        {% assign sorted_posts = site.posts %}
-        {% if site.categories[target_topic] %}
-            {% assign sorted_posts = site.categories[target_topic] | sort: topic_sort %}
-        {% endif %}       
-    
-        {% if topic_order == "desc" %}
-            {% assign sorted_posts = sorted_posts | reverse %}
-        {% endif %}
-    
-        {% assign limited_posts = sorted_posts | slice: 0, topic_limit %}
-        <p>Posts "{{ target_topic }}" - limited to {{ limited_posts.size }} - order ({{ topic_order}})</p>
-        <ul>
-        {% for post in limited_posts%}
-            {% if post.url %}
-                <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a> (Priority: {{ post.priority }})</li>
-            {% endif %}
-        {% endfor %}    
-        </ul>
-
-
-    {% endif %}
+        
 {% endfor %}
 </div>

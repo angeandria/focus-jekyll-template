@@ -5,7 +5,7 @@ guide-1:
     id: 1-1
     url: /guide-1
     title: "Guide 1" 
-    subtitle: "Thsi is Guide 1"     
+    subtitle: "This is Guide 1"     
     description: "
     from data.guides.yml | Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever
     

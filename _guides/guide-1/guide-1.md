@@ -8,6 +8,9 @@ description: This is Guide 1 description dummy text of the printing and typesett
 categories:
   - personal development
   - main
+tags:
+  - featured
+  - black friday
 priority: 10
 ---
 
