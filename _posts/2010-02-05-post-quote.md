@@ -5,7 +5,7 @@ header:
 categories:
   - blog
 tags:
-  - post formats
+  - post-formats
   - quote
 ---
 

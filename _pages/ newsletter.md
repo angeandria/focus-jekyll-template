@@ -1,7 +1,7 @@
 ---
 title: "Newsletter"
 categories:
-  - personal development
+  - personal-development
 show_date: true
 ---
 

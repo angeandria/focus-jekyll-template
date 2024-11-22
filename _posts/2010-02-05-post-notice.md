@@ -3,7 +3,7 @@ title: "Post: Notice"
 categories:
   - blog
 tags:
-  - post formats
+  - post-formats
   - notice
 ---
 
