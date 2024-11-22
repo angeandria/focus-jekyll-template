@@ -1,6 +1,12 @@
 {% comment %} HOW TO USE
-- example : {% include focus/post-display.html type="resource" topic="main" order="desc" 
-container_class="box-shadow" type_class="" type-item_class="" %}
+{% include focus/post-display.html
+    type="resource"
+    topic="main" # Posts : site.categories, other collections : site.pages where...
+    format="list" # cards, grid
+    order="desc" 
+    container_class="box-shadow"
+    type_class=""
+    type-item_class="" %}
 {% endcomment %} 
 
 {% assign target_topic = include.topic | default: "all" %}
