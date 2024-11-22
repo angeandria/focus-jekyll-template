@@ -13,6 +13,6 @@ layout: focus/single
     {% for category_key in site.data.categories %}
         <h4>category_key : {{category_key}}</h4>
         <h4>category_key[0] : {{ category_key[0] }}</h4>      
-        {% include focus/post-display.html type=type topic=category_key[0] order="desc" container_class="" type_class="box-shadow" type-item_class="" %}            
+        {% include focus/post-display.html type=type topic="personal development" order="desc" container_class="" type_class="box-shadow" type-item_class="" %}            
     {% endfor %}        
 {% endfor %}
