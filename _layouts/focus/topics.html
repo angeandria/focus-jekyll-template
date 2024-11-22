@@ -6,10 +6,15 @@ layout: focus/single
 
 ---
 
-{% assign types_list = "resource, page, post" %}
+{% assign types_list = "resource, page, post" | split: ", " %}
 
-{% include focus/post-display.html type="page" topic="personal development" order="desc" container_class="" type_class="box-shadow" type-item_class="" %}
-
-{% include focus/post-display.html type="resource" topic="personal development" order="desc" container_class="" type_class="box-shadow" type-item_class="" %}
-
-{% include focus/post-display.html type="post" topic="personal development" order="desc" container_class="" type_class="box-shadow" type-item_class="" %}
+{% for type in types_list %}
+    {% for category_key in site.data.categories %}
+        <h4>{{ category_key[0] }}</h4>      
+        {% if type != "post" %}
+            {% include focus/post-display.html type=type topic=category_key[0] order="desc" container_class="" type_class="box-shadow" type-item_class="" %}
+        {% else %}    
+    {% endfor %}
+        
+    {% endif %}
+{% endfor %}
