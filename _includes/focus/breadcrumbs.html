@@ -64,12 +64,12 @@
                 <a href="{{ '/' | relative_url }}resources/" itemprop="item"><span itemprop="name">Resources</span></a>          
             
             {% else %}
-                <a href="{{ '/' | relative_url }}{{site.category_archive.path}}/{{ category_main_slug }}" itemprop="item"><span itemprop="name">{{ category_main_label |  default : "article" }}</span></a>          
+                <a href="{{ '/' | relative_url }}{{site.category_archive.path}}/{{ category_main_slug }}" itemprop="item"><span itemprop="name">def -{{ category_main_label |  default : "article" }}</span></a>          
             {% endif %}
             <meta itemprop="position" content="{{ i }}" />
         </li>
         <span class="sep">{{ site.data.ui-text[site.locale].breadcrumb_separator | default: "/" }}</span>
-      {% endif %}
+      {% endif %} 
     {% endfor %}
   </ol>
 </nav>
