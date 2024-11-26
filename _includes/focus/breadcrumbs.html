@@ -12,6 +12,11 @@
   {% assign crumb_path = site.category_archive.path %}
 {% endif %}
 
+{% assign layout_slug = page.layout | default: layout.layout | replace: '/', '-') %}
+{% assign layout_class = site.layout_prefix | append: layout_slug %}
+{% assign current_layout = layout_slug | replace: 'focus-', '') %}
+
+<h1>{{ current_layout }}</h1>
 
 {% comment %}
 <!-- Main Category class -->
@@ -64,10 +69,11 @@
                 <a href="{{ '/' | relative_url }}resources/" itemprop="item"><span itemprop="name">Resources</span></a>          
             
             {% else %}
-                <a href="{{ '/' | relative_url }}{{site.category_archive.path}}/{{ category_main_slug }}" itemprop="item"><span itemprop="name">def -{{ category_main_label |  default : "article" }}                                        
-                </span></a>          
-                YOOO
                 <a href="{{ crumb | downcase | replace: '%20', '-' | prepend: path_type | prepend: crumb_path | relative_url }}" itemprop="item"><span itemprop="name">{{ crumb | url_decode | replace: '-', ' ' | capitalize }}</span></a>
+                
+                - YOO - 
+                <a href="{{ '/' | relative_url }}{{site.category_archive.path}}/{{ category_main_slug }}" itemprop="item"><span itemprop="name">def -{{ category_main_label |  default : "article" }}</span></a>          
+
             {% endif %}
             <meta itemprop="position" content="{{ i }}" />
         </li>
