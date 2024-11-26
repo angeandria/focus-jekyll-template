@@ -2,7 +2,7 @@
 {% assign post_slug = page.title | slugify %}
 {% capture dynamic_key %}{{ post_slug }}{% endcapture %}
 {% assign taxonomy_details = site.data.categories[dynamic_key] %}
-
+<h1>Page title? {{ page.title }}</h1>
 {% if taxonomy_details %}
   <div class="taxonomy-details">
        <h1 id="page-title" class="page__title"{% if page.locale %} lang="{{ page.locale }}"{% endif %}>{{ taxonomy_details.title | markdownify }}</h1>
