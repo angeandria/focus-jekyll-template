@@ -22,12 +22,12 @@
 {% assign topic_limit = include.limit | default: 100000 %}
 
 
-{% comment %} DEBUG
+
 <h2>
     Type : {{type_string}} | Topic : {{ target_topic }}<br>
     sort by ({{ topic_sort}}) limit ({{ topic_limit}}) order ({{ topic_order}})
 </h2>
-{% endcomment %}
+
 
 
 <div class="items-container {{ container_class }}">
