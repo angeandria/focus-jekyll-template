@@ -4,8 +4,8 @@ title_before: "How to"
 title_after: "Let's do it"
 date: 2019-04-18T15:34:30-04:00
 categories:
-  - guide
   - personal-development
+  - guide  
 tags:
   - jekyll
   - update

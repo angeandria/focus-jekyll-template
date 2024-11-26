@@ -66,7 +66,7 @@
             {% else %}
                 <a href="{{ '/' | relative_url }}{{site.category_archive.path}}/{{ category_main_slug }}" itemprop="item"><span itemprop="name">def -{{ category_main_label |  default : "article" }}
                     
-                    - YOOO - {{ crumb | url_decode | replace: '-', ' ' | capitalize }}
+                    {{ crumb | url_decode | replace: '-', ' ' | capitalize }}
                     
                 </span></a>          
             {% endif %}
