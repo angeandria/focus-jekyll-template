@@ -41,10 +41,10 @@
 
 
 
-<nav class="breadcrumbs">123
+<nav class="breadcrumbs">
   <ol itemscope itemtype="https://schema.org/BreadcrumbList">
     {% assign crumbs = page.url | split: '/' %}
-    {% assign i = 1 %}0123
+    {% assign i = 1 %}
     {% for crumb in crumbs offset: 1 %}
       {% if forloop.first %}
         <li class="nav-item-home" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
@@ -70,7 +70,6 @@
         </li>
         <span class="sep">{{ site.data.ui-text[site.locale].breadcrumb_separator | default: "/" }}</span>
       {% endif %} 
-    {% endfor %}0456
+    {% endfor %}
   </ol>
 </nav>
-456

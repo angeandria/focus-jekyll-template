@@ -10,8 +10,8 @@ author_profile: false
 {% endif %}
 
 {% if page.url != "/" and site.breadcrumbs %}
-  {% unless paginator %}YOOOOO
-    {% include breadcrumbs.html %}
+  {% unless paginator %}
+    {% include focus/breadcrumbs.html %}
   {% endunless %}
 {% endif %}
 
