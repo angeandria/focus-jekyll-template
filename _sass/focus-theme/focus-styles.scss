@@ -113,7 +113,7 @@ $max-width: $x-large !default;
     flex-wrap: wrap;
     padding-block: 1em;
     padding-inline: 1em;
-    @include breakpoint($large) {
+    @include breakpoint($x-large) {
         flex-wrap: nowrap;
     }
 }
@@ -125,7 +125,7 @@ $max-width: $x-large !default;
     padding-inline-end: 0;
     margin: 0;
     
-    @include breakpoint($large) {
+    @include breakpoint($x-large) {
             margin-right: 30px;
     }
 }
@@ -133,7 +133,7 @@ $max-width: $x-large !default;
 .sidebar{
     flex-grow: 1;
     /*width: $small;*/
-    @include breakpoint($large) {
+    @include breakpoint($x-large) {
             flex: 0 0 26%;
     }
 }
