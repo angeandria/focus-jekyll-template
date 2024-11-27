@@ -304,7 +304,7 @@ exclude:
   - README
   - tmp
   - _posts/content
-  - _pages/content/_pages_content # - _pages/examples 
+  - _pages/content/_pages_content
   - /docs # ignore Minimal Mistakes /docs
   - /test # ignore Minimal Mistakes /test
 keep_files:
