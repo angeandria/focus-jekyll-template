@@ -29,17 +29,3 @@ docs:
         url: /docs/authors/
       - title: "Layouts"
         url: /docs/layouts/
-        
-guide-1:
-  - title: Guide 1 navi
-    children:
-      - title: "Start"
-        url: /guide/guide-1
-      - title: "What"
-        url: /guide/guide-1-post-1
-      - title: "Why"
-        url: /guide/guide-1-post-2
-      - title: "How"
-        url: /guide/guide-1-post-3
-      - title: "+"
-        url: /guide/guide-1-post-cta        

@@ -1,6 +1,6 @@
 ---
 title: Guide 1
-guide: guide-1
+resource: guide-1
 subtitle: This is Guide 1 subtitle blablablab
 featured-img: "assets/images/placeholder-1200.jpg"	
 featured-logo: "assets/images/bio-photo.jpg"	
@@ -12,6 +12,9 @@ tags:
   - featured
   - black-friday
 priority: 10
+actions :
+  - label: "Get this"
+    url: "https://angeandria.com"
 ---
 
 This is the Guide 1 that blabla and then bu
