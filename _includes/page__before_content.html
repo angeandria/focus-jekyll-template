@@ -1,7 +1,1 @@
-{% if page.resource %}
-PAGE RESOURCE : {{ page.resource }}
-{% endif %}
-{% if post.resource %}
-POST RESOURCE : {{ post.resource }}
-{% endif %}
-<div class="resource-navi sticky">{% include focus/nav_list.html nav="guide-1" type="resource" %}</div>
+{% include focus/resource-navigation.html nav=page.resource type="resource" %}

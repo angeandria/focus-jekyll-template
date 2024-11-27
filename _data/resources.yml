@@ -45,15 +45,15 @@ guide-2:
     cta-title: "Get this"
     cta-url: "https://angeandria.com"
     navigation:
-      - title: Guide 1 navi
+      - title: Guide 2 navi
         children:
           - title: "Start"
-            url: /resource/guide-1
+            url: /resource/guide-2
           - title: "What"
-            url: /resource/guide-1-post-1
+            url: /resource/guide-2-post-1
           - title: "Why"
-            url: /resource/guide-1-post-2
+            url: /resource/guide-2-post-2
           - title: "How"
-            url: /resource/guide-1-post-3
+            url: /resource/guide-2-post-3
           - title: "+"
-            url: /resource/guide-1-post-cta        
+            url: /resource/guide-2-post-cta        

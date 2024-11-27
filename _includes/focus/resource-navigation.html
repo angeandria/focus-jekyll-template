@@ -1,0 +1,16 @@
+
+NAV : {{ include.nav}}
+TYPE : {{ include.type }}
+{% if site.data.resources[include.nav] %}
+    {% assign data = site.data.resources[include.nav] %}
+    <ul>
+        <li>{{ data.id }}</li>
+        <li>{{ data.url }}</li>        
+        <li>{{ data.title }}</li>
+        <li>{{ data.subtitle }}</li>
+        <li>{{ data.description }}</li>
+        <li>{{ data.id }}</li>        
+    </ul>    
+{% endif %}
+
+<div class="resource-navi sticky">{% include focus/nav_list.html nav=include.nav type=include.type %}</div>
