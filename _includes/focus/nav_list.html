@@ -4,10 +4,13 @@
   <label for="ac-toc">{{ site.data.ui-text[site.locale].menu_label | default: "Toggle Menu" }}</label>
   <ul class="nav__items">
     {% for navname in include.nav %}
+        TYPE : {{include.type }}
           {% if include.type="resource" %}
+            abc
             {% assign navigation = site.data.resources[navname].navigation %}
           {% else %}
-            {% assign navigation = site.data.navigation[navname] %}
+            def
+            {% assign navigation = site.data.navigation[navname] %}            
           {% endif %}
           
           {% for nav in navigation %}
