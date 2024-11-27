@@ -1,0 +1,36 @@
+{% assign resource = include.resource %}
+{% if site.data.resources[resource] %}
+    {% assign resource_details = site.data.resources[resource] %}
+
+    {% assign current_url = page.url | relative_url %}    
+    {% assign resource_source_url = resource_details.url | relative_url %}
+    
+    {% comment %}
+    Display Resource Data only if on the first page of the Guide
+    {% endcomment %}
+    {% if current_url == resource_source_url %}    
+        <div id="resource__header">
+            <div class="wrapper">
+                <div class="header">
+                    <div class="resource__featured-img"><img src="{{ resource_details.featured-img | relative_url }}" />
+                    </div>
+                    <div class="resource__title">
+                        <a href="{{ resource_details.url | relative_url }}">{{ resource_details.title }}</a>
+                    </div>
+                    <div class="resource__subtitle">
+                        {{ resource_details.subtitle | markdownify | strip_html }}
+                    </div>
+                    <div class="resource__description">
+                        {{ resource_details.description  | markdownify | strip_html }}
+                    </div>
+                    {% if resource.actions and resource.actions.size > 0 %}
+                        <div class="resource__cta">
+                            <a href="{{ resource_details.actions[0].url  | relative_url }}">{{ resource_details.actions[0].label }}</a>                        
+                        </div>                   
+                    {% endif %}
+                </div>
+            </div>
+        </div>    
+    {% endif %}
+    
+{% endif %}
