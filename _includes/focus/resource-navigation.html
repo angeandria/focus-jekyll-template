@@ -4,7 +4,7 @@ TYPE : {{ include.type }}
 {% if site.data.resources[include.nav] %}
     {% assign resource = site.data.resources[include.nav] %}
     
-    {% assign path = resource.url | relative_url }}
+    {% assign path = resource.url | relative_url %}
     TEST path : {{ path }} // {{ page.url }}
     <ul>        
         <li><a href="{{ resource.url | relative_url }}">{{ resource.title }}</a></li>
