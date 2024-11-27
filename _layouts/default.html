@@ -94,7 +94,11 @@
         {% endcase %}
         
         {% include_cached skip-links.html %}
-        {% include_cached masthead.html %}
+        <div id="header">
+            <div class="wrapper">
+                {% include_cached masthead.html %}
+            </div>
+        </div>
     
         <div class="initial-content">
             <!-- SECTION page__before_content -->      
@@ -120,16 +124,18 @@
         {% endif %}
     
         <div id="footer" class="page__footer">
-          <footer>
-            <!-- SECTION footer__before -->      
-            {% include focus/hook.html hook="footer__before" %}
-            
-            {% include footer/custom.html %}
-            {% include_cached footer.html %}
-            
-            <!-- SECTION footer__after -->      
-            {% include focus/hook.html hook="footer__after" %}      
-          </footer>
+            <div class="wrapper">
+                  <footer>
+                    <!-- SECTION footer__before -->      
+                    {% include focus/hook.html hook="footer__before" %}
+                    
+                    {% include footer/custom.html %}
+                    {% include_cached footer.html %}
+                    
+                    <!-- SECTION footer__after -->      
+                    {% include focus/hook.html hook="footer__after" %}      
+                  </footer>
+            </div>
         </div>
     
         {% include scripts.html %}

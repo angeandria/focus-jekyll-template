@@ -87,156 +87,159 @@ layout: default
 
 <!-- Main -->
 <div id="main" role="main">
-      <article class="page" itemscope itemtype="https://schema.org/CreativeWork"{% if page.locale %} lang="{{ page.locale }}"{% endif %}>
-        {% if page.title %}<meta itemprop="headline" content="{{ page.title | replace: '|', '&#124;' | markdownify | strip_html | strip_newlines | escape_once }}">{% endif %}
-        {% if page.excerpt %}<meta itemprop="description" content="{{ page.excerpt | markdownify | strip_html | strip_newlines | escape_once }}">{% endif %}
-        {% if page.date %}<meta itemprop="datePublished" content="{{ page.date | date_to_xmlschema }}">{% endif %}
-        {% if page.last_modified_at %}<meta itemprop="dateModified" content="{{ page.last_modified_at | date_to_xmlschema }}">{% endif %}
-    
+    <div class="wrapper">
+          <article class="page" itemscope itemtype="https://schema.org/CreativeWork"{% if page.locale %} lang="{{ page.locale }}"{% endif %}>
+            {% if page.title %}<meta itemprop="headline" content="{{ page.title | replace: '|', '&#124;' | markdownify | strip_html | strip_newlines | escape_once }}">{% endif %}
+            {% if page.excerpt %}<meta itemprop="description" content="{{ page.excerpt | markdownify | strip_html | strip_newlines | escape_once }}">{% endif %}
+            {% if page.date %}<meta itemprop="datePublished" content="{{ page.date | date_to_xmlschema }}">{% endif %}
+            {% if page.last_modified_at %}<meta itemprop="dateModified" content="{{ page.last_modified_at | date_to_xmlschema }}">{% endif %}
         
-        <div class="page__inner-wrap">            
-      
-            {% comment %} ########### DISABLE FOR NOW 
-            <header>
-              {% unless page.header.overlay_color or page.header.overlay_image %}
-                  {% if page.title_before %}<div class="page-title-before">{{ page.title_before }}</div>{% endif %}
-                  {% if page.title %}
-                  <h1 id="page-title" class="page__title" itemprop="headline">
-                    <a href="{{ page.url | absolute_url }}" itemprop="url">{{ page.title | markdownify | remove: "<p>" | remove: "</p>" }}</a>
-                  </h1>
-                  {% if page.title_after %}<div class="page-title-after">{{ page.title_after }}</div>{% endif %}
-                  {% endif %}
-              {% endunless %}      
-    
-              {% if page.featured_image or page.featured_video %}
-                      {% include focus/page__featured.html %}                
-              {% endif %}      
-              {% include page__meta.html %}
-            </header>
-            {% endcomment %}
-                                            
-             
-              <!-- SECTION page__before_post -->   
-              {% include focus/hook.html hook="page__before_post" class=""%}      
-              
-              <section class="page__content" itemprop="text">
-                      {% comment %} ########### DISABLE FOR NOW 
-                              <aside class="sidebar__right {% if page.toc_sticky %}sticky{% endif %}">
-                                  
-                                <!-- BEFORE -->  
-                                {% comment %} ### FOCUS code ### {% endcomment %}
-                                
-                                    <!-- SECTION sidebar__right_before -->
-                                    {% include focus/hook.html hook="sidebar__right_before" %}      
-                
-                                {% comment %} ### END - FOCUS code ### {% endcomment %}
-                                
-                                <!-- CTA -->
-                                  {% comment %} ### FOCUS code ### {% endcomment %}
-                
-                                <!-- SECTION sidebar__right_cta -->      
-                                {% include focus/hook.html hook="sidebar__right_cta" %}
-                    
-                                  {% comment %} ### END - FOCUS code ### {% endcomment %}
-                                 
-                                <!-- TOC -->  
-                                {% if page.toc %}
-                                <nav class="toc">
-                                  <header><h4 class="nav__title"><i class="fas fa-{{ page.toc_icon | default: 'file-alt' }}"></i> {{ page.toc_label | default: site.data.ui-text[site.locale].toc_label | default: "On this page" }}</h4></header>
-                                  {% include toc.html sanitize=true html=content h_min=1 h_max=6 class="toc__menu" skip_no_ids=true %}
-                                </nav>
-                                {% endif %}
-                                
-                                <!-- SIDEBAR CONTENT (config.yml) -->
-                                {% if page.sidebar %}
-                                    {% for s in page.sidebar %}
-                                      {% if s.image %}
-                                        <img src="{{ s.image | relative_url }}"
-                                             alt="{% if s.image_alt %}{{ s.image_alt }}{% endif %}">
-                                      {% endif %}
-                                      {% if s.title %}<h3>{{ s.title }}</h3>{% endif %}
-                                      {% if s.text %}{{ s.text | markdownify }}{% endif %}
-                                      {% if s.nav %}{% include nav_list nav=s.nav %}{% endif %}
-                                    {% endfor %}
-                                    {% if page.sidebar.nav %}
-                                      {% include nav_list nav=page.sidebar.nav %}
-                                    {% endif %}
-                                {% endif %}
-                                  
-                                <!-- AFTER -->
-                                {% comment %} ### FOCUS code ### {% endcomment %}
-                
-                                <!-- SECTION sidebar__right_after -->
-                                {% include focus/hook.html hook="sidebar__right_after" %}      
-                
-                                {% comment %} ### END - FOCUS code ### {% endcomment %}                    
-                              </aside>
-                    {% endcomment %}  
             
-                    
-                    <!-- CONTENT -->
-                    {% assign paragraphs = content | split: '</p>' %}
-                    {% for paragraph in paragraphs %}
-                        {{ paragraph | append: '</p>' }}
-                        {% if forloop.index == 3 %}
-                           {% include focus/hook.html hook="page__within_post" %}
-                        {% endif %}
-                    {% endfor %}
-                    
-                                      
-                    {% if page.link %}
-                        <div>                                
-                            <a href="{{ page.link }}" class="btn btn--primary">{{ site.data.ui-text[site.locale].ext_link_label | default: "Direct Link" }}</a>
-                        
-                        </div>
-                    {% endif %}
-        
-              </section> <!-- page__content -->
-        
-              <footer class="page__meta">
-                {% if site.data.ui-text[site.locale].meta_label %}
-                  <h4 class="page__meta-title">{{ site.data.ui-text[site.locale].meta_label }}</h4>
-                {% endif %}
-                
-                <!-- Page taxonomy -->
-                {% if page.show_taxonomy %}{% include page__taxonomy.html %}{% endif %}    
-                
-                <!-- Page date -->
-                {% if page.show_footer_date %}{% include page__date.html %}{% endif %}
-              </footer>
-              
-              <!-- SECTION page__after_post -->
-              {% include focus/hook.html hook="page__after_post"  class="notice--danger" %}      
-        
-              <!-- Page sharing -->
-              {% if page.share %}{% include social-share.html %}{% endif %}
-            
-              <!-- Page pagination -->
-              {% if page.show_pagination %}{% include post_pagination.html %}{% endif %}
+            <div class="page__inner-wrap">            
           
-        </div> <!-- page__inner-wrap -->
-    
-        {% if jekyll.environment == 'production' and site.comments.provider and page.comments %}
-          {% include comments.html %}
-        {% endif %}
+                {% comment %} ########### DISABLE FOR NOW 
+                <header>
+                  {% unless page.header.overlay_color or page.header.overlay_image %}
+                      {% if page.title_before %}<div class="page-title-before">{{ page.title_before }}</div>{% endif %}
+                      {% if page.title %}
+                      <h1 id="page-title" class="page__title" itemprop="headline">
+                        <a href="{{ page.url | absolute_url }}" itemprop="url">{{ page.title | markdownify | remove: "<p>" | remove: "</p>" }}</a>
+                      </h1>
+                      {% if page.title_after %}<div class="page-title-after">{{ page.title_after }}</div>{% endif %}
+                      {% endif %}
+                  {% endunless %}      
         
-
+                  {% if page.featured_image or page.featured_video %}
+                          {% include focus/page__featured.html %}                
+                  {% endif %}      
+                  {% include page__meta.html %}
+                </header>
+                {% endcomment %}
+                                                
+                 
+                  <!-- SECTION page__before_post -->   
+                  {% include focus/hook.html hook="page__before_post" class=""%}      
+                  
+                  <section class="page__content" itemprop="text">
+                          {% comment %} ########### DISABLE FOR NOW 
+                                  <aside class="sidebar__right {% if page.toc_sticky %}sticky{% endif %}">
+                                      
+                                    <!-- BEFORE -->  
+                                    {% comment %} ### FOCUS code ### {% endcomment %}
+                                    
+                                        <!-- SECTION sidebar__right_before -->
+                                        {% include focus/hook.html hook="sidebar__right_before" %}      
+                    
+                                    {% comment %} ### END - FOCUS code ### {% endcomment %}
+                                    
+                                    <!-- CTA -->
+                                      {% comment %} ### FOCUS code ### {% endcomment %}
+                    
+                                    <!-- SECTION sidebar__right_cta -->      
+                                    {% include focus/hook.html hook="sidebar__right_cta" %}
+                        
+                                      {% comment %} ### END - FOCUS code ### {% endcomment %}
+                                     
+                                    <!-- TOC -->  
+                                    {% if page.toc %}
+                                    <nav class="toc">
+                                      <header><h4 class="nav__title"><i class="fas fa-{{ page.toc_icon | default: 'file-alt' }}"></i> {{ page.toc_label | default: site.data.ui-text[site.locale].toc_label | default: "On this page" }}</h4></header>
+                                      {% include toc.html sanitize=true html=content h_min=1 h_max=6 class="toc__menu" skip_no_ids=true %}
+                                    </nav>
+                                    {% endif %}
+                                    
+                                    <!-- SIDEBAR CONTENT (config.yml) -->
+                                    {% if page.sidebar %}
+                                        {% for s in page.sidebar %}
+                                          {% if s.image %}
+                                            <img src="{{ s.image | relative_url }}"
+                                                 alt="{% if s.image_alt %}{{ s.image_alt }}{% endif %}">
+                                          {% endif %}
+                                          {% if s.title %}<h3>{{ s.title }}</h3>{% endif %}
+                                          {% if s.text %}{{ s.text | markdownify }}{% endif %}
+                                          {% if s.nav %}{% include nav_list nav=s.nav %}{% endif %}
+                                        {% endfor %}
+                                        {% if page.sidebar.nav %}
+                                          {% include nav_list nav=page.sidebar.nav %}
+                                        {% endif %}
+                                    {% endif %}
+                                      
+                                    <!-- AFTER -->
+                                    {% comment %} ### FOCUS code ### {% endcomment %}
+                    
+                                    <!-- SECTION sidebar__right_after -->
+                                    {% include focus/hook.html hook="sidebar__right_after" %}      
+                    
+                                    {% comment %} ### END - FOCUS code ### {% endcomment %}                    
+                                  </aside>
+                        {% endcomment %}  
+                
+                        
+                        <!-- CONTENT -->
+                        {% assign paragraphs = content | split: '</p>' %}
+                        {% for paragraph in paragraphs %}
+                            {{ paragraph | append: '</p>' }}
+                            {% if forloop.index == 3 %}
+                               {% include focus/hook.html hook="page__within_post" %}
+                            {% endif %}
+                        {% endfor %}
+                        
+                                          
+                        {% if page.link %}
+                            <div>                                
+                                <a href="{{ page.link }}" class="btn btn--primary">{{ site.data.ui-text[site.locale].ext_link_label | default: "Direct Link" }}</a>
+                            
+                            </div>
+                        {% endif %}
+            
+                  </section> <!-- page__content -->
+            
+                  <footer class="page__meta">
+                    {% if site.data.ui-text[site.locale].meta_label %}
+                      <h4 class="page__meta-title">{{ site.data.ui-text[site.locale].meta_label }}</h4>
+                    {% endif %}
+                    
+                    <!-- Page taxonomy -->
+                    {% if page.show_taxonomy %}{% include page__taxonomy.html %}{% endif %}    
+                    
+                    <!-- Page date -->
+                    {% if page.show_footer_date %}{% include page__date.html %}{% endif %}
+                  </footer>
+                  
+                  <!-- SECTION page__after_post -->
+                  {% include focus/hook.html hook="page__after_post"  class="notice--danger" %}      
+            
+                  <!-- Page sharing -->
+                  {% if page.share %}{% include social-share.html %}{% endif %}
+                
+                  <!-- Page pagination -->
+                  {% if page.show_pagination %}{% include post_pagination.html %}{% endif %}
+              
+            </div> <!-- page__inner-wrap -->
+        
+            {% if jekyll.environment == 'production' and site.comments.provider and page.comments %}
+              {% include comments.html %}
+            {% endif %}
+            
     
-  </article>
-  
-  <!-- Sidebar -->
-  {% include focus/sidebar.html class="main" %}
-
+        
+      </article>
+      
+      <!-- Sidebar -->
+      {% include focus/sidebar.html class="main" %}
+    </div> <!-- .wrapper -->
 </div> <!-- #main -->
 
 <div class="single-related">
-      {% comment %}<!-- only show related on a post page when `related: true` -->{% endcomment %}
-  {% if page.id and page.related and site.related_posts.size > 0 %}
-    {% include page__related.html posts=site.related_posts %}
-  {% comment %}<!-- otherwise show recent posts if no related when `related: true` -->{% endcomment %}
-  {% elsif page.id and page.related %}
-    {% include page__related.html posts=site.posts %}
-  {% endif %}
+    <div class="wrapper">
+          {% comment %}<!-- only show related on a post page when `related: true` -->{% endcomment %}
+          {% if page.id and page.related and site.related_posts.size > 0 %}
+            {% include page__related.html posts=site.related_posts %}
+          {% comment %}<!-- otherwise show recent posts if no related when `related: true` -->{% endcomment %}
+          {% elsif page.id and page.related %}
+            {% include page__related.html posts=site.posts %}
+          {% endif %}
+    </div>
 </div>
 
 
