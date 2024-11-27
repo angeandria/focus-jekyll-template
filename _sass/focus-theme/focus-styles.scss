@@ -109,12 +109,14 @@ $max-width: $x-large !default;
 */
     
 body > #header,
-.resource__header,
+#resource__header,
 #main,
 .single-related,
 body > #footer{
     & > .wrapper{
         max-width: 960px;
+        display: flex;
+        flex-wrap: nowrap;
     }
 }
 #main {    
