@@ -2,16 +2,18 @@
 NAV : {{ include.nav}}
 TYPE : {{ include.type }}
 {% if site.data.resources[include.nav] %}
-    {% assign data = site.data.resources[include.nav] %}
-    <ul>
-        <li>{{ data.id }}</li>
-        <li>{{ data.url }}</li>        
-        <li>{{ data.title }}</li>
-        <li>{{ data.subtitle }}</li>
-        <li>{{ data.description }}</li>
-        <li>{{ data.featured-img }}</li>        
-        <li>{{ data.actions.label }}</li>        
-        <li>{{ data.actions.url }}</li>                
+    {% assign resource = site.data.resources[include.nav] %}
+    
+    {% assign path = resource.url | relative_url }}
+    TEST path : {{ path }} // {{ page.url }} 
+    <ul>        
+        <li><a href="{{ resource.url | relative_url }}">{{ resource.title }}</a></li>
+        <li>{{ resource.subtitle }}</li>
+        <li>{{ resource.description }}</li>
+        <li>{{ resource.featured-img }}</li>        
+        {% if resource.actions and resource.actions.size > 0 %}
+            <li><a href="{{ resource.actions[0].url  | relative_url }}">{{ resource.actions[0].label }}</a></li>                    
+        {% endif %}  
     </ul>    
 {% endif %}
 
