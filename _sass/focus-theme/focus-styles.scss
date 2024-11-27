@@ -107,18 +107,16 @@ $large: 1024px !default;
 $x-large: 1280px !default;
 $max-width: $x-large !default;
 */
-    
-body > #header,
+
 #resource__header,
 #main,
 .single-related,
 body > #footer{
     & > .wrapper{
-        max-width: 960px;
-        display: flex;
-        flex-wrap: nowrap;
+        max-width: 1280px;        
     }
 }
+       
 #main {    
     display: flex;
     flex-wrap: wrap;
@@ -126,6 +124,9 @@ body > #footer{
     padding-inline: 1em;
     @include breakpoint($small) {
         flex-wrap: nowrap;
+    }
+    .wrapper{
+        display: flex;
     }
 }
 
@@ -143,6 +144,7 @@ body > #footer{
 
 .sidebar{
     flex-grow: 1;
+    overflow: hidden;overflow
     /*width: $small;*/
     @include breakpoint($small) {
             flex: 0 0 26%;
