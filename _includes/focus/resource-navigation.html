@@ -1,20 +1,33 @@
 
 NAVI : {{ include.nav}}
 TYPE : {{ include.type }}
+
+
+
 {% if site.data.resources[include.nav] %}
     {% assign resource = site.data.resources[include.nav] %}
+
+    {% assign current_url = page.url | relative_url %}    
+    {% assign resource_source_url = resource.url | relative_url %}
     
-    {% assign path = resource.url | relative_url %}
-    TEST path : {{ path }} // {{ page.url | relative_url }}
-    <ul>        
-        <li><a href="{{ resource.url | relative_url }}">{{ resource.title }}</a></li>
-        <li>{{ resource.subtitle }}</li>
-        <li>{{ resource.description }}</li>
-        <li>{{ resource.featured-img }}</li>        
-        {% if resource.actions and resource.actions.size > 0 %}
-            <li><a href="{{ resource.actions[0].url  | relative_url }}">{{ resource.actions[0].label }}</a></li>                    
-        {% endif %}  
-    </ul>    
+    {% comment %}
+    Display Resource Data only if on the first page of the Guide
+    {% endcomment %}
+    {% if current_url == resource_source_url %}    
+        image : <img src="{{ resource.featured-img | relative_url }}" />
+        <ul>        
+            <li><a href="{{ resource.url | relative_url }}">{{ resource.title }}</a></li>
+            <li>{{ resource.subtitle | markdownify | strip_html }}</li>
+            <li>{{ resource.description  | markdownify | strip_html }}</li>
+            <li></li>        
+            {% if resource.actions and resource.actions.size > 0 %}
+                <li><a href="{{ resource.actions[0].url  | relative_url }}">{{ resource.actions[0].label }}</a></li>   
+            {% else %}                      
+                no url {{ resource.actions[0].url }} or label {{ resource.actions[0].label }} to display
+            {% endif %}  
+        </ul>    
+    {% endif %}
+    
 {% endif %}
 
 <div class="resource-navi sticky">{% include focus/nav_list.html nav=include.nav type=include.type %}</div>
