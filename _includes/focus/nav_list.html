@@ -5,11 +5,9 @@
   <ul class="nav__items">
     {% for navname in include.nav %}
       {% comment %} FOCUS {% endcomment %}
-      {% if include.type == "resource"}
-            {% assign navigation = site.data.resources[navname].navigation %}
-      {% else %}
+      
             {% assign navigation = site.data.navigation[navname] %}
-      {% endif %}    
+      
       {% for nav in navigation %}
         <li>
           {% if nav.url %}
