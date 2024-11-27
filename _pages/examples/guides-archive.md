@@ -1,8 +1,8 @@
 ---
-title: Guides Archive
+title: Resources Archive
 layout: collection
-permalink: /guides-archive/
-collection: guides
+permalink: /resources-archive/
+collection: resources
 entries_layout: grid
 classes: wide
 ---
