@@ -43,6 +43,13 @@ $box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     --width-m: 960px;
     --width-s: 720px
     --width-xs: 560px;
+    
+    --font-size-ratio: 1;
+    --font-size-xl: calc(var(--font-size-ratio) * 3em);
+    --font-size-l: calc(var(--font-size-ratio) * 2em);
+    --font-size-m: calc(var(--font-size-ratio) * 1.25em);
+    --font-size-s: calc(var(--font-size-ratio) * .8em);
+    --font-size-xs: calc(var(--font-size-ratio) * .6em);
 }
 
 
