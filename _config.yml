@@ -191,7 +191,7 @@ defaults:
       path: "_resources"
       type: resources
     values:
-      layout: focus/single-page
+      layout: focus/single-resource
       ###
       author_profile: true
       comments: false
