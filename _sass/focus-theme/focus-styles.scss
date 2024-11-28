@@ -154,7 +154,7 @@ body > #footer{
     flex-grow: 1;
     overflow: hidden;
     /*width: $small;*/
-    @include breakpoint($medum-large) {
+    @include breakpoint($medium-large) {
             flex: 0 0 26%;
     }
 }
