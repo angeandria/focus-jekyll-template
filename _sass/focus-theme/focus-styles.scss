@@ -113,12 +113,12 @@ $max-width: $x-large !default;
 .single-related,
 body > #footer{
     & > .wrapper{
-        max-width: 1280px;        
+        max-width: var(--width-xl);        
     }
 }
 
 #resource__header .wrapper{
-  max-width:960px;
+  max-width: var(--width-m);
 }
        
 #main {    
@@ -132,6 +132,7 @@ body > #footer{
     .wrapper{
         @include breakpoint($small) {
             display: flex;
+        }
     }
     
 }
