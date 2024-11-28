@@ -137,7 +137,7 @@ body > #footer{
     
 }
 
-.layout--focus-single-page{
+//.layout--focus-single-page{
     .page {    
         float: none;    
         flex-grow: 1;
@@ -148,7 +148,7 @@ body > #footer{
                 margin-right: 30px;
         }
     }
-}
+//}
 
 .sidebar{
     flex-grow: 1;
