@@ -130,8 +130,10 @@ body > #footer{
         flex-wrap: nowrap;
     }
     .wrapper{
-        // display: flex;
+        @include breakpoint($small) {
+            display: flex;
     }
+    
 }
 
 
