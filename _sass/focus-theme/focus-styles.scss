@@ -418,20 +418,20 @@ html, .page__content p, .page__content li, .page__content dl{
 }
 
 h1{
-    font-size: calc(var(--font-size-l) * 3) ;
-}
-h2{
-    font-size: calc(var(--font-size-l) * 2.6) ;
-}
-h3{
-    font-size: calc(var(--font-size-l) * 2.3) ;
-}
-h4{
     font-size: calc(var(--font-size-l) * 2) ;
 }
-h5{
+h2{
     font-size: calc(var(--font-size-l) * 1.8) ;
 }
+h3{
+    font-size: calc(var(--font-size-l) * 1.6) ;
+}
+h4{
+    font-size: calc(var(--font-size-l) * 1.3) ;
+}
+h5{
+    font-size: calc(var(--font-size-l) * 1.2) ;
+}
 h6{
-    font-size: calc(var(--font-size-l) * 1.5) ;
+    font-size: calc(var(--font-size-l) * 1) ;
 }
