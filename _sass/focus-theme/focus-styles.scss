@@ -126,11 +126,11 @@ body > #footer{
     flex-wrap: wrap;
     padding-block: 1em;
     padding-inline: 1em;
-    @include breakpoint($small) {
+    @include breakpoint($medium) {
         flex-wrap: nowrap;
     }
     .wrapper{
-        @include breakpoint($small) {
+        @include breakpoint($medium) {
             display: flex;
         }
     }
