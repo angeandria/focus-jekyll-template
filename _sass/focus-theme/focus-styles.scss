@@ -57,6 +57,9 @@ body.template--columns-one{
     #main .wrapper > .sidebar__container{
         display: none;
     }
+    article.page{
+        margin-inline: 0;
+    }
 }
 
 
@@ -69,8 +72,11 @@ body.template--sidebar-left,
 body.template--sidebar-right{
     #main .wrapper > .sidebar__left,
     #main .wrapper > .sidebar__right{
-        //@include breakpoint($medium) {
-                flex: 0 0 var(--sidebar-width-l);
+        flex: 0 0 var(--sidebar-width-l);
+    }
+    
+    article.page{
+        margin-inline: var(--gutter-l);
     }
     
 }
@@ -196,10 +202,11 @@ $x-large: 1280px !default;
 $max-width: $x-large !default;
 */
 
-.initial-content, .search-content{
-    padding-inline-start: 1em;
-    padding-inline-end: 1em;    
+.initial-content,
+.search-content{        
+    padding-inline: 1em;
 }
+
 #resource__header,
 #main,
 .single-related,
@@ -264,8 +271,7 @@ article.page {
     margin: 0;
     
     @include breakpoint($medium) {
-            margin-left: var(--gutter-m);
-            margin-right: var(--gutter-m);
+            margin-inline: var(--gutter-m);
     }        
     pre {
         overflow-wrap: break-word;
@@ -277,8 +283,6 @@ article.page {
 #main {    
     display: flex;
     flex-wrap: wrap;
-    padding-block: 1em;
-    padding-inline: 1em;
     @include breakpoint($medium) {
         flex-wrap: nowrap;
     }
