@@ -67,9 +67,6 @@ body.template--columns-one{
 * -----------
 */
 body.template--sidebar-left{
-    #main .wrapper > .sidebar{
-        display: none;
-    }
     
     article.page{
         order: 2;        
@@ -242,8 +239,27 @@ body > #footer{
 }
 
 
-article.page {    
+#main .wrapper > .sidebar__left,
+#main .wrapper > .sidebar__right{
+    flex-grow: 1;
+    overflow: hidden;   
+    display: none; /* Default on small screens */
+    @include breakpoint($medium) {
+            flex: 0 0 26%;
+            display: initial;
+    }
+}
+
+#main .wrapper > .sidebar__left{
     order: 1;
+}
+#main .wrapper > .sidebar__right{
+    order: 3;
+}
+
+    
+article.page {    
+    order: 2;
     float: none;    
     flex-grow: 1;
     padding-inline-end: 0;
@@ -251,26 +267,10 @@ article.page {
     
     @include breakpoint($medium) {
             margin-right: 30px;
-    }
-    
-    
+    }        
     pre {
         overflow-wrap: break-word;
         white-space: pre-wrap;
-    }
-}
-
-
-
-.sidebar{
-    order: 2;
-    flex-grow: 1;
-    overflow: hidden;
-    /*width: $small;*/
-    display: none; /* Default on small screens */
-    @include breakpoint($medium) {
-            flex: 0 0 26%;
-            display: initial;
     }
 }
 
