@@ -264,8 +264,8 @@ article.page {
     margin: 0;
     
     @include breakpoint($medium) {
-            margin-left: 30px;
-            margin-right: 30px;
+            margin-left: var(--gutter-m);
+            margin-right: var(--gutter-m);
     }        
     pre {
         overflow-wrap: break-word;
@@ -311,12 +311,14 @@ article.page {
     }
 }
 
+
 #main .wrapper > .sidebar__container{
+    /*
     padding-block-start: 1em;
     padding-block-end: 1em;    
     padding-inline-start: 1em;
     padding-inline-end: 1em;
-    box-shadow: $box-shadow;
+    */
 }    
 
 #main .wrapper > .sidebar__left{
@@ -570,8 +572,12 @@ html,
 * S
 * ------
 */
-table,
-.breadcrumbs ol{
+
+.breadcrumbs ol,
+.page__meta, .comment__date,
+#page__header .page__meta_wrapper,
+#page__header .page__meta_wrapper a,
+table,{
     font-size: var(--font-size-s);
 }
 
@@ -581,9 +587,6 @@ table,
 * ------
 */
 .small,
-.site-subtitle,
-.page__meta, .comment__date,
-#page__header .page__meta_wrapper, #page__header .page__meta_wrapper a,
-{
+.site-subtitle{
     font-size: var(--font-size-xs);
 }
