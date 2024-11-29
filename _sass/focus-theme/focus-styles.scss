@@ -237,6 +237,16 @@ body > #footer{
 
 /*
 * -----------
+* ONE COLUMN
+* -----------
+*/
+body.layout--focus-one-column{
+    
+}
+
+
+/*
+* -----------
 * SINGLE PAGE
 * -----------
 */
@@ -244,7 +254,7 @@ body > #footer{
 body.layout--sidebar,
 body.layout--focus-single-page{
     #main > .sidebar{
-        display: none;
+        // display: none;
     }
     #main > .page{
         margin-right: 0;
