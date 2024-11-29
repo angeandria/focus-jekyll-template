@@ -138,7 +138,8 @@ defaults:
     values:
       layout: focus/single-post
       classes:
-        - single
+        - post
+        - template--sidebar-right        
       sidebar:
         - title: "My Title" 
           image: "/assets/images/your-image.jpg"
@@ -191,6 +192,8 @@ defaults:
   - scope:
       path: "_resources"
       type: resources
+      classes:
+        - resource
     values:
       layout: focus/single-resource
       ###
@@ -208,6 +211,8 @@ defaults:
   - scope:
       path: "_tools"
       type: tools
+      classes:
+          - tool      
     values:
       layout: focus/single-page
       ###
