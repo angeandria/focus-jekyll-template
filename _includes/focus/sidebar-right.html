@@ -4,17 +4,17 @@
 
   <div class="sidebar__{{ side }}_container sticky {{ include.class}}">
       
-      <!-- Before -->
+      <!-- SECTION sidebar__SIDE_before -->
       {% comment %} ### FOCUS code ### {% endcomment %}
       <div class="sidebar__{{ side }}_before">
-        {% include focus/hook.html hook="sidebar__{{ side }}_before" %}      
+        {% include focus/hook.html hook='sidebar__' | append: side | append: '_before' %}
       </div>          
       {% comment %} ### END - FOCUS code ### {% endcomment %}
         
-      <!-- CTA -->
+      <!-- SECTION sidebar__SIDE_cta -->
       {% comment %} ### FOCUS code ### {% endcomment %}
       <div class="sidebar__{{side}}_cta">
-        {% include focus/hook.html hook="sidebar__{{side}}_cta" %}
+        {% include focus/hook.html hook='sidebar__' | append: side | append: '_cta' %}
       </div>          
       {% comment %} ### END - FOCUS code ### {% endcomment %}
 
@@ -44,9 +44,9 @@
       {% endif %}
       
       
-      <!-- After -->
+      <!-- SECTION sidebar__SIDE_after -->
       <div class="sidebar__{{side}}_after">
-        {% include focus/hook.html hook="sidebar__{{side}}_after" %}      
+        {% include focus/hook.html hook='sidebar__' | append: side | append: '_after' %}
       </div>          
     
   </div>
