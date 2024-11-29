@@ -283,6 +283,8 @@ article.page {
     padding-block-end: 1em;    
     padding-inline-start: 1em;
     padding-inline-end: 1em;
+    box-shadow: $box-shadow;
+    background-color: yellow;
 }    
 
 #main .wrapper > .sidebar__left{
