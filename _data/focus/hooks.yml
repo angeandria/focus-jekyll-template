@@ -18,7 +18,7 @@ page__after_post:
   custom: true   
 page__after_content:
   custom: true 
-  sidebar__left_before:
+sidebar__left_before:
   custom: true 
 sidebar__left_cta:
   custom: true
