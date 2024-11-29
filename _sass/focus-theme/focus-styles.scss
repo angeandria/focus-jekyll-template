@@ -225,6 +225,7 @@ body > #footer{
 /* TEMPORARY : Hide internal sidebar */
 .page_content aside.sidebar__right{
     // display: none;
+    background: blue;
 }
 
 
@@ -237,9 +238,10 @@ body > #footer{
 
 /*
 * -----------
-* ONE COLUMN
+* ONE COLUMN - Custom Body class. NOT jekyll layout.
 * -----------
 */
+/* Hide */
 body.template--one-column{
     
 }
@@ -250,7 +252,7 @@ body.template--one-column{
 * SINGLE PAGE
 * -----------
 */
-/* Hide Sidebar */
+/* Hide Sidebar NOT TARGETING ANYTHING */
 body.layout--sidebar,
 body.layout--focus-single-page{
     #main > .sidebar{
