@@ -59,6 +59,9 @@ body.template--columns-one{
     }
 }
 body.aside-none{
+    .sidebar__right{
+        background: red;
+    }
     section.page__content aside.sidebar__right{
         display: none !important;
     }
