@@ -39,6 +39,25 @@
     padding: 14px 20px;
     margin: 20px 0 14px;
 }
+
+
+/*
+* --------------------------
+* CUSTOM CLASSES
+* --------------------------
+*/
+
+/*
+* -----------
+* One Column
+* -----------
+*/
+/* Hide */
+body.template--one-column{
+    .page_content aside.sidebar__right{
+    display: none;
+}
+
 /*
 * ----------------------
 * HOOKS
@@ -240,16 +259,6 @@ article.page {
 * LAYOUTS
 * ==========================================
 */
-
-/*
-* -----------
-* ONE COLUMN - Custom Body class. NOT jekyll layout.
-* -----------
-*/
-/* Hide */
-body.template--one-column{
-    
-}
 
 
 /*
