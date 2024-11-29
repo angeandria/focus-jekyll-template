@@ -7,14 +7,16 @@
       <!-- SECTION sidebar__SIDE_before -->
       {% comment %} ### FOCUS code ### {% endcomment %}
       <div class="sidebar__{{ side }}_before">
-        {% include focus/hook.html hook='sidebar__' | append: side | append: '_before' %}
+        {% assign hook_tmp = 'sidebar__' | append: side | append: '_before' %}  
+        {% include focus/hook.html hook=hook_tmp %}
       </div>          
       {% comment %} ### END - FOCUS code ### {% endcomment %}
         
       <!-- SECTION sidebar__SIDE_cta -->
       {% comment %} ### FOCUS code ### {% endcomment %}
       <div class="sidebar__{{side}}_cta">
-        {% include focus/hook.html hook='sidebar__' | append: side | append: '_cta' %}
+            {% assign hook_tmp = 'sidebar__' | append: side | append: '_cta' %}  
+            {% include focus/hook.html hook=hook_tmp %}
       </div>          
       {% comment %} ### END - FOCUS code ### {% endcomment %}
 
@@ -46,7 +48,8 @@
       
       <!-- SECTION sidebar__SIDE_after -->
       <div class="sidebar__{{side}}_after">
-        {% include focus/hook.html hook='sidebar__' | append: side | append: '_after' %}
+            {% assign hook_tmp = 'sidebar__' | append: side | append: '_after' %}  
+            {% include focus/hook.html hook=hook_tmp %}
       </div>          
     
   </div>
