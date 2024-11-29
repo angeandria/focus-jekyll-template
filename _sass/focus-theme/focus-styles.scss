@@ -224,7 +224,7 @@ body > #footer{
 */
 /* TEMPORARY : Hide internal sidebar */
 .page_content aside.sidebar__right{
-    display: none;
+    // display: none;
 }
 
 
@@ -240,7 +240,7 @@ body > #footer{
 * ONE COLUMN
 * -----------
 */
-body.layout--focus-one-column{
+body.template--one-column{
     
 }
 
@@ -255,9 +255,11 @@ body.layout--sidebar,
 body.layout--focus-single-page{
     #main > .sidebar{
         // display: none;
+        background: orange;
     }
     #main > .page{
         margin-right: 0;
+        background: yellow;
     }
 }
 
