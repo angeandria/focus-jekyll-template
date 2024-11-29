@@ -239,8 +239,8 @@ body > #footer{
 }
 
 
-#main .wrapper > .sidebar__left,
-#main .wrapper > .sidebar__right{
+#main .wrapper > .sidebar__left_container,
+#main .wrapper > .sidebar__right_container{
     flex-grow: 1;
     overflow: hidden;   
     display: none; /* Default on small screens */
@@ -250,10 +250,10 @@ body > #footer{
     }
 }
 
-#main .wrapper > .sidebar__left{
+#main .wrapper > .sidebar__left_container{
     order: 1;
 }
-#main .wrapper > .sidebar__right{
+#main .wrapper > .sidebar__right_container{
     order: 3;
 }
 
