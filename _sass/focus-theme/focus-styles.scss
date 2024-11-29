@@ -85,11 +85,17 @@ body.template--sidebar-left{
     #main .wrapper > .sidebar__right{
         display: none;
     }
+    article.page{
+        margin-inline-end: 0;
+    }
 }
 
 body.template--sidebar-right{    
     #main .wrapper > .sidebar__left{
         display: none;
+    }    
+    article.page{
+        margin-inline-start: 0;
     }    
 }
 

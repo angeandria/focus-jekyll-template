@@ -173,6 +173,7 @@ defaults:
       type: pages
       classes:
         - page
+        - template--sidebar-right
     values:
       layout: focus/single-page
       ###
