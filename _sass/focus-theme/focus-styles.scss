@@ -53,12 +53,16 @@
 * -----------
 */
 /* Hide */
-body.template--one-column{
+body.template--columns-one{
+    #main .wrapper > sidebar{
+        display: none;
+    }
+}
+body.aside-none{
     .page_content aside.sidebar__right{
         display: none;
     }
 }
-
 
 /*
 * -----------
@@ -255,9 +259,10 @@ article.page {
 
 /* Overwrite minimal mistakes behavior */
 aside.sidebar__right{
-    float: right;
+    
     @include breakpoint($medium) {
         margin-inline-end: inherit;
+        float: right;
     }    
 }
 
