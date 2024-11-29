@@ -12,6 +12,8 @@ tags:
   - markup
 toc: true
 toc_sticky: true
+classes:
+  - aside-none
 ---
 
 A variety of common markup showing how the theme styles them.
