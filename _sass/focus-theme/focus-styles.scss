@@ -432,9 +432,6 @@ body {
 FONTS
 --------------------------------------
 */
-html, .page__content p, .page__content li, .page__content dl{
-    font-size: var(--font-size-m);
-}
 
 h1{
     font-size: calc(var(--font-size-l) * 2) ;
@@ -455,6 +452,45 @@ h6{
     font-size: calc(var(--font-size-l) * .8) ;
 }
 
+/*
+* ------
+* L
+* ------
+*/
 a.site-title{
     font-size: var(--font-size-l);
+}
+
+/*
+* ------
+* M
+* ------
+*/
+html,
+.site-nav a,
+.page__content p, .page__content li, .page__content dl{
+    font-size: var(--font-size-m);
+}
+
+/*
+* ------
+* S
+* ------
+*/
+table,
+.breadcrumbs ol{
+    font-size: var(--font-size-s);
+}
+
+/*
+* ------
+* XS
+* ------
+*/
+.small,
+.site-subtitle,
+.page__meta, .comment__date,
+#page__header .page__meta_wrapper, #page__header .page__meta_wrapper a,
+{
+    font-size: var(--font-size-xs);
 }
