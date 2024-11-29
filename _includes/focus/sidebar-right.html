@@ -2,12 +2,12 @@
 
 {% assign side = include.side | default: "right" %}
 
-  <div class="sidebar__{{side}}_container sticky {{ include.class}}">
+  <div class="sidebar__{{ side }}_container sticky {{ include.class}}">
       
       <!-- Before -->
       {% comment %} ### FOCUS code ### {% endcomment %}
-      <div class="sidebar__{{side}}_before">
-        {% include focus/hook.html hook="sidebar__{{side}}_before" %}      
+      <div class="sidebar__{{ side }}_before">
+        {% include focus/hook.html hook="sidebar__{{ side }}_before" %}      
       </div>          
       {% comment %} ### END - FOCUS code ### {% endcomment %}
         
