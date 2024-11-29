@@ -88,6 +88,10 @@ layout: default
 <!-- Main -->
 <div id="main" role="main">
     <div class="wrapper">
+        
+          <!-- Sidebar -->
+          {% include focus/sidebar-left.html class="main" %}
+          
           <article class="page" itemscope itemtype="https://schema.org/CreativeWork"{% if page.locale %} lang="{{ page.locale }}"{% endif %}>
             {% if page.title %}<meta itemprop="headline" content="{{ page.title | replace: '|', '&#124;' | markdownify | strip_html | strip_newlines | escape_once }}">{% endif %}
             {% if page.excerpt %}<meta itemprop="description" content="{{ page.excerpt | markdownify | strip_html | strip_newlines | escape_once }}">{% endif %}
