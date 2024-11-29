@@ -60,11 +60,19 @@ body.template--columns-one{
 }
 
 
+/*
+* -----------
+* Sidebar Left / Sidebar Right
+* -----------
+*/
 body.template--sidebar-left,
 body.template--sidebar-right{
-    @include breakpoint($medium) {
-            flex: 0 0 var(--sidebar-width-l);
+    #main .wrapper > .sidebar__left,
+    #main .wrapper > .sidebar__right{
+        //@include breakpoint($medium) {
+                flex: 0 0 var(--sidebar-width-l);
     }
+    
 }
 
 body.template--sidebar-left{
@@ -98,17 +106,6 @@ body.template--sidebar-right{
 * Sidebar Left - Invert Sidebar's side TODO
 * -----------
 */
-body.template--sidebar-left{
-    
-    article.page{
-        order: 2;        
-    }
-    #main .wrapper > .sidebar{
-        order: 1;        
-    }
-    
-}
-
 
 body.aside-none{
     section.page__content aside.sidebar__right{
@@ -199,6 +196,10 @@ $x-large: 1280px !default;
 $max-width: $x-large !default;
 */
 
+.initial-content, .search-content{
+    padding-inline-start: 1em;
+    padding-inline-end: 1em;    
+}
 #resource__header,
 #main,
 .single-related,
@@ -316,7 +317,6 @@ article.page {
     padding-inline-start: 1em;
     padding-inline-end: 1em;
     box-shadow: $box-shadow;
-    background-color: yellow;
 }    
 
 #main .wrapper > .sidebar__left{
@@ -361,18 +361,7 @@ aside.sidebar__right{
 * SINGLE PAGE
 * -----------
 */
-/* Hide Sidebar NOT TARGETING ANYTHING */
-body.layout--sidebar,
-body.layout--focus-single-page{
-    #main > .sidebar{
-        // display: none;
-        background: orange;
-    }
-    #main > .page{
-        margin-right: 0;
-        background: yellow;
-    }
-}
+
 
 /*
 * -----------
