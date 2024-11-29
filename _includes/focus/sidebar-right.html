@@ -1,17 +1,20 @@
 {% if page.author_profile or layout.author_profile or page.sidebar %}
-  <div class="sidebar__right_container sticky {{ include.class}}">
+
+{% assign side = include.side | default: "right" %}
+
+  <div class="sidebar__{{side}}_container sticky {{ include.class}}">
       
       <!-- Before -->
       {% comment %} ### FOCUS code ### {% endcomment %}
-      <div class="sidebar__right_before">
-        {% include focus/hook.html hook="sidebar__right_before" %}      
+      <div class="sidebar__{{side}}_before">
+        {% include focus/hook.html hook="sidebar__{{side}}_before" %}      
       </div>          
       {% comment %} ### END - FOCUS code ### {% endcomment %}
         
       <!-- CTA -->
       {% comment %} ### FOCUS code ### {% endcomment %}
-      <div class="sidebar__right_cta">
-        {% include focus/hook.html hook="sidebar__right_cta" %}
+      <div class="sidebar__{{side}}_cta">
+        {% include focus/hook.html hook="sidebar__{{side}}_cta" %}
       </div>          
       {% comment %} ### END - FOCUS code ### {% endcomment %}
 
@@ -42,11 +45,9 @@
       
       
       <!-- After -->
-      {% comment %} ### FOCUS code ### {% endcomment %}
-      <div class="sidebar__right_after">
-        {% include focus/hook.html hook="sidebar__right_after" %}      
+      <div class="sidebar__{{side}}_after">
+        {% include focus/hook.html hook="sidebar__{{side}}_after" %}      
       </div>          
-      {% comment %} ### END - FOCUS code ### {% endcomment %}
     
   </div>
 {% endif %}

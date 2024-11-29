@@ -90,7 +90,7 @@ layout: default
     <div class="wrapper">
         
           <!-- Sidebar -->
-          {% include focus/sidebar-left.html class="main" %}
+          {% include focus/sidebar-left.html side="left" class="main" %}
           
           <article class="page" itemscope itemtype="https://schema.org/CreativeWork"{% if page.locale %} lang="{{ page.locale }}"{% endif %}>
             {% if page.title %}<meta itemprop="headline" content="{{ page.title | replace: '|', '&#124;' | markdownify | strip_html | strip_newlines | escape_once }}">{% endif %}
@@ -185,7 +185,7 @@ layout: default
       </article>
       
       <!-- Sidebar -->
-      {% include focus/sidebar.html class="main" %}
+      {% include focus/sidebar.html side="right" class="main" %}
     </div> <!-- .wrapper -->
 </div> <!-- #main -->
 
