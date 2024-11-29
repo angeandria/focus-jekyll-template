@@ -54,10 +54,34 @@
 */
 /* Hide */
 body.template--columns-one{
-    #main .wrapper > .sidebar{
+    #main .wrapper > .sidebar__container{
         display: none;
     }
 }
+
+body.template--sidebar-left{
+    #main .wrapper > .sidebar__left{
+        display: none;
+    }
+}
+
+body.template--sidebar-right{
+    #main .wrapper > .sidebar__right{
+        display: none;
+    }
+}
+
+
+/*
+
+#main .wrapper > .sidebar__left,
+#main .wrapper > .sidebar__right{    
+    @include breakpoint($medium) {
+            flex: 0 0 var(--sidebar-width-m);
+            display: initial;
+    }
+}
+*/
 
 
 
@@ -273,7 +297,7 @@ article.page {
     padding-inline-start: auto;
     padding-inline-end: auto;
     @include breakpoint($medium) {
-            flex: 0 0 26%;
+            flex: 0 0 var(--sidebar-width-m);
             display: initial;
     }
 }
