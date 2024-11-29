@@ -58,6 +58,15 @@ body.template--one-column{
     display: none;
 }
 
+
+/*
+* -----------
+* Sidebar Left - Invert Sidebar's side TODO
+* -----------
+*/
+
+
+
 /*
 * ----------------------
 * HOOKS
@@ -239,6 +248,16 @@ article.page {
             flex: 0 0 26%;
             display: initial;
     }
+}
+
+
+
+/* Overwrite minimal mistakes behavior */
+aside.sidebar__right{
+    float: right;
+    @include breakpoint($medium) {
+        margin-inline-end: inherit;
+    }    
 }
 
 /*
