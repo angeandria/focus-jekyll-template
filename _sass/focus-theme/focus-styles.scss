@@ -59,16 +59,24 @@ body.template--columns-one{
     }
 }
 
+
+body.template--sidebar-left,
+body.template--sidebar-right{
+    @include breakpoint($medium) {
+            flex: 0 0 var(--sidebar-width-l);
+    }
+}
+
 body.template--sidebar-left{
-    #main .wrapper > .sidebar__left{
+    #main .wrapper > .sidebar__right{
         display: none;
     }
 }
 
-body.template--sidebar-right{
-    #main .wrapper > .sidebar__right{
+body.template--sidebar-right{    
+    #main .wrapper > .sidebar__left{
         display: none;
-    }
+    }    
 }
 
 
