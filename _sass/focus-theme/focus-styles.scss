@@ -59,8 +59,8 @@ body.template--columns-one{
     }
 }
 body.aside-none{
-    .page__content aside.sidebar__right{
-        display: none;
+    section.page__content aside.sidebar__right{
+        display: none !important;
     }
 }
 
