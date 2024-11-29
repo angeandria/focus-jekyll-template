@@ -192,7 +192,7 @@ body > #footer{
 }
 
 
-.page {    
+article.page {    
     float: none;    
     flex-grow: 1;
     padding-inline-end: 0;
@@ -202,6 +202,11 @@ body > #footer{
             margin-right: 30px;
     }
     
+    
+    pre {
+        overflow-wrap: break-word;
+        white-space: pre-wrap;
+    }
 }
 
 
