@@ -137,9 +137,11 @@ defaults:
       type: posts
     values:
       layout: focus/single-post
-      classes:
-        - post
-        - template--sidebar-right        
+      template: sidebar-right
+      ##
+      classes: 
+        - post    
+        - template--sieebar-right
       sidebar:
         - title: "My Title" 
           image: "/assets/images/your-image.jpg"
@@ -172,12 +174,13 @@ defaults:
   - scope:
       path: "_pages"
       type: pages
+    values:
+      layout: focus/single-page
+      template: sidebar-right
+      ###
       classes:
         - page
         - template--sidebar-right
-    values:
-      layout: focus/single-page
-      ###
       author_profile: true
       comments: false      
       read_time: false
@@ -192,11 +195,13 @@ defaults:
   - scope:
       path: "_resources"
       type: resources
-      classes:
-        - resource
     values:
       layout: focus/single-resource
+      template: columns-one
       ###
+      classes:
+        - resource
+        - template--columns-one
       author_profile: true
       comments: false
       read_time: false
