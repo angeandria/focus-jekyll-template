@@ -30,6 +30,7 @@ minimal_mistakes_skin: "default" # "air", "aqua", "contrast", "dark", "dirt", "n
 mytheme_alias: "focus"
 mytheme_suffix: "-theme"
 layout_prefix: layout--
+template_prefix: template--
 categories_prefix: category--
 category_main_id_prefix: category--
 category_main_prefix: category-main--
@@ -141,7 +142,6 @@ defaults:
       ##
       classes: 
         - post    
-        - template--sieebar-right
       sidebar:
         - title: "My Title" 
           image: "/assets/images/your-image.jpg"
@@ -180,7 +180,6 @@ defaults:
       ###
       classes:
         - page
-        - template--sidebar-right
       author_profile: true
       comments: false      
       read_time: false

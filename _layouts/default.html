@@ -18,6 +18,12 @@
     {% assign template = page.template | default: layout.template %}
 
     {% comment %}
+    <!-- Template class -->
+    {% endcomment %}
+    {% assign template = page.template | default: layout.template %}
+    {% assign template_class = site.template_prefix | append: template %}
+    
+    {% comment %}
     ## DEBUG
     LAYOUT SLUG : {{ layout_slug }}    
     LAYOUT_CLASS : {{ layout_class }}
@@ -80,7 +86,7 @@
   "slug:" | append: category_main_slug | append: ",class:" | append: category_main_class | append: ",label:" | append: category_main_label %}
     {% endcomment %}
     
-    <body class="{{ layout_class }} {{ category_main_id_class }} {{ category_main_class }} {{ categories_classes }} {{ page_classes }}" dir="{% if site.rtl %}rtl{% else %}ltr{% endif %}">
+    <body class="{{ layout_class }} {{ template_class )} {{ category_main_id_class }} {{ category_main_class }} {{ categories_classes }} {{ page_classes }}" dir="{% if site.rtl %}rtl{% else %}ltr{% endif %}">
         
         <!-- SECTION top__bar -->
         {% case current_layout %}                
