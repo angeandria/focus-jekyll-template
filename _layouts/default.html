@@ -15,6 +15,7 @@
     {% assign layout_slug = page.layout | default: layout.layout | replace: '/', '-') %}
     {% assign layout_class = site.layout_prefix | append: layout_slug %}
     {% assign current_layout = layout_slug | replace: 'focus-', '') %}
+    {% assign template = page.template | default: layout.template %}
 
     {% comment %}
     ## DEBUG
