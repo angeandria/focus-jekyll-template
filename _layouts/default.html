@@ -86,7 +86,7 @@
   "slug:" | append: category_main_slug | append: ",class:" | append: category_main_class | append: ",label:" | append: category_main_label %}
     {% endcomment %}
     
-    <body class="{{ layout_class }} {{ template_class )} {{ category_main_id_class }} {{ category_main_class }} {{ categories_classes }} {{ page_classes }}" dir="{% if site.rtl %}rtl{% else %}ltr{% endif %}">
+    <body class="{{ layout_class }} {{ template_class }} {{ category_main_id_class }} {{ category_main_class }} {{ categories_classes }} {{ page_classes }}" dir="{% if site.rtl %}rtl{% else %}ltr{% endif %}">
         
         <!-- SECTION top__bar -->
         {% case current_layout %}                
