@@ -1,9 +1,6 @@
 ---
 title: Guide 1
 resource: guide-1
-classes :
-  - hello
-  - template--sidebar-right
 subtitle: This is Guide 1 subtitle blablablab
 featured-img: "assets/images/placeholder-1200.jpg"	
 featured-logo: "assets/images/bio-photo.jpg"	
