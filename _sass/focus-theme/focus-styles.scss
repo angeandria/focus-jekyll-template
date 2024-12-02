@@ -54,7 +54,8 @@
 */
 /* Hide */
 // body.template--columns-one by Default
-body{
+body,
+body.template--columns-one{
     #main .wrapper > .sidebar__container{
         display: none;
     }
@@ -84,18 +85,28 @@ body.template--sidebar-left-right{
 }
 
 body.template--sidebar-left{
+    #main .wrapper > .sidebar__left{
+        flex: 0 0 var(--sidebar-left-width);
+    }
+    /* Hide the other sidebar
     #main .wrapper > .sidebar__right{
         display: none;
     }
+     */
     article.page{
         margin-inline-end: 0;
     }
 }
 
 body.template--sidebar-right{   
+    #main .wrapper > .sidebar__right{
+        flex: 0 0 var(--sidebar-right-width);
+    }
+    /*
     #main .wrapper > .sidebar__left{
         display: none;
     }    
+    */
     article.page{
         margin-inline-start: 0;
     }    

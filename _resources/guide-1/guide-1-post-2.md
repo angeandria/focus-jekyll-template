@@ -1,7 +1,10 @@
 ---
 title: "Guide 1 Post 2"
 resource: guide-1
+template : sidebar-left
 ---
+
+template : sidebar-right
 
 > Tempor velit sint sunt ipsum tempor enim ad qui ullamco. Est dolore anim ad velit duis dolore minim sunt
 

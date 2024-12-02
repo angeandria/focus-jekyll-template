@@ -1,5 +1,6 @@
 ---
 title: "Markup: Text Alignment"
+template: columns-one
 categories:
   - Markup
 tags:
