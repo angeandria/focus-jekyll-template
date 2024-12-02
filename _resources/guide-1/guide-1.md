@@ -23,6 +23,12 @@ sidebar:
     text: "Some text here."
     nav:
       - main                      
+  - title: "My Second navi" 
+    image: "/assets/images/bio-photo.jpg"
+    image_alt: "image"
+    text: "Some text here."
+    nav:
+      - main                            
 ---
 
 This is the Guide 1 that blabla and then bu
