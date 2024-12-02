@@ -15,6 +15,13 @@ priority: 10
 actions :
   - label: "Get this"
     url: "https://angeandria.com"
+sidebar:
+  - title: "My Guide navi" 
+    image: "/assets/images/placeholder.jpg"
+    image_alt: "image"
+    text: "Some text here."
+    nav:
+      - main                      
 ---
 
 This is the Guide 1 that blabla and then bu
