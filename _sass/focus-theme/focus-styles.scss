@@ -41,6 +41,14 @@
 }
 
 
+.sticky {
+      @include clearfix();
+      position: -webkit-sticky;
+      position: sticky;
+      top: 2em;
+      float: inline-end;
+}
+
 /*
 * --------------------------
 * CUSTOM CLASSES
@@ -582,7 +590,8 @@ html,
 .page__meta, .comment__date,
 #page__header .page__meta_wrapper,
 #page__header .page__meta_wrapper a,
-table,{
+table,
+ul.toc__menu li a{
     font-size: var(--font-size-s);
 }
 
