@@ -1,7 +1,6 @@
 ---
 title: Guide 1
 resource: guide-1
-template: sidebar-right
 subtitle: This is Guide 1 subtitle blablablab
 featured-img: "assets/images/placeholder-1200.jpg"	
 featured-logo: "assets/images/bio-photo.jpg"	
@@ -29,7 +28,6 @@ sidebar:
     text: "Some text here."
     nav:
       - main                            
-toc: true      
 ---
 
 This is the Guide 1 that blabla and then bu

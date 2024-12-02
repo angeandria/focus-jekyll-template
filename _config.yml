@@ -139,19 +139,7 @@ defaults:
       template: sidebar-right
       ##
       #classes: 
-      #  - foo
-      sidebar:
-        - title: "My Title" 
-          image: "/assets/images/placeholder.jpg"
-          image_alt: "image"
-          text: "Some text here."
-          nav:
-            - main                  
-        # - title: "My Seconde Title"  
-        #   text: "More text"
-        #   nav:
-        #     - main
-        #     - docs
+      #  - foo      
       toc: true
       toc_label: "Unique Title"
       toc_icon: "heart"  # corresponding Font Awesome icon name (without fa prefix)
@@ -159,6 +147,15 @@ defaults:
       ###  
       author: default # data/authors.yml
       author_profile: true
+      ###
+      sidebar:
+        - image: "/assets/images/placeholder.jpg"
+          image_alt: "image"
+          title: "My Title" 
+          text: "Some text here."
+          nav:
+            - main    
+      ###      
       comments: true
       read_time: false
       related: false
@@ -178,7 +175,17 @@ defaults:
       ###
       #classes:
       #  - foo
+      author: default
       author_profile: true
+      ###
+      sidebar:
+        - image: "/assets/images/placeholder.jpg"
+          image_alt: "image"
+          title: "My Title" 
+          text: "Some text here."
+          nav:
+            - main                  
+      ###
       comments: false      
       read_time: false
       related: false
@@ -194,7 +201,7 @@ defaults:
       type: resources
     values:
       layout: focus/single-resource
-      template: columns-one
+      template: sidebar--left-right
       ###
       #classes:
       #  - foo
@@ -203,6 +210,15 @@ defaults:
       toc_icon: "heart"  # corresponding Font Awesome icon name (without fa prefix)
       toc_sticky: true
       author_profile: true
+      ###      
+      sidebar:
+        - image: "/assets/images/placeholder.jpg"
+          image_alt: "image"
+          title: "My Title" 
+          text: "Some text here."
+          nav:
+            - main                        
+      ###
       comments: false
       read_time: false
       related: false
