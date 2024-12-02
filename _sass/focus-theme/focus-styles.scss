@@ -41,13 +41,13 @@
 }
 
 
-.sticky {
-      @include clearfix();
-      position: -webkit-sticky;
-      position: sticky;
-      top: 2em;
-      float: inline-end;
-}
+// .sticky {
+//       @include clearfix();
+//       position: -webkit-sticky;
+//       position: sticky;
+//       top: 2em;
+//       float: inline-end;
+// }
 
 /*
 * --------------------------
