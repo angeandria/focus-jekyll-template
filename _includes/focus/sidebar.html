@@ -34,23 +34,19 @@
       <!-- Custom sidebar --> 
       {% if page.sidebar %}
         {% for s in page.sidebar %}
-            <!-- Image --> 
+              <!-- Image --> 
               {% if s.image %}
                 <img src="{{ s.image | relative_url }}"
                      alt="{% if s.image_alt %}{{ s.image_alt }}{% endif %}">
               {% endif %}
+
               <!-- Text --> 
               {% if s.title %}<h3>{{ s.title }}</h3>{% endif %}
               {% if s.text %}{{ s.text | markdownify }}{% endif %}
+
               <!-- Navigation --> 
-              ABC
               {% if s.nav %}{% include nav_list nav=s.nav %}{% endif %}
-        {% endfor %}
-        
-        {% if page.sidebar.nav %}
-            DEF
-          {% include nav_list nav=page.sidebar.nav %}
-        {% endif %}
+        {% endfor %}                
       {% endif %}
       
       

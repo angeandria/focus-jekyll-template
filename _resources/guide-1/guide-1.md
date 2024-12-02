@@ -29,6 +29,7 @@ sidebar:
     text: "Some text here."
     nav:
       - main                            
+toc: true      
 ---
 
 This is the Guide 1 that blabla and then bu

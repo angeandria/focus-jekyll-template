@@ -198,6 +198,10 @@ defaults:
       ###
       #classes:
       #  - foo
+      toc: true
+      toc_label: "My Toc title"
+      toc_icon: "heart"  # corresponding Font Awesome icon name (without fa prefix)
+      toc_sticky: true
       author_profile: true
       comments: false
       read_time: false
