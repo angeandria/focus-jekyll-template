@@ -73,10 +73,6 @@ body.template--columns-one{
 body.template--sidebar-left,
 body.template--sidebar-right,
 body.template--sidebar-left-right{
-    #main .wrapper > .sidebar__left,
-    #main .wrapper > .sidebar__right{
-        flex: 0 0 var(--sidebar-width-l);
-    }
     
     article.page{
         margin-inline: var(--gutter-l);
@@ -87,6 +83,7 @@ body.template--sidebar-left-right{
 body.template--sidebar-left{
     #main .wrapper > .sidebar__left{
         flex: 0 0 var(--sidebar-left-width);
+        display: initial;
     }
     /* Hide the other sidebar
     #main .wrapper > .sidebar__right{
@@ -101,6 +98,7 @@ body.template--sidebar-left{
 body.template--sidebar-right{   
     #main .wrapper > .sidebar__right{
         flex: 0 0 var(--sidebar-right-width);
+        display: initial;        
     }
     /*
     #main .wrapper > .sidebar__left{
@@ -113,9 +111,7 @@ body.template--sidebar-right{
 }
 
 body.template--sidebar-left-right{   
-    #main .wrapper > .sidebar__container{
-        display: none;
-    }
+    
 }
  
 
