@@ -1,7 +1,7 @@
 ---
 title: "Guide 1 Post 3"
 resource: guide-1
-template : sidebar-right
+template : sidebar-left-right
 ---
 
 template : sidebar-left-right

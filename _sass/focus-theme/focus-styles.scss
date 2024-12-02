@@ -72,61 +72,40 @@ body.template--columns-one{
 */
 body.template--sidebar-left,
 body.template--sidebar-right,
-body.template--sidebar-left-right{
-    
+body.template--sidebar-left-right{    
     article.page{
         margin-inline: var(--gutter-l);
     }
-    
 }
 
-body.template--sidebar-left{
+body.template--sidebar-left,
+body.template--sidebar-left-right{
     #main .wrapper > .sidebar__left{
         flex: 0 0 var(--sidebar-left-width);
         display: initial;
     }
-    /* Hide the other sidebar
-    #main .wrapper > .sidebar__right{
-        display: none;
-    }
-     */
     article.page{
         margin-inline-end: 0;
     }
 }
 
-body.template--sidebar-right{   
+body.template--sidebar-right,
+body.template--sidebar-left-right{   
     #main .wrapper > .sidebar__right{
         flex: 0 0 var(--sidebar-right-width);
         display: initial;        
-    }
-    /*
-    #main .wrapper > .sidebar__left{
-        display: none;
     }    
-    */
     article.page{
         margin-inline-start: 0;
     }    
 }
 
-body.template--sidebar-left-right{   
-    
+body.template--sidebar-left-right{       
+    article.page{
+        margin-inline: var(--gutter-l);
+    }    
 }
  
-
-
-/*
-
-#main .wrapper > .sidebar__left,
-#main .wrapper > .sidebar__right{    
-    @include breakpoint($medium) {
-            flex: 0 0 var(--sidebar-width-m);
-            display: initial;
-    }
-}
-*/
-
 
 
 /*
