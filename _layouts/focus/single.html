@@ -19,6 +19,8 @@ layout: default
   {% endunless %}
 {% endif %}
 
+
+{% if page.layout != "home" %}
 <div id="page__header">
     <div class="wrapper">
         <header>
@@ -84,6 +86,7 @@ layout: default
         </header>
     </div> <!-- wrapper -->
 </div> <!-- page__header -->
+{% endif %}
 
 <!-- Main -->
 <div id="main" role="main">
