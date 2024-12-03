@@ -1,6 +1,9 @@
 ---
 layout: default
 ---
+{% assign layout_slug = page.layout | default: layout.layout | replace: '/', '-') %}
+    
+
 
         
 {% if page.header.overlay_color or page.header.overlay_image or page.header.image %}
@@ -20,7 +23,7 @@ layout: default
 {% endif %}
 
 
-{% if page.layout != "home" %}
+{% if layout_slug != "home" %}
 <div id="page__header">
     <div class="wrapper">
         <header>
