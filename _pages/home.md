@@ -5,15 +5,9 @@ hidden: true
 ---
 
 
-{% assign types_list = "resource, page, post" | split: ", " %}
-
-{% for type in types_list %}
-    {% for category_key in site.data.categories %}
-        {% assign category = category_key[0] %}        
-        {% include focus/post-display.html type=type topic=category format="list" order="desc" container_class="" type_class="" type-item_class="box-shadow" %}            
-    {% endfor %}        
-{% endfor %}
-
+{% assign types_list = "page" | split: ", " %}
+{% include focus/post-display.html type=type topic=category format="list" order="desc" container_class="" type_class="" type-item_class="box-shadow" %}            
+        
 ---
 
 > Tempor velit sint sunt ipsum tempor enim ad qui ullamco. Est dolore anim ad velit duis dolore minim sunt
