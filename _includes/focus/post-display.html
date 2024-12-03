@@ -40,8 +40,6 @@
             {% assign sorted_pages = site.pages %}
         {% endif %}        
         
-        {% assign sorted_pages = sorted_pages | where_exp: "item", "item.hidden != true"  %}   
-
         {% comment %} // Filter by category {% endcomment %}
         {% if target_topic == "all" %}
             {% if type == "post" %}
@@ -60,6 +58,7 @@
             {% endif %}
         {% endif %}        
         
+        {% assign sorted_pages = sorted_pages | where_exp: "item", "item.hidden != true"  %}   
         
         {% comment %} // Sort by priority {% endcomment %}
         {% assign sorted_pages = sorted_pages | sort: topic_sort %}        
