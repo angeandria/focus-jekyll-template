@@ -527,14 +527,34 @@ body {
         .block-1{
             flex-basis: 75px;
         }
+        .item-title a{
+            text-decoration: none;
+        }
     }
+    &.compact,
     &.list{
         .item{
             flex-direction: row;
         }
+        .block-1,
+        .block-2{
+            margin-inline-end: var(--gutter-m-);
+        }
         .block-2{
             flex-basis: 250px;
         }        
+    }
+    
+    &.list{
+        .block-1,
+        .block-2{
+            display: none;
+        }
+    }
+    &.compact{
+        .block-2{
+            display: none;
+        }
     }
     
 }
