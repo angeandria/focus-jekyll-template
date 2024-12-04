@@ -521,12 +521,20 @@ body {
     .item{
         display: flex;                
         flex-direction: column;
-
+        .block{
+            flex-grow: 1;
+        }
+        .block-1{
+            flex-basis: 75px;
+        }
     }
     &.list{
         .item{
             flex-direction: row;
         }
+        .block-2{
+            flex-basis: 250px;
+        }        
     }
     
 }
