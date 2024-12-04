@@ -518,6 +518,17 @@ body {
 */
 .post-display{
     
+    .item{
+        display: flex;                
+        flex-direction: column;
+
+    }
+    &.list{
+        .item{
+            flex-direction: row;
+        }
+    }
+    
 }
 
 
@@ -587,7 +598,8 @@ a.site-title{
 */
 html,
 .site-nav a,
-.page__content p, .page__content li, .page__content dl{
+.page__content p, .page__content li, .page__content dl,
+.post-display .item-title{
     font-size: var(--font-size-m);
 }
 
@@ -602,7 +614,8 @@ html,
 #page__header .page__meta_wrapper,
 #page__header .page__meta_wrapper a,
 table,
-ul.toc__menu li a{
+ul.toc__menu li a,
+.post-display .item-description{
     font-size: var(--font-size-s);
 }
 
