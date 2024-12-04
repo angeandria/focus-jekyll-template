@@ -7,18 +7,18 @@ hidden: true
 This is the content of my homepage
 
 ## list | Posts - personal development
-{% include focus/post-display.html type="page" topic="personal development" format="list" order="desc" container_class="" type_class="" type-item_class="box-shadow" %}            
+{% include focus/post-display.html type="post" topic="personal development" format="list" order="desc" container_class="" type_class="" type-item_class="box-shadow" %}            
 
 ## compact | Posts - personal development
-{% include focus/post-display.html type="page" topic="personal development" format="compact" order="desc" container_class="" type_class="" type-item_class="box-shadow" %}            
+{% include focus/post-display.html type="post" topic="personal development" format="compact" order="desc" container_class="" type_class="" type-item_class="box-shadow" %}            
 
 
 ## cards | Posts - personal development
-{% include focus/post-display.html type="page" topic="personal development" format="cards" order="desc" container_class="" type_class="" type-item_class="box-shadow" %}            
+{% include focus/post-display.html type="post" topic="personal development" format="cards" order="desc" container_class="" type_class="" type-item_class="box-shadow" %}            
 
 
 ## grid | Posts - personal development
-{% include focus/post-display.html type="page" topic="personal development" format="grid" order="desc" container_class="" type_class="" type-item_class="box-shadow" %}            
+{% include focus/post-display.html type="post" topic="personal development" format="grid" order="desc" container_class="" type_class="" type-item_class="box-shadow" %}            
 
 ---
 
