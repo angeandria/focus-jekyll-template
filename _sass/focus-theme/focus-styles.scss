@@ -461,14 +461,19 @@ aside.sidebar__right{
     
 }
 
-
+.page__meta_date i{
+    display: none;
+}
 .page__meta_taxonomy.tags .page__taxonomy-item{
     margin-bottom: 0;
     background-color: #EFEFEF;
     border-radius: 8px;
     border-color: transparent;
 }
-.page__meta_taxonomy.tags .page__taxonomy-item:after{
+.page__meta_taxonomy.categories .page__taxonomy-item{
+    padding: 0;
+}
+.page__meta_taxonomy.categories .page__taxonomy-item:after{
     content: ", ";
 }
 
@@ -482,9 +487,9 @@ aside.sidebar__right{
 .page__meta_taxonomy.tags > .page__taxonomy:last-child {
             display: none;
 }
+
 .page__meta_taxonomy.tags > .page__taxonomy:first-child{
     display: inline-block;
-    float:right;
 }
 
 .page__meta_taxonomy p,
