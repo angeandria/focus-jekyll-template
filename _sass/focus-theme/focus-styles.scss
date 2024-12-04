@@ -470,9 +470,8 @@ aside.sidebar__right{
     display: none;
 }
 .page__meta_taxonomy.categories .page__taxonomy:first-child,
-.page__meta_taxonomy.tags .page__taxonomy:last-child { /* hide labels, hide tags entirely  */
+.page__meta_taxonomy.tags .page__taxonomy:last-child {
             display: none;
-        }
 }
 
 /*
