@@ -32,7 +32,7 @@
 
 
 
-<div class="post-display items-container {{ container_class }}">
+<div class="post-display items-container {{ display_format }}{{ container_class }}">
 {% for type in type_array %}
 
         {% comment %} // Get source {% endcomment %}
@@ -81,7 +81,7 @@
             DEBUG <p>Topic : {{ target_topic }} | Type : {{type}} - limited to {{ limited_pages.size }} - order ({{ topic_order}})</p>
             {% endcomment %}
                         
-            <div class="{{type}}s {{ type_class }} {{ display_format }}">
+            <div class="{{type}}s {{ type_class }}">
                 <div class="item-type">{{type_string | capitalize }}s</div>
                 <div class="item-topic">{{ target_topic }}</div>
                 {% for page in limited_pages %}

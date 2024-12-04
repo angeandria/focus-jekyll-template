@@ -652,7 +652,8 @@ html,
 table,
 ul.toc__menu li a,
 .post-display .item-description,
-.item-meta{
+.item-meta,
+.page__meta-date{
     font-size: var(--font-size-s);
 }
 
@@ -663,7 +664,7 @@ ul.toc__menu li a,
 */
 .small,
 .site-subtitle,
-.page__taxonomy{
+.page__taxonomy a{
     font-size: var(--font-size-xs);
 }
 
