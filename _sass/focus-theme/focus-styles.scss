@@ -469,7 +469,11 @@ aside.sidebar__right{
 .page__taxonomy strong{
     display: none;
 }
-
+.page__meta_taxonomy.categories .page__taxonomy:first-child,
+.page__meta_taxonomy.tags .page__taxonomy:last-child { /* hide labels, hide tags entirely  */
+            display: none;
+        }
+}
 
 /*
 * ----------------------
@@ -652,8 +656,7 @@ html,
 table,
 ul.toc__menu li a,
 .post-display .item-description,
-.item-meta,
-.page__meta-date{
+.item-meta{
     font-size: var(--font-size-s);
 }
 
@@ -664,7 +667,8 @@ ul.toc__menu li a,
 */
 .small,
 .site-subtitle,
-.page__taxonomy a{
+.page__taxonomy a,
+.page__meta-date{
     font-size: var(--font-size-xs);
 }
 

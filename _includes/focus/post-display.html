@@ -102,11 +102,10 @@
                             {% endif %}
                             
                             
-                            {% if site.tag_archive.type and page.tags[0] %}
-                                <div class="item-tags">
-                                    {% include tag-list.html %}
-                                </div>
-                            {% endif %}
+                               <!-- Page taxonomy -->            
+                                <div class="page__meta_taxonomy tags">                                    
+                                    {% include page__taxonomy.html %}
+                                </div>        
                             
                             <div class="item-description">
                                  {% if page.description %}
@@ -122,7 +121,7 @@
                                     {% include page__meta.html %}
                                 </div>                        
                                 <!-- Page taxonomy -->            
-                                <div class="page__meta_taxonomy">                                    
+                                <div class="page__meta_taxonomy categories">                                    
                                     {% include page__taxonomy.html %}
                                 </div>                                                    
                             </div>
