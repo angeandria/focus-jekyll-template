@@ -3,8 +3,12 @@ title: Guide 2
 subtitle: This is Guide 2 subtitle blablablab
 resource: guide-2
 categories:
-  - growth
+  - category1
+  - category 2
   - main
+tags:
+  - tag1
+  - tag2
 priority: 9
 ---
 
