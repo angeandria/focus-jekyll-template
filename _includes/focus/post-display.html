@@ -2,7 +2,7 @@
     ///{///% include focus/post-display.html
         type="resource"
         topic="main" // Posts : site.categories, other collections : site.pages where...
-        format="list" // cards, grid
+        format="list" // list, compact, cards (default), grid
         order="desc" 
         container_class="box-shadow"
         type_class=""
@@ -17,6 +17,7 @@
 {% assign type_string = include.type | default: "page" %}
 {% assign type_array = type_string | split: ", " %}
 
+{% assign display_format = include.format | default: "cards" %}
 {% assign topic_sort = include.sort | default: "priority" %}
 {% assign topic_order = include.order %}
 {% assign topic_limit = include.limit | default: 100000 %}
@@ -80,7 +81,7 @@
             DEBUG <p>Topic : {{ target_topic }} | Type : {{type}} - limited to {{ limited_pages.size }} - order ({{ topic_order}})</p>
             {% endcomment %}
                         
-            <div class="{{type}}s {{ type_class }}">
+            <div class="{{type}}s {{ type_class }} {{ display_format }}">
                 <div class="item-type">{{type_string | capitalize }}s</div>
                 <div class="item-topic">{{ target_topic }}</div>
                 {% for page in limited_pages %}

@@ -4,10 +4,22 @@ permalink: /
 hidden: true
 ---
 
+This is the content of my homepage
 
-{% assign types_list = "page" | split: ", " %}
-{% include focus/post-display.html type=type topic=category format="list" order="desc" container_class="" type_class="" type-item_class="box-shadow" %}            
-        
+## list | Posts - personal development
+{% include focus/post-display.html type="page" topic="personal development" format="list" order="desc" container_class="" type_class="" type-item_class="box-shadow" %}            
+
+## compact | Posts - personal development
+{% include focus/post-display.html type="page" topic="personal development" format="compact" order="desc" container_class="" type_class="" type-item_class="box-shadow" %}            
+
+
+## cards | Posts - personal development
+{% include focus/post-display.html type="page" topic="personal development" format="cards" order="desc" container_class="" type_class="" type-item_class="box-shadow" %}            
+
+
+## grid | Posts - personal development
+{% include focus/post-display.html type="page" topic="personal development" format="grid" order="desc" container_class="" type_class="" type-item_class="box-shadow" %}            
+
 ---
 
 > Tempor velit sint sunt ipsum tempor enim ad qui ullamco. Est dolore anim ad velit duis dolore minim sunt
