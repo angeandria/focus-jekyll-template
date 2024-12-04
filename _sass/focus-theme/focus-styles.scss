@@ -475,8 +475,8 @@ aside.sidebar__right{
 }
 
 /* Hide tags/categories when relevant */
-.page__meta_taxonomy.categories .page__taxonomy:first-child,
-.page__meta_taxonomy.tags .page__taxonomy:last-child {
+.page__meta_taxonomy.categories > .page__taxonomy:first-child,
+.page__meta_taxonomy.tags > .page__taxonomy:last-child {
             display: none;
 }
 
