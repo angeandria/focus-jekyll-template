@@ -6,19 +6,18 @@ hidden: true
 
 This is the content of my homepage
 
-## list | Posts - personal development
-{% include focus/post-display.html type="post" topic="personal development" format="list" order="desc" container_class="" type_class="" type-item_class="box-shadow" %}            
+## list | Resources - personal development
+{% include focus/post-display.html type="resource" topic="all" format="list" order="desc" container_class="" type_class="" type-item_class="" %}            
 
-## compact | Posts - personal development
-{% include focus/post-display.html type="post" topic="personal development" format="compact" order="desc" container_class="" type_class="" type-item_class="box-shadow" %}            
+## compact | Resources - personal development
+{% include focus/post-display.html type="resource" topic="all" format="compact" order="desc" container_class="" type_class="" type-item_class="box-shadow" %}            
+
+## cards | Resources - personal development
+{% include focus/post-display.html type="resource" topic="all" format="cards" order="desc" container_class="" type_class="" type-item_class="box-shadow" %}            
 
 
-## cards | Posts - personal development
-{% include focus/post-display.html type="post" topic="personal development" format="cards" order="desc" container_class="" type_class="" type-item_class="box-shadow" %}            
-
-
-## grid | Posts - personal development
-{% include focus/post-display.html type="post" topic="personal development" format="grid" order="desc" container_class="" type_class="" type-item_class="box-shadow" %}            
+## grid | Resources - personal development
+{% include focus/post-display.html type="resource" topic="all" format="grid" order="desc" container_class="" type_class="" type-item_class="box-shadow" %}            
 
 ---
 
