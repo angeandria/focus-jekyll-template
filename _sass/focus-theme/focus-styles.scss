@@ -523,10 +523,12 @@ body {
         flex-direction: column;
         .block{
             flex-grow: 1;
+            margin-block: var(--gutter-xs);
         }
         .block-1{
-            flex-basis: 75px;
+            display: none; /* Default to Cards format */
         }
+        .featured-im
         .item-title a{
             text-decoration: none;
         }
@@ -544,7 +546,7 @@ body {
             flex-basis: 250px;
         }        
     }
-    
+
     &.list{
         .block-1,
         .block-2{
@@ -552,10 +554,14 @@ body {
         }
     }
     &.compact{
+        .block-1{
+            flex-basis: 75px;
+        }
         .block-2{
             display: none;
         }
     }
+    
     
 }
 
