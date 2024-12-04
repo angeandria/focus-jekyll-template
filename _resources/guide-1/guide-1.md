@@ -27,7 +27,7 @@ sidebar:
     image_alt: "image"
     text: "Some text here."
     nav:
-      - main                            
+      - main                                
 ---
 
 This is the Guide 1 that blabla and then bu

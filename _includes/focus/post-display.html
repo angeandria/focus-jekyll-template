@@ -95,6 +95,7 @@
                         </div>
                               
                         <div class="block block-3">                        
+                            
                             <div class="item-title"><a href="{{ page.url | relative_url }}">{{ page.title }}</a></div>                        
                             {% if page.subtitle %}
                                 <div class="item-subtitle">{{ page.subtitle }}</div>                    
@@ -102,7 +103,9 @@
                             
                             
                             {% if site.tag_archive.type and page.tags[0] %}
-                                {% include tag-list.html %}
+                                <div class="item-tags">
+                                    {% include tag-list.html %}
+                                </div>
                             {% endif %}
                             
                             <div class="item-description">
@@ -118,11 +121,10 @@
                                 <div class="page__meta_date">                    
                                     {% include page__meta.html %}
                                 </div>                        
-                            
-                                 <!-- Page taxonomy -->            
+                                <!-- Page taxonomy -->            
                                 <div class="page__meta_taxonomy">                                    
                                     {% include page__taxonomy.html %}
-                                </div>                        
+                                </div>                                                    
                             </div>
                         </div>
                     </div>
