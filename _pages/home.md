@@ -10,14 +10,14 @@ This is the content of my homepage
 {% include focus/post-display.html type="resource" topic="all" format="list" order="desc" container_class="" type_class="" type-item_class="" %}            
 
 ## compact | Resources - personal development
-{% include focus/post-display.html type="resource" topic="all" format="compact" order="desc" container_class="" type_class="" type-item_class="box-shadow" %}            
+{% include focus/post-display.html type="resource" topic="all" format="compact" order="desc" container_class="" type_class="" type-item_class="" %}            
 
 ## cards | Resources - personal development
 {% include focus/post-display.html type="resource" topic="all" format="cards" order="desc" container_class="" type_class="" type-item_class="box-shadow" %}            
 
 
 ## grid | Resources - personal development
-{% include focus/post-display.html type="resource" topic="all" format="grid" order="desc" container_class="" type_class="" type-item_class="box-shadow" %}            
+{% include focus/post-display.html type="resource" topic="all" format="grid" order="desc" container_class="" type_class="" type-item_class="" %}            
 
 ---
 
