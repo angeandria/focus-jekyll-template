@@ -86,39 +86,43 @@
                 {% for page in limited_pages %}
                     <div class="item {{ type-item_class }}">
                         
-                        <img class="item-featured-logo" src="{{ page.featured-logo | default: '/assets/images/placeholder-logo.jpg' | relative_url }}" alt="Featured Logo">
-
-                        <img class="item-featured-img" src="{{ page.featured-img | default: '/assets/images/placeholder.jpg' | relative_url }}" alt="Featured Image">
-                        
-                                                                        
-                        <div class="item-title"><a href="{{ page.url | relative_url }}">{{ page.title }}</a></div>                        
-                        {% if page.subtitle %}
-                            <div class="item-subtitle">{{ page.subtitle }}</div>                    
-                        {% endif %}
-                        
-                        
-                        {% if site.tag_archive.type and page.tags[0] %}
-                            {% include tag-list.html %}
-                        {% endif %}
-                        
-                        <div class="item-description">
-                             {% if page.description %}
-                                 {{ page.description }}
-                             {% else %}
-                                 {{ page.excerpt | markdownify | strip_html | truncate: 250 }}
-                             {% endif %}                
+                        <div class="column">
+                            <img class="item-featured-logo" src="{{ page.featured-logo | default: '/assets/images/placeholder-logo.jpg' | relative_url }}" alt="Featured Logo">
                         </div>
-                        
-                        <div class="item-meta">
-                            <!-- Page date -->         
-                            <div class="page__meta_date">                    
-                                {% include page__meta.html %}
-                            </div>                        
-                        
-                             <!-- Page taxonomy -->            
-                            <div class="page__meta_taxonomy">                                    
-                                {% include page__taxonomy.html %}
-                            </div>                        
+
+                        <div class="column">                        <img class="item-featured-img" src="{{ page.featured-img | default: '/assets/images/placeholder.jpg' | relative_url }}" alt="Featured Image">
+                        </div>
+                              
+                        <div class="column">                        
+                            <div class="item-title"><a href="{{ page.url | relative_url }}">{{ page.title }}</a></div>                        
+                            {% if page.subtitle %}
+                                <div class="item-subtitle">{{ page.subtitle }}</div>                    
+                            {% endif %}
+                            
+                            
+                            {% if site.tag_archive.type and page.tags[0] %}
+                                {% include tag-list.html %}
+                            {% endif %}
+                            
+                            <div class="item-description">
+                                 {% if page.description %}
+                                     {{ page.description }}
+                                 {% else %}
+                                     {{ page.excerpt | markdownify | strip_html | truncate: 250 }}
+                                 {% endif %}                
+                            </div>
+                            
+                            <div class="item-meta">
+                                <!-- Page date -->         
+                                <div class="page__meta_date">                    
+                                    {% include page__meta.html %}
+                                </div>                        
+                            
+                                 <!-- Page taxonomy -->            
+                                <div class="page__meta_taxonomy">                                    
+                                    {% include page__taxonomy.html %}
+                                </div>                        
+                            </div>
                         </div>
                     </div>
                 {% endfor %}        
