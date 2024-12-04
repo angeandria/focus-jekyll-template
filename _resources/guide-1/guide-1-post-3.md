@@ -2,6 +2,13 @@
 title: "Guide 1 Post 3"
 resource: guide-1
 template : sidebar-left-right
+categories:
+  - category1
+  - category 2
+  - main
+tags:
+  - tag1
+  - tag2
 ---
 
 template : sidebar-left-right
