@@ -466,6 +466,9 @@ aside.sidebar__right{
    
     
 }
+.page__taxonomy strong{
+    display: none;
+}
 
 
 /*
@@ -648,7 +651,8 @@ html,
 #page__header .page__meta_wrapper a,
 table,
 ul.toc__menu li a,
-.post-display .item-description{
+.post-display .item-description,
+.item-meta{
     font-size: var(--font-size-s);
 }
 
@@ -658,6 +662,8 @@ ul.toc__menu li a,
 * ------
 */
 .small,
-.site-subtitle{
+.site-subtitle,
+.page__taxonomy{
     font-size: var(--font-size-xs);
 }
+
