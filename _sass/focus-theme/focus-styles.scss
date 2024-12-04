@@ -448,12 +448,6 @@ aside.sidebar__right{
     }
     .page__meta_taxonomy{
         justify-content: flex-start; /* Aligns the content of author to the right */
-        .page__taxonomy-item{
-            margin-bottom: 0;
-            background-color: #EFEFEF;
-            border-radius: 8px;
-            border-color: transparent;
-        }
         strong, .page__taxonomy:first-child { /* hide labels, hide tags entirely  */
             display: none;
         }
@@ -466,12 +460,29 @@ aside.sidebar__right{
    
     
 }
+
+
+.page__taxonomy-item{
+    margin-bottom: 0;
+    background-color: #EFEFEF;
+    border-radius: 8px;
+    border-color: transparent;
+}
+
+/* Hide taxonomy labels */
 .page__taxonomy strong{
     display: none;
 }
+
+/* Hide tags/categories when relevant */
 .page__meta_taxonomy.categories .page__taxonomy:first-child,
 .page__meta_taxonomy.tags .page__taxonomy:last-child {
             display: none;
+}
+
+.page__meta-taxonomy p,
+.page__meta-date p{
+    margin-bottom: 0;
 }
 
 /*
