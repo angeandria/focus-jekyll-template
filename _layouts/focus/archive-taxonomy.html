@@ -15,7 +15,10 @@ author_profile: false
   {% endunless %}
 {% endif %}
 
+{% assign slug = page.slug %}
+{% assign slug = page.slug | replace: '/', '-') %}
 <div id="main" role="main">
+   <h1>{{ slug }}</h1>
   {% include sidebar.html %}
 
   <div class="archive">
