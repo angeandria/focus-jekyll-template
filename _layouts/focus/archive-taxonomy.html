@@ -7,15 +7,19 @@ featured-logo: "assets/images/placeholder-logo.jpg"
 sidebar:
 - image: "/assets/images/placeholder.jpg"
   image_alt: "image"
-  title: "My Title" 
+  title: "My Title Sidebar" 
   text: "Some text here."
   nav:
     - main                        
 ---
 
 {{ content }}
-{% assign sidebar = page.sidebar[0] %}
-SIDEBAR : {{ sidebar.title }}
+{% if page.sidebar %}
+        {% for s in page.sidebar %}
+            SIDEBAR : {{ s.title }}        
+        {% endfor %}
+{% endif %}
+
 
 <div class="archive">
     {% unless page.header.overlay_color or page.header.overlay_image %}
