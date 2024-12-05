@@ -21,12 +21,12 @@ author_profile: false
 {% assign category = last_segment | replace: '-', ' ' %}
 
 <div id="main" role="main">
-   <h1>SLUG : {{ category }}</h1>
+
   {% include sidebar.html %}
 
   <div class="archive">
     {% unless page.header.overlay_color or page.header.overlay_image %}
-	
+	    <h1>{{ category }}</h1>
 		{% comment %}<!-- CUSTOM -->{% endcomment %}
 		{% include focus/taxonomy-description.html %}
 		
