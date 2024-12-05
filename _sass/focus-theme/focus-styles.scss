@@ -440,9 +440,8 @@ aside.sidebar__right{
 
 /* Hide tags/categories when relevant */
 .item .page__meta_taxonomy.categories > .page__taxonomy:first-child,
-.item .page__meta_taxonomy.tags > .page__taxonomy:last-child {
-            // display: none;
-            background-color: yellow; /* Example style */
+.item .page__meta_taxonomy.tags > .page__taxonomy:last-child(2){
+            display: none;
 }
 
 .page__meta_taxonomy.tags > .page__taxonomy:first-child{
@@ -602,7 +601,7 @@ body {
             margin-block: 0;
         }
         .page__meta_taxonomy.categories {
-            display: none;
+            /*display: none;*/
         }
     }
     &.compact{
