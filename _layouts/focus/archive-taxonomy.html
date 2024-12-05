@@ -16,9 +16,12 @@ author_profile: false
 {% endif %}
 
 
-{% assign slug = page.url | replace: '/', '-') %}
+{% assign slug = page.url | replace: '/topics/', '') %}
+{% assign slug = page.url | replace: '/', '') %}
+{% assign slug = slug | replace: '-', '') %}
+
 <div id="main" role="main">
-   <h1>SLUUUUUUUUUUG {{ slug }}</h1>
+   <h1>SLUG : {{ slug }}</h1>
   {% include sidebar.html %}
 
   <div class="archive">
