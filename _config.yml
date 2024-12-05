@@ -149,7 +149,7 @@ defaults:
       author_profile: true
       ###
       featured-img: "assets/images/placeholder-1200.jpg"	
-      featured-logo: "assets/images/placeholder-photo.jpg"	      
+      featured-logo: "assets/images/placeholder-logo.jpg"	      
       sidebar:
         - image: "/assets/images/placeholder.jpg"
           image_alt: "image"
@@ -181,7 +181,7 @@ defaults:
       author_profile: true
       ###
       featured-img: "assets/images/placeholder-1200.jpg"	
-      featured-logo: "assets/images/placeholder-photo.jpg"	      
+      featured-logo: "assets/images/placeholder-logo.jpg"	      
       sidebar:
         - image: "/assets/images/placeholder.jpg"
           image_alt: "image"
@@ -216,7 +216,7 @@ defaults:
       author_profile: true
       ###
       featured-img: "assets/images/placeholder-1200.jpg"	
-      featured-logo: "assets/images/placeholder-photo.jpg"	      
+      featured-logo: "assets/images/placeholder-logo.jpg"	      
       sidebar:
         - image: "/assets/images/placeholder.jpg"
           image_alt: "image"
@@ -244,7 +244,22 @@ defaults:
       ###
       #classes:
       #    - foo
+      toc: true
+      toc_label: "My Toc title"
+      toc_icon: "heart"  # corresponding Font Awesome icon name (without fa prefix)
+      toc_sticky: true
       author_profile: true
+      ###
+      featured-img: "assets/images/placeholder-1200.jpg"	
+      featured-logo: "assets/images/placeholder-logo.jpg"	      
+      sidebar:
+        - image: "/assets/images/placeholder.jpg"
+          image_alt: "image"
+          title: "My Title" 
+          text: "Some text here."
+          nav:
+            - main                        
+      ###
       comments: false
       read_time: false
       related: false
@@ -253,7 +268,7 @@ defaults:
       #show_footer_date: true
       #show_pagination: true      
       #show_taxonomy: true
-
+      
   #jekyll-archives Topic
   - scope:
       path: ""
