@@ -16,7 +16,7 @@ author_profile: false
 {% endif %}
 
 
-{% assign slug = page.permalink | replace: '/', '-') %}
+{% assign slug = page.url | replace: '/', '-') %}
 <div id="main" role="main">
    <h1>SLUUUUUUUUUUG {{ slug }}</h1>
   {% include sidebar.html %}
