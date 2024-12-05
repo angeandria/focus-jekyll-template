@@ -16,10 +16,8 @@ author_profile: false
 {% endif %}
 
 
-<h1>SLUG BEFORE : {{ page.url }}</h1>
-{% assign slug = page.url | replace: '/topics/', '') %}
-{% assign slug = page.url | replace: '/', '') %}
-{% assign slug = slug | replace: '-', '') %}
+{% assign last_segment = url | split: '/' | last %}
+{% assign slug = last_segment | replace: '-', ' ' %}
 
 <div id="main" role="main">
    <h1>SLUG : {{ slug }}</h1>
