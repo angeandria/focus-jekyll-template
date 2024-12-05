@@ -3,6 +3,12 @@ title: "Guide 1 Post 1"
 resource: guide-1
 template : sidebar-left
 toc: false
+categories:
+  - personal development
+  - main
+tags:
+  - featured
+  - black-friday
 ---
 
 > Tempor velit sint sunt ipsum tempor enim ad qui ullamco. Est dolore anim ad velit duis dolore minim sunt
