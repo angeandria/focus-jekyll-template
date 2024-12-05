@@ -472,8 +472,10 @@ aside.sidebar__right{
 }
 .page__meta_taxonomy.categories .page__taxonomy-item{
     padding: 0;
+    border: none;
+    margin: 0;
 }
-.page__meta_taxonomy.categories .page__taxonomy-item:after{
+.page__meta_taxonomy.categories > .page__taxonomy-item:not(:last-child)::after {
     content: ", ";
 }
 
@@ -589,6 +591,7 @@ body {
     &.compact{
         .block-1{
             flex-basis: 75px;
+            display: initial;
         }
         .block-2{
             display: none;
