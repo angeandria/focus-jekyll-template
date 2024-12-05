@@ -554,15 +554,18 @@ body {
         flex-direction: column;
         margin-block: var(--gutter-s);
         .block{
-            flex-grow: 1;
+            flex-grow: 0;
             margin-block: var(--gutter-xs);
         }
         .block-1{
             display: none; /* Default to Cards format */
         }
+        .block-3{
+            flew-grow: 1;
+        }
         .item-title a{
             text-decoration: none;
-        }
+        }        
     }
     &.compact,
     &.list{
