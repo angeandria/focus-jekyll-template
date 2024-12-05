@@ -16,7 +16,7 @@ author_profile: false
 {% endif %}
 
 
-{% assign last_segment = url | split: '/' | last %}
+{% assign last_segment = page.url | split: '/' | last %}
 {% assign category = last_segment | replace: '-', ' ' %}
 
 <div id="main" role="main">
