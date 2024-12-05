@@ -1,27 +1,12 @@
 ---
-layout: default
+layout: focus/single-page
 template: sidebar-right  
 author_profile: false
 ---
 
-{% if page.header.overlay_color or page.header.overlay_image or page.header.image %}
-  {% include page__hero.html %}
-{% elsif page.header.video.id and page.header.video.provider %}
-  {% include page__hero_video.html %}
-{% endif %}
+{{ content }}
 
-{% if page.url != "/" and site.breadcrumbs %}
-  {% unless paginator %}
-    {% include focus/breadcrumbs.html %}
-  {% endunless %}
-{% endif %}
-
-
-<div id="main" role="main">
-
-  {% include sidebar.html %}
-
-  <div class="archive">
+<div class="archive">
     {% unless page.header.overlay_color or page.header.overlay_image %}
 	    <h1>{{ page.title }}</h1>
 		{% comment %}<!-- CUSTOM -->{% endcomment %}
@@ -44,5 +29,4 @@ author_profile: false
     {% for post in page.posts %}
       {% include archive-single.html %}
     {% endfor %}
-  </div>
 </div>
