@@ -289,16 +289,6 @@ defaults:
             layout: focus/single-page
       author_profile: false
       ###
-      featured-img: "assets/images/placeholder-1200.jpg"	
-      featured-logo: "assets/images/placeholder-logo.jpg"	      
-      sidebar:
-        - image: "/assets/images/placeholder.jpg"
-          image_alt: "image"
-          title: "My Title" 
-          text: "Some text here."
-          nav:
-            - main                        
-      ###
       comments: false
       read_time: false
       related: false

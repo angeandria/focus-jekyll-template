@@ -2,9 +2,20 @@
 layout: focus/single
 template: sidebar-right  
 author_profile: false
+featured-img: "assets/images/placeholder-1200.jpg"	
+featured-logo: "assets/images/placeholder-logo.jpg"	      
+sidebar:
+- image: "/assets/images/placeholder.jpg"
+  image_alt: "image"
+  title: "My Title" 
+  text: "Some text here."
+  nav:
+    - main                        
 ---
 
-SIDEBAR : {{ page.sidebar}}
+{{ content }}
+{% assign sidebar = page.sidebar[0] %}
+SIDEBAR : {{ sidebar.title }}
 
 <div class="archive">
     {% unless page.header.overlay_color or page.header.overlay_image %}
