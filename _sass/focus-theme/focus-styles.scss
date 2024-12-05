@@ -470,7 +470,7 @@ aside.sidebar__right{
     border-color: transparent;
     padding: 3px 8px;
 }
-.categories .page__meta_taxonomy .sep{
+.page__meta_taxonomy.categories  .sep{
     display: initial;
     color: $muted-text-color;
 }
