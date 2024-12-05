@@ -17,7 +17,7 @@ author_profile: false
 
 
 {% assign last_segment = url | split: '/' | last %}
-{% assign slug = last_segment | replace: '-', ' ' %}
+{% assign category = last_segment | replace: '-', ' ' %}
 
 <div id="main" role="main">
    <h1>SLUG : {{ slug }}</h1>
@@ -30,6 +30,18 @@ author_profile: false
 		{% include focus/taxonomy-description.html %}
 		
     {% endunless %}
+    
+    <hr>
+    
+    <h1>RESOURCES, PAGES</h1>
+    {% assign types_list = "resource, page" | split: ", " %}
+    {% for type in types_list %}        
+            {% include focus/post-display.html type=type topic=category format="list" order="desc" container_class="" type_class="" type-item_class="box-shadow" %}            
+    {% endfor %}
+    
+    <hr>
+    
+    <h1>POSTS</h1>        
     {% for post in page.posts %}
       {% include archive-single.html %}
     {% endfor %}
