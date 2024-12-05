@@ -469,6 +469,7 @@ aside.sidebar__right{
     background-color: #EFEFEF;
     border-radius: 8px;
     border-color: transparent;
+    padding: 3px 8px;
 }
 .page__meta_taxonomy.categories .page__taxonomy-item{
     padding: 0;
@@ -555,13 +556,16 @@ body {
         margin-block: var(--gutter-s);
         .block{
             flex-grow: 0;
+            flex-shrink: 0;
             margin-block: var(--gutter-xs);
         }
         .block-1{
             display: none; /* Default to Cards format */
         }
         .block-3{
-            flew-grow: 1;
+            flex-grow: 1;
+            flex-shrink: 0;
+            padding: 20px 16px;
         }
         .item-title a{
             text-decoration: none;
@@ -579,6 +583,9 @@ body {
         .block-2{
             flex-basis: 250px;
         }        
+        .block-3{
+            padding: 0;
+        }
     }
 
     &.list{
@@ -593,7 +600,7 @@ body {
     }
     &.compact{
         .block-1{
-            flex-basis: 75px;
+            flex-basis: 50px;
             display: initial;
         }
         .block-2{
