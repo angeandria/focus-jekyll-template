@@ -148,6 +148,8 @@ defaults:
       author: default # data/authors.yml
       author_profile: true
       ###
+      featured-img: "assets/images/placeholder-1200.jpg"	
+      featured-logo: "assets/images/placeholder-photo.jpg"	      
       sidebar:
         - image: "/assets/images/placeholder.jpg"
           image_alt: "image"
@@ -178,6 +180,8 @@ defaults:
       author: default
       author_profile: true
       ###
+      featured-img: "assets/images/placeholder-1200.jpg"	
+      featured-logo: "assets/images/placeholder-photo.jpg"	      
       sidebar:
         - image: "/assets/images/placeholder.jpg"
           image_alt: "image"
@@ -210,7 +214,9 @@ defaults:
       toc_icon: "heart"  # corresponding Font Awesome icon name (without fa prefix)
       toc_sticky: true
       author_profile: true
-      ###      
+      ###
+      featured-img: "assets/images/placeholder-1200.jpg"	
+      featured-logo: "assets/images/placeholder-photo.jpg"	      
       sidebar:
         - image: "/assets/images/placeholder.jpg"
           image_alt: "image"
