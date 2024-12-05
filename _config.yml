@@ -274,8 +274,8 @@ defaults:
       path: ""
       type: topic
     values:
-      layout: focus/single-page
-      template: columns-one  
+      layout: focus/archive-taxonomy
+      template: sidebar-right  
       #classes:
       #    - foo  
       header:
