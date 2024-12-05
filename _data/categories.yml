@@ -43,7 +43,7 @@ blog:
 # --------------    
 # GROWTH
 # --------------    
-category-2:
+category 2:
     title: "Category 2"
     id: 8-1
     description: "from data.categories.yml | Category 2 description"	
