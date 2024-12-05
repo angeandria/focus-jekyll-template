@@ -410,6 +410,50 @@ aside.sidebar__right{
 
 
 
+.page__meta_date i{
+    display: none;
+}
+.page__meta_taxonomy.tags .page__taxonomy-item{
+    margin-bottom: 0;
+    background-color: #EFEFEF;
+    border-radius: 8px;
+    border-color: transparent;
+    padding: 3px 8px;
+}
+.page__meta_taxonomy.categories  .sep{
+    display: initial;
+    color: $muted-text-color;
+}
+.page__meta_taxonomy.categories .page__taxonomy-item{
+    padding: 0;
+    border: none;
+    margin: 0;
+}
+.page__meta_taxonomy.categories > .page__taxonomy-item:not(:last-child)::after {
+    content: ", ";
+}
+
+/* Hide taxonomy labels */
+.page__taxonomy strong{
+    display: none;
+}
+
+/* Hide tags/categories when relevant */
+.item .page__meta_taxonomy.categories > .page__taxonomy:first-child,
+.item .page__meta_taxonomy.tags > .page__taxonomy:last-child {
+            // display: none;
+            background-color: yellow; /* Example style */
+}
+
+.page__meta_taxonomy.tags > .page__taxonomy:first-child{
+    display: inline-block;
+}
+
+.page__meta_taxonomy p,
+.page__meta_date p{
+    margin-bottom: 0;
+}
+
 #page__header .page__meta_wrapper{
     display: flex; /* Enables flexbox layout */
     justify-content: space-between; /* Distributes space between items */
@@ -417,7 +461,7 @@ aside.sidebar__right{
     gap: var(--gap); /* Optional: Adds space between items */
     
     &, a{
-        font-size: calc(var(--font-factor) * var(--font-header-meta-factor));
+        font-size: var(font-size-xs);
     }
 
     .page__meta_wrapper > :last-child {
@@ -458,49 +502,6 @@ aside.sidebar__right{
     }       
    
     
-}
-
-.page__meta_date i{
-    display: none;
-}
-.page__meta_taxonomy.tags .page__taxonomy-item{
-    margin-bottom: 0;
-    background-color: #EFEFEF;
-    border-radius: 8px;
-    border-color: transparent;
-    padding: 3px 8px;
-}
-.page__meta_taxonomy.categories  .sep{
-    display: initial;
-    color: $muted-text-color;
-}
-.page__meta_taxonomy.categories .page__taxonomy-item{
-    padding: 0;
-    border: none;
-    margin: 0;
-}
-.page__meta_taxonomy.categories > .page__taxonomy-item:not(:last-child)::after {
-    content: ", ";
-}
-
-/* Hide taxonomy labels */
-.page__taxonomy strong{
-    display: none;
-}
-
-/* Hide tags/categories when relevant */
-.page__meta_taxonomy.categories > .page__taxonomy:first-child,
-.page__meta_taxonomy.tags > .page__taxonomy:last-child {
-            display: none;
-}
-
-.page__meta_taxonomy.tags > .page__taxonomy:first-child{
-    display: inline-block;
-}
-
-.page__meta_taxonomy p,
-.page__meta_date p{
-    margin-bottom: 0;
 }
 
 /*

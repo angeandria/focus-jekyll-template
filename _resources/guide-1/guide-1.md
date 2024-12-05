@@ -1,5 +1,4 @@
 ---
-hidden: true
 title: Guide 1
 resource: guide-1
 subtitle: This is Guide 1 subtitle blablablab

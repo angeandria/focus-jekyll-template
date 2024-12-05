@@ -117,9 +117,11 @@
                             
                             <div class="item-meta">
                                 <!-- Page date -->         
-                                <div class="page__meta_date">                    
-                                    {% include page__meta.html %}
-                                </div>                        
+                                {% if document.read_time or document.show_date %}
+                                    <div class="page__meta_date">                    
+                                        {% include page__meta.html %}
+                                    </div>                        
+                                {% endif %}
                                 <!-- Page taxonomy -->            
                                 <div class="page__meta_taxonomy categories">                                    
                                     {% include page__taxonomy.html %}
