@@ -38,3 +38,14 @@ blog:
     description: "from data.categories.yml | BLOG description"	
     cta-title: "Get this"
     cta-url: "https://angeandria.com"
+    
+    
+# --------------    
+# GROWTH
+# --------------    
+category-2:
+    title: "Category 2"
+    id: 8-1
+    description: "from data.categories.yml | Category 2 description"	
+    cta-title: "Get this"
+    cta-url: "https://angeandria.com"    
