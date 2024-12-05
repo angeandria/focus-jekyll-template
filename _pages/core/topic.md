@@ -1,3 +1,0 @@
----
-layout: focus/archive-single
----
