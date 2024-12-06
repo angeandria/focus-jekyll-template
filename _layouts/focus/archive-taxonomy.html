@@ -88,7 +88,7 @@ let attemptedUrl = currentPathname;
 document.getElementById('debug-attempted-url').textContent = attemptedUrl;  // Display it here
 
 // Check if the current page is a 404 page by title and URL pattern
-if (document.title.includes('Oops') && attemptedUrl.includes('/topics/')) {
+if (document.title.includes('oops') && attemptedUrl.includes('/topics/')) {
     // Extract part after /topics/
     let topicNameIndex = attemptedUrl.indexOf('/topics/') + '/topics/'.length;
     let topicName = attemptedUrl.slice(topicNameIndex);
