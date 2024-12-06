@@ -109,10 +109,13 @@ if (conditionMet) {
 
     // Display extracted topic name
     document.getElementById('debug-topic-name').textContent = topicName;
-
-    // Construct the new URL for redirection
-    let newUrl = '/redirect?content=' + encodeURIComponent(topicName);
     
+    // Dynamically construct the base path, excluding the trailing slash if necessary
+    let basePath = window.location.pathname.split('/').slice(0, -1).join('/');
+
+    // Construct the new URL for redirection with the dynamic base path
+    let newUrl = `${basePath}/topic?content=${encodeURIComponent(topicName)}`;
+
     // Display new URL for redirect
     document.getElementById('debug-new-url').textContent = newUrl;
 
