@@ -436,7 +436,7 @@ footer:
 #  - <base_path>/categories/my-awesome-category/index.html ~> path: /categories/
 #  - <base_path>/my-awesome-category/index.html ~> path: /
 category_archive:
-  type: liquid
+  type: jekyll-archives
   path: /topics/
 tag_archive:
   type: jekyll-archives
