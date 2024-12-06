@@ -67,26 +67,44 @@ PAGE TITLE ONLY WHEN HAS /TOPICS IN URL? {{ page.title}}
 
 
 
+<div id="debug-info">
+    <h2>Debug Information</h2>
+    <ul>
+        <li>Window Location Pathname: <span id="debug-pathname"></span></li>
+        <li>Attempted URL: <span id="debug-attempted-url"></span></li>
+        <li>Extracted Topic Name: <span id="debug-topic-name"></span></li>
+        <li>New URL for Redirect: <span id="debug-new-url"></span></li>
+    </ul>
+</div>
 
 <script>
+// Display current pathname
+document.getElementById('debug-pathname').textContent = window.location.pathname;
+
 // Check if the current page is the 404 page
 if (window.location.pathname === '/404.html' || window.location.pathname === '/404') {
     // Capture the full attempted path from the browser's address bar
-    let attemptedUrl = document.referrer.split(window.location.host)[1] || window.location.pathname;
+    let attemptedUrl = window.location.pathname; // Use referrer if possible, otherwise pathname
+    document.getElementById('debug-attempted-url').textContent = attemptedUrl;
 
     // Check if the attempted URL follows a specific pattern (e.g., starts with /topics/)
     if (attemptedUrl.startsWith('/topics/')) {
         // Extract the specific part after /topics/
         let topicName = attemptedUrl.substring('/topics/'.length);
+        document.getElementById('debug-topic-name').textContent = topicName;
 
         // Construct the new URL with query parameters
         let newUrl = '/topic?content=' + encodeURIComponent(topicName);
+        document.getElementById('debug-new-url').textContent = newUrl;
 
         // Redirect to the new URL
-        window.location.href = newUrl;
+        setTimeout(() => {
+            window.location.href = newUrl;
+        }, 3000); // Delayed redirect for debugging
     } else {
         console.log('Attempted URL does not match expected pattern.');
     }
 } else {
     console.log('This is not a 404 page.');
 }
+</script>
