@@ -1,6 +1,8 @@
 ---
 layout: focus/archive-taxonomy
-permalink: /topic
+permalink: topics/topic
 ---
 
 INDIVUDUAL TOPIC PAGE
+
+page url {{ page.url }}
