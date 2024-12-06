@@ -12,8 +12,13 @@ sidebar:
   nav:
     - main                        
 ---
-
+before content
 {{ content }}
+after content
+
+Image : {{ page.featured-img }}
+Logo : {{ page.featured-logo }}
+
 {% if page.sidebar %}
         {% for s in page.sidebar %}
             SIDEBAR : {{ s.title }}        
