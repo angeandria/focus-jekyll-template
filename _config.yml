@@ -310,7 +310,7 @@ defaults:
       path: ""
       type: topic
     values:
-      layout: focus/archive-taxonomy
+      layout: focus/single-taxonomy
       template: sidebar-right
       #classes:
       #    - foo  
