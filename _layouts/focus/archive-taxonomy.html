@@ -92,10 +92,14 @@ if (document.title.includes('Oops') && attemptedUrl.includes('/topics/')) {
     // Extract part after /topics/
     let topicNameIndex = attemptedUrl.indexOf('/topics/') + '/topics/'.length;
     let topicName = attemptedUrl.slice(topicNameIndex);
+
+    // Display extracted topic name
     document.getElementById('debug-topic-name').textContent = topicName;
 
     // Construct the new URL for redirection
     let newUrl = '/redirect?content=' + encodeURIComponent(topicName);
+    
+    // Display new URL for redirect
     document.getElementById('debug-new-url').textContent = newUrl;
 
     // Redirect after a delay to allow for debugging
