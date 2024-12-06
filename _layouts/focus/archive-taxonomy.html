@@ -15,7 +15,11 @@ Author : {{ page.author_profile }}
         {% endfor %}
 {% endif %}
 
-
+{% assign url = page.url | split: '/' %}
+URL : {{ url }}
+{% if url contains 'topics' %}
+PAGE TITLE ONLY WHEN HAS /TOPICS IN URL? {{ page.title}}
+{% endif %}
 
 <div class="archive">
     {% unless page.header.overlay_color or page.header.overlay_image %}
