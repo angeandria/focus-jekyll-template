@@ -79,25 +79,26 @@ PAGE TITLE ONLY WHEN HAS /TOPICS IN URL? {{ page.title}}
 </div>
 
 <script>
-// Display current pathname
+// Set and display the current pathname
 let currentPathname = window.location.pathname;
 document.getElementById('debug-pathname').textContent = currentPathname;
 
-// Check if the current page is the 404 page by title
-if (document.title.includes('Oops') && currentPathname.includes('/topic/')) {
-    // Attempt to extract the topic from the URL
+// Check if the current page is a 404 page by title and URL pattern
+if (document.title.includes('Oops') && currentPathname.includes('/topics/')) {
+    // Set attemptedUrl as the full pathname
     let attemptedUrl = currentPathname;
     document.getElementById('debug-attempted-url').textContent = attemptedUrl;
 
-    // Extract the topic name after /topic/
-    let topicName = attemptedUrl.substring(attemptedUrl.indexOf('/topic/') + '/topic/'.length);
+    // Extract part after /topics/
+    let topicNameIndex = attemptedUrl.indexOf('/topics/') + '/topics/'.length;
+    let topicName = attemptedUrl.substring(topicNameIndex);
     document.getElementById('debug-topic-name').textContent = topicName;
 
-    // Construct the new URL with query parameters
+    // Construct the new URL for redirection
     let newUrl = '/redirect?content=' + encodeURIComponent(topicName);
     document.getElementById('debug-new-url').textContent = newUrl;
 
-    // Redirect to the new URL after a delay for debugging
+    // Redirect after a delay to allow for debugging
     setTimeout(() => {
         window.location.href = newUrl;
     }, 3000); // 3-second delay for observation
