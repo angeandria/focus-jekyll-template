@@ -26,6 +26,8 @@ sidebar:
         {% endfor %}
 {% endif %}
 
+
+
 {% assign url = page.url | split: '/' %}
 URL : {{ url }}
 
@@ -35,6 +37,21 @@ URL : {{ url }}
 <!-- Display the formatted result -->
 <p>{{ formatted_last_part }}</p>
 
+---
+
+<div id="dynamic-content" data-topic="">
+    <!-- Content will be loaded here -->
+</div>
+
+<script>
+// Get the current path from the browser's address bar
+let attemptedUrl = window.location.pathname.split('/').pop().toLowerCase();
+
+// Set the topic data attribute
+document.getElementById('dynamic-content').setAttribute('data-topic', attemptedUrl);
+</script>
+
+---
 
 {% if url contains 'topics' %}
 PAGE TITLE ONLY WHEN HAS /TOPICS IN URL? {{ page.title}}
@@ -61,3 +78,27 @@ PAGE TITLE ONLY WHEN HAS /TOPICS IN URL? {{ page.title}}
       {% include archive-single.html %}
     {% endfor %}
 </div>
+
+
+
+<script>
+// Function to load and display content
+function loadContent() {
+    let topic = document.getElementById('dynamic-content').getAttribute('data-topic');
+
+    // Assuming you have predefined HTML snippets or templates stored in files
+    let typesList = ['resource', 'page'];
+    typesList.forEach(type => {
+        // Construct the file path or directly manipulate DOM elements
+        let container = document.createElement('div');
+        container.className = 'content-container';
+        container.innerHTML = `<p>Loading content for type: ${type} and topic: ${topic}</p>`;
+        
+        // Append this content to your dynamic-content div
+        document.getElementById('dynamic-content').appendChild(container);
+    });
+}
+
+// Execute the function
+loadContent();
+</script>
