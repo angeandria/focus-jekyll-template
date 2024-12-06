@@ -18,6 +18,7 @@ sidebar:
     <li>Author : {{ page.author_profile }}</li>
     <li>Page title : {{ page.title }}</li>
     <li>Page url : {{ page.url }}</li>    
+    <li>REDIRECT ME? {{ page.redirect_me }</li>
 </ul>    
 
 {% if page.sidebar %}
@@ -65,7 +66,7 @@ PAGE TITLE ONLY WHEN HAS /TOPICS IN URL? {{ page.title}}
     {% endfor %}
 </div>
 
-
+}
 
 <div id="debug-info">
     <h2>Debug Information</h2>
@@ -79,32 +80,28 @@ PAGE TITLE ONLY WHEN HAS /TOPICS IN URL? {{ page.title}}
 
 <script>
 // Display current pathname
-document.getElementById('debug-pathname').textContent = window.location.pathname;
+let currentPathname = window.location.pathname;
+document.getElementById('debug-pathname').textContent = currentPathname;
 
-// Check if the current page is the 404 page
-if (window.location.pathname === '/404.html' || window.location.pathname === '/404') {
-    // Capture the full attempted path from the browser's address bar
-    let attemptedUrl = window.location.pathname; // Use referrer if possible, otherwise pathname
+// Check if the current page is the 404 page by title
+if (document.title.includes('Oops') && currentPathname.includes('/topic/')) {
+    // Attempt to extract the topic from the URL
+    let attemptedUrl = currentPathname;
     document.getElementById('debug-attempted-url').textContent = attemptedUrl;
 
-    // Check if the attempted URL follows a specific pattern (e.g., starts with /topics/)
-    if (attemptedUrl.startsWith('/topics/')) {
-        // Extract the specific part after /topics/
-        let topicName = attemptedUrl.substring('/topics/'.length);
-        document.getElementById('debug-topic-name').textContent = topicName;
+    // Extract the topic name after /topic/
+    let topicName = attemptedUrl.substring(attemptedUrl.indexOf('/topic/') + '/topic/'.length);
+    document.getElementById('debug-topic-name').textContent = topicName;
 
-        // Construct the new URL with query parameters
-        let newUrl = '/topic?content=' + encodeURIComponent(topicName);
-        document.getElementById('debug-new-url').textContent = newUrl;
+    // Construct the new URL with query parameters
+    let newUrl = '/redirect?content=' + encodeURIComponent(topicName);
+    document.getElementById('debug-new-url').textContent = newUrl;
 
-        // Redirect to the new URL
-        setTimeout(() => {
-            window.location.href = newUrl;
-        }, 3000); // Delayed redirect for debugging
-    } else {
-        console.log('Attempted URL does not match expected pattern.');
-    }
+    // Redirect to the new URL after a delay for debugging
+    setTimeout(() => {
+        window.location.href = newUrl;
+    }, 3000); // 3-second delay for observation
 } else {
-    console.log('This is not a 404 page.');
+    console.log('Conditions not met for redirection.');
 }
 </script>
