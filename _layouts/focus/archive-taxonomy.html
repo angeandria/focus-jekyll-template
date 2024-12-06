@@ -1,13 +1,24 @@
 ---
 layout: focus/single
+sidebar:
+  - image: "/assets/images/placeholder-logo.jpg"
+    image_alt: "image"
+    title: "My Title5555555" 
+    text: "Some text here."
+    nav:
+      - main                  
 ---
-before content
-{{ content }}
-after content
 
-Image : {{ page.featured-img }}
-Logo : {{ page.featured-logo }}
-Author : {{ page.author_profile }}
+{{ content }}
+
+
+<ul>
+    <li>Image : {{ page.featured-img }}</li>
+    <li>Logo : {{ page.featured-logo }}</li>
+    <li>Author : {{ page.author_profile }}</li>
+    <li>Page title : {{ page.title }}</li>
+    <li>Page url : {{ page.url }}</li>    
+</ul>    
 
 {% if page.sidebar %}
         {% for s in page.sidebar %}
@@ -17,6 +28,14 @@ Author : {{ page.author_profile }}
 
 {% assign url = page.url | split: '/' %}
 URL : {{ url }}
+
+{% assign url_parts = page.url | split: '/' %}
+{% assign last_part = url_parts | last %}
+{% assign formatted_last_part = last_part | replace: '-', ' ' %}
+<!-- Display the formatted result -->
+<p>{{ formatted_last_part }}</p>
+
+
 {% if url contains 'topics' %}
 PAGE TITLE ONLY WHEN HAS /TOPICS IN URL? {{ page.title}}
 {% endif %}
