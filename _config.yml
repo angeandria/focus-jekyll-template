@@ -485,8 +485,8 @@ jekyll-archives:
      - categories
      - tags
    layouts:
-     category: focus/archive-taxonomy
-     tag: focus/archive-taxonomy
+     category: focus/single-taxonomy
+     tag: focus/single-taxonomy
    permalinks:
      category: /topics/:name/
      tag: /tags/:name/ 
