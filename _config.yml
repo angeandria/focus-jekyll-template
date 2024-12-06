@@ -275,6 +275,7 @@ defaults:
       type: topic
     values:
       layout: focus/archive-taxonomy
+      template: sidebar-right
       #classes:
       #    - foo  
       header:
