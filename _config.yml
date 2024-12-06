@@ -271,7 +271,7 @@ defaults:
       
   #jekyll-archives Topic
   - scope:
-      path: ""
+      path: "/topic"
       type: topic
     values:
       layout: focus/archive-taxonomy
