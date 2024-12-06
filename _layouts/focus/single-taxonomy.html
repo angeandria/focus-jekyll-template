@@ -2,6 +2,7 @@
 layout: focus/single
 ---
 
+{% assign title = page.title | downcase %}
 
 page title {{ page.title }}
 page url {{ page.url }}
@@ -13,7 +14,7 @@ page url {{ page.url }}
 <div class="archive">
     {% unless page.header.overlay_color or page.header.overlay_image %}
 		{% comment %}<!-- CUSTOM -->{% endcomment %}
-		{% include focus/taxonomy-description.html %}
+		{% include focus/taxonomy-description.html topic=title %}
     {% endunless %}
     
     <hr>
