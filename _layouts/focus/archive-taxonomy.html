@@ -73,6 +73,9 @@ PAGE TITLE ONLY WHEN HAS /TOPICS IN URL? {{ page.title}}
     <ul>
         <li>Window Location Pathname: <span id="debug-pathname"></span></li>
         <li>Attempted URL: <span id="debug-attempted-url"></span></li>
+        <li>Document Title Includes 'oops': <span id="debug-title-check"></span></li>
+        <li>Attempted URL Includes '/topics/': <span id="debug-url-check"></span></li>
+        <li>Condition Met for Redirection: <span id="debug-condition-met"></span></li>
         <li>Extracted Topic Name: <span id="debug-topic-name"></span></li>
         <li>New URL for Redirect: <span id="debug-new-url"></span></li>
     </ul>
@@ -87,8 +90,19 @@ document.getElementById('debug-pathname').textContent = currentPathname;
 let attemptedUrl = currentPathname;
 document.getElementById('debug-attempted-url').textContent = attemptedUrl;  // Display it here
 
-// Check if the current page is a 404 page by title and URL pattern
-if (document.title.includes('oops') && attemptedUrl.includes('/topics/')) {
+// Check if the document title includes 'oops'
+let titleCheck = document.title.toLowerCase().includes('oops');
+document.getElementById('debug-title-check').textContent = titleCheck;
+
+// Check if the attempted URL includes '/topics/'
+let urlCheck = attemptedUrl.includes('/topics/');
+document.getElementById('debug-url-check').textContent = urlCheck;
+
+// Determine if conditions are met for redirection
+let conditionMet = titleCheck && urlCheck;
+document.getElementById('debug-condition-met').textContent = conditionMet;
+
+if (conditionMet) {
     // Extract part after /topics/
     let topicNameIndex = attemptedUrl.indexOf('/topics/') + '/topics/'.length;
     let topicName = attemptedUrl.slice(topicNameIndex);
@@ -110,3 +124,4 @@ if (document.title.includes('oops') && attemptedUrl.includes('/topics/')) {
     console.log('Conditions not met for redirection.');
 }
 </script>
+
