@@ -106,6 +106,10 @@ collections:
     output: true
     permalink: /resource/:title
     sort_by: weight
+  taxonomies:
+    output: true
+    permalink: /topis/:title
+    sort_by: weight  
   tools: 
     output: true
     permalink: /tool/:title
@@ -198,7 +202,39 @@ defaults:
       #show_footer_date: true
       #show_pagination: true      
       #show_taxonomy: true
+  # _taxonomies
+  - scope:
+      path: "_taxonomies"
+      type: taxonomies
+    values:
+      layout: focus/single-taxonomy
+      template: columns-one
+      ###
+      #classes:
+      #  - foo
+      author: default
+      author_profile: true
+      ###
+      featured-img: "assets/images/placeholder-1200.jpg"	
+      featured-logo: "assets/images/placeholder-logo.jpg"	      
+      sidebar:
+        - image: "/assets/images/placeholder.jpg"
+          image_alt: "image"
+          title: "My Title5" 
+          text: "Some text here."
+          nav:
+            - main                  
+      ###
+      comments: false      
+      read_time: false
+      related: false
+      share: false  
+      #show_date: true
+      #show_footer_date: true
+      #show_pagination: true      
+      #show_taxonomy: true
 
+      
   # _resources
   - scope:
       path: "_resources"
