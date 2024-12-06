@@ -1,0 +1,33 @@
+---
+layout: focus/single
+---
+
+
+page title {{ page.title }}
+page url {{ page.url }}
+
+{{ content }}
+
+---
+
+<div class="archive">
+    {% unless page.header.overlay_color or page.header.overlay_image %}
+		{% comment %}<!-- CUSTOM -->{% endcomment %}
+		{% include focus/taxonomy-description.html %}
+    {% endunless %}
+    
+    <hr>
+    
+    <h1>RESOURCES, PAGES</h1>
+    {% assign types_list = "resource, page" | split: ", " %}
+    {% for type in types_list %}        
+            {% include focus/post-display.html type=type topic=page.title format="list" order="desc" container_class="" type_class="" type-item_class="box-shadow" %}            
+    {% endfor %}
+    
+    <hr>
+    
+    <h1>POSTS</h1>        
+    {% for post in page.posts %}
+      {% include archive-single.html %}
+    {% endfor %}
+</div>

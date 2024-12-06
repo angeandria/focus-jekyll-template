@@ -108,7 +108,7 @@ collections:
     sort_by: weight
   taxonomies:
     output: true
-    permalink: /topis/:title
+    permalink: /topics/:title
     sort_by: weight  
   tools: 
     output: true
