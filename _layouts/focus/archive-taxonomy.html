@@ -79,30 +79,30 @@ PAGE TITLE ONLY WHEN HAS /TOPICS IN URL? {{ page.title}}
 </div>
 
 <script>
-    // Capture and display the current pathname
-    let currentPathname = window.location.pathname;
-    document.getElementById('debug-pathname').textContent = currentPathname;
-    
-    // Use the pathname to mimic the attempted URL
-    let attemptedUrl = currentPathname;
-    document.getElementById('debug-attempted-url').textContent = attemptedUrl;  // Display it here
-    
-    // Check if the current page is a 404 page by title and URL pattern
-    if (document.title.includes('Oops') && attemptedUrl.includes('/topics/')) {
-        // Extract part after /topics/
-        let topicNameIndex = attemptedUrl.indexOf('/topics/') + '/topics/'.length;
-        let topicName = attemptedUrl.substring(topicNameIndex);
-        document.getElementById('debug-topic-name').textContent = topicName;
-    
-        // Construct the new URL for redirection
-        let newUrl = '/redirect?content=' + encodeURIComponent(topicName);
-        document.getElementById('debug-new-url').textContent = newUrl;
-    
-        // Redirect after a delay to allow for debugging
-        setTimeout(() => {
-            window.location.href = newUrl;
-        }, 3000); // 3-second delay for observation
-    } else {
-        console.log('Conditions not met for redirection.');
-    }
+// Capture and display the current pathname
+let currentPathname = window.location.pathname;
+document.getElementById('debug-pathname').textContent = currentPathname;
+
+// Use the pathname to mimic the attempted URL
+let attemptedUrl = currentPathname;
+document.getElementById('debug-attempted-url').textContent = attemptedUrl;  // Display it here
+
+// Check if the current page is a 404 page by title and URL pattern
+if (document.title.includes('Oops') && attemptedUrl.includes('/topics/')) {
+    // Extract part after /topics/
+    let topicNameIndex = attemptedUrl.indexOf('/topics/') + '/topics/'.length;
+    let topicName = attemptedUrl.slice(topicNameIndex);
+    document.getElementById('debug-topic-name').textContent = topicName;
+
+    // Construct the new URL for redirection
+    let newUrl = '/redirect?content=' + encodeURIComponent(topicName);
+    document.getElementById('debug-new-url').textContent = newUrl;
+
+    // Redirect after a delay to allow for debugging
+    setTimeout(() => {
+        window.location.href = newUrl;
+    }, 3000); // 3-second delay for observation
+} else {
+    console.log('Conditions not met for redirection.');
+}
 </script>
