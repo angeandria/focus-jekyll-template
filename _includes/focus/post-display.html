@@ -23,12 +23,12 @@
 {% assign topic_limit = include.limit | default: 100000 %}
 
 
-{% comment %}
+
 <h2>
     Type : {{type_string}} | Topic : {{ target_topic }}<br>
     sort by ({{ topic_sort}}) limit ({{ topic_limit}}) order ({{ topic_order}})
 </h2>
-{% endcomment %}
+
 
 
 
@@ -57,11 +57,7 @@
                 {% endif %}
             {% else %}
                 <!-- Categories -->
-                {% assign sorted_pages = sorted_pages | where: "categories", target_topic %}
-                <!-- Tags -->
-                {%- if sorted_pages.size == 0 -%}
-                    {%- assign sorted_pages = site.pages | where: "tags", target_topic %}
-                {%- endif -%}
+                {% assign sorted_pages = sorted_pages | where: "categories", target_topic %}                
             {% endif %}
         {% endif %}        
         
