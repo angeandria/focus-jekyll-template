@@ -213,6 +213,16 @@ defaults:
       ###
       #classes:
       #  - foo
+      header:
+        overlay_image: /assets/images/placeholder-1200.jpg
+        overlay_filter: linear-gradient(rgba(255, 0, 0, 0.5), rgba(0, 255, 255, 0.5))
+        caption: "Photo credit: [**Unsplash**](https://unsplash.com)"
+        actions:
+          - label: "More Info"
+            url: "https://unsplash.com"
+          - label: "Download"
+            url: "https://angeandria.com"     
+      ###      
       author: default
       author_profile: true
       ###
@@ -347,10 +357,10 @@ defaults:
   #jekyll-archives Tag	
   - scope:
       path: ""
-      type: tag
-      layout: focus/single-taxonomy
-      template: sidebar-right
+      type: tag    
     values:
+      layout: focus/single-taxonomy        
+      template: sidebar-right  
       author_profile: false
       comments: false
       read_time: false
