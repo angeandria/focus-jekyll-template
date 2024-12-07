@@ -202,13 +202,14 @@ defaults:
       #show_footer_date: true
       #show_pagination: true      
       #show_taxonomy: true
+      
   # _taxonomies
   - scope:
       path: "_taxonomies"
       type: taxonomies
     values:
       layout: focus/single-taxonomy
-      template: columns-one
+      template: sidebar-right
       ###
       #classes:
       #  - foo
@@ -220,7 +221,7 @@ defaults:
       sidebar:
         - image: "/assets/images/placeholder.jpg"
           image_alt: "image"
-          title: "My Title5" 
+          title: "My Title10" 
           text: "Some text here."
           nav:
             - main                  
@@ -322,8 +323,7 @@ defaults:
           - label: "More Info"
             url: "https://unsplash.com"
           - label: "Download"
-            url: "https://angeandria.com" 
-            layout: focus/single-page
+            url: "https://angeandria.com"             
       author_profile: false
       ###
       featured-img: "assets/images/placeholder-1200.jpg"	
