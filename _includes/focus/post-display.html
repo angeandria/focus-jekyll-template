@@ -56,8 +56,11 @@
                     {% assign sorted_pages = "" | split: "" %}
                 {% endif %}
             {% else %}
-                <!-- Categories -->
-                {% assign sorted_pages = sorted_pages | where: "categories", target_topic %}                
+                <!-- Categories -->                
+                {% assign sorted_pages_cats = sorted_pages | where: "categories", target_topic %}
+                {% assign sorted_pages_tags = sorted_pages | where: "tags", target_topic %}                
+                {%- assign sorted_pages = sorted_pages_cats | concat: sorted_pages_tags -%}
+
             {% endif %}
         {% endif %}        
         
