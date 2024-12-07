@@ -348,6 +348,8 @@ defaults:
   - scope:
       path: ""
       type: tag
+      layout: focus/single-taxonomy
+      template: sidebar-right
     values:
       author_profile: false
       comments: false
@@ -476,7 +478,7 @@ category_archive:
   path: /topics/
 tag_archive:
   type: jekyll-archives
-  path: /tags/
+  path: /topics/
 
 
 # https://github.com/jekyll/jekyll-archives
