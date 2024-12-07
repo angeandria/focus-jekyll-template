@@ -4,13 +4,6 @@ layout: default
 {% assign layout_slug = page.layout | default: layout.layout | replace: '/', '-') %}
     
 
-
-PAGE HEADER OVERLAY         
-overlay color {{ page.header.overlay_color }}
-overlay image {{ page.header.overlay_image }}
-Image {{ page.header.image }}
-Caption {{ page.header.caption }}
-
 {% if page.header.overlay_color or page.header.overlay_image or page.header.image %}
   {% include page__hero.html %}
 {% elsif page.header.video.id and page.header.video.provider %}
@@ -28,7 +21,7 @@ Caption {{ page.header.caption }}
 {% endif %}
 
 
-{% if layout_slug != "focus-home" %}
+{% if layout_slug != "focus-home" or layout_slug != "focus-single-taxonomy" %}
 <div id="page__header">
     <div class="wrapper">
         <header>
