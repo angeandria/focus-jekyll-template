@@ -1,3 +1,9 @@
+# ===============================================    
+#
+# CATEGORIES
+#
+# ===============================================
+
 # --------------    
 # GROWTH
 # --------------    
@@ -49,3 +55,21 @@ category 2:
     description: "from data.categories.yml | Category 2 description"	
     cta-title: "Get this"
     cta-url: "https://angeandria.com"    
+    
+
+# ===============================================    
+#
+# TAGS
+#
+# ===============================================
+    
+# --------------    
+# BLACK FRIDAY
+# --------------    
+black friday:
+    title: "Blaaaaaack Fridaaaaay"
+    id: 9-1
+    description: "from data.taxonomies.yml | Black Friday"	
+    cta-title: "Get this"
+    cta-url: "https://angeandria.com"
+    
