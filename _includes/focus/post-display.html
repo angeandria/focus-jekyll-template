@@ -23,12 +23,12 @@
 {% assign topic_limit = include.limit | default: 100000 %}
 
 
-
+{% comment %}
 <h2>
     Type : {{type_string}} | Topic : {{ target_topic }}<br>
     sort by ({{ topic_sort}}) limit ({{ topic_limit}}) order ({{ topic_order}})
 </h2>
-
+{% endcomment %}
 
 
 
@@ -96,7 +96,7 @@
                         </div>
 
                         <div class="block block-2">
-                            <img class="item-featured-img" src="{{ page.featured-img | default: '/assets/images/placeholder.jpg' | relative_url }}" alt="Featured Image">
+                            <img class="item-featured-img" src="{{ page.featured-image | default: '/assets/images/placeholder.jpg' | relative_url }}" alt="Featured Image">
                         </div>
                               
                         <div class="block block-3">                        

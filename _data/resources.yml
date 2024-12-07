@@ -15,7 +15,7 @@ guide-1:
     - item 2
     - item 3
     It was popularised in the 1960s with the release of Letraset sheets containing Lorem"
-    featured-img: "assets/images/placeholder-1200.jpg"	
+    featured-image: "assets/images/placeholder-1200.jpg"	
     actions :
       - label: "Get this"
         url: "https://angeandria.com"

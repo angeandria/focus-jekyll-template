@@ -22,7 +22,7 @@ tags:
 title: My best Post
 subtitle: My post subtitle
 description: My post desc
-featured-img: myimage.jpg
+featured-image: myimage.jpg
 hidden: true
 ---
 
