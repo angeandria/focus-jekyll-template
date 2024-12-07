@@ -5,7 +5,11 @@ layout: default
     
 
 
-        
+PAGE HEADER OVERLAY         
+overlay color {{ page.header.overlay_color }}
+overlay image {{ page.header.overlay_image }}
+Image {{ page.header.image }}
+
 {% if page.header.overlay_color or page.header.overlay_image or page.header.image %}
   {% include page__hero.html %}
 {% elsif page.header.video.id and page.header.video.provider %}

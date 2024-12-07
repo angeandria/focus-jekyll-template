@@ -86,8 +86,11 @@
             {% endcomment %}
                         
             <div class="{{type}}s {{ type_class }}">
+                {% comment %} DEBUG
                 <div class="item-type">{{type_string | capitalize }}s</div>
                 <div class="item-topic">{{ target_topic }}</div>
+                {% endcomment %}
+                
                 {% for page in limited_pages %}
                     <div class="item {{ type-item_class }}">
                         
