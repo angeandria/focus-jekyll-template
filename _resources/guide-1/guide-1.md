@@ -10,7 +10,7 @@ categories:
   - main
 tags:
   - featured
-  - black-friday
+  - black friday
 priority: 10
 actions :
   - label: "Get this"
