@@ -6,9 +6,10 @@ layout: default
 
 
 PAGE HEADER OVERLAY         
-overlay color {{ include.header.overlay_color }}
-overlay image {{ include.header.overlay_image }}
-Image {{ include.header.image }}
+overlay color {{ page.header.overlay_color }}
+overlay image {{ page.header.overlay_image }}
+Image {{ page.header.image }}
+Caption {{ page.header.caption }}
 
 {% if page.header.overlay_color or page.header.overlay_image or page.header.image %}
   {% include page__hero.html %}
