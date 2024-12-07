@@ -56,7 +56,12 @@
                     {% assign sorted_pages = "" | split: "" %}
                 {% endif %}
             {% else %}
+                <!-- Categories -->
                 {% assign sorted_pages = sorted_pages | where: "categories", target_topic %}
+                <!-- Tags -->
+                {%- if sorted_pages.size == 0 -%}
+                    {%- assign sorted_pages = site.pages | where: "tags", target_topic %}
+                {%- endif -%}
             {% endif %}
         {% endif %}        
         
@@ -91,7 +96,8 @@
                             <img class="item-featured-logo" src="{{ page.featured-logo | default: '/assets/images/placeholder-logo.jpg' | relative_url }}" alt="Featured Logo">
                         </div>
 
-                        <div class="block block-2">                        <img class="item-featured-img" src="{{ page.featured-img | default: '/assets/images/placeholder.jpg' | relative_url }}" alt="Featured Image">
+                        <div class="block block-2">
+                            <img class="item-featured-img" src="{{ page.featured-img | default: '/assets/images/placeholder.jpg' | relative_url }}" alt="Featured Image">
                         </div>
                               
                         <div class="block block-3">                        

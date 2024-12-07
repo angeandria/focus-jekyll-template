@@ -157,7 +157,7 @@ defaults:
       sidebar:
         - image: "/assets/images/placeholder.jpg"
           image_alt: "image"
-          title: "My Title1" 
+          title: "Posts" 
           text: "Some text here."
           nav:
             - main    
@@ -189,7 +189,7 @@ defaults:
       sidebar:
         - image: "/assets/images/placeholder.jpg"
           image_alt: "image"
-          title: "My Title5" 
+          title: "Pages" 
           text: "Some text here."
           nav:
             - main                  
@@ -221,7 +221,7 @@ defaults:
       sidebar:
         - image: "/assets/images/placeholder.jpg"
           image_alt: "image"
-          title: "My Title10" 
+          title: "Taxonomies" 
           text: "Some text here."
           nav:
             - main                  
@@ -257,7 +257,7 @@ defaults:
       sidebar:
         - image: "/assets/images/placeholder.jpg"
           image_alt: "image"
-          title: "My Title2" 
+          title: "Resources" 
           text: "Some text here."
           nav:
             - main                        
@@ -292,7 +292,7 @@ defaults:
       sidebar:
         - image: "/assets/images/placeholder.jpg"
           image_alt: "image"
-          title: "My Title4" 
+          title: "Tools" 
           text: "Some text here."
           nav:
             - main                        
