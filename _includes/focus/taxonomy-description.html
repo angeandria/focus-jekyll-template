@@ -12,7 +12,7 @@
        {% if taxonomy_details.subtitle %}
              <div id="page-subtitle" class="page__subtitle"{% if page.locale %} lang="{{ page.locale }}"{% endif %}>{{ taxonomy_details.subtitle | markdownify }}</div>
         {% endif %} 
-      <div>
+      <div class="taxonomy-description">
           {{ taxonomy_details.description | markdownify }}
       </div> 
       

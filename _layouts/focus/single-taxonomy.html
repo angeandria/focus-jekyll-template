@@ -15,10 +15,6 @@ sidebar:
 {{ content }}
 
 <div class="archives">
-    {% unless page.header.overlay_color or page.header.overlay_image %}
-		{% comment %}<!-- CUSTOM -->{% endcomment %}
-		{% include focus/taxonomy-description.html topic=title %}
-    {% endunless %}
             
     {% assign types_list = "resource, page, post" | split: ", " %}
     {% for type in types_list %}        

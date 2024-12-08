@@ -12,7 +12,7 @@ growth:
     title: "Growth"
     # subtitle :
     featured_image: https://plus.unsplash.com/premium_photo-1709311452215-496c6740ca59
-    description: "from data.categories.yml | Growth description"	
+    description: "from data.categories.yml - Growth description"	
     cta_title: "Get this"
     cta_url: "https://angeandria.com"
 
@@ -47,7 +47,7 @@ blog:
     title: "Blog"
     # subtitle:
     # featured_image:
-    description: "from data.categories.yml | BLOG description"	
+    description: "from data.categories.yml - BLOG description"	
     cta_title: "Get this"
     cta_url: "https://angeandria.com"
     
@@ -60,7 +60,7 @@ category 2:
     title: "Category 2"
     # subtitle:
     featured_image: https://images.unsplash.com/photo-1724786594231-c8bfd41c0bfa
-    description: "from data.categories.yml | Category 2 description"	
+    description: "from data.categories.yml - Category 2 description"	
     cta_title: "Get this"
     cta_url: "https://angeandria.com"    
     
@@ -79,7 +79,7 @@ black friday:
     title: "Blaaaaaack Fridaaaaay"
     # subtitle:    
     featured_image: https://images.unsplash.com/photo-1733218875809-78c2d54e5195    
-    description: "from data.taxonomies.yml | Black Friday"	
+    description: "from data.taxonomies.yml - Black Friday"	
     cta_title: "Get this"
     cta_url: "https://angeandria.com"
 
