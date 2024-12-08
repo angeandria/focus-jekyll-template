@@ -152,8 +152,8 @@ defaults:
       author: default # data/authors.yml
       author_profile: true
       ###
-      featured-image: "assets/images/placeholder-1200.jpg"	
-      featured-logo: "assets/images/placeholder-logo.jpg"	      
+      featured_image: "assets/images/placeholder-1200.jpg"	
+      featured_logo: "assets/images/placeholder-logo.jpg"	      
       sidebar:
         - image: "/assets/images/placeholder.jpg"
           image_alt: "image"
@@ -184,8 +184,8 @@ defaults:
       author: default
       author_profile: true
       ###
-      featured-image: "assets/images/placeholder-1200.jpg"	
-      featured-logo: "assets/images/placeholder-logo.jpg"	      
+      featured_image: "assets/images/placeholder-1200.jpg"	
+      featured_logo: "assets/images/placeholder-logo.jpg"	      
       sidebar:
         - image: "/assets/images/placeholder.jpg"
           image_alt: "image"
@@ -216,8 +216,8 @@ defaults:
       author: default
       author_profile: true
       ###
-      featured-image: "assets/images/placeholder-1200.jpg"	
-      featured-logo: "assets/images/placeholder-logo.jpg"	      
+      featured_image: "assets/images/placeholder-1200.jpg"	
+      featured_logo: "assets/images/placeholder-logo.jpg"	      
       sidebar:
         - image: "/assets/images/placeholder.jpg"
           image_alt: "image"
@@ -252,8 +252,8 @@ defaults:
       toc_sticky: true
       author_profile: true
       ###
-      featured-image: "assets/images/placeholder-1200.jpg"	
-      featured-logo: "assets/images/placeholder-logo.jpg"	      
+      featured_image: "assets/images/placeholder-1200.jpg"	
+      featured_logo: "assets/images/placeholder-logo.jpg"	      
       sidebar:
         - image: "/assets/images/placeholder.jpg"
           image_alt: "image"
@@ -287,8 +287,8 @@ defaults:
       toc_sticky: true
       author_profile: true
       ###
-      featured-image: "assets/images/placeholder-1200.jpg"	
-      featured-logo: "assets/images/placeholder-logo.jpg"	      
+      featured_image: "assets/images/placeholder-1200.jpg"	
+      featured_logo: "assets/images/placeholder-logo.jpg"	      
       sidebar:
         - image: "/assets/images/placeholder.jpg"
           image_alt: "image"
@@ -326,8 +326,8 @@ defaults:
             url: "https://angeandria.com"             
       author_profile: false
       ###
-      featured-image: "assets/images/placeholder-1200.jpg"	
-      featured-logo: "assets/images/placeholder-logo.jpg"	      
+      featured_image: "assets/images/placeholder-1200.jpg"	
+      featured_logo: "assets/images/placeholder-logo.jpg"	      
       sidebar:
         - image: "/assets/images/placeholder.jpg"
           image_alt: "image"

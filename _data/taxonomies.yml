@@ -22,7 +22,7 @@ personal development:
     id: 2-1
     title: "Personal developmentssssss" 
     subtitle: "subtitle from data.categories.yml"
-    featured-image: "assets/images/placeholder-1200.jpg"	
+    featured_image: "assets/images/placeholder-1200.jpg"	
     description: "Some content here   
     > since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
     

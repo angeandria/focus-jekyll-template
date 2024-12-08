@@ -11,7 +11,7 @@
     {% if current_url == resource_source_url %}    
         <div id="resource__header">
             <div class="wrapper">
-                    <div class="resource__featured-img"><img src="{{ resource_details.featured-image | relative_url }}" />
+                    <div class="resource__featured-img"><img src="{{ resource_details.featured_image | relative_url }}" />
                     </div>
                     <div class="resource__title">
                         <a href="{{ resource_details.url | relative_url }}">{{ resource_details.title }}</a>
