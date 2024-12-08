@@ -21,6 +21,10 @@ layout: default
 {% endif %}
 
 layout slug {{ layout_slug }}
+page template {{ page.template}}
+layout template {{ layout.template}}
+page sidebar {{ page.sidebar }}
+layout sidebar {{ layout.sidebar }}
 
 {% if layout_slug != "focus-home" or layout_slug != "focus-single-taxonomy" %}
 <div id="page__header">
