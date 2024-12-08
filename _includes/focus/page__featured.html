@@ -6,12 +6,19 @@
         {% capture resource_path %}{{ page.featured_image }}{% endcapture %}
         <div class="featured-image">
             {% include figure popup=true image_path=resource_path  alt='this is a placeholder image' caption='This is a figure caption.' %}
-        </div>
+        </div>        
     {% endif %}
     
     
     {% if page.featured_video %}
         <div class="featured-video">
+            {% assign video = page.featured_video %}
+            {% include video id=video.id provider=video.provider danmaku=video.danmaku %}
         </div> 
+    {% endif %}
+    
+    {% if page.cta_url %}    
+          <a href="{{ page.cta_url | relative_url }}" class="btn btn--light-outline btn--large">{{ page.cta_title | default: site.data.ui-text[site.locale].more_label | default: "Learn More" }}</a>
+          
     {% endif %}
 </div>

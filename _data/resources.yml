@@ -42,8 +42,8 @@ guide-2:
     title: "Guide 2" 
     subtitle: "This is Guide 2"    
     description: "from data.resources.yml | GUIDE description"	
-    cta-title: "Get this"
-    cta-url: "https://angeandria.com"
+    cta_title: "Get this"
+    cta_url: "https://angeandria.com"
     navigation:
       - title: Guide 2 navi
         children:
