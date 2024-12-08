@@ -50,7 +50,14 @@ layout: default
               <div class="page__meta_wrapper">          
                   {% assign author = page.author | default: page.authors[0] | default: site.author %}
                   {% assign author = site.data.authors[author] | default: author %}
-    
+
+                  <ul>    
+                      <li>Page author : {{ page.author }}</li>
+                      <li>Page.authors[0] : {{ page.authors[0] }}</li>
+                      <li>Site author : {{ site.author }}</li>
+                      <li>site.data.authors[author] {{ site.data.authors[author] }}</li>
+                  </ul>
+                  
                   {% if page.author %}
                     <!-- Page author -->         
                     <div class="page__meta_author">                    

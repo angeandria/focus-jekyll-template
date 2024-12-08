@@ -68,9 +68,14 @@ body.template--columns-one{
     }
     article.page{
         margin-inline: 0;
-    }
+    }    
 }
 
+body.template--columns-one{
+    #main{
+        max-width: var(--width-m);
+    }
+}
 
 /*
 * -----------
