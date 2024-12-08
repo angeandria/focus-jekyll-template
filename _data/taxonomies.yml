@@ -25,13 +25,15 @@ personal development:
     title: "Personal developmentssssss" 
     subtitle: "subtitle from data.categories.yml"
     featured_image: https://plus.unsplash.com/premium_photo-1709311452215-496c6740ca59
-    description: "Some content here   
+    description: |
+    Some content here   
+    
     > since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
     
     - item 1
     - item 2
     - item 3
-    It was popularised in the 1960s with the release of Letraset sheets containing Lorem"
+    It was popularised in the 1960s with the release of Letraset sheets containing Lorem
     actions :
       - label: "Get this"
         url: "https://angeandria.com"
