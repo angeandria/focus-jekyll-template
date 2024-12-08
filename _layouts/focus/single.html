@@ -3,6 +3,7 @@ layout: default
 ---
 {% assign layout_slug = page.layout | default: layout.layout | replace: '/', '-') %}
     
+{% assign title = page.title | downcase %}
 
 {% if page.header.overlay_color or page.header.overlay_image or page.header.image %}
   {% include page__hero.html %}
@@ -35,6 +36,11 @@ layout: default
                   {% endif %}
               {% endunless %}      
     
+              {% if layout_slug == "focus-single-taxonomy" %}
+                  {% comment %}<!-- CUSTOM -->{% endcomment %}
+	    	      {% include focus/taxonomy-description.html topic=title %}
+              {% endif %}
+        
               {% if page.featured_image or page.featured_video %}
                       {% include focus/page__featured.html %}                
               {% endif %}      
