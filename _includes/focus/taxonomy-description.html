@@ -6,12 +6,15 @@
 
 {% if taxonomy_details %}
   <div class="taxonomy-details">
-       <h1 id="page-title" class="page__title"{% if page.locale %} lang="{{ page.locale }}"{% endif %}>{{ taxonomy_details.title | markdownify }}</h1>
-       	<img class="taxonomy-featured-img" src="{{ taxonomy_details.featured_image | default: '/assets/images/placeholder.jpg' | relative_url }}" alt="Featured Image">
-
-       {% if taxonomy_details.subtitle %}
+      <h1 id="page-title" class="page__title"{% if page.locale %} lang="{{ page.locale }}"{% endif %}>{{ taxonomy_details.title | markdownify }}</h1>
+       
+      {% if taxonomy_details.subtitle %}
              <div id="page-subtitle" class="page__subtitle"{% if page.locale %} lang="{{ page.locale }}"{% endif %}>{{ taxonomy_details.subtitle | markdownify }}</div>
-        {% endif %} 
+      {% endif %} 
+      
+      <img class="taxonomy-featured-img" src="{{ taxonomy_details.featured_image | default: '/assets/images/placeholder.jpg' | relative_url }}" alt="Featured Image">
+
+      
       <div class="taxonomy-description">
           {{ taxonomy_details.description | markdownify }}
       </div> 

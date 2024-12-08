@@ -453,6 +453,7 @@ aside.sidebar__right{
     margin-bottom: 0;
 }
 
+
 #page__header .page__meta_wrapper{
     display: flex; /* Enables flexbox layout */
     justify-content: space-between; /* Distributes space between items */
@@ -501,6 +502,18 @@ aside.sidebar__right{
     }       
    
     
+}
+
+
+/*
+* ----------------------
+* TAXONOMY DETAILS
+* ----------------------
+*/
+.taxonomy-details{
+    .taxonomy-description{
+        text-align: left;
+    }
 }
 
 /*
@@ -670,10 +683,23 @@ h6{
 
 /*
 * ------
+* XL
+* ------
+*/
+
+/*
+.foo{
+    font-size: var(--font-size-xl);
+}
+*/
+
+/*
+* ------
 * L
 * ------
 */
-a.site-title{
+a.site-title,
+.taxonomy-details #page-subtitle{
     font-size: var(--font-size-l);
 }
 
