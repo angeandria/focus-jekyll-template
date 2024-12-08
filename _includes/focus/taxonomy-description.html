@@ -10,7 +10,7 @@
        	<img class="taxonomy-featured-img" src="{{ taxonomy_details.featured_image | default: '/assets/images/placeholder.jpg' | relative_url }}" alt="Featured Image">
 
        {% if taxonomy_details.subtitle %}
-             <h2 id="page-subtitle" class="page__subtitle"{% if page.locale %} lang="{{ page.locale }}"{% endif %}>{{ taxonomy_details.subtitle | markdownify }}</h2>
+             <div id="page-subtitle" class="page__subtitle"{% if page.locale %} lang="{{ page.locale }}"{% endif %}>{{ taxonomy_details.subtitle | markdownify }}</div>
         {% endif %} 
       <div>
           {{ taxonomy_details.description | markdownify }}

@@ -26,17 +26,18 @@ layout: default
 <div id="page__header">
     <div class="wrapper">
         <header>
-              {% unless page.header.overlay_color or page.header.overlay_image %}
-                  {% if page.title_before %}<div class="page-title-before">{{ page.title_before }}</div>{% endif %}
-                  {% if page.title %}
-                  <h1 id="page-title" class="page__title" itemprop="headline">
-                    <a href="{{ page.url | absolute_url }}" itemprop="url">{{ page.title | markdownify | remove: "<p>" | remove: "</p>" }}</a>
-                  </h1>
-                  {% if page.title_after %}<div class="page-title-after">{{ page.title_after }}</div>{% endif %}
-                  {% endif %}
-              {% endunless %}      
-    
-              {% if layout_slug == "focus-single-taxonomy" %}
+            
+              {% if layout_slug != "focus-single-taxonomy" %}              
+                  {% unless page.header.overlay_color or page.header.overlay_image %}
+                      {% if page.title_before %}<div class="page-title-before">{{ page.title_before }}</div>{% endif %}
+                      {% if page.title %}
+                      <h1 id="page-title" class="page__title" itemprop="headline">
+                        <a href="{{ page.url | absolute_url }}" itemprop="url">{{ page.title | markdownify | remove: "<p>" | remove: "</p>" }}</a>
+                      </h1>
+                      {% if page.title_after %}<div class="page-title-after">{{ page.title_after }}</div>{% endif %}
+                      {% endif %}
+                  {% endunless %}                      
+              {% else %}
                   {% comment %}<!-- CUSTOM -->{% endcomment %}
 	    	      {% include focus/taxonomy-description.html topic=title %}
               {% endif %}
