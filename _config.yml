@@ -209,7 +209,7 @@ defaults:
       type: taxonomies
     values:
       layout: focus/single-taxonomy
-      template: sidebar-right
+      # template: sidebar-right directly specified within single-taxonomy.html to unify custom taxonomies and jekyll-archive support
       ###
       #classes:
       #  - foo       
@@ -312,7 +312,7 @@ defaults:
       type: topic
     values:
       layout: focus/single-taxonomy
-      template: sidebar-right
+      # template: NOT available
       #classes:
       #    - foo  
       header:
