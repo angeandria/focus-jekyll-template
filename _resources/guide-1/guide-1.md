@@ -14,7 +14,7 @@ tags:
 info-1:
   - 20%
   - CODE345
-  info-2:
+info-2:
   - 13 hours left
 author: angeandria  
 priority: 10
