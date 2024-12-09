@@ -18,4 +18,12 @@ angeandria:
     home: https://www.angeandria.com
     location: Toulon
     links:
-    
+
+johndoe:
+    name: John Doe
+    avatar: assets/images/bio-photo.jpg
+    bio: hello
+    email: aa@gmail.com
+    home: https://www.angeandria.com
+    location: Toulon
+    links:    
