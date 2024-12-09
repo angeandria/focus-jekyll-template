@@ -11,6 +11,7 @@ categories:
 tags:
   - featured
   - black friday
+author: angeandria  
 priority: 10
 actions :
   - label: "Get this"
