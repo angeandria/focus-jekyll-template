@@ -52,7 +52,8 @@ layout: default
                         <li>page.author {{ page.author }}</li>  
                         <li>site.author {{ site.author }}</li>                    
                     </ul>
-                  {% assign author = site.data.authors[page.author] | site.data.authors[site.author] %}
+                  {% assign author_name = page.author | site.author %}  
+                  {% assign author = site.data.authors[author_name] %}
                     <ul>                                
                         <li>author.name {{ author.name }}</li>
                     </ul>
