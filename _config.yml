@@ -302,7 +302,7 @@ defaults:
             url: "https://unsplash.com"
           - label: "Download"
             url: "https://angeandria.com"             
-      author_profile: false
+      author_profile: true
       ###
       featured_image: "assets/images/placeholder-1200.jpg"	
       featured_logo: "assets/images/placeholder-logo.jpg"	      
