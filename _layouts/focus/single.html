@@ -77,7 +77,7 @@ layout: default
                     </div>
                   {% endif %}
         
-                  {% if page.date %}
+                  {% if page.date and page.show_date %}
                     <!-- Page date -->         
                     <div class="page__meta_date">                    
                         {% include page__meta.html %}
