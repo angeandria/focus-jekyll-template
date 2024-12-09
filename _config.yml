@@ -138,10 +138,11 @@ defaults:
           title: "Posts" 
           text: "Some text here."
           nav:
-            - main    
+            - main   
+      post_aside: true      
       ###      
       comments: true
-      read_time: false
+      read_time: true
       related: false
       share: true
       show_date: true
@@ -170,7 +171,8 @@ defaults:
           title: "Pages" 
           text: "Some text here."
           nav:
-            - main                  
+            - main      
+      post_aside: false            
       ###
       comments: false      
       read_time: false
