@@ -1,7 +1,7 @@
 <div class="scrollable-container">
     <div class="scrollable">
-        This is a long piece of text that will not break into a new line and will stay on the same line. 
-        It is intentionally made long to demonstrate horizontal scrolling in action. 
-        Additional content can be added here if necessary to test scrolling behavior.
+        {% for i in (1..100) %}
+            <span style="display: inline-block;">word {{ i }}</span>
+        {% endfor %}
     </div>
 </div>
