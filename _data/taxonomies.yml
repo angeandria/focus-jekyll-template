@@ -8,6 +8,7 @@
 # GROWTH
 # --------------    
 growth:
+    type: category
     id: 1-1
     title: "Growth"
     # subtitle :
@@ -21,6 +22,7 @@ growth:
 # PERSONAL DEVELOPMENT
 # --------------    
 personal development:
+    type: category    
     id: 2-1
     title: "Personal developmentssssss" 
     subtitle: "subtitle from data.categories.yml"
@@ -43,6 +45,7 @@ personal development:
 # BLOG
 # --------------    
 blog:
+    type: category
     id: 3-1
     title: "Blog"
     # subtitle:
@@ -56,6 +59,7 @@ blog:
 # GROWTH
 # --------------    
 category 2:
+    type: category    
     id: 8-1    
     title: "Category 2"
     # subtitle:
@@ -75,6 +79,7 @@ category 2:
 # BLACK FRIDAY
 # --------------    
 black friday:
+    type: tag 
     id: 9-1    
     title: "Blaaaaaack Fridaaaaay"
     # subtitle:    
