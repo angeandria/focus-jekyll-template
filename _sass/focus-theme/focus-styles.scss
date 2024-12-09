@@ -764,6 +764,14 @@ ul.toc__menu li a,
     scrollbar-width: none;      /* Hide scrollbar in Firefox */
     -ms-overflow-style: none;   /* Hide scrollbar in IE and Edge */    
     padding: 20px 24px;
+    
+    .item{
+        padding: 4px 8px;
+        margin: 0 4px;
+        border: 1px solid #EFEFEF;
+        background-color: #FFF;
+        color: #AFAFAF;
+    }
 }
 
 
