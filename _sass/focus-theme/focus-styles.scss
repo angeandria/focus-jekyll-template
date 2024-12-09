@@ -751,3 +751,20 @@ ul.toc__menu li a,
     font-size: var(--font-size-xs);
 }
 
+
+
+.scrollable-container {
+    width: 300px;              /* Fixed width for the container */
+    height: 50px;              /* Optional height */
+    overflow: hidden;          /* Hide overflow */
+    position: relative;        /* Positioning context for absolute child */
+}
+
+.scrollable {
+    width: max-content;        /* Allows content to expand */
+    height: 100%;              /* Fill the height of the container */
+    overflow-x: auto;          /* Enable horizontal scrolling */
+    white-space: nowrap;       /* Prevent line breaks */
+    position: absolute;        /* Allow positioning within container */
+    left: 0;                   /* Align to the left */
+}
