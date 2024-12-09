@@ -49,8 +49,8 @@ layout: default
               
               <div class="page__meta_wrapper">          
                     <ul>        
-                        <li>page.author {{ page.author }}</li>  
-                        <li>site.author {{ site.author }}</li>                    
+                        <li>site.author {{ site.author }}</li>                             
+                        <li>page.author {{ page.author }}</li>                 
                     </ul>
                   {% assign author_name = page.author | site.author %}  
                   {% assign author = site.data.authors[author_name] %}
