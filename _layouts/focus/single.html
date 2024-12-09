@@ -47,17 +47,12 @@ layout: default
               {% endif %}      
     
               
-              <div class="page__meta_wrapper">          
-                    <ul>        
-                        <li>site.author {{ site.author }}</li>                             
-                        <li>page.author {{ page.author }}</li>                 
-                    </ul>                    
+              <div class="page__meta_wrapper">                            
                   {% assign author_name = page.author | default: site.author %}  
                   {% assign author = site.data.authors[author_name] %}
-                    <ul>                                
-                        <li>author.name {{ author.name }}</li>
-                    </ul>
-                  {% if author %}
+                  {% assign show_author = site.author_profile | default: false %}
+                  
+                  {% if author and show_author %}
                     <!-- Page author -->         
                     <div class="page__meta_author">                    
                             {% if author.name %}

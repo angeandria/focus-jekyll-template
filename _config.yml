@@ -127,7 +127,7 @@ defaults:
       toc_icon: "heart"  # corresponding Font Awesome icon name (without fa prefix)
       toc_sticky: true
       ###  
-      author: johndoe # data/authors.yml
+      author: default # data/authors.yml
       author_profile: true
       ###
       # featured_image: "assets/images/placeholder-1200.jpg"	
@@ -160,7 +160,7 @@ defaults:
       #classes:
       #  - foo
       author: default
-      author_profile: true
+      author_profile: false
       ###
       # featured_image: "assets/images/placeholder-1200.jpg"	
       featured_logo: "assets/images/placeholder-logo.jpg"	      
