@@ -755,10 +755,7 @@ ul.toc__menu li a,
 .scrollable-container {
     height: auto;              /* Optional height */
     overflow: hidden;          /* Hide overflow */
-    position: relative;        /* Positioning context for absolute child */
-    box-shadow: inset 5px 0 10px rgba(0, 0, 0, 1);    
-
-        
+    position: relative;        /* Positioning context for absolute child */    
 }
 
 .scrollable {
@@ -767,6 +764,7 @@ ul.toc__menu li a,
     white-space: nowrap;       /* Prevent line breaks */
     scrollbar-width: none;      /* Hide scrollbar in Firefox */
     -ms-overflow-style: none;   /* Hide scrollbar in IE and Edge */    
+    padding: 20px 24px;
 }
 
 
