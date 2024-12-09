@@ -756,17 +756,21 @@ ul.toc__menu li a,
     height: auto;              /* Optional height */
     overflow: hidden;          /* Hide overflow */
     position: relative;        /* Positioning context for absolute child */
-    box-shadow: inset 5 0 10px rgba(0, 0, 0, 1);        
+    box-shadow: inset 5px 0 10px rgba(0, 0, 0, 1);    
+
+        
 }
 
 .scrollable {
-    width: max-content;        /* Allows content to expand */
     height: 100%;              /* Fill the height of the container */
     overflow-x: auto;          /* Enable horizontal scrolling */
     white-space: nowrap;       /* Prevent line breaks */
+    scrollbar-width: none;      /* Hide scrollbar in Firefox */
+    -ms-overflow-style: none;   /* Hide scrollbar in IE and Edge */    
 }
 
 
-.scrollable-container {
-    
+/* Hide scrollbars for WebKit browsers (Chrome, Safari) */
+.scrollable::-webkit-scrollbar {
+    display: none;              /* Hide scrollbar */
 }
