@@ -753,10 +753,10 @@ ul.toc__menu li a,
 
 
 .scrollable-container {
-    width: 300px;              /* Fixed width for the container */
-    height: 50px;              /* Optional height */
+    height: auto;              /* Optional height */
     overflow: hidden;          /* Hide overflow */
     position: relative;        /* Positioning context for absolute child */
+    box-shadow: inset 5 0 10px rgba(0, 0, 0, 1);        
 }
 
 .scrollable {
@@ -764,11 +764,9 @@ ul.toc__menu li a,
     height: 100%;              /* Fill the height of the container */
     overflow-x: auto;          /* Enable horizontal scrolling */
     white-space: nowrap;       /* Prevent line breaks */
-    position: absolute;        /* Allow positioning within container */
-    left: 0;                   /* Align to the left */
 }
 
 
 .scrollable-container {
-    box-shadow: inset 5 0 10px rgba(0, 0, 0, 1);    
+    
 }
