@@ -51,14 +51,8 @@ layout: default
                     <ul>        
                         <li>site.author {{ site.author }}</li>                             
                         <li>page.author {{ page.author }}</li>                 
-                    </ul>
-                    {% if page.author %} 
-                        PAGE.AUTHOR exists but display is empty so it will replace
-                    {% else %}
-                        PAGE.AUTHOR does NOT exist at all
-                    {% endif %} 
-                    
-                  {% assign author_name = page.author | site.author %}  
+                    </ul>                    
+                  {% assign author_name = page.author | default: site.author %}  
                   {% assign author = site.data.authors[author_name] %}
                     <ul>                                
                         <li>author.name {{ author.name }}</li>
