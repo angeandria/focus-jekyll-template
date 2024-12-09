@@ -176,7 +176,7 @@ defaults:
       read_time: false
       related: false
       share: false  
-      #show_date: true
+      show_date: false
       #show_footer_date: true
       #show_pagination: true      
       #show_taxonomy: true
