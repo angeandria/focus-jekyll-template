@@ -1,7 +1,7 @@
 <div class="scrollable-container">
     <div class="scrollable">
         {% for cat in site.categories %}
-            <div class="item"><a href={{ cat.url | relative_url }}>{{ cat.name }}</a></div>
+            <div class="item"><a href="{{ cat.url | relative_url }}"">{{ cat.name }}</a></div>
         {% endfor %}
     </div>
 </div>
