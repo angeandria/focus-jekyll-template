@@ -3,9 +3,9 @@
     <div class="scrollable-container">
         <div class="scrollable">    
             {% for cat in taxonomies %}            
-                <div class="item">
+                <span class="item">
                     <a href="{{ '/topics' | relative_url }}/{{ cat.title | slugify }}">{{ cat.title }}</a>                    
-                </div>
+                </span>
             {% endfor %}                        
         </div>
     </div>
