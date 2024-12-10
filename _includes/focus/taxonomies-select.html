@@ -13,7 +13,7 @@
                 {% endif %}
                 // {{ page.title }} - {{ category_key }} //
                 <span class="item {{ active }}">
-                    <a href="{{ '/topics' | relative_url }}/{{ cat.title | slugify }}">{{ cat.title }}</a>                    
+                    <a href="{{ '/topics' | relative_url }}/{{ category_key | slugify }}">{{ cat.title }}</a>                    
                 </span>
             {% endfor %}                        
         </div>
