@@ -9,7 +9,7 @@
                 {% else %}
                     {% assign active = '' %}                    
                 {% endif %}
-                active : {{ active }}
+                // {{ page.title }} - {{ cat.title }} //
                 <span class="item {{ active }}">
                     <a href="{{ '/topics' | relative_url }}/{{ cat.title | slugify }}">{{ cat.title }}</a>                    
                 </span>
