@@ -8,14 +8,14 @@
                 {% assign values = cat[1] %}
                 {% if values.type == "category" %}
                     {% assign key = cat[0] | slugify %}  <!-- Get the key for the current category -->
-                    
-                    {% if page.title == key %}
+                    {% assign title == page.title | slugify %}
+                    {% if title == key %}
                         {% assign active = 'current' %}
                     {% else %}
                         {% assign active = '' %}                    
                     {% endif %}
                     
-                    {{ page.title }} : {{ key }}
+                    {{ title }} : {{ key }}
                         
                     <span class="item {{ active }}">
                         <a href="{{ '/topics' | relative_url }}/{{ key }}">{{ values.title }}</a>                    
