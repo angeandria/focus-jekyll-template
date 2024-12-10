@@ -8,7 +8,7 @@
                 {% assign values = cat[1] %}
                 {% if values.type == "category" %}
                     {% assign key = cat[0] | slugify %}  <!-- Get the key for the current category -->
-                    {% assign title == page.title | slugify %}
+                    {% assign title = page.title | slugify %}
                     {% if title == key %}
                         {% assign active = 'current' %}
                     {% else %}
