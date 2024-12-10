@@ -1,12 +1,15 @@
 <div class="scrollable-container">
     <div class="scrollable">
-        site.data.taxonomies : {{ site.data.taxonomies }}
+
         {% assign taxonomies = site.data.taxonomies | where: "type", "category"%}
         {% if taxonomies %}
-            taxonomies exist : {{ taxonomies }}
             {% for cat in taxonomies %}
-                cat? {{ cat }}
-                <div class="item"><a href="{{ '/topics' | relative_url }}/{{cat.title | downcase">{{ cat.title }}</a></div>
+                <ul>
+                    <li>CAT TITLE : {{ cat.title }}</li>
+                </ul>
+                <div class="item">
+                    <a href="{{ '/topics' | relative_url }}/{{cat.title | downcase">{{ cat.title }}</a>                    
+                </div>
             {% endfor %}
         {% else %}
             taxonomies do NOT exist
