@@ -774,6 +774,12 @@ ul.toc__menu li a,
         color: #6F6F6F;
         display: inline-block;
         text-decoration: none;
+        border-radius: 8px;
+        padding: 8px 14px;
+    }
+    .item a:first-child{
+        background-color: #111;
+        color: #FFF;
     }
 }
 

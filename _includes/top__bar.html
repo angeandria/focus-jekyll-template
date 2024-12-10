@@ -2,6 +2,7 @@
 {% if taxonomies %}
     <div class="scrollable-container">
         <div class="scrollable">    
+            <span class="item"><a href="{{ '/topics' | relative_url }}">All</a></span>
             {% for cat in taxonomies %}            
                 <span class="item">
                     <a href="{{ '/topics' | relative_url }}/{{ cat.title | slugify }}">{{ cat.title }}</a>                    
