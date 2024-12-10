@@ -1,19 +1,19 @@
-{% assign taxonomies = site.data.taxonomies | where: "type", "category"%}
+{% assign taxonomies = site.data.taxonomies | where: "type", "category" %}
 {% if taxonomies %}
     <div class="scrollable-container">
         <div class="scrollable">    
             <span class="item"><a href="{{ '/topics' | relative_url }}">All</a></span>
             {% for cat in taxonomies %}            
-                {% if page.title == cat.title %}                    
-                    {% assign active = "" %}
+                {% if page.title == cat.title %}
+                    {% assign active = 'current' %}
                 {% else %}
-                    {% assign active = "current" %}                    
+                    {% assign active = '' %}                    
                 {% endif %}
                 active : {{ active }}
                 <span class="item {{ active }}">
-                    <a href="{{ '/topics' | relative_url }}/{{ cat | slugify }}">{{ cat.title }}</a>                    
+                    <a href="{{ '/topics' | relative_url }}/{{ cat.title | slugify }}">{{ cat.title }}</a>                    
                 </span>
             {% endfor %}                        
         </div>
     </div>
-{% endif %}    
+{% endif %}
