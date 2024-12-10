@@ -4,12 +4,12 @@
         <div class="scrollable">    
             <span class="item"><a href="{{ '/topics' | relative_url }}">All</a></span>
             {% for cat in taxonomies %}            
-                {% if page.title == cat.title %}
+                {% if page.title == cat %}
                     {% assign active = 'current' %}
                 {% else %}
                     {% assign active = '' %}                    
                 {% endif %}
-                // {{ page.title }} - {{ cat.title }} //
+                // {{ page.title }} - {{ cat }} //
                 <span class="item {{ active }}">
                     <a href="{{ '/topics' | relative_url }}/{{ cat.title | slugify }}">{{ cat.title }}</a>                    
                 </span>
