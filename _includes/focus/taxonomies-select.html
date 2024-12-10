@@ -15,8 +15,6 @@
                         {% assign active = '' %}                    
                     {% endif %}
                     
-                    {{ title }} : {{ key }}
-                        
                     <span class="item {{ active }}">
                         <a href="{{ '/topics' | relative_url }}/{{ key }}">{{ values.title }}</a>                    
                     </span>
