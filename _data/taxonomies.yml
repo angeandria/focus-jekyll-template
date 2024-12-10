@@ -10,7 +10,7 @@
 growth:
     type: category
     id: 1-1
-    title: "Growth"
+    title: "Growth is the new black"
     # subtitle :
     featured_image: https://plus.unsplash.com/premium_photo-1709311452215-496c6740ca59
     description: "from data.categories.yml - Growth description"	
@@ -24,7 +24,7 @@ growth:
 personal development:
     type: category    
     id: 2-1
-    title: "Personal developmentssssss" 
+    title: "Personal development for creative people" 
     subtitle: "subtitle from data.categories.yml"
     featured_image: https://plus.unsplash.com/premium_photo-1709311452215-496c6740ca59
     description: |
