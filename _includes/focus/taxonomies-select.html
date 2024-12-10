@@ -7,10 +7,10 @@
                 {% if page.title == cat.title %}                    
                     {% assign active = "" %}
                 {% else %}
-                    {% assign active = 'current' | prepend: '' %}                    
+                    {% assign active = "current" %}                    
                 {% endif %}
                 active : {{ active }}
-                <span class="item{{ active }}">
+                <span class="item {{ active }}">
                     <a href="{{ '/topics' | relative_url }}/{{ cat | slugify }}">{{ cat.title }}</a>                    
                 </span>
             {% endfor %}                        
