@@ -777,9 +777,12 @@ ul.toc__menu li a,
         border-radius: 8px;
         padding: 8px 14px;
     }
-    .item:first-child a{
-        background-color: #111;
+    .item.current a{
+        background-color: #000;
         color: #FFF;
+    }
+    .item:first-child a{
+        background-color: #d6d6d6;
     }
 }
 

@@ -4,19 +4,21 @@
     <div class="scrollable-container">
         <div class="scrollable">    
             <span class="item"><a href="{{ '/topics' | relative_url }}">All</a></span>
-            {% for cat in taxonomies %}     
-                {% assign category_key = cat[0] | slugify %}  <!-- Get the key for the current category -->
-               
-                {% if page.title == category_key %}
-                    {% assign active = 'current' %}
-                {% else %}
-                    {% assign active = '' %}                    
-                {% endif %}
-                // {{ page.title }} - category_key 
-                // active {{ active }}
-                <span class="item {{ active }}">
-                    <a href="{{ '/topics' | relative_url }}/{{ category_key }}">{{ cat.title }}</a>                    
-                </span>
+            {% for cat in taxonomies %}   
+                {% assign values = cat[1] %}
+                {% if values.type == "category" %}
+                    {% assign key = cat[0] | slugify %}  <!-- Get the key for the current category -->
+                    
+                    {% if page.title == key %}
+                        {% assign active = 'current' %}
+                    {% else %}
+                        {% assign active = '' %}                    
+                    {% endif %}
+                        
+                    <span class="item {{ active }}">
+                        <a href="{{ '/topics' | relative_url }}/{{ key }}">{{ values.title }}</a>                    
+                    </span>
+                {% endif %}   
             {% endfor %}                        
         </div>
     </div>
