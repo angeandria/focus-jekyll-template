@@ -4,9 +4,8 @@
         <div class="scrollable">    
             <span class="item"><a href="{{ '/topics' | relative_url }}">All</a></span>
             {% for cat in taxonomies %}      
-                {% assign category_key = cat[0] %}  <!-- Get the key for the current category -->
-                {% assign category_value = cat[1] %} <!-- Get the value (the object) for the current category --> 
-                
+                {% assign category_key = cat[0] | slugify %}  <!-- Get the key for the current category -->
+               
                 {% if page.title == category_key %}
                     {% assign active = 'current' %}
                 {% else %}
