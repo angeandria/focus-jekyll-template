@@ -1,9 +1,11 @@
 {% assign taxonomies = site.data.taxonomies | where: "type", "category" %}
+
 {% if taxonomies %}
     <div class="scrollable-container">
         <div class="scrollable">    
             <span class="item"><a href="{{ '/topics' | relative_url }}">All</a></span>
-            {% for cat in taxonomies %}      
+            {% for cat in taxonomies %}     
+           yo {{ site.data.categories[cat] }} 
                 {% assign category_key = cat[0] %}  <!-- Get the key for the current category -->
                
                 {% if page.title == cat[0] %}
