@@ -766,12 +766,14 @@ ul.toc__menu li a,
     -ms-overflow-style: none;   /* Hide scrollbar in IE and Edge */    
     padding: 20px 24px;
     
-    .item{
+    .item a{
         padding: 6px 14px;
         margin: 0 4px;
         border: 1px solid #EFEFEF;
         background-color: #FFF;
         color: #6F6F6F;
+        display: inline-block;
+        text-decoration: none;
     }
 }
 
