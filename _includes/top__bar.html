@@ -2,7 +2,7 @@
     <div class="scrollable">
         {% assign taxonomies = site.data.taxonomies | where: "type", "category"%}
         {% for cat in taxonomies %}
-            <div class="item"><a href="{{ '/topics' | relative_url }}/{{cat.name | downcase">{{ cat.name }}</a></div>
+            <div class="item"><a href="{{ '/topics' | relative_url }}/{{cat.title | downcase">{{ cat.title }}</a></div>
         {% endfor %}
     </div>
 </div>
