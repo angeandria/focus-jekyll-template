@@ -35,6 +35,9 @@
 <div class="post-display items-container {{ display_format }}{{ container_class }}">
 {% for type in type_array %}
 
+           
+        
+            
         {% comment %} // Get source {% endcomment %}
         {% if type == "resource"%}        
             {% assign sorted_pages = site.resources %}    
@@ -92,7 +95,25 @@
                 {% endcomment %}
                 
                 {% for page in limited_pages %}
-                    <div class="item {{ type-item_class }}">
+                            
+                
+                     {% comment %}
+                    <!-- Main Category class -->
+                    {% endcomment %}
+                    {% assign category_main = page.categories[0] %}  
+                    
+                    {% comment %}
+                    <!--  Main Category slug -->
+                    {% endcomment %}
+                    {% assign category_main_slug = "" %}
+                    {% assign category_main_class = "" %}
+                    {% if category_main %}
+                        {% assign category_main_slug = category_main | downcase | slugify %}
+                        {% assign category_main_class = site.category_main_prefix | append: category_main_slug %}                        
+                    {% endif %}
+                    
+                    
+                    <div class="item {{ type-item_class }} {{ category_main_class }}">
                         
                         <div class="block block-1">
                             <img class="item-featured-logo" src="{{ page.featured_logo | default: '/assets/images/placeholder-logo.jpg' | relative_url }}" alt="Featured Logo">
