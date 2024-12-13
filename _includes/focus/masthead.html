@@ -14,7 +14,7 @@
         
         {% assign navigation = site.data.navigation.main %}
         
-        navi {{ page.navigation }}
+        navi = {{ page.navigation}}
         <ul class="visible-links">
           {%- for link in navigation -%}
             <li class="masthead__menu-item">
