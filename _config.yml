@@ -39,7 +39,7 @@ category_main_prefix: category-main--
 # Site Details - More
 # ---------------
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png" 
-breadcrumbs              : true # true, false (default)
+breadcrumbs              : false # true, false (default)
 words_per_minute         : 200
 enable_copy_code_button  : # true, false (default)
 copyright                : # "copyright" name, defaults to site.title
@@ -141,6 +141,7 @@ defaults:
             - main   
       post_aside: true      
       ###      
+      breadcrumbs: true;
       comments: true
       read_time: true
       related: false
@@ -174,7 +175,7 @@ defaults:
             - main      
       post_aside: false            
       ###
-      breadcrumbs: false
+      # breadcrumbs: false
       comments: false      
       read_time: false
       related: false
@@ -207,7 +208,7 @@ defaults:
           nav:
             - main                  
       ###
-      breadcrumbs: false
+      # breadcrumbs: 
       comments: false      
       read_time: false
       related: false
@@ -244,6 +245,7 @@ defaults:
           nav:
             - main                        
       ###
+      breadcrumbs: true
       comments: false
       read_time: false
       related: false
@@ -317,6 +319,7 @@ defaults:
           text: "Some text here."
           nav:
             - main      
+      ###
       comments: false
       read_time: false
       related: false
