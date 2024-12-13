@@ -44,6 +44,7 @@ words_per_minute         : 200
 enable_copy_code_button  : # true, false (default)
 copyright                : # "copyright" name, defaults to site.title
 copyright_url            : # "copyright" URL, defaults to site.url
+taxonomy_display         : false
 
 # comments: # no comments for this site - See here for documentation
 # https://github.com/mmistakes/minimal-mistakes/blob/master/_config.yml
@@ -213,6 +214,7 @@ defaults:
             - main                  
       ###
       # breadcrumbs: 
+      taxonomy_display: true
       comments: false      
       read_time: false
       related: false
@@ -360,6 +362,8 @@ defaults:
           nav:
             - main      
       ###
+      #breadcrumbs :
+      taxonomy_display: true
       comments: false
       read_time: false
       related: false
@@ -377,6 +381,7 @@ defaults:
       layout: focus/single-taxonomy        
       template: sidebar-right  
       author_profile: false
+      taxonomy_display: true      
       comments: false
       read_time: false
       related: false

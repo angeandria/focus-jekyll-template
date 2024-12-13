@@ -1,4 +1,7 @@
-{% include focus/taxonomies-select.html %}
+{%  assign = page.taxonomy_display | site.taxonomy_display %}
+{% if taxonomy_display %}
+    {% include focus/taxonomies-select.html %}
+{% endif %}
 
 {% include focus/resource-intro.html resource=page.resource %}
 {% include focus/resource-navigation.html nav=page.resource type="resource" %}
