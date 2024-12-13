@@ -34,6 +34,7 @@ template_prefix: template--
 categories_prefix: category--
 category_main_id_prefix: category--
 category_main_prefix: category-main--
+taxonomy_prefix: taxonomy--
 
 # -----------------
 # Site Details - More

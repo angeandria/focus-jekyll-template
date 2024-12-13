@@ -109,7 +109,7 @@
                     {% assign category_main_class = "" %}
                     {% if category_main %}
                         {% assign category_main_slug = category_main | downcase | slugify %}
-                        {% assign category_main_class = category_main_slug | prepend: "taxonomy--" %}                        
+                        {% assign category_main_class = category_main_slug | prepend: site.taxonomy_prefix %}                        
                     {% endif %}
                     
                     
