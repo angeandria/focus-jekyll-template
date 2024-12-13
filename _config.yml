@@ -224,7 +224,7 @@ defaults:
       type: resources
     values:
       layout: focus/single-resource
-      template: sidebar--left-right
+      template: sidebar-left-right
       ###
       #classes:
       #  - foo
