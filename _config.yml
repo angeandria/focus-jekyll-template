@@ -80,14 +80,14 @@ collections:
     output: true
     permalink: /:title
     sort_by: weight
-  resources: 
-    output: true
-    permalink: /resource/:title
-    sort_by: weight
   taxonomies:
     output: true
     permalink: /topics/:title
     sort_by: weight  
+  resources: 
+    output: true
+    permalink: /resource/:title
+    sort_by: weight
   products:
     output: true
     permalink: /:title
