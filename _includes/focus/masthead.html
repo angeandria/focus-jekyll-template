@@ -14,9 +14,7 @@
           {% if site.subtitle %}<span class="site-subtitle">{{ site.subtitle }}</span>{% endif %}
         </a>
         
-        {% assign navigation =site.data.navigation.main %}
-        Navi : {{ site.data.navigation[page.navigation] }}
-        >> Site Navi : {{ site.data.navigation.main }}
+        {% assign navigation = site.data.navigation[page.navigation] | site.data.navigation.main %}        
         <ul class="visible-links">
           {%- for link in navigation -%}
             <li class="masthead__menu-item">
