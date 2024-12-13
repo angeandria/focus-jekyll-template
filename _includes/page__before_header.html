@@ -1,4 +1,5 @@
-{% if site.search == true %}
+{% assign site_search = page.search | site.search %}
+{% if site_search == true %}
         <button class="search__toggle" type="button">
           <span class="visually-hidden">{{ site.data.ui-text[site.locale].search_label | default: "Toggle search" }}</span>
           <i class="fas fa-search"></i>
