@@ -207,6 +207,7 @@ defaults:
           nav:
             - main                  
       ###
+      breadcrumbs: false
       comments: false      
       read_time: false
       related: false
