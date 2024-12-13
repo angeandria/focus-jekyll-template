@@ -1,6 +1,6 @@
 ---
 title: Get x for y without z
-docs:
+navigation:
   - title: Getting Started
     children:
       - title: "Quick-Start Guide"
