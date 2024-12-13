@@ -1,8 +1,4 @@
-{% if site.search == true %}
-        <button class="search__toggle" type="button">
-          <span class="visually-hidden">{{ site.data.ui-text[site.locale].search_label | default: "Toggle search" }}</span>
-          <i class="fas fa-search"></i>
-        </button>{% include focus/taxonomies-select.html %}
+{% include focus/taxonomies-select.html %}
 
 {% include focus/resource-intro.html resource=page.resource %}
 {% include focus/resource-navigation.html nav=page.resource type="resource" %}
