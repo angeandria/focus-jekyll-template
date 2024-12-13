@@ -14,9 +14,16 @@
           {% if site.subtitle %}<span class="site-subtitle">{{ site.subtitle }}</span>{% endif %}
         </a>
         
-        {% assign navigation = site.data.navigation[page.navigation] | site.data.navigation["main"] %}        
+        {% assign navigation = site.data.navigation[page.navigation] | site.data.navigation.main %}
+<ul>
+<li>navi : {{ site.data.navigation[page.navigation] }}</li>
+<li>site navi : {{ site.data.navigation.main }}</li>
+</ul>
+    
+    
         <ul class="visible-links">
           {%- for link in navigation -%}
+                link > {{ link }}
             <li class="masthead__menu-item">
               <a
                 href="{{ link.url | relative_url }}"
