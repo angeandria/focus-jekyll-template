@@ -141,6 +141,10 @@ body.aside-none{
 * -----------
 */
 body.layout--focus-landing{
+    #main{
+        max-width: var(--width-s);
+        width: var(--width-s);
+    }
     #footer{
         display:none;
     }
