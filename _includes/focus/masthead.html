@@ -12,7 +12,7 @@
           {% if site.subtitle %}<span class="site-subtitle">{{ site.subtitle }}</span>{% endif %}
         </a>
         
-        {% assign navigation = page.navigation | site.data.navigation.main %}
+        {% assign navigation = site.data.navigation[page.navigation] | site.data.navigation.main %}
         
         navi {{ navigation }}
         <ul class="visible-links">
