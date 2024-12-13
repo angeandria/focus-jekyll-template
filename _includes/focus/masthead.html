@@ -17,7 +17,6 @@
         {% assign navigation = site.data.navigation[page.navigation] | default: site.data.navigation.main %}        
         <ul class="visible-links">
           {%- for link in navigation -%}
-                link > {{ link }}
             <li class="masthead__menu-item">
               <a
                 href="{{ link.url | relative_url }}"
