@@ -571,6 +571,9 @@ body {
 */
 .post-display{
     
+    .item-featured-image{
+        width: 100%;
+    }
     .item{
         display: flex;                
         flex-direction: column;
