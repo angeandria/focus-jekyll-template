@@ -1,10 +1,5 @@
 {%  assign = page.taxonomy_display | site.taxonomy_display %}
-{% if site.search == true %}
-        <button class="search__toggle" type="button">
-          <span class="visually-hidden">{{ site.data.ui-text[site.locale].search_label | default: "Toggle search" }}</span>
-          <i class="fas fa-search"></i>
-        </button>
-        {% endif %}
+
 {% if taxonomy_display %}
     {% include focus/taxonomies-select.html %}
 {% endif %}
