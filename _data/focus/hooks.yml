@@ -8,6 +8,8 @@ top__bar_single:
   custom: true  
 page__before_content:
   custom: true
+page__before_header:
+  custom: true
 page__before_post:
   custom: true  
 page__within_post:

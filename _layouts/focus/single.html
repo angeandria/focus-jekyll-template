@@ -22,6 +22,11 @@ layout: default
 {% endif %}
 
 
+<!-- SECTION page__before_content -->      
+<div id="page__before_header">
+    {% include focus/hook.html hook="page__before_header" %}      
+</div>
+
 {% if layout_slug != "focus-home" or layout_slug != "focus-single-taxonomy" %}
 <div id="page__header">
     <div class="wrapper">
