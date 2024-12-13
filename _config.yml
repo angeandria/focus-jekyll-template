@@ -88,6 +88,10 @@ collections:
     output: true
     permalink: /topics/:title
     sort_by: weight  
+  products:
+    output: true
+    permalink: /:title
+    sort_by: weight  
   tools: 
     output: true
     permalink: /tool/:title
@@ -255,6 +259,42 @@ defaults:
       #show_pagination: true      
       #show_taxonomy: true
 
+   # _products
+  - scope:
+      path: "_products"
+      type: products
+    values:
+      layout: splash
+      template: columns-one
+      ###
+      #classes:
+      #  - foo
+      toc: true
+      toc_label: "My Toc title"
+      toc_icon: "heart"  # corresponding Font Awesome icon name (without fa prefix)
+      toc_sticky: true
+      author_profile: true
+      ###
+      # featured_image: "assets/images/placeholder-1200.jpg"	
+      featured_logo: "assets/images/placeholder-logo.jpg"	      
+      sidebar:
+        - image: "/assets/images/placeholder.jpg"
+          image_alt: "image"
+          title: "Products" 
+          text: "Some text here."
+          nav:
+            - main                        
+      ###
+      breadcrumbs: false
+      comments: false
+      read_time: false
+      related: false
+      share: false
+      #show_date: true
+      #show_footer_date: true
+      #show_pagination: true      
+      #show_taxonomy: true   
+      
   # _tools
   - scope:
       path: "_tools"
