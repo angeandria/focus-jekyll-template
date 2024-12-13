@@ -142,9 +142,11 @@ body.aside-none{
 */
 body.layout--focus-landing{
     #main{
-        max-width: var(--width-xs);
-        width: var(--width-xs);
+        max-width: var(--width-s);
+        width: var(--width-s);
     }
+    footer.page__meta,
+    .section--page__after_post,
     #footer{
         display:none;
     }

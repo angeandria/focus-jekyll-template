@@ -271,11 +271,11 @@ defaults:
       ###
       #classes:
       #  - foo
-      toc: true
+      toc: false
       toc_label: "My Toc title"
       toc_icon: "heart"  # corresponding Font Awesome icon name (without fa prefix)
       toc_sticky: true
-      author_profile: true
+      author_profile: false
       ###
       # featured_image: "assets/images/placeholder-1200.jpg"	
       featured_logo: "assets/images/placeholder-logo.jpg"	      
