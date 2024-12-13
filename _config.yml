@@ -264,7 +264,7 @@ defaults:
       path: "_products"
       type: products
     values:
-      layout: splash
+      layout: landing
       template: columns-one
       ###
       #classes:

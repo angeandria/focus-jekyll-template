@@ -74,8 +74,10 @@ body.template--columns-one{
 body.template--columns-one{
     #main{
         max-width: var(--width-m);
+        width: var(--width-m);
     }
 }
+
 
 /*
 * -----------
@@ -133,6 +135,16 @@ body.aside-none{
 }
 
 
+/*
+* -----------
+* Landing
+* -----------
+*/
+body.layout--landing{
+    #footer{
+        display:none;
+    }
+}
 
 /*
 * ----------------------
