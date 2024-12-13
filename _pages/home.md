@@ -6,6 +6,8 @@ hidden: true
 
 This is the content of my homepage
 
+[personal development](/personal-development)
+
 ## list | Resources - personal development
 {% include focus/post-display.html type="resource" topic="all" format="list" order="desc" container_class="" type_class="" type-item_class="" %}            
 
