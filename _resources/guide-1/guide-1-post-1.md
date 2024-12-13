@@ -1,7 +1,6 @@
 ---
 title: "Guide 1 Post 1"
 resource: guide-1
-template : sidebar-left
 toc: false
 categories:
   - personal development

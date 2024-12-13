@@ -1,7 +1,6 @@
 ---
 title: "Guide 1 Post 3"
 resource: guide-1
-template : sidebar-left-right
 categories:
   - category1
   - category 2
