@@ -792,6 +792,8 @@ ul.toc__menu li a,
 }
 
 .taxonomies-select {
+    display: flex;    
+    justify-content: center;
     .item a{
         padding: 6px 14px;
         margin: 0 4px;
@@ -811,8 +813,14 @@ ul.toc__menu li a,
         background-color: #d6d6d6;
     }
     
-    &.buttons li.item{
-        display: inline;
+    &.buttons {
+        ul{
+            display: flex;
+            list-style: none;
+        }   
+        li.item{
+            display: inline;
+        }
     }
     
 }

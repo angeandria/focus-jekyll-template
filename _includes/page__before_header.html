@@ -4,7 +4,8 @@
           <span class="visually-hidden">{{ site.data.ui-text[site.locale].search_label | default: "Toggle search" }}</span>
           <i class="fas fa-search"></i>
         </button>
-        {% endif %}
+{% endif %}
+        
 {%  assign taxonomy_display = page.taxonomy_display | default: site.taxonomy_display %}
 {% if taxonomy_display %}
     {% include focus/taxonomies-select.html classes = "buttons"%}
