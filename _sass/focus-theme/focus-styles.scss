@@ -837,20 +837,13 @@ ul.toc__menu li a,
     overflow-x: scroll;
     &.sticky{
         z-index: 10;
-        top: 6px;
+        top: 0;
     }
     
     .nav__items > li:first-child{
         background: #FFF;
         text-align: center;
-        margin-bottom: 20px
+        box-shadow: 0 0 10px rgba(0, 0, 0, .07);
         padding: 10px 14px;
-        border-radius: 20px;
-        box-shadow: 0px 10px 16px 0 rgba(0, 0, 0, .07);
-    }
-    .nav__sub-title{
-        border: none;
-        text-transform: uppercase;
-        font-weight: 900;
     }
 }
