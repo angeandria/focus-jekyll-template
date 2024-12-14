@@ -335,7 +335,6 @@ article.page {
 #main .wrapper > .sidebar__left,
 #main .wrapper > .sidebar__right{
     flex-grow: 1;
-    overflow: hidden;   
     display: none; /* Default on small screens */
     padding-inline-start: auto;
     padding-inline-end: auto;
