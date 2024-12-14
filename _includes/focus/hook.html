@@ -7,21 +7,18 @@
 
 {% if target_hook %}
     
-    {% if target_hook["custom"] %}    
-        <div class="section--hook custom-hook section--{{target_file}} {{ target_class }} ">            
-            {% capture my_include %}
-                {% include {{ target_file | append: '.html' }} %}                        
-            {% endcapture %}
-            {{ my_include | markdownify }}
-        </div>
+    {% if target_hook["custom"] %}
+        {% assign path = "" %}        
+        {% assign class = "custom" %}            
     {% else %}
-        <div class="section--hook default-hook section--{{target_file}} {{ target_class }} ">  
-            {% capture my_include %}            
-                {% include focus/hooks/{{ target_file | append: '.html' }} %}
-            {% endcapture %}
-            {{ my_include | markdownify }}
-        </div>
+        {% assign path = "focus/hooks/" %}        
+        {% assign class = "default" %}
     {% endif %}
+    
+    <div class="section--hook {{class}}-hook section--{{target_file}} {{ target_class }} ">  
+            {% include focus/hooks/{{ target_file | prepend: path | append: '.html' }} %}                
+    </div>
+
     
 {% else %}
     <div class="notice--danger">Error : Hook {{ target_file }} does not exist in hooks.yml
