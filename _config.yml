@@ -46,6 +46,7 @@ enable_copy_code_button  : # true, false (default)
 copyright                : # "copyright" name, defaults to site.title
 copyright_url            : # "copyright" URL, defaults to site.url
 taxonomy_display         : false
+resource_navigation      : false
 
 # comments: # no comments for this site - See here for documentation
 # https://github.com/mmistakes/minimal-mistakes/blob/master/_config.yml
@@ -253,6 +254,7 @@ defaults:
             - main                        
       ###
       breadcrumbs: true
+      resource_navigation : true
       comments: false
       read_time: false
       related: false
@@ -299,40 +301,6 @@ defaults:
       #show_pagination: true      
       #show_taxonomy: true   
       
-  # _tools
-  - scope:
-      path: "_tools"
-      type: tools      
-    values:
-      layout: focus/single-page
-      template: columns-one
-      ###
-      #classes:
-      #    - foo
-      toc: true
-      toc_label: "My Toc title"
-      toc_icon: "heart"  # corresponding Font Awesome icon name (without fa prefix)
-      toc_sticky: true
-      author_profile: true
-      ###
-      featured_image: "assets/images/placeholder-1200.jpg"	
-      featured_logo: "assets/images/placeholder-logo.jpg"	      
-      sidebar:
-        - image: "/assets/images/placeholder.jpg"
-          image_alt: "image"
-          title: "Tools" 
-          text: "Some text here."
-          nav:
-            - main                        
-      ###
-      comments: false
-      read_time: false
-      related: false
-      share: false
-      #show_date: true
-      #show_footer_date: true
-      #show_pagination: true      
-      #show_taxonomy: true
       
   #jekyll-archives Topic
   - scope:

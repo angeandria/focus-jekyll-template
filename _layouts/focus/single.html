@@ -27,6 +27,13 @@ layout: default
     {% include focus/hook.html hook="page__before_header" %}      
 </div>
 
+<!-- RESOURCE intro + Navigation -->      
+{% assign resource_navigation = page.resource_navigation | site.resource_navigation %}
+{% if resource_navigation %}
+    {% include focus/resource-intro.html resource=page.resource %}
+    {% include focus/resource-navigation.html nav=page.resource type="resource" %}
+{% endif %}
+
 {% if layout_slug != "focus-home" or layout_slug != "focus-single-taxonomy" %}
 <div id="page__header">
     <div class="wrapper">
