@@ -9,11 +9,11 @@
     
     {% if target_hook["custom"] %}    
         <div class="section--hook custom-hook section--{{target_file}} {{ target_class }} ">
-            {% include {{ target_file | append: '.html' }} %}
+            {% include {{ target_file | markdownify | append: '.html' }} %}
         </div>
     {% else %}
         <div class="section--hook default-hook section--{{target_file}} {{ target_class }} ">    
-            {% include focus/hooks/{{ target_file | append: '.html' }} %}
+            {% include focus/hooks/{{ target_file | markdownify | append: '.html' }} %}
         </div>
     {% endif %}
     

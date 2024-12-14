@@ -613,6 +613,7 @@ body {
             text-decoration: none;
         }        
     }
+    .
     &.compact,
     &.list{
         .item{
@@ -654,6 +655,10 @@ body {
     }
     
     
+}
+
+.item-info{
+    display: inline-block;
 }
 
 
