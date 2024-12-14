@@ -831,4 +831,11 @@ ul.toc__menu li a,
     display: none;              /* Hide scrollbar */
 }
 
-
+.resource-navi{
+    overflow-x: scroll;
+    &.sticky{
+        z-index: 10;
+        background: #FFF;
+        top: 0;
+    }
+}
