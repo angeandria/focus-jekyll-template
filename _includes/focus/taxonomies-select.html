@@ -2,24 +2,27 @@
 
 {% if taxonomies %}
     <div class="scrollable-container">
-        <div class="scrollable">    
-            <span class="item"><a href="{{ '/topics' | relative_url }}">All</a></span>
-            {% for cat in taxonomies %}   
-                {% assign values = cat[1] %}
-                {% if values.type == "category" %}
-                    {% assign key = cat[0] | slugify %}  <!-- Get the key for the current category -->
-                    {% assign title = page.title | slugify %}
-                    {% if title == key %}
-                        {% assign active = 'current' %}
-                    {% else %}
-                        {% assign active = '' %}                    
-                    {% endif %}
-                    
-                    <span class="item {{ active }}">
-                        <a href="{{ '/topics' | relative_url }}/{{ key }}">{{ values.title }}</a>                    
-                    </span>
-                {% endif %}   
-            {% endfor %}                        
+        <div class="scrollable">
+            
+            <ul>    
+                <li class="item"><a href="{{ '/topics' | relative_url }}">All</a></li>
+                {% for cat in taxonomies %}   
+                    {% assign values = cat[1] %}
+                    {% if values.type == "category" %}
+                        {% assign key = cat[0] | slugify %}  <!-- Get the key for the current category -->
+                        {% assign title = page.title | slugify %}
+                        {% if title == key %}
+                            {% assign active = 'current' %}
+                        {% else %}
+                            {% assign active = '' %}                    
+                        {% endif %}
+                        
+                        <li class="item {{ active }}">
+                            <a href="{{ '/topics' | relative_url }}/{{ key }}">{{ values.title }}</a>                    
+                        </li>
+                    {% endif %}   
+                {% endfor %}      
+            </ul>            
         </div>
     </div>
 {% endif %}
