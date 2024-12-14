@@ -740,7 +740,8 @@ a.site-title,
 html,
 .site-nav a,
 .page__content p, .page__content li, .page__content dl,
-.post-display .item-title{
+.post-display .item-title,
+.resource-navi .nav__items{
     font-size: var(--font-size-m);
 }
 
@@ -757,7 +758,8 @@ html,
 table,
 ul.toc__menu li a,
 .post-display .item-description,
-.item-meta{
+.item-meta,
+.resource-navi li a{
     font-size: var(--font-size-s);
 }
 
@@ -835,7 +837,20 @@ ul.toc__menu li a,
     overflow-x: scroll;
     &.sticky{
         z-index: 10;
+        top: 6px;
+    }
+    
+    .nav__items > li:first-child{
         background: #FFF;
-        top: 0;
+        text-align: center;
+        margin-bottom: 20px
+        padding: 10px 14px;
+        border-radius: 20px;
+        box-shadow: 0px 10px 16px 0 rgba(0, 0, 0, .07);
+    }
+    .nav__sub-title{
+        border: none;
+        text-transform: uppercase;
+        font-weight: 900;
     }
 }
