@@ -816,3 +816,13 @@ ul.toc__menu li a,
 .scrollable::-webkit-scrollbar {
     display: none;              /* Hide scrollbar */
 }
+
+
+
+.stickyyy {
+    position: sticky; /* Enable sticky positioning */
+    top: 0; /* Offset from top when scrolling */
+    background-color: #f0f0f0; /* Background color for visibility */
+    padding: 10px; /* Padding for the sticky content */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional shadow for effect */
+}
