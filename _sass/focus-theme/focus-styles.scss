@@ -789,7 +789,9 @@ ul.toc__menu li a,
     scrollbar-width: none;      /* Hide scrollbar in Firefox */
     -ms-overflow-style: none;   /* Hide scrollbar in IE and Edge */    
     padding: 20px 24px;
-    
+}
+
+.taxonomies-select {
     .item a{
         padding: 6px 14px;
         margin: 0 4px;
@@ -808,6 +810,11 @@ ul.toc__menu li a,
     .item:first-child a{
         background-color: #d6d6d6;
     }
+    
+    &.buttons li.item{
+        display: inline;
+    }
+    
 }
 
 
@@ -817,11 +824,3 @@ ul.toc__menu li a,
 }
 
 
-
-.stickyyy {
-    position: sticky; /* Enable sticky positioning */
-    top: 0; /* Offset from top when scrolling */
-    background-color: #f0f0f0; /* Background color for visibility */
-    padding: 10px; /* Padding for the sticky content */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional shadow for effect */
-}
