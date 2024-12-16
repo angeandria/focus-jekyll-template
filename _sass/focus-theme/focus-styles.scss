@@ -844,10 +844,10 @@ ul.toc__menu li a,
     overflow-x: scroll;
     &.sticky{
         z-index: 10;
-        top: 6px;
+        top: 0px;
         background: #FFF;
-        border-top: 1px solid #AAA;
-        border-bottom: 1px solid #AAA;
+        border-top: 1px solid #EAEAEA;
+        border-bottom: 1px solid #EAEAEA;
     }
     
     .nav__items > li:first-child{
