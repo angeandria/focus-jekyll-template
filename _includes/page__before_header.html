@@ -1,5 +1,8 @@
+{% assign taxonomy_display = site.taxonomy_display %}
+{% if page.taxonomy_display != nil %}
+  {% assign taxonomy_display = page.taxonomy_display %}
+{% endif %}
 
-{%  assign taxonomy_display = page.taxonomy_display | default: site.taxonomy_display %}
 {% if taxonomy_display %}
     {% include focus/taxonomies-select.html classes = "buttons"%}
 {% endif %}

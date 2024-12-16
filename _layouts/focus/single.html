@@ -12,14 +12,18 @@ layout: default
 {% endif %}
 
 <!-- RESOURCE intro + Navigation -->      
-{% assign resource_navigation = page.resource_navigation | site.resource_navigation %}
+{% assign resource_navigation = site.resource_navigation %}
+{% if page.resource_navigation != nil %}
+  {% assign resource_navigation = page.resource_navigation %}
+{% endif %}
+
 {% if resource_navigation %}
     {% include focus/resource-intro.html resource=page.resource %}
     {% include focus/resource-navigation.html nav=page.resource type="resource" %}
 {% endif %}
 
 {% assign breadcrumbs_enabled = site.breadcrumbs %}
-{% if page.breadcrumbs != null %}
+{% if page.breadcrumbs != nil %}
   {% assign breadcrumbs_enabled = page.breadcrumbs %}
 {% endif %}
 {% if page.url != "/" and breadcrumbs_enabled %}
@@ -43,11 +47,11 @@ layout: default
               {% if layout_slug != "focus-single-taxonomy" %}              
                   {% unless page.header.overlay_color or page.header.overlay_image %}
                       
-                      {% assign title_display = page.title_display | default: site.title_display %}  
-                      <ul>
-                      <li>PAGE TITLE DISPLAY : {{ page.title_display}}</li>
-                      <li>SITE TITLE DISPLAY : {{ site.title_display}}</li>
-                      <li>page.hidden: {{ page.hidden }}</li>
+                      {% assign title_display = site.title_display %}
+                      {% if page.title_display != nil %}
+                          {% assign title_display = page.title_display %}
+                      {% endif %}
+
                       {% if title_display %}
                           {% if page.title_before %}<div class="page-title-before">{{ page.title_before }}</div>{% endif %}
                           {% if page.title %}
@@ -68,8 +72,11 @@ layout: default
               {% endif %}      
     
               
-              <div class="page__meta_wrapper">                            
-                  {% assign author_name = page.author | default: site.author %}  
+              <div class="page__meta_wrapper">         
+                    {% assign author_name = site.author %}
+                    {% if page.author != nil %}
+                      {% assign author_name = page.author %}
+                    {% endif %}                  
                   {% assign author = site.data.authors[author_name] %}
                   {% assign show_author = page.author_profile | default: false %}
                                     
