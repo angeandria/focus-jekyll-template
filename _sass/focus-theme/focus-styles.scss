@@ -337,6 +337,7 @@ article.page {
 #main {    
     display: flex;
     flex-wrap: wrap;
+    max-width: 100%;
     @include breakpoint($medium) {
         flex-wrap: nowrap;
     }
