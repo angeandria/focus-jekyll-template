@@ -2,6 +2,7 @@
 layout: focus/home
 permalink: /
 hidden: true
+title_display: false
 ---
 
 This is the content of my homepage

@@ -39,14 +39,15 @@ taxonomy_prefix: taxonomy--
 # -----------------
 # Site Details - More
 # ---------------
-teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png" 
-breadcrumbs              : false # true, false (default)
+teaser                   :          # path of fallback teaser image, e.g. "/assets/images/500x300.png" 
+breadcrumbs              : false    # display breadcrumbs | boolean | default: false
 words_per_minute         : 200
-enable_copy_code_button  : # true, false (default)
-copyright                : # "copyright" name, defaults to site.title
-copyright_url            : # "copyright" URL, defaults to site.url
-taxonomy_display         : false
-resource_navigation      : false
+enable_copy_code_button  :          # bool | default: false | 
+copyright                :          # copyright name | string | default : site.title
+copyright_url            :          # copyright URL | default: site.url
+title_display            : true     # display page title | bool | default: true
+taxonomy_display         : false    # display page taxonomies | bool | default: false
+resource_navigation      : false    # display resource navigation | bool | default: false
 
 # comments: # no comments for this site - See here for documentation
 # https://github.com/mmistakes/minimal-mistakes/blob/master/_config.yml
