@@ -67,7 +67,7 @@
     display: none; /* Default on small screens */
     padding-inline-start: auto;
     padding-inline-end: auto;
-    @include breakpoint($medium) {
+    @include breakpoint($large) {
             flex: 0 0 var(--sidebar-width-s);
             display: initial;
     }
@@ -338,11 +338,11 @@ article.page {
     display: flex;
     flex-wrap: wrap;
     max-width: 100%;
-    @include breakpoint($medium) {
+    @include breakpoint($large) {
         flex-wrap: nowrap;
     }
     .wrapper{
-        @include breakpoint($medium) {
+        @include breakpoint($large) {
             display: flex;
         }
     }
@@ -366,7 +366,7 @@ article.page {
 }
 #main .wrapper > .sidebar__right{
     order: 3;
-    @include breakpoint($medium) {
+    @include breakpoint($large) {
         margin-inline-end: auto;
         width: 100%;
     }
