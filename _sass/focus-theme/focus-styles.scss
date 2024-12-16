@@ -54,6 +54,25 @@
 * --------------------------
 */
 
+
+/*
+* -----------
+* SIDEBARS
+* -----------
+*/
+
+#main .wrapper > .sidebar__left,
+#main .wrapper > .sidebar__right{
+    flex-grow: 1;
+    display: none; /* Default on small screens */
+    padding-inline-start: auto;
+    padding-inline-end: auto;
+    @include breakpoint($medium) {
+            flex: 0 0 var(--sidebar-width-s);
+            display: initial;
+    }
+}
+
 /*
 * -----------
 * One Column
@@ -92,6 +111,8 @@ body.template--sidebar-left-right{
         margin-inline-end: var(--gutter-m);        
     }
 }
+
+
 
 body.template--sidebar-left,
 body.template--sidebar-left-right{
@@ -328,24 +349,6 @@ article.page {
 }
 
 
-
-/*
-* -----------
-* SIDEBARS
-* -----------
-*/
-
-#main .wrapper > .sidebar__left,
-#main .wrapper > .sidebar__right{
-    flex-grow: 1;
-    display: none; /* Default on small screens */
-    padding-inline-start: auto;
-    padding-inline-end: auto;
-    @include breakpoint($medium) {
-            flex: 0 0 var(--sidebar-width-m);
-            display: initial;
-    }
-}
 
 
 #main .wrapper > .sidebar__container{
