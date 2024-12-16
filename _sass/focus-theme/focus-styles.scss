@@ -99,7 +99,7 @@ body.template--sidebar-left-right{
         flex: 0 0 var(--sidebar-left-width);
         display: initial;
         
-        @include breakpoint($medium) {
+        @include breakpoint($large) {
             flex: 0 0 var(--sidebar-width-m);
         }        
     }
@@ -114,7 +114,7 @@ body.template--sidebar-left-right{
         flex: 0 0 var(--sidebar-right-width);
         display: initial;        
         
-        @include breakpoint($medium) {
+        @include breakpoint($large) {
             flex: 0 0 var(--sidebar-width-l);
         }        
     }    
@@ -123,12 +123,6 @@ body.template--sidebar-left-right{
     }    
 }
 
-body.template--sidebar-left-right{       
-    article.page{
-        margin-inline: var(--gutter-m);
-    }    
-}
- 
 
 
 /*
@@ -309,7 +303,7 @@ article.page {
     padding-inline-end: 0;
     margin: 0;
     
-    @include breakpoint($medium) {
+    @include breakpoint($large) {
             margin-inline: var(--gutter-m);
     }        
     pre {
