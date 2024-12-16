@@ -99,7 +99,7 @@ body.template--sidebar-left-right{
         display: initial;
         
         @include breakpoint($medium) {
-            margin-inline: var(--sidebar-width-m);
+            flex: 0 0 var(--sidebar-width-m);
         }        
     }
     article.page{
@@ -114,7 +114,7 @@ body.template--sidebar-left-right{
         display: initial;        
         
         @include breakpoint($medium) {
-            margin-inline: var(--sidebar-width-l);
+            flex: 0 0 var(--sidebar-width-l);
         }        
     }    
     article.page{
