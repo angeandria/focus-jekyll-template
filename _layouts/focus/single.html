@@ -44,7 +44,10 @@ layout: default
                   {% unless page.header.overlay_color or page.header.overlay_image %}
                       
                       {% assign title_display = page.title_display | default: site.title_display %}  
-                      TITLE DISPLAY : {{ title_display}}
+                      <ul>
+                      <li>PAGE TITLE DISPLAY : {{ page.title_display}}</li>
+                      <li>SITE TITLE DISPLAY : {{ site.title_display}}</li>
+                      <li>page.hidden: {{ page.hidden }}</li>
                       {% if title_display %}
                           {% if page.title_before %}<div class="page-title-before">{{ page.title_before }}</div>{% endif %}
                           {% if page.title %}
