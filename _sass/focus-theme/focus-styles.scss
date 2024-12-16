@@ -758,15 +758,13 @@ html,
 * ------
 */
 
-.breadcrumbs ol,
 .page__meta, .comment__date,
 #page__header .page__meta_wrapper,
 #page__header .page__meta_wrapper a,
 table,
 ul.toc__menu li a,
 .post-display .item-description,
-.item-meta,
-.resource-navi li a{
+.item-meta{
     font-size: var(--font-size-s);
 }
 
@@ -780,7 +778,9 @@ ul.toc__menu li a,
 .page__taxonomy a,
 .categories .page__taxonomy .sep,
 .page__meta-date,
-.scrollable .item a{
+.scrollable .item a,
+.breadcrumbs ol,
+.resource-navi li a{
     font-size: var(--font-size-xs);
 }
 
@@ -845,15 +845,13 @@ ul.toc__menu li a,
     &.sticky{
         z-index: 10;
         top: 6px;
+        background: #FFF;
+        border-top: 1px solid #AAA;
+        border-bottom: 1px solid #AAA;
     }
     
     .nav__items > li:first-child{
-        background: #FFF;
-        text-align: center;
-        margin-bottom: 20px;
-        padding: 10px 14px;
-        border-radius: 20px;
-        box-shadow: 0px 10px 16px 0 rgba(0, 0, 0, .07);
+        text-align: center;    
     }
     .nav__sub-title{
         border: none;
