@@ -88,7 +88,8 @@ body.template--sidebar-left,
 body.template--sidebar-right,
 body.template--sidebar-left-right{    
     article.page{
-        margin-inline: var(--gutter-m);
+        margin-inline-start: var(--gutter-m);
+        margin-inline-end: var(--gutter-m);        
     }
 }
 
