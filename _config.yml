@@ -2,8 +2,8 @@
 # Site settings
 # ---------------
 repository               : "angeandria/focus-jekyll-template" # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
-url                      : "https://angeandria.github.io/focus-jekyll-template" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
-baseurl                  : "" # the subpath of your site, e.g. "/blog"
+url                      : "https://angeandria.github.io" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
+baseurl                  : "/focus-jekyll-template" # the subpath of your site, e.g. "/blog"
 incremental: true # incremental builds
 
 # -----------------
