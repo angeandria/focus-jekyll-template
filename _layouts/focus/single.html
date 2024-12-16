@@ -43,7 +43,7 @@ layout: default
               {% if layout_slug != "focus-single-taxonomy" %}              
                   {% unless page.header.overlay_color or page.header.overlay_image %}
                       
-                      {% assign title_display = page.title_display | site.title_display %}  
+                      {% assign title_display = page.title_display | default: site.title_display %}  
                       {% if title_display %}
                           {% if page.title_before %}<div class="page-title-before">{{ page.title_before }}</div>{% endif %}
                           {% if page.title %}
