@@ -97,6 +97,10 @@ body.template--sidebar-left-right{
     #main .wrapper > .sidebar__left{
         flex: 0 0 var(--sidebar-left-width);
         display: initial;
+        
+        @include breakpoint($medium) {
+            margin-inline: var(--sidebar-width-m);
+        }        
     }
     article.page{
         margin-inline-end: 0;
@@ -108,6 +112,10 @@ body.template--sidebar-left-right{
     #main .wrapper > .sidebar__right{
         flex: 0 0 var(--sidebar-right-width);
         display: initial;        
+        
+        @include breakpoint($medium) {
+            margin-inline: var(--sidebar-width-l);
+        }        
     }    
     article.page{
         margin-inline-start: 0;

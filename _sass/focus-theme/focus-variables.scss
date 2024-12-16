@@ -53,8 +53,8 @@ $box-shadow: 0 4px 20px rgba(0, 0, 0, 0.07);
     --sidebar-width-l: 26%;    
     --sidebar-width-m: 20%;        
     --sidebar-width-s: 18%;            
-    --sidebar-left-width: var(--sidebar-width-m);
-    --sidebar-right-width: var(--sidebar-width-l);  
+    --sidebar-left-width: var(--sidebar-width-s);
+    --sidebar-right-width: var(--sidebar-width-m);  
     --sidebar-left-right-width: var(--sidebar-width-m);    
     
     --gutter-ratio: 1;
