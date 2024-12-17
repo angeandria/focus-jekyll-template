@@ -107,8 +107,8 @@ body.template--sidebar-left,
 body.template--sidebar-right,
 body.template--sidebar-left-right{    
     article.page{
-        margin-inline-start: var(--gutter-m);
-        margin-inline-end: var(--gutter-m);        
+        margin-inline-start: 0;
+        margin-inline-end: 0;        
     }
 }
 
@@ -116,31 +116,35 @@ body.template--sidebar-left-right{
 
 body.template--sidebar-left,
 body.template--sidebar-left-right{
+    article.page{
+       @include breakpoint($large) {
+            margin-inline-start: var(--gutter-m);    
+        }
+    }
     #main .wrapper > .sidebar__left{
         flex: 0 0 var(--sidebar-left-width);
         display: initial;
         
         @include breakpoint($large) {
-            flex: 0 0 var(--sidebar-width-m);
+            flex: 0 0 var(--sidebar-width-m);   
         }        
-    }
-    article.page{
-        margin-inline-end: 0;
     }
 }
 
 body.template--sidebar-right,
-body.template--sidebar-left-right{   
+body.template--sidebar-left-right{  
+   article.page{
+       @include breakpoint($large) {
+            margin-inline-end: var(--gutter-m);    
+        }
+    }   
     #main .wrapper > .sidebar__right{
         flex: 0 0 var(--sidebar-right-width);
-        display: initial;        
+        display: initial;
         
         @include breakpoint($large) {
-            flex: 0 0 var(--sidebar-width-l);
+            flex: 0 0 var(--sidebar-width-l);        
         }        
-    }    
-    article.page{
-        margin-inline-start: 0;
     }    
 }
 
@@ -315,8 +319,13 @@ a.site-title{
 * Resources Navigation
 * ----
 */
-.resource-navi {
-    padding: 6px 0;
+
+.resource-navi{
+
+    overflow:hidden;
+    padding: 7px 0 10px;
+    overflow-x: scroll;
+
     ul {
         list-style-type: none; /* Remove default list styling */
         padding: 0; /* Remove default padding */
@@ -328,6 +337,33 @@ a.site-title{
     li {
         margin: 0 10px; /* Add some space between list items */
     }
+    
+    &.sticky{
+        z-index: 10;
+        top: 0px;
+        background: #FFF;
+        border-bottom: 1px solid #EAEAEA;
+    }
+    
+    .nav__items > li:first-child{
+        text-align: center; 
+        
+        ul a{
+            padding: 6px 10px;
+            border-radius: 30px;
+            opacity: 0.7;
+            border: 1px solid #CFCFCF;
+        }
+    }
+    .nav__sub-title{
+        border: none;
+        text-transform: uppercase;
+        font-weight: 900;
+        margin: 0 0 10px;
+        padding: 0;
+    }
+    
+    
 }
 
 
@@ -869,30 +905,3 @@ a.site-title,
     display: none;              /* Hide scrollbar */
 }
 
-.resource-navi{
-    overflow-x: scroll;
-    &.sticky{
-        z-index: 10;
-        top: 0px;
-        background: #FFF;
-        border-bottom: 1px solid #EAEAEA;
-    }
-    
-    .nav__items > li:first-child{
-        text-align: center;    
-        ul a{
-            padding: 6px 10px;
-            border-radius: 30px;
-            opacity: 0.7;
-        }
-    }
-    .nav__sub-title{
-        border: none;
-        text-transform: uppercase;
-        font-weight: 900;
-        margin: 0;
-        padding: 0;
-    }
-    
-    
-}
