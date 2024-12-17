@@ -850,24 +850,14 @@ a.site-title,
 
 
 
-.scrollable-container {
-    height: auto;              /* Optional height */
-    overflow: hidden;          /* Hide overflow */
-    position: relative;        /* Positioning context for absolute child */    
-}
-
-.scrollable {
-    height: 100%;              /* Fill the height of the container */
-    overflow-x: auto;          /* Enable horizontal scrolling */
-    white-space: nowrap;       /* Prevent line breaks */
-    scrollbar-width: none;      /* Hide scrollbar in Firefox */
-    -ms-overflow-style: none;   /* Hide scrollbar in IE and Edge */    
-    padding: 20px 24px;
-}
 
 .taxonomies-select {
     display: flex;    
     justify-content: center;
+    
+    .scrollable{
+        padding: 20px 24px;
+    }
         
     ul{
         display: flex;
@@ -905,6 +895,20 @@ a.site-title,
         }
     }
     
+}
+
+.scrollable-container {
+    height: auto;              /* Optional height */
+    overflow: hidden;          /* Hide overflow */
+    position: relative;        /* Positioning context for absolute child */    
+}
+
+.scrollable {
+    height: 100%;              /* Fill the height of the container */
+    overflow-x: auto;          /* Enable horizontal scrolling */
+    white-space: nowrap;       /* Prevent line breaks */
+    scrollbar-width: none;      /* Hide scrollbar in Firefox */
+    -ms-overflow-style: none;   /* Hide scrollbar in IE and Edge */    
 }
 
 
