@@ -316,6 +316,8 @@ a.site-title{
 * ----
 */
 .resource-navi {
+    overflow:hidden;
+    padding: 6px 0;
     ul {
         list-style-type: none; /* Remove default list styling */
         padding: 0; /* Remove default padding */
@@ -784,7 +786,8 @@ html,
 table,
 ul.toc__menu li a,
 .post-display .item-description,
-.item-meta{
+.item-meta,
+.resource-navi li a{
     font-size: var(--font-size-s);
 }
 
@@ -800,8 +803,7 @@ a.site-title,
 .categories .page__taxonomy .sep,
 .page__meta-date,
 .scrollable .item a,
-.breadcrumbs ol,
-.resource-navi li a{
+.breadcrumbs ol{
     font-size: var(--font-size-xs);
 }
 
@@ -879,7 +881,7 @@ a.site-title,
     
     .nav__items > li:first-child{
         text-align: center;    
-        a{
+        ul a{
             padding: 6px 10px;
             border-radius: 30px;
             opacity: 0.7;
