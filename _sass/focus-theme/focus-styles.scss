@@ -855,9 +855,6 @@ a.site-title,
     display: flex;    
     justify-content: center;
     
-    .scrollable{
-        padding: 20px 24px;
-    }
         
     ul{
         display: flex;
@@ -879,7 +876,11 @@ a.site-title,
     }
     
     
-    &.buttons {                     
+    &.buttons {     
+        .scrollable{
+            padding: 20px 24px;
+        }
+    
         .item a{            
             border: 1px solid #EFEFEF;
             background-color: #FFF;            
