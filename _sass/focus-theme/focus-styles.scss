@@ -674,8 +674,13 @@ body {
         }
         .item-title a{
             text-decoration: none;
-        }        
+            
+        }  
+        .item-title :not(.tags) a{
+            text-transform : uppercase;
+        }      
     }
+    
     &.compact,
     &.list{
         .item{
@@ -707,6 +712,11 @@ body {
         }
     }
     &.compact{
+        .item{
+            border: 1px solid #DFDFDF;
+            padding: 2px 14px;
+            border-radius: 10px,
+        }
         .block-1{
             flex-basis: 50px;
             display: initial;
@@ -858,7 +868,9 @@ a.site-title,
         
     ul{
         display: flex;
-        list-style: none;                
+        list-style: none;
+        marign: 0;
+        padding: 0;        
     }  
     li.item{
         display: inline;
