@@ -182,12 +182,16 @@ body.layout--focus-landing{
 * ----------------------
 */
 .section--hook{
-    display: inline-block;
+    display: block; /* inline-block? Check for errors from this change */
     width:100%;
     margin: 10px auto;
 }
 
 .section--{    
+    &page__before_content,
+    &top__bar{
+        margin-top: 0;
+    }
     &footer__before{
     }
     &page__before_post{
@@ -856,5 +860,7 @@ ul.toc__menu li a,
         border: none;
         text-transform: uppercase;
         font-weight: 900;
+        margin: 0;
+        padding: 0;
     }
 }
