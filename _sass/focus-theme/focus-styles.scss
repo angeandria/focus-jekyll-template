@@ -866,34 +866,36 @@ a.site-title,
 }
 
 .taxonomies-select {
-    display: flex;    
-    justify-content: center;
-    .item a{
-        padding: 6px 14px;
-        margin: 0 4px;
-        border: 1px solid #EFEFEF;
-        background-color: #FFF;
-        color: #6F6F6F;
-        display: inline-block;
-        text-decoration: none;
-        border-radius: 8px;
-        padding: 8px 14px;
-    }
-    .item.current a{
-        background-color: #000;
-        color: #FFF;
-    }
-    .item:first-child a{
-        background-color: #d6d6d6;
-    }
+
+    ul{
+        display: flex;
+        list-style: none;
+    }  
     
-    &.buttons {
-        ul{
-            display: flex;
-            list-style: none;
-        }   
+    &.buttons {         
+        display: flex;    
+        justify-content: center;
+    
         li.item{
             display: inline;
+        }
+        .item a{
+            padding: 6px 14px;
+            margin: 0 4px;
+            border: 1px solid #EFEFEF;
+            background-color: #FFF;
+            color: #6F6F6F;
+            display: inline-block;
+            text-decoration: none;
+            border-radius: 8px;
+            padding: 8px 14px;
+        }
+        .item.current a{
+            background-color: #000;
+            color: #FFF;
+        }
+        .item:first-child a{
+            background-color: #d6d6d6;
         }
     }
     
