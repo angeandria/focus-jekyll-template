@@ -654,6 +654,7 @@ body {
     
     .item-featured-img{
         width: 100%;
+        max-width: 100%;
     }
     .item{
         display: flex;                
@@ -676,8 +677,9 @@ body {
             text-decoration: none;
             
         }  
-        .item-title :not(.tags) a{
-            text-transform : uppercase;
+        .item-title > a {
+            color: #000;
+            font-weight: 900;            
         }      
     }
     
@@ -710,6 +712,9 @@ body {
         .page__meta_taxonomy.categories {
             display: none;
         }
+        .item-title > a {            
+            font-size: var(--font-size-s);
+        }  
     }
     &.compact{
         .item{
