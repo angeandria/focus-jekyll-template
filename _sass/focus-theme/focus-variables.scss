@@ -48,7 +48,15 @@ $box-shadow: 0 4px 20px rgba(0, 0, 0, 0.07);
     --font-size-l: calc(var(--font-size-ratio) * 1.2rem);
     --font-size-m: calc(var(--font-size-ratio) * 1.1rem);
     --font-size-s: calc(var(--font-size-ratio) * .9rem);
-    --font-size-xs: calc(var(--font-size-ratio) * .75rem);    
+    --font-size-xs: calc(var(--font-size-ratio) * .75rem);  
+  
+    --font-size-heading: 1;
+    --font-size-h1: calc(var(--font-size-heading) * var(--font-size-m) * 2.2rem);  
+    --font-size-h2: calc(var(--font-size-heading) * var(--font-size-m) * 1.8rem);  
+    --font-size-h3: calc(var(--font-size-heading) * var(--font-size-m) * 1.5rem);  
+    --font-size-h4: calc(var(--font-size-heading) * var(--font-size-m) * 1.1rem);  
+    --font-size-h5: calc(var(--font-size-heading) * var(--font-size-m) * .9rem);  
+    --font-size-h6: calc(var(--font-size-heading) * var(--font-size-m) * .8rem);
 
     --sidebar-width-l: 26%;    
     --sidebar-width-m: 20%;        
