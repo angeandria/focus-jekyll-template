@@ -129,12 +129,9 @@ body.template--sidebar-left-right{
         }
     }
     #main .wrapper > .sidebar__left{
-        flex: 0 0 var(--sidebar-left-width);
-        @include breakpoint($medium) {
-            display: initial;
-        }                        
         @include breakpoint($large) {
-            flex: 0 0 var(--sidebar-width-m);   
+            display: initial;
+            flex: 0 0 var(--sidebar-left-width);   
         }        
     }
 }
@@ -146,13 +143,9 @@ body.template--sidebar-left-right{
             margin-inline-end: var(--gutter-m);    
         }
     }   
-    #main .wrapper > .sidebar__right{
-        flex: 0 0 var(--sidebar-right-width);
-        @include breakpoint($medium) {
-            display: initial;
-        }                                
+    #main .wrapper > .sidebar__right{        
         @include breakpoint($large) {
-            flex: 0 0 var(--sidebar-width-l);        
+            flex: 0 0 var(--sidebar-right-width);        
         }        
     }    
 }
