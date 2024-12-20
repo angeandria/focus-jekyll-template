@@ -130,8 +130,9 @@ body.template--sidebar-left-right{
     }
     #main .wrapper > .sidebar__left{
         flex: 0 0 var(--sidebar-left-width);
-        display: initial;
-        
+        @include breakpoint($medium) {
+            display: initial;
+        }                        
         @include breakpoint($large) {
             flex: 0 0 var(--sidebar-width-m);   
         }        
@@ -147,8 +148,9 @@ body.template--sidebar-left-right{
     }   
     #main .wrapper > .sidebar__right{
         flex: 0 0 var(--sidebar-right-width);
-        display: initial;
-        
+        @include breakpoint($medium) {
+            display: initial;
+        }                                
         @include breakpoint($large) {
             flex: 0 0 var(--sidebar-width-l);        
         }        
