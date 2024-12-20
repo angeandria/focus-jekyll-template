@@ -67,10 +67,6 @@
     display: none; /* Default on small screens */
     padding-inline-start: auto;
     padding-inline-end: auto;
-    @include breakpoint($large) {
-            flex: 0 0 var(--sidebar-width-s);
-            display: initial;
-    }
 }
 
 /*
@@ -116,6 +112,9 @@ body.template--sidebar-left-right{
     }
     #main .wrapper > .sidebar__container{
         display: none;
+        @include breakpoint($large) {        
+            display: initial;
+        }        
     }
 }
 
