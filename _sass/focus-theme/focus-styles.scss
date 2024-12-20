@@ -61,13 +61,7 @@
 * -----------
 */
 
-#main .wrapper > .sidebar__left,
-#main .wrapper > .sidebar__right{
-    flex-grow: 1;
-    display: none; /* Default on small screens */
-    padding-inline-start: auto;
-    padding-inline-end: auto;
-}
+
 
 /*
 * -----------
@@ -103,21 +97,26 @@ body.template--columns-one{
 * Sidebar Left / Sidebar Right
 * -----------
 */
+#main .wrapper > .sidebar__left,
+#main .wrapper > .sidebar__right{
+    
+
+}
 body.template--sidebar-left,
 body.template--sidebar-right,
-body.template--sidebar-left-right{    
+body.template--sidebar-left-right{   
+
     article.page{
         margin-inline-start: 0;
         margin-inline-end: 0;        
     }
-    #main .wrapper > .sidebar__container{
-        display: none;
-        @include breakpoint($large) {        
-            display: initial;
-        }        
+    & > #main .wrapper > .sidebar__container{
+        flex-grow: 1;   
+        padding-inline-start: auto;
+        padding-inline-end: auto; 
+        display: none; /* Default on small screens */        
     }
 }
-
 
 
 body.template--sidebar-left,
