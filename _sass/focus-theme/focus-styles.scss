@@ -872,6 +872,17 @@ a.site-title,
 
 
 
+
+
+:root{
+    @include breakpoint($medium) {
+        --font-size-heading: 1
+    }       
+}
+
+
+
+
 .taxonomies-select {
     display: flex;    
     justify-content: center;
