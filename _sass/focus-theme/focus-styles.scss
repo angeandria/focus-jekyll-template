@@ -781,6 +781,9 @@ h1{
 }
 h2{
     font-size: var(--font-size-h2);
+    .page__content &{
+        border: none;
+    }
 }
 h3{
     font-size: var(--font-size-h3);
@@ -867,16 +870,9 @@ a.site-title,
 
 
 
-
-
-
-
-
-
-
 :root{
     @include breakpoint($medium) {
-        --font-size-heading: 1
+        --font-size-ratio: 1;
     }       
 }
 

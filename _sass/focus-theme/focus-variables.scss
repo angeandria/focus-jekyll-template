@@ -29,9 +29,7 @@ $box-shadow: 0 4px 20px rgba(0, 0, 0, 0.07);
 */
 :root{
  
-    /* Fonts */
-    --font-factor: 1rem;
-    --font-header-meta-factor: .8;
+
     
     /* Page meta columns */
     --gap: 20px;   
@@ -43,14 +41,16 @@ $box-shadow: 0 4px 20px rgba(0, 0, 0, 0.07);
     --width-s: 720px;
     --width-xs: 560px;
     
-    --font-size-ratio: 1;
+    /* Fonts */
+    --font-size-ratio: .7;
     --font-size-xl: calc(var(--font-size-ratio) * 1.8rem);
     --font-size-l: calc(var(--font-size-ratio) * 1.2rem);
     --font-size-m: calc(var(--font-size-ratio) * 1.1rem);
     --font-size-s: calc(var(--font-size-ratio) * .9rem);
     --font-size-xs: calc(var(--font-size-ratio) * .75rem);  
   
-    --font-size-heading: 1;
+    /* Headings */
+    --font-size-heading: var(--font-size-ratio);
     --font-size-h1: calc(var(--font-size-heading) * 2.2rem);  
     --font-size-h2: calc(var(--font-size-heading) * 1.8rem);  
     --font-size-h3: calc(var(--font-size-heading) * 1.6rem);  

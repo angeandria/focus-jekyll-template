@@ -151,7 +151,7 @@ defaults:
       ###      
       breadcrumbs: true;
       comments: true
-      read_time: true
+      read_time: false
       related: false
       share: true
       show_date: true
