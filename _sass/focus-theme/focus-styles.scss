@@ -810,6 +810,7 @@ h6{
 * L
 * ------
 */
+.post-display .item-title,
 .taxonomy-details #page-subtitle{
     font-size: var(--font-size-s);
 }
@@ -822,7 +823,6 @@ h6{
 html,
 .site-nav a,
 .page__content p, .page__content li, .page__content dl,
-.post-display .item-title,
 .resource-navi .nav__items{
     font-size: var(--font-size-m);
 }
