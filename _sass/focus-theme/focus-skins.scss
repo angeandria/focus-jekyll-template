@@ -4,9 +4,7 @@
 */
 
 
-body{
-    
-    &.dark{
+body.dark{
         --body-bg-color: #AAA;
         --font-color-primary: #333;
         --font-color-secondary: #111;
@@ -17,4 +15,3 @@ body{
         --links-color-border: blue;
     }
     
-}
