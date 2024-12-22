@@ -126,7 +126,7 @@ body.template--sidebar-left-right{
             margin-inline-start: var(--gutter-m);    
         }
     }
-    #main .wrapper > .sidebar__left{
+    & > #main .wrapper > .sidebar__left.sidebar__container{
         @include breakpoint($large) {
             display: initial;
             flex: 0 0 var(--sidebar-left-width);   
@@ -141,8 +141,9 @@ body.template--sidebar-left-right{
             margin-inline-end: var(--gutter-m);    
         }
     }   
-    #main .wrapper > .sidebar__right{        
+    #main .wrapper > .sidebar__right.sidebar__container{        
         @include breakpoint($large) {
+            display: initial;
             flex: 0 0 var(--sidebar-right-width);        
         }        
     }    
