@@ -515,7 +515,7 @@ aside.sidebar__right{
 .page__meta_wrapper .page__taxonomy-item, /* inside .page__header */
 .page__meta_taxonomy.tags .page__taxonomy-item{
     margin-bottom: 0;
-    background-color: #EFEFEF;
+    background-color: var(--bg-color-1);
     border-radius: 8px;
     border-color: transparent;
     padding: 3px 8px;
