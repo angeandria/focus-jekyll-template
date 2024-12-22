@@ -238,6 +238,27 @@ body.aside-none{
 }
 
 
+
+#main .wrapper > .sidebar__container{
+    /*
+    padding-block-start: 1em;
+    padding-block-end: 1em;    
+    padding-inline-start: 1em;
+    padding-inline-end: 1em;
+    */
+}    
+
+#main .wrapper > .sidebar__left{
+    order: 1;
+}
+#main .wrapper > .sidebar__right{
+    order: 3;
+    @include breakpoint($large) {
+        margin-inline-end: auto;
+        width: 100%;
+    }
+}
+
 /*
 * -----------
 * Landing
@@ -355,8 +376,8 @@ a.site-title{
     &.sticky{
         z-index: 10;
         top: 0px;
-        background: #FFF;
-        border-bottom: 1px solid #EAEAEA;
+        background: var(--body-bg-color);
+        border-bottom: 1px solid var(--border-color-1);
     }
     
     .nav__items > li:first-child{
@@ -366,7 +387,7 @@ a.site-title{
             padding: 6px 10px;
             border-radius: 30px;
             opacity: 0.7;
-            border: 1px solid #CFCFCF;
+            border: 1px solid var(--border-color-2);
         }
     }
     .nav__sub-title{
@@ -421,27 +442,18 @@ article.page {
 }
 
 
-
-
-#main .wrapper > .sidebar__container{
-    /*
-    padding-block-start: 1em;
-    padding-block-end: 1em;    
-    padding-inline-start: 1em;
-    padding-inline-end: 1em;
-    */
-}    
-
-#main .wrapper > .sidebar__left{
-    order: 1;
+/*
+* ==========================================
+* SIDEBARS
+* ==========================================
+*/
+.sidebar__container{
+    .nav__sub-title{
+        border: none;
+    }    
 }
-#main .wrapper > .sidebar__right{
-    order: 3;
-    @include breakpoint($large) {
-        margin-inline-end: auto;
-        width: 100%;
-    }
-}
+
+
 
 
 /*
