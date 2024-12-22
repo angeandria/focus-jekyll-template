@@ -794,7 +794,7 @@ body{
 }
 a{
     color: var(--links-color-primary);
-    border: 4px solid var(--links-color-border);
+    border-bottom: 4px solid var(--links-color-border);
     text-decoration: none;
 }
 
@@ -802,7 +802,7 @@ a{
 .breadcrumbs,
 #page__header
 #footer{
-    a{
+    & a{
         border: none;
     }    
 }
