@@ -580,6 +580,10 @@ aside.sidebar__right{
         .author__bio{
             display: none; /* Hide author bio. Temporarily? */
         }
+        a{
+            text-decoration: none;
+            color: #000;
+        }
     }    
     .page__meta_date{
         justify-content: center;
@@ -778,6 +782,26 @@ body {
 FONTS
 --------------------------------------
 */
+
+/*
+* -----------
+* COLORS
+* -----------
+*/
+
+body{    
+    color: var(--font-color-primary);    
+}
+a{
+    color: var(--links-color-primary);
+}
+
+
+/*
+* -----------
+* SIZES
+* -----------
+*/
 h1{
     font-size: var(--font-size-h1);
 }
@@ -798,6 +822,13 @@ h5{
 }
 h6{
     font-size: var(--font-size-h6);
+}
+
+h1, h2, h3, h4, h5, h6{
+    & a{
+        color: var(--font-color-heading-primary);
+    }
+    color: var(--font-color-heading-primary);
 }
 
 /*
@@ -872,6 +903,15 @@ a.site-title,
 
 
 
+
+
+
+/*
+* --------------------------------------
+* TEMPORARY
+* --------------------------------------
+*/
+
 :root{
     @include breakpoint($medium) {
         --font-size-ratio: 1;
@@ -879,8 +919,11 @@ a.site-title,
 }
 
 
-
-
+/*
+* --------------------------------------
+* TAXONOMIES
+* --------------------------------------
+*/
 .taxonomies-select {
     display: flex;    
     justify-content: center;
@@ -929,6 +972,9 @@ a.site-title,
     }
     
 }
+
+
+
 
 .scrollable-container {
     height: auto;              /* Optional height */
