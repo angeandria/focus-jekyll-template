@@ -572,7 +572,7 @@ aside.sidebar__right{
         justify-content: flex-end; /* Aligns the content of author to the right */
         
         .author__avatar img{
-            max-width: 60px;
+            max-width: 40px;
             @include breakpoint($medium) {
                 max-width: 60px;
             } 
