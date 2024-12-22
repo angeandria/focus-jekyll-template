@@ -7,14 +7,19 @@
 body{
     
     &.dark{
-        --body-bg-color: #AAA;
-        --font-color-primary: #333;
-        --font-color-secondary: #111;
-        --font-color-heading-primary: red;
+        --body-bg-color: #111111;
+        --bg-color-1: #222222;
+        --bg-color-2: #591E78;
+        --font-color-primary: #FFF;
+        --font-color-secondary: #AFAFAF;
+        --font-color-heading-primary: var(--font-color-primary);
         --font-color-heading-secondary: blue;    
-        --links-color-primary: blue;
+        --links-color-primary: #8C33B6;
         --links-color-secondary: yellow;
-        --links-color-border: blue;
+        --links-color-border: gold;
+        --border-color-1: #666666;
+        --border-color-2: var(--border-color-1);
+        --border-color-3: orange;   
     }
     
 }
