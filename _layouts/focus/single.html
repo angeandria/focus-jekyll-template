@@ -56,7 +56,10 @@ layout: default
                           {% if page.title_before %}<div class="page-title-before">{{ page.title_before }}</div>{% endif %}
                           {% if page.title %}
                           <h1 id="page-title" class="page__title" itemprop="headline">
-                            <a href="{{ page.url | absolute_url }}" itemprop="url">{{ page.title | markdownify | remove: "<p>" | remove: "</p>" }}</a>
+                                {{ page.title | markdownify | remove: "<p>" | remove: "</p>" }}
+                                {% comment %} REMOVE LINK
+                                <a href="{{ page.url | absolute_url }}" itemprop="url">{{ page.title | markdownify | remove: "<p>" | remove: "</p>" }}</a>
+                                {% endcomment %}
                           </h1>
                           {% if page.title_after %}<div class="page-title-after">{{ page.title_after }}</div>{% endif %}
                           {% endif %}
