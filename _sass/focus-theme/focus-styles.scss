@@ -463,6 +463,7 @@ nav.toc{
     box-shadow: none;
     -webkit-box-shadow: none;
     border: none;
+    border-radius: 0;
 
     &,
     .nav__title{
@@ -472,10 +473,12 @@ nav.toc{
     .nav__title{
         background-color: transparent;
         text-transform: uppercase;   
-        border-bottom: 1px solid var(--border-color-2);  
+        border-bottom: 1px solid var(--border-color-1);  
     }
     
-    .toc__menu{
+    ul.toc__menu{
+        list-style-type: square;
+        list-style-position: inside;
         a{
             border: none;
             color: inherit;
@@ -947,7 +950,8 @@ table,
 ul.toc__menu li a,
 .post-display .item-description,
 .item-meta,
-.resource-navi li a{
+.resource-navi li a,
+nav.toc .nav__title{
     font-size: var(--font-size-s);
 }
 
@@ -965,7 +969,7 @@ a.site-title,
 .scrollable .item a,
 .breadcrumbs ol,
 nav.toc,
-.toc__menu{
+.toc__menu li a{
     font-size: var(--font-size-xs);
 }
 
