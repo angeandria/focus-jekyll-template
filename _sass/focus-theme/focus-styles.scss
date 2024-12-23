@@ -453,6 +453,36 @@ article.page {
     }    
 }
 
+/*
+* -----------
+* TOC
+* -----------
+*/
+nav.toc{
+    background-color: var(--body-bg-color);
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    border: none;
+
+    &,
+    .nav__title{
+        color: var(--font-color-primary);
+    }
+    
+    .nav__title{
+        background-color: transparent;
+        text-transform: uppercase;   
+        border-bottom: 1px solid var(--border-color-2);  
+    }
+    
+    .toc__menu{
+        a{
+            border: none;
+            color: inherit;
+        }
+    }
+}
+
 
 
 
@@ -933,7 +963,9 @@ a.site-title,
 .categories .page__taxonomy .sep,
 .page__meta-date,
 .scrollable .item a,
-.breadcrumbs ol{
+.breadcrumbs ol,
+nav.toc,
+.toc__menu{
     font-size: var(--font-size-xs);
 }
 
