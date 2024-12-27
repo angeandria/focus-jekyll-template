@@ -50,7 +50,7 @@
 .section--hook{
     display: inline-block;
     width:100%;
-    margin: 10px auto;
+    margin: 0 auto;
 }
 
 .section--{    
@@ -111,6 +111,25 @@ body::after{
 	z-index: -1;
 }
 
+
+/*
+* -------------
+* CONTAINER
+* -------------
+*/
+#header,
+.initial-content,
+.search-content{        
+    padding-inline: 1em;
+}
+
+.masthead__inner-wrap,
+.breadcrumbs,
+#main,
+#footer .wrapper{
+    padding-inline-start:4em;
+    padding-inline-end:4em;    
+}
 
 
 /*
@@ -274,10 +293,6 @@ body.layout--focus-landing{
 * MORE
 * -----------
 */
-.initial-content,
-.search-content{        
-    padding-inline: 1em;
-}
 
 #resource__header,
 #main,
@@ -300,15 +315,6 @@ body > #footer{
 * ==========================================
 */
 
-
-
-.masthead__inner-wrap,
-.breadcrumbs,
-#main,
-#footer .wrapper{
-    padding-inline-start:4em;
-    padding-inline-end:4em;    
-}
 
 /*
 * Masthead
