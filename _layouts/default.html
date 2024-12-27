@@ -10,6 +10,11 @@
   </head>
 
     {% comment %}
+    <!-- Site classes -->
+    {% endcomment %}
+    {% assign site_class = site.site_class | default: ""%}
+    
+    {% comment %}
     <!-- Layout class -->
     {% endcomment %}
     {% assign layout_slug = page.layout | default: layout.layout | replace: '/', '-') %}
@@ -81,13 +86,14 @@
         {% assign page_classes = page.classes | default: layout.classes | join: ' ' | prepend: ' ' %}
     {% endif %}
     
+    
     {% comment %}
     <!-- - [ ] TODO : Implement? -->
     {% assign myHashString = 
   "slug:" | append: category_main_slug | append: ",class:" | append: category_main_class | append: ",label:" | append: category_main_label %}
     {% endcomment %}
     
-    <body class="{{ layout_class }} {{ template_class }} {{ category_main_id_class }} {{ category_main_class }} {{ categories_classes }} {{ page_classes }}" dir="{% if site.rtl %}rtl{% else %}ltr{% endif %}">
+    <body class="{{site_class}} {{ layout_class }} {{ template_class }} {{ category_main_id_class }} {{ category_main_class }} {{ categories_classes }} {{ page_classes }}" dir="{% if site.rtl %}rtl{% else %}ltr{% endif %}">
         
         <!-- SECTION top__bar -->
         {% case current_layout %}                

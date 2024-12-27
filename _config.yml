@@ -36,6 +36,7 @@ category_main_id_prefix: category--
 category_main_prefix: category-main--
 taxonomy_prefix: taxonomy--
 
+
 # -----------------
 # Site Details - More
 # ---------------
@@ -48,7 +49,7 @@ copyright_url            :          # copyright URL | default: site.url
 title_display            : true     # display page title | bool | default: true
 taxonomy_display         : false    # display page taxonomies | bool | default: false
 resource_navigation      : false    # display resource navigation | bool | default: false
-
+site_class             : "boxed box-shadow"    # Display site in boxed body
 # comments: # no comments for this site - See here for documentation
 # https://github.com/mmistakes/minimal-mistakes/blob/master/_config.yml
 

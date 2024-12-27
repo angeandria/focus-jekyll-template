@@ -94,12 +94,19 @@ html, body{
 body{
 	position: relative;
     padding-inline: 0;
-    width: var(--body-width);
     margin: 0 auto;
-    box-shadow: var(--body-box-shadow);
-    -webkit-box-shadow: var(--body-box-shadow);    
     @include breakpoint($medium) {
         padding-inline: var(--padding-inline-body);
+    } 
+}
+
+body.boxed{
+    width: var(--body-boxed-width);
+    box-shadow: var(--body-box-shadow);
+    -webkit-box-shadow: var(--body-box-shadow);    
+    margin-block: 20px; 
+    @include breakpoint($medium) {
+        margin-block: 40px;
     } 
 }
 
