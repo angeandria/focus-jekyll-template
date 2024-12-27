@@ -97,12 +97,16 @@ html{
     background-color: var(--html-bg-color);
 }
 
+body,
+.sidebar__container .sticky{
+    background-color: var(--body-bg-color);
+}
+
 /* Implement Body Bg Image */
 body{
 	position: relative;
     padding-inline: 0;
     margin: 0 auto;
-    background-color: var(--body-bg-color);
     @include breakpoint($medium) {
         padding-inline: var(--padding-inline-body);
     } 
@@ -519,7 +523,8 @@ article.page {
 
 .sidebar__container .sticky{
     @include breakpoint($medium) {
-        top: 4em;
+        top: 60px;
+        padding-top: 20px;
     } 
 
     
