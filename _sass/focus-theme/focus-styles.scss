@@ -141,7 +141,7 @@ body::after{
 
 #resource__header,
 #page__header,
-.layout--focus-home #main{
+#main{
     margin-top: 20px;
     @include breakpoint($medium) {
         margin-top: 60px;    
