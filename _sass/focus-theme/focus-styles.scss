@@ -48,7 +48,7 @@
 * ----------------------
 */
 
-[class^="hook--"] {
+[class^="hook__"] {
     font-size: 0;   
 }
 
@@ -515,6 +515,14 @@ article.page {
     .nav__sub-title{
         border: none;
     }    
+}
+
+.sidebar .sticky{
+    @include breakpoint($medium) {
+        top: 4em;
+    } 
+
+    
 }
 
 /*
