@@ -397,6 +397,19 @@ a.site-title{
 * Resources Navigation
 * ----
 */
+#resource__header{
+  margin-bottom: 10px;  
+  @include breakpoint($medium) {
+        margin-bottom: 40px;
+  } 
+}
+
+/*
+* 
+* Resources Navigation
+* ----
+*/
+
 .resource-navi{
 
     overflow:hidden;
