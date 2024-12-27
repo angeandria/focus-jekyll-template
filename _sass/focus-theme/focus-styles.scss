@@ -539,8 +539,9 @@ article.page {
 
 .sidebar__container .sticky{
     @include breakpoint($medium) {
-        top: 60px;
-        padding-block: 20px;
+        top: 30px;
+        padding-top: 80px;
+        padding-bottom: 20px;
     } 
 
     
