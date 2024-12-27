@@ -93,6 +93,14 @@ html, body{
 /* Implement Body Bg Image */
 body{
 	position: relative;
+    padding-inline: 0;
+    width: var(--body-width);
+    margin: 0 auto;
+    box-shadow: var(--body-box-shadow);
+    -webkit-box-shadow: var(--body-box-shadow);    
+    @include breakpoint($medium) {
+        padding-inline: var(--padding-inline-body);
+    } 
 }
 
 body::after{
@@ -119,16 +127,19 @@ body::after{
 */
 #header,
 .initial-content,
-.search-content{        
-    padding-inline: 1em;
+.search-content,
+#footer{
+    padding-inline: var(--padding-inline-container);    
 }
 
 .masthead__inner-wrap,
 .breadcrumbs,
 #main,
 #footer .wrapper{
-    padding-inline-start:4em;
-    padding-inline-end:4em;    
+    padding-inline: 0;
+    @include breakpoint($medium) {
+        padding-inline: var(--padding-inline-wrapper);
+    } 
 }
 
 
@@ -844,6 +855,10 @@ body {
     margin-top: 0;
 }
 
+.page__footer footer{
+    padding-inline-start: 0;
+    padding-inline-end: 0;
+}
 
 
 

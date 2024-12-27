@@ -30,6 +30,7 @@ $box-shadow: 0 4px 20px rgba(0, 0, 0, 0.07);
 :root{
     
     --body-bg-color: #FFF;
+    --body-box-shadow: 0 4px 20px rgba(0, 0, 0, 0.07); /* 0 4px 20px rgba(0, 0, 0, 0.07); */
     --bg-color-1: #EFEFEF;    
     --bg-color-2: #AFAFAF;
     
@@ -52,6 +53,7 @@ $box-shadow: 0 4px 20px rgba(0, 0, 0, 0.07);
     --gap: 20px;   
     
     /* Content width */    
+    --width-full: 100%;
     --width-xl: 1280px;
     --width-l: 1024px;
     --width-m: 960px;
@@ -77,6 +79,10 @@ $box-shadow: 0 4px 20px rgba(0, 0, 0, 0.07);
     
     
     /* Layouts */
+    --body-width: var(--width-m);
+    --padding-inline-body: 0em;
+    --padding-inline-container: 1em;
+    --padding-inline-wrapper: 4em;
     --sidebar-width-l: 36%;    
     --sidebar-width-m: 26%;        
     --sidebar-width-s: 20%;            
