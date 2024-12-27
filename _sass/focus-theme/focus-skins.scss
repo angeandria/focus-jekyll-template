@@ -8,8 +8,8 @@ body{
     
     &.dark{
         --body-bg-color: #111111;
-        --bg-color-1: #222222;
-        --bg-color-2: #591E78;
+        --bg-color-1: #09202B;
+        --bg-color-2: #0E2A2D;
         --font-color-primary: #678986;
         --font-color-secondary: #AFAFAF;
         --font-color-heading-primary: #FFF;
@@ -17,8 +17,8 @@ body{
         --links-color-primary: #8C33B6;
         --links-color-secondary: yellow;
         --links-color-border: #292929;
-        --border-color-1: #350000;
-        --border-color-2: #323240;
+        --border-color-1: var(--bg-color-1);
+        --border-color-2: var(--bg-color-2);
         --border-color-3: yellow;   
     }
     
