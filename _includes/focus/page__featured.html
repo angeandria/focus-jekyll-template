@@ -5,7 +5,7 @@
     {% if page.featured_image %}
         {% capture resource_path %}{{ page.featured_image }}{% endcapture %}
         <div class="featured-image">
-            {% include figure popup=true image_path=resource_path  alt='{{ page.title }}' caption='{{ page.caption }}' %}
+            {% include figure image_path=resource_path  alt='{{ page.title }}' caption='{{ page.caption }}' %}
         </div>        
     {% endif %}
     
