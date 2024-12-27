@@ -28,16 +28,16 @@ $box-shadow: 0 4px 20px rgba(0, 0, 0, 0.07);
 * --------------------------
 */
 :root{
-    --html-bg-color: #FFF;
-    --body-bg-color: #FFF;
+    --html-bg-color: #FFFFFF;
+    --body-bg-color: #FFFFFF;
     --body-box-shadow: 0 4px 20px rgba(0, 0, 0, 0.07); /* 0 4px 20px rgba(0, 0, 0, 0.07); */
     --bg-color-1: var(--body-bg-color);    
     --bg-color-2: #EFEFEF;
     
-    --font-color-primary: green;
+    --font-color-primary: #111;
     --font-color-secondary: yellow;
-    --font-color-heading-primary: pink;
-    --font-color-heading-secondary: orange;    
+    --font-color-heading-primary: #000000;
+    --font-color-heading-secondary: #333333;    
     --links-color-primary: red;
     --links-color-secondary: blue;
     --links-color-border: yellow;

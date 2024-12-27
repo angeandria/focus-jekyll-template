@@ -891,7 +891,7 @@ body {
     &.compact{
         .item{
             border: 1px solid var(--border-color-1);
-            padding: 2px 14px;
+            padding: 8px 14px;
             border-radius: 10px;
         }
         .block-1{
@@ -902,6 +902,11 @@ body {
             display: none;
         }
     }
+    &.cards{
+        .block-2{
+            padding-top: 0;
+        }
+    }    
     
     
 }
