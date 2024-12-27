@@ -130,6 +130,13 @@ body::after{
 }
 
 
+.page__header
+.layout--focus-home #main{
+    margin-top: 20px;
+    @include breakpoint($medium) {
+        margin-top: 60px;    
+    }     
+}
 /*
 * -------------
 * CONTAINER
@@ -194,7 +201,7 @@ body.template--columns-one{
 
 body.template--columns-one{
     #main{
-        max-width: var(--width-s);
+        max-width: var(--width-m);
         width: 100%;
         margin: 0 auto;
     }    
