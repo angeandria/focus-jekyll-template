@@ -130,7 +130,8 @@ body::after{
 }
 
 
-.page__header
+#resource_header,
+.page__header,
 .layout--focus-home #main{
     margin-top: 20px;
     @include breakpoint($medium) {
