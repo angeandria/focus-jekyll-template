@@ -348,6 +348,10 @@ body > #footer{
 * ----
 */
 
+.masthead{
+    border: none;
+}
+
 .masthead__inner-wrap{
 
 }
@@ -972,8 +976,13 @@ h1, h2, h3, h4, h5, h6{
 html,
 .site-nav a,
 .page__content p, .page__content li, .page__content dl,
-.resource-navi .nav__items{
+.resource-navi .nav__items,
+.section--hook{
     font-size: var(--font-size-m);
+}
+.notice,
+[class^="notice--"] {
+    font-size: var(--font-size-m) !important;
 }
 
 /*

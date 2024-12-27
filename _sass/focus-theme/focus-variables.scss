@@ -74,7 +74,7 @@ $box-shadow: 0 4px 20px rgba(0, 0, 0, 0.07);
     --font-size-h2: calc(var(--font-size-heading) * 1.8rem);  
     --font-size-h3: calc(var(--font-size-heading) * 1.6rem);  
     --font-size-h4: calc(var(--font-size-heading) * 1.3rem);  
-    --font-size-h5: calc(var(--font-size-heading) * 1.1rem);  
+    --font-size-h5: calc(var(--font-size-heading) * 1rem);  
     --font-size-h6: calc(var(--font-size-heading) * .9rem);
     
     
@@ -84,8 +84,8 @@ $box-shadow: 0 4px 20px rgba(0, 0, 0, 0.07);
     --padding-inline-container: 1em;
     --padding-inline-wrapper: 4em;
     --sidebar-width-l: 36%;    
-    --sidebar-width-m: 26%;        
-    --sidebar-width-s: 20%;            
+    --sidebar-width-m: 32%;        
+    --sidebar-width-s: 24%;            
     --sidebar-width-xs: 15%;                
     --sidebar-left-width: var(--sidebar-width-s);
     --sidebar-right-width: var(--sidebar-width-m);  
