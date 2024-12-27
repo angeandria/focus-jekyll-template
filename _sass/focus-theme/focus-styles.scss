@@ -407,10 +407,13 @@ a.site-title{
 * Page Header
 * ----
 */
-.page__header{
+.page__featured{
     .featured-image figure{
         margin-bottom: 0;    
-    }
+    }    
+}
+figcaption{
+    font-family: inherit;    
 }
 
 
@@ -957,6 +960,8 @@ a{
 #header,
 .breadcrumbs,
 #page__header,
+.post-display .item-title,
+.sidebar__container,
 #footer{
     & a{
         border: none;
@@ -969,24 +974,31 @@ a{
 * SIZES
 * -----------
 */
-h1{
+h1,
+.resource-header .resource__title{
     font-size: var(--font-size-h1);
 }
+
 h2{
     font-size: var(--font-size-h2);
     .page__content &{
         border: none;
     }
 }
-h3{
+
+h3,
+.resource-header .resource__subtitle{
     font-size: var(--font-size-h3);
 }
+
 h4{
     font-size: var(--font-size-h4);
 }
+
 h5{
     font-size: var(----font-size-h5);
 }
+
 h6{
     font-size: var(--font-size-h6);
 }
@@ -1062,6 +1074,7 @@ table,
 .small,
 a.site-title,
 .site-subtitle,
+figcaption,
 .page__taxonomy a,
 .categories .page__taxonomy .sep,
 .page__meta-date,
