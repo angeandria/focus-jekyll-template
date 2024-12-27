@@ -14,7 +14,7 @@
         {% assign path = "focus/hooks/" %}        
         {% assign class = "default" %}
     {% endif %}
-    <div class="wrapper__{{target_file}}">
+    <div class="hook__{{target_file}}">
         <div class="section--hook {{class}}-hook section--{{target_file}} {{ target_class }} ">  
                 {% include {{ target_file | prepend: path | append: '.html' }} %}                
         </div>

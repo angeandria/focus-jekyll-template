@@ -47,6 +47,11 @@
 * HOOKS
 * ----------------------
 */
+
+[class^="hook--"] {
+    font-size: 0;   
+}
+
 .section--hook{
     display: inline-block;
     width:100%;
