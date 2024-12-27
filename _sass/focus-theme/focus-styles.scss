@@ -401,6 +401,19 @@ a.site-title{
     float:inline-start;
 }
 
+
+/*
+* 
+* Page Header
+* ----
+*/
+.page__header{
+    .featured-image figure{
+        margin-bottom: 0;    
+    }
+}
+
+
 /*
 * 
 * Resources Navigation
@@ -524,7 +537,7 @@ article.page {
 .sidebar__container .sticky{
     @include breakpoint($medium) {
         top: 60px;
-        padding-top: 20px;
+        padding-block: 20px;
     } 
 
     
