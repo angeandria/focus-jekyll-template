@@ -517,7 +517,7 @@ article.page {
     }    
 }
 
-.sidebar .sticky{
+.sidebar__container .sticky{
     @include breakpoint($medium) {
         top: 4em;
     } 
