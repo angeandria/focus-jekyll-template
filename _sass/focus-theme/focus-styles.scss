@@ -121,6 +121,13 @@ html{
     background-color: var(--html-bg-color);
 }
 
+body{
+  --font-size-ratio:1.1 
+  @include breakpoint($medium) {
+      --font-size-ratio: 0.9;
+  } 
+}
+
 body,
 .sidebar__container .sticky{
     background-color: var(--body-bg-color);
