@@ -61,8 +61,10 @@ $box-shadow: 0 4px 20px rgba(0, 0, 0, 0.07);
     --width-xs: 560px;
     
     /* Fonts */
-    --font-size-ratio: .9;
-    --font-size-ratio-small: 1.1;
+    --font-size-ratio: 1.1;
+    @include breakpoint($medium) {
+            --font-size-ratio: .9;
+    } 
     --font-size-xl: calc(var(--font-size-ratio) * 1.8rem);
     --font-size-l:  calc(var(--font-size-ratio) * 1.2rem);
     --font-size-m:  calc(var(--font-size-ratio) * 1rem);
