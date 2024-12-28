@@ -121,12 +121,6 @@ html{
     background-color: var(--html-bg-color);
 }
 
-body{
-  --font-size-ratio: 2;
-  @include breakpoint($medium) {
-      --font-size-ratio: 0.9;
-  } 
-}
 
 body,
 .sidebar__container .sticky{
