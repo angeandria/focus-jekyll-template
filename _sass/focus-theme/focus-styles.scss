@@ -41,6 +41,30 @@
     z-index: 30;
 }
 
+img{
+    &.full{
+        width: 100%;
+    }
+    &.width-xl{
+        width: var(--width-xl);
+    }    
+    &.width-l{
+        width: var(--width-l);
+    }
+    &.width-m{
+        width: var(--width-m);
+    }
+    &.width-s{
+        width: var(--width-s);
+    }    
+    &.width-avatar{
+        width: var(--width-xs);
+    }        
+    &.width-icon{
+        width: var(--width-xs);
+    }            
+}
+
 
 /*
 * ----------------------
@@ -210,12 +234,38 @@ body.template--columns-one{
 }
 
 body.template--columns-one{
-    #main{
+    #main,
+    section.page__content > section{
         max-width: var(--width-m);
-        width: 100%;
+        width: 100%;           
         margin: 0 auto;
-    }    
+    }
 }
+
+
+/*
+* -----------
+* Canvas - Full width sections
+* -----------
+*/
+body.canvas.template--columns-one{
+    div.initial-content,
+    #main{
+        padding-inline: 0;
+    }    
+    #main{
+            max-width: var(--width-full);
+            padding-inline: 0;    
+    }
+    section.page__content > section{
+        padding-block: 14px;
+        @include breakpoint($medium) {
+            padding-block: 50px;
+        } 
+        
+    }
+}
+
 
 
 /*
