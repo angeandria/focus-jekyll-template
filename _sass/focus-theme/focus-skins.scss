@@ -9,10 +9,19 @@ body{
     
 
     &.dark{
+        --html-bg-color: #111111;
         --body-bg-color: #111111;
+        --body-box-shadow: 0 4px 20px rgba(0, 0, 0, 0.07); /* 0 4px 20px rgba(0, 0, 0, 0.07); */
+            
         --bg-color-1: #09202B;
         --bg-color-2: #0E2A2D;
         --bg-color-3: #1E4B8D;
+        --bg-color-tags: #EFEFEF;
+        --bg-color-categories: pink;    
+        --bg-color-info-1: #EFEFEF;
+        --bg-color-info-2: yellow;    
+        --bg-color-info-3: blue;        
+        
         --font-color-primary: #678986;
         --font-color-secondary: #AFAFAF;
         --font-color-heading-primary: #FFF;
@@ -20,6 +29,7 @@ body{
         --links-color-primary: #8C33B6;
         --links-color-secondary: yellow;
         --links-color-border: #292929;
+        
         --border-color-1: var(--bg-color-1);
         --border-color-2: var(--bg-color-2);
         --border-color-3: yellow;   

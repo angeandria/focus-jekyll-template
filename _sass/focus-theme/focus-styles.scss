@@ -182,7 +182,7 @@ body::after{
 .initial-content,
 .search-content,
 #footer{
-    padding-inline: 3em;
+    padding-inline: 2em;
     @include breakpoint($medium) {
         padding-inline: var(--padding-inline-container);    
     }
@@ -423,6 +423,10 @@ body > #footer{
 
 .masthead__inner-wrap{
 
+}
+
+.greedy-nav__toggle{
+    padding-inline-end: 0;
 }
 
 /*
@@ -678,6 +682,10 @@ aside.sidebar__right{
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+#page-title{
+    font-weight: 900;    
 }
 
 .page-title-before,

@@ -503,7 +503,7 @@ jekyll-archives:
 # -----------------
 # Search
 # -----------------
-search                   : true # true, false (default)
+search                   : false # true, false (default)
 search_full_content      : # true, false (default)
 search_provider          : # lunr (default), algolia, google
 lunr:
