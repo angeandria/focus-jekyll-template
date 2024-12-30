@@ -7,9 +7,6 @@
 body{
     
     
-    @include breakpoint($small) {      } 
-    
-
 
     &.dark{
         --body-bg-color: #111111;
