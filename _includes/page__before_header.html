@@ -7,7 +7,10 @@
               <span class="visually-hidden">{{ site.data.ui-text[site.locale].search_label | default: "Toggle search" }}</span>
               <i class="fas fa-search"></i>
             </button>
-            
+<div class="search-content">
+            {% include_cached search/search_form.html %}
+          </div>
+          
 {% if taxonomy_display %}
     {% include focus/taxonomies-select.html classes = "buttons"%}
 {% endif %}
