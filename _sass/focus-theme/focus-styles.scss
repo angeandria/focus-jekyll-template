@@ -711,7 +711,7 @@ aside.sidebar__right{
 .page__meta_wrapper .page__taxonomy-item, /* inside .page__header */
 .page__meta_taxonomy.tags .page__taxonomy-item{
     margin-bottom: 0;
-    background-color: var(--bg-color-2);
+    background-color: var(--bg-color-tags);
     border-radius: 8px;
     border-color: transparent;
     padding: 3px 8px;
@@ -725,6 +725,7 @@ aside.sidebar__right{
     padding: 0;
     border: none;
     margin: 0;
+    background-color: var(--bg-color-categories);
 }
 .page__meta_taxonomy.categories > .page__taxonomy-item:not(:last-child)::after {
     content: ", ";
@@ -970,6 +971,15 @@ body {
 
 .item-info{
     display: inline-block;
+}
+.item-info-1{
+    background-color: var(--bg-color-info-1);
+}
+.item-info-2{
+    background-color: var(--bg-color-info-2);
+}
+.item-info-3{
+    background-color: var(--bg-color-info-3);
 }
 
 
