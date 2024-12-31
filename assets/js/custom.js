@@ -15,6 +15,8 @@ document.addEventListener("DOMContentLoaded", function() {
         // For example, updating .post-display with relevant content
         const otherDivs = document.querySelectorAll('.all-posts');
         
+        $(".initial-content").removeClass("is--hidden");
+        
         if (query.length > 0) {
             $("#page__header").addClass("is--hidden");
             $("#main").addClass("is--hidden");
