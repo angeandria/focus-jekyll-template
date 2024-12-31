@@ -36,6 +36,15 @@ category_main_id_prefix: category--
 category_main_prefix: category-main--
 taxonomy_prefix: taxonomy--
 
+# -----------------
+# Custom scripts
+# ---------------
+head_scripts:
+  - /assets/js/custom.js
+# footer_scripts:
+#  - /assets/js/your-custom-script.js
+# after_footer_scripts:
+#  - /assets/js/your-custom-script.js  
 
 # -----------------
 # Site Details - More
