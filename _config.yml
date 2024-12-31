@@ -39,8 +39,8 @@ taxonomy_prefix: taxonomy--
 # -----------------
 # Custom scripts
 # ---------------
-#head_scripts:
-#  - /assets/js/custom.js
+head_scripts:
+  - /assets/js/custom.js
 # footer_scripts:
 #  - /assets/js/your-custom-script.js
 # after_footer_scripts:
