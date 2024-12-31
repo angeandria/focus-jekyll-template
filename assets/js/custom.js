@@ -16,7 +16,11 @@ document.addEventListener("DOMContentLoaded", function() {
         const otherDivs = document.querySelectorAll('.all-posts');
         
         if (query.length > 0) {
-            $(".initial-content").addClass("is--hidden");
+            $("#page__header").addClass("is--hidden");
+            $("#main").addClass("is--hidden");
+        }else {
+            $("#page__header").removeClass("is--hidden");
+            $("#main").removeClass("is--hidden");
         }
       
         otherDivs.forEach(div => {
