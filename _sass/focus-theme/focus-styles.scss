@@ -1196,8 +1196,15 @@ nav.toc .nav__title{
 
 
 .search-content.is--visible{
-    display: inline-block;
+    display: inline-block;    
 }
+
+.search-content__form{
+    border: 1px solid var(--border-color-1);
+    border-radius: 10px;
+}
+
+
 
 
 /*
