@@ -14,7 +14,10 @@ document.addEventListener("DOMContentLoaded", function() {
         // Implement logic to act on other divs based on the query
         // For example, updating .post-display with relevant content
         const otherDivs = document.querySelectorAll('.all-posts');
+        const initialContent = document.getElementById("initial-content");
         
+        if ($(".initial-content").toggleClass("is--hidden"));
+      
         otherDivs.forEach(div => {
             // Example: Change background color based on query length
             if (query.length > 0) {
