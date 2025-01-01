@@ -32,16 +32,34 @@ document.addEventListener("DOMContentLoaded", function() {
                               categories.includes(query) ||
                               tagsInfo1.includes(query) ||
                               tagsInfo2.includes(query));
+            // Check if any of the content matches the query
+            if (    title.includes(query)
+                ||  subtitle.includes(query)
+                ||  description.includes(query)
+                ||  tags.includes(query)
+                ||  categories.includes(query)
+                ||  tagsInfo1.includes(query)
+                ||  tagsInfo2.includes(query)) {
+                        item.classList.add("is--visible");
+                        item.classList.remove("is--hidden");
+            } else {
+                        item.classList.add("is--hidden");
+                        item.classList.remove("is--visible");
+            }
+            /*
             
             if (isHidden) {
                 // Add .is--hidden if it's not already present
                 if (!item.classList.contains("is--hidden")) {
                     item.classList.add("is--hidden");
+                    item.style.backgroundColor = "lightyellow"; // Highlight when searchingitem.style.backgroundColor = "lightyellow"; // Highlight when searchingblue
                 }
             } else {
                 // Remove .is--hidden if any content matches the query
                 item.classList.remove("is--hidden");
+                item.style.backgroundColor = "lightyellow"; // Highlight when searching
             }
+            */
             
         });
         
