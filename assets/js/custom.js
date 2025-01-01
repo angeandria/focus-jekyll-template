@@ -14,12 +14,15 @@ document.addEventListener("DOMContentLoaded", function() {
             const taxonomies = item.querySelector(".page__taxonomy").textContent.toLowerCase();            
 
             // Check if any of the content matches the query
-            if (title.includes(query) || subtitle.includes(query) || taxonomies.includes(query)) || subtitle.includes(query){
-                item.classList.add("is--visible");
-                item.classList.remove("is--hidden");
+            if (title.includes(query)
+                || subtitle.includes(query)
+                || description.includes(query)
+                || taxonomies.includes(query)) {
+                    item.classList.add("is--visible");
+                    item.classList.remove("is--hidden");
             } else {
-                item.classList.add("is--hidden");
-                item.classList.remove("is--visible");
+                    item.classList.add("is--hidden");
+                    item.classList.remove("is--visible");
             }
         });
         
