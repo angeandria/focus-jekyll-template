@@ -6,23 +6,37 @@ document.addEventListener("DOMContentLoaded", function() {
         const query = searchInput.value.trim(); // Get the current input value
         const items = document.querySelectorAll(".item");
         
-        items.forEach(item => {
-            // Get the text content from title, subtitle, and description
-            const title = item.querySelector(".item-title").textContent.toLowerCase();
-            const subtitle = item.querySelector(".item-subtitle").textContent.toLowerCase();
-            const description = item.querySelector(".item-description").textContent.toLowerCase();
-            const taxonomies = item.querySelector(".page__taxonomy").textContent.toLowerCase();            
-
+        items.forEach(item => {            
+            // Safely get the text content from title, subtitle, and description
+            const titleElement = item.querySelector(".item-title");
+            const subtitleElement = item.querySelector(".item-subtitle");
+            const descriptionElement = item.querySelector(".item-description");
+            const tagsElement = item.querySelector(".tags .page__taxonomy ");
+            const categoriesElement = item.querySelector(".categories .page__taxonomy ");
+            const tagsInfo1Element = item.querySelector(".tags-info-1");    
+            const tagsInfo2Element = item.querySelector(".tags-info-2");       
+       
+            const title = titleElement ? titleElement.textContent.toLowerCase() : '';
+            const subtitle = subtitleElement ? subtitleElement.textContent.toLowerCase() : '';
+            const description = descriptionElement ? descriptionElement.textContent.toLowerCase() : '';     
+            const tags = tagsElement ? tagssElement.textContent.toLowerCase() : '';
+            const categories = categoriesElement ? categoriesElement.textContent.toLowerCase() : '';     
+            const tagsInfo1 = tagsInfo1Element ? tagsInfo1Element.textContent.toLowerCase() : '';
+            const tagsInfo2 = tagsInfo2Element ? tagsInfo2Element.textContent.toLowerCase() : '';                 
+                
             // Check if any of the content matches the query
-            if (title.includes(query)
-                || subtitle.includes(query)
-                || description.includes(query)
-                || taxonomies.includes(query)) {
-                    item.classList.add("is--visible");
-                    item.classList.remove("is--hidden");
+            if (    title.includes(query)
+                ||  subtitle.includes(query)
+                ||  description.includes(query)
+                ||  tags.includes(query)
+                ||  categories.includes(query)
+                ||  tagsInfo1.includes(query)
+                ||  tagsInfo2.includes(query)) {
+                        item.classList.add("is--visible");
+                        item.classList.remove("is--hidden");
             } else {
-                    item.classList.add("is--hidden");
-                    item.classList.remove("is--visible");
+                        item.classList.add("is--hidden");
+                        item.classList.remove("is--visible");
             }
         });
         
