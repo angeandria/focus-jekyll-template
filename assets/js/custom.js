@@ -8,18 +8,18 @@ document.addEventListener("DOMContentLoaded", function() {
         
         items.forEach(item => {            
             // Safely get the text content from title, subtitle, and description
-            const titleElement = item.querySelector(".item-title");
-            const subtitleElement = item.querySelector(".item-subtitle");
-            const descriptionElement = item.querySelector(".item-description");
-            const tagsElement = item.querySelector(".tags .page__taxonomy ");
-            const categoriesElement = item.querySelector(".categories .page__taxonomy ");
-            const tagsInfo1Element = item.querySelector(".tags-info-1");    
-            const tagsInfo2Element = item.querySelector(".tags-info-2");       
+            const titleElement = item.querySelector(".post-display .item-title");
+            const subtitleElement = item.querySelector(".post-display .item-subtitle");
+            const descriptionElement = item.querySelector(".post-display .item-description");
+            const tagsElement = item.querySelector(".post-display .tags .page__taxonomy");
+            const categoriesElement = item.querySelector(".post-display .categories .page__taxonomy");
+            const tagsInfo1Element = item.querySelector(".post-display .tags-info-1");    
+            const tagsInfo2Element = item.querySelector(".post-display .tags-info-2");       
        
             const title = titleElement ? titleElement.textContent.toLowerCase() : '';
             const subtitle = subtitleElement ? subtitleElement.textContent.toLowerCase() : '';
             const description = descriptionElement ? descriptionElement.textContent.toLowerCase() : '';     
-            const tags = tagsElement ? tagssElement.textContent.toLowerCase() : '';
+            const tags = tagsElement ? tagsElement.textContent.toLowerCase() : ''; // Fixed typo
             const categories = categoriesElement ? categoriesElement.textContent.toLowerCase() : '';     
             const tagsInfo1 = tagsInfo1Element ? tagsInfo1Element.textContent.toLowerCase() : '';
             const tagsInfo2 = tagsInfo2Element ? tagsInfo2Element.textContent.toLowerCase() : '';                 
