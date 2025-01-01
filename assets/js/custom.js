@@ -24,14 +24,6 @@ document.addEventListener("DOMContentLoaded", function() {
             const tagsInfo1 = tagsInfo1Element ? tagsInfo1Element.textContent.toLowerCase() : '';
             const tagsInfo2 = tagsInfo2Element ? tagsInfo2Element.textContent.toLowerCase() : '';                 
                 
-            // Check if none of the content matches the query
-            const isHidden = !(title.includes(query) ||
-                              subtitle.includes(query) ||
-                              description.includes(query) ||
-                              tags.includes(query) ||
-                              categories.includes(query) ||
-                              tagsInfo1.includes(query) ||
-                              tagsInfo2.includes(query));
             // Check if any of the content matches the query
             if (    title.includes(query)
                 ||  subtitle.includes(query)
@@ -46,21 +38,6 @@ document.addEventListener("DOMContentLoaded", function() {
                         item.classList.add("is--hidden");
                         item.classList.remove("is--visible");
             }
-            /*
-            
-            if (isHidden) {
-                // Add .is--hidden if it's not already present
-                if (!item.classList.contains("is--hidden")) {
-                    item.classList.add("is--hidden");
-                    item.style.backgroundColor = "lightyellow"; // Highlight when searchingitem.style.backgroundColor = "lightyellow"; // Highlight when searchingblue
-                }
-            } else {
-                // Remove .is--hidden if any content matches the query
-                item.classList.remove("is--hidden");
-                item.style.backgroundColor = "lightyellow"; // Highlight when searching
-            }
-            */
-            
         });
         
         // Optionally, you can also call another function to act on other divs
@@ -83,14 +60,12 @@ document.addEventListener("DOMContentLoaded", function() {
         }
       
         otherDivs.forEach(div => {
-            /*
             // Example: Change background color based on query length
             if (query.length > 0) {
                 div.style.backgroundColor = "lightyellow"; // Highlight when searching
             } else {
                 div.style.backgroundColor = "blue"; // Reset when empty
             }
-            *
         });
     }
         
