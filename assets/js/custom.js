@@ -22,16 +22,20 @@ document.addEventListener("DOMContentLoaded", function() {
             const tags = tagsElement ? tagsElement.textContent.toLowerCase() : ''; // Fixed typo
             const categories = categoriesElement ? categoriesElement.textContent.toLowerCase() : '';     
             const tagsInfo1 = tagsInfo1Element ? tagsInfo1Element.textContent.toLowerCase() : '';
-            const tagsInfo2 = tagsInfo2Element ? tagsInfo2Element.textContent.toLowerCase() : '';                 
-                
-            // Check if any of the content matches the query
-            if (    title.includes(query)
-                ||  subtitle.includes(query)
-                ||  description.includes(query)
-                ||  tags.includes(query)
-                ||  categories.includes(query)
-                ||  tagsInfo1.includes(query)
-                ||  tagsInfo2.includes(query)) {
+            const tagsInfo2 = tagsInfo2Element ? tagsInfo2Element.textContent.toLowerCase() : '';   
+
+            
+                    // Check if none of the content matches the query
+                const isHidden = (title.includes(query) ||
+                  subtitle.includes(query) ||
+                  description.includes(query) ||
+                  tags.includes(query) ||
+                  categories.includes(query) ||
+                  tagsInfo1.includes(query) ||
+                  tagsInfo2.includes(query));
+                  
+            // Check if any of the content matches the query 
+            if (isHidden) {         
                         item.classList.add("is--visible");
                         item.classList.remove("is--hidden");
             } else {
