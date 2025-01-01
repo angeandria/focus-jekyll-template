@@ -4,7 +4,24 @@ document.addEventListener("DOMContentLoaded", function() {
 
     searchInput.addEventListener("input", function() {
         const query = searchInput.value.trim(); // Get the current input value
+        const items = document.querySelectorAll(".item");
         
+        items.forEach(item => {
+            // Get the text content from title, subtitle, and description
+            const title = item.querySelector(".item-title").textContent.toLowerCase();
+            const subtitle = item.querySelector(".item-subtitle").textContent.toLowerCase();
+            const description = item.querySelector(".item-description").textContent.toLowerCase();
+            const taxonomies = item.querySelector(".page__taxonomy").textContent.toLowerCase();            
+
+            // Check if any of the content matches the query
+            if (title.includes(query) || subtitle.includes(query) || taxonomies.includes(query)) || subtitle.includes(query){
+                item.classList.add("is--visible");
+                item.classList.remove("is--hidden");
+            } else {
+                item.classList.add("is--hidden");
+                item.classList.remove("is--visible");
+            }
+        });
         
         // Optionally, you can also call another function to act on other divs
         updateOtherDivs(query);
@@ -34,4 +51,5 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         });
     }
-});    
+        
+});
