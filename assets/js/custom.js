@@ -24,20 +24,25 @@ document.addEventListener("DOMContentLoaded", function() {
             const tagsInfo1 = tagsInfo1Element ? tagsInfo1Element.textContent.toLowerCase() : '';
             const tagsInfo2 = tagsInfo2Element ? tagsInfo2Element.textContent.toLowerCase() : '';                 
                 
-            // Check if any of the content matches the query
-            if (    title.includes(query)
-                ||  subtitle.includes(query)
-                ||  description.includes(query)
-                ||  tags.includes(query)
-                ||  categories.includes(query)
-                ||  tagsInfo1.includes(query)
-                ||  tagsInfo2.includes(query)) {
-                        item.classList.add("is--visible");
-                        item.classList.remove("is--hidden");
+            // Check if none of the content matches the query
+            const isHidden = !(title.includes(query) ||
+                              subtitle.includes(query) ||
+                              description.includes(query) ||
+                              tags.includes(query) ||
+                              categories.includes(query) ||
+                              tagsInfo1.includes(query) ||
+                              tagsInfo2.includes(query));
+            
+            if (isHidden) {
+                // Add .is--hidden if it's not already present
+                if (!item.classList.contains("is--hidden")) {
+                    item.classList.add("is--hidden");
+                }
             } else {
-                        item.classList.add("is--hidden");
-                        item.classList.remove("is--visible");
+                // Remove .is--hidden if any content matches the query
+                item.classList.remove("is--hidden");
             }
+            
         });
         
         // Optionally, you can also call another function to act on other divs
@@ -47,7 +52,7 @@ document.addEventListener("DOMContentLoaded", function() {
     function updateOtherDivs(query) {
         // Implement logic to act on other divs based on the query
         // For example, updating .post-display with relevant content
-        const otherDivs = document.querySelectorAll('.all-posts');
+        const otherDivs = document.querySelectorAll('.all-posts .item');
         
         // $(".initial-content").removeClass("is--hidden");
         
@@ -60,12 +65,14 @@ document.addEventListener("DOMContentLoaded", function() {
         }
       
         otherDivs.forEach(div => {
+            /*
             // Example: Change background color based on query length
             if (query.length > 0) {
                 div.style.backgroundColor = "lightyellow"; // Highlight when searching
             } else {
                 div.style.backgroundColor = "blue"; // Reset when empty
             }
+            *
         });
     }
         

@@ -41,6 +41,12 @@
     z-index: 30;
 }
 
+.is--hidden{
+    display: none !important; /* Add importance to the class provided by MinimalMistakes*/
+}
+
+
+
 img{
     &.full{
         width: 100%;
