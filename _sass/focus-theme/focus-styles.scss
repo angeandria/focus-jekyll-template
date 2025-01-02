@@ -537,6 +537,13 @@ figcaption{
 * SEARCH
 * ------------
 */
+body.search-mode{
+    .initial-content{
+        flex-grow: 0;        
+    }
+}
+
+
 .search-content.is--visible #results{
     display: none;
 }

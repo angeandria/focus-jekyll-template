@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function() {
     const searchInput = document.getElementById("search");
     const postDisplay = document.querySelector(".all-posts");
-
+    
     searchInput.addEventListener("input", function() {
         const query = searchInput.value.trim(); // Get the current input value
         const items = document.querySelectorAll(".item");
@@ -55,10 +55,14 @@ document.addEventListener("DOMContentLoaded", function() {
         // Implement logic to act on other divs based on the query
         // For example, updating .post-display with relevant content
         const otherDivs = document.querySelectorAll('.all-posts .item');
-        
-        // $(".initial-content").removeClass("is--hidden");
+                
+        // Get the body element
+        const bodyElement = document.body;
         
         if (query.length > 0) {
+            // Add the "search-mode" class to the body
+            bodyElement.classList.addClass("search-mode");
+    
             $("#page__header").addClass("is--hidden");
             $("#main").addClass("is--hidden");
             $(".single-related").addClass("is--hidden");
@@ -67,6 +71,9 @@ document.addEventListener("DOMContentLoaded", function() {
             // Overwrite search's default results
             $(".search-content #results").removeClass("is--visible");
         }else {
+            // Add the "search-mode" class to the body
+            bodyElement.classList.removeClass("search-mode");
+        
             $("#page__header").removeClass("is--hidden");
             $("#main").removeClass("is--hidden");
             $(".single-related").removeClass("is--hidden");            

@@ -1,14 +1,3 @@
-<div class="all-posts">
-    {% assign types_list = "resource, page, post" | split: ", " %}
-
-{% for type in types_list %}
-    {% for category_key in site.data.taxonomies %}
-        {% assign category = category_key[0] %}        
-        {% include focus/post-display.html type=type topic=category format="compact" order="desc" container_class="" type_class="" type-item_class="box-shadow" %}            
-    {% endfor %}        
-{% endfor %}
-</div>
-
 Sign up for my weekly newsletter to receive 1 email per week on branding, audience building, marketing and more.
 
 1 email every week. Unsubscribe anytime.
