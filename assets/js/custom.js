@@ -1,10 +1,10 @@
 document.addEventListener("DOMContentLoaded", function() {
     const searchInput = document.getElementById("search");
-    const items = document.querySelector(".search-mode.all-posts .item");
     
     searchInput.addEventListener("input", function() {
         const query = searchInput.value.trim(); // Get the current input value
-        
+        const items = document.querySelector(".search-mode.all-posts .item");
+            
         items.forEach(item => {            
             // Safely get the text content from title, subtitle, and description
             const titleElement = item.querySelector(".post-display .item-title");
