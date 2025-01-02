@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
     const searchInput = document.getElementById("search");
-    const postDisplay = document.querySelector(".all-posts");
+    const postDisplay = document.querySelector(".search-mode.all-posts");
     
     searchInput.addEventListener("input", function() {
         const query = searchInput.value.trim(); // Get the current input value
@@ -26,13 +26,15 @@ document.addEventListener("DOMContentLoaded", function() {
 
             
             // Check if none of the content matches the query
-            const isVisible = (title.includes(query) ||
-                  subtitle.includes(query) ||
-                  description.includes(query) ||
-                  tags.includes(query) ||
-                  categories.includes(query) ||
-                  tagsInfo1.includes(query) ||
-                  tagsInfo2.includes(query));
+            const isVisible = (
+                      title.includes(query) ||
+                      subtitle.includes(query) ||
+                      description.includes(query) ||
+                      tags.includes(query) ||
+                      categories.includes(query) ||
+                      tagsInfo1.includes(query) ||
+                      tagsInfo2.includes(query)
+                  );
             
             // Check if any of the content matches the query 
             if (isVisible) {         
