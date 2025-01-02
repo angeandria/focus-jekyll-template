@@ -26,23 +26,19 @@ document.addEventListener("DOMContentLoaded", function() {
 
             
                     // Check if none of the content matches the query
-                const isHidden = !(title.includes(query) &&
-                  subtitle.includes(query) &&
-                  description.includes(query) &&
-                  tags.includes(query) &&
-                  categories.includes(query) &&
-                  tagsInfo1.includes(query) &&
+            const isVisible = (title.includes(query) ||
+                  subtitle.includes(query) ||
+                  description.includes(query) ||
+                  tags.includes(query) ||
+                  categories.includes(query) ||
+                  tagsInfo1.includes(query) ||
                   tagsInfo2.includes(query));
             
-  
             // Check if any of the content matches the query 
-            if (isHidden) {         
-                    item.classList.add("is--hidden");
-                    item.classList.remove("is--visible");
-
-            } else {
-                    item.classList.add("is--visible");
+            if (isVisible) {         
                     item.classList.remove("is--hidden");              
+            } else {
+                    item.classList.add("is--hidden");
             }
             /*
             if (!item.classList.contains("is--hidden")) {
