@@ -26,22 +26,29 @@ document.addEventListener("DOMContentLoaded", function() {
 
             
                     // Check if none of the content matches the query
-                const isHidden = (title.includes(query) ||
+                const isHidden = !(title.includes(query) ||
                   subtitle.includes(query) ||
                   description.includes(query) ||
                   tags.includes(query) ||
                   categories.includes(query) ||
                   tagsInfo1.includes(query) ||
                   tagsInfo2.includes(query));
-                  
+            
+  
             // Check if any of the content matches the query 
             if (isHidden) {         
-                        item.classList.add("is--visible");
-                        item.classList.remove("is--hidden");
+                    item.classList.add("is--hidden");
+                    item.classList.remove("is--visible");
+
             } else {
-                        item.classList.add("is--hidden");
-                        item.classList.remove("is--visible");
+                    item.classList.add("is--visible");
+                    item.classList.remove("is--hidden");              
             }
+            /*
+            if (!item.classList.contains("is--hidden")) {
+                item.classList.add("is--hidden");
+            }
+            */
         });
         
         // Optionally, you can also call another function to act on other divs
