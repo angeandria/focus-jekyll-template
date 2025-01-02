@@ -482,15 +482,6 @@ figcaption{
 
 
 
-/*
-* ------------
-* SEARCH
-* ------------
-*/
-.search-content.is--visible #results{
-    display: none;
-}
-
 
 
 /*
@@ -503,8 +494,11 @@ figcaption{
     overflow: hidden;          /* Hide overflow */
     position: relative;        /* Positioning context for absolute child */    
     
-    .search-content .search-input{
-
+    .search-content{
+        max-width: 250px;
+        .search-content__form{
+            padding: 10px 16px;
+        }
     }
 }
 
@@ -525,6 +519,14 @@ figcaption{
 }
 
 
+/*
+* ------------
+* SEARCH
+* ------------
+*/
+.search-content.is--visible #results{
+    display: none;
+}
 
 /*
 * ------------
