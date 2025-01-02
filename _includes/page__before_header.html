@@ -1,4 +1,7 @@
 {% assign taxonomy_display = site.taxonomy_display %}
+{% if layout.taxonomy_display != nil %}
+  {% assign taxonomy_display = layout.taxonomy_display %}
+{% endif %}
 {% if page.taxonomy_display != nil %}
   {% assign taxonomy_display = page.taxonomy_display %}
 {% endif %}
