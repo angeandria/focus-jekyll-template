@@ -26,12 +26,12 @@ document.addEventListener("DOMContentLoaded", function() {
 
             
                     // Check if none of the content matches the query
-                const isHidden = !(title.includes(query) ||
-                  subtitle.includes(query) ||
-                  description.includes(query) ||
-                  tags.includes(query) ||
-                  categories.includes(query) ||
-                  tagsInfo1.includes(query) ||
+                const isHidden = !(title.includes(query) &&
+                  subtitle.includes(query) &&
+                  description.includes(query) &&
+                  tags.includes(query) &&
+                  categories.includes(query) &&
+                  tagsInfo1.includes(query) &&
                   tagsInfo2.includes(query));
             
   
