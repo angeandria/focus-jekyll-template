@@ -2,10 +2,11 @@ document.addEventListener("DOMContentLoaded", function() {
     const searchInput = document.getElementById("search");
     
     /* Hide all Search results on loading */
-    const searchResults = document.querySelector(".search-mode.all-posts");
+    const searchResults = document.querySelectorAll(".search-mode.all-posts");
     searchResults.forEach(item => {            
         item.classList.add("is--hidden");              
-    }
+    )};
+    
     /*
     // Step 1: Get the "topic" URL parameter
     const urlParams = new URLSearchParams(window.location.search);
