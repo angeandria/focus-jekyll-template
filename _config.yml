@@ -203,7 +203,7 @@ defaults:
       #show_pagination: true      
       #show_taxonomy: true
       
-  # _taxonomies
+  # _taxonomies  /* Used when no post belong to the taxonomy */
   - scope:
       path: "_taxonomies"
       type: taxonomies
