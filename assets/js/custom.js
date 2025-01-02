@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
     const searchInput = document.getElementById("search");
+    console.log("add");
     
     // Step 1: Get the "topic" URL parameter
     const urlParams = new URLSearchParams(window.location.search);
