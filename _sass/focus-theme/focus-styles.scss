@@ -543,10 +543,10 @@ body.search-mode{
     }
     
     #page__header,
-    #main,
-    .single-related,
+    section.page__content,
+    footer.page__meta,
     #page__after_content{
-        /*display:none;*/
+        display:none;
     }
 }
 

@@ -68,13 +68,7 @@ document.addEventListener("DOMContentLoaded", function() {
             // Add the "search-mode" class to the body
             $("body").addClass("search-mode");
     
-            /*
-            $("#page__header").addClass("is--hidden");
-            $("#main").addClass("is--hidden");
-            $(".single-related").addClass("is--hidden");
-            $("#page__after_content").addClass("is--hidden");                        
-            */
-            
+                        
             // Overwrite search's default results
             $(".search-content #results").removeClass("is--visible");
         }else {
@@ -82,12 +76,6 @@ document.addEventListener("DOMContentLoaded", function() {
             // Remove the "search-mode" class to the body
             $("body").removeClass("search-mode");
             
-            /*
-            $("#page__header").removeClass("is--hidden");
-            $("#main").removeClass("is--hidden");
-            $(".single-related").removeClass("is--hidden");            
-            $("#page__after_content").removeClass("is--hidden");                        
-            */
         }
       
         otherDivs.forEach(div => {
