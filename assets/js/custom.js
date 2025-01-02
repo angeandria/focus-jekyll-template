@@ -66,7 +66,7 @@ document.addEventListener("DOMContentLoaded", function() {
         if (query.length > 0) {
             console.log("search mode IN");
             // Add the "search-mode" class to the body
-            bodyElement.classList.addClass("search-mode");
+            $("body").addClass("search-mode");
     
             $("#page__header").addClass("is--hidden");
             $("#main").addClass("is--hidden");
@@ -77,9 +77,9 @@ document.addEventListener("DOMContentLoaded", function() {
             $(".search-content #results").removeClass("is--visible");
         }else {
             console.log("search mode OUT");
-            // Add the "search-mode" class to the body
-            bodyElement.classList.removeClass("search-mode");
-        
+            // Remove the "search-mode" class to the body
+            $("body").removeClass("search-mode");
+            
             $("#page__header").removeClass("is--hidden");
             $("#main").removeClass("is--hidden");
             $(".single-related").removeClass("is--hidden");            
