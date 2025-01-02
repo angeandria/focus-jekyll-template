@@ -541,6 +541,13 @@ body.search-mode{
     .initial-content{
         flex-grow: 0;        
     }
+    
+    #page__header,
+    #main,
+    .single-related,
+    #page__after_content{
+        display:none;
+    }
 }
 
 
