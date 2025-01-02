@@ -114,7 +114,7 @@ if (conditionMet) {
     let basePath = window.location.pathname.split('/').slice(0, -1).join('/');
 
     // Construct the new URL for redirection with the dynamic base path
-    let newUrl = `${basePath}/topic?content=${encodeURIComponent(topicName)}`;
+    let newUrl = `${basePath}?topic=${encodeURIComponent(topicName)}`;
 
     // Display new URL for redirect
     document.getElementById('debug-new-url').textContent = newUrl;
