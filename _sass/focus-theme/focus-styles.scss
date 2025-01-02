@@ -549,6 +549,11 @@ body.search-mode{
         display:none;
     }
 }
+body:not(.search-mode){
+    .search-mode.all-posts{
+        display: none;
+    }
+}
 
 body.layout--focus-topics{
 

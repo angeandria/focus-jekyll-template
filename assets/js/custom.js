@@ -50,18 +50,10 @@ document.addEventListener("DOMContentLoaded", function() {
                 tagsInfo2.includes(query)
             );
             
-            /* Hide all Search results on loading */
-            const searchResults = document.querySelectorAll(".search-mode.all-posts");
             if (isVisible) {         
                 item.classList.remove("is--hidden");              
-                searchResults.forEach(item => {            
-                    item.classList.remove("is--hidden");              
-                });
             } else {
-                item.classList.add("is--hidden");
-                searchResults.forEach(item => {            
-                    item.classList.add("is--hidden");              
-                });                
+                item.classList.add("is--hidden");                
             }
         });
         
@@ -78,6 +70,9 @@ document.addEventListener("DOMContentLoaded", function() {
         // Get the body element
         const bodyElement = document.body;
         
+        /* Hide all Search results on loading */
+        const searchResults = document.querySelectorAll(".search-mode.all-posts");
+                
         if (query.length > 0) {
             /* Search Mode ON */
             $("body").addClass("search-mode");
