@@ -496,6 +496,10 @@ figcaption{
     
     .search-content{
         max-width: 250px;
+        padding: 0;
+        .search-content__inner-wrap{
+            padding-inline: 0;
+        }
         .search-content__form{
             padding: 10px 16px;
         }
