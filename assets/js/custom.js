@@ -61,10 +61,16 @@ document.addEventListener("DOMContentLoaded", function() {
         if (query.length > 0) {
             $("#page__header").addClass("is--hidden");
             $("#main").addClass("is--hidden");
+            $(".single-related").addClass("is--hidden");
+            $("#page__after_content").addClass("is--hidden");                        
+            
+            // Overwrite search's default results
             $(".search-content #results").removeClass("is--visible");
         }else {
             $("#page__header").removeClass("is--hidden");
             $("#main").removeClass("is--hidden");
+            $(".single-related").removeClass("is--hidden");            
+            $("#page__after_content").removeClass("is--hidden");                        
         }
       
         otherDivs.forEach(div => {
