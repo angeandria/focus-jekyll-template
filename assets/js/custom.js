@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function() {
     // Step 1: Get the "topic" URL parameter
     const urlParams = new URLSearchParams(window.location.search);
     const topic = urlParams.get('topic');
-
+    
     // Step 2: Pre-fill the search input if the topic exists
     if (topic) {
         searchInput.value = topic; // Set the input field with the topic value
@@ -44,10 +44,10 @@ document.addEventListener("DOMContentLoaded", function() {
             );
             
             if (isVisible) {         
-                console.log(title + "is visible");
+                console.log(title + " is visible");
                 item.classList.remove("is--hidden");              
             } else {
-                console.log (title + "is hidden");
+                console.log (title + " is hidden");
                 item.classList.add("is--hidden");                
             }
         });
@@ -63,10 +63,7 @@ document.addEventListener("DOMContentLoaded", function() {
         const otherDivs = document.querySelectorAll('.search-mode.all-posts .item');
                 
         // Get the body element
-        const bodyElement = document.body;
-        
-        /* Hide all Search results on loading */
-        const searchResults = document.querySelectorAll(".search-mode.all-posts");
+        const bodyElement = document.body;        
                 
         if (query.length > 0) {
             /* Search Mode ON */
