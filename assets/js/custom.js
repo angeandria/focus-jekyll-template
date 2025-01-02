@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function() {
         
     searchInput.addEventListener("input", function() {
         const query = searchInput.value.trim(); // Get the current input value
-        
+        console.log("hey");
         const searchItems = document.querySelectorAll(".search-mode.all-posts .item");            
         searchItems.forEach(item => {            
             // Safely get the text content from title, subtitle, and description
