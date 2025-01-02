@@ -44,8 +44,10 @@ document.addEventListener("DOMContentLoaded", function() {
             );
             
             if (isVisible) {         
+                console.log(title + "is visible");
                 item.classList.remove("is--hidden");              
             } else {
+                console.log (title + "is hidden");
                 item.classList.add("is--hidden");                
             }
         });
