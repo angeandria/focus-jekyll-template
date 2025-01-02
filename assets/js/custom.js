@@ -52,14 +52,18 @@ document.addEventListener("DOMContentLoaded", function() {
     });
     
     function updateOtherDivs(query) {
+        
+        console.log("Update other divs?");
+        
         // Implement logic to act on other divs based on the query
         // For example, updating .post-display with relevant content
-        const otherDivs = document.querySelectorAll('.all-posts .item');
+        const otherDivs = document.querySelectorAll('.search-mode.all-posts .item');
                 
         // Get the body element
         const bodyElement = document.body;
         
         if (query.length > 0) {
+            console.log("search mode IN");
             // Add the "search-mode" class to the body
             bodyElement.classList.addClass("search-mode");
     
@@ -71,6 +75,7 @@ document.addEventListener("DOMContentLoaded", function() {
             // Overwrite search's default results
             $(".search-content #results").removeClass("is--visible");
         }else {
+            console.log("search mode OUT");
             // Add the "search-mode" class to the body
             bodyElement.classList.removeClass("search-mode");
         
