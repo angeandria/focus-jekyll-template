@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function() {
             const tagsInfo2 = tagsInfo2Element ? tagsInfo2Element.textContent.toLowerCase() : '';   
 
             
-                    // Check if none of the content matches the query
+            // Check if none of the content matches the query
             const isVisible = (title.includes(query) ||
                   subtitle.includes(query) ||
                   description.includes(query) ||
@@ -61,6 +61,7 @@ document.addEventListener("DOMContentLoaded", function() {
         if (query.length > 0) {
             $("#page__header").addClass("is--hidden");
             $("#main").addClass("is--hidden");
+            $(".search-content #results").removeClass("is--visible");
         }else {
             $("#page__header").removeClass("is--hidden");
             $("#main").removeClass("is--hidden");
