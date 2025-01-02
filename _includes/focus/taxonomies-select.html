@@ -3,9 +3,6 @@
 
 {% if taxonomies %}
     <div class="taxonomies-select {{ classes}}">
-        <div class="scrollable-container">
-            <div class="scrollable">
-                
                 <ul>    
                     <li class="item"><a href="{{ '/topics' | relative_url }}">All</a></li>
                     {% for cat in taxonomies %}   
@@ -24,9 +21,7 @@
                             </li>
                         {% endif %}   
                     {% endfor %}      
-                </ul>            
-            </div>
-        </div>
+                </ul>                            
     </div>
 {% endif %}
 

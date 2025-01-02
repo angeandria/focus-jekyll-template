@@ -7,10 +7,13 @@
 {% endif %}
 
 
-<div class="search-content is--visible">
+<div class="scrollable-container">
+    <div class="scrollable">
+        <div class="search-content is--visible">
             {% include_cached search/search_form.html %}
-          </div>
-          
-{% if taxonomy_display %}
-    {% include focus/taxonomies-select.html classes = "buttons"%}
-{% endif %}
+        </div>          
+        {% if taxonomy_display %}
+            {% include focus/taxonomies-select.html classes = "buttons"%}
+        {% endif %}
+    </div>
+</div>
