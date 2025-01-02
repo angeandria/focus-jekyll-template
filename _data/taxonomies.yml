@@ -89,17 +89,3 @@ black friday:
     cta_url: "https://angeandria.com"
     
     
-# --------------    
-# FEATURED
-# --------------    
-featured:
-    type: tag 
-    id: 9-1    
-    title: "Featured deals"
-    # subtitle:    
-    featured_image: https://images.unsplash.com/photo-1733218875809-78c2d54e5195    
-    description: "from data.taxonomies.yml - Featured deals"	
-    cta_title: "Get this"
-    cta_url: "https://angeandria.com"    
-
-    
