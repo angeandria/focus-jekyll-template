@@ -2,15 +2,14 @@ document.addEventListener("DOMContentLoaded", function() {
     const searchInput = document.getElementById("search");
     /* Hide all Search results on loading */
     const searchResults = document.querySelector(".search-mode.all-posts");
-    searchItems.forEach(item => {            
+    searchResults.forEach(item => {            
         item.classList.add("is--hidden");              
     }
         
     searchInput.addEventListener("input", function() {
         const query = searchInput.value.trim(); // Get the current input value
         
-        
-        
+                
         const searchItems = document.querySelectorAll(".search-mode.all-posts .item");            
         searchItems.forEach(item => {            
             // Safely get the text content from title, subtitle, and description
@@ -74,6 +73,12 @@ document.addEventListener("DOMContentLoaded", function() {
                             
             // Overwrite search's default results
             $(".search-content #results").removeClass("is--visible");
+            
+            const searchResults = document.querySelector(".search-mode.all-posts");
+            searchResults.forEach(item => {            
+                item.classList.remove("is--hidden");              
+            }
+            
         }else {           
             /* Search Mode OFF */
             $("body").removeClass("search-mode");            
