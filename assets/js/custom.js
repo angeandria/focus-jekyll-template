@@ -5,9 +5,9 @@ document.addEventListener("DOMContentLoaded", function() {
     const searchResults = document.querySelectorAll(".search-mode.all-posts");
     searchResults.forEach(item => {            
         item.classList.add("is--hidden");              
-    }); // Corrected closing brace and parentheses
+    });
     
-    /*
+    
     // Step 1: Get the "topic" URL parameter
     const urlParams = new URLSearchParams(window.location.search);
     const topic = urlParams.get('topic');
@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function() {
     // Step 2: Pre-fill the search input if the topic exists
     if (topic) {
         searchInput.value = topic; // Set the input field with the topic value
-    }*/
+    }
         
     searchInput.addEventListener("input", function() {
         const query = searchInput.value.trim(); // Get the current input value
@@ -50,10 +50,18 @@ document.addEventListener("DOMContentLoaded", function() {
                 tagsInfo2.includes(query)
             );
             
+            /* Hide all Search results on loading */
+            const searchResults = document.querySelectorAll(".search-mode.all-posts");
             if (isVisible) {         
                 item.classList.remove("is--hidden");              
+                searchResults.forEach(item => {            
+                    item.classList.remove("is--hidden");              
+                });
             } else {
                 item.classList.add("is--hidden");
+                searchResults.forEach(item => {            
+                    item.classList.add("is--hidden");              
+                });                
             }
         });
         
