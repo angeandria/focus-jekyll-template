@@ -3,9 +3,9 @@ document.addEventListener("DOMContentLoaded", function() {
     
     searchInput.addEventListener("input", function() {
         const query = searchInput.value.trim(); // Get the current input value
-        const items = document.querySelectorAll(".search-mode.all-posts .item");
-            
-        items.forEach(item => {            
+                
+        const searchItems = document.querySelectorAll(".search-mode.all-posts .item");            
+        searchItems.forEach(item => {            
             // Safely get the text content from title, subtitle, and description
             const titleElement = item.querySelector(".post-display .item-title");
             const subtitleElement = item.querySelector(".post-display .item-subtitle");
@@ -49,13 +49,11 @@ document.addEventListener("DOMContentLoaded", function() {
         });
         
         // Optionally, you can also call another function to act on other divs
-        updateOtherDivs(query);
+        displaySearchResults(query);
     });
     
-    function updateOtherDivs(query) {
-        
-        console.log("Update other divs?");
-        
+    function displaySearchResults(query) {
+                
         // Implement logic to act on other divs based on the query
         // For example, updating .post-display with relevant content
         const otherDivs = document.querySelectorAll('.search-mode.all-posts .item');
@@ -64,20 +62,17 @@ document.addEventListener("DOMContentLoaded", function() {
         const bodyElement = document.body;
         
         if (query.length > 0) {
-            console.log("search mode IN");
-            // Add the "search-mode" class to the body
+            /* Search Mode ON */
             $("body").addClass("search-mode");
-    
-                        
+                            
             // Overwrite search's default results
             $(".search-content #results").removeClass("is--visible");
-        }else {
-            console.log("search mode OUT");
-            // Remove the "search-mode" class to the body
-            $("body").removeClass("search-mode");
-            
+        }else {           
+            /* Search Mode OFF */
+            $("body").removeClass("search-mode");            
         }
-      
+        
+        /*
         otherDivs.forEach(div => {
             // Example: Change background color based on query length
             if (query.length > 0) {
@@ -86,6 +81,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 div.style.backgroundColor = "blue"; // Reset when empty
             }
         });
+        */
     }
         
 });
