@@ -1,11 +1,12 @@
 document.addEventListener("DOMContentLoaded", function() {
     const searchInput = document.getElementById("search");
+    
     /* Hide all Search results on loading */
     const searchResults = document.querySelector(".search-mode.all-posts");
     searchResults.forEach(item => {            
         item.classList.add("is--hidden");              
     }
-    
+    /*
     // Step 1: Get the "topic" URL parameter
     const urlParams = new URLSearchParams(window.location.search);
     const topic = urlParams.get('topic');
@@ -13,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function() {
     // Step 2: Pre-fill the search input if the topic exists
     if (topic) {
         searchInput.value = topic; // Set the input field with the topic value
-    }
+    }*/
         
     searchInput.addEventListener("input", function() {
         const query = searchInput.value.trim(); // Get the current input value
