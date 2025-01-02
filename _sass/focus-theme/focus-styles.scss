@@ -483,18 +483,108 @@ figcaption{
 
 
 /*
-* 
-* Search
-* ----
+* ------------
+* SEARCH
+* ------------
 */
 .search-content.is--visible #results{
     display: none;
 }
 
+
+
 /*
-* 
-* Resources Navigation
-* ----
+* ------------
+* SCROLLABLE CONTAINER - Search & Taxonomies
+* ------------
+*/
+.scrollable-container {
+    height: auto;              /* Optional height */
+    overflow: hidden;          /* Hide overflow */
+    position: relative;        /* Positioning context for absolute child */    
+    
+    .search-content .search-input{
+
+    }
+}
+
+.scrollable {
+    display: flex;
+    align-items: center;        
+    height: 100%;              /* Fill the height of the container */
+    overflow-x: auto;          /* Enable horizontal scrolling */
+    white-space: nowrap;       /* Prevent line breaks */
+    scrollbar-width: none;      /* Hide scrollbar in Firefox */
+    -ms-overflow-style: none;   /* Hide scrollbar in IE and Edge */    
+}
+
+
+/* Hide scrollbars for WebKit browsers (Chrome, Safari) */
+.scrollable::-webkit-scrollbar {
+    display: none;              /* Hide scrollbar */
+}
+
+
+
+/*
+* ------------
+* TAXONOMIES
+* ------------
+*/
+.taxonomies-select {
+    display: flex;    
+    justify-content: center;
+    
+        
+    ul{
+        display: flex;
+        list-style: none;
+        margin: 0;
+        padding: 0;        
+    }  
+    li.item{
+        display: inline;
+    }
+    .item a{
+        padding: 6px 14px;
+        margin: 0 4px;        
+        color: #6F6F6F;
+        display: inline-block;
+        text-decoration: none;        
+    }
+   .item.current a{
+        border-bottom: 3px solid gold;
+        color: #000;
+    }
+    
+    
+    &.buttons {     
+        .scrollable{
+            padding: 20px 24px;
+        }
+    
+        .item a{            
+            border: 1px solid #EFEFEF;
+            background-color: #FFF;            
+            border-radius: 8px;
+        }
+        .item.current a{
+            background-color: #000;
+            color: #FFF;
+            border: none;
+        }
+        .item:first-child a{
+            background-color: #d6d6d6;
+        }
+    }
+    
+}
+
+
+/*
+* ------------
+* RESOURCES NAVIGATION
+* ------------
 */
 #resource__header{
   margin-bottom: 10px;  
@@ -503,11 +593,6 @@ figcaption{
   } 
 }
 
-/*
-* 
-* Resources Navigation
-* ----
-*/
 
 .resource-navi{
 
@@ -1166,7 +1251,8 @@ html,
 table,
 .post-display .item-description,
 .item-meta,
-.resource-navi li a{
+.resource-navi li a,
+.scrollable-container .search-content .search-input{
     font-size: var(--font-size-s);
 }
 
@@ -1224,80 +1310,6 @@ nav.toc .nav__title{
 
 
 
-/*
-* --------------------------------------
-* TAXONOMIES
-* --------------------------------------
-*/
-.taxonomies-select {
-    display: flex;    
-    justify-content: center;
-    
-        
-    ul{
-        display: flex;
-        list-style: none;
-        margin: 0;
-        padding: 0;        
-    }  
-    li.item{
-        display: inline;
-    }
-    .item a{
-        padding: 6px 14px;
-        margin: 0 4px;        
-        color: #6F6F6F;
-        display: inline-block;
-        text-decoration: none;        
-    }
-   .item.current a{
-        border-bottom: 3px solid gold;
-        color: #000;
-    }
-    
-    
-    &.buttons {     
-        .scrollable{
-            padding: 20px 24px;
-        }
-    
-        .item a{            
-            border: 1px solid #EFEFEF;
-            background-color: #FFF;            
-            border-radius: 8px;
-        }
-        .item.current a{
-            background-color: #000;
-            color: #FFF;
-            border: none;
-        }
-        .item:first-child a{
-            background-color: #d6d6d6;
-        }
-    }
-    
-}
 
 
-
-
-.scrollable-container {
-    height: auto;              /* Optional height */
-    overflow: hidden;          /* Hide overflow */
-    position: relative;        /* Positioning context for absolute child */    
-}
-
-.scrollable {
-    height: 100%;              /* Fill the height of the container */
-    overflow-x: auto;          /* Enable horizontal scrolling */
-    white-space: nowrap;       /* Prevent line breaks */
-    scrollbar-width: none;      /* Hide scrollbar in Firefox */
-    -ms-overflow-style: none;   /* Hide scrollbar in IE and Edge */    
-}
-
-
-/* Hide scrollbars for WebKit browsers (Chrome, Safari) */
-.scrollable::-webkit-scrollbar {
-    display: none;              /* Hide scrollbar */
-}
 
