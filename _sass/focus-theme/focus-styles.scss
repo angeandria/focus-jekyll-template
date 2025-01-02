@@ -482,7 +482,14 @@ figcaption{
 
 
 
-
+/*
+* ------------
+* SECTION - Page Before Header
+* ------------
+*/
+.section--page__before_header{
+    padding: 30px 0;   
+}
 
 /*
 * ------------
@@ -492,7 +499,9 @@ figcaption{
 .scrollable-container {
     height: auto;              /* Optional height */
     overflow: hidden;          /* Hide overflow */
-    position: relative;        /* Positioning context for absolute child */    
+    position: relative;        /* Positioning context for absolute child */   
+    display: flex; 
+    justify-content: center;
     
     .search-content{
         max-width: 250px;
