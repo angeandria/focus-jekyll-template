@@ -1,4 +1,4 @@
-$(document).ready(function() {
+document.addEventListener('DOMContentLoaded', function() {
     const searchInput = $("#search");
 
     // Step 1: Get the "topic" URL parameter
