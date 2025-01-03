@@ -50,10 +50,10 @@ document.addEventListener('DOMContentLoaded', function() {
             );
             
             if (isVisible) {         
-                console.log(titleElement + " is visible");
+                console.log(title + " is visible");
                 item.removeClass("is--hidden");              
             } else {
-                console.log(titleElement + " is hidden");
+                console.log(title + " is hidden");
                 item.addClass("is--hidden");                
             }
         });
