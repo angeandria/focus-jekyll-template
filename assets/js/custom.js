@@ -52,12 +52,10 @@ document.addEventListener('DOMContentLoaded', function() {
             
             if (isVisible) {         
                 console.log(title + " is VISIBLE");
-                //item.removeClass("is--hidden");              
-                item.classList.remove("is--hidden")
+                item.removeClass("is--hidden");              
             } else {
                 console.log(title + " is hidden");
-                //item.addClass("is--hidden");              
-                item.classList.add("is--hidden")  
+                item.addClass("is--hidden");                                              
             }
         });
         
