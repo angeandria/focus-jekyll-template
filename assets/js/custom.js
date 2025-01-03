@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', function() {
             );
             
             if (isVisible) {         
-                console.log(title + " is visible");
+                console.log(title + " is VISIBLE");
                 item.removeClass("is--hidden");              
             } else {
                 console.log(title + " is hidden");
