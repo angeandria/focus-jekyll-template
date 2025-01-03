@@ -1,4 +1,4 @@
-$(document).ready(function() { // jQuery equivalent of DOMContentLoaded
+document.addEventListener('DOMContentLoaded', function() {
     const searchInput = $("#search"); // Get the input field using jQuery
     
     // Step 1: Get the "topic" URL parameter
