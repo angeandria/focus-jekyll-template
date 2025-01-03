@@ -53,11 +53,11 @@ document.addEventListener('DOMContentLoaded', function() {
             if (isVisible) {         
                 console.log(title + " is VISIBLE");
                 //item.removeClass("is--hidden");              
-                item[0].classList.remove("is--hidden")
+                item.classList.remove("is--hidden")
             } else {
                 console.log(title + " is hidden");
                 //item.addClass("is--hidden");              
-                item[0].classList.add("is--hidden")  
+                item.classList.add("is--hidden")  
             }
         });
         
