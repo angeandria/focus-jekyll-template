@@ -1,34 +1,35 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const searchInput = $("#search"); // Get the input field using jQuery
-    
+$(document).ready(function() {
+    const searchInput = $("#search");
+
     // Step 1: Get the "topic" URL parameter
     const urlParams = new URLSearchParams(window.location.search);
     const topic = urlParams.get('topic');
-    
+
     // Step 2: Pre-fill the search input if the topic exists
     if (topic) {
-        searchInput.val(topic); // Set the input field with the topic value using jQuery
+        searchInput.val(topic); // Set the input field with the topic value
     }
         
     // Hide all Search results on loading
-    //$(".search-mode.all-posts .item").addClass("is--hidden"); // Add hidden class to all items
+    $(".search-mode.all-posts .item").addClass("is--hidden");
 
-    searchInput.on("input", function() { // jQuery event listener for input
+    searchInput.on("input", function() {
         const query = searchInput.val().trim().toLowerCase(); // Get the current input value
         
         const searchItems = $(".search-mode.all-posts .item"); // Select all items using jQuery            
+        
         searchItems.each(function() { 
-            const item = $(this); // Convert current item to jQuery object
+            const item = $(this);
 
             // Safely get the text content from title, subtitle, and description            
-            const titleElement = item.find(".post-display .item-title");
-            const subtitleElement = item.find(".post-display .item-subtitle");
-            const descriptionElement = item.find(".post-display .item-description");
-            const tagsElement = item.find(".post-display .tags .page__taxonomy");
-            const categoriesElement = item.find(".post-display .categories .page__taxonomy");
-            const tagsInfo1Element = item.find(".post-display .tags-info-1");
-            const tagsInfo2Element = item.find(".post-display .tags-info-2");
-            
+            const titleElement = item.find(".item-title");
+            const subtitleElement = item.find(".item-subtitle");
+            const descriptionElement = item.find(".item-description");
+            const tagsElement = item.find(".tags .page__taxonomy");
+            const categoriesElement = item.find(".categories .page__taxonomy");
+            const tagsInfo1Element = item.find(".tags-info-1");    
+            const tagsInfo2Element = item.find(".tags-info-2");
+
             // Safely get the text content from each element
             const title = titleElement.length ? titleElement.text().toLowerCase() : '';
             const subtitle = subtitleElement.length ? subtitleElement.text().toLowerCase() : '';
@@ -58,7 +59,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
         
-        // Call another function to act on other divs
+        // Optionally, you can also call another function to act on other divs
         displaySearchResults(query);
     });
     
@@ -69,7 +70,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const otherDivs = $('.search-mode.all-posts .item');
                 
         // Get the body element
-        const bodyElement = $("body");        
+        const bodyElement = $("body");
                 
         if (query.length > 0) {
             /* Search Mode ON */
