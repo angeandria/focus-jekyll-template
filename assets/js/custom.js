@@ -1,6 +1,5 @@
-document.addEventListener("DOMContentLoaded", function() {
-    const searchInput = document.getElementById("search");
-    console.log("add");
+$(document).ready(function() { // jQuery equivalent of DOMContentLoaded
+    const searchInput = $("#search"); // Get the input field using jQuery
     
     // Step 1: Get the "topic" URL parameter
     const urlParams = new URLSearchParams(window.location.search);
@@ -8,30 +7,36 @@ document.addEventListener("DOMContentLoaded", function() {
     
     // Step 2: Pre-fill the search input if the topic exists
     if (topic) {
-        searchInput.value = topic; // Set the input field with the topic value
+        searchInput.val(topic); // Set the input field with the topic value using jQuery
     }
         
-    searchInput.addEventListener("input", function() {
-        const query = searchInput.value.trim(); // Get the current input value
-        console.log("hey");
-        const searchItems = document.querySelectorAll(".search-mode.all-posts .item");            
-        searchItems.forEach(item => {            
-            // Safely get the text content from title, subtitle, and description
-            const titleElement = item.querySelector(".post-display .item-title");
-            const subtitleElement = item.querySelector(".post-display .item-subtitle");
-            const descriptionElement = item.querySelector(".post-display .item-description");
-            const tagsElement = item.querySelector(".post-display .tags .page__taxonomy");
-            const categoriesElement = item.querySelector(".post-display .categories .page__taxonomy");
-            const tagsInfo1Element = item.querySelector(".post-display .tags-info-1");    
-            const tagsInfo2Element = item.querySelector(".post-display .tags-info-2");       
-       
-            const title = titleElement ? titleElement.textContent.toLowerCase() : '';
-            const subtitle = subtitleElement ? subtitleElement.textContent.toLowerCase() : '';
-            const description = descriptionElement ? descriptionElement.textContent.toLowerCase() : '';     
-            const tags = tagsElement ? tagsElement.textContent.toLowerCase() : ''; // Fixed typo
-            const categories = categoriesElement ? categoriesElement.textContent.toLowerCase() : '';     
-            const tagsInfo1 = tagsInfo1Element ? tagsInfo1Element.textContent.toLowerCase() : '';
-            const tagsInfo2 = tagsInfo2Element ? tagsInfo2Element.textContent.toLowerCase() : '';   
+    // Hide all Search results on loading
+    $(".search-mode.all-posts .item").addClass("is--hidden"); // Add hidden class to all items
+
+    searchInput.on("input", function() { // jQuery event listener for input
+        const query = searchInput.val().trim().toLowerCase(); // Get the current input value
+        
+        const searchItems = $(".search-mode.all-posts .item"); // Select all items using jQuery            
+        searchItems.each(function() { 
+            const item = $(this); // Convert current item to jQuery object
+
+            // Safely get the text content from title, subtitle, and description            
+            const titleElement = item.find(".post-display .item-title");
+            const subtitleElement = item.find(".post-display .item-subtitle");
+            const descriptionElement = item.find(".post-display .item-description");
+            const tagsElement = item.find(".post-display .tags .page__taxonomy");
+            const categoriesElement = item.find(".post-display .categories .page__taxonomy");
+            const tagsInfo1Element = item.find(".post-display .tags-info-1");
+            const tagsInfo2Element = item.find(".post-display .tags-info-2");
+            
+            // Safely get the text content from each element
+            const title = titleElement.length ? titleElement.text().toLowerCase() : '';
+            const subtitle = subtitleElement.length ? subtitleElement.text().toLowerCase() : '';
+            const description = descriptionElement.length ? descriptionElement.text().toLowerCase() : '';
+            const tags = tagsElement.length ? tagsElement.text().toLowerCase() : '';
+            const categories = categoriesElement.length ? categoriesElement.text().toLowerCase() : '';
+            const tagsInfo1 = tagsInfo1Element.length ? tagsInfo1Element.text().toLowerCase() : '';
+            const tagsInfo2 = tagsInfo2Element.length ? tagsInfo2Element.text().toLowerCase() : '';
 
             // Check if any of the content matches the query 
             const isVisible = (
@@ -46,14 +51,14 @@ document.addEventListener("DOMContentLoaded", function() {
             
             if (isVisible) {         
                 console.log(title + " is visible");
-                item.classList.remove("is--hidden");              
+                item.removeClass("is--hidden");              
             } else {
-                console.log (title + " is hidden");
-                item.classList.add("is--hidden");                
+                console.log(title + " is hidden");
+                item.addClass("is--hidden");                
             }
         });
         
-        // Optionally, you can also call another function to act on other divs
+        // Call another function to act on other divs
         displaySearchResults(query);
     });
     
@@ -61,35 +66,24 @@ document.addEventListener("DOMContentLoaded", function() {
         console.log("Update other divs?");
         
         // Implement logic to act on other divs based on the query
-        const otherDivs = document.querySelectorAll('.search-mode.all-posts .item');
+        const otherDivs = $('.search-mode.all-posts .item');
                 
         // Get the body element
-        const bodyElement = document.body;        
+        const bodyElement = $("body");        
                 
         if (query.length > 0) {
             /* Search Mode ON */
-            $("body").addClass("search-mode");
+            bodyElement.addClass("search-mode");
                             
             $(".search-content #results").removeClass("is--visible");
             
-            otherDivs.forEach(item => {            
-                item.classList.remove("is--hidden");              
-            }); // Corrected closing brace for forEach
+            otherDivs.each(function() {
+                $(this).removeClass("is--hidden");              
+            }); 
             
         } else {           
             /* Search Mode OFF */
-            $("body").removeClass("search-mode");            
+            bodyElement.removeClass("search-mode");            
         }
-        
-        /*
-        otherDivs.forEach(div => {
-            // Example: Change background color based on query length
-            if (query.length > 0) {
-                div.style.backgroundColor = "lightyellow"; // Highlight when searching
-            } else {
-                div.style.backgroundColor = "blue"; // Reset when empty
-            }
-        });
-        */
     }
 });
