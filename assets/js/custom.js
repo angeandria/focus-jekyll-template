@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
         
     // Hide all Search results on loading
-    $(".search-mode.all-posts .item").addClass("is--hidden"); // Add hidden class to all items
+    //$(".search-mode.all-posts .item").addClass("is--hidden"); // Add hidden class to all items
 
     searchInput.on("input", function() { // jQuery event listener for input
         const query = searchInput.val().trim().toLowerCase(); // Get the current input value
