@@ -54,23 +54,26 @@ document.addEventListener('DOMContentLoaded', function() {
             if (isVisible) {         
                 console.log(title + subtitle + description + " is VISIBLE");
                 
-                // Replace all <span class="highlight">...</span> with their text content
-                /*
+                // Make visible
+                item.removeClass("is--hidden");              
+                                
+                // Replace all <span class="highlight">...</span> with their text content                
                 titleElement.html(titleElement.html().replace(/<span class="highlight">(.*?)<\/span>/gi, '$1'));
                 // Highlight matching text
                 titleElement.html(highlightText(titleElement.html(), query));
-                */
+
+                subtitleElement.html(subtitleElement.html().replace(/<span class="highlight">(.*?)<\/span>/gi, '$1'));
+                subtitleElement.html(highlightText(subtitleElement.html(), query));
                 
-                /*subtitleElement.html(highlightText(subtitleElement.html(), query));
+                descriptionElement.html(descriptionElement.html().replace(/<span class="highlight">(.*?)<\/span>/gi, '$1'));
                 descriptionElement.html(highlightText(descriptionElement.html(), query));
+                
+                tagsElement.html(tagsElement.html().replace(/<span class="highlight">(.*?)<\/span>/gi, '$1'));
                 tagsElement.html(highlightText(tagsElement.html(), query));
-                categoriesElement.html(highlightText(categoriesElement.html(), query));*/
                 
-                item.html(item.html().replace(/<span class="highlight">(.*?)<\/span>/gi, '$1'));
-                // Highlight matching text
-                item.html(highlightText(item.html(), query));
-                
-                item.removeClass("is--hidden");              
+                categoriesElement.html(categoriesElement.html().replace(/<span class="highlight">(.*?)<\/span>/gi, '$1'));
+categoriesElement.html(highlightText(categoriesElement.html(), query));
+
             } else {
                 console.log(title + " is hidden");
                 item.addClass("is--hidden");                                              
