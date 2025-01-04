@@ -54,12 +54,12 @@ document.addEventListener('DOMContentLoaded', function() {
                 console.log(title + subtitle + description + " is VISIBLE");
                 
                 // Highlight matching text
-                titleElement.html(highlightText(titleElement.text(), query));
+                /*titleElement.html(highlightText(titleElement.text(), query));
                 subtitleElement.html(highlightText(subtitleElement.text(), query));
                 descriptionElement.html(highlightText(descriptionElement.text(), query));
                 tagsElement.html(highlightText(tagsElement.text(), query));
                 categoriesElement.html(highlightText(categoriesElement.text(), query));
-
+                */
                 item.removeClass("is--hidden");              
             } else {
                 console.log(title + subtitle + description + " is hidden");
