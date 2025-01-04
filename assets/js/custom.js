@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 titleElement.html(titleElement.html().replace(/<span class="highlight">(.*?)<\/span>/gi, '$1'));
                 // Highlight matching text
                 titleElement.html(highlightText(titleElement.html(), query));
-
+                
                 subtitleElement.html(subtitleElement.html().replace(/<span class="highlight">(.*?)<\/span>/gi, '$1'));
                 subtitleElement.html(highlightText(subtitleElement.html(), query));
                 
@@ -72,7 +72,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 tagsElement.html(highlightText(tagsElement.html(), query));
                 
                 categoriesElement.html(categoriesElement.html().replace(/<span class="highlight">(.*?)<\/span>/gi, '$1'));
-categoriesElement.html(highlightText(categoriesElement.html(), query));
+                categoriesElement.html(highlightText(categoriesElement.html(), query));
+                
 
             } else {
                 console.log(title + " is hidden");
