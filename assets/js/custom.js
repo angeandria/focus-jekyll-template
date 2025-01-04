@@ -56,10 +56,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 
                 // Highlight matching text
                 titleElement.html(highlightText(titleElement.html(), query));
-                subtitleElement.html(highlightText(subtitleElement.html(), query));
+                /*subtitleElement.html(highlightText(subtitleElement.html(), query));
                 descriptionElement.html(highlightText(descriptionElement.html(), query));
                 tagsElement.html(highlightText(tagsElement.html(), query));
-                categoriesElement.html(highlightText(categoriesElement.html(), query));
+                categoriesElement.html(highlightText(categoriesElement.html(), query));*/
                 
                 item.removeClass("is--hidden");              
             } else {
