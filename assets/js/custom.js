@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 
                 item.removeClass("is--hidden");              
             } else {
-                console.log(title + subtitle + description + " is hidden");
+                console.log(title + " is hidden");
                 item.addClass("is--hidden");                                              
             }
         });
