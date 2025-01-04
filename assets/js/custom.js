@@ -54,11 +54,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 console.log(title + subtitle + description + " is VISIBLE");
                 
                 // Highlight matching text
-                titleElement.html(highlightText(titleElement.text(), query));
-                subtitleElement.html(highlightText(subtitleElement.text(), query));
-                descriptionElement.html(highlightText(descriptionElement.text(), query));
-                tagsElement.html(highlightText(tagsElement.text(), query));
-                categoriesElement.html(highlightText(categoriesElement.text(), query));
+                titleElement.html(highlightText(titleElement.html(), query));
+                subtitleElement.html(highlightText(subtitleElement.html(), query));
+                descriptionElement.html(highlightText(descriptionElement.html(), query));
+                tagsElement.html(highlightText(tagsElement.html(), query));
+                categoriesElement.html(highlightText(categoriesElement.html(), query));
                 
                 item.removeClass("is--hidden");              
             } else {
