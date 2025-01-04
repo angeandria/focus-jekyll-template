@@ -78,9 +78,11 @@ document.addEventListener('DOMContentLoaded', function() {
                             
             $(".search-content #results").removeClass("is--visible");
             
+            /*
             otherDivs.each(function() {
                 $(this).removeClass("is--hidden");              
-            }); 
+            });
+           */ 
             
         } else {           
             /* Search Mode OFF */
