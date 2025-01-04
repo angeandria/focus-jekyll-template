@@ -56,12 +56,32 @@ document.addEventListener('DOMContentLoaded', function() {
                 
                 // Make visible
                 item.removeClass("is--hidden");              
-                                
+                               
+                const elementsToHighlight = [
+                    { element: titleElement, query },                
+                    { element: subtitleElement, query },
+                    { element: descriptionElement, query },
+                    { element: tagsElement, query },
+                    { element: categoriesElement, query },
+                    { element: tagsInfo1Element, query },
+                    { element: tagsInfo2Element, query }
+                ];
+                
+                elementsToHighlight.forEach(({ element, query }) => {
+                    if (element.length) { // Check if the element exists
+                        // Remove existing highlights
+                        element.html(element.html().replace(/<span class="highlight">(.*?)<\/span>/gi, '$1'));                        
+                        // Highlight new matches
+                        element.html(highlightText(element.html(), query));
+                    }
+                });
+
+                /*
                 // Replace all <span class="highlight">...</span> with their text content                
                 titleElement.html(titleElement.html().replace(/<span class="highlight">(.*?)<\/span>/gi, '$1'));
                 // Highlight matching text
                 titleElement.html(highlightText(titleElement.html(), query));
-                
+                */
                 /*
                 subtitleElement.html(subtitleElement.html().replace(/<span class="highlight">(.*?)<\/span>/gi, '$1'));
                 subtitleElement.html(highlightText(subtitleElement.html(), query));
