@@ -62,6 +62,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 // Highlight matching text
                 titleElement.html(highlightText(titleElement.html(), query));
                 
+                /*
                 subtitleElement.html(subtitleElement.html().replace(/<span class="highlight">(.*?)<\/span>/gi, '$1'));
                 subtitleElement.html(highlightText(subtitleElement.html(), query));
                 
@@ -73,6 +74,13 @@ document.addEventListener('DOMContentLoaded', function() {
                 
                 categoriesElement.html(categoriesElement.html().replace(/<span class="highlight">(.*?)<\/span>/gi, '$1'));
                 categoriesElement.html(highlightText(categoriesElement.html(), query));
+                
+                tagsInfo1Element.html(tagsInfo1Element.html().replace(/<span class="highlight">(.*?)<\/span>/gi, '$1'));
+                tagsInfo1Element.html(highlightText(tagsInfo1Element.html(), query));
+
+                tagsInfo2Element.html(tagsInfo2Element.html().replace(/<span class="highlight">(.*?)<\/span>/gi, '$1'));
+                tagsInfo2Element.html(highlightText(tagsInfo2Element.html(), query)); 
+                */               
                 
 
             } else {
