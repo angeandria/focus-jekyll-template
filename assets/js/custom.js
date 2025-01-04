@@ -54,6 +54,9 @@ document.addEventListener('DOMContentLoaded', function() {
             if (isVisible) {         
                 console.log(title + subtitle + description + " is VISIBLE");
                 
+                // Replace all <span class="highlight">...</span> with their text content
+                item.html(item.html().replace(/<span class="highlight">(.*?)<\/span>/gi, '$1'));
+
                 // Highlight matching text
                 titleElement.html(highlightText(titleElement.html(), query));
                 /*subtitleElement.html(highlightText(subtitleElement.html(), query));
