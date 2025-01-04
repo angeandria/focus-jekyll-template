@@ -55,14 +55,20 @@ document.addEventListener('DOMContentLoaded', function() {
                 console.log(title + subtitle + description + " is VISIBLE");
                 
                 // Replace all <span class="highlight">...</span> with their text content
+                /*
                 titleElement.html(titleElement.html().replace(/<span class="highlight">(.*?)<\/span>/gi, '$1'));
-
                 // Highlight matching text
                 titleElement.html(highlightText(titleElement.html(), query));
+                */
+                
                 /*subtitleElement.html(highlightText(subtitleElement.html(), query));
                 descriptionElement.html(highlightText(descriptionElement.html(), query));
                 tagsElement.html(highlightText(tagsElement.html(), query));
                 categoriesElement.html(highlightText(categoriesElement.html(), query));*/
+                
+                item.html(item.html().replace(/<span class="highlight">(.*?)<\/span>/gi, '$1'));
+                // Highlight matching text
+                item.html(highlightText(item.html(), query));
                 
                 item.removeClass("is--hidden");              
             } else {
