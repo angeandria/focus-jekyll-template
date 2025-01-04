@@ -7,7 +7,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Step 2: Pre-fill the search input if the topic exists
     if (topic) {
-        searchInput.val(topic); // Set the input field with the topic value
+        searchInput.val(topic);         // Set the input field with the topic value
+        searchInput.trigger("input");   // Manually trigger the input event
     }
         
     // Hide all Search results on loading
