@@ -26,8 +26,8 @@ document.addEventListener('DOMContentLoaded', function() {
             const titleElement = item.find(".item-title > a");
             const subtitleElement = item.find(".item-subtitle");
             const descriptionElement = item.find(".item-description");
-            const tagsElement = item.find(".tags .page__taxonomy");
-            const categoriesElement = item.find(".categories .page__taxonomy");
+            const tagsElement = item.find(".tags .page__taxonomy span a");
+            const categoriesElement = item.find(".categories .page__taxonomy span a");
             const tagsInfo1Element = item.find(".tags-info-1");    
             const tagsInfo2Element = item.find(".tags-info-2");
 
