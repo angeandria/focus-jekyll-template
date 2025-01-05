@@ -28,8 +28,8 @@ document.addEventListener('DOMContentLoaded', function() {
             const descriptionElement = item.find(".item-description");
             const tagsElement = item.find(".tags .page__taxonomy span a");
             const categoriesElement = item.find(".categories .page__taxonomy span a");
-            const tagsInfo1Element = item.find(".tags-info-1");    
-            const tagsInfo2Element = item.find(".tags-info-2");
+            const tagsInfo1Element = item.find(".item-info-1");    
+            const tagsInfo2Element = item.find(".item-info-2");
 
             // Safely get the text content from each element
             const title = titleElement.length ? titleElement.text().toLowerCase() : '';
@@ -60,11 +60,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 const elementsToHighlight = [
                     { element: titleElement, query },                
                     { element: subtitleElement, query },
-                    { element: descriptionElement, query },
+                    { element: descriptionElement, query }/*,
                     { element: tagsElement, query },
                     { element: categoriesElement, query },
                     { element: tagsInfo1Element, query },
-                    { element: tagsInfo2Element, query }
+                    { element: tagsInfo2Element, query } */
                 ];
                 
                 elementsToHighlight.forEach(({ element, query }) => {
@@ -144,7 +144,7 @@ document.addEventListener('DOMContentLoaded', function() {
     function highlightText(html, query) {
         if (!query) return html; // Return original text if query is empty
         const regex = new RegExp(`(${query})`, 'gi'); // Create a regex for the query
-        return html.replace(regex, '<span class="highlight">$1</span>'); // Wrap matches in <span>
+        return html.replace(regex, '<span class="search-highlight">$1</span>'); // Wrap matches in <span>
     }
 
 });
