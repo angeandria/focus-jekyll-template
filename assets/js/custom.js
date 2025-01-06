@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', function() {
             );
             
             if (isVisible) {         
-                console.log(title + " is VISIBLE");
+                console.log("QUERY : " query + " - " + title + " is VISIBLE");
                 
                 // Make visible
                 item.removeClass("is--hidden");              
@@ -115,7 +115,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
         
     function highlightText(html, query) {
-        console.log ("QUERY : " + query);
+        console.log ("QUERY B : " + query);
         if (!query) return html; // Return original text if query is empty
     
         // Escape special characters in query for regex
