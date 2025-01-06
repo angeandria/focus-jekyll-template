@@ -113,15 +113,19 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
     
-    // Function to highlight matching text
+        
     function highlightText(html, query) {
+        console.log ("QUERY : " + query);
         if (!query) return html; // Return original text if query is empty
     
         // Escape special characters in query for regex
         const escapedQuery = query.replace(/[-[${}()*+?.,\\^$|#\s]/g, '\\$&');
-        
-        const regex = new RegExp(`(${escapedQuery})`, 'gi'); // Create a regex for the escaped query
-        return html.replace(regex, '<span class="search-highlight">$1</span>'); // Wrap matches in <span>
+    
+        // Create a regex for the escaped query
+        const regex = new RegExp(`(${escapedQuery})`, 'gi');
+    
+        // Wrap matches in <span>
+        return html.replace(regex, '<span class="search-highlight">$1</span>');
     }
 
 });
