@@ -8,13 +8,14 @@ document.addEventListener('DOMContentLoaded', function() {
     // Step 2: Pre-fill the search input if the topic exists
     if (topic) {
         searchInput.val(topic); // Set the input field with the topic value
-        searchInput.trigger("input"); // Manually trigger the input event
+        //searchInput.trigger("input"); // Manually trigger the input event
     }
         
     // Hide all Search results on loading
     // $(".search-mode.all-posts .item").addClass("is--hidden");
-
-    searchInput.on("input", function() {
+        
+    function updateSearchInput() { 
+    // searchInput.on("input", function() {
         const query = searchInput.val().trim().toLowerCase(); // Get the current input value
         
         const searchItems = $(".search-mode.all-posts .item"); // Select all items using jQuery            
@@ -69,8 +70,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     { element: tagsInfo1Element, query },   // should treat it as an array, and loop
                     { element: tagsInfo2Element, query }    // should treat it as an array, and loop
                     */  
-                ];
-                
+                ];                
                 elementsToHighlight.forEach(({ element, query }) => {
                     if (element.length) { // Check if the element exists
                         
@@ -82,64 +82,54 @@ document.addEventListener('DOMContentLoaded', function() {
                 });
                 
                 
-                // Function to process each element in a jQuery collection
-                function processElementCollection(elements, query) {
-                    elements.each(function() {
-                        const elem = $(this); // Get the current jQuery element
-                
-                        // Remove existing highlights
-                        elem.html(removeTextHighlight(elem.html()));
-                        // Highlight new matches
-                        elem.html(addTextHighlight(elem.html(), query));
-                    });
-                }
                 
                 // Process tags, categories, and additional info elements
                 processElementCollection(tagsElement, query);
                 processElementCollection(categoriesElement, query);
                 processElementCollection(tagsInfo1Element, query);
                 processElementCollection(tagsInfo2Element, query);
-                
-                
+                                
             } else {
                 item.addClass("is--hidden");                                              
             }
         });
         
-        // Optionally, you can also call another function to act on other divs
-        displaySearchResults(query);
+        // Toggle Search Mode
+        toggleSearchMode(query);
     });
     
-    function displaySearchResults(query) {
+    // Function to process each element in a jQuery collection
+    function processElementCollection(elements, query) {
+        elements.each(function() {
+            const elem = $(this); // Get the current jQuery element
+    
+            // Remove existing highlights
+            elem.html(removeTextHighlight(elem.html()));
+            // Highlight new matches
+            elem.html(addTextHighlight(elem.html(), query));
+        });
+    }
+    
+    // Trigger manually and listen to input events
+    updateSearchInput(); // Trigger manually
+    searchInput.on("input", updateSearchInput); // Listen to keyboard input and trigger automatically
+    
+
+    function toggleSearchMode(query) {
         
-        // Implement logic to act on other divs based on the query
-        //const otherDivs = $('.search-mode.all-posts .item');
-                
         // Get the body element 
         const bodyElement = $("body");
                 
         if (query.length > 0) {
             /* Search Mode ON */
-            bodyElement.addClass("search-mode");
-            
-            //$(".search-content #results").removeClass("is--visible");                        
-            /*                        
-            otherDivs.each(function() {
-                $(this).removeClass("is--hidden");              
-            });
-           */ 
+            bodyElement.addClass("search-mode");            
             
         } else {           
             /* Search Mode OFF */
             bodyElement.removeClass("search-mode");            
         }
     }
-    
-    function removeTextHighlight(html) {
-        // Remove existing highlights
-        return html.replace(/<span class="search-highlight">(.*?)<\/span>/gi, '$1');
-    }
-        
+            
     function addTextHighlight(html, query) {
 
         if (!query) return html; // Return original text if query is empty
@@ -152,6 +142,11 @@ document.addEventListener('DOMContentLoaded', function() {
     
         // Wrap matches in <span> and ensure correct application
         return html.replace(regex, '<span class="search-highlight">$1</span>');
+    }
+    
+    function removeTextHighlight(html) {
+        // Remove existing highlights
+        return html.replace(/<span class="search-highlight">(.*?)<\/span>/gi, '$1');
     }
 
 });
