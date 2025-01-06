@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', function() {
             );
             
             if (isVisible) {         
-                console.log("QUERY : " query + " - " + title + " is VISIBLE");
+                console.log("QUERY A1 : " query + " - " + title + " is VISIBLE");
                 
                 // Make visible
                 item.removeClass("is--hidden");              
@@ -77,7 +77,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 });
                 
             } else {
-                console.log(title + " is hidden");
+                console.log("QUERY A2 : " query + " - " + title + " is VISIBLE");
                 item.addClass("is--hidden");                                              
             }
         });
