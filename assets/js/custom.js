@@ -80,6 +80,18 @@ document.addEventListener('DOMContentLoaded', function() {
                         element.html(addTextHighlight(element.html(), query));
                     }
                 });
+                
+                // Loop through each tag in tagsElement array and apply highlight functions
+                tagsElement.each(function() {
+                    const tag = $(this); // Get the current jQuery element
+                
+                    // Remove highlights
+                    tag.html(removeTextHighlight(tag.html()));
+                    // Highlight new matches
+                    tag.html(addTextHighlight(tag.html(), query));
+                });
+                
+                
                 /*
                 tags.forEach(({ element, query }) => {
                     if (element.length) { // Check if the element exists
