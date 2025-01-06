@@ -140,12 +140,14 @@
                                      {{ page.excerpt | markdownify | strip_html | truncate: 250 }}
                                  {% endif %}                
                             </div>
-                                                        
-                            <div class="item-content">
-                                 {% if page.content %}
-                                     {{ page.content | markdownify }}
-                                 {% endif %}                
-                            </div>
+                                                      
+                           {% if display_format == "search" %}  
+                                {% if page.content %}
+                                    <div class="item-content">                                     
+                                             {{ page.content | markdownify }}           
+                                    </div>
+                                {% endif %}     
+                            {% endif %}                
                             
                             <div class="item-meta">
                                 <!-- Page date -->         
