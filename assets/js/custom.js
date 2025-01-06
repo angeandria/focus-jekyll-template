@@ -115,16 +115,16 @@ document.addEventListener('DOMContentLoaded', function() {
     
         
     function highlightText(html, query) {
-    console.log("QUERY B : " + query);
-    if (!query) return html; // Return original text if query is empty
-    
+        console.log("QUERY B : " + query);
+        if (!query) return html; // Return original text if query is empty
+        
         // Escape special characters in query for regex
         const escapedQuery = query.replace(/[-[${}()*+?.,\\^$|#\s]/g, '\\$&');
     
         // Create a regex for the escaped query
         const regex = new RegExp(`(${escapedQuery})`, 'gi');
     
-        // Wrap matches in <span>
+        // Wrap matches in <span> and ensure correct application
         return html.replace(regex, '<span class="search-highlight">$1</span>');
     }
 
