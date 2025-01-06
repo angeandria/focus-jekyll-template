@@ -82,19 +82,21 @@
         {% comment %} // Display {% endcomment %}
         {% if limited_pages.size > 0 %}
             
-
-           <p>Topic : {{ target_topic }} | Type : {{type}} - limited to {{ limited_pages.size }} - order ({{ topic_order}})</p>
-
+            {% comment %} 
+                <p>Topic : {{ target_topic }} | Type : {{type}} - limited to {{ limited_pages.size }} - order ({{ topic_order}})</p>
+            {% endcomment %}
                         
             <div class="{{type}}s {{ type_class }}">
 
-                <div class="item-type">{{type_string | capitalize }}s</div>
-                <div class="item-topic">{{ target_topic }}</div>
+                {% comment %}
+                    <div class="item-type">{{type_string | capitalize }}s</div>
+                    <div class="item-topic">{{ target_topic }}</div>
+                {% endcomment %}
                 
                 {% for page in limited_pages %}
                             
                 
-                     {% comment %}
+                    {% comment %}
                     <!-- Main Category class -->
                     {% endcomment %}
                     {% assign category_main = page.categories[0] %}  
@@ -141,11 +143,7 @@
                                  {% endif %}                
                             </div>
                            
-                             <ul>                           
-                               <li>CONTAINER CLASS : {{ container_class }}</li>
-                               <li>container_class[0] : {{ container_class[0] }}</li>
-                               <li>container_class[1] : {{ container_class[1] }}</li>                               
-                             </ul>
+                            
                             {% if container_class contains "search" %}
                                     <div class="item-content">                                     
                                         {% if page.content %}                                        
