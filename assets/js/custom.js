@@ -80,6 +80,15 @@ document.addEventListener('DOMContentLoaded', function() {
                         element.html(addTextHighlight(element.html(), query));
                     }
                 });
+                tags.forEach(({ element, query }) => {
+                    if (element.length) { // Check if the element exists
+                        
+                        // Remove highlights
+                        element.html(removeTextHighlight(element.html()));
+                        // Highlight new matches
+                        element.html(addTextHighlight(element.html(), query));
+                    }
+                });
                 
             } else {
                 item.addClass("is--hidden");                                              
@@ -93,7 +102,7 @@ document.addEventListener('DOMContentLoaded', function() {
     function displaySearchResults(query) {
         
         // Implement logic to act on other divs based on the query
-        const otherDivs = $('.search-mode.all-posts .item');
+        //const otherDivs = $('.search-mode.all-posts .item');
                 
         // Get the body element 
         const bodyElement = $("body");
@@ -101,10 +110,9 @@ document.addEventListener('DOMContentLoaded', function() {
         if (query.length > 0) {
             /* Search Mode ON */
             bodyElement.addClass("search-mode");
-                            
-            $(".search-content #results").removeClass("is--visible");
             
-            /*
+            /*            
+            $(".search-content #results").removeClass("is--visible");                        
             otherDivs.each(function() {
                 $(this).removeClass("is--hidden");              
             });
