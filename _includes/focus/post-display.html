@@ -142,14 +142,12 @@
                             </div>
                                                       
                            
-                            {% if (containerClass.includes("search")) %}
+                            {% if (container_class.includes("search")) %}
                                     <div class="item-content">                                     
                                         {% if page.content %}                                        
                                                      {{ page.content | markdownify }}           
                                         {% endif %}                                                  
-                                    </div>
-                            {% else %}                
-                                    <p>Container does NOT </p>
+                                    </div>                                    
                             {% endif %}                
                             
                             <div class="item-meta">
