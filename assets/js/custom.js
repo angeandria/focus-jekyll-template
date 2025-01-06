@@ -62,12 +62,13 @@ document.addEventListener('DOMContentLoaded', function() {
                 const elementsToHighlight = [
                     { element: titleElement, query },                
                     { element: subtitleElement, query },
-                    { element: descriptionElement, query },
-                    { element: contentElement, query }/*,
-                    { element: tagsElement, query },
-                    { element: categoriesElement, query },
-                    { element: tagsInfo1Element, query },
-                    { element: tagsInfo2Element, query }*/
+                    { element: descriptionElement, query },/* TODO : 
+                    { element: contentElement, query },     // not returning html perfectly, then gives encoding errors
+                    { element: tagsElement, query },        // should treat it as an array, and loop
+                    { element: categoriesElement, query },  // should treat it as an array, and loop
+                    { element: tagsInfo1Element, query },   // should treat it as an array, and loop
+                    { element: tagsInfo2Element, query }    // should treat it as an array, and loop
+                    */  
                 ];
                 
                 elementsToHighlight.forEach(({ element, query }) => {
