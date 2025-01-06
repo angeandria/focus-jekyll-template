@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', function() {
             );
             
             if (isVisible) {         
-                console.log("QUERY A1 : " query + " - " + title + " is VISIBLE");
+                console.log("QUERY A1 : " + query + " - " + title + " is VISIBLE");
                 
                 // Make visible
                 item.removeClass("is--hidden");              
