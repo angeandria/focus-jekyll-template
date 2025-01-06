@@ -143,11 +143,13 @@
                                                       
                            
                             {% if (containerClass.includes("search")) %}
-                                {% if page.content %}
+
                                     <div class="item-content">                                     
-                                             {{ page.content | markdownify }}           
+                                        {% if page.content %}                                        
+                                                     {{ page.content | markdownify }}           
+                                        {% endif %}                                                  
                                     </div>
-                                {% endif %}     
+
                             {% endif %}                
                             
                             <div class="item-meta">
