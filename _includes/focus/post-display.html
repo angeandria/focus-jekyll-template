@@ -141,14 +141,15 @@
                                  {% endif %}                
                             </div>
                                                       
-                            
+                           
+                            {% if (containerClass.includes("search")) %}
                                     <div class="item-content">                                     
                                         {% if page.content %}                                        
                                                      {{ page.content | markdownify }}           
                                         {% endif %}                                                  
                                     </div>
 
-                                           
+                            {% endif %}                
                             
                             <div class="item-meta">
                                 <!-- Page date -->         
