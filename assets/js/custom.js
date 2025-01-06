@@ -17,6 +17,8 @@ document.addEventListener('DOMContentLoaded', function() {
     searchInput.on("input", function() {
         const query = searchInput.val().trim().toLowerCase(); // Get the current input value
         
+        console.log("Input triggered, Query:", query); // Log query for debugging
+        
         const searchItems = $(".search-mode.all-posts .item"); // Select all items using jQuery            
         
         searchItems.each(function() { 
@@ -70,9 +72,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 elementsToHighlight.forEach(({ element, query }) => {
                     if (element.length) { // Check if the element exists
                         // Remove existing highlights
-                        element.html(element.html().replace(/<span class="highlight">(.*?)<\/span>/gi, '$1'));                        
+                        element.html(removeTextHighlight(element.html(), query));                    
                         // Highlight new matches
-                        element.html(highlightText(element.html(), query));
+                        element.html(addTextHighlight(element.html(), query));
                     }
                 });
                 
@@ -113,8 +115,12 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
     
+    function removeTextHighlight(html, query){
+        // Remove existing highlights
+        return html.replace(element.html(), '/<span class="search-highlight">(.*?)<\/span>/gi, '$1');           
+    }
         
-    function highlightText(html, query) {
+    function addTextHighlight(html, query) {
         console.log("QUERY B : " + query);
         if (!query) return html; // Return original text if query is empty
         
