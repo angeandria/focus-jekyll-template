@@ -62,7 +62,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 const elementsToHighlight = [
                     { element: titleElement, query },                
                     { element: subtitleElement, query },
-                    { element: descriptionElement, query }/*,
+                    { element: descriptionElement, query },
+                    { element: contentElement, query }/*,
                     { element: tagsElement, query },
                     { element: categoriesElement, query },
                     { element: tagsInfo1Element, query },
