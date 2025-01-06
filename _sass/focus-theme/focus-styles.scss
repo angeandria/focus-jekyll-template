@@ -554,7 +554,7 @@ body.search-mode{
 }
 body:not(.search-mode){
     .search-mode.all-posts{
-        display: none;
+        /* display: none; Should posts in search mode be hidden by default? */
     }
 }
 
