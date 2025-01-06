@@ -146,7 +146,7 @@
                                <li>container_class[0] : {{ container_class[0] }}</li>
                                <li>container_class[1] : {{ container_class[1] }}</li>                               
                              </ul>
-                            {% if (container_class.includes("search")) %}
+                            {% if container_class contains "search" %}
                                     <div class="item-content">                                     
                                         {% if page.content %}                                        
                                                      {{ page.content | markdownify }}           
