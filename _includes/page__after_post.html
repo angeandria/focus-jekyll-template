@@ -6,7 +6,7 @@ abc
     {% assign types_list = "resource, page, post" | split: ", " %}
 
 {% for type in types_list %}
-    {% for category_key in site.data.taxonomies %}
+    {% for category_key in site.data.taxonomies | where: "type", "category" %}
         {% assign category = category_key[0] %}        
         {% include focus/post-display.html type=type topic=category format="compact" order="desc" container_class="search" type_class="" type-item_class="box-shadow" %}            
     {% endfor %}        
