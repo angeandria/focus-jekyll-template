@@ -26,6 +26,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const titleElement = item.find(".item-title > a");
             const subtitleElement = item.find(".item-subtitle");
             const descriptionElement = item.find(".item-description");
+            const contentElement = item.find(".item-content");            
             const tagsElement = item.find(".tags .page__taxonomy span a");
             const categoriesElement = item.find(".categories .page__taxonomy span a");
             const tagsInfo1Element = item.find(".item-info-1");    
@@ -35,6 +36,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const title = titleElement.length ? titleElement.text().toLowerCase() : '';
             const subtitle = subtitleElement.length ? subtitleElement.text().toLowerCase() : '';
             const description = descriptionElement.length ? descriptionElement.text().toLowerCase() : '';
+            const content = contentElement.length ? contentElement.text().toLowerCase() : '';
             const tags = tagsElement.length ? tagsElement.text().toLowerCase() : '';
             const categories = categoriesElement.length ? categoriesElement.text().toLowerCase() : '';
             const tagsInfo1 = tagsInfo1Element.length ? tagsInfo1Element.text().toLowerCase() : '';
@@ -45,6 +47,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 title.includes(query) ||
                 subtitle.includes(query) ||
                 description.includes(query) ||
+                content.includes(query) ||
                 tags.includes(query) ||
                 categories.includes(query) ||
                 tagsInfo1.includes(query) ||
