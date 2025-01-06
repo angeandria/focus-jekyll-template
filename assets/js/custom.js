@@ -8,8 +8,9 @@ document.addEventListener('DOMContentLoaded', function() {
     // Step 2: Pre-fill the search input if the topic exists
     if (topic) {
         searchInput.val(topic); // Set the input field with the topic value
-        //searchInput.focus(); // Set the input field with the topic value
-        document.getElementById('search').focus();
+        setTimeout(() => {
+            searchInput.focus();
+        }, 100); // Delay focusing by 100 milliseconds
     }
         
     // Hide all Search results on loading
