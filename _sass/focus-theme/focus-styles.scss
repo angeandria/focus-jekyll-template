@@ -1065,8 +1065,7 @@ body {
     
     
     &.list,
-    &.compact,
-    &.search{
+    &.compact{
         .item{
             flex-direction: row;
         }
@@ -1098,8 +1097,7 @@ body {
             font-size: var(--font-size-m);
         }  
     }
-    &.compact,
-    &.search{
+    &.compact{
         .item{
             border: 1px solid var(--border-color-1);
             padding: 8px 14px;
@@ -1119,7 +1117,6 @@ body {
         }
     }    
     &.compact .item,
-    &.search .item,
     &.cards .item{
          background-color: var(--bg-color-1);
          margin-bottom: 14px;

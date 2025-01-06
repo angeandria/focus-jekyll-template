@@ -141,7 +141,8 @@
                                  {% endif %}                
                             </div>
                                                       
-                           {% if display_format == "search" %}  
+                           
+                            {% if (containerClass.includes("search")) {
                                 {% if page.content %}
                                     <div class="item-content">                                     
                                              {{ page.content | markdownify }}           
