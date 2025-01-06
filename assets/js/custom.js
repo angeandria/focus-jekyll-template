@@ -57,6 +57,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 // Make visible
                 item.removeClass("is--hidden");              
                                
+                /*
                 const elementsToHighlight = [
                     { element: titleElement, query },                
                     { element: subtitleElement, query },
@@ -75,14 +76,13 @@ document.addEventListener('DOMContentLoaded', function() {
                         element.html(highlightText(element.html(), query));
                     }
                 });
-
-                /*
+                */
+                
                 // Replace all <span class="highlight">...</span> with their text content                
                 titleElement.html(titleElement.html().replace(/<span class="highlight">(.*?)<\/span>/gi, '$1'));
                 // Highlight matching text
                 titleElement.html(highlightText(titleElement.html(), query));
-                */
-                /*
+                
                 subtitleElement.html(subtitleElement.html().replace(/<span class="highlight">(.*?)<\/span>/gi, '$1'));
                 subtitleElement.html(highlightText(subtitleElement.html(), query));
                 
@@ -100,7 +100,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
                 tagsInfo2Element.html(tagsInfo2Element.html().replace(/<span class="highlight">(.*?)<\/span>/gi, '$1'));
                 tagsInfo2Element.html(highlightText(tagsInfo2Element.html(), query)); 
-                */               
+                             
                 
 
             } else {
@@ -119,7 +119,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Implement logic to act on other divs based on the query
         const otherDivs = $('.search-mode.all-posts .item');
                 
-        // Get the body element
+        // Get the body element 
         const bodyElement = $("body");
                 
         if (query.length > 0) {
