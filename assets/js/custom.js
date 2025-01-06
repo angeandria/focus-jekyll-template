@@ -17,6 +17,8 @@ document.addEventListener('DOMContentLoaded', function() {
     searchInput.on("input", function() {
         const query = searchInput.val().trim().toLowerCase(); // Get the current input value
         
+        console.log("Input triggered, Query:", query); // Log query for debugging
+        
         const searchItems = $(".search-mode.all-posts .item"); // Select all items using jQuery            
         
         searchItems.each(function() { 
