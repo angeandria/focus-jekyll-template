@@ -35,8 +35,6 @@
 <div class="post-display items-container {{ display_format }}{{ container_class }}">
 {% for type in type_array %}
 
-           
-        
             
         {% comment %} // Get source {% endcomment %}
         {% if type == "resource"%}        
@@ -89,10 +87,9 @@
             {% endcomment %}
                         
             <div class="{{type}}s {{ type_class }}">
-                {% comment %} DEBUG
+
                 <div class="item-type">{{type_string | capitalize }}s</div>
                 <div class="item-topic">{{ target_topic }}</div>
-                {% endcomment %}
                 
                 {% for page in limited_pages %}
                             
