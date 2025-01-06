@@ -77,7 +77,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 });
                 
             } else {
-                console.log("QUERY A2 : " query + " - " + title + " is VISIBLE");
+                console.log("QUERY A2 : " + query + " - " + title + " is VISIBLE");
                 item.addClass("is--hidden");                                              
             }
         });
