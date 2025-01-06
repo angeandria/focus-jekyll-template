@@ -140,8 +140,12 @@
                                      {{ page.excerpt | markdownify | strip_html | truncate: 250 }}
                                  {% endif %}                
                             </div>
-                                                      
-                           <p>CONTAINER CLASS : {{ container_class }}</p>
+                           
+                             <ul>                           
+                               <li>CONTAINER CLASS : {{ container_class }}</li>
+                               <li>container_class[0] : {{ container_class[0] }}</li>
+                               <li>container_class[1] : {{ container_class[1] }}</li>                               
+                             </ul>
                             {% if (container_class.includes("search")) %}
                                     <div class="item-content">                                     
                                         {% if page.content %}                                        
