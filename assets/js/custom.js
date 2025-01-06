@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Step 1: Get the "topic" URL parameter
     const urlParams = new URLSearchParams(window.location.search);
-    const topic = urlParams.get('topic');
+    const topic = urlParams.get('search');
 
     // Step 2: Pre-fill the search input if the topic exists
     if (topic) {
