@@ -72,7 +72,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 elementsToHighlight.forEach(({ element, query }) => {
                     if (element.length) { // Check if the element exists
                         // Remove existing highlights
-                        element.html(removeTextHighlight(element.html(), query));                    
+                        element.html(element.html().replace(/<span class="search-highlight">(.*?)<\/span>/gi, '$1'));                        
                         // Highlight new matches
                         element.html(addTextHighlight(element.html(), query));
                     }
