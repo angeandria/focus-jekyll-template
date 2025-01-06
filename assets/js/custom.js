@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
         searchInput.val(topic); // Set the input field with the topic value
         setTimeout(() => {
             searchInput.focus();
-        }, 100); // Delay focusing by 100 milliseconds
+        }, 1000); // Delay focusing by 100 milliseconds
     }
         
     // Hide all Search results on loading
