@@ -144,6 +144,12 @@
                                  {% endif %}                
                             </div>
                                                         
+                            <div class="item-content">
+                                 {% if page.content %}
+                                     {{ page.content | markdownify }}
+                                 {% endif %}                
+                            </div>
+                            
                             <div class="item-meta">
                                 <!-- Page date -->         
                                 {% if document.read_time or document.show_date %}
