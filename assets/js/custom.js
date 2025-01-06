@@ -76,33 +76,6 @@ document.addEventListener('DOMContentLoaded', function() {
                     }
                 });
                 
-                /*
-                // Replace all <span class="highlight">...</span> with their text content                
-                titleElement.html(titleElement.html().replace(/<span class="highlight">(.*?)<\/span>/gi, '$1'));
-                // Highlight matching text
-                titleElement.html(highlightText(titleElement.html(), query));
-                */
-                /*
-                subtitleElement.html(subtitleElement.html().replace(/<span class="highlight">(.*?)<\/span>/gi, '$1'));
-                subtitleElement.html(highlightText(subtitleElement.html(), query));
-                
-                descriptionElement.html(descriptionElement.html().replace(/<span class="highlight">(.*?)<\/span>/gi, '$1'));
-                descriptionElement.html(highlightText(descriptionElement.html(), query));
-                
-                tagsElement.html(tagsElement.html().replace(/<span class="highlight">(.*?)<\/span>/gi, '$1'));
-                tagsElement.html(highlightText(tagsElement.html(), query));
-                
-                categoriesElement.html(categoriesElement.html().replace(/<span class="highlight">(.*?)<\/span>/gi, '$1'));
-                categoriesElement.html(highlightText(categoriesElement.html(), query));
-                
-                tagsInfo1Element.html(tagsInfo1Element.html().replace(/<span class="highlight">(.*?)<\/span>/gi, '$1'));
-                tagsInfo1Element.html(highlightText(tagsInfo1Element.html(), query));
-
-                tagsInfo2Element.html(tagsInfo2Element.html().replace(/<span class="highlight">(.*?)<\/span>/gi, '$1'));
-                tagsInfo2Element.html(highlightText(tagsInfo2Element.html(), query)); 
-                */             
-                
-
             } else {
                 console.log(title + " is hidden");
                 item.addClass("is--hidden");                                              
