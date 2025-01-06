@@ -91,7 +91,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     function displaySearchResults(query) {
-        console.log("Update other divs?");
         
         // Implement logic to act on other divs based on the query
         const otherDivs = $('.search-mode.all-posts .item');
