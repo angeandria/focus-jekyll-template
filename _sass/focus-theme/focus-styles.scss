@@ -1030,6 +1030,10 @@ body {
     .item-featured-logo{
         border-radius: 6px;     
     }
+    /* Invisible to user, Visible to the search mode */
+    .item-content{
+        display: none;
+    }
     .item{
         display: flex;                
         flex-direction: column;
@@ -1058,6 +1062,8 @@ body {
             color: var(--font-heading-color-primary);
         }
     }
+    
+    
     
     &.compact,
     &.list{
