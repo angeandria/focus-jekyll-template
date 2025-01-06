@@ -116,7 +116,11 @@ document.addEventListener('DOMContentLoaded', function() {
     // Function to highlight matching text
     function highlightText(html, query) {
         if (!query) return html; // Return original text if query is empty
-        const regex = new RegExp(`(${query})`, 'gi'); // Create a regex for the query
+    
+        // Escape special characters in query for regex
+        const escapedQuery = query.replace(/[-[${}()*+?.,\\^$|#\s]/g, '\\$&');
+        
+        const regex = new RegExp(`(${escapedQuery})`, 'gi'); // Create a regex for the escaped query
         return html.replace(regex, '<span class="search-highlight">$1</span>'); // Wrap matches in <span>
     }
 
