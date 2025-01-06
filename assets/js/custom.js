@@ -60,11 +60,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 const elementsToHighlight = [
                     { element: titleElement, query },                
                     { element: subtitleElement, query },
-                    { element: descriptionElement, query },
+                    { element: descriptionElement, query }/*,
                     { element: tagsElement, query },
                     { element: categoriesElement, query },
                     { element: tagsInfo1Element, query },
-                    { element: tagsInfo2Element, query }
+                    { element: tagsInfo2Element, query }*/
                 ];
                 
                 elementsToHighlight.forEach(({ element, query }) => {
