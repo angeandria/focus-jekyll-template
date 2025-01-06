@@ -80,6 +80,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         element.html(addTextHighlight(element.html(), query));
                     }
                 });
+                /*
                 tags.forEach(({ element, query }) => {
                     if (element.length) { // Check if the element exists
                         
@@ -89,6 +90,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         element.html(addTextHighlight(element.html(), query));
                     }
                 });
+                */
                 
             } else {
                 item.addClass("is--hidden");                                              
@@ -111,8 +113,8 @@ document.addEventListener('DOMContentLoaded', function() {
             /* Search Mode ON */
             bodyElement.addClass("search-mode");
             
-            /*            
-            $(".search-content #results").removeClass("is--visible");                        
+            //$(".search-content #results").removeClass("is--visible");                        
+            /*                        
             otherDivs.each(function() {
                 $(this).removeClass("is--hidden");              
             });
