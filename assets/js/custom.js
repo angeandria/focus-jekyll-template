@@ -17,8 +17,6 @@ document.addEventListener('DOMContentLoaded', function() {
     searchInput.on("input", function() {
         const query = searchInput.val().trim().toLowerCase(); // Get the current input value
         
-        console.log("Input triggered, Query:", query); // Log query for debugging
-        
         const searchItems = $(".search-mode.all-posts .item"); // Select all items using jQuery            
         
         searchItems.each(function() { 
@@ -54,7 +52,6 @@ document.addEventListener('DOMContentLoaded', function() {
             );
             
             if (isVisible) {         
-                console.log("QUERY A1 : " + query + " - " + title + " is VISIBLE");
                 
                 // Make visible
                 item.removeClass("is--hidden");              
@@ -71,15 +68,15 @@ document.addEventListener('DOMContentLoaded', function() {
                 
                 elementsToHighlight.forEach(({ element, query }) => {
                     if (element.length) { // Check if the element exists
-                        // Remove existing highlights
-                        element.html(element.html().replace(/<span class="search-highlight">(.*?)<\/span>/gi, '$1'));                        
+                        
+                        // Remove highlights
+                        element.html(removeTextHighlight(element.html()));
                         // Highlight new matches
                         element.html(addTextHighlight(element.html(), query));
                     }
                 });
                 
             } else {
-                console.log("QUERY A2 : " + query + " - " + title + " is VISIBLE");
                 item.addClass("is--hidden");                                              
             }
         });
@@ -115,13 +112,13 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
     
-    function removeTextHighlight(html, query){
+    function removeTextHighlight(html) {
         // Remove existing highlights
-        return html.replace(element.html(), '/<span class="search-highlight">(.*?)<\/span>/gi, '$1');           
+        return html.replace(/<span class="search-highlight">(.*?)<\/span>/gi, '$1');
     }
         
     function addTextHighlight(html, query) {
-        console.log("QUERY B : " + query);
+
         if (!query) return html; // Return original text if query is empty
         
         // Escape special characters in query for regex
