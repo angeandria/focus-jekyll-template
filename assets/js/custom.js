@@ -14,15 +14,14 @@ document.addEventListener('DOMContentLoaded', function() {
     // Hide all Search results on loading
     // $(".search-mode.all-posts .item").addClass("is--hidden");
         
-    function updateSearchInput() { 
-    // searchInput.on("input", function() {
+    function updateSearchInput() {
         const query = searchInput.val().trim().toLowerCase(); // Get the current input value
         
         const searchItems = $(".search-mode.all-posts .item"); // Select all items using jQuery            
         
         searchItems.each(function() { 
             const item = $(this);
-
+    
             // Safely get the text content from title, subtitle, and description            
             const titleElement = item.find(".item-title > a");
             const subtitleElement = item.find(".item-subtitle");
@@ -32,17 +31,17 @@ document.addEventListener('DOMContentLoaded', function() {
             const categoriesElement = item.find(".categories .page__taxonomy span a");
             const tagsInfo1Element = item.find(".item-info-1");    
             const tagsInfo2Element = item.find(".item-info-2");
-
+    
             // Safely get the text content from each element
             const title = titleElement.length ? titleElement.text().toLowerCase() : '';
             const subtitle = subtitleElement.length ? subtitleElement.text().toLowerCase() : '';
             const description = descriptionElement.length ? descriptionElement.text().toLowerCase() : '';
             const content = contentElement.length ? contentElement.text().toLowerCase() : '';
-            const tags = tagsElement.length ? tagsElement.text().toLowerCase() : '';
-            const categories = categoriesElement.length ? categoriesElement.text().toLowerCase() : '';
+            const tags = tagsElement.map(function() { return $(this).text().toLowerCase(); }).get().join(' ');
+            const categories = categoriesElement.map(function() { return $(this).text().toLowerCase(); }).get().join(' ');
             const tagsInfo1 = tagsInfo1Element.length ? tagsInfo1Element.text().toLowerCase() : '';
             const tagsInfo2 = tagsInfo2Element.length ? tagsInfo2Element.text().toLowerCase() : '';
-
+    
             // Check if any of the content matches the query 
             const isVisible = (
                 title.includes(query) ||
@@ -56,24 +55,17 @@ document.addEventListener('DOMContentLoaded', function() {
             );
             
             if (isVisible) {         
-                
                 // Make visible
                 item.removeClass("is--hidden");              
                                
                 const elementsToHighlight = [
                     { element: titleElement, query },                
                     { element: subtitleElement, query },
-                    { element: descriptionElement, query },/* TODO : 
-                    { element: contentElement, query },     // not returning html perfectly, then gives encoding errors
-                    { element: tagsElement, query },        // should treat it as an array, and loop
-                    { element: categoriesElement, query },  // should treat it as an array, and loop
-                    { element: tagsInfo1Element, query },   // should treat it as an array, and loop
-                    { element: tagsInfo2Element, query }    // should treat it as an array, and loop
-                    */  
+                    { element: descriptionElement, query },
+                    { element: contentElement, query }
                 ];                
                 elementsToHighlight.forEach(({ element, query }) => {
                     if (element.length) { // Check if the element exists
-                        
                         // Remove highlights
                         element.html(removeTextHighlight(element.html()));
                         // Highlight new matches
@@ -81,9 +73,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     }
                 });
                 
-                
-                
-                // Process tags, categories, and additional info elements
+                // Process tags, categories, and additional info elements using a helper function
                 processElementCollection(tagsElement, query);
                 processElementCollection(categoriesElement, query);
                 processElementCollection(tagsInfo1Element, query);
@@ -96,7 +86,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Toggle Search Mode
         toggleSearchMode(query);
-    });
+    }
     
     // Function to process each element in a jQuery collection
     function processElementCollection(elements, query) {
@@ -113,6 +103,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Trigger manually and listen to input events
     updateSearchInput(); // Trigger manually
     searchInput.on("input", updateSearchInput); // Listen to keyboard input and trigger automatically
+
     
 
     function toggleSearchMode(query) {
