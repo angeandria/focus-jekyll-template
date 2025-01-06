@@ -81,28 +81,25 @@ document.addEventListener('DOMContentLoaded', function() {
                     }
                 });
                 
-                // Loop through each tag in tagsElement array and apply highlight functions
-                tagsElement.each(function() {
-                    const tag = $(this); // Get the current jQuery element
                 
-                    // Remove highlights
-                    tag.html(removeTextHighlight(tag.html()));
-                    // Highlight new matches
-                    tag.html(addTextHighlight(tag.html(), query));
-                });
+                // Function to process each element in a jQuery collection
+                function processElementCollection(elements, query) {
+                    elements.each(function() {
+                        const elem = $(this); // Get the current jQuery element
                 
-                
-                /*
-                tags.forEach(({ element, query }) => {
-                    if (element.length) { // Check if the element exists
-                        
-                        // Remove highlights
-                        element.html(removeTextHighlight(element.html()));
+                        // Remove existing highlights
+                        elem.html(removeTextHighlight(elem.html()));
                         // Highlight new matches
-                        element.html(addTextHighlight(element.html(), query));
-                    }
-                });
-                */
+                        elem.html(addTextHighlight(elem.html(), query));
+                    });
+                }
+                
+                // Process tags, categories, and additional info elements
+                processElementCollection(tagsElement, query);
+                processElementCollection(categoriesElement, query);
+                processElementCollection(tagsInfo1Element, query);
+                processElementCollection(tagsInfo2Element, query);
+                
                 
             } else {
                 item.addClass("is--hidden");                                              
