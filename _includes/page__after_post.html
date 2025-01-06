@@ -7,8 +7,10 @@ abc
 
 {% for type in types_list %}
     {% for category_key in site.data.taxonomies | where: "type", "category" %}
-        {% assign category = category_key[0] %}        
-        {% include focus/post-display.html type=type topic=category format="compact" order="desc" container_class="search" type_class="" type-item_class="box-shadow" %}            
+        {% if category_key[1].type == "category" %}
+            {% assign category = category_key[0] %}        
+            {% include focus/post-display.html type=type topic=category format="compact" order="desc" container_class="search" type_class="" type-item_class="box-shadow" %}            
+        {% endif %}        
     {% endfor %}        
 {% endfor %}
 </div>
