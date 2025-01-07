@@ -176,10 +176,11 @@ layout: default
                         
                         
                         {% comment %}      
-                            {% assign current_page = site.data.pages[page.name] %}
-                            <h2>CURRENT PAGE : {{ current_page.name }}, {{ current_page.id }}</h2>
-                            <h2>
+                            {% assign current_page = site.data.pages[page_name] %}
+                         
+                            
                             {% if current_page %}
+                                   <h2>CURRENT PAGE : {{ current_page.name }}, {{ current_page.id }}</h2>
                                 <div class="taxonomies-select {{ classes}}">
                                     {{ current_page.name }}
                                 </div>
