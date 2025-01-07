@@ -1022,7 +1022,9 @@ body {
 * --------------------------
 */
 .post-display{
-    
+    &.grid .item{
+        display: flex: 1 1 calc(30% - 20px);
+    }
     .item-featured-img{
         width: 100%;
         max-width: 100%;
@@ -1339,8 +1341,8 @@ nav.toc .nav__title,
 
 :root{
     @include breakpoint($medium) {
-        --font-size-ratio: 1.1;
-        --font-size-heading: 1.2;
+        --font-size-ratio: 1;
+        --font-size-heading: 1.1;
     }       
 }
 

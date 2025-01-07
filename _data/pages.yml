@@ -1,0 +1,8 @@
+firstPage:
+    id: 123
+    name: This is the first page
+    
+secondPage:
+    id: 456
+    name: This is the second page
+    
