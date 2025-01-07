@@ -1031,6 +1031,7 @@ body {
         border-radius: 6px;     
     }
     /* Invisible to user, Visible to the search mode */
+    .item-details,
     .item-content{
         display: none;
     }
