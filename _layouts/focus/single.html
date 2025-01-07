@@ -170,14 +170,19 @@ layout: default
                   <section class="page__content" itemprop="text">
                       
                         <!-- Page Data -->                         
-                        {% assign current_page = site.data.pages[page.name] %}
-                        <h2>CURRENT PAGE : {{ current_page.name }}, {{ current_page.id }}</h2>
-                        {% if current_page %}
-                            <div class="taxonomies-select {{ classes}}">
-                                {{ current_page.name }}
-                            </div>
-                        {% endif %}
-                      
+                        <h1>Page Name : {{ page.name }}</h1>
+                        
+                        {% comment %}      
+                            {% assign current_page = site.data.pages[page.name] %}
+                            <h2>CURRENT PAGE : {{ current_page.name }}, {{ current_page.id }}</h2>
+                            <h2>
+                            {% if current_page %}
+                                <div class="taxonomies-select {{ classes}}">
+                                    {{ current_page.name }}
+                                </div>
+                            {% endif %}
+                        {% endcomment %}
+                        
                         <!-- SECTION page__post_aside -->   
                         {% comment %} Disabled by default through css  {% endcomment %}  
                         {% assign post_aside = page.post_aside | default : false %}

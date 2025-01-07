@@ -1023,7 +1023,7 @@ body {
 */
 .post-display{
     &.grid .item{
-        display: flex: 1 1 calc(30% - 20px);
+        display: flex 1 1 calc(30% - 20px);
     }
     .item-featured-img{
         width: 100%;
