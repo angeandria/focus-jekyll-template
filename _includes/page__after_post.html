@@ -1,3 +1,6 @@
+
+{% assign layout_slug = page.layout | default: layout.layout | replace: '/', '-') %}
+<h1>{{ layout_slug }}</h1>
 <div class="search-mode all-posts">
     {% assign types_list = "resource, post" | split: ", " %}
 
