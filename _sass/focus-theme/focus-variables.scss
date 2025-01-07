@@ -45,9 +45,9 @@ $box-shadow: 0 4px 20px rgba(0, 0, 0, 0.07);
     --font-color-secondary: blue;
     --font-color-heading-primary: #000000;
     --font-color-heading-secondary: #333333;    
-    --links-color-primary: blue;
+    --links-color-primary: #000000;
     --links-color-secondary: red;
-    --links-color-border: gold;
+    --links-color-border: var(--links-color-primary);
 
     --border-color-1: #EFEFEF;
     --border-color-2: #AFAFAF;
