@@ -174,24 +174,20 @@ layout: default
                         {% assign page_name = page.path | split: '/' | last | remove: '.md' %}
                         <h1>Page Name : {{ page_name }} , {{ page.path }}</h1>
                         
-                        {% comment %}
-                            Check if the page name is what you expect
-                            You can also log all available keys in site.data.pages for debugging
-                            Example:
-                            <pre>{{ site.data.pages | inspect }}</pre>
-                        {% endcomment %}
+                        {{ site.data.pages | inspect }}
 
-                        {% comment %}      
-                            {% assign current_page = site.data.pages[page_name] %}
-                         
-                            
-                            {% if current_page %}
-                                   <h2>CURRENT PAGE : {{ current_page.name }}, {{ current_page.id }}</h2>
-                                <div class="taxonomies-select {{ classes}}">
-                                    {{ current_page.name }}
-                                </div>
-                            {% endif %}
-                        {% endcomment %}
+
+    
+                        {% assign current_page = site.data.pages[page_name] %}
+                     
+                        
+                        {% if current_page %}
+                               <h2>CURRENT PAGE : {{ current_page.name }}, {{ current_page.id }}</h2>
+                            <div class="taxonomies-select {{ classes}}">
+                                {{ current_page.name }}
+                            </div>
+                        {% endif %}
+    
                         
                         <!-- SECTION page__post_aside -->   
                         {% comment %} Disabled by default through css  {% endcomment %}  
