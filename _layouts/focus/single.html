@@ -185,13 +185,12 @@ layout: default
                         JSon? {{ page_name }} - {{ current_page_json | inspect }}
                         
                         {% if current_page_json %}
-                            <div class="data__page-details">
-                                <ul>                                        
-                                    <li>{{ current_page.id }}</li>
-                                    <li>{{ current_page.title }}</li>
-                                    <li>{{ current_page.category }}</li>                                     
-                                    <li>{{ current_page_json['published date'] }}</li>                                                          
-                                    <li>{{ current_page_json.embed | safe }}</li>                                                          
+                            <div class="data__page-details">                                      
+                                    <h3>{{ current_page.title }}<h3>
+                                    <h4>{{ current_page.id }}</h4>                                        
+                                    <p>{{ current_page.category }}</p>                                     
+                                    <p>{{ current_page_json['published date'] }}</p>                                                          
+                                    <div>{{ current_page_json.embed | safe }}</div>                                                          
                             </div>
                         {% endif %}                        
     
