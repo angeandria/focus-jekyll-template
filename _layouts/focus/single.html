@@ -185,9 +185,9 @@ layout: default
                         
                         {% if current_page_json %}
                             <div class="data__page-details">                                      
-                                    <h3>title : {{ current_page.title }}</h3>
-                                    <h4>id : {{ current_page.id }}</h4>                                        
-                                    <p>category : {{ current_page.category }}</p>                                     
+                                    <h3>title : {{ current_page_json.title }}</h3>
+                                    <h4>id : {{ current_page_json.id }}</h4>                                        
+                                    <p>category : {{ current_page_json.category }}</p>                                     
                                     <p>date : {{ current_page_json['published date'] }}</p>                                                          
                                     <div>embed : {{ current_page_json.embed | safe }}</div>                                                          
                             </div>
