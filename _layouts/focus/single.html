@@ -182,15 +182,14 @@ layout: default
 
                         <!-- JSON -->                   
                         {% assign current_page_json = site.data.pages_json | where: "id", page_name | first %}
-                        JSon? {{ page_name }} - {{ current_page_json | inspect }}
                         
                         {% if current_page_json %}
                             <div class="data__page-details">                                      
-                                    <h3>{{ current_page.title }}<h3>
-                                    <h4>{{ current_page.id }}</h4>                                        
-                                    <p>{{ current_page.category }}</p>                                     
-                                    <p>{{ current_page_json['published date'] }}</p>                                                          
-                                    <div>{{ current_page_json.embed | safe }}</div>                                                          
+                                    <h3>title : {{ current_page.title }}</h3>
+                                    <h4>id : {{ current_page.id }}</h4>                                        
+                                    <p>category : {{ current_page.category }}</p>                                     
+                                    <p>date : {{ current_page_json['published date'] }}</p>                                                          
+                                    <div>embed : {{ current_page_json.embed | safe }}</div>                                                          
                             </div>
                         {% endif %}                        
     
