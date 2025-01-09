@@ -182,6 +182,7 @@ layout: default
 
                         <!-- JSON -->                                                 
                         {% assign current_page_json = site.data.pages_json | where: "id", page_name | first %}
+                        JSon? {{ current_page_json }}
                         {% if current_page_json %}
                             <div class="data__page-details">
                                 <ul>                                        
