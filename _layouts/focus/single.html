@@ -182,7 +182,6 @@ layout: default
 
                         <!-- JSON -->                                                 
                         {% assign current_page_json = site.data.pages_json | where: "id", page_name | first %}
-                        first %}
                         {% if current_page_json %}
                             <div class="data__page-details">
                                 <ul>                                        
@@ -190,6 +189,7 @@ layout: default
                                     <li>{{ current_page.title }}</li>
                                     <li>{{ current_page.category }}</li>                                     
                                     <li>{{ current_page_json['published date'] }}</li>                                                          
+                                    <li>{{ current_page_json.embed | safe }}</li>                                                          
                             </div>
                         {% endif %}                        
     
