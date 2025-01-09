@@ -171,19 +171,11 @@ layout: default
                       
                         <!-- Page Data -->                         
                         
-                        {% assign page_name = page.path | split: '/' | last | remove: '.md' %}
-                        <h1>Page Name : {{ page_name }} , {{ page.path }}</h1>
-                        
-                        {{ site.data.pages | inspect }}
-
-
-    
+                        {% assign page_name = page.path | split: '/' | last | remove: '.md' %}                        
                         {% assign current_page = site.data.pages[page_name] %}
-                     
-                        
+                                             
                         {% if current_page %}
-                               <h2>CURRENT PAGE : {{ current_page.name }}, {{ current_page.id }}</h2>
-                            <div class="taxonomies-select {{ classes}}">
+                            <div class="data__page-details">
                                 {{ current_page.name }}
                             </div>
                         {% endif %}

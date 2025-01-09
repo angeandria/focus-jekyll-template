@@ -1,0 +1,43 @@
+[
+  "file:",
+  {
+    "growth": {
+      "type": "category",
+      "id": "1-1",
+      "title": "Growth is the new black",
+      "featured_image": "https://plus.unsplash.com/premium_photo-1709311452215-496c6740ca59",
+      "description": "from data.categories.yml - Growth description",
+      "cta_title": "Get this",
+      "cta_url": "https://google.com"
+    },
+    "personal development": {
+      "type": "category",
+      "id": "2-1",
+      "title": "Personal development for creative people",
+      "subtitle": "subtitle from data.categories.yml",
+      "featured_image": "https://plus.unsplash.com/premium_photo-1709311452215-496c6740ca59",
+      "description": "Some content here\n\nand then blablablelbelblal\n\n> since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.\n\n- item 1\n- item 2\n- item 3\nIt was popularised in the 1960s with the release of Letraset sheets containing Lorem\n\nThis is the longest version possible",
+      "actions": [
+        {
+          "label": "Get this",
+          "url": "https://google.com"
+        }
+      ]
+    },
+    "testFromJson": {
+      "type": "category",
+      "id": "2-1",
+      "title": "Personal development for creative people",
+      "subtitle": "subtitle from data.categories.yml",
+      "featured_image": "https://plus.unsplash.com/premium_photo-1709311452215-496c6740ca59",
+      "description": "Some content here\n\nand then blablablelbelblal\n\n> since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.\n\n- item 1\n- item 2\n- item 3\nIt was popularised in the 1960s with the release of Letraset sheets containing Lorem\n\nThis is the longest version possible",
+      "": "",
+      "actions": [
+        {
+          "label": "Get this",
+          "url": "https://google.com"
+        }
+      ]
+    }
+  }
+]

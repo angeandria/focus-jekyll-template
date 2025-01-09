@@ -1,0 +1,32 @@
+[
+  {
+    "id": "fileA",
+    "title": "File A Title",
+    "featured_image": "",
+    "category": "finances",
+    "category 2": "main",
+    "category 3": "",
+    "tag 1": "featured",
+    "tag 2": "",
+    "tag 3": "",
+    "info 1": 0.2,
+    "info 2": "",
+    "published date": "2025.01.09",
+    "edit date": ""
+  },
+  {
+    "id": "fileB",
+    "title": "File B Title",
+    "featured_image": "",
+    "category": "personal development",
+    "category 2": "main",
+    "category 3": "",
+    "tag 1": "pnned",
+    "tag 2": "",
+    "tag 3": "",
+    "info 1": "code345",
+    "info 2": "",
+    "published date": "2025.01.09",
+    "edit date": ""
+  }
+]
