@@ -1,7 +1,7 @@
 [
   {
-    "id": "firstPage",
-    "title": "FirstPage Title",
+    "id": "first-page",
+    "title": "First page Title",
     "featured_image": "",
     "category": "finances",
     "category 2": "main",
@@ -13,11 +13,11 @@
     "info 2": "",
     "published date": "2025.01.09",
     "edit date": "",
-    "embed": "<div><p>Hello world</p></div>"
+    "embed": "<div><h4>Hello woooooorld</h4></div>"
   },
   {
-    "id": "secondPage",
-    "title": "SecondPage Title",
+    "id": "second-page",
+    "title": "Seconde page Title",
     "featured_image": "",
     "category": "personal development",
     "category 2": "main",
@@ -29,6 +29,6 @@
     "info 2": "",
     "published date": "2025.01.09",
     "edit date": "",
-    "embed": "<iframe src=\"https://angeandria.com\"></iframe>"
+    "embed": "<iframe src=\\\"https://angeandria.com\\\"></iframe>"
   }
 ]
