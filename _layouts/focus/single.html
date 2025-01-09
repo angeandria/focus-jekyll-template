@@ -173,12 +173,25 @@ layout: default
                         
                         {% assign page_name = page.path | split: '/' | last | remove: '.md' %}                        
                         {% assign current_page = site.data.pages[page_name] %}
-                                             
+                        
                         {% if current_page %}
                             <div class="data__page-details">
                                 {{ current_page.name }}
                             </div>
                         {% endif %}
+
+                        <!-- JSON -->                                                 
+                        {% assign current_page_json = site.data.pages_json | where: "id", page_name | first %}
+                        first %}
+                        {% if current_page_json %}
+                            <div class="data__page-details">
+                                <ul>                                        
+                                    <li>{{ current_page.id }}</li>
+                                    <li>{{ current_page.title }}</li>
+                                    <li>{{ current_page.category }}</li>                                     
+                                    <li>{{ current_page_json['published date'] }}</li>                                                          
+                            </div>
+                        {% endif %}                        
     
                         
                         <!-- SECTION page__post_aside -->   
