@@ -179,7 +179,24 @@ layout: default
                             <div class="data__page-details">                                      
                                     <h3>title : {{ current_page_json.title }}</h3>
                                     <h4>id : {{ current_page_json.id }}</h4>                                        
-                                    <p>category : {{ current_page_json.category }}</p>                                     
+                                    <div class="categories">
+                                        <h5>CATEGORIES</h5>
+                                        {% for category in current_page_json.categories %}
+                                            <h6>{{ category }}</h6>
+                                            {% if site.data.taxonomies[category] %}
+                                                <p>desc : {{ site.data.taxonomies[category].description }}</p>
+                                            {% endif %}
+                                        {% endfor %}
+                                    </div>
+                                    <div class="tags">
+                                        <h5>TAGS</h5>
+                                        {% for tag in current_page_json.tags %}
+                                            <h6>{{ tag }}</h6>
+                                            {% if site.data.taxonomies[tag] %}
+                                                <p>desc : {{ site.data.taxonomies[tag].description }}</p>
+                                            {% endif %}
+                                        {% endfor %}
+                                    </div>
                                     <p>date : {{ current_page_json['published date'] }}</p>                                                          
                                     <div>embed : {{ current_page_json.embed | safe }}</div>                                                          
                             </div>
