@@ -47,7 +47,6 @@
 
 <nav class="breadcrumbs">
   <ol itemscope itemtype="https://schema.org/BreadcrumbList">
-    page collection 1? {{ page.collection }}
                   
     {% assign crumbs = page.url | split: '/' %}
     {% assign i = 1 %}
@@ -64,7 +63,6 @@
       {% endcomment %}
       
       {% if forloop.last %}
-      page collection 2? {{ page.collection }}
         <!-- Last -->
         <li class="nav-item-post current"{% if page.locale %} lang="{{ page.locale }}"{% endif %}>{{ page.title | replace: '-', ' ' | capitalize }}</li>
       {% else %}
