@@ -171,6 +171,7 @@ layout: default
                       
                         <!-- Page Data -->                                                 
                         {% assign page_name = page.path | split: '/' | last | remove: '.md' %}                        
+                        PAGE PATH {{ page.path }}
                         
                         <!-- JSON -->                   
                         {% assign current_page_json = site.data.pages_json | where: "id", page_name | first %}
