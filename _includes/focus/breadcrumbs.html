@@ -67,7 +67,7 @@
       {% else %}
         {% assign i = i | plus: 1 %}
         <li class="nav-item-category" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-
+            page collection? {{ page.collection }}
             {% if page.collection == "resources" %}                          
                 <a href="{{ '/' | relative_url }}resources/" itemprop="item"><span itemprop="name">Resources</span></a>          
             

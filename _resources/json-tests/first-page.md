@@ -1,5 +1,6 @@
 ---
 content_file: "[[_content/first-page.md]]"
+resource: guide-1
 permalink: /first-page-permalink
 aliases: 
   - file1
