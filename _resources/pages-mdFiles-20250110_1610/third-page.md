@@ -1,6 +1,6 @@
 ---
 content_file: "[[_content/third-page.md]]"
-permalink: /myFile3
+permalink: /resource/myFile3
 aliases: 
   - file3
   - fileA3

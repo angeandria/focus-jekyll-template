@@ -1,6 +1,6 @@
 ---
 content_file: "[[_content/second-page.md]]"
-permalink: /second-page-permalink
+permalink: /resource/second-page-permalink
 aliases: 
   - file2
   - fileA2
