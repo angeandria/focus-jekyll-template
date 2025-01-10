@@ -1,6 +1,6 @@
 ---
 content_file: "[[_content/first-page.md]]"
-permalink: /resource/first-page-permalink
+permalink: /first-page-permalink
 aliases: 
   - file1
   - fileA1
