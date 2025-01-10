@@ -22,6 +22,8 @@ priority: 10
 actions :
   - label: "Get this"
     url: "https://angeandria.com"
+  - label: "Learn more"
+    url: "https://angeandria.com"    
 sidebar:
   - title: "My Guide navi" 
     image: "/assets/images/placeholder.jpg"

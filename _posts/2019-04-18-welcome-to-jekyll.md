@@ -22,7 +22,7 @@ header:
     - label: "More Info"
       url: "https://unsplash.com"
     - label: "Download"
-      url: "https://angeandria.com"  
+      url: "https://angeandria.com"        
 
 featured_image: /assets/images/placeholder-1200.jpg
 

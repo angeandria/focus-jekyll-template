@@ -1,8 +1,6 @@
 [
   {
     "id": "first-page",
-    "permalink": "",
-    "aliases": "file1, fileA1",
     "title": "My best Post",
     "subtitle": "My post subtitle",
     "priority": 4,
@@ -28,6 +26,7 @@
     "embed": "Embed here!",
     "table-of-contents": "## header 2\nsomething here",
     "outro": "the end",
+    "actions-label": "",
     "categories": [
       "money",
       "guide",
@@ -47,8 +46,6 @@
   },
   {
     "id": "second-page",
-    "permalink": "second-page-permalink",
-    "aliases": "file2, fileA2",
     "title": "My post 2",
     "subtitle": "Subtitle 2",
     "priority": 8,
@@ -74,6 +71,7 @@
     "embed": "embed 2",
     "table-of-contents": "Some content 2",
     "outro": "the ending",
+    "actions-label": "",
     "categories": [
       "relationships",
       "guide"
@@ -89,8 +87,6 @@
   },
   {
     "id": "third-page",
-    "permalink": "myFile3",
-    "aliases": "file3, fileA3",
     "title": "My post 3",
     "subtitle": "Subtitle 3",
     "priority": 2,
@@ -116,6 +112,7 @@
     "embed": "embed 3",
     "table-of-contents": "some content 3",
     "outro": "it's over.",
+    "actions-label": "",
     "categories": [
       "business"
     ],
