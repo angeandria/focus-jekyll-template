@@ -9,4 +9,4 @@ aliases:
 {% capture include_markdown %}
 {% include_relative _content/first-page.md %}
 {% endcapture %}
-{{ include_markdown }}
+{{ include_markdown | markdownify }}
