@@ -69,6 +69,7 @@
         
         {% assign i = i | plus: 1 %}
         <li class="nav-item-category" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+            abc
             {% case current_layout %}
                   {% when "single-post" %}
                         <a href="{{ '/' | relative_url }}{{site.category_archive.path}}/{{ category_main_slug }}" itemprop="item"><span itemprop="name">{{ category_main_label |  default : "article" }}</span></a>                  
