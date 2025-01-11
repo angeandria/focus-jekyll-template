@@ -77,6 +77,7 @@
         <!-- Last -->
         <li class="nav-item-post current"{% if page.locale %} lang="{{ page.locale }}"{% endif %}>
             {{ page.title | replace: '-', ' ' | capitalize }}
+            <span class="sep">{{ site.data.ui-text[site.locale].breadcrumb_separator | default: ">" }}</span>
             <meta itemprop="position" content="{{ i }}" />
         </li>
       {% else %}
