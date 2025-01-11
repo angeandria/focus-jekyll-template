@@ -4,7 +4,6 @@ resource: guide-1
 categories:
   - category1
   - category 2
-  - main
 tags:
   - tag1
   - tag2

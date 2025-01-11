@@ -4,7 +4,6 @@ resource: guide-1
 toc: false
 categories:
   - personal development
-  - main
 tags:
   - featured
   - black friday

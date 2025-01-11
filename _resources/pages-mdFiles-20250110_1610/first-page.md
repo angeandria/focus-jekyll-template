@@ -1,6 +1,8 @@
 ---
 content_file: "[[_content/first-page.md]]"
 permalink: /first-page-permalink
+categories:
+  - main
 aliases: 
   - file1
   - fileA1
