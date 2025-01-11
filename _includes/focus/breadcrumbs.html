@@ -61,16 +61,14 @@
       {% endcomment %}
 
               
-      crumb {{ crumb }}
       <!-- SINGLE RESOURCE -->
       {% if crumb == "resource" %}
-            continue;
+            {% continue %}
       {% endif %}     
       {% if page.collection == "resources" %}      
         <li class="nav-item-category" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
             <a href="{{ '/' | relative_url }}resources/" itemprop="item"><span itemprop="name">Resources</span></a>          
         </li>
-        <span class="sep">{{ site.data.ui-text[site.locale].breadcrumb_separator | default: ">" }}</span>
         <meta itemprop="position" content="{{ i }}" />
         {% assign i = i | plus: 1 %}
       {% endif %}
