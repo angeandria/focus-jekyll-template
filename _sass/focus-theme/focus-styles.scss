@@ -1022,6 +1022,10 @@ body {
 * --------------------------
 */
 .post-display{
+    &grid-3 .post-type{ --columns: 3 };
+    &grid-4 .post-type{ --columns: 4 };
+    &grid-6 .post-type{ --columns: 6 };    
+    
     &.grid-3,
     &.grid-4,
     &.grid-6{          
@@ -1033,9 +1037,7 @@ body {
                 gap: var(--gutter-l);          
          }           
     }
-    &grid-3 .post-type{ --columns: 3 };
-    &grid-4 .post-type{ --columns: 4 };
-    &grid-6 .post-type{ --columns: 6 };    
+
     
     .item-featured-img{
         width: 100%;
