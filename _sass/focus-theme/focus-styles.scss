@@ -1031,6 +1031,18 @@ body {
             background-color: #f0f0f0; /* Example styling */
             padding: 20px;
             border: 1px solid #ccc;
+            
+            display: block;           /* Ensure block-level behavior */
+            flex: none;               /* Override any flex properties */
+            grid-column: auto;        /* Default grid column behavior */
+            grid-row: auto;           /* Default grid row behavior */
+            width: auto;              /* Let the grid control the width */
+            height: auto;             /* Let content control the height */
+            margin: 0;                /* Reset margin */
+            padding: 0;               /* Reset padding */
+            box-sizing: border-box;   /* Include padding and border in element's total size */
+            justify-self: stretch;    /* Align items horizontally within grid area */
+            align-self: stretch;      /* Align items vertically within grid area */
         }
     }
     .item-featured-img{
