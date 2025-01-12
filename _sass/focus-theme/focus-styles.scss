@@ -1035,6 +1035,20 @@ body {
 * --------------------------
 */
 .post-display{
+    
+    &.grid-2,    
+    &.grid-3,
+    &.grid-4,
+    &.grid-6{          
+          display: grid;                  /* Enable grid layout */
+          gap: var(--gutter-s);          
+         .post-type{               
+                display: grid;
+                gap: var(--gutter-xs);       
+                grid-template-columns: repeat(var(--columns), 1fr);                
+         }           
+    }
+    
     &.grid-2 .post-type{
         --columns: 2;
         gap: var(--gutter-m);        
@@ -1050,18 +1064,6 @@ body {
         gap: var(--gutter-xs);
     }
 
-    &.grid-2,    
-    &.grid-3,
-    &.grid-4,
-    &.grid-6{          
-          display: grid;                  /* Enable grid layout */
-          gap: var(--gutter-s);          
-         .post-type{               
-                display: grid;
-                gap: var(--gutter-xs);       
-                grid-template-columns: repeat(var(--columns), 1fr);                
-         }           
-    }
 
     
     .item-featured-img{
