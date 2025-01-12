@@ -1044,7 +1044,7 @@ body {
           gap: var(--gutter-s);          
          .post-type{               
                 display: grid;
-                gap: var(--gutter-xs);       
+                gap: var(--gutter-s);       
                 grid-template-columns: repeat(var(--columns), 1fr);                
          }           
     }
@@ -1054,7 +1054,7 @@ body {
         gap: var(--gutter-m);        
     }    
     &.grid-3 .post-type{
-        --columns: 3;
+        --columns: 3;        
     }
     &.grid-4 .post-type{
         --columns: 4;
