@@ -86,7 +86,7 @@
                 <p>Topic : {{ target_topic }} | Type : {{type}} - limited to {{ limited_pages.size }} - order ({{ topic_order}})</p>
             {% endcomment %}
                         
-            <div class="{{type}}s {{ type_class }}">
+            <div class="post-type {{type}}s {{ type_class }}">
 
                 {% comment %}
                     <div class="item-type">{{type_string | capitalize }}s</div>
@@ -124,9 +124,7 @@
                               
                         <div class="block block-3">                        
                             
-                            <!-- Page taxonomy -->            
-                            
-                                
+                            <!-- Page taxonomy -->                                                                        
                             <div class="item-title"><a href="{{ page.url | relative_url }}">{{ page.title }}</a><span class="page__meta_taxonomy tags">                                    
                                 {% include focus/page__taxonomy.html %}
                             </span></div>                        

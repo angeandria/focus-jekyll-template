@@ -1022,22 +1022,29 @@ body {
 * --------------------------
 */
 .post-display{
-    &.grid{          
+    &.grid-3,
+    &.grid-4,
+    &.grid-6{          
           display: grid;                  /* Enable grid layout */
-          gap: 10px;          
-         .resources{
-                 --columns: 3; /* Set the number of columns here */
+          gap: var(--gutter-l);          
+         .post-type{               
                 display: grid;
                 grid-template-columns: repeat(var(--columns), 1fr);
-                gap: 10px; /* Adjust the gap between items */
-         }
-  
-         .item{
-            box-shadow: var(--box-shadow);
-            padding: 20px;
-            border: 1px solid #ccc;            
-        }
+                gap: var(--gutter-l);          
+         }           
     }
+    .post-type{
+        .grid-3 &{
+            --columns: 3;
+        }
+        .grid-4 &{
+            --columns: 4;
+        }        
+        .grid-6 &{
+            --columns: 6;
+        }        
+    }
+    
     .item-featured-img{
         width: 100%;
         max-width: 100%;
