@@ -1023,6 +1023,7 @@ body {
 */
 .post-display{
     &.grid{
+        --columns: 3;
         display: grid;
         grid-template-columns: repeat(var(--columns), 1fr);
         gap: 16px; /* You can adjust the gap size as needed */        
