@@ -10,7 +10,7 @@ This is the content of my homepage
 [personal development](/personal-development)
 
 ## list | Resources - personal development
-{% include focus/post-display.html type="resource" topic="all" format="list" order="desc" container_class="" type_class="" type-item_class="" %}            
+{% include focus/post-display.html type="resource" topic="all" format="list" order="desc" container_class="grid" type_class="" type-item_class="" %}            
 
 ## compact | Resources - personal development
 {% include focus/post-display.html type="resource" topic="all" format="compact" order="desc" container_class="" type_class="" type-item_class="" %}            
