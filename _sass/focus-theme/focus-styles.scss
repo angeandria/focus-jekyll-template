@@ -51,7 +51,7 @@
 
 
 .sticky {
-    z-index: 30;
+    z-index: 30; 
 }
 
 .is--hidden{
@@ -1037,14 +1037,18 @@ body {
 .post-display{
     &.grid-2 .post-type{
         --columns: 2;
-        gap: var(--gutter-s); }    
+        gap: var(--gutter-m);        
+    }    
     &.grid-3 .post-type{
         --columns: 3;
-        gap: var(--gutter-s); }
+    }
     &.grid-4 .post-type{
-        --columns: 4; }
+        --columns: 4;
+    }
     &.grid-6 .post-type{
-        --columns: 6; }
+        --columns: 6;
+        gap: var(--gutter-xs);
+    }
 
     &.grid-2,    
     &.grid-3,
