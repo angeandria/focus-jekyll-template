@@ -28,9 +28,11 @@ $box-shadow: 0 4px 20px rgba(0, 0, 0, 0.07);
 * --------------------------
 */
 :root{
+    --box-shadow: $box-shadow;
+        
     --html-bg-color: #FFFFFF;
     --body-bg-color: #FFFFFF;
-    --body-box-shadow: 0 4px 20px rgba(0, 0, 0, 0.07); /* 0 4px 20px rgba(0, 0, 0, 0.07); */
+    --body-box-shadow: var(--box-shadow); /* 0 4px 20px rgba(0, 0, 0, 0.07); */
   
     --bg-color-1: var(--body-bg-color);    
     --bg-color-2: #EFEFEF;
@@ -52,6 +54,8 @@ $box-shadow: 0 4px 20px rgba(0, 0, 0, 0.07);
     --border-color-1: #EFEFEF;
     --border-color-2: #AFAFAF;
     --border-color-3: orange;    
+    
+
     
     
     /* DO NOT MODIFY BELOW ------- */
