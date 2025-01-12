@@ -1034,13 +1034,13 @@ body {
          }           
     }
     .post-type{
-        .grid-3 &{
+        .grid-3&{
             --columns: 3;            
         }
-        .grid-4 &{
+        .grid-4&{
             --columns: 4;
         }        
-        .grid-6 &{
+        .grid-6&{
             --columns: 6;
         }        
     }
