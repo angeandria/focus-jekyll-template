@@ -1022,15 +1022,15 @@ body {
 * --------------------------
 */
 .post-display{
-    &grid-3 .post-type{
+    &.grid-3 .post-type{
         --columns: 3;
         grid-template-columns: repeat(var(--columns), 1fr);
     };
-    &grid-4 .post-type{
+    &.grid-4 .post-type{
         --columns: 4;
         grid-template-columns: repeat(var(--columns), 1fr);
     };
-    &grid-6 .post-type{
+    &.grid-6 .post-type{
         --columns: 6;
         grid-template-columns: repeat(var(--columns), 1fr);
     };    
