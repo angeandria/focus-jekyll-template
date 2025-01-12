@@ -1022,9 +1022,9 @@ body {
 * --------------------------
 */
 .post-display{
-    &.grid-3,
-    &.grid-4,
-    &.grid-6{          
+    &.grid-three,
+    &.grid-four,
+    &.grid-six{          
           display: grid;                  /* Enable grid layout */
           gap: var(--gutter-l);          
          .post-type{               
@@ -1034,13 +1034,13 @@ body {
          }           
     }
     .post-type{
-        .grid-3&{
+        .grid-three&{
             --columns: 3;            
         }
-        .grid-4&{
+        .grid-four&{
             --columns: 4;
         }        
-        .grid-6&{
+        .grid-six&{
             --columns: 6;
         }        
     }
