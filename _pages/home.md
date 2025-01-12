@@ -10,9 +10,9 @@ This is the content of my homepage
 [personal development](/personal-development)
 
 ## list | Resources - personal development
-{% include focus/post-display.html type="resource" topic="all" format="list" order="desc" container_class="grid-2" type_class="" type-item_class="boxed-xs box-shadow" %}            
+{% include focus/post-display.html type="resource" topic="all" format="list" order="desc" container_class="grid-2" type_class="" type-item_class="boxed-s box-shadow" %}            
 
-{% include focus/post-display.html type="resource" topic="all" format="list" order="desc" container_class="grid-3" type_class="" type-item_class="boxed-xs box-shadow" %}            
+{% include focus/post-display.html type="resource" topic="all" format="list" order="desc" container_class="grid-3" type_class="" type-item_class="boxed-s box-shadow" %}            
 
 {% include focus/post-display.html type="resource" topic="all" format="list" order="desc" container_class="grid-4" type_class="" type-item_class="boxed-xs box-shadow" %}            
 
