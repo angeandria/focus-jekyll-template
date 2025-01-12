@@ -36,6 +36,19 @@
     margin: 20px 0 14px;
 }
 
+.boxed-l{
+    padding: var(--boxed-l);
+}
+.boxed-m{
+    padding: var(--boxed-m);
+}
+.boxed-s{
+    padding: var(--boxed-s);
+}
+.boxed-xs{
+    padding: var(--boxed-xs);
+}
+
 
 .sticky {
     z-index: 30;
@@ -1022,10 +1035,16 @@ body {
 * --------------------------
 */
 .post-display{
-    &.grid-2 .post-type{ --columns: 2; gap: var(--gutter-s); }    
-    &.grid-3 .post-type{ --columns: 3; gap: var(--gutter-s); }
-    &.grid-4 .post-type{ --columns: 4; }
-    &.grid-6 .post-type{ --columns: 6; }
+    &.grid-2 .post-type{
+        --columns: 2;
+        gap: var(--gutter-s); }    
+    &.grid-3 .post-type{
+        --columns: 3;
+        gap: var(--gutter-s); }
+    &.grid-4 .post-type{
+        --columns: 4; }
+    &.grid-6 .post-type{
+        --columns: 6; }
 
     &.grid-2,    
     &.grid-3,
