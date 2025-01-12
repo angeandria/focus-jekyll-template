@@ -10,13 +10,13 @@ This is the content of my homepage
 [personal development](/personal-development)
 
 ## list | Resources - personal development
-{% include focus/post-display.html type="resource" topic="all" format="list" order="desc" container_class="grid-six" type_class="" type-item_class="" %}            
+{% include focus/post-display.html type="resource" topic="all" format="list" order="desc" container_class="grid-6" type_class="" type-item_class="" %}            
 
 ## compact | Resources - personal development
-{% include focus/post-display.html type="resource" topic="all" format="compact" order="desc" container_class="grid-four" type_class="" type-item_class="" %}            
+{% include focus/post-display.html type="resource" topic="all" format="compact" order="desc" container_class="grid-4" type_class="" type-item_class="" %}            
 
 ## cards | Resources - personal development
-{% include focus/post-display.html type="resource" topic="all" format="cards" order="desc" container_class="grid-three" type_class="" type-item_class="box-shadow" %}            
+{% include focus/post-display.html type="resource" topic="all" format="cards" order="desc" container_class="grid-3" type_class="" type-item_class="box-shadow" %}            
 
 
 ## grid | Resources - personal development
