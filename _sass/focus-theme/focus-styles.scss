@@ -888,8 +888,8 @@ aside.sidebar__right{
 }
 
 /* Hide tags/categories when relevant */
-.item .page__meta_taxonomy.categories > .page__taxonomy .tag-list,
-.item .page__meta_taxonomy.tags > .page__taxonomy .category-list{
+.item .page__meta_taxonomy.categories .tag-list,
+.item .page__meta_taxonomy.tags .category-list{
     display: none;
 }
 
