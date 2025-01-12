@@ -1022,8 +1022,15 @@ body {
 * --------------------------
 */
 .post-display{
-    &.grid .item{
-        display: flex 1 1 calc(30% - 20px);
+    &.grid{
+        display: grid;
+        grid-template-columns: repeat(var(--columns), 1fr);
+        gap: 16px; /* You can adjust the gap size as needed */        
+         .item{
+            background-color: #f0f0f0; /* Example styling */
+            padding: 20px;
+            border: 1px solid #ccc;
+        }
     }
     .item-featured-img{
         width: 100%;
