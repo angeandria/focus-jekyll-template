@@ -148,7 +148,7 @@ defaults:
       author: default # data/authors.yml
       author_profile: true
       ###
-      # featured_image: "assets/images/placeholder-1200.jpg"	
+      featured_image: "assets/images/placeholder-1200.jpg"	
       featured_logo: "assets/images/placeholder-logo.jpg"	      
       sidebar:
         - image: "/assets/images/placeholder.jpg"
