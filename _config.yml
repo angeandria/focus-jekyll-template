@@ -320,17 +320,14 @@ defaults:
   # _docs
   - scope:
       path: "_docs"
-      type: docs
+      type: docs      
     values:
-      layout: focus/landing
+      layout: focus/single-page
       template: columns-one
       ###
-      #classes:
-      #  - foo
-      toc: false
-      toc_label: "My Toc title"
-      toc_icon: "heart"  # corresponding Font Awesome icon name (without fa prefix)
-      toc_sticky: true
+      classes:
+        - docs
+      author: default
       author_profile: false
       ###
       # featured_image: "assets/images/placeholder-1200.jpg"	
@@ -338,21 +335,22 @@ defaults:
       sidebar:
         - image: "/assets/images/placeholder.jpg"
           image_alt: "image"
-          title: "Products" 
+          title: "Pages" 
           text: "Some text here."
           nav:
-            - main                        
+            - main      
+      post_aside: false            
       ###
-      breadcrumbs: false
-      comments: false
+      # breadcrumbs: false
+      comments: false      
       read_time: false
       related: false
-      share: false
-      search: false
-      #show_date: true
+      share: false  
+      show_date: false
       #show_footer_date: true
       #show_pagination: true      
-      #show_taxonomy: true         
+      #show_taxonomy: true
+      
       
   #jekyll-archives Topic
   - scope:

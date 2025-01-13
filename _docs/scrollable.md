@@ -18,5 +18,7 @@ typesetting industry. Lorem Ipsum has been the industry's standard dummy text ev
 or
 
 ```html
-    hello {: .scrollable}
+    hello
+    
+    {: .scrollable}
 ```
