@@ -101,17 +101,17 @@ img{
          }           
     }
     
-    &.grid-2 > div{
+    .grid-2 > div{
         --columns: 2;
         gap: var(--gutter-m);        
     }    
-    &.grid-3 > div{
+    .grid-3 > div{
         --columns: 3;        
     }
-    &.grid-4 > div{
+    .grid-4 > div{
         --columns: 4;
     }
-    &.grid-6 div {
+    .grid-6 div {
         --columns: 6;
         gap: var(--gutter-xs);
     }
