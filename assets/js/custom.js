@@ -143,23 +143,24 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
-
-// Function to toggle dark mode
-function toggleDarkMode() {
-    document.body.classList.toggle('dark-mode');
-    
-    // Save the current mode in localStorage
-    if (document.body.classList.contains('dark-mode')) {
-        localStorage.setItem('darkMode', 'enabled');
-    } else {
-        localStorage.setItem('darkMode', 'disabled');
+$(document).ready(function() {
+    // Function to toggle dark theme
+    function toggleDarkTheme() {
+        $('body').toggleClass('dark-theme');
+        
+        // Save the current mode in localStorage
+        if ($('body').hasClass('dark-theme')) {
+            localStorage.setItem('darkTheme', 'enabled');
+        } else {
+            localStorage.setItem('darkTheme', 'disabled');
+        }
     }
-}
 
-// Event listener for the toggle button
-document.getElementById('darkModeToggle').addEventListener('click', toggleDarkMode);
+    // Event listener for the toggle button
+    $('#darkModeToggle').on('click', toggleDarkTheme);
 
-// Check localStorage on page load and apply dark mode if enabled
-if (localStorage.getItem('darkMode') === 'enabled') {
-    document.body.classList.add('dark-mode');
-}
+    // Check localStorage on page load and apply dark theme if enabled
+    if (localStorage.getItem('darkTheme') === 'enabled') {
+        $('body').addClass('dark-theme');
+    }
+});
