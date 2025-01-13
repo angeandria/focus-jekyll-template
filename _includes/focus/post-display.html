@@ -36,11 +36,16 @@
 
             
         {% comment %} // Get source {% endcomment %}
-        {% if type == "resource"%}        
-            {% assign sorted_pages = site.resources %}    
-        {% else %}    
+        
+        {% case type %}
+          {% when "resource" %}
+            {% assign sorted_pages = site.resources %}                
+          {% when "product" %}
+            {% assign sorted_pages = site.products %}
+          {% else %}
             {% assign sorted_pages = site.pages %}
-        {% endif %}        
+        {% endcase %}
+        
         
         {% comment %} // Filter by category {% endcomment %}
         {% if target_topic == "all" %}
