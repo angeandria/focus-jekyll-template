@@ -1,4 +1,6 @@
 main:
+    - title: "Pages"
+    url: /all-pages        
   - title: "Topics"
     url: /topics    
   - title: "Newsletter"
