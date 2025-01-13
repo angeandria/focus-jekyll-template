@@ -1,5 +1,4 @@
 ---
-title: Search tests
 ---
 
 ## Grid 2
