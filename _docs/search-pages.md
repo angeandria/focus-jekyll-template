@@ -1,5 +1,5 @@
 ---
-layout: focus/search-pages
+layout: focus/search-filter
 ---
 
 ## Search pages
