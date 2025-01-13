@@ -4,12 +4,14 @@ document.addEventListener('DOMContentLoaded', function() {
     // Step 1: Get the "topic" URL parameter
     const urlParams = new URLSearchParams(window.location.search);
     const topic = urlParams.get('search');
-
+  
     // Step 2: Pre-fill the search input if the topic exists
     if (topic) {
         searchInput.val(topic); // Set the input field with the topic value
         // searchInput.focus(); // TODO : Does NOT work
     }
+    
+    
         
     // Hide all Search results on loading
     // $(".search-mode.all-posts .item").addClass("is--hidden");
