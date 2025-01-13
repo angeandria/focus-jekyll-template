@@ -110,6 +110,11 @@ collections:
     output: true
     permalink: /tool/:title
     sort_by: weight
+  docs: 
+    output: true
+    permalink: /docs/:title
+    sort_by: weight
+    
 
 #collections:
 #  docs:
@@ -311,7 +316,43 @@ defaults:
       #show_footer_date: true
       #show_pagination: true      
       #show_taxonomy: true   
-      
+
+  # _docs
+  - scope:
+      path: "_docs"
+      type: docs
+    values:
+      layout: focus/landing
+      template: columns-one
+      ###
+      #classes:
+      #  - foo
+      toc: false
+      toc_label: "My Toc title"
+      toc_icon: "heart"  # corresponding Font Awesome icon name (without fa prefix)
+      toc_sticky: true
+      author_profile: false
+      ###
+      # featured_image: "assets/images/placeholder-1200.jpg"	
+      featured_logo: "assets/images/placeholder-logo.jpg"	      
+      sidebar:
+        - image: "/assets/images/placeholder.jpg"
+          image_alt: "image"
+          title: "Products" 
+          text: "Some text here."
+          nav:
+            - main                        
+      ###
+      breadcrumbs: false
+      comments: false
+      read_time: false
+      related: false
+      share: false
+      search: false
+      #show_date: true
+      #show_footer_date: true
+      #show_pagination: true      
+      #show_taxonomy: true         
       
   #jekyll-archives Topic
   - scope:
