@@ -1190,12 +1190,13 @@ body {
 * MEDIA QUERIES
 * ----------------------
 */
-@include breakpoint($small) {
-    input.search-input{
-        font-size: 30px;
+#search.search-input{
+    font-size: 30px;
+    @include breakpoint($medium) {
+        font-size: var(--font-size-s);
     }
-    
 }
+
 
 /*
 * ==========================================
