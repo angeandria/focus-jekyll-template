@@ -653,7 +653,7 @@ body.layout--focus-topics{
         }
         .item.current a{
             background-color: var(--bg-color-10);
-            color: #FFF;
+            color: var(--font-color-10);
             border: none;
         }
         .item:first-child a{
@@ -713,6 +713,7 @@ body.layout--focus-topics{
         }
         a.current{
             background-color: var(--bg-color-10);
+            color: var(--font-color-10);            
         }
     }
     .nav__sub-title{

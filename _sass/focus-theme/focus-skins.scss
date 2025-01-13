@@ -11,6 +11,7 @@ body{
         --body-bg-color: #111111;
         --body-box-shadow: 0 4px 20px rgba(0, 0, 0, 0.07); /* 0 4px 20px rgba(0, 0, 0, 0.07); */
             
+        --bg-color-0: #000000;
         --bg-color-1: #09202B;
         --bg-color-2: #0E2A2D;
         --bg-color-3: #1E4B8D;
@@ -25,6 +26,7 @@ body{
         --font-color-secondary: #AFAFAF;
         --font-color-heading-primary: #FFF;
         --font-color-heading-secondary: #EFEFEF;    
+        --font-color-10 : var(--bg-color-0);        
         --links-color-primary: #FFFFFF;
         --links-color-secondary: yellow;
         --links-color-border: var(--links-color-primary);
