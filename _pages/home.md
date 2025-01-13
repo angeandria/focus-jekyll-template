@@ -30,7 +30,7 @@ This is the content of my homepage
 
 
 ## list | Posts - personal development
-{% include focus/post-display.html type="post" topic="all" format="list" order="desc" container_class="" type_class="" type-item_class="" %}     
+{% include focus/post-display.html type="post, resource" topic="all" format="list" order="desc" container_class="" type_class="" type-item_class="" %}     
 
 ---
 
