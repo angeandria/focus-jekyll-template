@@ -1,4 +1,6 @@
 main:
+    - title: "Topics"
+    url: /topics    
   - title: "Newsletter"
     url: /newsletter
   - title: "About"
