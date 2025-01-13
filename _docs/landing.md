@@ -11,8 +11,6 @@ Add this frontmatter to :
 
 
 ```
----
 layout: focus/landing
 template: columns-one
----
 ``` 

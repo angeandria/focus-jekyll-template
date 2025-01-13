@@ -420,7 +420,8 @@ body.aside-none{
 * Landing
 * -----------
 */
-body.layout--focus-landing{
+body.layout--focus-landing,
+body.landing{
     #main{
         max-width: var(--width-s);
         width: var(--width-s);

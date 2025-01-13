@@ -2,10 +2,8 @@
 navigation: docs
 ---
 
-## Custom header navigation : frontmatter
-
+## Custom header navigation
+Frontmatter :
 ```html
----
 navigation: docs
----
 ```
