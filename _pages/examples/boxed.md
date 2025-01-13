@@ -9,6 +9,12 @@ Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
 <span class="box-shadow boxed-l">hello</span>
 ```
 
+or
+
+```html
+    hello {: .box-shadow .boxed-l }
+```
+
 #### boxed-xs
 ```
 <span class="boxed-xs">hello</span>

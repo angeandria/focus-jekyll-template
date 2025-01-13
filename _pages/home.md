@@ -5,6 +5,10 @@ hidden: true
 title_display: false
 ---
 
+## List | Products
+{% include focus/post-display.html type="product" topic="all" format="list" order="desc" container_class="" type_class="" type-item_class="" %}           
+
+
 This is the content of my homepage
 
 [personal development](/personal-development)
@@ -26,7 +30,7 @@ This is the content of my homepage
 
 
 ## grid | Resources - personal development
-{% include focus/post-display.html type="resource" topic="all" format="grid" order="desc" container_class="" type_class="" type-item_class="" %}           
+{% include focus/post-display.html type="resource" topic="all" format="list" order="desc" container_class="grid-6" type_class="" type-item_class="" %}           
 
 
 ## list | Posts - personal development
