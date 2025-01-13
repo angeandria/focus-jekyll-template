@@ -139,11 +139,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Remove existing highlights
         return html.replace(/<span class="search-highlight">(.*?)<\/span>/gi, '$1');
     }
-
-});
-
-
-$(document).ready(function() {
+    
     // Function to toggle dark theme
     function toggleDarkTheme() {
         $('body').toggleClass('dark-theme');
@@ -163,4 +159,6 @@ $(document).ready(function() {
     if (localStorage.getItem('darkTheme') === 'enabled') {
         $('body').addClass('dark-theme');
     }
+
 });
+
