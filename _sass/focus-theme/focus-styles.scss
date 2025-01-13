@@ -1191,6 +1191,9 @@ body {
 * ----------------------
 */
 @include breakpoint($small) {
+    input.search-input{
+        font-size: 30px;
+    }
     
 }
 
