@@ -1,7 +1,2 @@
 <h2>PAGES</h2>
-{% for page in site.pages %}
-	<div><a href="{{ page.url | relative_url }}">{{ page.title }}</a> - {{ page.url }}</div>
-	<div>
-		{{ page.excerpt | markdownify | strip_html | truncate: 20 }}
-	</div>
-{% endfor %}   
+{% include focus/post-display.html type="page" topic="all" format="list" order="desc" container_class="grid-3" type_class="" type-item_class="" %}     
