@@ -1,3 +1,3 @@
 —-
-layout:focus/search-product
+layout: focus/search-products
 —-
