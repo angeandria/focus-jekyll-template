@@ -140,15 +140,16 @@ document.addEventListener('DOMContentLoaded', function() {
         return html.replace(/<span class="search-highlight">(.*?)<\/span>/gi, '$1');
     }
     
-    // Function to toggle dark theme
     function toggleDarkTheme() {
         $('body').toggleClass('dark-theme');
         
         // Save the current mode in localStorage
         if ($('body').hasClass('dark-theme')) {
             localStorage.setItem('darkTheme', 'enabled');
+            $('#darkModeToggle').html('&#9788;'); // Sun icon when dark theme is enabled
         } else {
             localStorage.setItem('darkTheme', 'disabled');
+            $('#darkModeToggle').html('&#9790;'); // Moon icon when default theme is enabled
         }
     }
 
@@ -158,6 +159,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Check localStorage on page load and apply dark theme if enabled
     if (localStorage.getItem('darkTheme') === 'enabled') {
         $('body').addClass('dark-theme');
+        $('#darkModeToggle').html('&#9788;'); // Set sun icon if dark theme was enabled
     }
 
 });
