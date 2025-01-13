@@ -1,4 +1,5 @@
 ---
+layout: focus/search-pages
 ---
 
-## Grid 2
+## Search pages
