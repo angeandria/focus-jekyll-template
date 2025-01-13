@@ -1,3 +1,0 @@
-—-
-layout: focus/search-products
-—-
