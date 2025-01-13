@@ -8,8 +8,8 @@ this is my lead magnet Lorem Ipsum is simply dummy text of the printing and type
 
 ## Front matter
 ```
-layout: focus/landing
-template: columns-one
+layout: focus/landing  // by default for the "products" collection
+template: columns-one  // by default for the "products" collection
 ``` 
 ## Insert form
 
