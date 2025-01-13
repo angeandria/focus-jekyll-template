@@ -141,3 +141,25 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
 });
+
+
+
+// Function to toggle dark mode
+function toggleDarkMode() {
+    document.body.classList.toggle('dark-mode');
+    
+    // Save the current mode in localStorage
+    if (document.body.classList.contains('dark-mode')) {
+        localStorage.setItem('darkMode', 'enabled');
+    } else {
+        localStorage.setItem('darkMode', 'disabled');
+    }
+}
+
+// Event listener for the toggle button
+document.getElementById('darkModeToggle').addEventListener('click', toggleDarkMode);
+
+// Check localStorage on page load and apply dark mode if enabled
+if (localStorage.getItem('darkMode') === 'enabled') {
+    document.body.classList.add('dark-mode');
+}
