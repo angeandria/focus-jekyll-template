@@ -87,6 +87,36 @@ img{
     }            
 }
 
+@include breakpoint($small) {
+    .grid-2,    
+    .grid-3,
+    .grid-4,
+    .grid-6{          
+          display: grid;                  /* Enable grid layout */
+          gap: var(--gutter-s);          
+         > div{               
+                display: grid;
+                gap: var(--gutter-s);       
+                grid-template-columns: repeat(var(--columns), 1fr);                
+         }           
+    }
+    
+    &.grid-2 > div{
+        --columns: 2;
+        gap: var(--gutter-m);        
+    }    
+    &.grid-3 > div{
+        --columns: 3;        
+    }
+    &.grid-4 > div{
+        --columns: 4;
+    }
+    &.grid-6 div {
+        --columns: 6;
+        gap: var(--gutter-xs);
+    }
+} 
+
 
 /*
 * ----------------------
@@ -1034,14 +1064,16 @@ body {
 * POST DISPLAY
 * --------------------------
 */
-.post-display{
     
+    
+.post-display{
+    /*
     @include breakpoint($small) {
         &.grid-2,    
         &.grid-3,
         &.grid-4,
         &.grid-6{          
-              display: grid;                  /* Enable grid layout */
+              display: grid;
               gap: var(--gutter-s);          
              .post-type{               
                     display: grid;
@@ -1065,6 +1097,7 @@ body {
             gap: var(--gutter-xs);
         }
     } 
+    */
     
 
     
@@ -1191,7 +1224,7 @@ body {
 * ----------------------
 */
 #search.search-input{
-    font-size: 30px;
+    font-size: 16px;
     @include breakpoint($medium) {
         font-size: var(--font-size-s);
     }
