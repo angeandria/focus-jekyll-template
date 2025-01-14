@@ -1,5 +1,5 @@
-@mixin box-shadow($x: 0, $y: 0, $blur: 0, $spread: 0, $color: black) {
-  -webkit-box-shadow: $x $y $blur $spread $color; // For older WebKit browsers
-  -moz-box-shadow: $x $y $blur $spread $color;    // For older Firefox browsers
-  box-shadow: $x $y $blur $spread $color;         // Standard syntax
+@mixin box-shadow($shadow) {
+  -webkit-box-shadow: #{$shadow}; // For older WebKit browsers
+  -moz-box-shadow: #{$shadow};    // For older Firefox browsers
+  box-shadow: #{$shadow};         // Standard syntax
 }
