@@ -24,9 +24,6 @@
 .single-related{ background-color : orange; }
 */
 
-body.docs{
-    background-color: #F2F2F9;
-}
 
 
 /*
@@ -592,8 +589,8 @@ body.search-mode{
         flex-grow: 0;        
     }
     
-    #page__header,
-    section.page__content,
+    /*#page__header,
+    section.page__content,*/
     footer.page__meta,
     #page__after_content{
         display:none;
@@ -1413,6 +1410,14 @@ nav.toc .nav__title,
 
 
 
+/*
+* --------------------------
+* DOCS
+* --------------------------
+*/
+body.docs{
+    border-top: 5px solid red;
+}
 
 
 

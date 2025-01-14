@@ -6,14 +6,6 @@
   {% assign taxonomy_display = page.taxonomy_display %}
 {% endif %}
 
-<!-- Search Layouts -->
-{% assign prefix = "focus/search-" %}
-{% if page.layout | slice: 0, prefix.size == prefix %}
-    <div class="search-content is--visible">
-        {% include_cached search/search_form.html %}
-    </div>
-{% endif %}
-
 <div class="scrollable-container">
     <div class="scrollable">          
         {% if taxonomy_display %}
