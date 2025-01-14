@@ -1,5 +1,4 @@
 ---
-layout: focus/search-pages
+layout: focus/search-docs
 ---
 
-search All docs
