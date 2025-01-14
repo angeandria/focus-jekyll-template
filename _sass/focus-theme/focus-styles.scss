@@ -671,7 +671,7 @@ body.layout--focus-topics{
     
         .item a{            
             border: 1px solid #EFEFEF;
-            background-color: #FFF;            
+            background-color: var(--bg-color-1);            
             border-radius: 8px;
         }
         .item.current a{
