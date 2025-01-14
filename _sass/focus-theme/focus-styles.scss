@@ -570,7 +570,7 @@ body:not(.search-mode){
     }
     .search-content__form{
         padding: 10px 16px;
-        include box-shadow(var(--box-shadow));
+        @include box-shadow(var(--box-shadow));
     }
 }
 
