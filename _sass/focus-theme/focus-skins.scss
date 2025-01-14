@@ -26,7 +26,8 @@ body{
         --font-color-secondary: #AFAFAF;
         --font-color-heading-primary: #FFF;
         --font-color-heading-secondary: #EFEFEF;    
-        --font-color-10 : var(--bg-color-0);        
+        --font-color-0 : var(--bg-color-10);    
+        --font-color-10 : var(--bg-color-0);
         --links-color-primary: #FFFFFF;
         --links-color-secondary: yellow;
         --links-color-border: var(--links-color-primary);
