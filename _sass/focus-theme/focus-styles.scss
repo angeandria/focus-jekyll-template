@@ -535,7 +535,10 @@ figcaption{
 * ------------
 */
 .section--page__before_header{
-    padding: 30px 0;   
+    padding: 30px 0;       
+    .search-content .search-content__form{
+        box-shadow: none;
+    }
 }
 
 
@@ -582,8 +585,6 @@ body:not(.search-mode){
 }
 
 
-
-
 body.layout--focus-topics{
 
 }
@@ -591,6 +592,8 @@ body.layout--focus-topics{
 .search-content.is--visible #results{
     display: none;
 }
+
+
 
 
 
