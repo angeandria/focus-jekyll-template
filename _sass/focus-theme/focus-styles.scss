@@ -564,11 +564,13 @@ body:not(.search-mode){
 
 .search-content{        
     padding: 0;
+    width: 100%;
     .search-content__inner-wrap{
         padding-inline: 0;
     }
     .search-content__form{
         padding: 10px 16px;
+        include box-shadow(var(--box-shadow));
     }
 }
 
