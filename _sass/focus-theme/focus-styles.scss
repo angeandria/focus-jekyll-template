@@ -488,7 +488,7 @@ body > #footer{
 */
 a.site-title{
     text-transform: uppercase;
-    color: var(--font-heading-color-primary);
+    color: var(--font-color-heading-primary);
     font-weight: 900;
 }
 
@@ -496,6 +496,19 @@ a.site-title{
     background-color: transparent;
 }
 
+
+/*
+* Dark Mode
+* ----
+*/
+#darkModeToggle{
+    background-color: var(--bg-color-2);
+    color: var(--font-color-heading-primary);
+    border: none;
+    padding: 4px 8px;
+    border-radius: 50%;
+    font-size: var(--font-size-l);
+}
 
 /*
 * ==========================================
