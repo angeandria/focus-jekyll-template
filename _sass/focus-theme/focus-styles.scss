@@ -538,46 +538,6 @@ figcaption{
     padding: 30px 0;   
 }
 
-/*
-* ------------
-* SCROLLABLE CONTAINER - Search & Taxonomies
-* ------------
-*/
-.scrollable-container {
-    height: auto;              /* Optional height */
-    overflow: hidden;          /* Hide overflow */
-    position: relative;        /* Positioning context for absolute child */   
-    display: flex; 
-    justify-content: center;
-    
-    .search-content{
-        max-width: 250px;
-        padding: 0;
-        .search-content__inner-wrap{
-            padding-inline: 0;
-        }
-        .search-content__form{
-            padding: 10px 16px;
-        }
-    }
-}
-
-.scrollable {
-    display: flex;
-    align-items: center;        
-    height: 100%;              /* Fill the height of the container */
-    overflow-x: auto;          /* Enable horizontal scrolling */
-    white-space: nowrap;       /* Prevent line breaks */
-    scrollbar-width: none;      /* Hide scrollbar in Firefox */
-    -ms-overflow-style: none;   /* Hide scrollbar in IE and Edge */    
-}
-
-
-/* Hide scrollbars for WebKit browsers (Chrome, Safari) */
-.scrollable::-webkit-scrollbar {
-    display: none;              /* Hide scrollbar */
-}
-
 
 /*
 * ------------
@@ -602,6 +562,17 @@ body:not(.search-mode){
     }
 }
 
+.search-content{        
+    padding: 0;
+    .search-content__inner-wrap{
+        padding-inline: 0;
+    }
+    .search-content__form{
+        padding: 10px 16px;
+    }
+}
+
+
 body.layout--focus-topics{
 
 }
@@ -609,6 +580,43 @@ body.layout--focus-topics{
 .search-content.is--visible #results{
     display: none;
 }
+
+
+
+/*
+* ------------
+* SCROLLABLE CONTAINER - Search & Taxonomies
+* ------------
+*/
+.scrollable-container {
+    height: auto;              /* Optional height */
+    overflow: hidden;          /* Hide overflow */
+    position: relative;        /* Positioning context for absolute child */   
+    display: flex; 
+    justify-content: center;
+    
+    .search-content{
+        max-width: 250px;        
+    }
+}
+
+.scrollable {
+    display: flex;
+    align-items: center;        
+    height: 100%;              /* Fill the height of the container */
+    overflow-x: auto;          /* Enable horizontal scrolling */
+    white-space: nowrap;       /* Prevent line breaks */
+    scrollbar-width: none;      /* Hide scrollbar in Firefox */
+    -ms-overflow-style: none;   /* Hide scrollbar in IE and Edge */    
+}
+
+
+/* Hide scrollbars for WebKit browsers (Chrome, Safari) */
+.scrollable::-webkit-scrollbar {
+    display: none;              /* Hide scrollbar */
+}
+
+
 
 /*
 * ------------
