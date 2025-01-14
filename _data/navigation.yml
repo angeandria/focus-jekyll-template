@@ -1,4 +1,16 @@
 main:
+  - title: "Search"
+    chidren:
+      - title: "Resources"
+        url: /docs/search-resources
+      - title: "Pages"
+        url: /docs/search-pages
+      - title: "Products"
+        url: /docs/search-products
+      - title: "Docs"
+        url: /docs/search-docs        
+      - title: "Posts"
+        url: /docs/search-posts        
   - title: "Pages"
     url: /all-pages        
   - title: "Topics"

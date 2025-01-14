@@ -569,10 +569,19 @@ body:not(.search-mode){
         padding-inline: 0;
     }
     .search-content__form{
-        padding: 10px 16px;
+        padding: 10px 16px;        
+        border: 1px solid var(--border-color-1);
+        border-radius: 10px;        
         @include box-shadow(var(--box-shadow));
     }
 }
+
+
+.search-content.is--visible{
+    display: inline-block;    
+}
+
+
 
 
 body.layout--focus-topics{
@@ -1406,16 +1415,6 @@ nav.toc .nav__title,
         --font-size-ratio: 1;
         --font-size-heading: 1.1;
     }       
-}
-
-
-.search-content.is--visible{
-    display: inline-block;    
-}
-
-.search-content__form{
-    border: 1px solid var(--border-color-1);
-    border-radius: 10px;
 }
 
 
