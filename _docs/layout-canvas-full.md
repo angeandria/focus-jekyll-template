@@ -52,11 +52,9 @@ Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
 
 
 
-## Centered image
+## Centered image not working
 
-<img class="item-featured-img" src="{{ page.featured_image | default: '/assets/images/placeholder.jpg' | relative_url }}" alt="Featured Image">
-
-{: .align-center}
+<img class="item-featured-img" src="{{ page.featured_image | default: '/assets/images/placeholder.jpg' | relative_url }}" alt="Featured Image">{: .align-center}
 
 ```
 <img class="" src="...">
