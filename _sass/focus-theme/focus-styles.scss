@@ -66,6 +66,7 @@
 img{
     &.full{
         width: 100%;
+        max-width:100%;
     }
     &.width-xl{
         width: var(--width-xl);
