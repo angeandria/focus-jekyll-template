@@ -1,7 +1,7 @@
 ---
 classes :
   - boxed
-  - boxed-m
+  - boxed-s
 ---
 
 
