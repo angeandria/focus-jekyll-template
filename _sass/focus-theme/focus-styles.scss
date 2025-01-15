@@ -424,18 +424,30 @@ body.aside-none{
 * -----------
 */
 body.layout--focus-landing,
-body.landing{
-    #main{
+body.landing,
+body.splash{
+    > .initial-content #main{
         max-width: var(--width-s);
         width: var(--width-s);
     }
     footer.page__meta,
     .section--page__after_post,
-    #footer{
+    > div#footer{
+        display:none;
+    }
+}
+body.splash{    
+    > #header{
         display:none;
     }
 }
 
+
+/*
+* -----------
+* Splash
+* -----------
+*/
 
 /*
 * -----------

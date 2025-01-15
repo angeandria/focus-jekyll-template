@@ -1,10 +1,9 @@
 ---
+layout: focus/landing
 template: columns-one
-classes:
-  - landing
 ---
 
-Alternative to [landing-layout](/docs/landing-layout)
+Alternative to [landing](/docs/landing)
 
 ## Landing page
 Add this frontmatter to :
@@ -14,7 +13,6 @@ Add this frontmatter to :
 
 
 ```
+layout: focus/landing
 template: columns-one
-classes:
-  - landing
 ``` 
