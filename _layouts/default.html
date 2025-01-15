@@ -96,7 +96,7 @@
     <body class="{{site_class}} {{ layout_class }} {{ template_class }} {{ category_main_id_class }} {{ category_main_class }} {{ categories_classes }} {{ page_classes }}" dir="{% if site.rtl %}rtl{% else %}ltr{% endif %}">
         
         <!-- SECTION top__bar -->
-        {% assign top_bar_details = site.data.top-bar[current_layout] | site.data.top-bar["default"] %}    
+        {% assign top_bar_details = site.data.top-bar[current_layout] | default: site.data.top-bar["default"] %}    
         {% include focus/hook.html hook="top__bar" class="top__bar" data=top_bar_details %}         
 
         {% comment %}
