@@ -4,7 +4,7 @@ classes:
   - landing
 ---
 
-Alternative to [layout-landing](/docs/layout-landing)
+Alternative to [layout-landing](./layout-landing.md)
 
 ## Landing page
 Add this frontmatter to :

@@ -1,15 +1,15 @@
 default:
-    text : top bar DEFAULT text 
+    text : hello
     cta : 
         
-home:
-    text : top bar HOME text 
-    cta : 
+# home:
+#     text : top bar HOME text 
+#     cta : 
 
-single:
-    text : top bar SINGLE text 
-    cta : 
+# single:
+#     text : top bar SINGLE text 
+#     cta : 
         
-product-1:
-    text : top bar PRODUCT-1 text 
-    cta :  
+# product-1:
+#     text : top bar PRODUCT-1 text 
+#     cta :  

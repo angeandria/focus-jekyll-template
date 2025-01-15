@@ -2,8 +2,8 @@
 
 {% assign hooks = site.data.focus.hooks %}
 {% assign target_hook = hooks[target_file] %}
-{% assign target_class = include.class | default: ""%}
-{% assign data = include.data %}
+{% assign target_class = include.class | default: "" %}  
+{% assign target_data = include.data | default : nil %}
 
 
 {% if target_hook %}
@@ -17,7 +17,7 @@
     {% endif %}
     <div class="hook__{{target_file}}">
         <div class="section--hook {{class}}-hook section--{{target_file}} {{ target_class }} ">  
-                {% include {{ target_file | prepend: path | append: '.html' }} data=data %}                
+                {% include {{ target_file | prepend: path | append: '.html' }} target_data = data %}                
         </div>
     </div>
 
