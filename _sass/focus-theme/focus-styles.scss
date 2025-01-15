@@ -480,6 +480,14 @@ body > #footer{
     border-bottom: 1px solid transparent;
 }
 
+
+.top__bar{
+    background-color: var(--bg-color-top-bar);    
+    color: var(--font-color-10);
+    text-align:center;
+    padding: 8px;
+}
+
 /*
 * Masthead
 * ----
