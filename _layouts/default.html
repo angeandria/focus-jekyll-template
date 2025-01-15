@@ -100,27 +100,6 @@
         {% comment %}
         {% include focus/hook.html hook="top__bar" class="top__bar" data=top_bar_details %}         
         {% endcomment %}
-        
-        {% comment %}
-        {% if current_layout == "home"
-            || current_layout == "single-page"
-            || current_layout == "single-post"
-            || current_layout == "single-product"      
-            || current_layout == "single-resource"
-        %}        
-            {% case current_layout %}                
-                {% when "home" %}
-                    {% include focus/hook.html hook="top__bar_home" class="top__bar" %}
-                {% when "single-page" %}
-                    {% include focus/hook.html hook="top__bar_single" class="top__bar" %}                        
-                {% when "single-post" %}
-                    {% include focus/hook.html hook="top__bar_single" class="top__bar" %}                               
-            {% endcase %}
-        {% else %}
-            {% include focus/hook.html hook="top__bar" class="top__bar" %}
-        {% endif %}
-        {% endcomment %}        
-        
             
         {% include_cached skip-links.html %}
         <div id="header">
