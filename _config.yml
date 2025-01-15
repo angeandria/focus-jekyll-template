@@ -285,11 +285,11 @@ defaults:
       path: "_products"
       type: products
     values:
-      layout: focus/landing
+      layout: focus/single-product
       template: columns-one
       ###
-      #classes:
-      #  - foo
+      classes:
+        - landing
       toc: false
       toc_label: "My Toc title"
       toc_icon: "heart"  # corresponding Font Awesome icon name (without fa prefix)
@@ -322,7 +322,7 @@ defaults:
       path: "_docs"
       type: docs      
     values:
-      layout: focus/single-page
+      layout: focus/single-doc
       template: columns-one
       ###
       classes:
