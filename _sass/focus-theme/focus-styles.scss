@@ -146,10 +146,6 @@ img{
     &page__before_post{
     }
 }
-.top__bar{    
-    background-color: #EFEFEF;
-    margin-top: 0;
-}
 
 /*
 * --------------------------------------
@@ -483,11 +479,14 @@ body > #footer{
 }
 
 
-.top__bar{
-    background-color: var(--bg-color-top-bar);    
-    color: var(--font-color-10);
-    text-align:center;
-    padding: 8px;
+.top__bar{ 
+    margin-top: 0;
+    .wrapper{
+        background-color: var(--bg-color-top-bar);    
+        color: var(--font-color-10);
+        text-align:center;
+        padding: 8px;
+    }
 }
 
 /*

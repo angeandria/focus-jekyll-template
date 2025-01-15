@@ -1,2 +1,6 @@
-{% assign top_bar_content = include.data %}    
-{{ top_bar_content.text }}
+{% assign content = include.data %}    
+{% if content.text != "" %}
+    <div class="wrapper">
+        {{ content.text }}
+    </div>
+{% endif %}
