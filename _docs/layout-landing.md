@@ -3,7 +3,7 @@ layout: focus/landing
 template: columns-one
 ---
 
-Alternative to [landing](/docs/landing)
+Alternative to [landing](./landing)
 
 ## Landing page
 Add this frontmatter to :
