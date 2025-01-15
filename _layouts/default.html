@@ -28,13 +28,13 @@
     {% assign template = page.template | default: layout.template %}
     {% assign template_class = site.template_prefix | append: template %}
     
-
+    {% comment %}
     ## DEBUG
     LAYOUT SLUG : {{ layout_slug }}    
     LAYOUT_CLASS : {{ layout_class }}
     CURRENT LAYOUT : {{ current_layout }}
     CURRENT TEMPLATE : {{ template }}    
-
+    {% endcomment %}
 
     {% comment %}
     <!-- Main Category class -->
@@ -99,7 +99,7 @@
         {% assign top_bar_details = site.data.top-bar[current_layout] | site.data.top-bar["default"] %}    
         {% include focus/hook.html hook="top__bar" class="top__bar" data=top_bar_details %}         
 
-            {% comment %}
+        {% comment %}
         {% if current_layout == "home"
             || current_layout == "single-page"
             || current_layout == "single-post"
