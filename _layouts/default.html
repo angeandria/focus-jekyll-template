@@ -28,13 +28,13 @@
     {% assign template = page.template | default: layout.template %}
     {% assign template_class = site.template_prefix | append: template %}
     
-    {% comment %}
+
     ## DEBUG
     LAYOUT SLUG : {{ layout_slug }}    
     LAYOUT_CLASS : {{ layout_class }}
     CURRENT LAYOUT : {{ current_layout }}
     CURRENT TEMPLATE : {{ template }}    
-    {% endcomment %}
+
 
     {% comment %}
     <!-- Main Category class -->
@@ -95,13 +95,13 @@
     
     <body class="{{site_class}} {{ layout_class }} {{ template_class }} {{ category_main_id_class }} {{ category_main_class }} {{ categories_classes }} {{ page_classes }}" dir="{% if site.rtl %}rtl{% else %}ltr{% endif %}">
         
+        <!-- SECTION top__bar -->
         {% if current_layout == "home"
             || current_layout == "single-page"
             || current_layout == "single-post"
             || current_layout == "single-product"      
             || current_layout == "single-resource"
-            %}
-            <!-- SECTION top__bar -->
+        %}        
             {% case current_layout %}                
                 {% when "home" %}
                     {% include focus/hook.html hook="top__bar_home" class="top__bar" %}
