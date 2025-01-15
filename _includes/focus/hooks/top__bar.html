@@ -1,11 +1,6 @@
 {% assign content = include.data %}    
-{{ content | inspect }}
-
-{% comment %}
-
 {% if content.text != nil %}
     <div class="wrapper">
         {{ content.text }}
     </div>
 {% endif %}
-{% endcomment %}

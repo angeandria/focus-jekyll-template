@@ -17,7 +17,7 @@
     {% endif %}
     <div class="hook__{{target_file}}">
         <div class="section--hook {{class}}-hook section--{{target_file}} {{ target_class }} ">  
-                {% include {{ target_file | prepend: path | append: '.html' }} target_data = data %}                
+                {% include {{ target_file | prepend: path | append: '.html' }} data = target_data %}                
         </div>
     </div>
 
