@@ -3,6 +3,8 @@ layout: focus/landing
 template: columns-one
 ---
 
+Alternative to [landing-class](/docs/landing-class)
+
 ## Landing page
 Add this frontmatter to :
 

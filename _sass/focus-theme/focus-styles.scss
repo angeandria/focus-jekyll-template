@@ -235,7 +235,8 @@ body::after{
 .initial-content,
 .search-content,
 #footer,
-body.template--columns-one section.page__content > section{
+body.template--columns-one section.page__content > section,
+body.template--columns-one .section--page__after_post{
     padding-inline: 2em;
     @include breakpoint($medium) {
         padding-inline: var(--padding-inline-container);    
