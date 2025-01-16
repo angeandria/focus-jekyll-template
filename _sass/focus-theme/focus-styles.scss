@@ -1147,7 +1147,8 @@ body {
     }
     .item-author{
         img{
-            max-width: 40px;
+            max-width: 36px;
+            border-radius: 50%;
             @include breakpoint($medium) {
                 max-width: 60px;
             } 
@@ -1441,7 +1442,8 @@ figcaption,
 nav.toc,
 ul.toc__menu li a,
 nav.toc .nav__title,
-.item-info{
+.item-info,
+.item-author{
     font-size: var(--font-size-xs);
 }
 
