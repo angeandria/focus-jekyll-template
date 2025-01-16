@@ -1038,6 +1038,7 @@ aside.sidebar__right{
         
         .author__avatar img{
             max-width: 40px;
+            border-radius: 50%;
             @include breakpoint($medium) {
                 max-width: 60px;
             } 
@@ -1143,6 +1144,14 @@ body {
     .item-details,
     .item-content{
         display: none;
+    }
+    .item-author{
+        img{
+            max-width: 40px;
+            @include breakpoint($medium) {
+                max-width: 60px;
+            } 
+        }
     }
     .item{
         display: flex;                
