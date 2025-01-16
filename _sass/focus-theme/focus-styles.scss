@@ -1011,7 +1011,8 @@ aside.sidebar__right{
 }
 
 
-#page__header .page__meta_wrapper{
+#page__header .page__meta_wrapper,
+.item-author{
     display: flex; /* Enables flexbox layout */
     justify-content: space-between; /* Distributes space between items */
     align-items: center; /* Centers items vertically */
