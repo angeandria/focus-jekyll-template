@@ -167,16 +167,18 @@
                                           <div class="item-author__bio p-note" itemprop="description">
                                             {{ author.bio | markdownify }}
                                           </div>
-                                        {% endif %}                        
+                                        {% endif %}            
+                            
+                                        {% if page.date and page.show_date %}
+                                            <!-- Page date -->         
+                                            <div class="item-date">                    
+                                                {% include page__meta.html %}
+                                            </div>
+                                        {% endif %}            
                                 </div>
                             {% endif %}
                             
-                            {% if page.date and page.show_date %}
-                            <!-- Page date -->         
-                            <div class="item-date">                    
-                                {% include page__meta.html %}
-                            </div>
-                            {% endif %}
+                            
                           
                             
                             <div class="item-description">

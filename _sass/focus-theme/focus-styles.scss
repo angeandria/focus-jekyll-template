@@ -1152,6 +1152,7 @@ body {
         gap: var(--gap-xs); /* Optional: Adds space between items */
         a {
             text-decoration: none;
+            border: none;
         } 
         img{
             max-width: 32px;
