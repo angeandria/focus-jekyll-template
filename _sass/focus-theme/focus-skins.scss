@@ -16,7 +16,7 @@ body{
         --bg-color-2: #0E2A2D;
         --bg-color-3: #848484;
         --bg-color-10: #FFFFFF;                
-        --bg-color-tags: #EFEFEF;
+        --bg-color-tags: var(--bg-color-2);
         --bg-color-categories: pink;    
         --bg-color-info-1: #EFEFEF;
         --bg-color-info-2: yellow;    
