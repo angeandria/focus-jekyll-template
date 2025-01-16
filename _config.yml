@@ -341,7 +341,7 @@ defaults:
             - main      
       post_aside: false            
       ###
-      # breadcrumbs: false
+      breadcrumbs: true
       comments: false      
       read_time: false
       related: false
