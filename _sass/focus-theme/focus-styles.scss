@@ -1147,10 +1147,10 @@ body {
     }
     .item-author{
         img{
-            max-width: 36px;
+            max-width: 32px;
             border-radius: 50%;
             @include breakpoint($medium) {
-                max-width: 60px;
+                max-width: 46px;
             } 
         }
     }
