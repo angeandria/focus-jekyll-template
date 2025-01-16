@@ -131,13 +131,18 @@
                         <div class="block block-3">                        
                             
                             <!-- Page taxonomy -->                                                                        
-                            <div class="item-title"><a href="{{ page.url | relative_url }}">{{ page.title }}</a><span class="page__meta_taxonomy tags">                                    
-                                {% include focus/page__taxonomy.html %}
-                            </span></div>                        
-                            {% if page.subtitle %}
-                                <div class="item-subtitle">{{ page.subtitle }}</div>                    
-                            {% endif %}
-                                                    
+                            <div class="item-title">
+                                 <a href="{{ page.url | relative_url }}">{{ page.title }}</a>
+                                 
+                                 <span class="page__meta_taxonomy tags">                                    
+                                    {% include focus/page__taxonomy.html %}
+                                </span>
+                                {% if page.subtitle %}
+                                    <div class="item-subtitle">{{ page.subtitle }}</div>                    
+                                {% endif %}
+                            </div>                        
+                            
+                                      
                             <!-- Page author -->                                                                        
                             {% assign author_name = site.author %}
                             {% if page.author != nil %}
