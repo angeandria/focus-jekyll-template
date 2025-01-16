@@ -62,7 +62,8 @@
 
               
       <!-- SINGLE RESOURCE -->
-      {% if crumb == "resource" %}
+      {% if crumb == "resource"
+            || crumb == "doc" %}
             {% continue %}
       {% endif %}     
       
