@@ -1169,6 +1169,11 @@ body {
     &:not(.cards) .item-author{
         /*display: none;*/
     }
+    
+    .item-author .page__meta-date i,
+    .item-meta .page__meta-date{
+        display: none;
+    }
     .item{
         display: flex;                
         flex-direction: column;
