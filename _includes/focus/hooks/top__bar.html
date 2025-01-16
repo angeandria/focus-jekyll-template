@@ -1,10 +1,7 @@
 {% assign top = include.data %}
-{{ top | inspect }}
-{{ top.text }}
-{% comment %}
+
     {% if top.text %}
         <div class="wrapper">
             {{ top.text }}
         </div>
     {% endif %}
-{% endcomment %}
