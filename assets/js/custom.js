@@ -28,6 +28,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const titleElement = item.find(".item-title > a");
             const subtitleElement = item.find(".item-subtitle");
             const authorElement = item.find(".item-author__name a");
+            const dateElement = item.find(".page__meta-date time");
             const descriptionElement = item.find(".item-description");
             const contentElement = item.find(".item-content");            
             const tagsElement = item.find(".tags .page__taxonomy span a");
@@ -39,6 +40,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const title = titleElement.length ? titleElement.text().toLowerCase() : '';
             const subtitle = subtitleElement.length ? subtitleElement.text().toLowerCase() : '';
             const author = authorElement.length ? authorElement.text().toLowerCase() : '';
+            const date = dateElement.length ? dateElement.text().toLowerCase() : '';
             const description = descriptionElement.length ? descriptionElement.text().toLowerCase() : '';
             const content = contentElement.length ? contentElement.text().toLowerCase() : '';
             const tags = tagsElement.map(function() { return $(this).text().toLowerCase(); }).get().join(' ');
@@ -51,6 +53,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 title.includes(query) ||
                 subtitle.includes(query) ||
                 author.includes(query) ||                
+                date.includes(query) ||                                
                 description.includes(query) ||
                 content.includes(query) ||
                 tags.includes(query) ||
@@ -67,6 +70,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     { element: titleElement, query },                
                     { element: subtitleElement, query },
                     { element: authorElement, query },                    
+                    { element: dateElement, query },                                        
                     { element: descriptionElement, query },
                     { element: contentElement, query }
                 ];                
