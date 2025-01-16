@@ -134,12 +134,13 @@
                             <div class="item-title">
                                  <a href="{{ page.url | relative_url }}">{{ page.title }}</a>
                                  
+                                 {% if page.subtitle %}
+                                    <div class="item-subtitle">{{ page.subtitle }}</div>                    
+                                 {% endif %}
                                  <span class="page__meta_taxonomy tags">                                    
                                     {% include focus/page__taxonomy.html %}
                                 </span>
-                                {% if page.subtitle %}
-                                    <div class="item-subtitle">{{ page.subtitle }}</div>                    
-                                {% endif %}
+                                
                             </div>                        
                             
                                       
