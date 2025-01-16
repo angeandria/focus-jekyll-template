@@ -4,7 +4,7 @@ classes:
   - splash
 ---
 
-More minimalistic than [landing](/docs/landing)
+More minimalistic than [landing](./landing)
 
 ## Landing page
 Add this frontmatter to :

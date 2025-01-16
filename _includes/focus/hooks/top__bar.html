@@ -1,6 +1,7 @@
-{% assign content = include.data %}    
-{% if content.text != nil %}
-    <div class="wrapper">
-        {{ content.text }}
-    </div>
-{% endif %}
+{% assign top = include.data %}
+
+    {% if top.text %}
+        <div class="wrapper">
+            {{ top.text }}
+        </div>
+    {% endif %}
