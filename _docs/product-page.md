@@ -2,6 +2,7 @@
 Title : Product page example
 ---
 
+{% capture page_content %}
 
 ## Benefits
 
@@ -56,3 +57,7 @@ Title : Product page example
         </div>  
     </div>
 </div>
+
+{% endcapture %}
+
+{{ page_content | markdownify }}
