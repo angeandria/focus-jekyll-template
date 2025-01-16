@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', function() {
             // Safely get the text content from title, subtitle, and description            
             const titleElement = item.find(".item-title > a");
             const subtitleElement = item.find(".item-subtitle");
-            const authorElement = item.find(".item-author a");
+            const authorElement = item.find(".item-author__name a");
             const descriptionElement = item.find(".item-description");
             const contentElement = item.find(".item-content");            
             const tagsElement = item.find(".tags .page__taxonomy span a");
