@@ -148,13 +148,7 @@
                                             
                             {% if author %}
                                 <!-- Page author -->         
-                                <div class="item-author">                    
-                                        {% if author.name %}
-                                            <div class="item-author__name p-name" itemprop="name">
-                                              <a class="u-url" rel="me" href="{{ author.home | default: '/' | absolute_url }}" itemprop="url">{{ author.name }}</a>
-                                            </div>
-                                        {% endif %}
-                                        
+                                <div class="item-author">   
                                         {% if author.avatar %}
                                             <div class="item-author__avatar">
                                               <a href="{{ author.home | default: '/' | absolute_url }}">
@@ -162,7 +156,13 @@
                                               </a>
                                             </div>
                                         {% endif %}
-                                          
+                 
+                                        {% if author.name %}
+                                            <div class="item-author__name p-name" itemprop="name">
+                                              <a class="u-url" rel="me" href="{{ author.home | default: '/' | absolute_url }}" itemprop="url">{{ author.name }}</a>
+                                            </div>
+                                        {% endif %}
+                                                                                  
                                         {% if author.bio %}
                                           <div class="item-author__bio p-note" itemprop="description">
                                             {{ author.bio | markdownify }}

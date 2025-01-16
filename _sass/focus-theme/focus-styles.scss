@@ -1011,8 +1011,7 @@ aside.sidebar__right{
 }
 
 
-#page__header .page__meta_wrapper,
-.item-author{
+#page__header .page__meta_wrapper{
     display: flex; /* Enables flexbox layout */
     justify-content: space-between; /* Distributes space between items */
     align-items: center; /* Centers items vertically */
@@ -1147,6 +1146,13 @@ body {
         display: none;
     }
     .item-author{
+        display: flex; /* Enables flexbox layout */
+        justify-content: flex-start; /* Distributes space between items */
+        align-items: center; /* Centers items vertically */
+        gap: var(--gap-xs); /* Optional: Adds space between items */
+        a {
+            text-decoration: none;
+        } 
         img{
             max-width: 32px;
             border-radius: 50%;
@@ -1154,6 +1160,9 @@ body {
                 max-width: 46px;
             } 
         }
+    }
+    &:not(.cards) .item-author{
+        display: none;
     }
     .item{
         display: flex;                
