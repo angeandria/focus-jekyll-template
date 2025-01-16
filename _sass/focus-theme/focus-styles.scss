@@ -517,10 +517,11 @@ a.site-title{
 
 #site-nav{
     background-color: transparent;
-    ul.hidden-links{
+     .greedy-nav ul.hidden-links{
         background-color: var(--body-bg-color);
-        .greedy-nav a{
+        a{
             color: var(--font-color-primary);
+            font-size: var(--font-size-s);
         }
     }
 }
