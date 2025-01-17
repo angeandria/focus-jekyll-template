@@ -604,29 +604,17 @@ body.search-mode{
 }
 .search-mode.all-posts.hide{
     display: none;
+    opacity: 0;                  /* Start hidden */
+    transform: translateY(20px); /* Slide in from left */
+    transition: opacity 2s ease; /* Duration and easing for the transition */
 }
 body.search-mode{
     .search-mode.all-posts.hide{
         display: initial;
-    }
-}
-
-.post-display {    
-    .item.--is-hidden {
-        opacity: 0;                  /* Start hidden */
-        transform: translateY(20px); /* Slide in from left */
-        transition: opacity 2s ease; /* Duration and easing for the transition */
-    }
-    
-    /* State when the class is removed */
-    .item:not(--is-hidden) {        
-        opacity: 1;                  /* Fade in */
+        opacity: 1;
         transform: translateY(0); /* Slide in from left */
     }
 }
-
-
-
 
 
 .search-content{        
