@@ -1,7 +1,5 @@
 ---
-layout: archive
-title: "Post Archive with Feature Rows"
-permalink: /post-archive-feature-rows/
+title: "Feature Rows"
 author_profile: true
 feature_row:
   - image_path: /assets/images/placeholder.jpg
