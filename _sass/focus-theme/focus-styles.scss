@@ -606,7 +606,8 @@ body.search-mode{
     display: none;
     opacity: 0;                  /* Start hidden */
     transform: translateY(20px); /* Slide in from left */
-    transition: opacity 2s ease; /* Duration and easing for the transition */
+    transition: opacity 5s ease; /* Duration and easing for the transition */
+    transition: transform 5s ease; /* Duration and easing for the transition */    
 }
 body.search-mode{
     .search-mode.all-posts.hide{
