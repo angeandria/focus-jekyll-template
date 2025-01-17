@@ -602,9 +602,12 @@ body.search-mode{
         display:none;
     }
 }
-body:not(.search-mode){
+.search-mode.all-posts.hide{
+    display: none;
+}
+body:.search-mode{
     .search-mode.all-posts.hide{
-        display: none;
+        display: initial;
     }
 }
 
