@@ -14,8 +14,8 @@ document.addEventListener('DOMContentLoaded', function() {
     // Hide all Search results on loading
     // $(".search-mode.all-posts .item").addClass("is--hidden");
         
-    function updateSearchInput(searchinput) {
-        const query = searchinput.val().trim().toLowerCase(); // Get the current input value
+    function updateSearchInput(inputElement) {
+        const query = inputElement.val().trim().toLowerCase(); // Get the current input value
         
         const searchItems = $(".search-mode.all-posts .item"); // Select all items using jQuery            
         
@@ -110,7 +110,8 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Trigger manually and listen to input events
     updateSearchInput(searchInput); // Trigger manually
-    searchInput.on("input", updateSearchInput); // Listen to keyboard input and trigger automatically
+    searchInput.on("input", function() { updateSearchInput(searchInput); }); // Listen for input on the first input
+ // Listen to keyboard input and trigger automatically
 
     
 
