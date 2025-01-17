@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Hide all Search results on loading
     // $(".search-mode.all-posts .item").addClass("is--hidden");
         
+    
     function updateSearchInput(inputElement) {
         const query = inputElement.val().trim().toLowerCase(); // Get the current input value
         
