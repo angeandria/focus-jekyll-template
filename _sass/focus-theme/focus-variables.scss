@@ -39,7 +39,7 @@ $box-shadow: 0 4px 20px rgba(0, 0, 0, 0.07);
     --bg-color-2: #EFEFEF;
     --bg-color-3: #AAAAAA;    
     --bg-color-10: #000000;        
-    --bg-color-tags: #EFEFEF;
+    --bg-color-tags: var(--bg-color-2);
     --bg-color-categories: pink;    
     --bg-color-info-1: #EFEFEF;
     --bg-color-info-2: yellow;    

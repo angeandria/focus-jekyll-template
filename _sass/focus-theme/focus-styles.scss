@@ -231,8 +231,7 @@ body::after{
 .initial-content,
 .search-content,
 #footer,
-body.template--columns-one section.page__content > section,
-body.template--columns-one .section--page__after_post{
+body.template--columns-one section.page__content > section{
     padding-inline: 2em;
     @include breakpoint($medium) {
         padding-inline: var(--padding-inline-container);    
@@ -518,6 +517,14 @@ a.site-title{
 
 #site-nav{
     background-color: transparent;
+     .greedy-nav ul.hidden-links{
+        background-color: var(--body-bg-color);
+        a{
+            color: var(--font-color-primary);
+            font-size: var(--font-size-s);
+            border:none;
+        }
+    }
 }
 
 
@@ -571,8 +578,7 @@ figcaption{
 * SECTION - Page Before Header
 * ------------
 */
-.section--page__before_header{
-    padding: 30px 0;       
+.section--page__before_header{     
     .search-content .search-content__form{
         box-shadow: none;
     }
@@ -639,6 +645,12 @@ body.layout--focus-topics{
 * SCROLLABLE CONTAINER - Search & Taxonomies
 * ------------
 */
+.taxonomies-select{
+    padding: 16px 0;
+    @include breakpoint($medium) {
+        padding: 26px 0;
+    } 
+}
 .scrollable-container {
     height: auto;              /* Optional height */
     overflow: hidden;          /* Hide overflow */
@@ -1013,7 +1025,7 @@ aside.sidebar__right{
 
 #page__header .page__meta_wrapper{
     display: flex; /* Enables flexbox layout */
-    justify-content: space-between; /* Distributes space between items */
+    justify-content: center; /* Distributes space between items */
     align-items: center; /* Centers items vertically */
     gap: var(--gap); /* Optional: Adds space between items */
     
@@ -1025,17 +1037,7 @@ aside.sidebar__right{
       margin-right: -var(--gap); /* Negate the gap on the last child */
     }
     
-    .page__meta_author,
-    .page__meta_date,    
-    .page__meta_taxonomy{
-        flex: 1; /* Makes each div take equal space */
-        display: flex; /* Allows for internal flexbox properties */
-        align-items: center; /* Centers content vertically */
-    }
-    
-    .page__meta_author{        
-        justify-content: flex-end; /* Aligns the content of author to the right */
-        
+    .page__meta_author{                        
         .author__avatar img{
             max-width: 40px;
             border-radius: 50%;
@@ -1051,11 +1053,8 @@ aside.sidebar__right{
             color: var(--font-color-primary);
         }
     }    
-    .page__meta_date{
-        justify-content: center;
-    }
+
     .page__meta_taxonomy{
-        justify-content: flex-start; /* Aligns the content of author to the right */
         strong, .page__taxonomy:first-child { /* hide labels, hide tags entirely  */
             display: none;
         }
