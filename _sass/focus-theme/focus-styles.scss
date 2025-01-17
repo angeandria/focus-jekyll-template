@@ -1088,28 +1088,6 @@ aside.sidebar__right{
 * ----------------------
 */
 
-
-$item-part: (
-    "title",
-    "subtitle",
-    "teaser",    
-    "author",       
-    "date", 
-    "description",    
-    "tags",
-    "categories",
-    "info-1",
-    "info-2"
-);
-
-.post-display{
-    @each $prefix in $item-part {
-        &[class^=".hide-#{$prefix} .item-#{$prefix}"] {
-            display:none;
-        }
-    }        
-}
-
 $cta-categories: 3; // Define a variable for the number of categories
 $cta-per-category: 3; 
 $color-array: (
@@ -1285,6 +1263,24 @@ body {
          margin-bottom: 14px;
     }
     
+    $item-part: (
+        "title",
+        "subtitle",
+        "teaser",    
+        "author",       
+        "date", 
+        "description",    
+        "tags",
+        "categories",
+        "info-1",
+        "info-2"
+    );
+    @each $prefix in $item-part {
+        &.hide-#{$prefix} .item-#{$prefix} {
+            display: none;
+        }
+    }        
+
     
 }
 
