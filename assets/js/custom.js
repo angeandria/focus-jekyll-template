@@ -8,14 +8,14 @@ document.addEventListener('DOMContentLoaded', function() {
     // Step 2: Pre-fill the search input if the topic exists
     if (topic) {
         searchInput.val(topic); // Set the input field with the topic value
-        searchInput.focus(); // TODO : Does NOT work
+         // TODO : Does NOT work
     }
-    
+    searchInput.focus();
     // Hide all Search results on loading
     // $(".search-mode.all-posts .item").addClass("is--hidden");
         
-    function updateSearchInput() {
-        const query = searchInput.val().trim().toLowerCase(); // Get the current input value
+    function updateSearchInput(search_input) {
+        const query = search_input.val().trim().toLowerCase(); // Get the current input value
         
         const searchItems = $(".search-mode.all-posts .item"); // Select all items using jQuery            
         
@@ -109,7 +109,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     // Trigger manually and listen to input events
-    updateSearchInput(); // Trigger manually
+    updateSearchInput(searchInput); // Trigger manually
     searchInput.on("input", updateSearchInput); // Listen to keyboard input and trigger automatically
 
     
