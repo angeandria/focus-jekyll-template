@@ -11,7 +11,7 @@ page__before_content:
 page__before_header:
   custom: true
 page__after_header:
-  custom: true
+  custom: false
 page__before_post:
   custom: true  
 page__within_post:
