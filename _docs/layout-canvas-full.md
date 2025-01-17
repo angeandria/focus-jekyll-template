@@ -40,24 +40,37 @@ Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
 ```
 </section>
 
+<section markdown="1">
+## Section - Full width image
+
+![image-full-width]({{ page.featured_image | default: '/assets/images/placeholder.jpg' | relative_url }}){: .full}
+
+```
+<section>
+   ![image-full-width]({{ page.featured_image | default: '/assets/images/placeholder.jpg' | relative_url }}){: .full}
+</section>
+```
+</section>
+
 
 ## Full width image
 
-<img class="item-featured-img full" src="{{ page.featured_image | default: '/assets/images/placeholder-1200.jpg' | relative_url }}" alt="Featured Image">
+![image-full-width]({{ page.featured_image | default: '/assets/images/placeholder.jpg' | relative_url }}){: .full}
 
 ```
-<img class="full" src="...">
+![image-full-width]({{ page.featured_image | default: '/assets/images/placeholder.jpg' | relative_url }}){: .full}
 ```
-
-
 
 
 ## Centered image not working
 
-<img class="item-featured-img" src="{{ page.featured_image | default: '/assets/images/placeholder.jpg' | relative_url }}" alt="Featured Image">{: .align-center}
+<img class="" src="{{ page.featured_image | default: '/assets/images/placeholder.jpg' | relative_url }}" alt="Featured Image">{: .align-center}
+
+![image-center]({{ page.featured_image | default: '/assets/images/placeholder.jpg' | relative_url }}){: .align-center .item-featured-img}
+
 
 ```
 <img class="" src="...">
 
-{: .align-center}
+![](){: .align-center}
 ```
