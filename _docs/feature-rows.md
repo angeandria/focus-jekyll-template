@@ -42,11 +42,17 @@ feature_row4:
     btn_class: "btn--primary"
 feature_row5:
   - image_path: /assets/images/placeholder.jpg    
+    excerpt: "This is some sample content that goes here with **Markdown** formatting."
   - image_path: /assets/images/placeholder.jpg
+    excerpt: "This is some sample content that goes here with **Markdown** formatting."
   - image_path: /assets/images/placeholder.jpg
+    excerpt: "This is some sample content that goes here with **Markdown** formatting."
   - image_path: /assets/images/placeholder.jpg
+    excerpt: "This is some sample content that goes here with **Markdown** formatting."
   - image_path: /assets/images/placeholder.jpg
+    excerpt: "This is some sample content that goes here with **Markdown** formatting."
   - image_path: /assets/images/placeholder.jpg  
+    excerpt: "This is some sample content that goes here with **Markdown** formatting."
 ---
 
 {% for post in site.posts limit: 5 %}

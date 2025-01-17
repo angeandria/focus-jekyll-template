@@ -173,7 +173,7 @@ html{
 
 
 body,
-.sidebar__container .sticky{
+.sticky{
     background-color: var(--body-bg-color);
 }
 
@@ -1438,7 +1438,8 @@ html,
 .site-nav a,
 .page__content p, .page__content li, .page__content dl,
 .resource-navi .nav__items,
-.section--hook{
+.section--hook,
+.post-display .item-subtitle{
     font-size: var(--font-size-m);
 }
 .notice,
