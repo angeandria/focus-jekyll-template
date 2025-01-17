@@ -603,8 +603,8 @@ body.search-mode{
     }
 }
 body:not(.search-mode){
-    .search-mode.all-posts{
-        /* display: none; Should posts in search mode be hidden by default? */
+    .search-mode.all-posts.hide{
+        display: none;
     }
 }
 

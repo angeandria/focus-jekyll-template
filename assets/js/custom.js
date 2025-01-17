@@ -8,11 +8,9 @@ document.addEventListener('DOMContentLoaded', function() {
     // Step 2: Pre-fill the search input if the topic exists
     if (topic) {
         searchInput.val(topic); // Set the input field with the topic value
-        // searchInput.focus(); // TODO : Does NOT work
+        searchInput.focus(); // TODO : Does NOT work
     }
     
-    
-        
     // Hide all Search results on loading
     // $(".search-mode.all-posts .item").addClass("is--hidden");
         
