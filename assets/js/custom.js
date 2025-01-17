@@ -29,8 +29,8 @@ document.addEventListener('DOMContentLoaded', function() {
             const dateElement = item.find(".page__meta-date time");
             const descriptionElement = item.find(".item-description");
             const contentElement = item.find(".item-content");            
-            const tagsElement = item.find(".tags-list .page__taxonomy span a");
-            const categoriesElement = item.find(".categories-list .page__taxonomy span a");
+            const tagsElement = item.find(".item-tags .page__taxonomy span a");
+            const categoriesElement = item.find(".item-categories .page__taxonomy span a");
             const tagsInfo1Element = item.find(".item-info-1");    
             const tagsInfo2Element = item.find(".item-info-2");
     
