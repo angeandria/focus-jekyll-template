@@ -14,8 +14,8 @@ document.addEventListener('DOMContentLoaded', function() {
     // Hide all Search results on loading
     // $(".search-mode.all-posts .item").addClass("is--hidden");
         
-    function updateSearchInput(search_input) {
-        const query = search_input.val().trim().toLowerCase(); // Get the current input value
+    function updateSearchInput(searchinput) {
+        const query = searchinput.val().trim().toLowerCase(); // Get the current input value
         
         const searchItems = $(".search-mode.all-posts .item"); // Select all items using jQuery            
         
