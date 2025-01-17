@@ -117,22 +117,28 @@
                         {% assign category_main_class = category_main_slug | prepend: site.taxonomy_prefix %}                        
                     {% endif %}
                     
+                    {% assign item-link = page.url | relative_url %}
+                    {% assign item-link = page.link | default: item-link %}
                     
                     <div class="item {{ type-item_class }} {{ category_main_class }}">
                         
                         <div class="block block-1">
-                            <img class="item-featured-logo" src="{{ page.featured_logo | default: '/assets/images/placeholder-logo.jpg' | relative_url }}" alt="Featured Logo">
+                            <a href="{{ item-link }}" title="{{ page.title }}">                                    
+                                <img class="item-featured-logo" src="{{ page.featured_logo | default: '/assets/images/placeholder-logo.jpg' | relative_url }}" alt="Featured Logo">
+                            </a>
                         </div>
 
                         <div class="block block-2">
-                            <img class="item-featured-img" src="{{ page.featured_image | default: '/assets/images/placeholder.jpg' | relative_url }}" alt="Featured Image">
+                            <a href="{{ item-link }}" title="{{ page.title }}">                                    
+                                <img class="item-featured-img" src="{{ page.featured_image | default: '/assets/images/placeholder.jpg' | relative_url }}" alt="Featured Image">
+                            </a>
                         </div>
                               
                         <div class="block block-3">                        
                             
                             <!-- Page taxonomy -->                                                                        
                             <div class="item-title">
-                                 <a href="{{ page.url | relative_url }}">{{ page.title }}</a>
+                                 <a href="{{ item-link }}" title="{{ page.title }}">{{ page.title }}</a>
                                  
                                  {% if page.subtitle %}
                                     <div class="item-subtitle">{{ page.subtitle }}</div>                    
