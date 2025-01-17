@@ -422,8 +422,8 @@ body.layout--focus-landing,
 body.landing,
 body.splash{
     > .initial-content #main{
-        max-width: var(--width-s);
-        width: var(--width-s);
+        max-width: var(--width-m);
+        width: var(--width-m);
     }
     footer.page__meta,
     .section--page__after_post,
