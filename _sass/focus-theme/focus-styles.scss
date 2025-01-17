@@ -1037,7 +1037,9 @@ aside.sidebar__right{
       margin-right: -var(--gap); /* Negate the gap on the last child */
     }
     
-    .page__meta_author{                        
+    .page__meta_author{        
+        display: flex;
+        align-items: center;        
         .author__avatar img{
             max-width: 40px;
             border-radius: 50%;
