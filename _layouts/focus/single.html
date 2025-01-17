@@ -33,7 +33,7 @@ layout: default
 {% endif %}
 
 
-<!-- SECTION page__before_content -->      
+<!-- SECTION page__before_header -->      
 <div id="page__before_header">
     {% include focus/hook.html hook="page__before_header" %}      
 </div>
@@ -127,6 +127,11 @@ layout: default
     </div> <!-- wrapper -->
 </div> <!-- page__header -->
 {% endif %}
+
+<!-- SECTION page__after_header -->      
+<div id="page__after_header">
+    {% include focus/hook.html hook="page__after_header" %}      
+</div>
 
 <!-- Main -->
 <div id="main" role="main">

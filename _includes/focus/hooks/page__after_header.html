@@ -1,0 +1,15 @@
+{% assign layout_slug = page.layout | default: layout.layout | replace: '/', '-') %}
+{% if layout_slug == "focus-topics" or layout_slug == "focus-single-taxonomy" %}
+    <div class="search-mode all-posts hide">
+        {% assign types_list = "resource, post, page, product" | split: ", " %}
+    
+    {% for type in types_list %}
+        {% for category_key in site.data.taxonomies %}
+            {% if category_key[1].type == "category" %}
+                {% assign category = category_key[0] %}        
+                {% include focus/post-display.html type=type topic=category format="compact" order="desc" container_class="search" type_class="" type-item_class="box-shadow" %}            
+            {% endif %}        
+        {% endfor %}        
+    {% endfor %}
+    </div>
+{% endif %}
