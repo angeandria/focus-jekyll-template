@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Construct searchItems selector
         //const searchItems = $(".search-mode.all-posts .item"); // Select all items using jQuery            
-        const searchItems = $(`#search-items${suffix}.search-items`); // Select relevant items
+        const searchItems = $('#search-items${suffix}.search-mode.all-posts'); // Select relevant items
         
                 
         // Check if searchItems exists

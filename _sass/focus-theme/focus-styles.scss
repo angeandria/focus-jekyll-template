@@ -602,7 +602,7 @@ body.search-mode{
         display:none;
     }
 }
-.search-items.hide{
+.search-mode.all-posts.hide{
     display: none;
     opacity: 0;                  /* Start hidden */
     transform: translateY(20px); /* Slide in from left */
@@ -610,7 +610,7 @@ body.search-mode{
     transition: transform 5s ease; /* Duration and easing for the transition */    
 }
 body.search-mode{
-    .search-items.hide{
+    .search-mode.all-posts.hide{
         display: initial;
         opacity: 1;
         transform: translateY(0); /* Slide in from left */
