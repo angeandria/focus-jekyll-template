@@ -1,6 +1,6 @@
 {% assign layout_slug = page.layout | default: layout.layout | replace: '/', '-') %}
 {% if layout_slug == "focus-topics" or layout_slug == "focus-single-taxonomy" %}
-    <div class="search-mode all-posts">
+    <div id="search-items-a" class="search-items">
         {% assign types_list = "resource, post, page, product" | split: ", " %}
     
     {% for type in types_list %}

@@ -9,7 +9,7 @@
 <div class="scrollable-container">
     <div class="scrollable">          
         {% if taxonomy_display %}
-            <div class="taxonomies-select search-content is--visible">
+            <div id="search-a" class="taxonomies-select search-content is--visible">
                 {% include_cached search/search_form.html %}
             </div>
             {% include focus/taxonomies-select.html classes = "buttons"%}

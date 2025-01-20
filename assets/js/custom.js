@@ -1,5 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {    
     const searchInput = $("#search");
+    
+    const searchInputs = $("div[id^='search-'] > #search").toArray();
 
     // Step 1: Get the "topic" URL parameter
     const urlParams = new URLSearchParams(window.location.search);
@@ -18,8 +20,21 @@ document.addEventListener('DOMContentLoaded', function() {
     function updateSearchInput(inputElement) {
         const query = inputElement.val().trim().toLowerCase(); // Get the current input value
         
-        const searchItems = $(".search-mode.all-posts .item"); // Select all items using jQuery            
+         // Extract suffix from the input ID
+        const inputId = $(inputElement).attr('id'); // e.g., "search-a"
+        const suffix = inputId.replace("search-", ""); // e.g., "a"
         
+        // Construct searchItems selector
+        //const searchItems = $(".search-mode.all-posts .item"); // Select all items using jQuery            
+        const searchItems = $(`#search-items${suffix}.search-items`); // Select relevant items
+        
+                
+        // Check if searchItems exists
+        if (searchItems.length === 0) {
+            console.warn(`No search items found for selector: #search-items${suffix}.search-items`);
+            return; // Exit the function if no items are found
+        }
+
         searchItems.each(function() { 
             const item = $(this);
     
@@ -110,10 +125,18 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     // Trigger manually and listen to input events
-    updateSearchInput(searchInput); // Trigger manually
-    searchInput.on("input", function() { updateSearchInput(searchInput); }); // Listen for input on the first input
+    //updateSearchInput(searchInput); // Trigger manually
+    //searchInput.on("input", function() { updateSearchInput(searchInput); }); // Listen for input on the first input
  // Listen to keyboard input and trigger automatically
-
+    
+    // Trigger manually for each search input
+    searchInputs.forEach(function(searchInput) {
+        updateSearchInput(searchInput); // Trigger manually
+        
+        $(searchInput).on("input", function() { 
+            updateSearchInput(searchInput); // Listen for input on each input
+        });
+    });
     
 
     function toggleSearchMode(query) {
