@@ -13,8 +13,8 @@ document.addEventListener('DOMContentLoaded', function() {
     // Step 2: Pre-fill the search input if the topic exists
     if (topic) {
         searchInput.val(topic); // Set the input field with the topic value
-        searchInput.focus();
         // TODO : Does NOT work
+        searchInput.focus();
     }
 
     // Hide all Search results on loading
@@ -31,9 +31,9 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Construct searchItems selector
         //const searchItems = $(".search-mode.all-posts .item"); // Select all items using jQuery            
-        const searchItems = $('#search-items-${suffix}.search-mode.all-posts'); // Select relevant items
+        const searchItems = $(`#search-items-${suffix}.search-mode.all-posts`); // Select relevant items
         
-        console.log('#search-items-${suffix}.search-mode.all-posts');
+        console.log(`#search-items-${suffix}.search.mode.all-posts`);
                 
         // Check if searchItems exists
         if (searchItems.length === 0) {
