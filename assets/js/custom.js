@@ -1,7 +1,8 @@
 document.addEventListener('DOMContentLoaded', function() {    
     
-    const searchInput = $("#search");
+    const searchInput = $("#search-a");
     
+    // MULTIPLE SEARCHES ON THE SAME PAGE : NOT working
     //const searchInputs = $("div[id^='search-'] > #search").toArray();
 
     // Step 1: Get the "topic" URL parameter
@@ -11,9 +12,10 @@ document.addEventListener('DOMContentLoaded', function() {
     // Step 2: Pre-fill the search input if the topic exists
     if (topic) {
         searchInput.val(topic); // Set the input field with the topic value
-         // TODO : Does NOT work
+        searchInput.focus();
+        // TODO : Does NOT work
     }
-    searchInput.focus();
+
     // Hide all Search results on loading
     // $(".search-mode.all-posts .item").addClass("is--hidden");
         
@@ -21,15 +23,15 @@ document.addEventListener('DOMContentLoaded', function() {
     function updateSearchInput(inputElement) {
         const query = inputElement.val().trim().toLowerCase(); // Get the current input value
         
-         // Extract suffix from the input ID
+        // Extract suffix from the input ID
         const inputId = $(inputElement).attr('id'); // e.g., "search-a"
         const suffix = inputId.replace("search-", ""); // e.g., "a"
         
         // Construct searchItems selector
         //const searchItems = $(".search-mode.all-posts .item"); // Select all items using jQuery            
-        const searchItems = $('#search-items${suffix}.search-mode.all-posts'); // Select relevant items
+        const searchItems = $('#search-items-${suffix}.search-mode.all-posts'); // Select relevant items
         
-        console.log('#search-items${suffix}.search-mode.all-posts');
+        console.log('#search-items-${suffix}.search-mode.all-posts');
                 
         // Check if searchItems exists
         if (searchItems.length === 0) {
@@ -133,8 +135,9 @@ document.addEventListener('DOMContentLoaded', function() {
     // Trigger manually and listen to input events
     updateSearchInput(searchInput); // Trigger manually
     searchInput.on("input", function() { updateSearchInput(searchInput); }); // Listen for input on the first input
- // Listen to keyboard input and trigger automatically
+
     
+    // MULTIPLE SEARCHES ON THE SAME PAGE : NOT working
     // Trigger manually for each search input
     /*searchInputs.forEach(function(searchInput) {
         updateSearchInput(searchInput); // Trigger manually
