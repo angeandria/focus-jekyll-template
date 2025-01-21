@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Check if searchItems exists
         if (searchItems.length === 0) {
-            console.warn('No search items found for selector: #search-items${suffix}.search-items');
+            console.warn(`No search items found for selector: #search-items-${suffix}.search-items`);
             return; // Exit the function if no items are found
         }
 
