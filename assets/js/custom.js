@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {    
     
-    const searchInput = $("#search-a #search");
+    const searchInput = $("#search-a input#search");
         
     // MULTIPLE SEARCHES ON THE SAME PAGE : NOT working
     //const searchInputs = $("div[id^='search-'] > #search").toArray();
