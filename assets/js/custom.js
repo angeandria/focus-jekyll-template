@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {    
-    const searchInput = $("#search");
+    //const searchInput = $("#search");
     
     const searchInputs = $("div[id^='search-'] > #search").toArray();
 
@@ -28,15 +28,17 @@ document.addEventListener('DOMContentLoaded', function() {
         //const searchItems = $(".search-mode.all-posts .item"); // Select all items using jQuery            
         const searchItems = $('#search-items${suffix}.search-mode.all-posts'); // Select relevant items
         
+        console.log(#search-items${suffix}.search-mode.all-posts);
                 
         // Check if searchItems exists
         if (searchItems.length === 0) {
-            console.warn(`No search items found for selector: #search-items${suffix}.search-items`);
+            console.warn('No search items found for selector: #search-items${suffix}.search-items');
             return; // Exit the function if no items are found
         }
 
         searchItems.each(function() { 
             const item = $(this);
+    
     
             // Safely get the text content from title, subtitle, and description            
             const titleElement = item.find(".item-title > a");
@@ -52,6 +54,9 @@ document.addEventListener('DOMContentLoaded', function() {
     
             // Safely get the text content from each element
             const title = titleElement.length ? titleElement.text().toLowerCase() : '';
+            
+            console.log("TITLE" + title);
+            
             const subtitle = subtitleElement.length ? subtitleElement.text().toLowerCase() : '';
             const author = authorElement.length ? authorElement.text().toLowerCase() : '';
             const date = dateElement.length ? dateElement.text().toLowerCase() : '';
