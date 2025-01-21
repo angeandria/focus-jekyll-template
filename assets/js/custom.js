@@ -1,9 +1,9 @@
 document.addEventListener('DOMContentLoaded', function() {    
     
-    const searchInput = $("#search-a input#search");
+    //const searchInput = $("#search-a input#search");
         
     // MULTIPLE SEARCHES ON THE SAME PAGE : NOT working
-    //const searchInputs = $("div[id^='search-'] > input#search").toArray();
+    const searchInputs = $("div[id^='search-'] > input#search").toArray();
 
     // Step 1: Get the "topic" URL parameter
     const urlParams = new URLSearchParams(window.location.search);
@@ -133,21 +133,21 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     // Listen to input events
+    /*
     searchInput.on("input", function() { 
         console.log("Input detected:", searchInput.val()); // Log on input
         updateSearchInput(searchInput); 
     });
+    */
     
     // MULTIPLE SEARCHES ON THE SAME PAGE : NOT working
     // Trigger manually for each search input
-    /*searchInputs.forEach(function(searchInput) {
-        updateSearchInput(searchInput); // Trigger manually
-        
+    searchInputs.forEach(function(searchInput) {        
         $(searchInput).on("input", function() { 
             updateSearchInput(searchInput); // Listen for input on each input
         });
     });
-    */
+    
 
     function toggleSearchMode(query) {
         
