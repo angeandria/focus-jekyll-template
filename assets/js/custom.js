@@ -117,7 +117,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
         
         // Toggle Search Mode
-        toggleSearchMode(query);
+        toggleSearchMode(query, suffix);
     }
     
     // Function to process each element in a jQuery collection
@@ -149,19 +149,21 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
 
-    function toggleSearchMode(query) {
+    function toggleSearchMode(query, suffix) {
         
         // Get the body element 
         const bodyElement = $("body");
                 
         if (query.length > 0) {
             /* Search Mode ON */
-            bodyElement.addClass("search-mode");            
+            bodyElement.addClass("search-mode");
+            bodyElement.addClass(`search-mode-${suffix}`);
             console.log("search mode ON");
             
         } else {           
             /* Search Mode OFF */
-            bodyElement.removeClass("search-mode");            
+            bodyElement.removeClass("search-mode");   
+            bodyElement.removeClass(`search-mode-${suffix}`);            
             console.log("search mode OFF");            
         }
     }
