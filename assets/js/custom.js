@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (searchInputs[0]){
             searchInputs[0].val(topic);
             updateSearchInput(searchInputs[0]); // Trigger manually
-            searchInputs.focus();            // Does NOT work
+            searchInputs[0].focus();            // Does NOT work
         }
     }
 
