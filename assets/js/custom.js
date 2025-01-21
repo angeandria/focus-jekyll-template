@@ -11,10 +11,12 @@ document.addEventListener('DOMContentLoaded', function() {
   
     // Pre-fill the search input if the topic exists
     if (topic) {
-        if (searchInputs[0]){
-            searchInputs[0].val(topic);
-            updateSearchInput(searchInputs[0]); // Trigger manually
-            searchInputs[0].focus();            // Does NOT work
+        if (searchInputs[0]) {
+            // Wrap the first element in jQuery
+            const firstSearchInput = $(searchInputs[0]); 
+            firstSearchInput.val(topic); // Set the value
+            updateSearchInput(firstSearchInput); // Trigger manually
+            firstSearchInput.focus(); // Focus on the input
         }
     }
 
