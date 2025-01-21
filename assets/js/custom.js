@@ -22,7 +22,6 @@ document.addEventListener('DOMContentLoaded', function() {
         
     
     function updateSearchInput(inputElement) {
-        console.log('updateSearchInput');
         const query = inputElement.val().trim().toLowerCase(); // Get the current input value
         
         // Extract suffix from the input ID
@@ -33,8 +32,6 @@ document.addEventListener('DOMContentLoaded', function() {
         //const searchItems = $(".search-mode.all-posts .item"); // Select all items using jQuery            
         const searchItems = $(`#search-items-${suffix}.search-mode.all-posts`); // Select relevant items
         
-        console.log(`#search-items-${suffix}.search.mode.all-posts`);
-                
         // Check if searchItems exists
         if (searchItems.length === 0) {
             console.warn('No search items found for selector: #search-items${suffix}.search-items');
@@ -43,8 +40,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         searchItems.each(function() { 
             const item = $(this);
-    
-    
+            
             // Safely get the text content from title, subtitle, and description            
             const titleElement = item.find(".item-title > a");
             const subtitleElement = item.find(".item-subtitle");
@@ -58,10 +54,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const tagsInfo2Element = item.find(".item-info-2");
     
             // Safely get the text content from each element
-            const title = titleElement.length ? titleElement.text().toLowerCase() : '';
-            
-            console.log("TITLE" + title);
-            
+            const title = titleElement.length ? titleElement.text().toLowerCase() : '';        
             const subtitle = subtitleElement.length ? subtitleElement.text().toLowerCase() : '';
             const author = authorElement.length ? authorElement.text().toLowerCase() : '';
             const date = dateElement.length ? dateElement.text().toLowerCase() : '';
@@ -118,6 +111,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
         
+        console.log("Query: ", query);
         // Toggle Search Mode
         toggleSearchMode(query);
     }
@@ -158,10 +152,12 @@ document.addEventListener('DOMContentLoaded', function() {
         if (query.length > 0) {
             /* Search Mode ON */
             bodyElement.addClass("search-mode");            
+            console.log("search mode ON");
             
         } else {           
             /* Search Mode OFF */
             bodyElement.removeClass("search-mode");            
+            console.log("search mode OFF");            
         }
     }
             
