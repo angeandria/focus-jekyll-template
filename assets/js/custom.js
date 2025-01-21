@@ -11,9 +11,11 @@ document.addEventListener('DOMContentLoaded', function() {
   
     // Pre-fill the search input if the topic exists
     if (topic) {
-        searchInput.val(topic);
-        updateSearchInput(searchInput); // Trigger manually
-        searchInput.focus();            // Does NOT work
+        if (searchInputs[0]){
+            searchInputs[0].val(topic);
+            updateSearchInput(searchInputs[0]); // Trigger manually
+            searchInputs.focus();            // Does NOT work
+        }
     }
 
     // Hide all Search results on loading
