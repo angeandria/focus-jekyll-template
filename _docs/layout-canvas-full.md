@@ -9,7 +9,7 @@ Full width **canvas** using the template **columns-one** :
 
 ```
 template: columns-one
-class: 
+classes: 
   - canvas
 ```
 </section>
