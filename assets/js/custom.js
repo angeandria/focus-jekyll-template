@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {    
-    //const searchInput = $("#search");
+    
+    const searchInput = $("#search");
     
     //const searchInputs = $("div[id^='search-'] > #search").toArray();
 
