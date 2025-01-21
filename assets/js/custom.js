@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Extract suffix from the input ID
         const inputId = $(inputElement).attr('id'); // e.g., "search-a"
         const suffix = inputId.replace("search-", ""); // e.g., "a"
-            console.log("inputId : ", inputId, " | suffix : "; suffix); // Log the query right after fetching it        
+        console.log("inputId : ", inputId, " | suffix : ", suffix); // Log the query right after fetching it        
                 
         // Construct searchItems selector
         //const searchItems = $(".search-mode.all-posts .item"); // Select all items using jQuery            
