@@ -1,27 +1,27 @@
 document.addEventListener('DOMContentLoaded', function() {    
     
-    //const searchInput = $("#search-a input#search");
-        
-    // MULTIPLE SEARCHES ON THE SAME PAGE : NOT working
+    // Find all search inputs that start with "search-"
     const searchInputs = $("div[id^='search-'] input#search").toArray();
 
-    // Step 1: Get the "topic" URL parameter
+    //
+    // Get Url Parameter "search" to fill the search input
+    //
     const urlParams = new URLSearchParams(window.location.search);
     const topic = urlParams.get('search');
   
-    // Step 2: Pre-fill the search input if the topic exists
+    // Pre-fill the search input if the topic exists
     if (topic) {
-        searchInput.val(topic); // Set the input field with the topic value
-        // Trigger manually and listen to input events
+        searchInput.val(topic);
         updateSearchInput(searchInput); // Trigger manually
-        // TODO : Does NOT work
-        searchInput.focus();
+        searchInput.focus();            // Does NOT work
     }
 
     // Hide all Search results on loading
     // $(".search-mode.all-posts .item").addClass("is--hidden");
         
-    
+    //
+    // UPDATE SEARCH INPUT
+    //
     function updateSearchInput(inputElement) {
         const query = inputElement.val().trim().toLowerCase(); // Get the current input value
         console.log("Initial Query: ", query); // Log the query right after fetching it        
@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 
         // Construct searchItems selector
         //const searchItems = $(".search-mode.all-posts .item"); // Select all items using jQuery            
-        const searchItems = $(`#search-items-${suffix}.search-mode.all-posts .item`); // Select relevant items
+        const searchItems = $(`#search-items-${suffix}.search-items.all-posts .item`); // Select relevant items
         
         // Check if searchItems exists
         if (searchItems.length === 0) {
@@ -132,15 +132,9 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Listen to input events
-    /*
-    searchInput.on("input", function() { 
-        console.log("Input detected:", searchInput.val()); // Log on input
-        updateSearchInput(searchInput); 
-    });
-    */
+
     
-    // MULTIPLE SEARCHES ON THE SAME PAGE : NOT working
+    // Listen to input events    
     // Trigger manually for each search input
     searchInputs.forEach(function(element) {        
         const searchInputElement = $(element); // Wrap the element in jQuery
@@ -150,7 +144,9 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-
+    //
+    // TOGGLE SEARCH MODE
+    //
     function toggleSearchMode(query, suffix) {
         
         // Get the body element 
@@ -169,7 +165,10 @@ document.addEventListener('DOMContentLoaded', function() {
             console.log("search mode OFF");            
         }
     }
-            
+     
+    //
+    // ADD TEXT HIGHLIGHT
+    //    
     function addTextHighlight(html, query) {
 
         if (!query) return html; // Return original text if query is empty
@@ -184,11 +183,17 @@ document.addEventListener('DOMContentLoaded', function() {
         return html.replace(regex, '<span class="search-highlight">$1</span>');
     }
     
+    //
+    // REMOVE TEXT HIGHLIGHT
+    //    
     function removeTextHighlight(html) {
         // Remove existing highlights
         return html.replace(/<span class="search-highlight">(.*?)<\/span>/gi, '$1');
     }
     
+    //
+    // TOGGLE DARK THEME
+    //
     function toggleDarkTheme() {
         $('body').toggleClass('dark-theme');
         
@@ -201,7 +206,6 @@ document.addEventListener('DOMContentLoaded', function() {
             $('#darkModeToggle').html('&#9790;'); // Moon icon when default theme is enabled
         }
     }
-
     // Event listener for the toggle button
     $('#darkModeToggle').on('click', toggleDarkTheme);
 
