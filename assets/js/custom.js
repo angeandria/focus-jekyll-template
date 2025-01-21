@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {    
     //const searchInput = $("#search");
     
-    const searchInputs = $("div[id^='search-'] > #search").toArray();
+    //const searchInputs = $("div[id^='search-'] > #search").toArray();
 
     // Step 1: Get the "topic" URL parameter
     const urlParams = new URLSearchParams(window.location.search);
@@ -130,19 +130,19 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     // Trigger manually and listen to input events
-    //updateSearchInput(searchInput); // Trigger manually
-    //searchInput.on("input", function() { updateSearchInput(searchInput); }); // Listen for input on the first input
+    updateSearchInput(searchInput); // Trigger manually
+    searchInput.on("input", function() { updateSearchInput(searchInput); }); // Listen for input on the first input
  // Listen to keyboard input and trigger automatically
     
     // Trigger manually for each search input
-    searchInputs.forEach(function(searchInput) {
+    /*searchInputs.forEach(function(searchInput) {
         updateSearchInput(searchInput); // Trigger manually
         
         $(searchInput).on("input", function() { 
             updateSearchInput(searchInput); // Listen for input on each input
         });
     });
-    
+    */
 
     function toggleSearchMode(query) {
         
