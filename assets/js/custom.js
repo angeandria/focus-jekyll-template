@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function() {
         //const searchItems = $(".search-mode.all-posts .item"); // Select all items using jQuery            
         const searchItems = $('#search-items${suffix}.search-mode.all-posts'); // Select relevant items
         
-        console.log(#search-items${suffix}.search-mode.all-posts);
+        console.log('#search-items${suffix}.search-mode.all-posts');
                 
         // Check if searchItems exists
         if (searchItems.length === 0) {
