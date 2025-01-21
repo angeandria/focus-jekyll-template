@@ -142,9 +142,11 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // MULTIPLE SEARCHES ON THE SAME PAGE : NOT working
     // Trigger manually for each search input
-    searchInputs.forEach(function(searchInput) {        
-        $(searchInput).on("input", function() { 
-            updateSearchInput(searchInput); // Listen for input on each input
+    searchInputs.forEach(function(element) {        
+        const searchInputElement = $(element); // Wrap the element in jQuery
+        searchInputElement.on("input", function() { 
+            console.log("Input detected:", searchInputElement.val()); // Log on input
+            updateSearchInput(searchInputElement); 
         });
     });
     
