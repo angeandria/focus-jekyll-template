@@ -25,14 +25,20 @@ document.addEventListener('DOMContentLoaded', function() {
     function updateSearchInput(inputElement) {
         const query = inputElement.val().trim().toLowerCase(); // Get the current input value
         console.log("Initial Query: ", query); // Log the query right after fetching it        
-        // Extract suffix from the input ID
-        const inputId = $(inputElement).attr('id'); // e.g., "search-a"
-        const suffix = inputId.replace("search-", ""); // e.g., "a"
-        console.log("inputId : ", inputId, " | suffix : ", suffix); // Log the query right after fetching it        
+        
+        // Extract suffix from the parent div's ID
+        const parentId = $(inputElement).closest('div[id^="search-"]').attr('id'); // Get the ID of the parent div
+        const suffix = parentId.replace("search-", ""); // Extract suffix, should return "a" for id "search-a"
+
+        console.log("Input ID: ", parentId); // Log the parent ID
+        console.log("Suffix: ", suffix); // Log the suffix
+
                 
         // Construct searchItems selector
         //const searchItems = $(".search-mode.all-posts .item"); // Select all items using jQuery            
         const searchItems = $(`#search-items-${suffix}.search-mode.all-posts .item`); // Select relevant items
+        
+        console.log("Search Items Selector: ", searchItems.selector); // Log the constructed selector
         
         // Check if searchItems exists
         if (searchItems.length === 0) {
