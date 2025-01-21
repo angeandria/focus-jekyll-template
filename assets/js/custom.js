@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {    
     
     const searchInput = $("#search-a");
+    console.log(searchInput);
     
     // MULTIPLE SEARCHES ON THE SAME PAGE : NOT working
     //const searchInputs = $("div[id^='search-'] > #search").toArray();
@@ -21,6 +22,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
     
     function updateSearchInput(inputElement) {
+        console.log('updateSearchInput');
         const query = inputElement.val().trim().toLowerCase(); // Get the current input value
         
         // Extract suffix from the input ID
