@@ -31,11 +31,11 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Construct searchItems selector
         //const searchItems = $(".search-mode.all-posts .item"); // Select all items using jQuery            
-        const searchItems = $(`#search-items-${suffix}.search-mode.all-posts`); // Select relevant items
+        const searchItems = $(`#search-items-${suffix}.search-mode.all-posts .item`); // Select relevant items
         
         // Check if searchItems exists
         if (searchItems.length === 0) {
-            console.warn(`No search items found for selector: #search-items-${suffix}.search-items`);
+            console.warn(`No search items found for selector: #search-items-${suffix}.search-mode.all-posts .item`);
             return; // Exit the function if no items are found
         }
 
