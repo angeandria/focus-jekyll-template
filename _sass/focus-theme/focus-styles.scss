@@ -1281,6 +1281,8 @@ body {
     }
     
     $item-part: (
+        "featured-logo",
+        "featured-img",
         "title",
         "subtitle",
         "teaser",    
@@ -1292,12 +1294,24 @@ body {
         "info-1",
         "info-2"
     );
-    @each $prefix in $item-part {
-        &.hide-#{$prefix} .item-#{$prefix} {
+    @each $suffix in $item-part {
+        &.hide-#{$suffix} .item-#{$suffix} {
             display: none;
         }
+        
     }        
-
+    
+    $item-block: (
+        "block-1",
+        "block-2",
+        "block-3"
+    );
+    @each $suffix in $item-block {
+        &.hide-#{$suffix} .#{$suffix} {
+            display: none;
+        }
+        
+    }        
     
 }
 
