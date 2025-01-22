@@ -5,8 +5,13 @@
 {% include copyright.html %}
 <html lang="{{ site.locale | replace: "_", "-" | default: "en" }}" class="no-js">
   <head>
+    <!-- Mmistakes -->
     {% include head.html %}
     {% include head/custom.html %}
+
+    <!-- Focus -->
+    {% include focus/head.html %}
+    {% include focus/head/custom.html %}    
   </head>
 
     {% comment %}
@@ -138,8 +143,13 @@
                     <!-- SECTION footer__before -->      
                     {% include focus/hook.html hook="footer__before" %}
                     
+                    <!-- Mmistakes -->
                     {% include footer/custom.html %}
                     {% include_cached footer.html %}
+                    
+                    <!-- Focus -->
+                    {% include focus/footer/custom.html %}
+                    {% include_cached focus/footer.html %}
                     
                     <!-- SECTION footer__after -->      
                     {% include focus/hook.html hook="footer__after" %}      
