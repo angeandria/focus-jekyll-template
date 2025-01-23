@@ -10,13 +10,6 @@
 {% endcomment %} 
 
 
-{% assign is_recursion = false %}  <!-- Default flag to prevent recursion -->
-
-{% if include.allow_recursion == true %}
-    {% assign is_recursion = true %}
-{% endif %}
-
-
     {% assign target_topic = include.topic | default: "all" %}
     {% assign target_topic = target_topic | downcase %}
     {% assign container_class = include.container_class | default: "" %}
