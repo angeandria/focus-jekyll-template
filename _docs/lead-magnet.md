@@ -1,6 +1,5 @@
 ---
-layout: focus/landing
-template: columns-one
+layout: focus/lead-magnet
 classes :
   - hide-page-title
 ---
