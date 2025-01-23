@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function() {
             console.log("Scroll Position: ", scrollPosition);
             $('.scrollable').animate({
                 scrollLeft: scrollPosition
-            }, 500); // Adjust duration as needed
+            }, 1); // Adjust duration as needed
         } else {
             console.log("Category link not found");
         }
