@@ -9,6 +9,7 @@
         type-item_class="" %}
 {% endcomment %} 
 
+
 {% assign target_topic = include.topic | default: "all" %}
 {% assign target_topic = target_topic | downcase %}
 {% assign container_class = include.container_class | default: "" %}
@@ -99,9 +100,14 @@
                     <div class="item-topic">{{ target_topic }}</div>
                 {% endcomment %}
                 
-                {% for page in limited_pages %}
-                            
                 
+                {% for page in limited_pages %}
+                    {% assign is_recursion = true %}  <!-- Default flag to allow recursion -->
+
+                    {% comment %} 
+                    if contains "<include"> then do not add the include part?                    
+                    {% endcomment %} 
+                                            
                     {% comment %}
                     <!-- Main Category class -->
                     {% endcomment %}
@@ -247,9 +253,22 @@
                                           {% endif %}                                                                   
                                     </div>   
                                     
-                                    <div class="item-content">                                     
-                                        {% if page.content %}                                        
-                                                     {{ page.content | markdownify }}           
+                                    <div class="item-content">
+                                        {% if page.content %}             
+                                                {% assign include_string = "{% include focus/post-display.html" %}
+                                                {% assign parts = page.content | split: include_string %}
+                                
+                                                {% assign modified_content = "" %}
+                                                {% for part in parts %}
+                                                    {% if forloop.first %}
+                                                        {% assign modified_content = part %}
+                                                    {% else %}
+                                                        {% assign modified_content = modified_content | append: "..." | append: part %}
+                                                    {% endif %}
+                                                {% endfor %}
+                                
+                                                <!-- Render the modified content -->
+                                                {{ modified_content | markdownify }} <!-- Use markdownify if you want to render markdown -->                                                                                
                                         {% endif %}                                                  
                                     </div>                                    
                             {% endif %}                
