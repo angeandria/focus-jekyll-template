@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if ($categoryLink.length) {
             var scrollPosition = $categoryLink.position().left + $categoryLink.parent().scrollLeft();
             console.log("Scroll Position: ", scrollPosition);
-            $('html, body').animate({
+            $('.scrollable').animate({
                 scrollLeft: scrollPosition
             }, 500); // Adjust duration as needed
         } else {
