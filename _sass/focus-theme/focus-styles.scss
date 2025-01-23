@@ -429,8 +429,11 @@ body.layout--focus-landing,
 body.landing,
 body.splash{
     > .initial-content #main{
-        max-width: var(--width-m);
+        max-width: 100%;
         width: var(--width-m);
+        @include breakpoint($medium) {
+            max-width: var(--width-m);
+        } 
     }
     footer.page__meta,
     .section--page__after_post,
