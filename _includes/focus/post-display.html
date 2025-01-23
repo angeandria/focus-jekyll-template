@@ -10,307 +10,309 @@
 {% endcomment %} 
 
 
-{% assign target_topic = include.topic | default: "all" %}
-{% assign target_topic = target_topic | downcase %}
-{% assign container_class = include.container_class | default: "" %}
-{% assign type_class = include.type_class | default: "" %}
-{% assign type-item_class = include.type-item_class | default: "" %}
-{% assign type_string = include.type | default: "page" %}
-{% assign type_array = type_string | split: ", " %}
-
-{% assign display_format = include.format | default: "cards" %}
-{% assign topic_sort = include.sort | default: "priority" %}
-{% assign topic_order = include.order %}
-{% assign topic_limit = include.limit | default: 100000 %}
-
-
-{% comment %}
-<h2>
-    Type : {{type_string}} | Topic : {{ target_topic }}<br>
-    sort by ({{ topic_sort}}) limit ({{ topic_limit}}) order ({{ topic_order}})
-</h2>
-{% endcomment %}
-
-
-<div class="post-display items-container {{ display_format }} {{ container_class }}">
-{% for type in type_array %}
-
+{% if prevent_recursion != true %}
+    {% assign target_topic = include.topic | default: "all" %}
+    {% assign target_topic = target_topic | downcase %}
+    {% assign container_class = include.container_class | default: "" %}
+    {% assign type_class = include.type_class | default: "" %}
+    {% assign type-item_class = include.type-item_class | default: "" %}
+    {% assign type_string = include.type | default: "page" %}
+    {% assign type_array = type_string | split: ", " %}
+    
+    {% assign display_format = include.format | default: "cards" %}
+    {% assign topic_sort = include.sort | default: "priority" %}
+    {% assign topic_order = include.order %}
+    {% assign topic_limit = include.limit | default: 100000 %}
+    
+    
+    {% comment %}
+    <h2>
+        Type : {{type_string}} | Topic : {{ target_topic }}<br>
+        sort by ({{ topic_sort}}) limit ({{ topic_limit}}) order ({{ topic_order}})
+    </h2>
+    {% endcomment %}
+    
+    
+    <div class="post-display items-container {{ display_format }} {{ container_class }}">
+    {% for type in type_array %}
+    
+                
+            {% comment %} // Get source {% endcomment %}
             
-        {% comment %} // Get source {% endcomment %}
-        
-        {% case type %}
-          {% when "resource" %}
-            {% assign sorted_pages = site.resources %}                
-          {% when "product" %}
-            {% assign sorted_pages = site.products %}
-          {% when "doc" %}
-            {% assign sorted_pages = site.docs %}            
-          {% else %}
-            {% assign sorted_pages = site.pages %}
-        {% endcase %}
-        
-        
-        {% comment %} // Filter by category {% endcomment %}
-        {% if target_topic == "all" %}
-            {% if type == "post" %}
-                {% comment %} // Get source {% endcomment %}
-                {% assign sorted_pages = site.posts %}
-            {% endif %}        
-        {% else %}           
-            {% if type == "post" %}            
-                {% if site.categories[target_topic] %}
-                    {% assign sorted_pages = site.categories[target_topic] %}
-                {% else %}                
-                    {% assign sorted_pages = "" | split: "" %}
-                {% endif %}
-            {% else %}
-                <!-- Categories -->                
-                {% assign sorted_pages_cats = sorted_pages | where: "categories", target_topic %}
-                {% assign sorted_pages_tags = sorted_pages | where: "tags", target_topic %}                
-                {%- assign sorted_pages = sorted_pages_cats | concat: sorted_pages_tags -%}
-
-            {% endif %}
-        {% endif %}        
-        
-        {% assign sorted_pages = sorted_pages | where_exp: "item", "item.hidden != true"  %}
-        {% assign sorted_pages = sorted_pages | where_exp: "item", "item.status != 'draft'"  %}      
-        
-        {% comment %} // Sort by priority {% endcomment %}
-        {% assign sorted_pages = sorted_pages | sort: topic_sort %}        
-                
-        {% comment %} // Order direction {% endcomment %}
-        {% if topic_order == "desc" %}
-            {% assign sorted_pages = sorted_pages | reverse %}
-        {% endif %}
-
-        {% comment %} // Limit number {% endcomment %}
-        {% assign limited_pages = sorted_pages | slice: 0, topic_limit %}
-        
-        {% comment %} // Display {% endcomment %}
-        {% if limited_pages.size > 0 %}
+            {% case type %}
+              {% when "resource" %}
+                {% assign sorted_pages = site.resources %}                
+              {% when "product" %}
+                {% assign sorted_pages = site.products %}
+              {% when "doc" %}
+                {% assign sorted_pages = site.docs %}            
+              {% else %}
+                {% assign sorted_pages = site.pages %}
+            {% endcase %}
             
-            {% comment %} 
-                <p>Topic : {{ target_topic }} | Type : {{type}} - limited to {{ limited_pages.size }} - order ({{ topic_order}})</p>
-            {% endcomment %}
-                        
-            <div class="post-type {{type}}s {{ type_class }}">
-
-                {% comment %}
-                    <div class="item-type">{{type_string | capitalize }}s</div>
-                    <div class="item-topic">{{ target_topic }}</div>
-                {% endcomment %}
-                
-                
-                {% for page in limited_pages %}
-                    {% assign is_recursion = true %}  <!-- Default flag to allow recursion -->
-
-                    {% comment %} 
-                    if contains "<include"> then do not add the include part?                    
-                    {% endcomment %} 
-                                            
-                    {% comment %}
-                    <!-- Main Category class -->
-                    {% endcomment %}
-                    {% assign category_main = page.categories[0] %}  
-                    
-                    {% comment %}
-                    <!--  Main Category slug -->
-                    {% endcomment %}
-                    {% assign category_main_slug = "" %}
-                    {% assign category_main_class = "" %}
-                    {% if category_main %}
-                        {% assign category_main_slug = category_main | downcase | slugify %}
-                        {% assign category_main_class = category_main_slug | prepend: site.taxonomy_prefix %}                        
+            
+            {% comment %} // Filter by category {% endcomment %}
+            {% if target_topic == "all" %}
+                {% if type == "post" %}
+                    {% comment %} // Get source {% endcomment %}
+                    {% assign sorted_pages = site.posts %}
+                {% endif %}        
+            {% else %}           
+                {% if type == "post" %}            
+                    {% if site.categories[target_topic] %}
+                        {% assign sorted_pages = site.categories[target_topic] %}
+                    {% else %}                
+                        {% assign sorted_pages = "" | split: "" %}
                     {% endif %}
+                {% else %}
+                    <!-- Categories -->                
+                    {% assign sorted_pages_cats = sorted_pages | where: "categories", target_topic %}
+                    {% assign sorted_pages_tags = sorted_pages | where: "tags", target_topic %}                
+                    {%- assign sorted_pages = sorted_pages_cats | concat: sorted_pages_tags -%}
+    
+                {% endif %}
+            {% endif %}        
+            
+            {% assign sorted_pages = sorted_pages | where_exp: "item", "item.hidden != true"  %}
+            {% assign sorted_pages = sorted_pages | where_exp: "item", "item.status != 'draft'"  %}      
+            
+            {% comment %} // Sort by priority {% endcomment %}
+            {% assign sorted_pages = sorted_pages | sort: topic_sort %}        
                     
-                    {% assign item-link = page.url | relative_url %}
-                    {% assign item-link = page.link | default: item-link %}
+            {% comment %} // Order direction {% endcomment %}
+            {% if topic_order == "desc" %}
+                {% assign sorted_pages = sorted_pages | reverse %}
+            {% endif %}
+    
+            {% comment %} // Limit number {% endcomment %}
+            {% assign limited_pages = sorted_pages | slice: 0, topic_limit %}
+            
+            {% comment %} // Display {% endcomment %}
+            {% if limited_pages.size > 0 %}
+                
+                {% comment %} 
+                    <p>Topic : {{ target_topic }} | Type : {{type}} - limited to {{ limited_pages.size }} - order ({{ topic_order}})</p>
+                {% endcomment %}
+                            
+                <div class="post-type {{type}}s {{ type_class }}">
+    
+                    {% comment %}
+                        <div class="item-type">{{type_string | capitalize }}s</div>
+                        <div class="item-topic">{{ target_topic }}</div>
+                    {% endcomment %}
                     
                     
-                    <div class="item {{ type-item_class }} {{ category_main_class }}">
+                    {% for page in limited_pages %}
+                        {% assign is_recursion = true %}  <!-- Default flag to allow recursion -->
+    
+                        {% comment %} 
+                        if contains "<include"> then do not add the include part?                    
+                        {% endcomment %} 
+                                                
+                        {% comment %}
+                        <!-- Main Category class -->
+                        {% endcomment %}
+                        {% assign category_main = page.categories[0] %}  
                         
-                        <div class="block block-1">
-                            <a href="{{ item-link }}" title="{{ page.title }}">                                    
-                                <img class="item-featured-logo" src="{{ page.featured_logo | default: '/assets/images/placeholder-logo.jpg' | relative_url }}" alt="Featured Logo">
-                            </a>
-                        </div>
-
-                        <div class="block block-2">
-                            <a href="{{ item-link }}" title="{{ page.title }}">                                    
-                                <img class="item-featured-img" src="{{ page.featured_image | default: '/assets/images/placeholder.jpg' | relative_url }}" alt="Featured Image">
-                            </a>
-                        </div>
-                              
-                        <div class="block block-3">                        
+                        {% comment %}
+                        <!--  Main Category slug -->
+                        {% endcomment %}
+                        {% assign category_main_slug = "" %}
+                        {% assign category_main_class = "" %}
+                        {% if category_main %}
+                            {% assign category_main_slug = category_main | downcase | slugify %}
+                            {% assign category_main_class = category_main_slug | prepend: site.taxonomy_prefix %}                        
+                        {% endif %}
+                        
+                        {% assign item-link = page.url | relative_url %}
+                        {% assign item-link = page.link | default: item-link %}
+                        
+                        
+                        <div class="item {{ type-item_class }} {{ category_main_class }}">
                             
-                            <!-- Page taxonomy -->                                                                        
-                            <div class="item-title">
-                                 <a href="{{ item-link }}" title="{{ page.title }}">{{ page.title }}</a>
-                                 
-                                 {% if page.subtitle %}
-                                    <div class="item-subtitle">{{ page.subtitle }}</div>                    
-                                 {% endif %}
-                                 <span class="page__meta_taxonomy item-tags">                                    
-                                    {% include focus/page__taxonomy.html %}
-                                </span>
-                                
-                            </div>                        
-                            
-                                      
-                            <!-- Page author -->                                                                        
-                            {% assign author_name = site.author %}
-                            {% if page.author != nil %}
-                              {% assign author_name = page.author %}
-                            {% endif %}                                              
-                            {% assign author = site.data.authors[author_name] %}
-                            {% assign show_author = page.author_profile | default: false %}
-                                            
-                            {% if author %}
-                                <!-- Page author -->         
-                                <div class="item-author">   
-                                        {% if author.avatar %}
-                                            <div class="item-author__avatar">
-                                              <a href="{{ author.home | default: '/' | absolute_url }}">
-                                                <img src="{{ author.avatar | relative_url }}" alt="{{ author.name }}" itemprop="image" class="u-photo">
-                                              </a>
-                                            </div>
-                                        {% endif %}
-                 
-                                        {% if author.name %}
-                                            <div class="item-author__name p-name" itemprop="name">
-                                              <a class="u-url" rel="me" href="{{ author.home | default: '/' | absolute_url }}" itemprop="url">{{ author.name }}</a>
-                                            </div>
-                                        {% endif %}
-                                                    
-                                        
-                                        {% comment %} DISABLED
-                                            {% if author.bio %}
-                                              <div class="item-author__bio p-note" itemprop="description">
-                                                {{ author.bio | markdownify }}
-                                              </div>
-                                            {% endif %}    
-                                        {% endcomment %}        
-                            
-                                        {% if page.date and page.show_date %}
-                                            <!-- Page date -->         
-                                            <div class="item-date">                    
-                                                {% include page__meta.html %}
-                                            </div>
-                                        {% endif %}            
-                                </div>
-                            {% endif %}
-                            
-                            
-                            <div class="item-description">
-                                 {% if page.description %}
-                                     {{ page.description }}
-                                 {% else %}
-                                     {{ page.excerpt | markdownify | strip_html | truncate: 250 }}
-                                 {% endif %}                
+                            <div class="block block-1">
+                                <a href="{{ item-link }}" title="{{ page.title }}">                                    
+                                    <img class="item-featured-logo" src="{{ page.featured_logo | default: '/assets/images/placeholder-logo.jpg' | relative_url }}" alt="Featured Logo">
+                                </a>
                             </div>
-                           
-                            
-                            {% if container_class contains "search" %}
-                                    <div class="item-details">                                     
-                                            {% assign author_name = site.author %}
-                                            {% if page.author != nil %}
-                                              {% assign author_name = page.author %}
-                                            {% endif %}                  
-                                            
-                                            {% assign author = site.data.authors[author_name] %}
-                                            {% assign show_author = page.author_profile | default: false %}
-                                                            
-                                            {% if author and show_author %}
-                                                <!-- Page author -->         
-                                                <div class="page__meta_author">                    
-                                                        {% if author.name %}
-                                                            <div class="author__name p-name" itemprop="name">
-                                                              <a class="u-url" rel="me" href="{{ author.home | default: '/' | absolute_url }}" itemprop="url">{{ author.name }}</a>
-                                                            </div>
-                                                        {% endif %}
-                                                        
-                                                        {% if author.avatar %}
-                                                            <div class="author__avatar">
-                                                              <a href="{{ author.home | default: '/' | absolute_url }}">
-                                                                <img src="{{ author.avatar | relative_url }}" alt="{{ author.name }}" itemprop="image" class="u-photo">
-                                                              </a>
-                                                            </div>
-                                                        {% endif %}
-                                                          
-                                                        {% if author.bio %}
-                                                          <div class="author__bio p-note" itemprop="description">
-                                                            {{ author.bio | markdownify }}
-                                                          </div>
-                                                        {% endif %}                        
-                                                </div>
-                                          {% endif %}
-                                          
-                                          {% if page.date and page.show_date %}
-                                            <!-- Page date -->         
-                                            <div class="page__meta_date">                    
-                                                {% include page__meta.html %}
-                                            </div>
-                                          {% endif %}                                                                   
-                                    </div>   
+    
+                            <div class="block block-2">
+                                <a href="{{ item-link }}" title="{{ page.title }}">                                    
+                                    <img class="item-featured-img" src="{{ page.featured_image | default: '/assets/images/placeholder.jpg' | relative_url }}" alt="Featured Image">
+                                </a>
+                            </div>
+                                  
+                            <div class="block block-3">                        
+                                
+                                <!-- Page taxonomy -->                                                                        
+                                <div class="item-title">
+                                     <a href="{{ item-link }}" title="{{ page.title }}">{{ page.title }}</a>
+                                     
+                                     {% if page.subtitle %}
+                                        <div class="item-subtitle">{{ page.subtitle }}</div>                    
+                                     {% endif %}
+                                     <span class="page__meta_taxonomy item-tags">                                    
+                                        {% include focus/page__taxonomy.html %}
+                                    </span>
                                     
-                                    <div class="item-content">
-                                        {% comment %}             
-                                        {% if page.content %}             
-                                                {% assign include_string = "{% include focus/post-display.html" %}
-                                                {% assign parts = page.content | split: include_string %}
+                                </div>                        
                                 
-                                                {% assign modified_content = "" %}
-                                                {% for part in parts %}
-                                                    {% if forloop.first %}
-                                                        {% assign modified_content = part %}
-                                                    {% else %}
-                                                        {% assign modified_content = modified_content | append: "..." | append: part %}
-                                                    {% endif %}
-                                                {% endfor %}
+                                          
+                                <!-- Page author -->                                                                        
+                                {% assign author_name = site.author %}
+                                {% if page.author != nil %}
+                                  {% assign author_name = page.author %}
+                                {% endif %}                                              
+                                {% assign author = site.data.authors[author_name] %}
+                                {% assign show_author = page.author_profile | default: false %}
+                                                
+                                {% if author %}
+                                    <!-- Page author -->         
+                                    <div class="item-author">   
+                                            {% if author.avatar %}
+                                                <div class="item-author__avatar">
+                                                  <a href="{{ author.home | default: '/' | absolute_url }}">
+                                                    <img src="{{ author.avatar | relative_url }}" alt="{{ author.name }}" itemprop="image" class="u-photo">
+                                                  </a>
+                                                </div>
+                                            {% endif %}
+                     
+                                            {% if author.name %}
+                                                <div class="item-author__name p-name" itemprop="name">
+                                                  <a class="u-url" rel="me" href="{{ author.home | default: '/' | absolute_url }}" itemprop="url">{{ author.name }}</a>
+                                                </div>
+                                            {% endif %}
+                                                        
+                                            
+                                            {% comment %} DISABLED
+                                                {% if author.bio %}
+                                                  <div class="item-author__bio p-note" itemprop="description">
+                                                    {{ author.bio | markdownify }}
+                                                  </div>
+                                                {% endif %}    
+                                            {% endcomment %}        
                                 
-                                                <!-- Render the modified content -->
-                                                {{ modified_content | markdownify }} <!-- Use markdownify if you want to render markdown -->                                                                                
-                                        {% endif %}           
-                                        {% endcomment %}                                                    
-                                    </div>                                    
-                            {% endif %}                
-                            
-                            <div class="item-meta">
-                                <!-- Page date -->         
-                                {% if document.read_time or document.show_date %}
-                                    <div class="page__meta_date">                    
-                                        {% include page__meta.html %}
-                                    </div>                        
-                                {% endif %}
-                                
-                                <!-- Page taxonomy -->            
-                                <div class="page__meta_taxonomy item-categories">                                    
-                                    {% include focus/page__taxonomy.html %}
-                                </div>                                                    
-                                
-                                {% if page.info-1 %}
-                                <div class="item-info item-info-1">
-                                    {% for info in page.info-1 %}
-                                        {{ info | capitalize }}
-                                    {% endfor %}
-                                </div>
-                                {% endif %}
-                                
-                                {% if page.info-2 %}
-                                    <div class="item-info item-info-2">
-                                        {% for info in page.info-2 %}
-                                            {{ info | capitalize }}
-                                        {% endfor %}
+                                            {% if page.date and page.show_date %}
+                                                <!-- Page date -->         
+                                                <div class="item-date">                    
+                                                    {% include page__meta.html %}
+                                                </div>
+                                            {% endif %}            
                                     </div>
                                 {% endif %}
                                 
+                                
+                                <div class="item-description">
+                                     {% if page.description %}
+                                         {{ page.description }}
+                                     {% else %}
+                                         {{ page.excerpt | markdownify | strip_html | truncate: 250 }}
+                                     {% endif %}                
+                                </div>
+                               
+                                
+                                {% if container_class contains "search" %}
+                                        <div class="item-details">                                     
+                                                {% assign author_name = site.author %}
+                                                {% if page.author != nil %}
+                                                  {% assign author_name = page.author %}
+                                                {% endif %}                  
+                                                
+                                                {% assign author = site.data.authors[author_name] %}
+                                                {% assign show_author = page.author_profile | default: false %}
+                                                                
+                                                {% if author and show_author %}
+                                                    <!-- Page author -->         
+                                                    <div class="page__meta_author">                    
+                                                            {% if author.name %}
+                                                                <div class="author__name p-name" itemprop="name">
+                                                                  <a class="u-url" rel="me" href="{{ author.home | default: '/' | absolute_url }}" itemprop="url">{{ author.name }}</a>
+                                                                </div>
+                                                            {% endif %}
+                                                            
+                                                            {% if author.avatar %}
+                                                                <div class="author__avatar">
+                                                                  <a href="{{ author.home | default: '/' | absolute_url }}">
+                                                                    <img src="{{ author.avatar | relative_url }}" alt="{{ author.name }}" itemprop="image" class="u-photo">
+                                                                  </a>
+                                                                </div>
+                                                            {% endif %}
+                                                              
+                                                            {% if author.bio %}
+                                                              <div class="author__bio p-note" itemprop="description">
+                                                                {{ author.bio | markdownify }}
+                                                              </div>
+                                                            {% endif %}                        
+                                                    </div>
+                                              {% endif %}
+                                              
+                                              {% if page.date and page.show_date %}
+                                                <!-- Page date -->         
+                                                <div class="page__meta_date">                    
+                                                    {% include page__meta.html %}
+                                                </div>
+                                              {% endif %}                                                                   
+                                        </div>   
+                                        
+                                        <div class="item-content">
+                                            {% comment %}             
+                                            {% if page.content %}             
+                                                    {% assign include_string = "{% include focus/post-display.html" %}
+                                                    {% assign parts = page.content | split: include_string %}
+                                    
+                                                    {% assign modified_content = "" %}
+                                                    {% for part in parts %}
+                                                        {% if forloop.first %}
+                                                            {% assign modified_content = part %}
+                                                        {% else %}
+                                                            {% assign modified_content = modified_content | append: "..." | append: part %}
+                                                        {% endif %}
+                                                    {% endfor %}
+                                    
+                                                    <!-- Render the modified content -->
+                                                    {{ modified_content | markdownify }} <!-- Use markdownify if you want to render markdown -->                                                                                
+                                            {% endif %}           
+                                            {% endcomment %}                                                    
+                                        </div>                                    
+                                {% endif %}                
+                                
+                                <div class="item-meta">
+                                    <!-- Page date -->         
+                                    {% if document.read_time or document.show_date %}
+                                        <div class="page__meta_date">                    
+                                            {% include page__meta.html %}
+                                        </div>                        
+                                    {% endif %}
+                                    
+                                    <!-- Page taxonomy -->            
+                                    <div class="page__meta_taxonomy item-categories">                                    
+                                        {% include focus/page__taxonomy.html %}
+                                    </div>                                                    
+                                    
+                                    {% if page.info-1 %}
+                                    <div class="item-info item-info-1">
+                                        {% for info in page.info-1 %}
+                                            {{ info | capitalize }}
+                                        {% endfor %}
+                                    </div>
+                                    {% endif %}
+                                    
+                                    {% if page.info-2 %}
+                                        <div class="item-info item-info-2">
+                                            {% for info in page.info-2 %}
+                                                {{ info | capitalize }}
+                                            {% endfor %}
+                                        </div>
+                                    {% endif %}
+                                    
+                                </div>
                             </div>
                         </div>
-                    </div>
-                {% endfor %}        
-            </div>    
+                    {% endfor %}        
+                </div>    
+                
+            {% endif %}
             
-        {% endif %}
-        
-{% endfor %}
-</div>
+    {% endfor %}
+    </div>
+{% endcomment %} 
