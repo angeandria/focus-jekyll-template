@@ -7,7 +7,7 @@ classes:
         <div>
             <div class="col col-1">
                 <div id="search-b" class="search-content is--visible">
-                    <h3>Pages</h3>
+                    <h3>Docs</h3>
                     {% include_cached search/search_form.html %}
                 </div>
                 <div id="search-items-b" class="search-items search-mode all-posts">            
