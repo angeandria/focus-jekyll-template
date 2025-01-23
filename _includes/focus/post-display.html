@@ -16,7 +16,7 @@
     {% assign is_recursion = true %}
 {% endif %}
 
-{% if is_recursion == false %}
+
     {% assign target_topic = include.topic | default: "all" %}
     {% assign target_topic = target_topic | downcase %}
     {% assign container_class = include.container_class | default: "" %}
@@ -306,4 +306,3 @@
             
     {% endfor %}
     </div>
-{% endif %}
