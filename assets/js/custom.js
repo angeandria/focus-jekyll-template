@@ -1,15 +1,15 @@
 document.addEventListener('DOMContentLoaded', function() {    
     
-    /*    
-    *  HANDLING URL PARAMETERS
-    */
+    
+    //  HANDLING URL PARAMETERS
+    //
     //
     // Get Url Parameter "search" to fill the search input
     //
-    /*const urlParams = new URLSearchParams(window.location.search);
-    const topic = urlParams.get('search');
-    const category = urlParams.get('search');
-    */
+    //const urlParams = new URLSearchParams(window.location.search);
+    //const topic = urlParams.get('search');
+    //const category = urlParams.get('search');
+
     // Function to get URL parameters
     function getUrlParameter(name) {
         var results = new RegExp('[?&]' + name + '=([^&#]*)').exec(window.location.href);
@@ -37,9 +37,9 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
     
-    /*    
-    *  SEARCH INPUTS
-    */
+
+    //  SEARCH INPUTS
+    //
     // Find all search inputs that start with "search-"
     const searchInputs = $("div[id^='search-'] input#search").toArray();
 
