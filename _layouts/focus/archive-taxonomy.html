@@ -45,7 +45,7 @@ URL : {{ url }}
 PAGE TITLE ONLY WHEN HAS /TOPICS IN URL? {{ page.title}}
 {% endif %}
 
-<div class="archive">
+<div>
     {% unless page.header.overlay_color or page.header.overlay_image %}
 		{% comment %}<!-- CUSTOM -->{% endcomment %}
 		{% include focus/taxonomy-description.html %}
@@ -68,7 +68,7 @@ PAGE TITLE ONLY WHEN HAS /TOPICS IN URL? {{ page.title}}
 </div>
 
 
-<div id="debug-info">
+<div id="debug-info" st>
     <h2>Debug Information</h2>
     <ul>
         <li>Window Location Pathname: <span id="debug-pathname"></span></li>
@@ -114,7 +114,7 @@ if (conditionMet) {
     let basePath = window.location.pathname.split('/').slice(0, -1).join('/');
 
     // Construct the new URL for redirection with the dynamic base path
-    let newUrl = `${basePath}?search=${encodeURIComponent(topicName)}`;
+    let newUrl = `${basePath}?search=${encodeURIComponent(topicName)&category=${encodeURIComponent(topicName)}`;
 
     // Display new URL for redirect
     document.getElementById('debug-new-url').textContent = newUrl;
