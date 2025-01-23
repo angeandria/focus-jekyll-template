@@ -19,22 +19,22 @@ document.addEventListener('DOMContentLoaded', function() {
     // Get parameters
     var topic = getUrlParameter('search');
     var category = getUrlParameter('category');
-    
+    /*
     if (category) {
-        console.log ("category found : ", category);
+         console.log ("category found : " + category);
         
         // Find the category link
         var $categoryLink = $('.category-link[data-category="' + category + '"]');
 
         if ($categoryLink.length) {
-            console.log ("scroll to : ", $categoryLink.position().left);
+            console.log ("scroll to : " + $categoryLink.position().left);
             // Scroll to the category link
             $('html, body').animate({
                 scrollLeft: $categoryLink.position().left + $categoryLink.parent().scrollLeft()
             }, 500); // Adjust duration as needed
         }
     }
-    
+    */
 
     //  SEARCH INPUTS
     //
