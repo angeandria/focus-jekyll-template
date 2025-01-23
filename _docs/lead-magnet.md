@@ -8,6 +8,15 @@ classes :
 
 ## Front matter - Landing page setup
 
+**New** 
+{: .notice--info}
+
+```
+layout: focus/lead-magnet
+``` 
+
+Or less specific to lead magnets :
+
 ```
 template: columns-one
 classes:
@@ -16,6 +25,7 @@ classes:
 
 ## Hide page title
 to display a custom title within the page content
+
 
 ```
 ---
