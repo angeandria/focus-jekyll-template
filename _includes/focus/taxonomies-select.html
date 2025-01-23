@@ -17,7 +17,7 @@
                             {% endif %}
                             
                             <li class="item {{ active }}">
-                                <a href="{{ '/topics' | relative_url }}/{{ key }}" data-category="{{ key }}">{{ values.title }}</a>                    
+                                <a href="{{ '/topics' | relative_url }}/{{ key }}?category={{ key }}" class="category-link" data-category="{{ key }}">{{ values.title }}</a>                    
                             </li>
                         {% endif %}   
                     {% endfor %}      

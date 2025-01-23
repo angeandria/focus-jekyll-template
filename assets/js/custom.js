@@ -1,14 +1,44 @@
 document.addEventListener('DOMContentLoaded', function() {    
     
-    // Find all search inputs that start with "search-"
-    const searchInputs = $("div[id^='search-'] input#search").toArray();
-
+    /*    
+    *  HANDLING URL PARAMETERS
+    */
     //
     // Get Url Parameter "search" to fill the search input
     //
-    const urlParams = new URLSearchParams(window.location.search);
+    /*const urlParams = new URLSearchParams(window.location.search);
     const topic = urlParams.get('search');
-  
+    const category = urlParams.get('search');
+    */
+    // Function to get URL parameters
+    function getUrlParameter(name) {
+        var results = new RegExp('[?&]' + name + '=([^&#]*)').exec(window.location.href);
+        return results ? decodeURIComponent(results[1]) : null;
+    }
+    
+    // Get parameters
+    var topic = getUrlParameter('search');
+    var category = getUrlParameter('category');
+
+    if (category) {
+        // Find the category link
+        var $categoryLink = $('.category-link[data-category="' + category + '"]');
+
+        if ($categoryLink.length) {
+            // Scroll to the category link
+            $('html, body').animate({
+                scrollLeft: $categoryLink.position().left + $categoryLink.parent().scrollLeft()
+            }, 500); // Adjust duration as needed
+        }
+    }
+    
+    /*    
+    *  SEARCH INPUTS
+    */
+    // Find all search inputs that start with "search-"
+    const searchInputs = $("div[id^='search-'] input#search").toArray();
+
+    
     // Pre-fill the search input if the topic exists
     if (topic) {
         if (searchInputs[0]) {
