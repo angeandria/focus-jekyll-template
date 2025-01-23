@@ -21,10 +21,13 @@ document.addEventListener('DOMContentLoaded', function() {
     var category = getUrlParameter('category');
 
     if (category) {
+        console.log ("category found : ", category);
+        
         // Find the category link
         var $categoryLink = $('.category-link[data-category="' + category + '"]');
 
         if ($categoryLink.length) {
+            console.log ("scroll to : ", $categoryLink.position().left);
             // Scroll to the category link
             $('html, body').animate({
                 scrollLeft: $categoryLink.position().left + $categoryLink.parent().scrollLeft()
