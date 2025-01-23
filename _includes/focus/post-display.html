@@ -284,27 +284,29 @@
                                     {% if page.content %}             
                                             <div class="item-content">
                                             
-                                                {% assign modified_content = page.content %}
-
-                                                {% if modified_content contains include_string_start %}
+                                                {% if page.content contains include_string_start %}
                                                     {% comment %} Split content based on the start of the include statement %}{% endcomment %}
-                                                    {% assign parts = modified_content | split: include_string_start %}
-                                                    {% assign modified_content = parts[0] %} <!-- Start with the first part -->
-                                                    
+                                                    {% assign parts = page.content | split: include_string_start %}
+                                                    {% assign modified_content = "" %}
+                                
                                                     {% for part in parts %}
                                                         {% if forloop.first %}
-                                                            {% continue %} <!-- Skip the first part since it's already assigned -->
+                                                            {% assign modified_content = part %}
                                                         {% else %}
-                                                            {% assign modified_content = modified_content | append: "..." %} <!-- Append "..." for each occurrence -->
+                                                            {% comment %} Append "..." for the replaced include statement %}{% endcomment %}
+                                                            {% assign modified_content = modified_content | append: "..." %}
+                                                            
+                                                            {% comment %} Remove everything after the end of the include statement %}{% endcomment %}
                                                             {% assign sub_parts = part | split: include_string_end %}
-                                                            {% assign modified_content = modified_content | append: sub_parts[1] %} <!-- Append everything after the end (if needed) -->
+                                                            {% assign modified_content = modified_content | append: sub_parts[1] %}
                                                         {% endif %}
                                                     {% endfor %}
+                                                {% else %}
+                                                    {% assign modified_content = page.content %}
                                                 {% endif %}
-                                                
+                                
                                                 <!-- Render the modified content without the includes -->
                                                 {{ modified_content | markdownify }} <!-- Use markdownify if your content is markdown -->
-
                                             </div>
                                     {% endif %}                                                  
                                    
