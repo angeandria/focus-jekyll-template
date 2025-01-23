@@ -255,9 +255,8 @@
                                     
                                     {% if page.content %}             
                                         <div class="item-content">                                        
-                                            {% assign modified_content = page.content | replace: "{% include focus/post-display.html xxxxxxxxxxxxxxxxxx %}", "..." %}                        
                                             <!-- Render the modified content -->
-                                            {{ modified_content | markdownify }} <!-- Use markdownify if you want to render markdown -->                                     
+                                            {{ page.content | markdownify }} <!-- Use markdownify if you want to render markdown -->                                     
                                         </div>                                        
                                     {% endif %}                                                  
                                    
