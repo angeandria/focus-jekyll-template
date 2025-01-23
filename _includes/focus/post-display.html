@@ -32,6 +32,11 @@
 {% endcomment %}
 
 
+{% comment %} Prevent recursive issues {% endcomment %}
+{% assign include_string_start = "{% include focus/post-display.html" %}
+{% assign include_string_end = "%}" %}
+                                
+
 <div class="post-display items-container {{ display_format }} {{ container_class }}">
 {% for type in type_array %}
 
@@ -205,7 +210,30 @@
                                  {% if page.description %}
                                      {{ page.description }}
                                  {% else %}
-                                     {{ page.excerpt | markdownify | strip_html | truncate: 250 }}
+                                              {% if page.excerpt contains include_string_start %}
+                                                    {% comment %} Split content based on the start of the include statement %}{% endcomment %}
+                                                    {% assign parts = page.excerpt | split: include_string_start %}
+                                                    {% assign modified_excerpt = "" %}
+                                
+                                                    {% for part in parts %}
+                                                        {% if forloop.first %}
+                                                            {% assign modified_excerpt = part %}
+                                                        {% else %}
+                                                            {% comment %} Append "..." for the replaced include statement %}{% endcomment %}
+                                                            {% assign modified_excerpt = modified_content | append: "..." %}
+                                                            
+                                                            {% comment %} Remove everything after the end of the include statement %}{% endcomment %}
+                                                            {% assign sub_parts = part | split: include_string_end %}
+                                                            {% assign modified_excerpt = modified_excerpt | append: sub_parts[1] %}
+                                                        {% endif %}
+                                                    {% endfor %}
+                                              {% else %}
+                                                    {% assign modified_excerpt = page.excerpt %}
+                                              {% endif %}
+                                
+                                              <!-- Render the modified content without the includes -->
+                                              {{ modified_excerpt | markdownify | strip_html | truncate: 250  }} <!-- Use markdownify if your content is markdown -->
+
                                  {% endif %}                
                             </div>
                            
@@ -254,10 +282,32 @@
                                     </div>   
                                     
                                     {% if page.content %}             
-                                        <div class="item-content">                                        
-                                            <!-- Render the modified content -->
-                                            {{ page.content | markdownify }} <!-- Use markdownify if you want to render markdown -->                                     
-                                        </div>                                        
+                                            <div class="item-content">
+                                            
+                                                {% if page.content contains include_string_start %}
+                                                    {% comment %} Split content based on the start of the include statement %}{% endcomment %}
+                                                    {% assign parts = page.content | split: include_string_start %}
+                                                    {% assign modified_content = "" %}
+                                
+                                                    {% for part in parts %}
+                                                        {% if forloop.first %}
+                                                            {% assign modified_content = part %}
+                                                        {% else %}
+                                                            {% comment %} Append "..." for the replaced include statement %}{% endcomment %}
+                                                            {% assign modified_content = modified_content | append: "..." %}
+                                                            
+                                                            {% comment %} Remove everything after the end of the include statement %}{% endcomment %}
+                                                            {% assign sub_parts = part | split: include_string_end %}
+                                                            {% assign modified_content = modified_content | append: sub_parts[1] %}
+                                                        {% endif %}
+                                                    {% endfor %}
+                                                {% else %}
+                                                    {% assign modified_content = page.content %}
+                                                {% endif %}
+                                
+                                                <!-- Render the modified content without the includes -->
+                                                {{ modified_content | markdownify }} <!-- Use markdownify if your content is markdown -->
+                                            </div>
                                     {% endif %}                                                  
                                    
                             {% endif %}                
