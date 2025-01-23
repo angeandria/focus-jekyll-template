@@ -19,7 +19,8 @@ document.addEventListener('DOMContentLoaded', function() {
     // Get parameters
     var topic = getUrlParameter('search');
     var category = getUrlParameter('category');
-
+    console.log ("category found?? : ", category);
+    
     if (category) {
         console.log ("category found : ", category);
         
