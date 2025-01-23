@@ -201,14 +201,7 @@
                             {% endif %}
                             
                             
-                            <div class="item-description">
-                                 {% if page.description %}
-                                     {{ page.description }}
-                                 {% else %}
-                                     {{ page.excerpt | markdownify | strip_html | truncate: 250 }}
-                                 {% endif %}                
-                            </div>
-                           
+                            
                             
                             {% if container_class contains "search" %}
                                     <div class="item-details">                                     
@@ -252,7 +245,6 @@
                                             </div>
                                           {% endif %}                                                                   
                                     </div>   
-                                    
                                     
                                    
                             {% endif %}                
