@@ -254,6 +254,7 @@
                                     </div>   
                                     
                                     <div class="item-content">
+                                        {% comment %}             
                                         {% if page.content %}             
                                                 {% assign include_string = "{% include focus/post-display.html" %}
                                                 {% assign parts = page.content | split: include_string %}
@@ -269,7 +270,8 @@
                                 
                                                 <!-- Render the modified content -->
                                                 {{ modified_content | markdownify }} <!-- Use markdownify if you want to render markdown -->                                                                                
-                                        {% endif %}                                                  
+                                        {% endif %}           
+                                        {% endcomment %}                                                    
                                     </div>                                    
                             {% endif %}                
                             
