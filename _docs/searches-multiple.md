@@ -11,7 +11,7 @@ classes:
                     {% include_cached search/search_form.html %}
                 </div>
                 <div id="search-items-b" class="search-items search-mode all-posts">            
-                    {% include focus/post-display.html type="doc" topic="all" format="compact" order="desc" container_class="search" type_class="" type-item_class="" %}                                    
+                    {% include focus/post-display.html type="page" topic="all" format="compact" order="desc" container_class="search" type_class="" type-item_class="" %}                                    
                 </div>            
             </div>
             
