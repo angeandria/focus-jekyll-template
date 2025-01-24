@@ -298,6 +298,7 @@
                                                 {% comment %} Prevent recursive issues {% endcomment %}
                                                 {% assign content = page.content %} <!-- Assume page.content contains your text -->
                                                 
+                                                
                                                 <!-- Step 1: Replace '{%' with '###START###' and '%}' with '###END###' -->
                                                 {% assign modified_content = content | replace: '{%', '###START###' | replace: '%}', '###END###' %}
                                                 
@@ -317,8 +318,7 @@
                                                             {% assign final_content = final_content | append: sub_parts[1] %} <!-- Append the rest of the content after '###END###' -->
                                                         {% endif %}
                                                     {% endif %}
-                                                {% endfor %}
-                                                                                    
+                                                {% endfor %}          
                                                 <!-- Render the modified content without the includes -->
                                                 {{ final_content }} <!-- Use markdownify if your content is markdown -->
                                             </div>
