@@ -297,27 +297,24 @@
                                             <div class="item-content">
                                                 {% comment %} Prevent recursive issues {% endcomment %}
                                                 {% assign content = page.content %} <!-- Assume page.content contains your text -->
-                                                <!-- Step 1: Replace '{%' with '###_' and '%}' with '_###' -->
-                                                {% assign modified_content = content | replace: '{%', '###_' | replace: '%}', '_###' %}
+                                                
+                                                <!-- Step 1: Replace '{%' with '###START###' and '%}' with '###END###' -->
+                                                {% assign modified_content = content | replace: '{%', '###START###' | replace: '%}', '###END###' %}
+                                                
                                                 <!-- Step 2: Initialize variables -->
-                                                {% assign parts = modified_content | split: '###_' %}
+                                                {% assign parts = modified_content | split: '###START###' %}
                                                 {% assign final_content = parts[0] %} <!-- Start with the first part -->
-                                                                                                
-                                                <!-- Page contains include_string_start -->
-                                                {% comment %} Split content based on the start of the include statement %}{% endcomment %}
-                                                {% assign parts = page.content | split: include_string_start %}
-                                                {% assign modified_content = "" %}
-                            
+                                                
                                                 <!-- Step 3: Loop through parts -->
                                                 {% for part in parts %}
                                                     {% if forloop.first %}
-                                                        {% continue %} <!-- Skip the first part as it doesn't contain '###_' -->
+                                                        {% continue %} <!-- Skip the first part as it doesn't contain '###START###' -->
                                                     {% else %}
-                                                        {% assign sub_parts = part | split: '_###' %}
+                                                        {% assign sub_parts = part | split: '###END###' %}
                                                         {% assign final_content = final_content | append: "HELLOOOO" %} <!-- Replace content between markers -->
                                                         
                                                         {% if sub_parts.size > 1 %}
-                                                            {% assign final_content = final_content | append: sub_parts[1] %} <!-- Append the rest of the content after '_###' -->
+                                                            {% assign final_content = final_content | append: sub_parts[1] %} <!-- Append the rest of the content after '###END###' -->
                                                         {% endif %}
                                                     {% endif %}
                                                 {% endfor %}
