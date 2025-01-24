@@ -286,7 +286,11 @@
                                     
                                     {% if page.content %}             
                                             <div class="item-content">
-                                            
+                                                <p>PAGE CONTENT</p>
+                                                <hr>
+                                                {{ page.content }}
+                                                
+                                                <hr>
                                                 {% if page.content contains include_string_start %}
                                                     {% comment %} Split content based on the start of the include statement %}{% endcomment %}
                                                     {% assign parts = page.content | split: include_string_start %}
