@@ -239,6 +239,7 @@
                                               {{ modified_excerpt | markdownify | strip_html | truncate: 250  }} <!-- Use markdownify if your content is markdown -->
 
                                  {% endif %}                
+                                                                  
                             </div>
                            
                             
@@ -282,13 +283,11 @@
                                             <div class="page__meta_date">                    
                                                 {% include page__meta.html %}
                                             </div>
-                                          {% endif %}                                                                   
+                                          {% endif %}         
+                                        
                                     </div>   
                                     
-                                <h5>PAGE CONTENT</h5>    
-                                <pre>{{ page.content }}</pre>
-                                
-                                <hr>
+
                                     {% if page.content != nil %}             
                                             <div class="item-content">
 
