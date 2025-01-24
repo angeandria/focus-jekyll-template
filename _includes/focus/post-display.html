@@ -310,7 +310,7 @@
                                 
                                                     {% for part in parts %}
                                                         <!-- Parts -->
-                                                        <div>Part : {{ part }}</div>
+                                                        <div><pre>{{ part }}</pre></div>
                                                         {% if forloop.first %}
                                                             {% assign modified_content = part %}
                                                         {% else %}
