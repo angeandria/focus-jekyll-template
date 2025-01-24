@@ -32,10 +32,6 @@
 {% endcomment %}
 
 
-{% comment %} Prevent recursive issues {% endcomment %}
-{% assign include_string_start = "include focus/post-display.html" %}
-{% assign include_string_end = "%" %}
-{% assign include_string_end = include_string_end | append: "}" %}
 
                                 
 
@@ -295,41 +291,39 @@
                                         
                                     </div>   
                                     
-
+                                    
                                     {% if page.content != nil %}             
+
                                             <div class="item-content">
-                                                
-                                                
-                
-                                                {% if page.content contains include_string_start %}
-                                                    {% assign include_string_start = include_string_start | prepend: "{%" %}
-                                                    <!-- Page contains include_string_start -->
-                                                    {% comment %} Split content based on the start of the include statement %}{% endcomment %}
-                                                    {% assign parts = page.content | split: include_string_start %}
-                                                    {% assign modified_content = "" %}
-                                
-                                                    {% for part in parts %}
-                                                        <!-- Parts -->
-                                                        <div><pre>{{ part }}</pre></div>
-                                                        {% if forloop.first %}
-                                                            {% assign modified_content = part %}
-                                                        {% else %}
-                                                            <!-- Append "..." -->
-                                                            {% comment %} Append "..." for the replaced include statement %}{% endcomment %}
-                                                            {% assign modified_content = modified_content | append: "HELLOOOO" %}
-                                                            <!-- Remove everything after the end of the include statement -->
-                                                            {% comment %} Remove everything after the end of the include statement %}{% endcomment %}
-                                                            {% assign sub_parts = part | split: include_string_end %}
-                                                            {% assign modified_content = modified_content | append: sub_parts[1] %}
+                                                {% comment %} Prevent recursive issues {% endcomment %}
+                                                {% assign content = page.content %} <!-- Assume page.content contains your text -->
+                                                <!-- Step 1: Replace '{%' with '###_' and '%}' with '_###' -->
+                                                {% assign modified_content = content | replace: '{%', '###_' | replace: '%}', '_###' %}
+                                                <!-- Step 2: Initialize variables -->
+                                                {% assign parts = modified_content | split: '###_' %}
+                                                {% assign final_content = parts[0] %} <!-- Start with the first part -->
+                                                                                                
+                                                <!-- Page contains include_string_start -->
+                                                {% comment %} Split content based on the start of the include statement %}{% endcomment %}
+                                                {% assign parts = page.content | split: include_string_start %}
+                                                {% assign modified_content = "" %}
+                            
+                                                <!-- Step 3: Loop through parts -->
+                                                {% for part in parts %}
+                                                    {% if forloop.first %}
+                                                        {% continue %} <!-- Skip the first part as it doesn't contain '###_' -->
+                                                    {% else %}
+                                                        {% assign sub_parts = part | split: '_###' %}
+                                                        {% assign final_content = final_content | append: "HELLOOOO" %} <!-- Replace content between markers -->
+                                                        
+                                                        {% if sub_parts.size > 1 %}
+                                                            {% assign final_content = final_content | append: sub_parts[1] %} <!-- Append the rest of the content after '_###' -->
                                                         {% endif %}
-                                                    {% endfor %}
-                                                {% else %}
-                                                    <!-- assign modified_content = page.content -->
-                                                    {% assign modified_content = page.content %}
-                                                {% endif %}
-                                
+                                                    {% endif %}
+                                                {% endfor %}
+                                                                                    
                                                 <!-- Render the modified content without the includes -->
-                                                {{ modified_content | markdownify }} <!-- Use markdownify if your content is markdown -->
+                                                {{ final_content | markdownify }} <!-- Use markdownify if your content is markdown -->
                                             </div>
                                     {% endif %}                                                  
                                    
