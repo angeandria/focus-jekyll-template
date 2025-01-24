@@ -316,7 +316,7 @@
                                                         {% else %}
                                                             <!-- Append "..." -->
                                                             {% comment %} Append "..." for the replaced include statement %}{% endcomment %}
-                                                            {% assign modified_content = modified_content | append: "HELLOOOOOIOO" %}
+                                                            {% assign modified_content = modified_content | append: "HELLOOOOOOO" %}
                                                             <!-- Remove everything after the end of the include statement -->
                                                             {% comment %} Remove everything after the end of the include statement %}{% endcomment %}
                                                             {% assign sub_parts = part | split: include_string_end %}
