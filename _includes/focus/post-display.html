@@ -33,7 +33,7 @@
 
 
 {% comment %} Prevent recursive issues {% endcomment %}
-{% assign include_string_start = "{% include focus/post-display.html" %}
+{% assign include_string_start = "include focus/post-display.html" %}
 {% assign include_string_end = "%" %}
 {% assign include_string_end = include_string_end | append: "}" %}
 
@@ -298,8 +298,11 @@
 
                                     {% if page.content != nil %}             
                                             <div class="item-content">
-
+                                                
+                                                <p>include_string_start : {{ include_string_start }}</p>
+                
                                                 {% if page.content contains include_string_start %}
+                                                    {% assign include_string_start = include_string_start | prepend: "{%" %}
                                                     <!-- Page contains include_string_start -->
                                                     {% comment %} Split content based on the start of the include statement %}{% endcomment %}
                                                     {% assign parts = page.content | split: include_string_start %}
