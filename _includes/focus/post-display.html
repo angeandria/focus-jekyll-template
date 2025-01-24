@@ -244,6 +244,10 @@
                            
                             
                             {% if container_class contains "search" %}
+                                {% comment %}
+                                #  Content included here will be 'searchable' by the search input
+                                #  It will only be included if you need it to be searchable (to make it lighter otherwise)
+                                {% endcomment %}
                                     <div class="item-details">                                     
                                             {% assign author_name = site.author %}
                                             {% if page.author != nil %}
