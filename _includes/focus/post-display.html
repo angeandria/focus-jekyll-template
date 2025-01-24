@@ -34,7 +34,8 @@
 
 {% comment %} Prevent recursive issues {% endcomment %}
 {% assign include_string_start = "{% include focus/post-display.html" %}
-{% assign include_string_end = "%}" %}
+{% assign include_string_end = "%" %}
+{% assign include_string_end | append: "}" %}
 
                                 
 
