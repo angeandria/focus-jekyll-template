@@ -299,7 +299,7 @@
                                     {% if page.content != nil %}             
                                             <div class="item-content">
                                                 
-                                                <p>include_string_start : {{ include_string_start }}</p>
+                                                
                 
                                                 {% if page.content contains include_string_start %}
                                                     {% assign include_string_start = include_string_start | prepend: "{%" %}
@@ -316,7 +316,7 @@
                                                         {% else %}
                                                             <!-- Append "..." -->
                                                             {% comment %} Append "..." for the replaced include statement %}{% endcomment %}
-                                                            {% assign modified_content = modified_content | append: "..." %}
+                                                            {% assign modified_content = modified_content | append: "HELLOOOOOIOO" %}
                                                             <!-- Remove everything after the end of the include statement -->
                                                             {% comment %} Remove everything after the end of the include statement %}{% endcomment %}
                                                             {% assign sub_parts = part | split: include_string_end %}
