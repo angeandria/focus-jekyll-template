@@ -212,6 +212,7 @@
                                      {{ page.description }}
                                  {% else %}
                                               {% if page.excerpt contains include_string_start %}
+                                                    <!-- contains include_string_start -->
                                                     {% comment %} Split content based on the start of the include statement %}{% endcomment %}
                                                     {% assign parts = page.excerpt | split: include_string_start %}
                                                     {% assign modified_excerpt = "" %}
@@ -221,7 +222,7 @@
                                                             {% assign modified_excerpt = part %}
                                                         {% else %}
                                                             {% comment %} Append "..." for the replaced include statement %}{% endcomment %}
-                                                            {% assign modified_excerpt = modified_content | append: "..." %}
+                                                            {% assign modified_excerpt = modified_content | append: "HELLLLLOOOOO" %}
                                                             
                                                             {% comment %} Remove everything after the end of the include statement %}{% endcomment %}
                                                             {% assign sub_parts = part | split: include_string_end %}
@@ -229,6 +230,7 @@
                                                         {% endif %}
                                                     {% endfor %}
                                               {% else %}
+                                                    <!-- else -->
                                                     {% assign modified_excerpt = page.excerpt %}
                                               {% endif %}
                                 
