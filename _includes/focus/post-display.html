@@ -33,8 +33,8 @@
 
 
 {% comment %} Prevent recursive issues {% endcomment %}
-{% assign include_string_start = '{% include focus/post-display.html' %}
-{% assign include_string_end = '%}' %}
+{% assign include_string_start = '{% include focus/post-display.html' | escape %}
+{% assign include_string_end = '%}' | escape %}
 
                                 
 
@@ -243,12 +243,15 @@
                             </div>
                            
                             
+                            {% comment %}
+                            #
+                            #  SEARCHABLE ONLY CONTENT (never displayed)
+                            #
+                            #  Content included here will be 'searchable' by the search input
+                            #  It will only be included if you need it to be searchable (to make it lighter otherwise)
+                            {% endcomment %}
                             {% if container_class contains "search" %}
-                                {% comment %}
-                                #  Content included here will be 'searchable' by the search input
-                                #  It will only be included if you need it to be searchable (to make it lighter otherwise)
-                                {% endcomment %}
-                                    <div class="item-details">                                     
+                                <div class="item-details">                                     
                                             {% assign author_name = site.author %}
                                             {% if page.author != nil %}
                                               {% assign author_name = page.author %}
@@ -322,6 +325,10 @@
                                     {% endif %}                                                  
                                    
                             {% endif %}                
+                            {% comment %}
+                            #  END of SEARCHABLE ONLY CONTENT (never displayed)
+                            {% endcomment %}
+                            
                             
                             <div class="item-meta">
                                 <!-- Page date -->         
