@@ -10,12 +10,12 @@ Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
 </section>
 
 <section class="boxed-s">
-    <h2>ALL PAGES</h2>
+    <h2>ALL DOCS</h2>
     <div id="search-default" class="search-content is--visible">
         {% include_cached search/search_form.html %}
     </div>
     <div id="search-items-default" class="search-items search-mode all-posts">            
-        {% include focus/post-display.html type="page" topic="all" format="cards" order="desc" container_class="grid-2 search" type_class="" type-item_class="box-shadow" %}     
+        {% include focus/post-display.html type="doc" topic="all" format="cards" order="desc" container_class="grid-2 search" type_class="" type-item_class="box-shadow" %}     
     </div>
 </section>
 
