@@ -208,11 +208,7 @@
                             
                             
                             <div class="item-description">
-                                <p>PAGE CONTENT</p>
-                                <hr>
-                                {{ page.content }}
-                                
-                                <hr>
+
                                  {% if page.description %}
                                      {{ page.description }}
                                  {% else %}
@@ -289,7 +285,11 @@
                                           {% endif %}                                                                   
                                     </div>   
                                     
-                                    {% if page.content %}             
+                                <h5>PAGE CONTENT</h5>    
+                                <pre>{{ page.content }}</pre>
+                                
+                                <hr>
+                                    {% if page.content != nil %}             
                                             <div class="item-content">
 
                                                 {% if page.content contains include_string_start %}
