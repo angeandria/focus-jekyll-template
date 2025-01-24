@@ -309,6 +309,8 @@
                                                     {% assign modified_content = "" %}
                                 
                                                     {% for part in parts %}
+                                                        <!-- Parts -->
+                                                        <p>Part : {{ part }}</p>
                                                         {% if forloop.first %}
                                                             {% assign modified_content = part %}
                                                         {% else %}
