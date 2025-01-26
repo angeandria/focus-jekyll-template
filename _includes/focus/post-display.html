@@ -300,8 +300,6 @@
                                                 {% comment %} Prevent recursive issues {% endcomment %}
                                                 {% assign content = page.content %} <!-- Assume page.content contains your text -->
                                                 
-                                                
-                                                { raw }
 
                                                 {% assign modified_content = content | replace: '{%', 'CUSTOMMMM_START' | replace: '%}', 'CUSTOMMMM_END' %}
                                                 
@@ -325,7 +323,7 @@
                                                     {% endif %}
                                                 {% endfor %}
                                                 {% endcomment %}
-                                                { endraw }
+
 
                                                 <!-- Render the modified content without the includes -->
                                                 {{ modified_content }} <!-- Use markdownify if your content is markdown -->
