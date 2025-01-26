@@ -204,7 +204,7 @@
                             {% endif %}
                             
                             
-                            {% comment %}
+                            {% comment %} DEBUG
                             <div class="item-description">
 
                                  {% if page.description %}
@@ -305,6 +305,8 @@
                                                 <!-- Step 1: Replace '{%' with 'CUSTOM_START' and '%}' with 'CUSTOM_END' -->
                                                 {% assign modified_content = content | replace: '{%', 'CUSTOM_START' | replace: '%}', 'CUSTOM_END' %}
                                                 
+                                                
+                                                {% comment %} DEBUG
                                                 <!-- Step 2: Initialize variables -->
                                                 {% assign parts = modified_content | split: 'CUSTOM_START' %}
                                                 {% assign final_content = parts[0] %} <!-- Start with the first part -->
@@ -322,9 +324,10 @@
                                                         {% endif %}
                                                     {% endif %}
                                                 {% endfor %}
+                                                {% endcomment %}
 
                                                 <!-- Render the modified content without the includes -->
-                                                {{ final_content }} <!-- Use markdownify if your content is markdown -->
+                                                {{ modified_content }} <!-- Use markdownify if your content is markdown -->
                                             </div>
                                     {% endif %}                                                  
                                    
