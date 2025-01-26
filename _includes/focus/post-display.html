@@ -301,7 +301,7 @@
                                                 {% assign content = page.content %} <!-- Assume page.content contains your text -->
                                                 
                                                 
-                                                
+                                                { raw }
                                                 <!-- Step 1: Replace '{%' with 'CUSTOM_START' and '%}' with 'CUSTOM_END' -->
                                                 {% assign modified_content = content | replace: '{%', 'CUSTOM_START' | replace: '%}', 'CUSTOM_END' %}
                                                 
@@ -325,9 +325,11 @@
                                                     {% endif %}
                                                 {% endfor %}
                                                 {% endcomment %}
+                                                { endraw }
 
                                                 <!-- Render the modified content without the includes -->
                                                 {{ modified_content }} <!-- Use markdownify if your content is markdown -->
+                                                
                                             </div>
                                     {% endif %}                                                  
                                    
