@@ -302,10 +302,13 @@
                                                 
 
                                                 {% assign modified_content = content | replace: '{%', 'CUSTOMMMMp_START' %}                                                
-                                                {% assign modified_content = modified_content | replace: '%}', 'CUSTOMMMM_END' %}
+                                                <!-- Debug the modified content -->
+<pre>Modified Content (after first replace): {{ modified_content }}</pre>
                                                 
                                                 
                                                 {% comment %} DEBUG
+                                                {% assign modified_content = modified_content | replace: '%}', 'CUSTOMMMM_END' %}
+
                                                 <!-- Step 2: Initialize variables -->
                                                 {% assign parts = modified_content | split: 'CUSTOMIIIII_START' %}
                                                 {% assign final_content = parts[0] %} <!-- Start with the first part -->
