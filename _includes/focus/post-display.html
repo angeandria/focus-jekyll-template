@@ -302,21 +302,21 @@
                                                 
                                                 
                                                 { raw }
-                                                <!-- Step 1: Replace '{%' with 'CUSTOM_START' and '%}' with 'CUSTOM_END' -->
+                                                <!-- Step 1: Replace '{%' with 'CUSTOMOOOO_START' and '%}' with 'CUSTOM_END' -->
                                                 {% assign modified_content = content | replace: '{%', 'CUSTOMMMM_START' | replace: '%}', 'CUSTOMMMM_END' %}
                                                 
                                                 
                                                 {% comment %} DEBUG
                                                 <!-- Step 2: Initialize variables -->
-                                                {% assign parts = modified_content | split: 'CUSTOM_START' %}
+                                                {% assign parts = modified_content | split: 'CUSTOMIIIII_START' %}
                                                 {% assign final_content = parts[0] %} <!-- Start with the first part -->
                                                 
                                                 <!-- Step 3: Loop through parts -->
                                                 {% for part in parts %}
                                                     {% if forloop.first %}
-                                                        {% continue %} <!-- Skip the first part as it doesn't contain 'CUSTOM_START' -->
+                                                        {% continue %} <!-- Skip the first part as it doesn't contain 'CUSTOMaaaaa_START' -->
                                                     {% else %}
-                                                        {% assign sub_parts = part | split: 'CUSTOM_END' %}
+                                                        {% assign sub_parts = part | split: 'CUSTOMIIIII_END' %}
                                                         {% assign final_content = final_content | append: "HELLOOOO" %} <!-- Replace content between markers -->
                                                         
                                                         {% if sub_parts.size > 1 %}
