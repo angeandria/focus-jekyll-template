@@ -211,9 +211,9 @@
                             
                             <div class="item-description">                                
                                     {% if page.description %}
-                                            {% assign content = page.description %}
+                                            {% assign desc_content = page.description %}
                                     {% else %}
-                                            {% assign content = page.excerpt %}    
+                                            {% assign desc_content = page.excerpt %}    
                                     {% endif %}                         
                                     
                                     {% comment %}
@@ -243,8 +243,9 @@
                                     
                                     {% endcomment %}
                                     
-                                    <!-- Render the final modified content -->
-                                    {{ content | truncate: 250 }}               
+                                    {{ desc_content | markdownify | strip_html | truncate: 250 }}
+                                    
+                                    
                                     
                             </div>
                             
