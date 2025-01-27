@@ -239,11 +239,7 @@
                                         {% endif %}
                                     {% endfor %}
                                     {% assign filtered_content = filtered_content | markdownify %} <!-- Start with the first part -->
-                                                                                    
-                                    <!-- Render the final modified content -->
-                                    {{ filtered_content }}       
                                     
-                                                                                    
                                     <!-- Render the final modified content -->
                                     {{ filtered_content | truncate: 250 }}               
                                     
