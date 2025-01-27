@@ -12,6 +12,16 @@ Using the Kramdown Markdown renderer with Jekyll allows you to add [block](http:
 **Jekyll 3:** Kramdown is the default for `jekyll new` sites and those hosted on GitHub Pages. Not using Kramdown? That's OK. The following classes are still available when used with standard HTML.
 {: .notice--warning}
 
+<section class="boxed-s">
+    <h2>ALL DOCS</h2>
+    <div id="search-default" class="search-content is--visible">
+        {% include_cached search/search_form.html %}
+    </div>
+    <div id="search-items-default" class="search-items search-mode all-posts">            
+        {% include focus/post-display.html type="doc" topic="all" format="cards" order="desc" container_class="grid-2 search" type_class="" type-item_class="box-shadow" %}     
+    </div>
+</section>
+
 ## Text alignment
 
 Align text blocks with the following classes.
