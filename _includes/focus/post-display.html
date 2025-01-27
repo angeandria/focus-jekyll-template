@@ -297,18 +297,18 @@
                                         
                                     </div>   
                                     
-                                     {% assign code_marker = "CODE" %}
-                                    {% assign code_marker_start = "CODE_START" %}
-                                    {% assign code_marker_end = "CODE_END" %}                                    
-                                    {% assign code_replacement = "code removed" %} 
+                                    {% assign code_marker = 'CODE' %}
+                                    {% assign code_marker_start = 'CODE_START' %}
+                                    {% assign code_marker_end = 'CODE_END' %}
+                                    {% assign code_replacement = 'code removed' %}
                                     {% if page.content != nil %}             
                                             <div class="item-content">
                                                 {% assign content = page.content %}                                                
-                                                {% assign modified_content = content | replace: '%', 'CODE' %}
-                                                {% assign modified_content = modified_content | replace: '{CODE', 'CODE_START' %}                                                
-                                                {% assign modified_content = modified_content | replace: 'CODE}', 'CODE_END' %}                                                                                                
+                                                {% assign modified_content = content | replace: '%', code_marker %}
+                                                {% assign modified_content = modified_content | replace: '{CODE', code_marker_start %}                                                
+                                                {% assign modified_content = modified_content | replace: 'CODE}', code_marker_end %}                                                                                                
                                                 
-                                                {% assign parts = modified_content | split: 'CODE_START' %}
+                                                {% assign parts = modified_content | split: code_marker_start %}
 
                                                 <!-- Start with the first part -->
                                                 {% assign filtered_content = parts[0] %}
@@ -318,8 +318,8 @@
                                                     {% if forloop.first %}
                                                         {% continue %} <!-- Skip the first part as it doesn't contain 'CODE_START' -->
                                                     {% else %}
-                                                        {% assign sub_parts = part | split: 'CODE_END' %}
-                                                        {% assign filtered_content = filtered_content | append: "code removed" %} <!-- Replace content between markers -->
+                                                        {% assign sub_parts = part | split: code_marker_end %}
+                                                        {% assign filtered_content = filtered_content | append: code_replacement %} <!-- Replace content between markers -->
                                                         
                                                         {% if sub_parts.size > 1 %}
                                                             {% assign filtered_content = filtered_content | append: sub_parts[1] %} <!-- Append the rest of the content after 'CUSTOM_END' -->
