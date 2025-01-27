@@ -216,8 +216,8 @@
                                             {% assign desc_content = page.excerpt %}    
                                     {% endif %}                         
                                     
-                                    {% comment %}
-                                    {% assign modified_content = content | replace: '%', code_marker %}
+
+                                    {% assign modified_content = desc_content | replace: '%', code_marker %}
                                     {% assign modified_content = modified_content | replace: code_marker_start_alt, code_marker_start %}                                                
                                     {% assign modified_content = modified_content | replace: code_marker_end_alt, code_marker_end %}                                                                                                
                                     
@@ -238,14 +238,9 @@
                                                 {% assign filtered_content = filtered_content | append: sub_parts[1] %} <!-- Append the rest of the content after 'CUSTOM_END' -->
                                             {% endif %}
                                         {% endif %}
-                                    {% endfor %}
-                                    {% assign filtered_content = filtered_content | markdownify %} <!-- Start with the first part -->
+                                    {% endfor %}                                    
                                     
-                                    {% endcomment %}
-                                    
-                                    {{ desc_content | markdownify | strip_html | truncate: 250 }}
-                                    
-                                    
+                                    {{ filtered_content | markdownify | strip_html | truncate: 250 }}                                    
                                     
                             </div>
                             
