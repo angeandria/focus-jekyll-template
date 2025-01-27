@@ -299,12 +299,29 @@
                                             <div class="item-content">
                                                 {% assign content = page.content %}
                                                 
-                                                <!-- Step 1: Replace all Liquid tags with "HELLOOOO" -->
-                                                {% assign modified_content = content | replace: '{% include', 'HELLO' %}
+
+                                                {% assign modified_content = content | replace: '{% include', 'CODE_START' %}
+                                                
+                                                {% assign parts = modified_content | split: 'CODE_START' %}
+                                                {% assign final_content = parts[0] %} <!-- Start with the first part -->
+                                                
+                                                <!-- Step 3: Loop through parts -->
+                                                {% for part in parts %}
+                                                    {% if forloop.first %}
+                                                        {% continue %} <!-- Skip the first part as it doesn't contain 'CODE_START' -->
+                                                    {% else %}
+                                                        {% assign sub_parts = part | split: '%}' %}
+                                                        {% assign final_content = final_content | append: "HELLOOOO" %} <!-- Replace content between markers -->
+                                                        
+                                                        {% if sub_parts.size > 1 %}
+                                                            {% assign final_content = final_content | append: sub_parts[1] %} <!-- Append the rest of the content after 'CUSTOM_END' -->
+                                                        {% endif %}
+                                                    {% endif %}
+                                                {% endfor %}
 
                                                 
                                                 <!-- Step 2: Render the final modified content -->
-                                                {{ modified_content }}
+                                                {{ final_content }}
                                                 
                                                 
                                             </div>
