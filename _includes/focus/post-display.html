@@ -209,14 +209,15 @@
                             
                             
                             
-                            <div class="item-description">                                
+                            <div class="item-description">                          
+                                    
                                     {% if page.description %}
                                             {% assign desc_content = page.description %}
                                     {% else %}
                                             {% assign desc_content = page.excerpt %}    
                                     {% endif %}                         
                                     
-
+                                    {% comment %}
                                     {% assign modified_content = desc_content | replace: '%', code_marker %}
                                     {% assign modified_content = modified_content | replace: code_marker_start_alt, code_marker_start %}                                                
                                     {% assign modified_content = modified_content | replace: code_marker_end_alt, code_marker_end %}                                                                                                
@@ -239,8 +240,9 @@
                                             {% endif %}
                                         {% endif %}
                                     {% endfor %}                                    
+                                    {% endcomment %}
                                     
-                                    {{ filtered_content | markdownify | strip_html | truncate: 250 }}                                    
+                                    {{ desc_content | markdownify | strip_html | truncate: 250 }}                                    
                                     
                             </div>
                             
