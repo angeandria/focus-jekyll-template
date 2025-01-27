@@ -204,15 +204,19 @@
                             {% endif %}
                             
                             
-
+                            {% comment %}
                             <div class="item-description">
+                                    {% assign code_marker = "CODE" %}
+                                    {% assign code_marker_start = "CODE_START" %}
+                                    {% assign code_marker_end = "CODE_END" %}                                    
+                                    {% assign code_replacement = "code removed" %}                                    
                                     {% if page.description %}
                                             {% assign content = page.description %}
                                     {% else %}
                                             {% assign content = page.excerpt %}    
                                     {% endif %}                         
                                     
-                                    {% assign modified_content = content | replace: '%', 'CODE' %}
+                                    {% assign modified_content = content | replace: '%', {{ code_marker }} %}
                                     {% assign modified_content = modified_content | replace: '{CODE', 'CODE_START' %}                                                
                                     {% assign modified_content = modified_content | replace: 'CODE}', 'CODE_END' %}                                                                                                
                                     
@@ -240,6 +244,7 @@
                                     {{ filtered_content | truncate: 250 }}               
                                     
                             </div>
+                            {% endcomment %}
                             
                             {% comment %}
                             #
@@ -292,7 +297,10 @@
                                         
                                     </div>   
                                     
-                                    
+                                     {% assign code_marker = "CODE" %}
+                                    {% assign code_marker_start = "CODE_START" %}
+                                    {% assign code_marker_end = "CODE_END" %}                                    
+                                    {% assign code_replacement = "code removed" %} 
                                     {% if page.content != nil %}             
                                             <div class="item-content">
                                                 {% assign content = page.content %}                                                
