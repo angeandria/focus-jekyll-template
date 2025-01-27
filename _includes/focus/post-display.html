@@ -300,8 +300,9 @@
                                                 {% assign content = page.content %}
                                                 
 
-                                                {% assign modified_content = content | replace: '{%', 'CODE_START' | replace: '%', 'CODE_END' %}
-                                                {% assign modified_content = modified_content | replace: 'CODE_END%', 'CODE_END' %}                                                
+                                                {% assign modified_content = content | replace: '%', 'CODE' %}
+                                                {% assign modified_content = modified_content | replace: '{CODE', 'CODE_START' %}                                                
+                                                {% assign modified_content = modified_content | replace: 'CODE}', 'CODE_END' %}                                                                                                
                                                 
                                                 {% assign parts = modified_content | split: 'CODE_START' %}
                                                 
