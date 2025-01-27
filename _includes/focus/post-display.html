@@ -300,14 +300,13 @@
                                                 {% comment %} Prevent recursive issues {% endcomment %}
                                                 {% assign content = page.content %} <!-- Assume page.content contains your text -->
                                                 
-                                                {% assign modified_content = content | replace: '{% include post-display', 'CUSTOMMMMp_START' %}    
-                                                  {% assign modified_content2 = content | replace: '%}', 'CUSTOMMMM_END' %}                                            
-                                                  <pre>Modified Content Before Replace: {{ modified_content }}</pre>
-                                                  <pre>Modified Content Before Replace: {{ modified_content2 }}</pre>
-                                                <!-- Debug the modified content -->
-
+                                                {% assign modified_content = content | replace: '{% include post-display', 'CUSTOMMMMp_START' %}                                                     
+                                                <pre>Modified Content Before Replace: {{ modified_content }}</pre>
                                                 
+                                                {% assign modified_content2 = content | replace: '%}', 'CUSTOMMMM_END' %}                                            
+                                                <pre>Modified Content Before Replace: {{ modified_content2 }}</pre>
                                                 
+                                                <!-- Debug the modified content -->                                                
                                                 {% comment %} DEBUG
                                                 {% assign modified_content = modified_content | replace: '%}', 'CUSTOMMMM_END' %}
 
