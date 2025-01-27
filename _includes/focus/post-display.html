@@ -297,15 +297,14 @@
                                     {% if page.content != nil %}             
 
                                             <div class="item-content">
-                                                {% comment %} Prevent recursive issues {% endcomment %}
-                                                {% assign content = page.content %} <!-- Assume page.content contains your text -->
+                                                {% capture content %}{{ page.content }}{% endcapture %}
                                                 
+                                                <!-- Step 1: Replace all Liquid tags with "HELLOOOO" -->
+                                                {% assign modified_content = content | replace: '{%', 'HELLOOOO' | replace: '%}', '' %}
+                                                {% assign modified_content = modified_content | replace: '{{', 'HELLOOOO' | replace: '}}', '' %}
                                                 
-                                                {% assign modified_content = content | replace: '{%', 'HELLOOOO' %}
-                                                {% assign modified_content = modified_content | replace: '%}', '' %}                                                
-
-                                                
-                                                {{ modified_content }} <!-- Use markdownify if your content is markdown -->
+                                                <!-- Step 2: Render the final modified content -->
+                                                {{ modified_content }}
                                                 
                                                 
                                             </div>
