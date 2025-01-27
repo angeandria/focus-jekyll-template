@@ -23,17 +23,21 @@
 {% assign topic_order = include.order %}
 {% assign topic_limit = include.limit | default: 100000 %}
 
+{% assign code_marker = 'CODE' %}
+{% assign code_marker_start = 'CODE_START' %}
+{% assign code_marker_start_alt = '{CODE' %}
+{% assign code_marker_end = 'CODE_END' %}
+{% assign code_marker_end_alt = 'CODE}' %}
+{% assign code_replacement = 'code removed' %}
 
-{% comment %}
+
+{% comment %} DEBUG
 <h2>
     Type : {{type_string}} | Topic : {{ target_topic }}<br>
     sort by ({{ topic_sort}}) limit ({{ topic_limit}}) order ({{ topic_order}})
 </h2>
 {% endcomment %}
 
-
-
-                                
 
 <div class="post-display items-container {{ display_format }} {{ container_class }}">
 {% for type in type_array %}
@@ -205,22 +209,18 @@
                             
                             
                             {% comment %}
-                            <div class="item-description">
-                                    {% assign code_marker = "CODE" %}
-                                    {% assign code_marker_start = "CODE_START" %}
-                                    {% assign code_marker_end = "CODE_END" %}                                    
-                                    {% assign code_replacement = "code removed" %}                                    
+                            <div class="item-description">                                
                                     {% if page.description %}
                                             {% assign content = page.description %}
                                     {% else %}
                                             {% assign content = page.excerpt %}    
                                     {% endif %}                         
                                     
-                                    {% assign modified_content = content | replace: '%', {{ code_marker }} %}
-                                    {% assign modified_content = modified_content | replace: '{CODE', 'CODE_START' %}                                                
-                                    {% assign modified_content = modified_content | replace: 'CODE}', 'CODE_END' %}                                                                                                
+                                    {% assign modified_content = content | replace: '%', code_marker %}
+                                    {% assign modified_content = modified_content | replace: code_marker_start_alt, code_marker_start %}                                                
+                                    {% assign modified_content = modified_content | replace: code_marker_end_alt, code_marker_end %}                                                                                                
                                     
-                                    {% assign parts = modified_content | split: 'CODE_START' %}
+                                    {% assign parts = modified_content | split: code_marker_start %}
 
                                     <!-- Start with the first part -->
                                     {% assign filtered_content = parts[0] %}
@@ -230,15 +230,19 @@
                                         {% if forloop.first %}
                                             {% continue %} <!-- Skip the first part as it doesn't contain 'CODE_START' -->
                                         {% else %}
-                                            {% assign sub_parts = part | split: 'CODE_END' %}
-                                            {% assign filtered_content = filtered_content | append: "code removed" %} <!-- Replace content between markers -->
+                                            {% assign sub_parts = part | split: code_marker_end %}
+                                            {% assign filtered_content = filtered_content | append: code_replacement %} <!-- Replace content between markers -->
                                             
                                             {% if sub_parts.size > 1 %}
                                                 {% assign filtered_content = filtered_content | append: sub_parts[1] %} <!-- Append the rest of the content after 'CUSTOM_END' -->
                                             {% endif %}
                                         {% endif %}
                                     {% endfor %}
-                                    {% assign filtered_content = filtered_content | strip_html %} <!-- Start with the first part -->
+                                    {% assign filtered_content = filtered_content | markdownify %} <!-- Start with the first part -->
+                                                                                    
+                                    <!-- Render the final modified content -->
+                                    {{ filtered_content }}       
+                                    
                                                                                     
                                     <!-- Render the final modified content -->
                                     {{ filtered_content | truncate: 250 }}               
@@ -297,16 +301,13 @@
                                         
                                     </div>   
                                     
-                                    {% assign code_marker = 'CODE' %}
-                                    {% assign code_marker_start = 'CODE_START' %}
-                                    {% assign code_marker_end = 'CODE_END' %}
-                                    {% assign code_replacement = 'code removed' %}
+
                                     {% if page.content != nil %}             
                                             <div class="item-content">
                                                 {% assign content = page.content %}                                                
                                                 {% assign modified_content = content | replace: '%', code_marker %}
-                                                {% assign modified_content = modified_content | replace: '{CODE', code_marker_start %}                                                
-                                                {% assign modified_content = modified_content | replace: 'CODE}', code_marker_end %}                                                                                                
+                                                {% assign modified_content = modified_content | replace: code_marker_start_alt, code_marker_start %}                                                
+                                                {% assign modified_content = modified_content | replace: code_marker_end_alt, code_marker_end %}                                                                                                
                                                 
                                                 {% assign parts = modified_content | split: code_marker_start %}
 
