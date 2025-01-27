@@ -216,6 +216,7 @@
                                             {% assign content = page.excerpt %}    
                                     {% endif %}                         
                                     
+                                    {% comment %}
                                     {% assign modified_content = content | replace: '%', code_marker %}
                                     {% assign modified_content = modified_content | replace: code_marker_start_alt, code_marker_start %}                                                
                                     {% assign modified_content = modified_content | replace: code_marker_end_alt, code_marker_end %}                                                                                                
@@ -240,8 +241,10 @@
                                     {% endfor %}
                                     {% assign filtered_content = filtered_content | markdownify %} <!-- Start with the first part -->
                                     
+                                    {% endcomment %}
+                                    
                                     <!-- Render the final modified content -->
-                                    {{ filtered_content | truncate: 250 }}               
+                                    {{ content | truncate: 250 }}               
                                     
                             </div>
                             
