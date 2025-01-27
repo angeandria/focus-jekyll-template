@@ -1,6 +1,4 @@
 ---
-classes: 
-  - canvas
 ---
 
 hey
