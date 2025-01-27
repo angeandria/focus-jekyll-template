@@ -322,9 +322,11 @@
                                                     {% endif %}
                                                 {% endfor %}
 
+                                                {% assign final_content = final_content | strip_html %} <!-- Start with the first part -->
+                                                {% assign final_content = final_content | markdownify %} <!-- Start with the first part -->
                                                 
                                                 <!-- Step 2: Render the final modified content -->
-                                                {{ final_content | strip_html | markdownify }}
+                                                {{ final_content }}
                                                 
                                                 
                                             </div>
