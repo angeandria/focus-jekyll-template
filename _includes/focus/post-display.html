@@ -301,8 +301,9 @@
                                                 {% assign content = page.content %} <!-- Assume page.content contains your text -->
                                                 
                                                 
-                                                {% assign modified_content = content | replace: '{%', 'HELLOOOO' | replace: '%}', '' %}
-                                                {% assign modified_content = modified_content | replace: '{{', 'HELLOOOO' | replace: '}}', '' %}
+                                                {% assign modified_content = content | replace: '{%', 'HELLOOOO' %}
+                                                {% assign modified_content = modified_content | replace: '%}', '' %}                                                
+
                                                 
                                                 {{ modified_content }} <!-- Use markdownify if your content is markdown -->
                                                 
