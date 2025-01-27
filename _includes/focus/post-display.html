@@ -297,11 +297,11 @@
                                     {% if page.content != nil %}             
 
                                             <div class="item-content">
-                                                {% capture content %}{{ page.content }}{% endcapture %}
+                                                {% assign content = page.content %}
                                                 
                                                 <!-- Step 1: Replace all Liquid tags with "HELLOOOO" -->
+                                                {% assign modified_content = content | replace: '{% include', 'HELLO' %}
 
-                                                {% assign modified_content = content | replace: '%}', '' %}
                                                 
                                                 <!-- Step 2: Render the final modified content -->
                                                 {{ modified_content }}
