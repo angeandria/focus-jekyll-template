@@ -2,10 +2,9 @@
 classes :
   - canvas
 ---
-{% include focus/post-display.html type="doc" topic="all" format="cards" order="desc" container_class="grid-2 search" type_class="" type-item_class="box-shadow" %}     
 hey
 
-
+{% include focus/post-display.html type="doc" topic="all" format="cards" order="desc" container_class="grid-2 search" type_class="" type-item_class="box-shadow" %}     
 
 <section markdown="1">
     
