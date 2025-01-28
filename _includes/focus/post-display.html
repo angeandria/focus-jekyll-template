@@ -216,7 +216,10 @@
                                     {% else %}
                                         {% assign desc_content = pageitem.content %}
                                     {% endif %}    
-                                    
+                                    {% if pageitem.excerpt != nil %}
+                                        <p>hello</p>
+                                    {% endif %}    
+
                                     
                                     {% comment %}
                                     {% if pageitem.description != nil %}
