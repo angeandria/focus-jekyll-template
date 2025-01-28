@@ -254,7 +254,8 @@
                                     
                                     <!-- Extract the first paragraph from HTML -->
                                     {% capture first_paragraph_html %}{% include focus/first_paragraph.html content=filtered_html %}{% endcapture %}
-                                    <div>{{ first_paragraph_html }}</div>
+
+                                    <div>{{ filtered_html }}</div>
                                     
                      
                             </div>
