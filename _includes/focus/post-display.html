@@ -217,6 +217,11 @@
                                         {% assign desc_content = pageitem.content %}
                                     {% endif %}    
                                     
+                                    {% if page.custom_excerpt %}
+                                      <!-- Code for handling custom excerpts -->
+                                      <p>Custom excerpt</p>
+                                    {% endif %}    
+                                    
                                     {% assign modified_content = desc_content | replace: '%', code_marker %}                                                                        
                                     {% assign modified_content = modified_content | replace: code_marker_start_alt, code_marker_start %}                                                
                                     {% assign modified_content = modified_content | replace: code_marker_end_alt, code_marker_end %}                                                                                                
@@ -239,10 +244,8 @@
                                             {% endif %}
                                         {% endif %}
                                     {% endfor %}   
-                            
-                            
-                                    {% assign modified_content = desc_content %}
-                                    {{ modified_content | markdownify | strip_html | strip_newlines | escape_once | truncate: 250 }}                                    
+                                                                
+                                    {{ filtered_content | markdownify | strip_html | strip_newlines | escape_once | truncate: 250 }}                                    
                      
                             </div>
                             
