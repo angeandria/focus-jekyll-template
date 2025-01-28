@@ -217,47 +217,33 @@
                                         {% assign desc_content = pageitem.content %}
                                     {% endif %}    
                                     
+                                    {% assign modified_content = desc_content | replace: '%', code_marker %}                                                                        
+                                    {% assign modified_content = modified_content | replace: code_marker_start_alt, code_marker_start %}                                                
+                                    {% assign modified_content = modified_content | replace: code_marker_end_alt, code_marker_end %}                                                                                                
+                                    
+                                    {% assign parts = modified_content | split: code_marker_start %}
 
+                                    <!-- Start with the first part -->
+                                    {% assign filtered_content = parts[0] %}
                                     
-                                    {% comment %}
-                                    {% if pageitem.description != nil %}
-                                         {% assign desc_content = pageitem.description %}
-                                    {% elsif pageitem.excerpt != nil %}
-                                        {% assign desc_content = pageitem.excerpt %}    
-                                    {% else %}
-                                        {% assign desc_content = "" %}
-                                    {% endif %}
-                                        
-                                    
-                                    {% assign modified_content = desc_content | replace: '%', code_marker %}
-                                    <pre>{{ modified_content }}</pre>    
-                                    
-                                            {% assign modified_content = modified_content | replace: code_marker_start_alt, code_marker_start %}                                                
-                                            {% assign modified_content = modified_content | replace: code_marker_end_alt, code_marker_end %}                                                                                                
+                                    <!-- Loop through parts -->
+                                    {% for part in parts %}
+                                        {% if forloop.first %}
+                                            {% continue %} <!-- Skip the first part as it doesn't contain 'CODE_START' -->
+                                        {% else %}
+                                            {% assign sub_parts = part | split: code_marker_end %}
+                                            {% assign filtered_content = filtered_content | append: code_replacement %} <!-- Replace content between markers -->
                                             
-                                            {% assign parts = modified_content | split: code_marker_start %}
-        
-                                            <!-- Start with the first part -->
-                                            {% assign filtered_content = parts[0] %}
-                                            
-                                            <!-- Loop through parts -->
-                                            {% for part in parts %}
-                                                {% if forloop.first %}
-                                                    {% continue %} <!-- Skip the first part as it doesn't contain 'CODE_START' -->
-                                                {% else %}
-                                                    {% assign sub_parts = part | split: code_marker_end %}
-                                                    {% assign filtered_content = filtered_content | append: code_replacement %} <!-- Replace content between markers -->
-                                                    
-                                                    {% if sub_parts.size > 1 %}
-                                                        {% assign filtered_content = filtered_content | append: sub_parts[1] %} <!-- Append the rest of the content after 'CUSTOM_END' -->
-                                                    {% endif %}
-                                                {% endif %}
-                                            {% endfor %}   
-                                    
-                                    
-                                            {% assign modified_content = desc_content %}
-                                            {{ modified_content | markdownify | strip_html | strip_newlines | escape_once | truncate: 250 }}                                    
-                                    {% endcomment %}                                 
+                                            {% if sub_parts.size > 1 %}
+                                                {% assign filtered_content = filtered_content | append: sub_parts[1] %} <!-- Append the rest of the content after 'CUSTOM_END' -->
+                                            {% endif %}
+                                        {% endif %}
+                                    {% endfor %}   
+                            
+                            
+                                    {% assign modified_content = desc_content %}
+                                    {{ modified_content | markdownify | strip_html | strip_newlines | escape_once | truncate: 250 }}                                    
+                     
                             </div>
                             
                             
