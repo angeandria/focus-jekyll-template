@@ -217,30 +217,33 @@
                                             {% assign desc_content = page.excerpt %}    
                                     {% endif %}                         
                                     
-                                        {% assign modified_content2 = desc_content | replace: '%', code_marker %}
-                                        {% assign modified_content2 = modified_content2 | replace: code_marker_start_alt, code_marker_start %}                                                
-                                        {% assign modified_content2 = modified_content2 | replace: code_marker_end_alt, code_marker_end %}                                                                                                
+                                        {% assign modified_content = desc_content | replace: '%', code_marker %}
                                         
-                                        {% assign parts = modified_content2 | split: code_marker_start %}
-    
-                                        <!-- Start with the first part -->
-                                        {% assign filtered_content2 = parts[0] %}
-                                        
-                                        <!-- Loop through parts -->
-                                        {% for part in parts %}
-                                            {% if forloop.first %}
-                                                {% continue %} <!-- Skip the first part as it doesn't contain 'CODE_START' -->
-                                            {% else %}
-                                                {% assign sub_parts = part | split: code_marker_end %}
-                                                {% assign filtered_content2 = filtered_content2 | append: code_replacement %} <!-- Replace content between markers -->
-                                                
-                                                {% if sub_parts.size > 1 %}
-                                                    {% assign filtered_content2 = filtered_content2 | append: sub_parts[1] %} <!-- Append the rest of the content after 'CUSTOM_END' -->
+                                        {% comment %}
+                                            {% assign modified_content = modified_content | replace: code_marker_start_alt, code_marker_start %}                                                
+                                            {% assign modified_content = modified_content | replace: code_marker_end_alt, code_marker_end %}                                                                                                
+                                            
+                                            {% assign parts = modified_content | split: code_marker_start %}
+        
+                                            <!-- Start with the first part -->
+                                            {% assign filtered_content = parts[0] %}
+                                            
+                                            <!-- Loop through parts -->
+                                            {% for part in parts %}
+                                                {% if forloop.first %}
+                                                    {% continue %} <!-- Skip the first part as it doesn't contain 'CODE_START' -->
+                                                {% else %}
+                                                    {% assign sub_parts = part | split: code_marker_end %}
+                                                    {% assign filtered_content = filtered_content | append: code_replacement %} <!-- Replace content between markers -->
+                                                    
+                                                    {% if sub_parts.size > 1 %}
+                                                        {% assign filtered_content = filtered_content | append: sub_parts[1] %} <!-- Append the rest of the content after 'CUSTOM_END' -->
+                                                    {% endif %}
                                                 {% endif %}
-                                            {% endif %}
-                                        {% endfor %}                                    
-                                        
-                                    {{ filtered_content2 | markdownify | strip_html | truncate: 250 }}                                    
+                                            {% endfor %}   
+                                       {% endcomment %}                                 
+                                            
+                                    {{ modified_content | markdownify | strip_html | truncate: 250 }}                                    
                                     
                             </div>
                             
