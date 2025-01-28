@@ -211,6 +211,8 @@
                             
                             <div class="item-description">                          
                                     {% assign desc_content = "" %}
+                                    
+                                    {% comment %}
                                     {% if page.description != nil %}
                                          {% assign desc_content = page.description %}
                                     {% elsif page.excerpt != nil %}
@@ -220,7 +222,7 @@
                                     {% endif %}
                                         
                                     
-                                    {% comment %}
+
                                     {% if page.description %}
                                         {% assign desc_content = page.description %}
                                     {% elsif page.excerpt %}
