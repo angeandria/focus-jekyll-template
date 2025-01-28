@@ -1,0 +1,6 @@
+{% comment %} Extract the first paragraph from HTML content {% endcomment %}
+{% assign first_p_start = content | split: '<p>' | size | minus: 1 %}
+{% assign first_p_end = content | split: '</p>' | first | size %}
+{% capture first_paragraph %}{{ content | slice: first_p_start, first_p_end }}{% endcapture %}
+
+{{ first_paragraph }}

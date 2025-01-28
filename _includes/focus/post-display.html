@@ -209,54 +209,44 @@
                             
                             
                             
-                            <div class="item-description">                          
-                                    {% assign desc_content = "hello default" %}
-                                    {% assign auto_excerpt = "" %}
-                                    {% assign filtered_content = "" %}
-                                    
-                                    {% if pageitem.description != nil %}
-                                        {% assign desc_content = pageitem.description %}
-                                    {% else %}
-                                        {% assign desc_content = pageitem.content %}
-                                    {% endif %}    
+                            <div class="item-description">
+                                    {% assign desc_content = pageitem.description | default: pageitem.content %}
                                     
                                     {% if page.custom_excerpt %}
-                                      <!-- Code for handling custom excerpts -->
                                       <p>Custom excerpt</p>
-                                    {% endif %}    
+                                    {% endif %}
                                     
+                                    {% assign code_marker = "CODE" %}
+                                    {% assign code_marker_start = "CODE_START" %}
+                                    {% assign code_marker_end = "CODE_END" %}
+                                    {% assign code_replacement = "code removed" %}
                                     
-                                
-                                    
-                                    
-                                    {% assign modified_content = desc_content | replace: '%', code_marker %}                                                                        
-                                    {% assign modified_content = modified_content | replace: code_marker_start_alt, code_marker_start %}                                                
-                                    {% assign modified_content = modified_content | replace: code_marker_end_alt, code_marker_end %}                                                                                                
+                                    {% assign modified_content = desc_content | replace: '%', code_marker %}
+                                    {% assign modified_content = modified_content | replace: '{' | append: code_marker_start %}
+                                    {% assign modified_content = modified_content | replace: '}', code_marker_end %}
                                     
                                     {% assign parts = modified_content | split: code_marker_start %}
-
-                                    <!-- Start with the first part -->
                                     {% assign filtered_content = parts[0] %}
                                     
-                                    <!-- Loop through parts -->
                                     {% for part in parts %}
                                         {% if forloop.first %}
-                                            {% continue %} <!-- Skip the first part as it doesn't contain 'CODE_START' -->
+                                            {% continue %}
                                         {% else %}
                                             {% assign sub_parts = part | split: code_marker_end %}
-                                            {% assign filtered_content = filtered_content | append: code_replacement %} <!-- Replace content between markers -->
+                                            {% assign filtered_content = filtered_content | append: code_replacement %}
                                             
                                             {% if sub_parts.size > 1 %}
-                                                {% assign filtered_content = filtered_content | append: sub_parts[1] %} <!-- Append the rest of the content after 'CUSTOM_END' -->
+                                                {% assign filtered_content = filtered_content | append: sub_parts[1] %}
                                             {% endif %}
                                         {% endif %}
-                                    {% endfor %}   
-
-                                    {% assign paragraphs = filtered_content | split: "\n\n" %}
-                                    {% assign auto_excerpt = paragraphs[0] | truncatewords: 150 %}
-                                    <div>{{ auto_excerpt | strip_html | markdownify }}</div>
+                                    {% endfor %}
                                     
-                     
+                                    <!-- Convert Markdown content to HTML -->
+                                    {% assign filtered_html = filtered_content | markdownify %}
+                                    
+                                    <!-- Extract the first paragraph from HTML -->
+                                    {% capture first_paragraph_html %}{% include focus/first_paragraph.html content=filtered_html %}{% endcapture %}
+                                    <div>{{ first_paragraph_html }}</div>
                             </div>
                             
                             
