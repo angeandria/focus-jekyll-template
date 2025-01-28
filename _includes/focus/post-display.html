@@ -211,6 +211,9 @@
                             
                             <div class="item-description">                          
                                     {% assign desc_content = "hello default" %}
+                                    {% assign auto_excerpt = "" %}
+                                    {% assign filtered_content = "" %}
+                                    
                                     {% if pageitem.description != nil %}
                                         {% assign desc_content = pageitem.description %}
                                     {% else %}
