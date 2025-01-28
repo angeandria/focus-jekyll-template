@@ -213,8 +213,10 @@
                                     {% assign desc_content = "" %}
                                     {% if page.description != nil %}
                                          {% assign desc_content = page.description %}
-                                    {% elseif page.excerpt != nil %}
+                                    {% elsif page.excerpt != nil %}
                                         {% assign desc_content = page.excerpt %}    
+                                    {% else %}
+                                        {% assign desc_content = "" %}
                                     {% endif %}
                                         
                                     
