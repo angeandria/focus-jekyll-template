@@ -251,10 +251,10 @@
                                             {% endif %}
                                         {% endif %}
                                     {% endfor %}   
-                                    
+                                    <pre>{{ filtered_content }}</pre>                                    
                                     {% assign paragraphs = filtered_content | split: "\n\n" %}
                                     {% assign auto_excerpt = paragraphs[0] | strip_html | truncatewords: 150 %}
-                                    <p>{{ auto_excerpt }}</p>
+
                                     
                      
                             </div>
