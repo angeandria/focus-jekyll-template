@@ -212,12 +212,11 @@
                             <div class="item-description">                          
                                     {% assign desc_content = "hello default" %}
                                     {% if page.description != nil %}
-                                        <p>Hello desc</p>                                     
+                                        {% assign desc_content = page.description %}
+                                    {% else %}
+                                        {% assign desc_content = page.content %}
                                     {% endif %}    
-                                    {% if page.excerpt != nil %}
-                                        <p>Hello excerpt</p>                                     
-                                    {% endif %}
-
+                                    
                                     
                                     {% comment %}
                                     {% if page.description != nil %}
