@@ -247,14 +247,6 @@
                                         {% endif %}
                                     {% endfor %}   
                                     
-                                    
-
-                                    <!-- Convert Markdown content to HTML -->
-                                    {% assign filtered_html = filtered_content | markdownify %}
-                                    
-                                    <!-- Extract the first paragraph from HTML -->
-                                    {% capture first_paragraph_html %}{% include focus/first_paragraph.html content=filtered_html %}{% endcapture %}
-
                                     <div>{{ filtered_content }}</div>
                                     
                      
