@@ -418,7 +418,8 @@ defaults:
 # ---------------
 markdown: kramdown
 timezone: # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
-  
+excerpt_separator: "\n\n"
+incremental: false  
 
 
 # -----------------

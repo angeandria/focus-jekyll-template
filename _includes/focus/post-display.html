@@ -108,7 +108,7 @@
                 {% endcomment %}
                 
                 
-                {% for page in limited_pages %}
+                {% for pageitem in limited_pages %}
                     {% assign is_recursion = true %}  <!-- Default flag to allow recursion -->
 
                     {% comment %} 
@@ -118,7 +118,7 @@
                     {% comment %}
                     <!-- Main Category class -->
                     {% endcomment %}
-                    {% assign category_main = page.categories[0] %}  
+                    {% assign category_main = pageitem.categories[0] %}  
                     
                     {% comment %}
                     <!--  Main Category slug -->
@@ -130,21 +130,21 @@
                         {% assign category_main_class = category_main_slug | prepend: site.taxonomy_prefix %}                        
                     {% endif %}
                     
-                    {% assign item-link = page.url | relative_url %}
-                    {% assign item-link = page.link | default: item-link %}
+                    {% assign item-link = pageitem.url | relative_url %}
+                    {% assign item-link = pageitem.link | default: item-link %}
                     
                     
                     <div class="item {{ type-item_class }} {{ category_main_class }}">
                         
                         <div class="block block-1">
-                            <a href="{{ item-link }}" title="{{ page.title }}">                                    
-                                <img class="item-featured-logo" src="{{ page.featured_logo | default: '/assets/images/placeholder-logo.jpg' | relative_url }}" alt="Featured Logo">
+                            <a href="{{ item-link }}" title="{{ pageitem.title }}">                                    
+                                <img class="item-featured-logo" src="{{ pageitem.featured_logo | default: '/assets/images/placeholder-logo.jpg' | relative_url }}" alt="Featured Logo">
                             </a>
                         </div>
 
                         <div class="block block-2">
-                            <a href="{{ item-link }}" title="{{ page.title }}">                                    
-                                <img class="item-featured-img" src="{{ page.featured_image | default: '/assets/images/placeholder.jpg' | relative_url }}" alt="Featured Image">
+                            <a href="{{ item-link }}" title="{{ pageitem.title }}">                                    
+                                <img class="item-featured-img" src="{{ pageitem.featured_image | default: '/assets/images/placeholder.jpg' | relative_url }}" alt="Featured Image">
                             </a>
                         </div>
                               
@@ -152,10 +152,10 @@
                             
                             <!-- Page taxonomy -->                                                                        
                             <div class="item-title">
-                                 <a href="{{ item-link }}" title="{{ page.title }}">{{ page.title }}</a>
+                                 <a href="{{ item-link }}" title="{{ pageitem.title }}">{{ pageitem.title }}</a>
                                  
-                                 {% if page.subtitle %}
-                                    <div class="item-subtitle">{{ page.subtitle }}</div>                    
+                                 {% if pageitem.subtitle %}
+                                    <div class="item-subtitle">{{ pageitem.subtitle }}</div>                    
                                  {% endif %}
                                  <span class="page__meta_taxonomy item-tags">                                    
                                     {% include focus/page__taxonomy.html %}
@@ -166,11 +166,11 @@
                                       
                             <!-- Page author -->                                                                        
                             {% assign author_name = site.author %}
-                            {% if page.author != nil %}
-                              {% assign author_name = page.author %}
+                            {% if pageitem.author != nil %}
+                              {% assign author_name = pageitem.author %}
                             {% endif %}                                              
                             {% assign author = site.data.authors[author_name] %}
-                            {% assign show_author = page.author_profile | default: false %}
+                            {% assign show_author = pageitem.author_profile | default: false %}
                                             
                             {% if author %}
                                 <!-- Page author -->         
@@ -198,7 +198,7 @@
                                             {% endif %}    
                                         {% endcomment %}        
                             
-                                        {% if page.date and page.show_date %}
+                                        {% if pageitem.date and pageitem.show_date %}
                                             <!-- Page date -->         
                                             <div class="item-date">                    
                                                 {% include page__meta.html %}
@@ -211,18 +211,18 @@
                             
                             <div class="item-description">                          
                                     {% assign desc_content = "hello default" %}
-                                    {% if page.description != nil %}
-                                        {% assign desc_content = page.description %}
+                                    {% if pageitem.description != nil %}
+                                        {% assign desc_content = pageitem.description %}
                                     {% else %}
-                                        {% assign desc_content = page.content %}
+                                        {% assign desc_content = pageitem.content %}
                                     {% endif %}    
                                     
                                     
                                     {% comment %}
-                                    {% if page.description != nil %}
-                                         {% assign desc_content = page.description %}
-                                    {% elsif page.excerpt != nil %}
-                                        {% assign desc_content = page.excerpt %}    
+                                    {% if pageitem.description != nil %}
+                                         {% assign desc_content = pageitem.description %}
+                                    {% elsif pageitem.excerpt != nil %}
+                                        {% assign desc_content = pageitem.excerpt %}    
                                     {% else %}
                                         {% assign desc_content = "" %}
                                     {% endif %}
@@ -270,12 +270,12 @@
                             {% if container_class contains "search" %}
                                 <div class="item-details">                                     
                                             {% assign author_name = site.author %}
-                                            {% if page.author != nil %}
-                                              {% assign author_name = page.author %}
+                                            {% if pageitem.author != nil %}
+                                              {% assign author_name = pageitem.author %}
                                             {% endif %}                  
                                             
                                             {% assign author = site.data.authors[author_name] %}
-                                            {% assign show_author = page.author_profile | default: false %}
+                                            {% assign show_author = pageitem.author_profile | default: false %}
                                                             
                                             {% if author and show_author %}
                                                 <!-- Page author -->         
@@ -302,7 +302,7 @@
                                                 </div>
                                           {% endif %}
                                           
-                                          {% if page.date and page.show_date %}
+                                          {% if pageitem.date and pageitem.show_date %}
                                             <!-- Page date -->         
                                             <div class="page__meta_date">                    
                                                 {% include page__meta.html %}
@@ -312,9 +312,9 @@
                                     </div>   
                                     
 
-                                    {% if page.content != nil %}             
+                                    {% if pageitem.content != nil %}             
                                             <div class="item-content">
-                                                {% assign content = page.content %}                                                
+                                                {% assign content = pageitem.content %}                                                
                                                 {% assign modified_content = content | replace: '%', code_marker %}
                                                 {% assign modified_content = modified_content | replace: code_marker_start_alt, code_marker_start %}                                                
                                                 {% assign modified_content = modified_content | replace: code_marker_end_alt, code_marker_end %}                                                                                                
@@ -363,17 +363,17 @@
                                     {% include focus/page__taxonomy.html %}
                                 </div>                                                    
                                 
-                                {% if page.info-1 %}
+                                {% if pageitem.info-1 %}
                                 <div class="item-info item-info-1">
-                                    {% for info in page.info-1 %}
+                                    {% for info in pageitem.info-1 %}
                                         {{ info | capitalize }}
                                     {% endfor %}
                                 </div>
                                 {% endif %}
                                 
-                                {% if page.info-2 %}
+                                {% if pageitem.info-2 %}
                                     <div class="item-info item-info-2">
-                                        {% for info in page.info-2 %}
+                                        {% for info in pageitem.info-2 %}
                                             {{ info | capitalize }}
                                         {% endfor %}
                                     </div>
