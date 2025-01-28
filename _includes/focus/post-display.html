@@ -253,8 +253,9 @@
                                     {% endfor %}   
 
                                     {% assign paragraphs = filtered_content | split: "\n\n" %}
-                                    {% assign auto_excerpt = paragraphs[0] | truncatewords: 150 %}
-                                    <div>{{ auto_excerpt | strip_html }}</div>
+                                    {% assign auto_excerpt = paragraphs[0] %}
+                                    {% assign auto_excerpt = auto_excerpt | strip_html %}
+                                    <div>{{ auto_excerpt | markdownify | truncatewords: 150 }}</div>
                                     
                      
                             </div>
