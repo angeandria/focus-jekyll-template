@@ -211,7 +211,9 @@
                             
                             <div class="item-description">                          
                                     {% assign desc_content = "" %}
-                                    
+                                    {% if page.description != nil %}
+                                        <p>Hello</p>                                     
+                                    {% endif %}    
                                     {% comment %}
                                     {% if page.description != nil %}
                                          {% assign desc_content = page.description %}
@@ -222,15 +224,6 @@
                                     {% endif %}
                                         
                                     
-
-                                    {% if page.description %}
-                                        {% assign desc_content = page.description %}
-                                    {% elsif page.excerpt %}
-                                        {% assign desc_content = page.excerpt %}    
-                                    {% else %}
-                                        {% assign desc_content = page.excerpt %}                                            
-                                    {% endif %}
-
                                     {% assign modified_content = desc_content | replace: '%', code_marker %}
                                     <pre>{{ modified_content }}</pre>    
                                     
