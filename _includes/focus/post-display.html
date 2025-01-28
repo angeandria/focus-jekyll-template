@@ -213,7 +213,7 @@
                                     {% assign desc_content = "" %}
                                     {% if page.description %}
                                          {% assign desc_content = page.description %}
-                                    {% elsif page.excerpt %}
+                                    {% elseif page.excerpt %}
                                         {% assign desc_content = page.excerpt %}    
                                     {% endif %}
                                         
