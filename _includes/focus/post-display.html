@@ -226,10 +226,7 @@
                                     {% endif %}    
                                     
                                     
-                                    
-                                      {% assign paragraphs = content | split: "\n\n" %}
-                                      {% assign auto_excerpt = paragraphs[0] | strip_html | truncatewords: 50 %}
-                                      <p>{{ auto_excerpt }}</p>
+                                
                                     
                                     
                                     {% assign modified_content = desc_content | replace: '%', code_marker %}                                                                        
