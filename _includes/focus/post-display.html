@@ -211,9 +211,9 @@
                             
                             <div class="item-description">                          
                                     {% assign desc_content = "" %}
-                                    {% if page.description %}
+                                    {% if page.description != nil %}
                                          {% assign desc_content = page.description %}
-                                    {% elseif page.excerpt %}
+                                    {% elseif page.excerpt != nil %}
                                         {% assign desc_content = page.excerpt %}    
                                     {% endif %}
                                         
