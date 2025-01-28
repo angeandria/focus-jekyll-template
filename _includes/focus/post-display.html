@@ -222,6 +222,13 @@
                                       <p>Custom excerpt</p>
                                     {% endif %}    
                                     
+                                    
+                                    
+                                      {% assign paragraphs = content | split: "\n\n" %}
+                                      {% assign auto_excerpt = paragraphs[0] | strip_html | truncatewords: 50 %}
+                                      <p>{{ auto_excerpt }}</p>
+                                    
+                                    
                                     {% assign modified_content = desc_content | replace: '%', code_marker %}                                                                        
                                     {% assign modified_content = modified_content | replace: code_marker_start_alt, code_marker_start %}                                                
                                     {% assign modified_content = modified_content | replace: code_marker_end_alt, code_marker_end %}                                                                                                
@@ -244,8 +251,12 @@
                                             {% endif %}
                                         {% endif %}
                                     {% endfor %}   
+                                    
+                                    {% assign paragraphs = filtered_content | split: "\n\n" %}
+                                    {% assign auto_excerpt = paragraphs[0] | strip_html | truncatewords: 150 %}
+                                    <p>{{ auto_excerpt }}</p>
                                                                 
-                                    {{ filtered_content | markdownify | strip_html | strip_newlines | truncate: 250 }}                                    
+                                   
                      
                             </div>
                             
