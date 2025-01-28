@@ -214,14 +214,19 @@
                                     {% assign auto_excerpt = "" %}
                                     {% assign filtered_content = "" %}
                                     
-    
-                                    {% assign desc_content = pageitem.description | default: pageitem.content %}
-                                        
+                                    {% if pageitem.description != nil %}
+                                        {% assign desc_content = pageitem.description %}
+                                    {% else %}
+                                        {% assign desc_content = pageitem.content %}
+                                    {% endif %}    
                                     
                                     {% if page.custom_excerpt %}
                                       <!-- Code for handling custom excerpts -->
                                       <p>Custom excerpt</p>
                                     {% endif %}    
+                                    
+                                    
+                                
                                     
                                     
                                     {% assign modified_content = desc_content | replace: '%', code_marker %}                                                                        
@@ -246,8 +251,10 @@
                                             {% endif %}
                                         {% endif %}
                                     {% endfor %}   
-                                    
-                                    <div>{{ filtered_content }}</div>
+
+                                    {% assign paragraphs = filtered_content | split: "\n\n" %}
+                                    {% assign auto_excerpt = paragraphs[0] | truncatewords: 150 %}
+                                    <div>{{ auto_excerpt | markdownify }}</div>
                                     
                      
                             </div>
