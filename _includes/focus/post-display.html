@@ -245,7 +245,7 @@
                                         {% endif %}
                                     {% endfor %}   
                                                                 
-                                    {{ filtered_content | markdownify | strip_html | strip_newlines | escape_once | truncate: 250 }}                                    
+                                    {{ filtered_content | markdownify | truncate: 250 }}                                    
                      
                             </div>
                             
