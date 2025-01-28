@@ -210,7 +210,7 @@
                             
                             
                             <div class="item-description">                          
-                                {% comment %}
+                                
                                     {% if page.description %}
                                         {% assign desc_content = page.description %}
                                     {% elsif page.excerpt %}
@@ -218,6 +218,7 @@
                                     {% else %}
                                         {% assign desc_content = page.content %}                                            
                                     {% endif %}
+                                    {% comment %}
 
                                     {% assign modified_content = desc_content | replace: '%', code_marker %}
                                     <pre>{{ modified_content }}</pre>    
