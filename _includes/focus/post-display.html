@@ -251,10 +251,13 @@
                                             {% endif %}
                                         {% endif %}
                                     {% endfor %}   
+                                    
+                                    <!-- Convert Markdown content to HTML -->
+                                    {% assign filtered_html = filtered_content | markdownify %}
 
                                     <!-- Extract the first paragraph from HTML -->
                                     {% assign first_p_index = filtered_html | index_of: '<p>' | plus: 3 %}
-                                    {% assign first_p_end_index = filtered_html | index_of: '</p>' %}
+                                    {% assign first_p_end_index = filtered_html | index_of: '</p>' %}                                
                                     {% if first_p_index and first_p_end_index %}
                                         {% assign first_paragraph_html = filtered_html | slice: first_p_index, first_p_end_index | minus: first_p_index %}
                                         <div>{{ first_paragraph_html }}</div>
