@@ -254,22 +254,17 @@
                                     
                                     <!-- Convert Markdown content to HTML -->
                                     {% assign filtered_html = filtered_content | markdownify %}
-                                    
-                                    <!-- Extract the first paragraph from HTML -->
-                                    {% assign first_p_index = filtered_html | index_of: '<p>' %}
-                                    {% assign first_p_end_index = filtered_html | index_of: '</p>' %}
-                                    
+                                    {% assign paragraphs = filtered_html | split: '</p>' %}
 
-
+                                    {% for paragraph in paragraphs %}
+                                        {% if paragraph contains '<p>' %}
+                                            {% assign first_paragraph = paragraph | remove: '<p>' %}
+                                            {% break %}
+                                        {% endif %}
+                                    {% endfor %}
                                     
-                                    {% assign test_string = "<p>my paragraph</p>" %}
-                                    {% assign start_index = test_string | index_of: '<p>' %}
-                                    {% assign end_index = test_string | index_of: '</p>' %}
+                                    <div>{{ first_paragraph }}</div>
                                     
-                                    <ul>
-                                        <li>Start index: {{ start_index }}</li>
-                                        <li>End index: {{ end_index }}</li>
-                                    </ul>
                                     
                                     
                      
