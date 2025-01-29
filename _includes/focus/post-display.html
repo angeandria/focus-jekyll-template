@@ -239,25 +239,25 @@
                                     {% assign filtered_content = parts[0] %}
                                     
                                     <!-- Loop through parts -->
-                                    {% for part in parts %}
+                                     {% for part in parts %}
                                         {% if forloop.first %}
-                                            {% continue %} <!-- Skip the first part as it doesn't contain 'CODE_START' -->
+                                            {% continue %}
                                         {% else %}
                                             {% assign sub_parts = part | split: code_marker_end %}
-                                            {% assign filtered_content = filtered_content | append: code_replacement %} <!-- Replace content between markers -->
+                                            {% assign filtered_content = filtered_content | append: code_replacement %}
                                             
                                             {% if sub_parts.size > 1 %}
-                                                {% assign filtered_content = filtered_content | append: sub_parts[1] %} <!-- Append the rest of the content after 'CUSTOM_END' -->
+                                                {% assign filtered_content = filtered_content | append: sub_parts[1] %}
                                             {% endif %}
                                         {% endif %}
                                     {% endfor %}   
                                     
                                     <!-- Convert Markdown content to HTML -->
                                     {% assign filtered_html = filtered_content | markdownify %}
-
+                                    
                                     <!-- Extract the first paragraph from HTML -->
                                     {% assign first_p_index = filtered_html | index_of: '<p>' | plus: 3 %}
-                                    {% assign first_p_end_index = filtered_html | index_of: '</p>' %}                                
+                                    {% assign first_p_end_index = filtered_html | index_of: '</p>' %}
                                     {% if first_p_index and first_p_end_index %}
                                         {% assign first_paragraph_html = filtered_html | slice: first_p_index, first_p_end_index | minus: first_p_index %}
                                         <div>{{ first_paragraph_html }}</div>
