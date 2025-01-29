@@ -253,11 +253,9 @@
                                     {% endfor %}   
 
                                     {% assign filtered_html = filtered_content | markdownify %}                                    
-                                    {% assign first_p_start = filtered_html | split: '<p>' | size | minus: 1 %}
-                                    {% assign first_p_end = filtered_html | split: '</p>' | first | size %}
-                                    {% assign first_paragraph = filtered_html | slice: first_p_start, first_p_end }}
                                     
-                                    <div>{{ first_paragraph }}</div>
+                                    
+                                    <div>{{ first_html }}</div>
                                     
                      
                             </div>
