@@ -256,11 +256,22 @@
                                     {% assign filtered_html = filtered_content | markdownify %}
                                     
                                     <!-- Extract the first paragraph from HTML -->
-                                    {% assign first_p_index = filtered_html | index_of: '<p>' | plus: 3 %}
+                                    {% assign first_p_index = filtered_html | index_of: '<p>' %}
                                     {% assign first_p_end_index = filtered_html | index_of: '</p>' %}
-                                    {% if first_p_index and first_p_end_index %}
-                                        {% assign first_paragraph_html = filtered_html | slice: first_p_index, first_p_end_index | minus: first_p_index %}
+                                    
+
+
+                                    <ul>
+                                        
+                                    <li>p index :{{ first_p_index }}</li>
+                                    <li>p end : {{ first_p_end_index }}</li>
+                                    </ul>
+                                    {% if first_p_index != nil and first_p_end_index != nil %}
+                                        {% assign first_paragraph_html = filtered_html | slice: first_p_index | plus: 3, first_p_end_index | minus: first_p_index %}
                                         <div>{{ first_paragraph_html }}</div>
+                                    {% else %}
+                                        <!-- Handle cases where indices are not found -->
+                                        <div>No paragraph found.</div>
                                     {% endif %}
                                     
                      
