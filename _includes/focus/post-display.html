@@ -261,10 +261,14 @@
                                     
 
 
+                                    
+                                    {% assign test_string = "<p>my paragraph</p>" %}
+                                    {% assign start_index = test_string | index_of: '<p>' %}
+                                    {% assign end_index = test_string | index_of: '</p>' %}
+                                    
                                     <ul>
-                                        
-                                    <li>p index :{{ first_p_index }}</li>
-                                    <li>p end : {{ first_p_end_index }}</li>
+                                        <li>Start index: {{ start_index }}</li>
+                                        <li>End index: {{ end_index }}</li>
                                     </ul>
                                     
                                     
