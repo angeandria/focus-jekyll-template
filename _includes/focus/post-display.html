@@ -257,7 +257,7 @@
                                     {% assign first_p_end = filtered_html | split: '</p>' | first | size %}
                                     {% assign first_paragraph = filtered_html | slice: first_p_start, first_p_end %}
                                     
-                                    <div>{{ first_paragraph }}</div>
+                                    <div>{{ first_paragraph | strip_html }}</div>
                                     
                      
                             </div>
