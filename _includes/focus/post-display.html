@@ -255,7 +255,7 @@
                                     <!-- Convert Markdown content to HTML -->
                                     {% assign filtered_html = filtered_content | markdownify %}
                                     {% assign paragraphs = filtered_html | split: '</p>' %}
-
+{% assign first_paragraph = "" %}
                                     {% for paragraph in paragraphs %}
                                         {% if paragraph contains '<p>' %}
                                             {% assign first_paragraph = paragraph | remove: '<p>' %}
