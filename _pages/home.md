@@ -20,20 +20,20 @@ This is the content of my homepage
 {% include focus/post-display.html type="post" filter="all" format="cards" order="desc" container_class="grid-3" type_class="" type-item_class="box-shadow" %}     
 
 
-## list | Resources - personal development
-{% include focus/post-display.html type="resource" filter="personal development" format="list" order="desc" container_class="grid-2" type_class="" type-item_class="box-shadow" %}            
+## list | Resources - All in Grids
+{% include focus/post-display.html type="resource" filter="all" format="list" order="desc" container_class="grid-2" type_class="" type-item_class="box-shadow" %}            
 
-{% include focus/post-display.html type="resource" filter="personal development" format="list" order="desc" container_class="grid-3" type_class="" type-item_class="boxed-s box-shadow" %}            
+{% include focus/post-display.html type="resource" filter="all format="list" order="desc" container_class="grid-3" type_class="" type-item_class="boxed-s box-shadow" %}            
 
-{% include focus/post-display.html type="resource" filter="personal development" format="list" order="desc" container_class="grid-4" type_class="" type-item_class="boxed-xs box-shadow" %}            
+{% include focus/post-display.html type="resource" filter="all" format="list" order="desc" container_class="grid-4" type_class="" type-item_class="boxed-xs box-shadow" %}            
 
-{% include focus/post-display.html type="resource" filter="personal development" format="list" order="desc" container_class="grid-6" type_class="" type-item_class="boxed-xs box-shadow" %}            
+{% include focus/post-display.html type="resource" filter="all" format="list" order="desc" container_class="grid-6" type_class="" type-item_class="boxed-xs box-shadow" %}            
 
 ## compact | Resources - personal development
 {% include focus/post-display.html type="resource" filter="personal development" format="compact" order="desc" container_class="grid-3" type_class="" type-item_class="" %}            
 
 ## cards | Resources - All
-{% include focus/post-display.html type="resource" filter="all" format="cards" order="desc" container_class="grid-2" type_class="" type-item_class="box-shadow" %}            
+{% include focus/post-display.html type="resource" filter="all" format="cards" order="desc" container_class="grid-3" type_class="" type-item_class="box-shadow" %}            
 
 
 ## grid | Posts - personal development
