@@ -1,7 +1,7 @@
 {% comment %} HOW TO USE
     ///{///% include focus/post-display.html
         type="resource" // 
-        topic="main"    // Posts : site.categories, other collections : site.pages where...
+        filter="main"    // Posts : site.categories, other collections : site.pages where...
         format="list"   // list, compact, cards (default), grid
         order="desc" 
         container_class="box-shadow"
@@ -10,7 +10,7 @@
 {% endcomment %} 
 
 
-{% assign target_topic = include.topic | default: "all" %}
+{% assign target_topic = include.filter | default: "all" %}
 {% assign target_topic = target_topic | downcase %}
 {% assign container_class = include.container_class | default: "" %}
 {% assign type_class = include.type_class | default: "" %}

@@ -3,7 +3,7 @@ classes :
   - canvas
 ---
 
-{% include focus/post-display.html type="doc" topic="all" format="cards" order="desc" container_class="grid-2 search" type_class="" type-item_class="box-shadow" %}     
+{% include focus/post-display.html type="doc" filter="all" format="cards" order="desc" container_class="grid-2 search" type_class="" type-item_class="box-shadow" %}     
 
 <section markdown="1">
     
@@ -18,7 +18,7 @@ Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
         {% include_cached search/search_form.html %}
     </div>
     <div id="search-items-default" class="search-items search-mode all-posts">            
-        {% include focus/post-display.html type="doc" topic="all" format="cards" order="desc" container_class="grid-2 search" type_class="" type-item_class="box-shadow" %}     
+        {% include focus/post-display.html type="doc" filter="all" format="cards" order="desc" container_class="grid-2 search" type_class="" type-item_class="box-shadow" %}     
     </div>
 </section>
 
@@ -33,7 +33,7 @@ Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
                     {% include_cached search/search_form.html %}
                 </div>
                 <div id="search-items-b" class="search-items search-mode all-posts">            
-                    {% include focus/post-display.html type="doc" topic="all" format="compact" order="desc" container_class="search" type_class="" type-item_class="" %}                                    
+                    {% include focus/post-display.html type="doc" filter="all" format="compact" order="desc" container_class="search" type_class="" type-item_class="" %}                                    
                 </div>            
             </div>
             
@@ -43,7 +43,7 @@ Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
                     {% include_cached search/search_form.html %}
                 </div>
                 <div id="search-items-c" class="search-items search-mode all-posts">            
-                    {% include focus/post-display.html type="resource" topic="all" format="compact" order="desc" container_class="search" type_class="" type-item_class="" %}                                    
+                    {% include focus/post-display.html type="resource" filter="all" format="compact" order="desc" container_class="search" type_class="" type-item_class="" %}                                    
                 </div>       
             </div>
             
@@ -53,7 +53,7 @@ Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
                     {% include_cached search/search_form.html %}
                 </div>
                 <div id="search-items-d" class="search-items search-mode all-posts">            
-                    {% include focus/post-display.html type="product" topic="all" format="compact" order="desc" container_class="search" type_class="" type-item_class="" %}                                    
+                    {% include focus/post-display.html type="product" filter="all" format="compact" order="desc" container_class="search" type_class="" type-item_class="" %}                                    
                 </div>       
             </div>
             

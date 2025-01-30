@@ -11,7 +11,7 @@ Allows to display posts or any custom collection in several formats :
 
 ### How to use
 ```
-{% include focus/post-display.html type="post" topic="all" format="cards" order="desc" container_class="grid-3" type_class="" type-item_class="box-shadow" %}     
+{% include focus/post-display.html type="post" filter="all" format="cards" order="desc" container_class="grid-3" type_class="" type-item_class="box-shadow" %}     
 ``` 
 
 Allowed :

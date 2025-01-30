@@ -7,7 +7,7 @@ permalink: /resources/
 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever
 
 <h2>RESOURCES</h2>
-{% include focus/post-display.html type="resource" topic="main" format="list" order="desc" container_class="grid-3" type_class="" type-item_class="boxed-s box-shadow" %}     
+{% include focus/post-display.html type="resource" filter="main" format="list" order="desc" container_class="grid-3" type_class="" type-item_class="boxed-s box-shadow" %}     
 ---
 
 {% for page in site.resources %}
