@@ -25,7 +25,7 @@ sidebar:
             
     {% assign types_list = "resource, page, post" | split: ", " %}
     {% for type in types_list %}        
-            {% include focus/post-display.html type=type topic=page.title format="compact" order="desc" container_class="" type_class="" type-item_class="box-shadow" %}            
+            {% include focus/post-display.html type=type filter=page.title format="compact" order="desc" container_class="" type_class="" type-item_class="box-shadow" %}            
     {% endfor %}
     
 </div>

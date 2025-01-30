@@ -7,7 +7,7 @@
         {% for category_key in site.data.taxonomies %}
             {% if category_key[1].type == "category" %}
                 {% assign category = category_key[0] %}        
-                {% include focus/post-display.html type=type topic=category format="compact" order="desc" container_class="search" type_class="" type-item_class="box-shadow" %}            
+                {% include focus/post-display.html type=type filter=category format="compact" order="desc" container_class="search" type_class="" type-item_class="box-shadow" %}            
             {% endif %}        
         {% endfor %}        
     {% endfor %}

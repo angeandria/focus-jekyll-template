@@ -56,7 +56,7 @@ PAGE TITLE ONLY WHEN HAS /TOPICS IN URL? {{ page.title}}
     <h1>RESOURCES, PAGES</h1>
     {% assign types_list = "resource, page" | split: ", " %}
     {% for type in types_list %}        
-            {% include focus/post-display.html type=type topic=page.title format="list" order="desc" container_class="" type_class="" type-item_class="box-shadow" %}            
+            {% include focus/post-display.html type=type filter=page.title format="list" order="desc" container_class="" type_class="" type-item_class="box-shadow" %}            
     {% endfor %}
     
     <hr>

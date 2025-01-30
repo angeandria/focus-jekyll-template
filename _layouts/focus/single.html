@@ -67,7 +67,7 @@ layout: default
                   {% endunless %}                      
               {% else %}
                   {% comment %}<!-- CUSTOM -->{% endcomment %}
-	    	      {% include focus/taxonomy-description.html topic=title %}
+	    	      {% include focus/taxonomy-description.html filter=title %}
               {% endif %}
         
               {% if page.featured_image or page.featured_video %}
