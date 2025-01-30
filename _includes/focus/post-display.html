@@ -24,10 +24,10 @@
 {% assign topic_limit = include.limit | default: 100000 %}
 
 {% assign code_marker = 'CODE' %}
-{% assign code_marker_start = 'CODE_START' %}
-{% assign code_marker_start_alt = '{CODE' %}
-{% assign code_marker_end = 'CODE_END' %}
-{% assign code_marker_end_alt = 'CODE}' %}
+{% assign code_marker_start_alt = '{' | append : code_marker %}
+{% assign code_marker_start = code_marker | append : '_START' %}
+{% assign code_marker_end_alt = code_marker | append : '}' %}
+{% assign code_marker_end = code_marker | append : '_END' %}
 {% assign code_replacement = 'code removed' %}
 
 
