@@ -20,7 +20,7 @@
 
 {% assign display_format = include.format | default: "cards" %}
 {% assign topic_sort = include.sort | default: "priority" %}
-{% assign topic_order = include.order %}
+{% assign topic_order = include.order | default: "asc" %}
 {% assign topic_limit = include.limit | default: 100000 %}
 
 {% assign code_marker = 'CODE' %}
