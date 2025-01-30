@@ -1,6 +1,6 @@
-{% comment %}
+
 {% assign layout_slug = page.layout | default: layout.layout | replace: '/', '-') %}
-{% if layout_slug == "focus-topics" or layout_slug == "focus-single-taxonomy" %}
+{% if layout_slug == "focus-topics" %}
     <div id="search-items-default" class="search-items search-mode all-posts">
         {% assign types_list = "resource, post, page, product" | split: ", " %}
     
@@ -14,8 +14,3 @@
     {% endfor %}
     </div>
 {% endif %}
-
-<hr>
-<hr>
-<hr>
-{% endcomment %}
