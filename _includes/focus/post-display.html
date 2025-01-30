@@ -31,12 +31,12 @@
 {% assign code_replacement = 'code removed' %}
 
 
-
+{% comment %} DEBUG
 <h2>
     Type : {{type_string}} | Topic : {{ target_topic }}<br>
     sort by ({{ topic_sort}}) limit ({{ topic_limit}}) order ({{ topic_order}})
 </h2>
-
+{% endcomment %}
 
 <div class="post-display items-container {{ display_format }} {{ container_class }}">
 {% for type in type_array %}
@@ -95,9 +95,9 @@
         {% comment %} // Display {% endcomment %}
         {% if limited_pages.size > 0 %}
             
-            {% comment %} 
+
                 <p>Topic : {{ target_topic }} | Type : {{type}} - limited to {{ limited_pages.size }} - order ({{ topic_order}})</p>
-            {% endcomment %}
+
                         
             <div class="post-type {{type}}s {{ type_class }}">
 
