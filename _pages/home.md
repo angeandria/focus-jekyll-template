@@ -23,7 +23,7 @@ This is the content of my homepage
 ## list | Resources - All in Grids
 {% include focus/post-display.html type="resource" filter="all" format="list" order="desc" container_class="grid-2" type_class="" type-item_class="box-shadow" %}            
 
-{% include focus/post-display.html type="resource" filter="all format="list" order="desc" container_class="grid-3" type_class="" type-item_class="boxed-s box-shadow" %}            
+{% include focus/post-display.html type="resource" filter="all" format="list" order="desc" container_class="grid-3" type_class="" type-item_class="boxed-s box-shadow" %}            
 
 {% include focus/post-display.html type="resource" filter="all" format="list" order="desc" container_class="grid-4" type_class="" type-item_class="boxed-xs box-shadow" %}            
 
