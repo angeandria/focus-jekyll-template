@@ -12,7 +12,7 @@ growth:
     id: 1-1
     title: "Growth is the new black"
     # subtitle :
-    featured_image: https://plus.unsplash.com/premium_photo-1709311452215-496c6740ca59
+    featured_image: https://images.unsplash.com/photo-1593699153969-4b3a1aff4066
     description: "from data.categories.yml - Growth description"	
     cta_title: "Get this"
     cta_url: "https://angeandria.com"
