@@ -1,0 +1,54 @@
+{% assign desc_content = include.content %}
+{% if desc_content %}
+    {% assign code_marker = include.marker | default: 'CODE' %}
+    {% assign code_marker_start_alt = include.marker-start | default: '{' | append : code_marker %}
+    {% assign code_marker_start = code_marker | append : '_START' %}
+    {% assign code_marker_start = include.code_marker_start | default: code_marker_start %}
+    
+    {% assign code_marker_end_alt = code_marker | append: '}' %}
+    {% assign code_marker_end_alt = include.marker-end-alt | default: code_marker_end_alt %}
+    {% assign code_marker_end = code_marker | append : '_END' %}
+    {% assign code_marker_end = include.marker-end | default: code_marker_end %}
+    
+    {% assign code_replacement = include.replacement | default: 'code removed' %}
+    
+    
+    {% assign modified_content = desc_content | replace: '%', code_marker %}                                                                        
+    {% assign modified_content = modified_content | replace: code_marker_start_alt, code_marker_start %}                                                
+    {% assign modified_content = modified_content | replace: code_marker_end_alt, code_marker_end %}                                                                                                
+    
+    {% assign parts = modified_content | split: code_marker_start %}
+
+    <!-- Start with the first part -->
+    {% assign filtered_content = parts[0] %}
+    
+    <!-- Loop through parts -->
+     {% for part in parts %}
+        {% if forloop.first %}
+            {% continue %}
+        {% else %}
+            {% assign sub_parts = part | split: code_marker_end %}
+            {% assign filtered_content = filtered_content | append: code_replacement %}
+            
+            {% if sub_parts.size > 1 %}
+                {% assign filtered_content = filtered_content | append: sub_parts[1] %}
+            {% endif %}
+        {% endif %}
+    {% endfor %}   
+    
+    
+    <!-- Convert Markdown content to HTML -->
+    {% assign filtered_html = filtered_content | markdownify %}
+    {% assign paragraphs = filtered_html | split: '</p>' %}
+{% assign first_paragraph = "" %}
+    {% for paragraph in paragraphs %}
+        {% if paragraph contains '<p>' %}
+            {% assign first_paragraph = paragraph | remove: '<p>' %}
+            {% break %}
+        {% endif %}
+    {% endfor %}
+    
+    <div>
+        {{ first_paragraph | strip_html }}
+    </div>
+{% endif %}                                        

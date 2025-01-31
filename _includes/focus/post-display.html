@@ -224,10 +224,10 @@
                                       <p>Custom excerpt</p>
                                     {% endif %}    
                                     
+                                    {% include focus/code-filter content = desc_content %}
                                     
-                                
                                     
-                                    
+                                    {% comment %}
                                     {% assign modified_content = desc_content | replace: '%', code_marker %}                                                                        
                                     {% assign modified_content = modified_content | replace: code_marker_start_alt, code_marker_start %}                                                
                                     {% assign modified_content = modified_content | replace: code_marker_end_alt, code_marker_end %}                                                                                                
@@ -266,7 +266,7 @@
                                     <div>
                                         {{ first_paragraph | strip_html }}
                                     </div>
-                                    
+                                    {% endcomment %}
                                     
                                     
                      
