@@ -22,7 +22,7 @@ Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, wh
         {% include_cached search/search_form.html %}
     </div>
     <div id="search-items-default" class="search-items search-mode all-posts">            
-        {% include focus/post-display.html type="doc" filter="all" format="cards" order="desc" container_class="grid-2 search" type_class="" type-item_class="box-shadow" %}     
+        {% include focus/post-display.html type="doc" filter="all" format="cards" order="desc" container_class="grid-4 search" type_class="" type-item_class="box-shadow" %}     
     </div>
 </section>
 
