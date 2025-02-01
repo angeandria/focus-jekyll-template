@@ -2,7 +2,7 @@
 ---
 
 ## Scrollable area
-<div class="scrollable box-shadow boxed-m">
+<div class="scrollable box-shadow boxed-m" markdown="1">
     
 Lorem Ipsum is simply dummy text of the printing and typesetting industry.
 
