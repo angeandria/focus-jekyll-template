@@ -229,7 +229,7 @@
                                         
                                         <!-- Filter code -->
                                         {% comment %} Filter Code from variable before outputting it {% endcomment %}
-                                        {% include focus/code-filter.html content = desc_content %}
+                                        {% include focus/code-filters.html content = desc_content type = "excerpt" %}
                                        
                                                              
                                 </div>
@@ -292,7 +292,7 @@
                                                     
                                                                                         <!-- Filter code -->
                                                     {% comment %} Filter Code from variable before outputting it {% endcomment %}
-                                                    {% include focus/code-filter.html content = page.content %}
+                                                    {% include focus/code-filters.html content = page.content %}
                                                     
                                                     {% comment %}
                                                                 {% assign content = page.content %}                                                

@@ -1,0 +1,97 @@
+{% comment %}
+    HOW TO USE
+    {% include focus/code-filter.html content = item.content
+        type = "excerpt" // content (default), excerpt
+    %}     
+{% endcomment %}
+
+
+{% assign desc_content = include.content %}
+
+{% if desc_content != nil %}    
+
+    {% assign type = include.type | default: 'content' %}    
+    {% assign filters = site.data.focus.code-filters %} <!-- Assuming you have a YAML file with filter configurations -->
+    {% assign filtered_results = "" %}
+
+    {% for filter in filters %}
+            {% if desc_content %}
+                {% assign code_marker = 'CODE' %}                                                                       {% comment %} CODE              {% endcomment %}
+                {% assign code_marker_start_final = code_marker | append : '__START' %}                                 {% comment %} CODE__START      {% endcomment %}       
+                {% assign code_marker_end_final = code_marker | append : '__END' %}                                     {% comment %} CODE__END        {% endcomment %}
+                
+                {% comment %}
+                {% assign code_marker_start_final = filter.marker-start-part | default: code_marker_start_final %}      {% comment %} CODE__START       {% endcomment %}
+                {% assign code_marker_end_final = filter.marker-end-part | default: code_marker_end_final %}            {% comment %} CODE__END         {% endcomment %}
+                {% endcomment %}
+                
+                {% assign code_delimiter = '%' | default: '' %}                                            {% comment %} ''       {% endcomment %}
+                
+                {% assign code_marker_start = filter.marker-start | default: '{' %}                                     {% comment %} '{'       {% endcomment %}
+                {% assign code_marker_start = code_marker_start | append : code_marker %}                               {% comment %} '{CODE'   {% endcomment %}    
+                {% assign code_marker_end = filter.marker-end | default: '}' %}                                         {% comment %} '}'       {% endcomment %}
+                {% assign code_marker_end = code_marker | append: code_marker_end %}                                    {% comment %} 'CODE}'   {% endcomment %}
+                
+                {% assign code_replacement = filter.replacement | default: '' %}                                        {% comment %} ''       {% endcomment %}
+                    
+                {% assign modified_content = desc_content | replace: code_delimiter, code_marker %}                    {% comment %} replace '%' by 'CODE'             {% endcomment %}                                                                        
+                {% assign modified_content = modified_content | replace: code_marker_start, code_marker_start_final %}   {% comment %} replace '{CODE' by 'CODE__START'  {% endcomment %}                                                                        
+                {% assign modified_content = modified_content | replace: code_marker_end, code_marker_end_final %}       {% comment %} replace 'CODE}' by 'CODE__END'    {% endcomment %}                                                                                                                                                                      
+                
+                
+                <p>marker start : {{ code_marker_start }} replaced by {{ code_marker_start_final }}</p>
+                <p>marker end : {{ code_marker_end }} replaced by {{ code_marker_end_final }}</p>        
+                <p>code delimiter : {{ code_delimiter }}</p>        
+                <p>all replaced by : {{ code_replacement }}</p>                
+        
+                {% assign parts = modified_content | split: code_marker_start_final %}                                   {% comment %} split with 'CODE__START'{% endcomment %}                                                                                                                                                                      
+                        
+                <!-- Start with the first part -->
+                {% assign filtered_content = parts[0] %}
+                
+                <!-- Loop through parts -->
+                 {% for part in parts %}
+                    {% if forloop.first %}
+                        {% continue %}
+                    {% else %}
+                        {% assign sub_parts = part | split: code_marker_end_final %}                                    {% comment %} split with 'CODE__END'        {% endcomment %}                                                                                                                                                                      
+                        {% assign filtered_content = filtered_content | append: code_replacement %}                     {% comment %} replace with 'code removed'   {% endcomment %}                                                                                                                                                                      
+                        
+                        {% if sub_parts.size > 1 %}
+                            {% assign filtered_content = filtered_content | append: sub_parts[1] %}
+                        {% endif %}
+                    {% endif %}
+                {% endfor %}   
+                
+                {% assign filtered_results = filtered_results | append: filtered_content %}
+                
+            {% endif %}                                        
+    {% endfor %}    
+    
+    
+    <!-- Convert Markdown content to HTML -->
+    {% assign filtered_html = filtered_content | markdownify %}
+    
+    {% if type != content %}
+
+        {% assign filtered_html = filtered_content | markdownify %}
+        {% assign paragraphs = filtered_html | split: '</p>' %}
+        {% assign first_paragraph = "" %}
+        {% for paragraph in paragraphs %}
+            {% if paragraph contains '<p>' %}
+                {% assign first_paragraph = paragraph | remove: '<p>' %}
+                {% break %}
+            {% endif %}
+        {% endfor %}
+        
+        <div>
+            {{ first_paragraph | strip_html }}
+        </div>
+                
+    {% else %}    
+        <div>
+            {{ filtered_html | strip_html }}
+        </div>        
+    {% endif %}    
+
+{% endif %}    
