@@ -1,6 +1,9 @@
 {% comment %}
     HOW TO USE
-    
+    include focus/code-filters.html
+        content = item.content
+        type = 'excerpt' (default: 'content')
+         
 {% endcomment %}
 
 
@@ -70,7 +73,7 @@
     <!-- Convert Markdown content to HTML -->
     {% assign filtered_html = filtered_content | markdownify %}
     
-    {% if type != content %}
+    {% if type != "content" %}
 
         {% assign filtered_html = filtered_content | markdownify %}
         {% assign paragraphs = filtered_html | split: '</p>' %}
