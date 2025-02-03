@@ -1,13 +1,11 @@
 # Code tags to filter and remove from content
 
-- marker: "CODE"
-  marker_start: "{"
+- marker_start: "{"
   marker_end: "}"
   delimiter: "%"
   replacement: "~~CODE REMOVED~~"
 
-- marker: "SCRIPT"
-  marker_start: "<script>"
+- marker_start: "<script>"
   marker_end: "</script>"
   delimiter: ""
   replacement: "~~SCRIPT REMOVED~~"

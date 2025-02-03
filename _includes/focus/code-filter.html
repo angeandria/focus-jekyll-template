@@ -1,29 +1,28 @@
 {% assign desc_content = include.content %}
 
-
 {% assign filters = site.data.focus.filters %} <!-- Assuming you have a YAML file with filter configurations -->
 
 {% assign filtered_results = "" %}
 
 {% for filter in filters %}
+
     {% assign code_marker = filter.marker | default: 'CODE' %}
     {% assign code_marker_start_final = code_marker | append : '__START' %}
     {% assign code_marker_start_final = filter.marker_start | default: code_marker_start_final %}
     {% assign code_marker_end_final = code_marker | append : '__END' %}
     {% assign code_marker_end_final = filter.marker_end | default: code_marker_end_final %}
-
-    {% assign code_delimiter = filter.delimiter | default: '' %}
     
     {% assign code_marker_start = filter.marker_start | default: '{' %}
     {% assign code_marker_start = code_marker_start | append : code_marker %}
     {% assign code_marker_end = filter.marker_end | default: '}' %}
     {% assign code_marker_end = code_marker | append: code_marker_end %}
-    
+    {% assign code_delimiter = filter.delimiter | default: '' %}
+        
     {% assign code_replacement = filter.replacement | default: '' %}
     
-    {% assign modified_content = desc_content | replace: '%', code_marker %}
+    {% assign modified_content = desc_content | replace: code_delimiter, code_marker %}
     {% assign modified_content = modified_content | replace: code_marker_start, code_marker_start_final %}
-    {% assign modified_content = modified_content | replace: code_marker_end, code_marker_end_final %}
+    {% assign modified_content = modified_content | replace: code_marker_end, code_marker_end_final %}wo
     
     {% assign parts = modified_content | split: code_marker_start_final %}
 
