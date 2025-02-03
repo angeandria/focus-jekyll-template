@@ -38,7 +38,7 @@
         
         {% assign code_replacement = filter.replacement | default: '' %}                                        {% comment %} ''       {% endcomment %}
             
-        {% assign modified_content = desc_content | replace: code_replacement, code_marker %}                    {% comment %} replace '%' by 'CODE'             {% endcomment %}                                                                        
+        {% assign modified_content = desc_content | replace: code_delimiter, code_marker %}                    {% comment %} replace '%' by 'CODE'             {% endcomment %}                                                                        
         {% assign modified_content = modified_content | replace: code_marker_start, code_marker_start_final %}   {% comment %} replace '{CODE' by 'CODE__START'  {% endcomment %}                                                                        
         {% assign modified_content = modified_content | replace: code_marker_end, code_marker_end_final %}       {% comment %} replace 'CODE}' by 'CODE__END'    {% endcomment %}                                                                                                                                                                      
         
