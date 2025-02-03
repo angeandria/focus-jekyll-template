@@ -10,9 +10,11 @@ Allows to display posts or any custom collection in several formats :
 - cards
 
 ### How to use
+{% raw %}
 ```
 {% include focus/post-display.html type="post" filter="all" format="cards" order="desc" container_class="grid-3" type_class="" type-item_class="box-shadow" %}     
 ``` 
+{% endraw %}
 
 Allowed :
 
