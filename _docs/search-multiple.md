@@ -2,7 +2,10 @@
 classes :
   - canvas
 ---
+<script>console.log('Hello, world')</script>
 
+Hello Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+    
 <div class="boxed-s">
 {% include focus/post-display.html type="doc" filter="all" format="cards" order="desc" container_class="grid-6 search" type_class="" type-item_class="box-shadow" %}     
 </div>
