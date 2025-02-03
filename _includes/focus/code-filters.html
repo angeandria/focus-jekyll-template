@@ -12,10 +12,10 @@
 
     {% assign content_type = include.type | default: 'content' %}    
     {% assign filters = site.data.focus.code-filters %} <!-- Assuming you have a YAML file with filter configurations -->
-    {% assign filtered_results = "" %}
+    {% assign filtered_results = desc_content %}
 
     {% for filter in filters %}
-            {% if desc_content %}
+
                 {% assign code_marker = 'CODE' %}                                                                       {% comment %} CODE              {% endcomment %}
                 {% assign code_marker_start_final = code_marker | append : '__START' %}                                 {% comment %} CODE__START      {% endcomment %}       
                 {% assign code_marker_end_final = code_marker | append : '__END' %}                                     {% comment %} CODE__END        {% endcomment %}
@@ -34,7 +34,7 @@
                 
                 {% assign code_replacement = filter.replacement | default: '' %}                                        {% comment %} ''       {% endcomment %}
                     
-                {% assign modified_content = desc_content | replace: code_delimiter, code_marker %}                    {% comment %} replace '%' by 'CODE'             {% endcomment %}                                                                        
+                {% assign modified_content = filtered_results | replace: code_delimiter, code_marker %}                    {% comment %} replace '%' by 'CODE'             {% endcomment %}                                                                        
                 {% assign modified_content = modified_content | replace: code_marker_start, code_marker_start_final %}   {% comment %} replace '{CODE' by 'CODE__START'  {% endcomment %}                                                                        
                 {% assign modified_content = modified_content | replace: code_marker_end, code_marker_end_final %}       {% comment %} replace 'CODE}' by 'CODE__END'    {% endcomment %}                                                                                                                                                                      
                 
@@ -65,7 +65,6 @@
                 
                 {% assign filtered_results = filtered_results | append: filtered_content %}
                 
-            {% endif %}                                        
     {% endfor %}    
     
     
