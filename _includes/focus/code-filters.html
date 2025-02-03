@@ -72,7 +72,7 @@
     
     <!-- Convert Markdown content to HTML -->
     {% assign filtered_html = filtered_results | markdownify %}
-    
+    <p>TYPE : {{ type }}</p>
     {% if type != "content" %}
         {% assign filtered_html = filtered_content | markdownify %}
         {% assign paragraphs = filtered_html | split: '</p>' %}
