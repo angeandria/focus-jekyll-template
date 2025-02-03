@@ -2,8 +2,7 @@
     HOW TO USE
     include focus/code-filters.html
         content = item.content
-        type = 'excerpt' (default: 'content')
-         
+        type = 'excerpt' (default: 'content')         
 {% endcomment %}
 
 
@@ -11,7 +10,7 @@
 
 {% if desc_content != nil %}    
 
-    {% assign type = include.type | default: 'content' %}    
+    {% assign content_type = include.type | default: 'content' %}    
     {% assign filters = site.data.focus.code-filters %} <!-- Assuming you have a YAML file with filter configurations -->
     {% assign filtered_results = "" %}
 
@@ -72,8 +71,8 @@
     
     <!-- Convert Markdown content to HTML -->
     {% assign filtered_html = filtered_results | markdownify %}
-    <p>TYPE : {{ type }}</p>
-    {% if type != "content" %}
+    <p>TYPE : {{ content_type }}</p>
+    {% if content_type != "content" %}
         {% assign filtered_html = filtered_content | markdownify %}
         {% assign paragraphs = filtered_html | split: '</p>' %}
         {% assign first_paragraph = "" %}
