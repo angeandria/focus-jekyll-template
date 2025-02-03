@@ -256,6 +256,28 @@ document.addEventListener('DOMContentLoaded', function() {
         $('body').addClass('dark-theme');
         $('#darkModeToggle').html('&#9788;'); // Set sun icon if dark theme was enabled
     }
+    
+    // Select all links with the class 'grid-link'
+    const gridLinks = document.querySelectorAll('.grid-link');
+
+    // Add click event listener to each link
+    gridLinks.forEach(function (link) {
+      link.addEventListener('click', function (event) {
+        // Prevent default anchor behavior
+        event.preventDefault();
+
+        // Get the parent div
+        const parentDiv = link.closest('.post-display');
+
+        // Remove all grid-... classes from this parent div only
+        parentDiv.classList.remove('grid-3', 'grid-4', 'grid-6');
+
+        // Add the selected grid class
+        const gridClass = link.getAttribute('data-grid');
+        parentDiv.classList.add(gridClass);
+      });
+    });
+
 
 });
 
