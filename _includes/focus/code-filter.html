@@ -29,7 +29,7 @@
         {% assign code_marker_end_final = filter.marker-end-part | default: code_marker_end_final %}            {% comment %} CODE__END         {% endcomment %}
         {% endcomment %}
         
-        {% assign code_delimiter = filter.delimiter | default: '' %}                                            {% comment %} ''       {% endcomment %}
+        {% assign code_delimiter = '%' | default: '' %}                                            {% comment %} ''       {% endcomment %}
         
         {% assign code_marker_start = filter.marker-start | default: '{' %}                                     {% comment %} '{'       {% endcomment %}
         {% assign code_marker_start = code_marker_start | append : code_marker %}                               {% comment %} '{CODE'   {% endcomment %}    
