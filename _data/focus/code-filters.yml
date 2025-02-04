@@ -8,7 +8,7 @@
 
 - marker_start: "<script>"
   marker_end: "</script>"
-  delimiter: ""
+#  delimiter: ""
   replacement: "~~SCRIPT REMOVED~~"
   
   
