@@ -20,7 +20,7 @@
                 {% assign code_marker_start_final = code_marker | append : '__START' %}                                 {% comment %} CODE__START      {% endcomment %}       
                 {% assign code_marker_end_final = code_marker | append : '__END' %}                                     {% comment %} CODE__END        {% endcomment %}
                 
-                {% assign code_delimiter = '%' | default: '' %}                                            {% comment %} ''       {% endcomment %}
+                {% assign code_delimiter = filter.delimiter | default: '' %}                                            {% comment %} ''       {% endcomment %}
                 
                 {% assign code_marker_start = filter.marker_start | default: '{' %}                                     {% comment %} '{'       {% endcomment %}
                 {% assign code_marker_start = code_marker_start | append : code_marker %}                               {% comment %} '{CODE'   {% endcomment %}    
