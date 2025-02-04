@@ -33,11 +33,12 @@
                 {% assign modified_content = modified_content | replace: code_marker_start, code_marker_start_final %}   {% comment %} replace '{CODE' by 'CODE__START'  {% endcomment %}                                                                        
                 {% assign modified_content = modified_content | replace: code_marker_end, code_marker_end_final %}       {% comment %} replace 'CODE}' by 'CODE__END'    {% endcomment %}                                                                                                                                                                      
                 
-                
+                {% comment %}
                 <p>marker start : {{ code_marker_start }} replaced by {# raw %} {{ code_marker_start_final }} {# endraw %}</p>
                 <p>marker end : {{ code_marker_end }} replaced by {# raw %} {{ code_marker_end_final }} {# endraw %}</p>        
                 <p>code delimiter : {{ code_delimiter }}</p>        
                 <p>all replaced by : {{ code_replacement }}</p>                
+                {% endcomment %}
         
                 {% assign parts = modified_content | split: code_marker_start_final %}                                   {% comment %} split with 'CODE__START'{% endcomment %}                                                                                                                                                                      
                         

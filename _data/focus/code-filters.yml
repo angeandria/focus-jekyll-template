@@ -5,9 +5,9 @@
   delimiter: "%"
   replacement: "~~CODE REMOVED~~"
 
-#- marker_start: "<script>"
-#  marker_end: "</script>"
-#  delimiter: ""
-#  replacement: "~~SCRIPT REMOVED~~"
+- marker_start: "<script>"
+  marker_end: "</script>"
+  delimiter: ""
+  replacement: "~~SCRIPT REMOVED~~"
   
   
