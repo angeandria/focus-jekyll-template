@@ -289,11 +289,11 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         // Remove all grid-... classes from this parent div only
-        targetDiv.classList.remove('grid-3', 'grid-4', 'grid-6');
+        targetDiv.classList.remove('list', 'compact', 'cards', 'grid-3', 'grid-4', 'grid-6');
 
         // Add the selected grid class
-        const gridClass = link.getAttribute('data-grid');
-        targetDiv.classList.add(gridClass);
+        const displayClass = link.getAttribute('data-display');
+        targetDiv.classList.add(displayClass);
       });
     });
 
