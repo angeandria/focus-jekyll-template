@@ -291,9 +291,20 @@ document.addEventListener('DOMContentLoaded', function() {
         // Remove all grid-... classes from this parent div only
         targetDiv.classList.remove('list', 'compact', 'cards', 'grid-3', 'grid-4', 'grid-6');
 
+        
         // Add the selected grid class
         const formatClass = link.getAttribute('data-format');
-        targetDiv.classList.add(formatClass);
+        // Split the classes if there are multiple and trim any extra spaces
+        const classList = formatClass.split(' ').map(cls => cls.trim());
+        
+        // Add each class to the targetDiv
+        classList.forEach(cls => {
+            if (cls) { // Ensure the class string is not empty
+                targetDiv.classList.add(cls);
+            }
+        });
+
+
       });
     });
 
