@@ -257,6 +257,10 @@ document.addEventListener('DOMContentLoaded', function() {
         $('#darkModeToggle').html('&#9788;'); // Set sun icon if dark theme was enabled
     }
     
+    
+    //
+    // SWITCH GRID DISPLAY
+    //
     // Select all links with the class 'grid-link'
     const gridLinks = document.querySelectorAll('.grid-link');
 
@@ -267,14 +271,29 @@ document.addEventListener('DOMContentLoaded', function() {
         event.preventDefault();
 
         // Get the parent div
-        const parentDiv = link.closest('.post-display');
+        const parentDiv = link.closest('.grid-links');
+        
+        // Initialize targetDiv as null
+        let targetDiv = null;
+        
+        // Check if parentDiv exists and find the next .post-display div
+        if (parentDiv) {
+            let nextSibling = parentDiv.nextElementSibling;
+            while (nextSibling) {
+                if (nextSibling.classList.contains('post-display')) {
+                    targetDiv = nextSibling;
+                    break;
+                }
+                nextSibling = nextSibling.nextElementSibling;
+            }
+        }
 
         // Remove all grid-... classes from this parent div only
-        parentDiv.classList.remove('grid-3', 'grid-4', 'grid-6');
+        targetDiv.classList.remove('grid-3', 'grid-4', 'grid-6');
 
         // Add the selected grid class
         const gridClass = link.getAttribute('data-grid');
-        parentDiv.classList.add(gridClass);
+        targetDiv.classList.add(gridClass);
       });
     });
 

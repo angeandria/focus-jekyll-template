@@ -38,13 +38,14 @@
 </h2>
 {% endcomment %}
 
+<div class="grid-links">
+    <a href="#" class="grid-link" data-grid="grid-3">grid-3</a>,
+    <a href="#" class="grid-link" data-grid="grid-4">grid-4</a>,
+    <a href="#" class="grid-link" data-grid="grid-6">grid-6</a>
+</div>
 <div class="post-display items-container {{ display_format }} {{ container_class }}">
         
-    {% for type in type_array %}
-            <a href="#" class="grid-link" data-grid="grid-3">grid-3</a>,
-            <a href="#" class="grid-link" data-grid="grid-4">grid-4</a>,
-            <a href="#" class="grid-link" data-grid="grid-6">grid-6</a>
-                
+    {% for type in type_array %}                            
             {% comment %} // Get source {% endcomment %}
             
             {% case type %}
