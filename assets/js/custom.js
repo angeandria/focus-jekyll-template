@@ -259,19 +259,19 @@ document.addEventListener('DOMContentLoaded', function() {
     
     
     //
-    // SWITCH GRID DISPLAY
+    // SWITCH POST-DISPLAY format
     //
-    // Select all links with the class 'grid-link'
-    const gridLinks = document.querySelectorAll('.grid-link');
+    // Select all links with the class 'display-link'
+    const displayLinks = document.querySelectorAll('.display-link');
 
     // Add click event listener to each link
-    gridLinks.forEach(function (link) {
+    displayLinks.forEach(function (link) {
       link.addEventListener('click', function (event) {
         // Prevent default anchor behavior
         event.preventDefault();
 
         // Get the parent div
-        const parentDiv = link.closest('.grid-links');
+        const parentDiv = link.closest('.display-links');
         
         // Initialize targetDiv as null
         let targetDiv = null;
@@ -292,8 +292,8 @@ document.addEventListener('DOMContentLoaded', function() {
         targetDiv.classList.remove('list', 'compact', 'cards', 'grid-3', 'grid-4', 'grid-6');
 
         // Add the selected grid class
-        const displayClass = link.getAttribute('data-display');
-        targetDiv.classList.add(displayClass);
+        const formatClass = link.getAttribute('data-format');
+        targetDiv.classList.add(formatClass);
       });
     });
 
