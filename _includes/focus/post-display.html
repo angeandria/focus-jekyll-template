@@ -230,7 +230,6 @@
                                         <!-- Filter code -->                                        
                                         {% if page.allow_recursive != true %}
                                             <!-- Filter code -->
-                                            <p>filter code</p>
                                             {% comment %} Filter Code from variable before outputting it {% endcomment %}
                                             {% include focus/code-filters.html content = desc_content type = 'excerpt' %}
                                         {% else%}
@@ -297,7 +296,6 @@
                                                 <div class="item-content">
                                                     
                                                     {% if page.allow-recursive != true %}
-                                                        <p>filter code content</p>
                                                         <!-- Filter code -->
                                                         {% comment %} Filter Code from variable before outputting it {% endcomment %}
                                                         {% include focus/code-filters.html content = page.content %}
@@ -343,6 +341,11 @@
                                         </div>
                                     {% endif %}
                                     
+                                    <div class="item-buttons">
+                                        <a href="{{ item-link }}" title="{{ page.title }}" class="btn btn--primary">
+                                            {{ site.data.ui-text[site.locale].more_label | default: "Learn more" }}
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
