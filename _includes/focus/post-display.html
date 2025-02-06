@@ -230,6 +230,7 @@
                                         <!-- Filter code -->                                        
                                         {% if page.allow_recursive != true %}
                                             <!-- Filter code -->
+                                            <p>filter code</p>
                                             {% comment %} Filter Code from variable before outputting it {% endcomment %}
                                             {% include focus/code-filters.html content = desc_content type = 'excerpt' %}
                                         {% else%}
@@ -296,6 +297,7 @@
                                                 <div class="item-content">
                                                     
                                                     {% if page.allow-recursive != true %}
+                                                        <p>filter code content</p>
                                                         <!-- Filter code -->
                                                         {% comment %} Filter Code from variable before outputting it {% endcomment %}
                                                         {% include focus/code-filters.html content = page.content %}

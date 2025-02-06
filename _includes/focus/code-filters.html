@@ -69,6 +69,10 @@
     <!-- Convert Markdown content to HTML -->
     {% assign filtered_html = filtered_results | markdownify %}
 
+    {% comment %}
+        NOTE : no idea why I have to use filtered_content instead of modified_content.
+        Hence, this would not work if several code filters were used in code-filters.yml
+    {% endcomment %}
     {% if content_type != "content" %}
         {% assign filtered_html = filtered_content | markdownify %}
         {% assign paragraphs = filtered_html | split: '</p>' %}
@@ -81,12 +85,9 @@
         {% endfor %}        
 
         {{ first_paragraph | strip_html }}
-
                 
     {% else %}        
-        
         {{ filtered_content | strip_html }}
-        
     {% endif %}    
 
 {% endif %}    
