@@ -6,6 +6,8 @@ categories:
 aliases: 
   - file1
   - fileA1
+excerpt : This is a custom excerpt
+custom_excerpt : true
 ---
 
 
