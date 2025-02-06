@@ -67,10 +67,10 @@
     
     
     <!-- Convert Markdown content to HTML -->
-
+    {% assign filtered_html = filtered_results | markdownify %}
 
     {% if content_type != "content" %}
-        {% assign filtered_html = modified_content | markdownify %}
+        {% assign filtered_html = filtered_content | markdownify %}
         {% assign paragraphs = filtered_html | split: '</p>' %}
         {% assign first_paragraph = "" %}
         {% for paragraph in paragraphs %}
@@ -85,7 +85,7 @@
                 
     {% else %}        
         
-        {{ filtered_html | strip_html }}
+        {{ filtered_content | strip_html }}
         
     {% endif %}    
 
