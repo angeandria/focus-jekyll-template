@@ -179,8 +179,7 @@ html{
 
 
 
-body,
-.sticky{
+body{
     background-color: var(--body-bg-color);
 }
 
@@ -1262,7 +1261,12 @@ body {
         .item-title > a {            
             font-size: var(--font-size-m);
         }  
+        .item-links{
+            display: none;
+        }  
     }
+    
+    
     &.compact{
         .item{
             border: 1px solid var(--border-color-1);
