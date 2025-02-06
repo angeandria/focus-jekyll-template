@@ -4,6 +4,7 @@ permalink: /resource/myFile3
 aliases: 
   - file3
   - fileA3
+allow_recursion : true  
 ---
 
 

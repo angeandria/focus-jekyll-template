@@ -4,6 +4,7 @@ permalink: /resource/second-page-permalink
 aliases: 
   - file2
   - fileA2
+allow_recursion : true  
 ---
 
 
