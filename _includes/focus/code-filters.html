@@ -70,7 +70,7 @@
     {% assign filtered_html = filtered_results | markdownify %}
 
     {% if content_type != "content" %}
-        
+        {% assign filtered_html = filtered_content | markdownify %}
         {% assign paragraphs = filtered_html | split: '</p>' %}
         {% assign first_paragraph = "" %}
         {% for paragraph in paragraphs %}
