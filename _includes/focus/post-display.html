@@ -111,7 +111,7 @@
                     {% endcomment %}
                     
                     
-                    {% for page in limited_pages %}
+                    {% for page-item in limited_pages %}
                         {% assign is_recursion = true %}  <!-- Default flag to allow recursion -->
     
                         {% comment %} 
@@ -121,7 +121,7 @@
                         {% comment %}
                         <!-- Main Category class -->
                         {% endcomment %}
-                        {% assign category_main = page.categories[0] %}  
+                        {% assign category_main = page-item.categories[0] %}  
                         
                         {% comment %}
                         <!--  Main Category slug -->
@@ -133,21 +133,21 @@
                             {% assign category_main_class = category_main_slug | prepend: site.taxonomy_prefix %}                        
                         {% endif %}
                         
-                        {% assign item-link = page.url | relative_url %}
-                        {% assign item-link = page.link | default: item-link %}
+                        {% assign item-link = page-item.url | relative_url %}
+                        {% assign item-link = page-item.link | default: item-link %}
                         
                         
                         <div class="item {{ type-item_class }} {{ category_main_class }}">
                             
                             <div class="block block-1">
-                                <a href="{{ item-link }}" title="{{ page.title }}">                                    
-                                    <img class="item-featured-logo" src="{{ page.featured_logo | default: '/assets/images/placeholder-logo.jpg' | relative_url }}" alt="Featured Logo">
+                                <a href="{{ item-link }}" title="{{ page-item.title }}">                                    
+                                    <img class="item-featured-logo" src="{{ page-item.featured_logo | default: '/assets/images/placeholder-logo.jpg' | relative_url }}" alt="Featured Logo">
                                 </a>
                             </div>
     
                             <div class="block block-2">
-                                <a href="{{ item-link }}" title="{{ page.title }}">                                    
-                                    <img class="item-featured-img" src="{{ page.featured_image | default: '/assets/images/placeholder.jpg' | relative_url }}" alt="Featured Image">
+                                <a href="{{ item-link }}" title="{{ page-item.title }}">                                    
+                                    <img class="item-featured-img" src="{{ page-item.featured_image | default: '/assets/images/placeholder.jpg' | relative_url }}" alt="Featured Image">
                                 </a>
                             </div>
                                   
@@ -155,10 +155,10 @@
                                 
                                 <!-- Page taxonomy -->                                                                        
                                 <div class="item-title">
-                                     <a href="{{ item-link }}" title="{{ page.title }}">{{ page.title }}</a>
+                                     <a href="{{ item-link }}" title="{{ page-item.title }}">{{ page-item.title }}</a>
                                      
-                                     {% if page.subtitle %}
-                                        <div class="item-subtitle">{{ page.subtitle }}</div>                    
+                                     {% if page-item.subtitle %}
+                                        <div class="item-subtitle">{{ page-item.subtitle }}</div>                    
                                      {% endif %}
                                      <span class="page__meta_taxonomy item-tags">                                    
                                         {% include focus/page__taxonomy.html %}
@@ -169,11 +169,11 @@
                                           
                                 <!-- Page author -->                                                                        
                                 {% assign author_name = site.author %}
-                                {% if page.author != nil %}
-                                  {% assign author_name = page.author %}
+                                {% if page-item.author != nil %}
+                                  {% assign author_name = page-item.author %}
                                 {% endif %}                                              
                                 {% assign author = site.data.authors[author_name] %}
-                                {% assign show_author = page.author_profile | default: false %}
+                                {% assign show_author = page-item.author_profile | default: false %}
                                                 
                                 {% if author %}
                                     <!-- Page author -->         
@@ -201,7 +201,7 @@
                                                 {% endif %}    
                                             {% endcomment %}        
                                 
-                                            {% if page.date and page.show_date %}
+                                            {% if page-item.date and page-item.show_date %}
                                                 <!-- Page date -->         
                                                 <div class="item-date">                    
                                                     {% include page__meta.html %}
@@ -217,18 +217,18 @@
                                         {% assign auto_excerpt = "" %}
                                         {% assign filtered_content = "" %}
                                         
-                                        {% if page.description != nil %}
-                                            {% assign desc_content = page.description %}
+                                        {% if page-item.description != nil %}
+                                            {% assign desc_content = page-item.description %}
                                         {% else %}
-                                            {% assign desc_content = page.content %}
+                                            {% assign desc_content = page-item.content %}
                                         {% endif %}    
                                         
-                                        {% if page.custom_excerpt %}
-                                            {% assign desc_content = page.excerpt %}
+                                        {% if page-item.custom_excerpt %}
+                                            {% assign desc_content = page-item.excerpt %}
                                         {% endif %}    
                                         
                                         <!-- Filter code -->                                        
-                                        {% if page.allow_recursion != true %}
+                                        {% if page-item.allow_recursion != true %}
                                             <!-- Filter code -->
                                             <p>no recursion</p>
                                             {% comment %} Filter Code from variable before outputting it {% endcomment %}
@@ -252,12 +252,12 @@
                                 {% if container_class contains "search" %}
                                     <div class="item-details">                                     
                                                 {% assign author_name = site.author %}
-                                                {% if page.author != nil %}
-                                                  {% assign author_name = page.author %}
+                                                {% if page-item.author != nil %}
+                                                  {% assign author_name = page-item.author %}
                                                 {% endif %}                  
                                                 
                                                 {% assign author = site.data.authors[author_name] %}
-                                                {% assign show_author = page.author_profile | default: false %}
+                                                {% assign show_author = page-item.author_profile | default: false %}
                                                                 
                                                 {% if author and show_author %}
                                                     <!-- Page author -->         
@@ -284,7 +284,7 @@
                                                     </div>
                                               {% endif %}
                                               
-                                              {% if page.date and page.show_date %}
+                                              {% if page-item.date and page-item.show_date %}
                                                 <!-- Page date -->         
                                                 <div class="page__meta_date">                    
                                                     {% include page__meta.html %}
@@ -294,15 +294,15 @@
                                         </div>   
                                         
     
-                                        {% if page.content != nil %}             
+                                        {% if page-item.content != nil %}             
                                                 <div class="item-content">
                                                     
-                                                    {% if page.allow_recursion != true %}
+                                                    {% if page-item.allow_recursion != true %}
                                                         <!-- Filter code -->
                                                         {% comment %} Filter Code from variable before outputting it {% endcomment %}
-                                                        {% include focus/code-filters.html content = page.content %}
+                                                        {% include focus/code-filters.html content = page-item.content %}
                                                     {% else%}
-                                                            {{ page.content | strip_html }}
+                                                            {{ page-item.content | strip_html }}
                                                     {% endif%}
                                                     
                                                 </div>
@@ -327,24 +327,24 @@
                                         {% include focus/page__taxonomy.html %}
                                     </div>                                                    
                                     
-                                    {% if page.info-1 %}
+                                    {% if page-item.info-1 %}
                                     <div class="item-info item-info-1">
-                                        {% for info in page.info-1 %}
+                                        {% for info in page-item.info-1 %}
                                             {{ info | capitalize }}
                                         {% endfor %}
                                     </div>
                                     {% endif %}
                                     
-                                    {% if page.info-2 %}
+                                    {% if page-item.info-2 %}
                                         <div class="item-info item-info-2">
-                                            {% for info in page.info-2 %}
+                                            {% for info in page-item.info-2 %}
                                                 {{ info | capitalize }}
                                             {% endfor %}
                                         </div>
                                     {% endif %}
                                     
                                     <div class="item-buttons">
-                                        <a href="{{ item-link }}" title="{{ page.title }}" class="btn btn--primary">
+                                        <a href="{{ item-link }}" title="{{ page-item.title }}" class="btn btn--primary">
                                             {{ site.data.ui-text[site.locale].more_label | default: "Learn more" }}
                                         </a>
                                     </div>
