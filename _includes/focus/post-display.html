@@ -235,7 +235,7 @@
                                             {% include focus/code-filters.html content = desc_content type = 'excerpt' %}
                                         {% else%}
                                             <p>recursion</p>
-                                            {{ desc_content | strip_html }}        
+                                            {{ desc_content | strip_html | markdownify }}        
                                         {% endif%}
                                        
                                                              
