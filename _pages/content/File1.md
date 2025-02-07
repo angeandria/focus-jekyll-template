@@ -5,7 +5,6 @@ last_edit:
 featured: true
 priority: 4
 layout: 
-permalink: myFile1
 aliases:
   - file1
   - fileA1
