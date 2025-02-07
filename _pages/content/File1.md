@@ -21,7 +21,6 @@ title: My best Post
 subtitle: My post subtitle
 description: My post desc
 featured_image: myimage.jpg
-hidden: true
 ---
 
 {% capture include_markdown %}
