@@ -17,10 +17,10 @@ category:
 tags:
   - a
   - c
-title: My best Post
+title: File 1 - My best Post
 subtitle: My post subtitle
 description: My post desc
-featured_image: myimage.jpg
+featured_image: https://images.unsplash.com/photo-1733218875809-78c2d54e5195
 ---
 
 {% capture include_markdown %}
