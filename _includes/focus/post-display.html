@@ -82,7 +82,7 @@
                 {% endif %}
             {% endif %}        
             
-            {% assign sorted_pages = sorted_pages | where_exp: "item", "item.hidden != true"  %}
+            {% assign sorted_pages = sorted_pages | where_exp: "item", "item.hidden != true"  %}            
             {% assign sorted_pages = sorted_pages | where_exp: "item", "item.status != 'draft'"  %}      
             
             {% comment %} // Sort by priority {% endcomment %}
