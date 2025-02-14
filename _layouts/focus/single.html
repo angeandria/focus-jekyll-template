@@ -209,7 +209,7 @@ layout: default
     
                         
                         <!-- SECTION page__post_aside -->   
-                        {% comment %} Disabled by default through css  {% endcomment %}  
+                        {% comment %} Disabled by default through css : TODO check if implemented {% endcomment %}  
                         {% assign post_aside = page.post_aside | default : false %}
                         {% if post_aside %}
                             <aside class="sidebar__right {% if page.toc_sticky %}sticky{% endif %}">

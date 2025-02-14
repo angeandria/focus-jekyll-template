@@ -17,7 +17,7 @@ page__before_post:
 page__within_post:
   custom: true   
 page__post_aside:
-  custom: true     
+  custom: false     
 page__after_post:
   custom: true   
 page__after_content:
