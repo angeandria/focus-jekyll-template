@@ -222,7 +222,7 @@ layout: default
                         {% assign paragraphs = content | split: '</p>' %}
                         {% for paragraph in paragraphs %}
                             {{ paragraph | append: '</p>' }}
-                            {% if forloop.index == 8 %}
+                            {% if forloop.index == 5 %}
                                {% include focus/hook.html hook="page__within_post" %}
                             {% endif %}
                         {% endfor %}
