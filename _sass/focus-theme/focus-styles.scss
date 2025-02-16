@@ -1111,9 +1111,9 @@ aside.sidebar__right{
 $cta-categories: 3; // Define a variable for the number of categories
 $cta-per-category: 3; 
 $color-array: (
-    "cta-category-1-": rgba(255, 122, 0, 1),
-    "cta-category-2-": rgba(0, 0, 255, 1),
-    "cta-category-3-": rgba(0, 255, 0, 1)
+    "cta-category-1-": rgba(255, 122, 0, .5),
+    "cta-category-2-": rgba(0, 0, 255, .5),
+    "cta-category-3-": rgba(0, 255, 0, .5)
 );
 
 .cta-category{
