@@ -1129,9 +1129,13 @@ $color-array: (
     display: none;
 }
 
-.cta-category[class^="cta-category-1-"]{
-    background-color:rgba(255,122,0,1);
+.cta-category[class^="cta-category-1-1"]{
+    background-color:red;
 }
+.cta-category.cta-category-1-1{
+    background-color:blue;
+}
+
 
 body {
     @for $i from 1 through $cta-categories {
