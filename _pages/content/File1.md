@@ -22,8 +22,11 @@ subtitle: My post subtitle
 description: My post desc
 featured_image: https://images.unsplash.com/photo-1733218875809-78c2d54e5195
 ---
-{% assign path = page.path | split: '/' | last | split: '.' | first %}
+{% assign parts = page.path | split: '/' %}
+{% assign filename_with_extension = parts | last %}
+{% assign path = filename_with_extension | split: '.' | first %}
 <h1>{{ path }}</h1>
+
 {% capture include_markdown %}
 {% include_relative _pages_content/File1_content.md %}
 {% endcapture %}
