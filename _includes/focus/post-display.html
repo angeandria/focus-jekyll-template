@@ -9,7 +9,7 @@
         type-item_class="" %}
 {% endcomment %} 
 
-
+{% comment %}SAVE global page's scope{% endcomment %}
 {% assign page_backup = page %}
 
 {% assign target_topic = include.filter | default: "all" %}
@@ -361,5 +361,5 @@
     {% endfor %}
 </div>
 
-{% comment %}Restore global page's scope{% endcomment %}
+{% comment %}RESTORE global page's scope{% endcomment %}
 {% assign page = page_backup %}
