@@ -1,0 +1,17 @@
+{% assign parts = page.path | split: '/' %}
+{% assign filename_with_extension = parts | last %}
+{% assign path = filename_with_extension | split: '.' | first %}
+
+<h1>{{ path }}</h1>
+
+{% assign base_folder = parts | slice: 0, parts.size | join: '/' | replace: filename_with_extension, '' %}
+
+{% capture include_path %}
+{{ base_folder }}_content/{{ path }}.md
+{% endcapture %}
+
+{% capture include_markdown %}
+{% include {{ include_path }} %}
+{% endcapture %}
+
+{{ include_markdown | markdownify }}
