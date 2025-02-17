@@ -1,4 +1,4 @@
-{% assign local-item = include.item %}
+{% assign page = include.item %}
 <h1>{{ local-item.title }}    </h1>
 <p>Category : {{ local-item.categories[0] }}</p>
 {% if site.category_archive.type and local-item.categories[0] %}
