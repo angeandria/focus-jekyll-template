@@ -1201,10 +1201,8 @@ body {
     &:not(.cards) .item-author{
         display: none;
     }*/    
-    .item-author{
-        display: none;
-    }
-    
+
+    .item-author,
     .item-author .page__meta-date i,
     .item-meta .page__meta-date{
         display: none;
@@ -1271,7 +1269,8 @@ body {
         .item-title > a {            
             font-size: var(--font-size-m);
         }  
-        .item-links{
+        .item-links,
+        .item-buttons{
             display: none;
         }  
     }
