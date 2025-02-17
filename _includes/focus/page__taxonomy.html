@@ -1,10 +1,12 @@
-{% if site.category_archive.type and page-item.categories[0] %}
+{% assign local-item = include.item %}
+<h1>{{ local-item.title }}    </h1>
+{% if site.category_archive.type and local-item.categories[0] %}
     <div class="category-list">
       {% include category-list.html %}
     </div>  
 {% endif %}
 
-{% if site.tag_archive.type and page-item.tags[0] %}
+{% if site.tag_archive.type and local-item.tags[0] %}
   <div class="tag-list">  
       {% include tag-list.html %}
   </div>
