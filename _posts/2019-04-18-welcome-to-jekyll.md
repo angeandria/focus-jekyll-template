@@ -29,7 +29,7 @@ featured_image: /assets/images/placeholder-1200.jpg
 ---
 
 {% capture include_markdown %}
-{% include_relative _pages_content/.md %}
+{% include_relative content/2019-04-18-welcome-to-jekyll.md %}
 {% endcapture %}
 
 {{ include_markdown | markdownify }}
