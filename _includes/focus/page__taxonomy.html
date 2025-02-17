@@ -1,4 +1,6 @@
+{% comment %}Temporary assignment to make the includes work at local scope{% endcomment %}
 {% assign page = include.item %}
+
 {% if site.category_archive.type and page.categories[0] %}
     <div class="category-list">
       {% include category-list.html %}

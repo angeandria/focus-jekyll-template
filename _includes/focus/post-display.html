@@ -10,6 +10,8 @@
 {% endcomment %} 
 
 
+{% assign page_backup = page %}
+
 {% assign target_topic = include.filter | default: "all" %}
 {% assign target_topic = target_topic | downcase %}
 {% assign container_class = include.container_class | default: "" %}
@@ -358,3 +360,6 @@
             
     {% endfor %}
 </div>
+
+{% comment %}Restore global page's scope{% endcomment %}
+{% assign page = page_backup %}
