@@ -6,6 +6,6 @@
 {% assign base_folder = parts | slice: 0, parts.size | join: '/' | replace: filename_with_extension, '' %}
 
 {% capture full_path %}
-    content/{{ path }}.md
+    {{ folder }}/{{ path }}.md
 {% endcapture %}
 
