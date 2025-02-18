@@ -9,3 +9,8 @@
 {% capture include_path %}
 content/{{ path }}.md
 {% endcapture %}
+
+{% capture include_markdown %}
+{% include_relative {{ include_path }} %}
+{% endcapture %}
+
