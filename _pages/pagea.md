@@ -10,6 +10,6 @@ Title : PageA
     {{ folder }}/{{ path }}.md
 {% endcapture %}
 {% capture include_markdown %}
-    {% include_relative {{ full_path }} %}
+    {% include_relative {{ folder }}/{{ path }} %}
 {% endcapture %}
 {{ include_markdown | markdownify }}
