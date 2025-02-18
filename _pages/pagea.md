@@ -11,7 +11,7 @@ Folder : {{ folder }}
 Path : {{ path }}
 
 {% capture include_markdown %}
-{% include_relative content/pagea.md %}
+{% include_relative {{ folder }}/pagea.md %}
 {% endcapture %}
 {{ include_markdown | markdownify }}
 
