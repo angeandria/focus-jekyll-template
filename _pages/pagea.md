@@ -4,12 +4,11 @@ Title : PageA
 
 ### BEFORE embed
 
-
 {% include focus/embed-content.html %}
 Full path : {{ full_path }}
 
 {% capture include_markdown %}
-{% include_relative {{ full_path }} %}
+{% include_relative content/pagea.md %}
 {% endcapture %}
 {{ include_markdown | markdownify }}
 
