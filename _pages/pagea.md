@@ -1,17 +1,13 @@
 ---
 Title : PageA
+file: pagea
 ---
 
 ### BEFORE embed
 
-{% include focus/embed-content.html %}
-
-Full path : {{ full_path }}
-Folder : {{ folder }}
-Path : {{ path }}
-
+{% include focus/page-content-vars.html %}
 {% capture include_markdown %}
-{% include_relative {{ folder }}/{{ path }}.md %}
+{% include_relative {{ folder }}/{{ page.file}}.md %}
 {% endcapture %}
 {{ include_markdown | markdownify }}
 
