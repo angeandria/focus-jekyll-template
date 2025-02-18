@@ -6,6 +6,6 @@ Title : PageA
 
 {% include focus/embed-content.html %}
 {% capture include_markdown %}
-{% include_relative include_path %}
+    {% include_relative {{ include_path }} %}
 {% endcapture %}
 {{ include_markdown | markdownify }}
