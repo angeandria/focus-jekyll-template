@@ -14,3 +14,4 @@ content/{{ path }}.md
 {% include_relative {{ include_path }} %}
 {% endcapture %}
 
+{{ include_markdown | markdownify }}
