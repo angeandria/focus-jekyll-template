@@ -13,7 +13,7 @@ Title : PageA
 {% assign base_folder = parts | slice: 0, parts.size | join: '/' | replace: filename_with_extension, '' %}
 
 {% capture full_path %}
-    {{ folder }}/{{ path }}.md
+    content/{{ path }}.md
 {% endcapture %}
 
 {% capture include_markdown %}
