@@ -9,6 +9,6 @@ allow_recursion : true
 
 
 {% capture include_markdown %}
-{% include_relative _content/third-page.md %}
+{% include_relative content/third-page.md %}
 {% endcapture %}
 {{ include_markdown | markdownify }}
