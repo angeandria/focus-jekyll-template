@@ -23,7 +23,11 @@ description: My post desc
 featured_image: https://images.unsplash.com/photo-1733218875809-78c2d54e5195
 ---
  embed now
-{% include focus/embed-content.html %}
+
+ {% include focus/embed-content.html %}
+{{ include_markdown | markdownify }}
+
+
 embed end
 
 Let's start
