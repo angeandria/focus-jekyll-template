@@ -5,3 +5,7 @@
 <h1>{{ path }}</h1>
 
 {% assign base_folder = parts | slice: 0, parts.size | join: '/' | replace: filename_with_extension, '' %}
+
+{% capture include_path %}
+content/{{ path }}.md
+{% endcapture %}
