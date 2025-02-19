@@ -6,6 +6,7 @@ featured_image: "assets/images/placeholder-1200.jpg"
 featured_logo: "assets/images/placeholder-logo.jpg"	
 caption: "Hello Ange"
 description: This is Guide 1 description dummy text of the printing and typesetting industry.
+categories:
   - personal development
   - main
 tags:

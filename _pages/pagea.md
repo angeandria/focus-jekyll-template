@@ -1,13 +1,12 @@
 ---
 Title : PageA
-file: pagea
+id: pagea
+read_time: true
 ---
-
-### BEFORE embed
 
 {% include focus/page-content-vars.html %}
 {% capture include_markdown %}
-{% include_relative {{ folder }}/{{ page.file}}.md %}
+{% include_relative {{ content_folder }}/{{ page.id}}.md %}
 {% endcapture %}
 {{ include_markdown | markdownify }}
 
