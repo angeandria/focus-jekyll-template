@@ -2,7 +2,6 @@
 title : PageA
 file: pagea # NOT id
 read_time: true
-breadcrumbs: false
 ---
 
 {% capture include_markdown %}
