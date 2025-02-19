@@ -1,10 +1,10 @@
 {% assign parts = page.path | split: '/' %}
 {% assign filename_with_extension = parts | last %}
-{% assign filename = filename_with_extension | split: '.' | first %}
-{% assign content_folder = page.content_folder | default: site.content_folder %}
+{% assign path = filename_with_extension | split: '.' | first %}
+{% assign folder = page.content_folder | default: site.content_folder %}
 {% assign base_folder = parts | slice: 0, parts.size | join: '/' | replace: filename_with_extension, '' %}
 
-{% capture content_full_path %}
-{{ content_folder }}/{{ filename }}.md
+{% capture full_path %}
+{{ folder }}/{{ path }}.md
 {% endcapture %}
 

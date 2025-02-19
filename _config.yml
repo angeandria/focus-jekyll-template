@@ -49,7 +49,7 @@ head_scripts:
 # -----------------
 # Site Details - More
 # ---------------
-content_folder           : content  # collection subfolder where content files will be located
+content_folder           : "content" # collection subfolder where content files will be located
 teaser                   :          # path of fallback teaser image, e.g. "/assets/images/500x300.png" 
 breadcrumbs              : false    # display breadcrumbs | boolean | default: false
 words_per_minute         : 200
