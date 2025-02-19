@@ -14,12 +14,12 @@ Title: Grid Tests
 
 ```html
 <div class="grid-2">hello
-<div> <!-- Mandatory container -->
-<div>Some text here</div>
-<div>Some text here</div>
-<div>Some text here</div>
-<div>Some text here</div>
-</div>
+    <div> <!-- Mandatory container -->
+        <div>Some text here</div>
+        <div>Some text here</div>
+        <div>Some text here</div>
+        <div>Some text here</div>
+    </div>
 </div>
 ```
 
