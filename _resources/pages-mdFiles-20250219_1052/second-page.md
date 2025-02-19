@@ -1,5 +1,5 @@
 ---
-id: second-page
+file: second-page
 content_file: "[[_content/second-page.md]]"
 permalink: /resource/second-page-permalink
 aliases: 

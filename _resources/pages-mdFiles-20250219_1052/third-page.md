@@ -1,5 +1,5 @@
 ---
-id: third-page
+file: third-page
 content_file: "[[_content/third-page.md]]"
 permalink: /resource/myFile3
 aliases: 
