@@ -40,15 +40,20 @@ author_profile
 date
 last_modified_at
 show_date: true
+show_footer_date: true
+show_pagination: true      
+show_taxonomy: true
 sitemap: false (plugin jekyll-sitemap)
 hidden
-read_time: false
 comments: false
-share: false
+read_time: false
 related: false
+share: false
+
 
 # Navigation
 navigation
+breadcrumbs
 resource
 
 # Header
@@ -75,7 +80,7 @@ toc
 toc_sticky
 toc_label
 toc_icon
-aside
+post_aside
 sidebar:
   - title:
     image:

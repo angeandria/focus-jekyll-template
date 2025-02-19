@@ -1,5 +1,5 @@
 ---
-Title : PageA
+title : PageA
 file: pagea # NOT id
 read_time: true
 ---

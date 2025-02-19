@@ -53,7 +53,7 @@ content_folder           : "content" # collection subfolder where content files 
 teaser                   :          # path of fallback teaser image, e.g. "/assets/images/500x300.png" 
 breadcrumbs              : false    # display breadcrumbs | boolean | default: false
 words_per_minute         : 200
-enable_copy_code_button  :          # bool | default: false | 
+enable_copy_code_button  : true     # bool | default: false | 
 copyright                :          # copyright name | string | default : site.title
 copyright_url            :          # copyright URL | default: site.url
 title_display            : true     # display page title | bool | default: true
@@ -199,7 +199,7 @@ defaults:
             - main      
       post_aside: false            
       ###
-      # breadcrumbs: false
+      breadcrumbs: true
       comments: false      
       read_time: false
       related: false
