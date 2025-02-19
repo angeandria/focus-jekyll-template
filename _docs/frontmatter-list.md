@@ -2,7 +2,7 @@
 ---
 
 # File
-id
+file (NOT id since it's a jekyll native variable)
 permalink
 content_file
 aliases
