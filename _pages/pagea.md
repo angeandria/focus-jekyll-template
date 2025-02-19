@@ -8,7 +8,7 @@ What is the date of this post if it hasn't been defined? {{ page.date }}
 Page name : {{ page.name }}
 {% include focus/page__content-vars.html %}
 {% capture include_markdown %}
-{% include_relative {{ site.content_folder }}/{{ page.file }}.md %}
+{% include_relative {{ site.content_folder }}/{{ page.slug }} %}
 {% endcapture %}
 {{ include_markdown | markdownify }}
 
