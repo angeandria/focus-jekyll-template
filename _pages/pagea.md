@@ -5,9 +5,10 @@ read_time: true
 ---
 
 What is the date of this post if it hasn't been defined? {{ page.date }}
+Page name : {{ page.name }}
 {% include focus/page__content-vars.html %}
 {% capture include_markdown %}
-{% include_relative {{ content_folder }}/{{ page.name }} %}
+{% include_relative {{ content_folder }}/{{ page.file }}.md %}
 {% endcapture %}
 {{ include_markdown | markdownify }}
 
