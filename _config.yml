@@ -56,7 +56,7 @@ words_per_minute         : 200
 enable_copy_code_button  : true     # bool | default: false | 
 copyright                :          # copyright name | string | default : site.title
 copyright_url            :          # copyright URL | default: site.url
-title_display            : true     # display page title | bool | default: true
+show_page_title            : true     # display page title | bool | default: true
 taxonomy_display         : false    # display page taxonomies | bool | default: false
 resource_navigation      : false    # display resource navigation | bool | default: false
 site_class             : ""    # Display site in boxed body

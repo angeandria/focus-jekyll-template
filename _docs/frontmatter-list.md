@@ -1,12 +1,15 @@
 ---
 ---
 
+
+```
 # File
 file (NOT id since it's a jekyll native variable)
 permalink
 content_file
 aliases
 lang
+allow_recursion
 
 # Layout
 layout ([focus layouts] + archive, collection, categories, posts, tag, search, splash)
@@ -15,6 +18,8 @@ classes
 
 # Content
 title
+title_before
+title_after
 subtitle
 description
 excerpt
@@ -39,6 +44,7 @@ author
 author_profile
 date
 last_modified_at
+show_page_title: 
 show_date: true
 show_footer_date: true
 show_pagination: true      
@@ -49,7 +55,6 @@ comments: false
 read_time: false
 related: false
 share: false
-
 
 # Navigation
 navigation
@@ -89,18 +94,8 @@ sidebar:
     nav:
       - main            
       
-
       
-allow_recursion
 
-
-
-
-
-          
-
-
-title_display (?)
 
 # Additional content
 gallery:
@@ -120,3 +115,4 @@ feature_row:
     url: "#test-link"
     btn_label: "Read More"
     btn_class: "btn--primary"
+```

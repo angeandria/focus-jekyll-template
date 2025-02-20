@@ -46,12 +46,12 @@ layout: default
               {% if layout_slug != "focus-single-taxonomy" %}              
                   {% unless page.header.overlay_color or page.header.overlay_image %}
                       
-                      {% assign title_display = site.title_display %}
-                      {% if page.title_display != nil %}
-                          {% assign title_display = page.title_display %}
+                      {% assign show_page_title = site.show_page_title %}
+                      {% if page.show_page_title != nil %}
+                          {% assign show_page_title = page.show_page_title %}
                       {% endif %}
 
-                      {% if title_display %}
+                      {% if show_page_title %}
                           {% if page.title_before %}<div class="page-title-before">{{ page.title_before }}</div>{% endif %}
                           {% if page.title %}
                           <h1 id="page-title" class="page__title" itemprop="headline">
