@@ -1,24 +1,24 @@
 ---
 ---
 
-
 ```
 # File
-file (NOT id since it's a jekyll native variable)
-permalink
-content_file
-aliases
-lang
-allow_recursion
+file                            # NOT id since it's a jekyll native variable
+permalink: 
+content_file: 
+aliases: 
+lang: 
+sitemap: false                  # plugin jekyll-sitemap
+hidden: 
 
 # Layout
-layout ([focus layouts] + archive, collection, categories, posts, tag, search, splash)
-template
-classes
+layout:                         # [focus layouts] + archive, collection, categories, posts, tag, search, splash
+template: 
+classes: 
 
 # Content
-title
-title_before
+title: 
+title_before: 
 title_after
 subtitle
 description
@@ -28,38 +28,38 @@ featured_image
 caption
 teaser_image
 featured_logo
+link
 categories
-taxonomy (single category, do not use taxonom)
-collection (add layout: collection | Refers to the custom collection you want to display within that **page**)
+taxonomy:                       # single category, do not use taxonomy
+collection:                     # add layout: collection | Refers to the custom collection you want to display within that **page**
 entries_layout: grid
-tags
-info1
-info2
+tags: 
+info1: 
+info2: 
 
 # Meta
-featured
-priority
-status
-author
-author_profile
-date
-last_modified_at
+featured: 
+priority: 
+status: 
+date: 
+last_modified_at: 
+author: 
+author_profile: 
 show_page_title: 
 show_date: true
 show_footer_date: true
 show_pagination: true      
 show_taxonomy: true
-sitemap: false (plugin jekyll-sitemap)
-hidden
 comments: false
 read_time: false
 related: false
 share: false
+allow_recursion: false
 
 # Navigation
-navigation
-breadcrumbs
-resource
+navigation: 
+breadcrumbs: 
+resource: 
 
 # Header
 header:
@@ -81,11 +81,11 @@ actions:
     url:
 
 # Sidebar
-toc
-toc_sticky
-toc_label
-toc_icon
-post_aside
+toc: 
+toc_sticky: 
+toc_label: 
+toc_icon: 
+post_aside: 
 sidebar:
   - title:
     image:
@@ -94,9 +94,6 @@ sidebar:
     nav:
       - main            
       
-      
-
-
 # Additional content
 gallery:
   - url: /assets/images/unsplash-gallery-image-1.jpg

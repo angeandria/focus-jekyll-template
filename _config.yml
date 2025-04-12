@@ -23,6 +23,46 @@ masthead_title           : # overrides the website title displayed in the masthe
 
 
 # -----------------
+# Plugin : SEO Tag
+# ---------------
+# https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
+# title, description, url, author
+# twitter:
+#  username: benbalter
+#  card: summary
+#facebook:
+#  app_id: 1234
+#  publisher: 1234
+#  admins: 1234
+#social:
+#  name: Ben Balter
+#  links:
+#    - https://twitter.com/BenBalter
+#    - https://www.facebook.com/ben.balter
+#    - https://www.linkedin.com/in/BenBalter
+#    - https://github.com/benbalter
+#    - https://keybase.io/benbalter
+#logo: 
+#webmaster_verifications:
+#  google: 1234
+#  bing: 1234
+#  alexa: 1234
+#  yandex: 1234
+#  baidu: 1234
+#  facebook: 1234
+# locale:   # locale - The locale these tags are marked up in. Of the format language_TERRITORY. Default is en_US. Takes priority over existing config key lang.
+
+
+tagline: "" # Similar to subtitle. TODO : Replace subtitle?
+
+# IMPORTANT
+# The SEO tag will respect the following YAML front matter if included in a post, page, or document:
+
+#title, description, author, locale
+# image - URL to an image associated with the post, page, or document (e.g., /assets/page-pic.jpg)
+# TODO : replace featured_image by image to benefit from this feture?
+
+# -----------------
 # Theme Settings
 # ---------------
 remote_theme: mmistakes/minimal-mistakes
@@ -473,6 +513,7 @@ markdown_ext: "markdown,mkdown,mkdn,mkd,md"
 plugins:
   - jekyll-paginate
   - jekyll-sitemap
+  - jekyll-seo-tag  
   - jekyll-gist
   - jekyll-feed
   - jemoji

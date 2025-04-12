@@ -3,12 +3,14 @@ default:
     avatar: assets/images/bio-photo.jpg
     bio: hello default
     email: anonymous@email.com
-    home: https://www.default.com
-    location: nonono
+    home: https://www.default.com # TODO : Replace by "url" for jekyll so tag
+    location: nonono    
     links:
         - label: "Email"
           icon: "fas fa-fw fa-envelope-square"
           url: "mailto:ange@angeandria.com"    
+    picture: /img/benbalter.png # TODO : AVATAR OR PICTURE?
+    twitter: angeeandria
 
 angeandria:
     name: Ange Andria
